@@ -1,0 +1,154 @@
+---
+layout: default
+title: Home
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.title }}</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+        }
+
+        .container {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+
+        .header {
+            text-align: center;
+            padding: 2rem 0;
+            background-color: #f8f8f8;
+            margin: 0;
+            position: relative;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .group-logo {
+            position: absolute;
+            left: 2rem;
+            top: 0;
+            height: 100%;
+            width: auto;
+            padding: 0.5rem 0;
+            box-sizing: border-box;
+        }
+
+        .group-logo img {
+            height: 100%;
+            width: auto;
+            transition: opacity 0.2s ease;
+        }
+
+        .group-logo:hover img {
+            opacity: 0.8;
+        }
+
+        .featured-image-container {
+            position: relative;
+            width: 100%;
+            height: 90vh;
+            overflow: hidden;
+            background-color: #f8f8f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 2rem 0;
+        }
+
+        .featured-image {
+            max-height: 100%;
+            width: auto;
+            object-fit: contain;
+            transition: opacity 0.3s ease;
+        }
+
+        .image-overlay {
+            position: absolute;
+            bottom: 15%;
+            left: 2rem;
+            transform: none;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1.2rem;
+            max-width: 600px;
+            text-align: left;
+            border-radius: 4px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .youtube-overlay {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .featured-image-container:hover .image-overlay,
+        .featured-image-container:hover .youtube-overlay {
+            opacity: 1;
+        }
+
+        .youtube-overlay img {
+            height: 28px;
+            width: auto;
+        }
+
+        .image-overlay p {
+            margin: 0;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            color: #333;
+        }
+
+        .header h1 {
+            margin: 0;
+            color: #333;
+            font-size: 2.5rem;
+        }
+
+        .header p {
+            color: #666;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="/" class="group-logo">
+                <img src="assets/logos/CoMPhy-Lab-no-name.png" alt="CoMPhy Lab Logo">
+            </a>
+            <h1>CoMPhy Lab</h1>
+            <p>Computational Multiphase Physics Lab</p>
+        </div>
+        
+        <div class="featured-image-container">
+            <img src="assets/featured/singularWorthingtonJet.png" alt="Singular Worthington Jet" class="featured-image">
+            <div class="image-overlay">
+                <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.129.104501" target="_blank" style="color: inherit; text-decoration: none;">
+                    <p>Singular Worthington jet when the second force peak is much larger than the first one. See: B. Zhang, V. Sanjay, S. Shi, Y. Zhao, C. Lv, X. Feng & D. Lohse, Phys. Rev. Lett., 129:10, 104501 (2022)</p>
+                </a>
+            </div>
+            <a href="https://youtu.be/t6Ddg4Kh_TA?si=O9MBRlLR4x8gOotT" target="_blank" class="youtube-overlay">
+                <img src="https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white" alt="Watch on YouTube">
+            </a>
+        </div>
+    </div>
+</body>
+</html>
