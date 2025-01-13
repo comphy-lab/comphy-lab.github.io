@@ -4,12 +4,16 @@ body, html {
     height: 100%;
     font-family: 'Arial', sans-serif;
     background-color: #f8f8f8;
+    display: flex;
+    justify-content: center;
 }
 
 .container {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
+    box-sizing: border-box;
 }
 
 .header {
@@ -24,14 +28,17 @@ body, html {
 
 .featured-image-container {
     position: relative;
-    max-width: 100%;
+    width: 100%;
+    max-width: 1000px;
     margin: 0 auto;
+    overflow: hidden;
 }
 
 .featured-image {
     width: 100%;
     height: auto;
     display: block;
+    margin: 0 auto;
 }
 
 .image-overlay {
