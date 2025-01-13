@@ -17,6 +17,24 @@
         });
     }
 
+    /* Load About Content
+    * -------------------------------------------------- */
+    const loadAboutContent = async () => {
+        try {
+            const response = await fetch('about.md');
+            const text = await response.text();
+            const aboutContent = document.getElementById('about-content');
+            if (aboutContent) {
+                aboutContent.innerHTML = marked.parse(text);
+            }
+        } catch (error) {
+            console.error('Error loading about content:', error);
+        }
+    };
+
+    // Load about content when page loads
+    window.addEventListener('load', loadAboutContent);
+
     /* Mobile Menu
     * -------------------------------------------------- */
     const menuToggle = document.querySelector('.s-header__menu-toggle');

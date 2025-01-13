@@ -58,11 +58,27 @@
 
     <section id="about" class="s-about target-section">
       <div class="row s-about__content" data-animate-block>
-        <div class="column lg-12">
-          <h2 class="text-pretitle" data-animate-el>About Us</h2>
-          <p class="s-about__desc" data-animate-el>
-            <span>CoMPhy Lab</span> is dedicated to advancing the field of computational multiphase physics.
-          </p>
+        <div class="s-about__grid">
+          <div class="s-about__left">
+            <div id="about-content" class="s-about__desc" data-animate-el>
+              <!-- Markdown content will be loaded here -->
+            </div>
+          </div>
+          <div class="s-about__right">
+            <div class="s-about__social" data-animate-el>
+              <div class="s-about__social-header">
+                <img src="https://bsky.app/static/favicon-32x32.png" alt="Bluesky Logo">
+                <h3>Bluesky Feed</h3>
+              </div>
+              <script type="module" src="https://cdn.jsdelivr.net/npm/bsky-embed/dist/bsky-embed.es.js" async></script>
+              <bsky-embed
+                username="comphy-lab.org"
+                limit="5"
+                load-more="true"
+              >
+              </bsky-embed>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -81,6 +97,7 @@
   </div>
 
   <script src="assets/js/plugins.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
