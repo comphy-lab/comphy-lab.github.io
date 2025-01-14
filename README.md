@@ -20,7 +20,10 @@ COMPHY-LAB.GITHUB.IO/
 │   ├── js/                  # JavaScript files
 │   │   ├── plugins.js       # Third-party plugins
 │   │   └── main.js         # Main site functionality and markdown rendering
-│   └── logos/                # Lab logos and branding assets
+│   ├── logos/                # Lab logos and branding assets
+│   ├── font-awesome/         # Font Awesome icons (used for GitHub icons)
+│   ├── fontello/            # Fontello icon set
+│   └── academicons-1.7.0/  # Academic icons (used for Google Scholar)
 ├── featured/                  # Featured content and images
 ├── about.md                   # About section content in markdown
 ├── Gemfile                    # Ruby gem dependencies
@@ -56,6 +59,9 @@ COMPHY-LAB.GITHUB.IO/
       - Custom scrollbars
       - Grid layouts
       - Animations
+    - `font-awesome/`: Font Awesome icons (used for GitHub icons)
+    - `fontello/`: Fontello icon set
+    - `academicons-1.7.0/`: Academic icons (used for Google Scholar)
   - `js/`:
     - `plugins.js`: Third-party plugins and utilities
     - `main.js`: Site functionality including:
@@ -65,6 +71,25 @@ COMPHY-LAB.GITHUB.IO/
       - Mobile menu handling
   - `logos/`: Lab branding assets and logos
 - `featured/`: Featured content, images, and highlighted materials
+
+### Icon Usage
+Team member profiles support various icon links:
+1. **GitHub**: Using Font Awesome
+   ```markdown
+   [<i class="fab fa-github" style="font-size: 1.5em; color: black;"></i>](https://github.com/username)
+   ```
+2. **Google Scholar**: Using Academicons
+   ```markdown
+   [<i class="ai ai-google-scholar-square" style="font-size: 1.5em;"></i>](https://scholar.google.com/citations?user=USER_ID)
+   ```
+
+These icons are loaded through CSS dependencies in the layout files:
+```html
+<!-- Font dependencies -->
+<link rel="stylesheet" href="/assets/css/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="/assets/css/fontello/css/fontello.css">
+<link rel="stylesheet" href="/assets/css/academicons-1.7.0/css/academicons.min.css">
+```
 
 ## Content Management
 
@@ -193,6 +218,26 @@ To run this website locally for development and testing, follow these steps:
    - Open your web browser
    - Navigate to `http://localhost:4000`
    - Changes to source files (including about.md) will automatically trigger a rebuild
+
+## Fonts and Icons Attribution
+
+This website uses several fonts and icon sets that are freely available under open-source licenses:
+
+### Icon Sets
+- **Academicons 1.7.0**: Used for academic icons (Google Scholar, etc.)
+  - Font License: SIL OFL 1.1
+  - CSS License: MIT License
+  - Source: https://github.com/jpswalsh/academicons
+- **Font Awesome**: Used for general icons (GitHub, etc.)
+  - License: MIT License
+- **Fontello**: Custom icon set
+  - License: Various open-source licenses depending on included icons
+
+### Fonts
+- **Libre Baskerville**: SIL Open Font License
+- **Open Sans**: Apache License 2.0
+
+We extend our sincere thanks to the creators and maintainers of these fonts and icon sets for making their work freely available to the academic community.
 
 ## Notes
 - The website will automatically rebuild when changes are pushed to the main branch
