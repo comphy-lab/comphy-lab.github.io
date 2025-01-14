@@ -21,17 +21,17 @@ title: Research
 
 ## 2025
 
-### **Sanjay, V.**, Zhang, B., Lv, C., & Lohse, D. The role of viscosity on drop impact forces on non-wetting surfaces. _J. Fluid Mech._, in press (2025).
+### [17] **Sanjay, V.**, Zhang, B., Lv, C., & Lohse, D. The role of viscosity on drop impact forces on non-wetting surfaces. _J. Fluid Mech._, in press (2025).
 
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2311.03012&color=green)](https://arxiv.org/abs/2311.03012)
 
-### Kayal, L., **Sanjay, V.**, Yewale, N., Kumar, A., & Dasgupta, R. Focusing of concentric free-surface waves. _J. Fluid Mech._, in press (2025).
+### [16] Kayal, L., **Sanjay, V.**, Yewale, N., Kumar, A., & Dasgupta, R. Focusing of concentric free-surface waves. _J. Fluid Mech._, in press (2025).
 
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2406.05416&color=green)](https://arxiv.org/abs/2406.05416)
 
 ## 2024
 
-### Balasubramanian, A. G., **Sanjay, V.**, Jalaal, M., Vinuesa, R., & Tammisola, O. Bursting bubble in an elastoviscoplastic medium. _J. Fluid Mech._, 1001, A9 (2024).
+### [15] Balasubramanian, A. G., **Sanjay, V.**, Jalaal, M., Vinuesa, R., & Tammisola, O. Bursting bubble in an elastoviscoplastic medium. _J. Fluid Mech._, 1001, A9 (2024).
 
 #### Highlights
 * Cover of that volume of _J. Fluid Mech._
