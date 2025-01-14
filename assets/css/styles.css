@@ -648,8 +648,88 @@ body {
 
 .team-member {
   width: 400px;
-  display: flex;
-  flex-direction: column;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: justify;
+  transition: transform 0.3s ease;
+}
+
+/* Center the name */
+.team-member h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Center social links (they come right after h2) */
+.team-member h2 + p {
+  text-align: center !important;
+  margin-bottom: 1rem;
+}
+
+/* Center member image */
+.team-member img {
+  display: block;
+  margin: 0 auto 1rem;
+}
+
+/* Center "Joint with" text (it's a paragraph with a single link) */
+.team-member p:has(a[href*="Detlef"]),
+.team-member p:has(a[href*="Martin"]),
+.team-member p:has(a[href*="Jacco"]),
+.team-member p:has(a[href*="Alvaro"]) {
+  text-align: center !important;
+  margin: 1rem 0;
+}
+
+/* Style for social icons */
+.team-member .fa,
+.team-member .ai {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+/* Center the CV button */
+.cv-button {
+  display: block;
+  text-align: center;
+  margin: 1rem auto;
+}
+
+/* Keep lists and other paragraphs justified */
+.team-member ul,
+.team-member p:not(:has(a[href*="Detlef"])):not(:has(a[href*="Martin"])):not(:has(a[href*="Jacco"])):not(:has(a[href*="Alvaro"])):not(:has(.fa)):not(:has(.ai)):not(:has(.cv-button)) {
+  text-align: justify;
+}
+
+/* Responsive breakpoints */
+@media screen and (max-width: 1700px) {
+  .team-grid {
+    grid-template-columns: repeat(3, 400px);
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 400px);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .team-grid {
+    grid-template-columns: 400px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .team-member {
+    width: 100%;
+  }
 }
 
 .member-image {
@@ -1029,5 +1109,71 @@ body {
   .team-member img {
     width: 100%;
     height: auto;
+  }
+}
+
+.team-section {
+  margin-bottom: 4rem;
+  width: 100%;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.team-section h1 {
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+  color: var(--color-1);
+  text-align: center;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 400px);
+  gap: 2rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+.team-member {
+  width: 400px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: justify;
+  transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+}
+
+/* Responsive breakpoints for team grid */
+@media screen and (max-width: 1700px) {
+  .team-grid {
+    grid-template-columns: repeat(3, 400px);
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 400px);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .team-grid {
+    grid-template-columns: repeat(1, 400px);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .team-member {
+    width: 100%;
   }
 }
