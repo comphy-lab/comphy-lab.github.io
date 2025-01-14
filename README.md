@@ -134,12 +134,30 @@ These icons are loaded through CSS dependencies in the layout files:
 
 ### Main Pages
 - `index.html`: The main landing page featuring:
+  - Lab name with expanded acronym: "Computational Multiphase Physics (CoMPhy) Lab"
+  - Social media links with color scheme matching the lab name:
+    - ORCID (matte red)
+    - GitHub (purple)
+    - Google Scholar (blue)
+  - Responsive navigation with glass-morphism effects
+  - Fixed-position header with blur effect and warm orange tint
   - Animated header with gradient text
   - Split-layout About section:
     - Left: Markdown content
     - Right: Bluesky feed in scrollable container
-  - Responsive navigation with glass-morphism effects
-  - Fixed-position header with blur effect
+
+### Design Elements
+- **Color Scheme**:
+  - Text gradient: Red to blue for the lab name
+  - Social icons: Matte red (ORCID), Purple (GitHub), Blue (Google Scholar)
+  - Header background: Transparent warm orange with blur effect
+- **Typography**:
+  - Clean, modern fonts for readability
+  - Gradient effects for emphasis
+- **Layout**:
+  - Responsive design for all screen sizes
+  - Glass-morphism effects for modern look
+  - Fixed header with blur effect
 
 ### Research Papers (`_research/index.md`)
 The research section is organized chronologically with the following structure:
