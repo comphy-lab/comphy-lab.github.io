@@ -8,8 +8,9 @@ title: Our Team & Collaborators
 ## Vatsal Sanjay (PI) 
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/VatsalSy)
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?user=67aQviYAAAAJ)
+[<i class="fa-brands fa-bluesky" style="font-size: 2em; color: #0085ff;"></i>](https://bsky.app/profile/comphy-lab.org)
 
-<img src="../assets/images/team/0.webp" alt="Vatsal Sanjay" loading="lazy" width="250" height="250">
+<img src="/assets/images/team/0.jpg" alt="Vatsal Sanjay" loading="lazy" width="250" height="250">
 
 - [Postdoc, Phys. Fluids - Univ. Twente / 2022-25](https://pof.tnw.utwente.nl/people/profile/1330)
 - [Ph.D., Phys. Fluids - Univ. Twente / 2018-22](https://doi.org/10.3990/1.9789036554077)
@@ -24,7 +25,7 @@ title: Our Team & Collaborators
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/ayushkumardixit)
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?hl=en&user=ws43SmkAAAAJ)
 
-<img src="../assets/images/team/1.webp" alt="Vatsal Sanjay" loading="lazy" width="250" height="250">
+<img src="/assets/images/team/1.jpg" alt="Ayush Dixit" loading="lazy" width="250" height="250">
 
 Joint with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 
@@ -37,7 +38,7 @@ Joint with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/amanb1901)
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?hl=en&user=AmGOP8gAAAAJ)
 
-<img src="../assets/images/team/2.webp" alt="Vatsal Sanjay" loading="lazy" width="250" height="250">
+<img src="/assets/images/team/2.jpg" alt="Aman Bhargava" loading="lazy" width="250" height="250">
 
 Joint with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 
@@ -52,7 +53,7 @@ Joint with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?hl=en&user=Coxj4VQAAAAJ)
 [<i class="fa-brands fa-bluesky" style="font-size: 2em; color: #0085ff;"></i>](https://bsky.app/profile/jnandeep.bsky.social)
 
-<img src="../assets/images/team/3.webp" alt="Vatsal Sanjay" loading="lazy" width="250" height="250">
+<img src="/assets/images/team/3.jpg" alt="Jnandeep Talukdar" loading="lazy" width="250" height="250">
 
 Joint with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 
@@ -65,7 +66,7 @@ Joint with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 ## Saumili Jana (M.Sc.) 
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/SaumiliJana)
 
-<img src="../assets/images/team/4.webp" alt="Vatsal Sanjay" loading="lazy" width="250" height="250">
+<img src="/assets/images/team/4.jpg" alt="Saumili Jana" loading="lazy" width="250" height="250">
 
 Joint with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 
@@ -78,7 +79,7 @@ Joint with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 ## Floris Hoek (M.Sc.) 
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/Floris-Hoek)
 
-<img src="../assets/images/team/6.webp" alt="Vatsal Sanjay" loading="lazy" width="250" height="250">
+<img src="/assets/images/team/6.jpg" alt="Floris Hoek" loading="lazy" width="250" height="250">
 
 Joint with [Martin van der Hoef](https://pof.tnw.utwente.nl/people/profile/244) and [Alvaro Marin](https://pof.tnw.utwente.nl/people/profile/243)
 
@@ -89,7 +90,7 @@ Joint with [Martin van der Hoef](https://pof.tnw.utwente.nl/people/profile/244) 
 ## Milan Sent (B.Sc.) 
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/mdjsent)
 
-<img src="../assets/images/team/5.webp" alt="Vatsal Sanjay" loading="lazy" width="250" height="250">
+<img src="/assets/images/team/5.jpg" alt="Milan Sent" loading="lazy" width="250" height="250">
 
 Joint with [Jacco Snoeijer](https://pof.tnw.utwente.nl/people/profile/21)
 
@@ -100,7 +101,7 @@ Joint with [Jacco Snoeijer](https://pof.tnw.utwente.nl/people/profile/21)
 ## Xiangyu Zhang (Intern) 
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/zhangxyPHD)
 
-<img src="../assets/images/team/7.webp" alt="Vatsal Sanjay" loading="lazy" width="250" height="250">
+<img src="/assets/images/team/7.jpg" alt="Xiangyu Zhang" loading="lazy" width="250" height="250">
 
 Joint with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 
@@ -111,7 +112,7 @@ Joint with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 
 ## We need you!
 
-<img src="../assets/images/team/placeholder.webp" alt="Vatsal Sanjay" loading="lazy" width="250" height="250">
+<img src="/assets/images/team/placeholder.jpg" alt="Join Us" loading="lazy" width="250" height="250">
 
 See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-students) for ongoing projects.
 
@@ -143,7 +144,7 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 ## Maziyar Jalaal (Mazi)
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?user=FE8TQeUAAAAJ)
 [<i class="fa-brands fa-x-twitter" style="font-size: 2em; color: #000000;"></i>](https://x.com/maziyarj)
-[<i class="fa-brands fa-bluesky" style="font-size: 2.5em; color: #0085ff;"></i>](https://bsky.app/profile/mazi1.bsky.social)
+[<i class="fa-brands fa-bluesky" style="font-size: 2em; color: #0085ff;"></i>](https://bsky.app/profile/mazi1.bsky.social)
 
 - [Associate Professor, Fluid Lab, Univ. Amsterdam](https://www.fluidlab.nl/)
 

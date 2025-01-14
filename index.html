@@ -17,7 +17,16 @@
     document.documentElement.classList.remove('no-js');
     document.documentElement.classList.add('js');
   </script>
-  <script src="https://kit.fontawesome.com/b1cfd9ca75.js" crossorigin="anonymous"></script>
+    <script>
+      // Check if we're on localhost
+      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        // Use official Font Awesome CDN for local development with version 6.7.2
+        document.write('<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.2/css/all.css" crossorigin="anonymous">');
+      } else {
+        // Use Kit for production
+        document.write('<script src="https://kit.fontawesome.com/b1cfd9ca75.js" crossorigin="anonymous"><\/script>');
+      }
+    </script>
 
 </head>
 <body id="top">
@@ -40,12 +49,12 @@
       <nav class="s-header__nav">
         <a href="#0" class="s-header__nav-close-btn"><span>Close</span></a>
         <ul class="s-header__nav-list">
-          <li style="background: none;"><a href="https://bsky.app/profile/comphy-lab.org" style="background: none; padding: 0;"><i class="fa-brands fa-bluesky" style="font-size: 1.75em; color: #0085ff;"></i></a></li>
           <li style="background: none;"><a href="https://github.com/comphy-lab" style="background: none; padding: 0;"><i class="fa-brands fa-github" style="font-size: 1.75em"></i></a></li>
           <li><a href="#about" class="smoothscroll">About</a></li>
           <li><a href="/team/">Team</a></li>
           <li><a href="/research">Research</a></li>
           <li><a href="https://publish.obsidian.md/comphy-lab/README" target="_blank">Blog</a></li>
+          <li style="background: none;"><a href="https://bsky.app/profile/comphy-lab.org" style="background: none; padding: 0;"><i class="fa-brands fa-bluesky" style="font-size: 1.75em; color: #0085ff;"></i></a></li>
         </ul>
       </nav>
     </header>
