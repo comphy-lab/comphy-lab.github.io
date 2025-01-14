@@ -6,7 +6,7 @@ title: Our Team & Collaborators
 # Present Team
 
 ## Vatsal Sanjay (PI) 
-[<i class="fab fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/VatsalSy)
+[<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/VatsalSy)
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?user=67aQviYAAAAJ)
 
 <img src="../assets/images/team/0.webp" alt="Vatsal Sanjay" loading="lazy" width="250" height="250">
@@ -21,7 +21,7 @@ title: Our Team & Collaborators
 [Download CV](https://raw.githubusercontent.com/VatsalSy/Vatsal_CV/master/Vatsal_CV.pdf){: .cv-button}
 
 ## Ayush Dixit (Ph.D) 
-[<i class="fab fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/ayushkumardixit)
+[<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/ayushkumardixit)
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?hl=en&user=ws43SmkAAAAJ)
 
 <img src="../assets/images/team/1.webp" alt="Vatsal Sanjay" loading="lazy" width="250" height="250">
@@ -34,7 +34,7 @@ Joint with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 **Research Interest:** Viscoelastic flows, Bursting bubbles, Respiratory drops.
 
 ## Aman Bhargava (Ph.D) 
-[<i class="fab fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/amanb1901)
+[<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/amanb1901)
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?hl=en&user=AmGOP8gAAAAJ)
 
 <img src="../assets/images/team/2.webp" alt="Vatsal Sanjay" loading="lazy" width="250" height="250">
@@ -48,9 +48,9 @@ Joint with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 **Research Interest:** Inertial contact line, Drop retraction
 
 ## Jnandeep Talukdar (M.Sc.) 
-[<i class="fab fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/spilltheT)
+[<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/spilltheT)
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?hl=en&user=Coxj4VQAAAAJ)
-[<i class="fa fa-square" style="font-size: 2em; color: #0085ff;"></i>](https://bsky.app/profile/jnandeep.bsky.social)
+[<i class="fa-brands fa-bluesky" style="font-size: 2em; color: #0085ff;"></i>](https://bsky.app/profile/jnandeep.bsky.social)
 
 <img src="../assets/images/team/3.webp" alt="Vatsal Sanjay" loading="lazy" width="250" height="250">
 
@@ -63,7 +63,7 @@ Joint with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 **Research Interest:** Surfactant dynamics, Dissipative anomaly, Soft wetting.
 
 ## Saumili Jana (M.Sc.) 
-[<i class="fab fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/SaumiliJana)
+[<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/SaumiliJana)
 
 <img src="../assets/images/team/4.webp" alt="Vatsal Sanjay" loading="lazy" width="250" height="250">
 
@@ -76,7 +76,7 @@ Joint with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 **Research Interest:** Soft impact.
 
 ## Floris Hoek (M.Sc.) 
-[<i class="fab fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/Floris-Hoek)
+[<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/Floris-Hoek)
 
 <img src="../assets/images/team/6.webp" alt="Vatsal Sanjay" loading="lazy" width="250" height="250">
 
@@ -87,7 +87,7 @@ Joint with [Martin van der Hoef](https://pof.tnw.utwente.nl/people/profile/244) 
 **Research Interest:** Molecular dynamics simulations of evaporation-driven colloidal self-assembly
 
 ## Milan Sent (B.Sc.) 
-[<i class="fab fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/mdjsent)
+[<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/mdjsent)
 
 <img src="../assets/images/team/5.webp" alt="Vatsal Sanjay" loading="lazy" width="250" height="250">
 
@@ -98,7 +98,7 @@ Joint with [Jacco Snoeijer](https://pof.tnw.utwente.nl/people/profile/21)
 **Research Interest:** Spinning Pizza
 
 ## Xiangyu Zhang (Intern) 
-[<i class="fab fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/zhangxyPHD)
+[<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/zhangxyPHD)
 
 <img src="../assets/images/team/7.webp" alt="Vatsal Sanjay" loading="lazy" width="250" height="250">
 
@@ -119,7 +119,7 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 
 ## Detlef Lohse
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?user=WvP_pIUAAAAJ)
-[<i class="fa fa-x" style="font-size: 2em; color: #000000;"></i>](https://x.com/detlef_lohse)
+[<i class="fa-brands fa-x-twitter" style="font-size: 2em; color: #000000;"></i>](https://x.com/detlef_lohse)
 
 - [Professor, Phys. Fluids - Univ. Twente](https://pof.tnw.utwente.nl/people/profile/3)
 
@@ -142,8 +142,8 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 
 ## Maziyar Jalaal (Mazi)
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?user=FE8TQeUAAAAJ)
-[<i class="fa fa-x" style="font-size: 2em; color: #000000;"></i>](https://x.com/maziyarj)
-[<i class="fa fa-square" style="font-size: 2em; color: #0085ff;"></i>](https://bsky.app/profile/mazi1.bsky.social)
+[<i class="fa-brands fa-x-twitter" style="font-size: 2em; color: #000000;"></i>](https://x.com/maziyarj)
+[<i class="fa-brands fa-bluesky" style="font-size: 2.5em; color: #0085ff;"></i>](https://bsky.app/profile/mazi1.bsky.social)
 
 - [Associate Professor, Fluid Lab, Univ. Amsterdam](https://www.fluidlab.nl/)
 
@@ -158,9 +158,9 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 
 ## Alvaro Marin
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?user=0_jOqqkAAAAJ)
-[<i class="fab fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/alvarogum)
-[<i class="fa fa-x" style="font-size: 2em; color: #000000;"></i>](https://x.com/AlvaroGMarin)
-[<i class="fa fa-square" style="font-size: 2em; color: #0085ff;"></i>](https://bsky.app/profile/alvaromarin.bsky.social)
+[<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/alvarogum)
+[<i class="fa-brands fa-x-twitter" style="font-size: 2em; color: #000000;"></i>](https://x.com/AlvaroGMarin)
+[<i class="fa-brands fa-bluesky" style="font-size: 2em; color: #0085ff;"></i>](https://bsky.app/profile/alvaromarin.bsky.social)
 
 - [Adjunct Professor, Phys. Fluids - Univ. Twente](https://pof.tnw.utwente.nl/people/profile/243)
 
@@ -168,8 +168,8 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 
 ## Gareth McKinley
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?user=uLxFfGkAAAAJ)
-[<i class="fa fa-wikipedia-w" style="font-size: 2em; color: #000000;"></i>](https://en.wikipedia.org/wiki/Gareth_H._McKinley)
-[<i class="fa fa-x" style="font-size: 2em; color: #000000;"></i>](https://x.com/garethmckinley)
+[<i class="fa-brands fa-wikipedia-w" style="font-size: 2em; color: #000000;"></i>](https://en.wikipedia.org/wiki/Gareth_H._McKinley)
+[<i class="fa-brands fa-x-twitter" style="font-size: 2em; color: #000000;"></i>](https://x.com/garethmckinley)
 
 - [Professor, MIT](https://nnf.mit.edu/)
 
@@ -177,7 +177,7 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 
 ## John Kolinski
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?user=BDzF8kMAAAAJ)
-[<i class="fa fa-wikipedia-w" style="font-size: 2em; color: #000000;"></i>](https://en.wikipedia.org/wiki/John_Martin_Kolinski)
+[<i class="fa-brands fa-wikipedia-w" style="font-size: 2em; color: #000000;"></i>](https://en.wikipedia.org/wiki/John_Martin_Kolinski)
 
 - [Asst. Professor, EPFL (École Polytechnique Fédérale de Lausanne)](https://people.epfl.ch/john.kolinski)
 
@@ -185,7 +185,7 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 
 ## C. Ricardo Constante-Amores
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?user=ncqnphMAAAAJ)
-[<i class="fab fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/rcrc15)
+[<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/rcrc15)
 
 
 - [Asst. Professor, Univ. Illinois Urbana-Champaign](https://publish.illinois.edu/constanteamores/home/)
@@ -194,7 +194,7 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 
 ## Jie Feng
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?user=226dDBAAAAAJ)
-[<i class="fa fa-x" style="font-size: 2em; color: #000000;"></i>](https://x.com/FengFluidsLab)
+[<i class="fa-brands fa-x-twitter" style="font-size: 2em; color: #000000;"></i>](https://x.com/FengFluidsLab)
 
 - [Asst. Professor, Univ. Illinois Urbana-Champaign](https://fengfluidslab.web.illinois.edu/wp/)
 
@@ -202,7 +202,7 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 
 ## Omar Matar
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?user=mLXz_NAAAAAJ&hl=en)
-[<i class="fa fa-x" style="font-size: 2em; color: #000000;"></i>](https://x.com/okmatar?lang=en)
+[<i class="fa-brands fa-x-twitter" style="font-size: 2em; color: #000000;"></i>](https://x.com/okmatar?lang=en)
 
 - [Professor, Imperial College London](https://profiles.imperial.ac.uk/o.matar)
 
@@ -211,7 +211,7 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 
 ## Ratul Dasgupta
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?user=I1jFG_oAAAAJ)
-[<i class="fa fa-x" style="font-size: 2em; color: #000000;"></i>](https://x.com/RatulDG)
+[<i class="fa-brands fa-x-twitter" style="font-size: 2em; color: #000000;"></i>](https://x.com/RatulDG)
 
 - [Assc. Professor, IIT-Bombay](https://sites.google.com/view/ratuldasgupta/home)
 
@@ -233,7 +233,7 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 
 ## Stéphane Zaleski 
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?hl=en&user=no1GX_QAAAAJ)
-[<i class="fa fa-x" style="font-size: 2em; color: #000000;"></i>](https://x.com/zaleski)
+[<i class="fa-brands fa-x-twitter" style="font-size: 2em; color: #000000;"></i>](https://x.com/zaleski)
 
 - [Professor, Sorbonne Universite](http://www.ida.upmc.fr/~zaleski/zaleski.html)
 
@@ -270,8 +270,8 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 
 ## Arivazhagan Balasubramanian (Ari)
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?user=xyheRZ8AAAAJ)
-[<i class="fab fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/GbArivazhagan)
-[<i class="fa fa-square" style="font-size: 2em; color: #0085ff;"></i>](https://bsky.app/profile/gbarivaz.bsky.social)
+[<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/GbArivazhagan)
+[<i class="fa-brands fa-bluesky" style="font-size: 2em; color: #0085ff;"></i>](https://bsky.app/profile/gbarivaz.bsky.social)
 
 - [Ph.D. Student, KTH Sweden](https://www.kth.se/profile/argb?l=en)
 
@@ -279,7 +279,7 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 
 ## Konstantinos Zinelis (Costis)
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?user=dZrR_z8AAAAJ&hl=en&inst=5726176096060060532&oi=ao)
-[<i class="fa fa-x" style="font-size: 2em; color: #000000;"></i>](https://x.com/KZinelis)
+[<i class="fa-brands fa-x-twitter" style="font-size: 2em; color: #000000;"></i>](https://x.com/KZinelis)
 
 - [Postdoc, MIT](https://qigroup.mit.edu/team/)
 
@@ -288,21 +288,21 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 # Our Alumni
 
 ## Valentin Rosario
-[<i class="fab fa-linkedin" style="font-size: 1.5em; color: black;"></i>](https://www.linkedin.com/in/valentin-rosario-6377602b2/?originalSubdomain=nl)
-[<i class="fab fa-github" style="font-size: 2em; color: black;"></i>](https://github.com/ValeRos9)
+[<i class="fa-brands fa-linkedin" style="font-size: 1.5em; color: black;"></i>](https://www.linkedin.com/in/valentin-rosario-6377602b2/?originalSubdomain=nl)
+[<i class="fa-brands fa-github" style="font-size: 2em; color: black;"></i>](https://github.com/ValeRos9)
 
 - **2024:** Graduated with M.Sc., Univ. Amsterdam
 - **Thesis:** [Modelling the Ward--Hunt ice-shelf as viscoelastic solid](https://tinyurl.com/2cjsjvr4)
 
 ## Swen van den Heuvel
-[<i class="fab fa-linkedin" style="font-size: 1.5em; color: black;"></i>](https://www.linkedin.com/in/swen-van-den-heuvel-33a1901aa/)
+[<i class="fa-brands fa-linkedin" style="font-size: 1.5em; color: black;"></i>](https://www.linkedin.com/in/swen-van-den-heuvel-33a1901aa/)
 
 - **Now:** [Ph.D. Student, Phys. Fluids - Univ. Twente](https://pof.tnw.utwente.nl/people/profile/2119)
 - **2023:** [Graduated with M.Sc., Univ. Twente](https://pof.tnw.utwente.nl/people/profile/2119)
 - **Thesis:** [Hydrodynamic forces acting on vertically rising bubbles](https://bit.ly/4er5VaH)
 
 ## Niels Kuipers
-[<i class="fab fa-linkedin" style="font-size: 1.5em; color: black;"></i>](https://www.linkedin.com/in/nielskuipers1/)
+[<i class="fa-brands fa-linkedin" style="font-size: 1.5em; color: black;"></i>](https://www.linkedin.com/in/nielskuipers1/)
 
 - **Now:** M.Sc. Student, Adv. Technology - Univ. Twente
 - **2023:** [Graduated with B.Sc., Univ. Twente](https://pof.tnw.utwente.nl/people/profile/2064)
@@ -320,21 +320,21 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 - **Thesis:** [The deformation of a droplet in a viscoplastic simple shear flow](https://bit.ly/ThesisTom)
 
 ## Twan Heijink
-[<i class="fab fa-linkedin" style="font-size: 1.5em; color: black;"></i>](https://www.linkedin.com/in/twanheijink/)
+[<i class="fa-brands fa-linkedin" style="font-size: 1.5em; color: black;"></i>](https://www.linkedin.com/in/twanheijink/)
 
 - **Now:** Software IVQA Engineer at Thales
 - **2021:** [Graduated with B.Sc., Saxion Univ.](https://pof.tnw.utwente.nl/people/profile/1822)
 - **Thesis:**  [Standing waves at a fluid-fluid interface with plastocapillarity](https://bit.ly/ThesisTwanHeijink)
 
 ## Steven Meuleman
-[<i class="fab fa-linkedin" style="font-size: 1.5em; color: black;"></i>](https://www.linkedin.com/in/steven-meuleman/)
+[<i class="fa-brands fa-linkedin" style="font-size: 1.5em; color: black;"></i>](https://www.linkedin.com/in/steven-meuleman/)
 
 - **Now:** Mechanical Engineer at VIRO
 - **2020:** Graduated with B.Sc., Univ. Twente
 - **Thesis:** [Simulations of foam generation for a custom axisymmetric core-shell nozzle](https://bit.ly/ThesisStevenM)
 
 ## Thijmen Kroeze
-[<i class="fab fa-linkedin" style="font-size: 1.5em; color: black;"></i>](https://www.linkedin.com/in/thijmen-kroeze-535aa3207/)
+[<i class="fa-brands fa-linkedin" style="font-size: 1.5em; color: black;"></i>](https://www.linkedin.com/in/thijmen-kroeze-535aa3207/)
 
 - **Now:** CFD Engineer, Brink Climate Systems
 - **2020:** [Graduated with B.Sc., Univ. Twente](https://pof.tnw.utwente.nl/people/profile/1630)
@@ -347,14 +347,14 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 - **Thesis:** [Early time dynamics in immiscible drop impacts](https://bit.ly/ThesisCoenVerschuur)
 
 ## Pim J. Dekker
-[<i class="fab fa-linkedin" style="font-size: 1.5em; color: black;"></i>](https://www.linkedin.com/in/pim-dekker/)
+[<i class="fa-brands fa-linkedin" style="font-size: 1.5em; color: black;"></i>](https://www.linkedin.com/in/pim-dekker/)
 
 - **Now:** [Ph.D. Student, Phys. Fluids - Univ. Twente](https://pof.tnw.utwente.nl/people/profile/1431)
 - **2019:** [Graduated with B.Sc., Univ. Twente](https://pof.tnw.utwente.nl/people/profile/1431)
 - **Thesis:** [Spreading of a drop on a water-air interface](https://bit.ly/ThesisPimDekker)
 
 ## Laurence Bruggink
-[<i class="fab fa-linkedin" style="font-size: 1.5em; color: black;"></i>](https://www.linkedin.com/in/laurence-bruggink-b733b222a/)
+[<i class="fa-brands fa-linkedin" style="font-size: 1.5em; color: black;"></i>](https://www.linkedin.com/in/laurence-bruggink-b733b222a/)
 
 - **Now:** Research Engineer at Alfen
 - **2019:** [Graduated with B.Sc., Univ. Twente](https://pof.tnw.utwente.nl/people/profile/1518)

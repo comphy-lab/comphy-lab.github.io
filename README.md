@@ -64,9 +64,9 @@ COMPHY-LAB.GITHUB.IO/
 
 ### Icon Usage
 Team member profiles support various icon links:
-1. **GitHub**: Using Font Awesome
+1. **GitHub**: Using Font Awesome 6.5.2
    ```markdown
-   [<i class="fab fa-github" style="font-size: 1.5em; color: black;"></i>](https://github.com/username)
+   [<i class="fa-brands fa-github" style="font-size: 1.5em; color: black;"></i>](https://github.com/username)
    ```
 2. **Google Scholar**: Using Academicons
    ```markdown
@@ -76,7 +76,7 @@ Team member profiles support various icon links:
 These icons are loaded through CSS dependencies in the layout files:
 ```html
 <!-- Font dependencies -->
-<link rel="stylesheet" href="/assets/css/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <link rel="stylesheet" href="/assets/css/fontello/css/fontello.css">
 <link rel="stylesheet" href="/assets/css/academicons-1.7.0/css/academicons.min.css">
 ```
