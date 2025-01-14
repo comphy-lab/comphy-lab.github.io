@@ -66,40 +66,51 @@
       <div class="s-team__desc">
         <h1>{{ page.title }}</h1>
       </div>
-      <div class="team-grid">
-        {% assign content_html = content | markdownify %}
-        {% assign team_members = content_html | split: '<h2' %}
-        {% for member in team_members offset:1 %}
-          <div class="team-member">
-            {% assign member_content = member | split: '</h2>' %}
-            {% assign member_name = member_content[0] | split: '>' | last %}
-            {% assign member_details = member_content[1] %}
-            
-            {% if member_details contains '<img' %}
-              {% assign image_parts = member_details | split: '<img' %}
-              {% assign image_tag = image_parts[1] | split: '>' | first %}
-              {% assign image_src = image_tag | split: 'src="' | last | split: '"' | first %}
-              {% assign image_alt = image_tag | split: 'alt="' | last | split: '"' | first %}
-              <div class="member-image">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E"
-                     data-src="{{ image_src }}"
-                     alt="{{ image_alt }}"
-                     loading="lazy"
-                     width="250"
-                     height="250"
-                     fetchpriority="low"
-                     decoding="async">
+      
+      {% assign content_html = content | markdownify %}
+      {% assign sections = content_html | split: '<h1' %}
+      
+      {% for section in sections offset:1 %}
+        {% assign section_content = section | split: '</h1>' %}
+        {% assign section_title = section_content[0] | split: '>' | last %}
+        {% assign section_members = section_content[1] | split: '<h2' %}
+        
+        <div class="team-section">
+          <h1>{{ section_title }}</h1>
+          <div class="team-grid">
+            {% for member in section_members offset:1 %}
+              <div class="team-member">
+                {% assign member_content = member | split: '</h2>' %}
+                {% assign member_name = member_content[0] | split: '>' | last %}
+                {% assign member_details = member_content[1] %}
+                
+                {% if member_details contains '<img' %}
+                  {% assign image_parts = member_details | split: '<img' %}
+                  {% assign image_tag = image_parts[1] | split: '>' | first %}
+                  {% assign image_src = image_tag | split: 'src="' | last | split: '"' | first %}
+                  {% assign image_alt = image_tag | split: 'alt="' | last | split: '"' | first %}
+                  <div class="member-image">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E"
+                         data-src="{{ image_src }}"
+                         alt="{{ image_alt }}"
+                         loading="lazy"
+                         width="250"
+                         height="250"
+                         fetchpriority="low"
+                         decoding="async">
+                  </div>
+                  {% assign member_details = member_details | replace_first: image_tag, '' | replace: '<img>', '' | replace: '<img', '' %}
+                {% endif %}
+                
+                <div class="member-content">
+                  <h2>{{ member_name }}</h2>
+                  {{ member_details }}
+                </div>
               </div>
-              {% assign member_details = member_details | replace_first: image_tag, '' | replace: '<img>', '' | replace: '<img', '' %}
-            {% endif %}
-            
-            <div class="member-content">
-              <h2>{{ member_name }}</h2>
-              {{ member_details }}
-            </div>
+            {% endfor %}
           </div>
-        {% endfor %}
-      </div>
+        </div>
+      {% endfor %}
     </section>
 
     <footer id="colophon" class="s-footer">

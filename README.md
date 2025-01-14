@@ -9,23 +9,23 @@ COMPHY-LAB.GITHUB.IO/
 ├── _config.yml                 # Main Jekyll configuration file
 ├── _includes/                  # Reusable HTML components and partials
 ├── _layouts/                   # Page layout templates
-│   └── default.html           # Default layout template for pages
-├── _research/                 # Collection of research and publication entries
+│   ├── default.html           # Default layout template for pages
+│   ├── research.html          # Research page layout
+│   └── team.html              # Team page layout
+├── _research/                  # Collection of research and publication entries
 ├── _site/                     # Generated site (not tracked in git)
 ├── _team/                     # Collection of team member profiles
+│   └── index.md              # Main team listing page
 ├── assets/                    # Static assets
 │   ├── css/                  # Stylesheets
-│   │   ├── vendor.css       # Third-party and reset styles
-│   │   └── styles.css       # Main site styles with glass-morphism effects
-│   ├── js/                  # JavaScript files
-│   │   ├── plugins.js       # Third-party plugins
-│   │   └── main.js         # Main site functionality and markdown rendering
-│   ├── logos/                # Lab logos and branding assets
-│   ├── font-awesome/         # Font Awesome icons (used for GitHub icons)
-│   ├── fontello/            # Fontello icon set
-│   └── academicons-1.7.0/  # Academic icons (used for Google Scholar)
+│   ├── favicon/              # Website favicon assets
+│   ├── images/               # Image assets including team photos
+│   ├── js/                   # JavaScript files
+│   └── logos/                # Lab logos and branding assets
 ├── featured/                  # Featured content and images
+├── scripts/                   # Utility scripts
 ├── about.md                   # About section content in markdown
+├── CNAME                      # Custom domain configuration
 ├── Gemfile                    # Ruby gem dependencies
 ├── Gemfile.lock              # Locked versions of gem dependencies
 ├── index.html                # Website homepage
@@ -41,36 +41,26 @@ COMPHY-LAB.GITHUB.IO/
 - `_config.yml`: Defines site-wide settings, collections configuration, and Jekyll build options
 - `Gemfile` & `Gemfile.lock`: Specify Ruby dependencies including Jekyll and its plugins
 - `.ruby-version`: Specifies the required Ruby version for the project
+- `CNAME`: Configures custom domain for GitHub Pages
+
+### Layout Templates
+- `_layouts/default.html`: Base template that defines the common structure
+- `_layouts/research.html`: Template for research pages
+- `_layouts/team.html`: Template for team member pages
 
 ### Content Management
-- `about.md`: Contains the About section content in markdown format, automatically rendered on the website
+- `about.md`: Contains the About section content in markdown format
 - `_research/`: Contains research projects, areas, and publications
-- `_team/`: Houses team member profiles and information
-- `_includes/`: Contains reusable HTML components for consistent layout
-- `_layouts/`: Contains page templates, with `default.html` as the main layout
+- `_team/`: Contains team member profiles and information
+- `featured/`: Houses featured content and highlighted material
+- `scripts/`: Contains utility scripts for site maintenance
 
-### Assets and Static Files
-- `assets/`: 
-  - `css/`:
-    - `vendor.css`: Reset and third-party styles
-    - `styles.css`: Main site styles including:
-      - Glass-morphism effects
-      - Responsive design
-      - Custom scrollbars
-      - Grid layouts
-      - Animations
-    - `font-awesome/`: Font Awesome icons (used for GitHub icons)
-    - `fontello/`: Fontello icon set
-    - `academicons-1.7.0/`: Academic icons (used for Google Scholar)
-  - `js/`:
-    - `plugins.js`: Third-party plugins and utilities
-    - `main.js`: Site functionality including:
-      - Markdown rendering
-      - Social media integration
-      - Smooth scrolling
-      - Mobile menu handling
-  - `logos/`: Lab branding assets and logos
-- `featured/`: Featured content, images, and highlighted materials
+### Assets
+- `assets/css/`: Stylesheet files for site styling
+- `assets/js/`: JavaScript files for site functionality
+- `assets/images/`: Image assets including team photos
+- `assets/logos/`: Lab branding and logo files
+- `assets/favicon/`: Website favicon assets
 
 ### Icon Usage
 Team member profiles support various icon links:
@@ -112,6 +102,40 @@ These icons are loaded through CSS dependencies in the layout files:
    - Use `**text**` for emphasis (e.g., **starting**, **current**)
    - Keep image dimensions 400x400 pixels for consistency
    - Add CV button by linking: `[Download CV](/path/to/cv.pdf)`
+
+### Adding New Team Members
+
+To add a new team member, follow these steps:
+
+1. Add member information to `_team/index.md`:
+   - Use `##` for member name (H2 heading)
+   - Add social links using Font Awesome/Academic icons:
+     ```markdown
+     [<i class="fab fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/username)
+     [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?user=...)
+     ```
+   - Add member photo:
+     ```markdown
+     <img src="../assets/images/team/X.webp" alt="Member Name" loading="lazy" width="250" height="250">
+     ```
+     where X is the next available number in sequence
+
+2. Add member photo:
+   - Save photo as webp format in `assets/images/team/`
+   - Name it as the next number in sequence (e.g., if last photo is 7.webp, name new photo 8.webp)
+   - Recommended photo size: 250x250 pixels
+   - Use professional headshot with clear background
+
+3. If jointly supervised, add the joint supervisor info:
+   ```markdown
+   Joint with [Supervisor Name](link_to_supervisor)
+   ```
+
+4. Add education/position history using bullet points:
+   ```markdown
+   - [Current Position, Institution / Year](link_to_profile)
+   - [Previous Position, Institution / Year](link_to_profile_or_thesis)
+   ```
 
 ### Updating About Section
 1. Edit the `about.md` file using markdown syntax
