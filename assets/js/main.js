@@ -17,18 +17,21 @@
         });
     }
 
-    /* Load About Content
+    /* Load About Content - Only on main page
     * -------------------------------------------------- */
     const loadAboutContent = async () => {
-        try {
-            const response = await fetch('about.md');
-            const text = await response.text();
-            const aboutContent = document.getElementById('about-content');
-            if (aboutContent) {
-                aboutContent.innerHTML = marked.parse(text);
+        // Only load about.md if we're on the main page
+        if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+            try {
+                const response = await fetch('/about.md');
+                const text = await response.text();
+                const aboutContent = document.getElementById('about-content');
+                if (aboutContent) {
+                    aboutContent.innerHTML = marked.parse(text);
+                }
+            } catch (error) {
+                console.error('Error loading about content:', error);
             }
-        } catch (error) {
-            console.error('Error loading about content:', error);
         }
     };
 
