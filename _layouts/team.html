@@ -17,6 +17,20 @@
   <!-- Site styles -->
   <link rel="stylesheet" href="/assets/css/vendor.css">
   <link rel="stylesheet" href="/assets/css/styles.css">
+
+  <!-- Preload critical assets -->
+  <link rel="preload" as="style" href="/assets/css/styles.css">
+  <link rel="preload" as="script" href="/assets/js/main.js">
+  
+  <!-- Preconnect to external domains -->
+  <link rel="preconnect" href="https://github.com">
+
+  {% for member in team_members limit:1 %}
+    {% if member.details contains '<img' %}
+      {% assign image_src = member.details | split: 'src="' | last | split: '"' | first %}
+      <link rel="preload" as="image" href="{{ image_src | replace: '.webp', '-small.webp' }}" />
+    {% endif %}
+  {% endfor %}
 </head>
 <body id="top">
 
@@ -64,8 +78,17 @@
             {% if member_details contains '<img' %}
               {% assign image_parts = member_details | split: '<img' %}
               {% assign image_tag = image_parts[1] | split: '>' | first %}
+              {% assign image_src = image_tag | split: 'src="' | last | split: '"' | first %}
+              {% assign image_alt = image_tag | split: 'alt="' | last | split: '"' | first %}
               <div class="member-image">
-                <img{{ image_tag }}>
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E"
+                     data-src="{{ image_src }}"
+                     alt="{{ image_alt }}"
+                     loading="lazy"
+                     width="250"
+                     height="250"
+                     fetchpriority="low"
+                     decoding="async">
               </div>
               {% assign member_details = member_details | replace_first: image_tag, '' | replace: '<img>', '' | replace: '<img', '' %}
             {% endif %}

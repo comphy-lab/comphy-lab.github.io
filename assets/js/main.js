@@ -93,4 +93,61 @@
         });
     }
 
+    document.addEventListener('DOMContentLoaded', function() {
+        // Defer non-critical operations
+        const isMobile = window.innerWidth <= 768;
+        const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+        const isSlowConnection = connection && (connection.effectiveType === '3g' || connection.effectiveType === '2g');
+
+        requestIdleCallback(() => {
+            const images = document.querySelectorAll('.member-image img[loading="lazy"]');
+            
+            // Use more efficient IntersectionObserver options
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            if (isSlowConnection) {
+                                // First load tiny version
+                                const tinyVersion = img.dataset.src.replace(/(\.\w+)$/, '-tiny$1');
+                                img.src = tinyVersion;
+                                
+                                // Then upgrade to full version when loaded
+                                img.onload = () => {
+                                    img.classList.add('loaded');
+                                    img.parentElement.classList.add('loaded');
+                                    
+                                    // Load full version after tiny version is displayed
+                                    requestIdleCallback(() => {
+                                        const fullImg = new Image();
+                                        fullImg.src = img.dataset.src;
+                                        fullImg.onload = () => {
+                                            img.src = img.dataset.src;
+                                        };
+                                    }, { timeout: 2000 });
+                                };
+                            } else {
+                                // Load full version directly for fast connections
+                                img.src = img.dataset.src;
+                                img.onload = () => {
+                                    img.classList.add('loaded');
+                                    img.parentElement.classList.add('loaded');
+                                };
+                            }
+                            observer.unobserve(img);
+                        }
+                    }
+                });
+            }, {
+                rootMargin: isMobile ? '10px 0px' : '50px 0px',
+                threshold: 0.01,
+                trackVisibility: true,
+                delay: isSlowConnection ? 300 : 100
+            });
+            
+            images.forEach(img => imageObserver.observe(img));
+        }, { timeout: isSlowConnection ? 2000 : 1000 });
+    });
+
 })(document.documentElement);

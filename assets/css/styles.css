@@ -1,10 +1,13 @@
 /* Base Styles */
 :root {
-  --color-primary: #0077cc;
+  --color-primary: #0056b3;
   --color-secondary: #2b2b2b;
   --color-text: #333333;
   --color-background: #ffffff;
-  --font-primary: 'Arial', sans-serif;
+  --font-primary: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Arial', sans-serif;
+  --color-primary-hover: #004494;
+  --color-link: #0056b3;
+  --color-link-hover: #004494;
 }
 
 html {
@@ -645,26 +648,85 @@ body {
 
 .team-member {
   width: 400px;
+  display: flex;
+  flex-direction: column;
 }
 
 .member-image {
-  width: 400px;
-  height: 400px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  background-color: #f8f9fa;
+  min-height: 250px;
   overflow: hidden;
-  position: relative;
+  content-visibility: auto;
+  contain: layout paint;
+}
+
+.member-image::before {
+  display: none;
 }
 
 .member-image img {
-  width: 100%;
-  height: 100%;
+  position: relative;
+  width: 250px;
+  height: 250px;
   object-fit: cover;
-  object-position: center;
-  display: block;
+  opacity: 0;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+  will-change: opacity, filter;
+  filter: blur(0);
+}
+
+.member-image img.loaded {
+  opacity: 1;
+}
+
+/* Add blur while loading full version */
+.member-image img.loading-full {
+  filter: blur(5px);
+}
+
+/* Remove blur when full version is loaded */
+.member-image img.loaded:not(.loading-full) {
+  filter: blur(0);
+}
+
+/* Loading animation */
+.member-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 86, 179, 0.1),
+    transparent
+  );
+  animation: loading 1.5s infinite;
+  contain: paint;
+}
+
+@keyframes loading {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 200%;
+  }
+}
+
+/* Hide loading animation when image is loaded */
+.member-image.loaded::after {
+  display: none;
 }
 
 .member-content {
-  padding: 2rem;
-  text-align: left;
+  padding: 0 2rem;
 }
 
 .member-content strong,
@@ -716,8 +778,15 @@ body {
   }
   
   .member-image {
-    height: 0;
-    padding-bottom: 100%;
+    height: auto;
+    padding-bottom: 0;
+  }
+  
+  .member-image img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    aspect-ratio: 1/1;
   }
 }
 
@@ -945,4 +1014,20 @@ body {
     border: none;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     margin: 2rem 0;
+}
+
+/* Add to existing styles.css where other image rules exist */
+.team-member img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+@media screen and (max-width: 768px) {
+  .team-member img {
+    width: 100%;
+    height: auto;
+  }
 }
