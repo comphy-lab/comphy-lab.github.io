@@ -3,13 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CoMPhy Lab</title>
+  <title>{{ page.title }} - CoMPhy Lab</title>
 
   <script>
     document.documentElement.classList.remove('no-js');
     document.documentElement.classList.add('js');
   </script>
 
+  <!-- Font dependencies -->
+  <link rel="stylesheet" href="/assets/css/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/assets/css/fontello/css/fontello.css">
+  <link rel="stylesheet" href="/assets/css/academicons-1.7.0/css/academicons.min.css">
+  <!-- Site styles -->
   <link rel="stylesheet" href="/assets/css/vendor.css">
   <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
@@ -33,60 +38,50 @@
       <nav class="s-header__nav">
         <a href="#0" class="s-header__nav-close-btn"><span>Close</span></a>
         <ul class="s-header__nav-list">
-          <li><a href="#about" class="smoothscroll">About</a></li>
-          <li><a href="/team/">Team</a></li>
+          <li><a href="/#about">About</a></li>
+          <li><a href="/team">Team</a></li>
           <li><a href="/research">Research</a></li>
           <li><a href="https://publish.obsidian.md/comphy-lab/README" target="_blank">Blog</a></li>
         </ul>
       </nav>
     </header>
 
-    <section id="intro" class="s-intro target-section">
-      <div class="s-intro__bg rellax" data-rellax-speed="-5"></div>
-      <div class="row s-intro__content">
-        <div class="column lg-12 s-intro__content-inner">
-          <h1 class="s-intro__title">
-            Computational <br>
-            Materials Physics Lab
-          </h1>
-          <div class="s-intro__caption">
-            <p>Picture: <a href="https://tinyurl.com/2bax6xa7">Study</a> on air entrainment in a water pool by impingement of a jet</p>
-          </div>
-        </div>
+    <!-- Team Section -->
+    <section class="s-team">
+      <div class="s-team__desc">
+        <h1>{{ page.title }}</h1>
       </div>
-    </section>
-
-    <section id="about" class="s-about target-section">
-      <div class="row s-about__content" data-animate-block>
-        <div class="s-about__grid">
-          <div class="s-about__left">
-            <div id="about-content" class="s-about__desc" data-animate-el>
-              <!-- Markdown content will be loaded here -->
-            </div>
-          </div>
-          <div class="s-about__right">
-            <div class="s-about__social" data-animate-el>
-              <div class="s-about__social-header">
-                <img src="https://bsky.app/static/favicon-32x32.png" alt="Bluesky">
-                <h3>Bluesky Feed: <a href="https://bsky.app/profile/comphy-lab.org" target="_blank">@comphy-lab.org</a></h3>
+      <div class="team-grid">
+        {% assign content_html = content | markdownify %}
+        {% assign team_members = content_html | split: '<h2' %}
+        {% for member in team_members offset:1 %}
+          <div class="team-member">
+            {% assign member_content = member | split: '</h2>' %}
+            {% assign member_name = member_content[0] | split: '>' | last %}
+            {% assign member_details = member_content[1] %}
+            
+            {% if member_details contains '<img' %}
+              {% assign image_parts = member_details | split: '<img' %}
+              {% assign image_tag = image_parts[1] | split: '>' | first %}
+              <div class="member-image">
+                <img{{ image_tag }}>
               </div>
-              <script type="module" src="https://cdn.jsdelivr.net/npm/bsky-embed/dist/bsky-embed.es.js" async></script>
-              <bsky-embed
-                username="comphy-lab.org"
-                limit="5"
-                load-more="true"
-              >
-              </bsky-embed>
+              {% assign member_details = member_details | replace_first: image_tag, '' | replace: '<img>', '' | replace: '<img', '' %}
+            {% endif %}
+            
+            <div class="member-content">
+              <h2>{{ member_name }}</h2>
+              {{ member_details }}
             </div>
           </div>
-        </div>
+        {% endfor %}
       </div>
     </section>
 
     <footer id="colophon" class="s-footer">
       <div class="row">
         <div class="column lg-12 ss-copyright">
-          <span>© Copyright CoMPhy Lab 2024</span>
+          <span>© Copyright CoMPhy Lab {{ 'now' | date: "%Y" }}</span>
         </div>
       </div>
       <div class="ss-go-top">
@@ -100,4 +95,4 @@
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="/assets/js/main.js"></script>
 </body>
-</html>
+</html> 

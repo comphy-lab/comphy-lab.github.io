@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }} - CoMPhy Lab</title>
+
+  <script>
+    document.documentElement.classList.remove('no-js');
+    document.documentElement.classList.add('js');
+  </script>
+
+  <!-- Font dependencies -->
+  <link rel="stylesheet" href="/assets/css/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/assets/css/fontello/css/fontello.css">
+  <link rel="stylesheet" href="/assets/css/academicons-1.7.0/css/academicons.min.css">
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/assets/css/vendor.css">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body id="top">
+
+  <div id="preloader">
+    <div id="loader"></div>
+  </div>
+
+  <div id="page" class="s-pagewrap">
+    <header class="s-header">
+      <div class="s-header__logo">
+        <a class="logo" href="/index.html">
+          <img src="/assets/logos/CoMPhy-Lab-no-name.png" alt="CoMPhy Lab">
+        </a>
+      </div>
+      <a class="s-header__menu-toggle" href="#0">
+        <span class="s-header__menu-text">Menu</span>
+        <span class="s-header__menu-icon"></span>
+      </a>
+      <nav class="s-header__nav">
+        <a href="#0" class="s-header__nav-close-btn"><span>Close</span></a>
+        <ul class="s-header__nav-list">
+          <li><a href="/#about">About</a></li>
+          <li><a href="/team">Team</a></li>
+          <li><a href="/research">Research</a></li>
+          <li><a href="https://publish.obsidian.md/comphy-lab/README" target="_blank">Blog</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Research Section -->
+    <section class="s-research">
+      <div class="row">
+        <div class="column">
+          <div class="research-content markdown-content">
+            {{ content }}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="colophon" class="s-footer">
+      <div class="row">
+        <div class="column lg-12 ss-copyright">
+          <span>© Copyright CoMPhy Lab {{ 'now' | date: "%Y" }}</span>
+        </div>
+      </div>
+      <div class="ss-go-top">
+        <a class="smoothscroll" title="Back to Top" href="#top">Top</a>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="/assets/js/plugins.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html> 
