@@ -5,6 +5,19 @@ title: Research
 
 # Research
 
+## Sort by topic
+
+<tags><span>Bubbles</span></tags>
+<tags><span>Drops</span></tags>
+<tags><span>Jets</span></tags>
+<tags><span>Sheets</span></tags>
+<tags><span>Non-Newtonian</span></tags>
+<tags><span>Coalescence</span></tags>
+<tags><span>Superamphiphobic-surfaces</span></tags>
+<tags><span>Impact forces</span></tags>
+<tags><span>Dissipative anamoly</span></tags>
+
+
 ## Work in Progress
 
 ### Demirkır, Ç., Yang, R., Bashkatov, A., **Sanjay, V.**, Lohse, D., & Krug, D. To jump or not to jump: Adhesion and viscous dissipation dictate the detachment of coalescing wall-attached bubbles. Submitted to _Phys. Rev. Lett._ (2025).
