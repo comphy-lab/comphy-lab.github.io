@@ -6,7 +6,6 @@ url: "https://comphy-lab.github.io"
 # Build settings
 markdown: kramdown
 plugins:
-  - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
@@ -15,8 +14,6 @@ plugins:
 
 # Site settings
 permalink: /:title/
-paginate: 5
-paginate_path: "/news/page:num/"
 
 # Collections
 collections:

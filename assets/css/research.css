@@ -1,6 +1,7 @@
 .s-research {
   padding: 8rem 0 6rem 0;
   background-color: #ffffff;
+  position: relative;
 }
 
 @media screen and (max-width: 800px) {
@@ -307,4 +308,166 @@
 
 .copy-success {
   animation: copySuccess 0.3s ease-in-out;
+} 
+
+.research-layout {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.toc-sidebar {
+  position: fixed;
+  left: max(2rem, calc((100vw - 1200px - 250px) / 2 - 2rem));
+  top: 100px;
+  width: 250px;
+  height: calc(100vh - 120px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(76, 110, 245, 0.3) transparent;
+}
+
+.toc-nav {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(8px);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(76, 110, 245, 0.1);
+}
+
+.toc-nav h3 {
+  font-size: 1.8rem;
+  color: #2b2b2b;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid rgba(76, 110, 245, 0.2);
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-list li {
+  margin: 0.8rem 0;
+}
+
+.toc-list a {
+  color: #666;
+  text-decoration: none;
+  font-size: 1.4rem;
+  transition: all 0.3s ease;
+  display: block;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border-left: 2px solid transparent;
+}
+
+.toc-list a:hover {
+  color: #4c6ef5;
+  background: rgba(76, 110, 245, 0.05);
+  border-left-color: #4c6ef5;
+}
+
+.toc-list a.active {
+  color: #4c6ef5;
+  background: rgba(76, 110, 245, 0.1);
+  border-left-color: #4c6ef5;
+  font-weight: 500;
+}
+
+/* Custom scrollbar for the TOC */
+.toc-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.toc-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.toc-sidebar::-webkit-scrollbar-thumb {
+  background-color: rgba(76, 110, 245, 0.3);
+  border-radius: 3px;
+}
+
+.toc-sidebar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(76, 110, 245, 0.5);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1600px) {
+  .toc-sidebar {
+    left: 2rem;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .toc-sidebar {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .toc-sidebar {
+    display: none;
+  }
+} 
+
+/* Tags styling */
+.research-content tags {
+  display: inline-flex;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 0.5rem 0 1rem 0;
+}
+
+/* Style each tag separately */
+.research-content tags > * {
+  background: rgba(147, 51, 234, 0.15);
+  color: #9333ea;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  border: 1px solid rgba(147, 51, 234, 0.2);
+  transition: all 0.3s ease;
+  display: inline-block;
+  transform: scale(1);
+}
+
+/* First tag - brightest background */
+.research-content tags > *:nth-of-type(1) {
+  background: rgba(147, 51, 234, 0.15);
+}
+
+/* Second tag - slightly lighter background */
+.research-content tags > *:nth-of-type(2) {
+  background: rgba(147, 51, 234, 0.1);
+}
+
+/* Third tag - even lighter background */
+.research-content tags > *:nth-of-type(3) {
+  background: rgba(147, 51, 234, 0.07);
+}
+
+/* Fourth and subsequent tags - lightest background */
+.research-content tags > *:nth-of-type(n+4) {
+  background: rgba(147, 51, 234, 0.04);
+}
+
+.research-content tags > *:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 5px rgba(147, 51, 234, 0.1);
+}
+
+/* Responsive adjustments for tags */
+@media screen and (max-width: 600px) {
+  .research-content tags {
+    font-size: 0.85rem;
+  }
+  .research-content tags > * {
+    padding: 0.3rem 0.8rem;
+  }
 } 
