@@ -16,6 +16,7 @@ title: Research
 <tags><span>Superamphiphobic-surfaces</span></tags>
 <tags><span>Impact forces</span></tags>
 <tags><span>Dissipative anamoly</span></tags>
+<tags><span>Soft-matter-singularities</span></tags>
 
 
 ## Work in Progress
@@ -33,7 +34,7 @@ title: Research
 
 ### **Dixit, A. K.**, Oratis, A., Zinelis, K., Lohse, D., & **Sanjay, V.** Viscoelastic Worthington jets & droplets produced by bursting bubbles. Received positive reviews in _J. Fluid Mech._ (2025).
 
-<tags><span>Bubbles</span><span>Non-Newtonian</span><span>Jets</span><span>Drops</span></tags>
+<tags><span>Bubbles</span><span>Non-Newtonian</span><span>Jets</span><span>Soft-matter-singularities</span><span>Drops</span></tags>
 
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2408.05089&color=green)](https://arxiv.org/abs/2408.05089)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/Viscoelastic-Worthington-jets-and-droplets-produced-by-bursting-bubbles)
@@ -57,7 +58,7 @@ title: Research
 
 ### Bashkatov, A., Bürkle, F., Demirkır, Ç., Ding, W., **Sanjay, V.**, Babich, A., Yang, X., Mutschke, G., Czarske, J., Lohse, D., et al. Electrolyte spraying within H₂ bubbles during water electrolysis. Received positive reviews in _Nat. Commun._ (2025).
 
-<tags><span>Bubbles</span><span>Jets</span><span>Coalescence</span><span>Drops</span></tags>
+<tags><span>Bubbles</span><span>Jets</span><span>Coalescence</span><span>Soft-matter-singularities</span><span>Drops</span></tags>
 
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2409.00515&color=green)](https://arxiv.org/abs/2409.00515)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/VatsalSy/Asymmetries-in-coalescence)
@@ -70,7 +71,7 @@ title: Research
 
 ### [14] **Sanjay, V.**, Zhang, B., Lv, C., & Lohse, D. The role of viscosity on drop impact forces on non-wetting surfaces. _J. Fluid Mech._, in press (2025).
 
-<tags><span>Drops</span><span>Jets</span><span>Superhydrophobic surfaces</span><span>Impact forces</span></tags>
+<tags><span>Drops</span><span>Jets</span><span>Superhydrophobic surfaces</span><span>Soft-matter-singularities</span><span>Impact forces</span></tags>
 
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2311.03012&color=green)](https://arxiv.org/abs/2311.03012)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/VatsalSy/The-role-of-viscosity-on-drop-impact-forces)
@@ -97,7 +98,7 @@ title: Research
 
 ### [12] Balasubramanian, A. G., **Sanjay, V.**, Jalaal, M., Vinuesa, R., & Tammisola, O. Bursting bubble in an elastoviscoplastic medium. _J. Fluid Mech._, 1001, A9 (2024).
 
-<tags><span>Bubbles</span><span>Non-Newtonian</span><span>Jets</span></tags>
+<tags><span>Bubbles</span><span>Non-Newtonian</span><span>Jets</span><span>Soft-matter-singularities</span></tags>
 
 #### Highlights
 * Cover of that volume of _J. Fluid Mech._
@@ -136,7 +137,7 @@ title: Research
 
 ### ➡️ **Sanjay, V.** Viscous free-surface flows. Ph.D. Thesis, Physics of Fluids, University of Twente (2022).
 
-<tags><span>Drops</span><span>Jets</span><span>Sheets</span><span>Bubbles</span><span>Non-Newtonian</span></tags>
+<tags><span>Drops</span><span>Jets</span><span>Sheets</span><span>Bubbles</span><span>Soft-matter-singularities</span><span>Non-Newtonian</span></tags>
 
 [![More information](https://img.shields.io/static/v1.svg?style=flat-square&label=More%20information&message=click%20here&color=blue)](https://www.vatsalsanjay.com/phd-thesis) 
 [![PhD thesis](https://img.shields.io/static/v1.svg?logo=adobeacrobatreader&style=flat-square&label=PhD%20thesis&message=Download&color=green)](https://qrco.de/bd9SHU) 
@@ -178,7 +179,7 @@ title: Research
 
 ### [7] **Sanjay, V.**, Lohse, D., & Jalaal, M. Bursting bubble in a viscoplastic medium. _J. Fluid Mech._, 922, A2 (2021).
 
-<tags><span>Bubbles</span><span>Jets</span><span>Non-Newtonian</span></tags>
+<tags><span>Bubbles</span><span>Jets</span><span>Non-Newtonian</span><span>Soft-matter-singularities</span></tags>
 
 [![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=Open%20Access&color=orange)](https://doi.org/10.1017/jfm.2021.489) 
 [![arXiv](https://img.shields.io/badge/arXiv-2101.07744-green?style=flat-square)](https://arxiv.org/abs/2101.07744) 

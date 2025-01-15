@@ -1,15 +1,15 @@
 # About Us
-We are based at the Physics of Fluids Department at the University of Twente, where we investigate **non-Newtonian free-surface flows** and **soft matter singularities**. Our group employs a synergy of continuum simulations, experiments (through collaborations), and theoretical analysis to understand phenomena ranging involving drops, bubbles, jets, sheets, and more. We strive to connect fundamental findings with real-world applications, from industrial processes to everyday fluid dynamics.
+We are based at the Physics of Fluids Department at the University of Twente, where we investigate [**non-Newtonian free-surface flows**](/research/?tag=Non-Newtonian) and [**soft matter singularities**](/research/?tag=Soft-matter-singularities). Our group employs a synergy of continuum simulations, experiments (through collaborations), and theoretical analysis to understand phenomena ranging involving drops, bubbles, jets, sheets, and more. We strive to connect fundamental findings with real-world applications, from industrial processes to everyday fluid dynamics.
 
 ## Research Focus
 ### Soft Matter Singularities
-We examine topological transitions in fluid systems—such as droplet impact, bubble bursting, and sheet fragmentation—where local instabilities drive fast, often dramatic flow dynamics. Our goal is to expose the universal mechanisms governing these **singular** events in soft matter.
+We examine topological transitions in fluid systems—such as [**droplet impact**](/research/?tag=Drops), [**bubble bursting**](/research/?tag=Bubbles), and [**sheet fragmentation**](/research/?tag=Sheets) — where local instabilities drive fast, often dramatic flow dynamics. Our goal is to expose the universal mechanisms governing these [**singular**]((/research/?tag=Soft-matter-singularities)) events in soft matter.
 
 ### Non-Newtonian Flows as the `Drosophila' of Continuum Mechanics
-From **elastoviscoplastic** bubble bursting and elastic sheet break-up to champagne bubble bursting and classical Taylor–Culick retractions, non-Newtonian fluids serve as model systems to explore the fundamentals of continuum mechanics. By integrating high-fidelity simulations, analytical frameworks, and collaborative experiments, we reveal how microstructural stresses affect fluid and solid dynamics. This research provides key insights for industrial and environmental applications.
+From [**elastoviscoplastic**]((/research/?tag=Non-Newtonian)) bubble bursting and elastic sheet break-up to champagne [**bubble**](/research/?tag=Bubbles) bursting and classical Taylor–Culick retractions, non-Newtonian fluids serve as model systems to explore the fundamentals of continuum mechanics. By integrating high-fidelity simulations, analytical frameworks, and collaborative experiments, we reveal how microstructural stresses affect fluid and solid dynamics. This research provides key insights for industrial and environmental applications.
 
 ### Viscous Free-Surface Flows
-We investigate various viscous free-surface flows including inertial contact lines, bubble removal, and focusing of waves. These phenomena are critical to energy transitions and manufacturing. For instance, a key challenge is optimizing bubble detachment in electrolysis to boost efficiency. This research involves advanced numerical methods and industry partnerships, with the broader aim of advancing technologies from chemical reactors to printing processes.
+We investigate various viscous free-surface flows including inertial contact lines, [**bubble**](/research/?tag=Bubbles) removal, and focusing of [**waves**](/research/?tag=Waves). These phenomena are critical to energy transitions and manufacturing. For instance, a key challenge is optimizing bubble detachment in electrolysis to boost efficiency. This research involves advanced numerical methods and industry partnerships, with the broader aim of advancing technologies from chemical reactors to printing processes.
 
 ## Commitment to Open Science
 Open exchange of ideas drives our progress. We share our codes from the earliest stages of development, embracing transparent research practices to foster collaboration and reproducibility. We welcome inquiries and partnerships from the broader scientific community. Watchout for [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab) and [<i class="fa-brands fa-github" style="font-size: 1.5em; color: black;"></i>](https://github.com/comphy-lab) on this website to interact with our codes. 
@@ -39,7 +39,7 @@ Feel free to contact us for discussions about our work or anything else related 
 [![X](https://img.shields.io/badge/-@VatsalSanjay-000000?style=flat&logo=x&logoColor=white)](https://twitter.com/VatsalSanjay)
 [![Bluesky](https://img.shields.io/badge/-@comphy--lab.org-0285FF?style=flat&logo=bluesky&logoColor=white)](https://bsky.app/profile/comphy-lab.org)
 
-For **supplementary** videos and **teaser** of our upcoming work:
+For supplementary videos and teaser of our upcoming work:
 
 <a href="https://www.youtube.com/@VatsalSanjay" target="_blank">
   <picture>
