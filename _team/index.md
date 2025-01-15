@@ -167,6 +167,17 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 
 **Collaboration on:** Colloidal systems, Evaporation, Shell formation.
 
+
+## Christian Diddens
+[<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?user=3QSyucwAAAAJ&hl=en&inst=5726176096060060532&oi=ao)
+[<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/cdiddens)
+
+
+- [Group Leader, Phys. Fluids - Univ. Twente](https://pof.tnw.utwente.nl/people/profile/1143)
+- [Developer of pyoomph](https://pyoomph.github.io/)
+
+**Collaboration on:** Surfactant dynamics in free surface flows, Dissipative anomaly, Sliding drops.
+
 ## Gareth McKinley
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?user=uLxFfGkAAAAJ)
 [<i class="fa-brands fa-wikipedia-w" style="font-size: 2em; color: #000000;"></i>](https://en.wikipedia.org/wiki/Gareth_H._McKinley)
