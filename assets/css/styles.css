@@ -531,7 +531,15 @@ body {
 
 /* Adjust footer layout */
 .footer-right {
-  padding-right: 80px; /* Make space for the go-to-top button */
+  flex: 0 1 auto;
+  justify-content: flex-end;
+  margin-right: 0;
+  gap: 2rem;
+  padding-right: 100px;
+}
+
+.footer-right a:last-child {
+  margin-right: -15px;
 }
 
 /* Animations */
@@ -551,6 +559,10 @@ body {
   .s-about__grid {
     grid-template-columns: minmax(400px, 1.2fr) minmax(450px, 1fr);
     gap: 3rem;
+  }
+
+  .footer-right {
+    padding-right: 90px;
   }
 }
 
@@ -645,6 +657,10 @@ body {
 
   .s-about__social bsky-embed {
     max-height: calc(500px - 60px);
+  }
+
+  .footer-right a:last-child {
+    margin-right: 0;
   }
 }
 
@@ -1506,16 +1522,29 @@ body {
     gap: 2rem;
 }
 
+.footer-left {
+    flex: 0 1 auto;
+}
+
 .footer-center {
     flex-direction: column;
     text-align: center;
-    flex: 1;
     justify-content: center;
-    display: flex;
     align-items: center;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    flex: 0 1 auto;
+    margin: 0 2rem;
+}
+
+.footer-right {
+    flex: 0 1 auto;
+    justify-content: flex-end;
+    margin-right: 0;
+    gap: 2rem;
+    padding-right: 100px;
+}
+
+.footer-right a:last-child {
+    margin-right: -15px;
 }
 
 .copyright-text {
@@ -1566,11 +1595,53 @@ body {
 
 .footer-left a, .footer-right a {
     transition: transform 0.3s ease, opacity 0.3s ease;
+    color: white;
 }
 
 .footer-left a:hover, .footer-right a:hover {
     transform: translateY(-2px);
     opacity: 0.8;
+}
+
+/* Responsive footer adjustments */
+@media screen and (max-width: 1200px) {
+    .footer-logo {
+        height: 45px;
+    }
+    
+    .pof-logo {
+        height: 50px;
+    }
+    
+    .footer-left, .footer-right {
+        gap: 1.5rem;
+    }
+
+    .footer-right {
+        padding-right: 90px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .footer-logo {
+        height: 35px;
+    }
+    
+    .pof-logo {
+        height: 40px;
+    }
+    
+    .footer-left, .footer-right {
+        gap: 1rem;
+    }
+    
+    .footer-right {
+        padding-right: 80px;
+    }
+    
+    .footer-right i {
+        font-size: 2em !important;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -1584,13 +1655,39 @@ body {
     .footer-left, .footer-center, .footer-right {
         justify-content: center;
         width: 100%;
+        flex-wrap: wrap;
+        margin: 0;
+        padding-right: 0;
+    }
+
+    .footer-right a:last-child {
+        margin-right: 0;
     }
     
     .footer-logo {
         height: 30px;
     }
     
+    .pof-logo {
+        height: 35px;
+    }
+    
     .footer-center {
         order: -1;
+    }
+    
+    .footer-right {
+        gap: 1.5rem;
+    }
+    
+    .footer-right i {
+        font-size: 1.75em !important;
+    }
+    
+    .edit-link {
+        width: 100%;
+        justify-content: center;
+        margin-top: 1rem;
+        color: white;
     }
 }
