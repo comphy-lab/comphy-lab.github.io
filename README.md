@@ -1,39 +1,61 @@
 # CoMPhy Lab Website
 
-This repository contains the source code for the CoMPhy Lab website. The website is built using Jekyll, a static site generator, and is hosted on GitHub Pages.
+# CoMPhy Lab Website
 
-## Repository Structure and Description
+The official website for the Computational Multiphase Physics Laboratory, built with Jekyll.
+
+## Directory Structure
 
 ```
-COMPHY-LAB.GITHUB.IO/
-├── _config.yml                 # Main Jekyll configuration file
-├── _includes/                  # Reusable HTML components and partials
-├── _layouts/                   # Page layout templates
-│   ├── default.html           # Default layout template for pages
-│   ├── research.html          # Research page layout
-│   └── team.html              # Team page layout
-├── _research/                  # Collection of research and publication entries
-├── _site/                     # Generated site (not tracked in git)
-├── _team/                     # Collection of team member profiles
-│   └── index.md              # Main team listing page
-├── assets/                    # Static assets
-│   ├── css/                  # Stylesheets
-│   ├── favicon/              # Website favicon assets
-│   ├── images/               # Image assets including team photos
-│   ├── js/                   # JavaScript files
-│   └── logos/                # Lab logos and branding assets
-├── featured/                  # Featured content and images
-├── scripts/                   # Utility scripts
-├── about.md                   # About section content in markdown
-├── CNAME                      # Custom domain configuration
-├── Gemfile                    # Ruby gem dependencies
-├── Gemfile.lock              # Locked versions of gem dependencies
-├── index.html                # Website homepage
-├── LICENSE
-├── README.md
-├── .gitignore
-└── .ruby-version             # Ruby version specification
+.
+├── _config.yml              # Site configuration
+├── _includes               # Reusable components
+├── _layouts                # Page templates
+│   ├── default.html       # Base layout
+│   ├── research.html      # Research page layout
+│   └── team.html          # Team page layout
+├── _research              # Research project content
+├── _team                  # Team member profiles
+├── assets                 # Static files
+│   ├── css               # Stylesheets
+│   ├── favicon           # Site favicon
+│   ├── images            # Image files
+│   ├── js                # JavaScript files
+│   └── logos             # Logo files
+├── about.md               # About page content
+├── index.html             # Homepage
+├── Gemfile               # Ruby dependencies
+└── _site                 # Generated site (not tracked in git)
 ```
+
+## Local Development
+
+To run this website locally for development and testing, follow these steps:
+
+1. **Prerequisites**
+   - Install Ruby (version 2.5.0 or higher)
+   - Install Bundler
+   ```bash
+   gem install bundler
+   ```
+
+2. **Install Dependencies**
+   ```bash
+   bundle install
+   ```
+
+3. **Run Local Server**
+   ```bash
+   bundle exec jekyll serve
+   ```
+   This will start a local server at `http://localhost:4000`
+
+4. **View the Website**
+   - Open your web browser
+   - Navigate to `http://localhost:4000`
+   - Changes to source files (including about.md) will automatically trigger a rebuild
+
+
 
 ## Key Components
 
@@ -230,7 +252,8 @@ The research section is organized chronologically with the following structure:
      - GitHub: `[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)]`
 
 5. **Paper Status Annotations**:
-   - For papers under review: "Received positive reviews in _Journal_"
+   - For papers under review with no reviews: "Submitted to _Journal_"
+   - For papers under review with positive reviews: "Received positive reviews in _Journal_"
    - For accepted papers: "_Journal_ (in press)"
    - For published papers: Include volume and page numbers
 
@@ -240,32 +263,6 @@ The research section is organized chronologically with the following structure:
    - Two spaces indentation for badges
    - No extra spacing between multiple badges
 
-## Local Development
-
-To run this website locally for development and testing, follow these steps:
-
-1. **Prerequisites**
-   - Install Ruby (version 2.5.0 or higher)
-   - Install Bundler
-   ```bash
-   gem install bundler
-   ```
-
-2. **Install Dependencies**
-   ```bash
-   bundle install
-   ```
-
-3. **Run Local Server**
-   ```bash
-   bundle exec jekyll serve
-   ```
-   This will start a local server at `http://localhost:4000`
-
-4. **View the Website**
-   - Open your web browser
-   - Navigate to `http://localhost:4000`
-   - Changes to source files (including about.md) will automatically trigger a rebuild
 
 ## Fonts and Icons Attribution
 

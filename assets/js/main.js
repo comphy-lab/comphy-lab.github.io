@@ -98,15 +98,88 @@
         
         images.forEach(img => {
             if (img.complete) {
-                // Image is already loaded
                 img.parentElement.classList.add('loaded');
             } else {
-                // Add load event listener
                 img.addEventListener('load', function() {
                     img.parentElement.classList.add('loaded');
                 });
             }
         });
+
+        // Email copy functionality
+        const copyButtons = document.querySelectorAll('.copy-btn');
+        copyButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const textToCopy = this.getAttribute('data-clipboard-text');
+                const textarea = document.createElement('textarea');
+                textarea.value = textToCopy;
+                textarea.style.position = 'fixed';
+                textarea.style.left = '-9999px';
+                document.body.appendChild(textarea);
+                
+                try {
+                    textarea.select();
+                    document.execCommand('copy');
+                    this.classList.add('copied');
+                    const icon = this.querySelector('i');
+                    icon.classList.remove('fa-copy');
+                    icon.classList.add('fa-check');
+                    
+                    setTimeout(() => {
+                        this.classList.remove('copied');
+                        icon.classList.remove('fa-check');
+                        icon.classList.add('fa-copy');
+                    }, 2000);
+                } catch (err) {
+                    console.error('Copy failed:', err);
+                } finally {
+                    document.body.removeChild(textarea);
+                }
+            });
+        });
     });
+
+    /* Copy Email Functionality
+    * -------------------------------------------------- */
+    window.copyEmail = function(button) {
+        const text = button.getAttribute('data-text');
+        navigator.clipboard.writeText(text).then(() => {
+            const icon = button.querySelector('i');
+            button.classList.add('copied');
+            icon.classList.remove('fa-copy');
+            icon.classList.add('fa-check');
+            
+            setTimeout(() => {
+                button.classList.remove('copied');
+                icon.classList.remove('fa-check');
+                icon.classList.add('fa-copy');
+            }, 2000);
+        }).catch(err => {
+            console.error('Copy failed:', err);
+            // Fallback for older browsers
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                document.execCommand('copy');
+                button.classList.add('copied');
+                const icon = button.querySelector('i');
+                icon.classList.remove('fa-copy');
+                icon.classList.add('fa-check');
+                
+                setTimeout(() => {
+                    button.classList.remove('copied');
+                    icon.classList.remove('fa-check');
+                    icon.classList.add('fa-copy');
+                }, 2000);
+            } catch (err) {
+                console.error('Fallback failed:', err);
+            }
+            document.body.removeChild(textarea);
+        });
+    };
 
 })(document.documentElement);
