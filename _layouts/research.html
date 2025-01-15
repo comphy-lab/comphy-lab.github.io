@@ -103,6 +103,47 @@
         }
       }
 
+      // Add copy buttons to paper titles
+      document.querySelectorAll('.research-content h3').forEach(titleEl => {
+        // Create container
+        const container = document.createElement('div');
+        container.className = 'paper-title-container';
+        
+        // Move the title into the container
+        titleEl.parentNode.insertBefore(container, titleEl);
+        container.appendChild(titleEl);
+        
+        // Add copy button
+        const copyBtn = document.createElement('button');
+        copyBtn.className = 'copy-button';
+        copyBtn.innerHTML = '<i class="fa-regular fa-copy"></i>';
+        copyBtn.setAttribute('aria-label', 'Copy citation');
+        copyBtn.onclick = async (e) => {
+          e.preventDefault();
+          
+          // Get the citation text (title + next paragraph)
+          const citation = titleEl.textContent + ' ' + 
+            (titleEl.nextElementSibling?.textContent || '');
+          
+          try {
+            await navigator.clipboard.writeText(citation);
+            
+            // Show success feedback
+            copyBtn.innerHTML = '<i class="fa-solid fa-check"></i>';
+            copyBtn.classList.add('copy-success');
+            
+            // Reset after animation
+            setTimeout(() => {
+              copyBtn.innerHTML = '<i class="fa-regular fa-copy"></i>';
+              copyBtn.classList.remove('copy-success');
+            }, 1000);
+          } catch (err) {
+            console.error('Failed to copy:', err);
+          }
+        };
+        container.appendChild(copyBtn);
+      });
+
       // Add intersection observer for animations
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {

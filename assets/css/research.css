@@ -5,7 +5,13 @@
 
 @media screen and (max-width: 800px) {
   .s-research {
-    padding: 6rem 0 4rem 0;
+    padding: 7.5rem 0 4rem 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .s-research {
+    padding: 7rem 0 4rem 0;
   }
 }
 
@@ -257,4 +263,48 @@
   .paper-status {
     font-size: 1.05rem;
   }
+} 
+
+/* Paper title container */
+.paper-title-container {
+  position: relative;
+  padding-right: 3rem; /* Space for copy button */
+}
+
+/* Copy button */
+.copy-button {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.75rem;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  color: #666;
+}
+
+.paper-title-container:hover .copy-button {
+  opacity: 1;
+}
+
+.copy-button:hover {
+  color: #0085ff;
+}
+
+.copy-button i {
+  font-size: 1.5rem;
+}
+
+/* Success animation */
+@keyframes copySuccess {
+  0% { transform: translateY(-50%) scale(1); }
+  50% { transform: translateY(-50%) scale(1.2); }
+  100% { transform: translateY(-50%) scale(1); }
+}
+
+.copy-success {
+  animation: copySuccess 0.3s ease-in-out;
 } 
