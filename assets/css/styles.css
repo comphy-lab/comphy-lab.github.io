@@ -739,6 +739,11 @@ body {
   .team-member {
     width: 100%;
   }
+  
+  .team-member img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 .member-image {
@@ -1454,4 +1459,112 @@ body {
 
 .copy-btn i {
     pointer-events: none;
+}
+
+/* Footer Styles */
+.site-footer {
+    background-color: #333;
+    color: white;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-left, .footer-center, .footer-right {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.footer-center {
+    flex-direction: column;
+    text-align: center;
+    flex: 1;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.copyright-text {
+    font-size: 1em;
+    margin: 0;
+    opacity: 0.9;
+    line-height: 1.5;
+    white-space: nowrap;
+}
+
+.edit-link {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9em;
+    padding: 0.5em 1em;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.edit-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-1px);
+}
+
+.edit-link i {
+    font-size: 1.1em;
+}
+
+.footer-logo {
+    height: 55px;
+    width: auto;
+    filter: brightness(0) invert(1);
+    transition: opacity 0.3s ease;
+}
+
+.pof-logo {
+    height: 60px;
+}
+
+.footer-logo:hover {
+    opacity: 0.8;
+}
+
+.footer-left a, .footer-right a {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.footer-left a:hover, .footer-right a:hover {
+    transform: translateY(-2px);
+    opacity: 0.8;
+}
+
+@media screen and (max-width: 768px) {
+    .site-footer {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+    
+    .footer-left, .footer-center, .footer-right {
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .footer-logo {
+        height: 30px;
+    }
+    
+    .footer-center {
+        order: -1;
+    }
 }

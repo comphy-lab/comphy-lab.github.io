@@ -17,7 +17,7 @@ Open exchange of ideas drives our progress. We share our codes from the earliest
 Feel free to contact us for discussions about our work or anything else related to fluid physics. Nothing is more exhilarating than a healthy scientific discussion.
 
 ### Location & Website
-[![Location](https://img.shields.io/badge/-University%20of%20Twente-4285F4?style=flat&logo=googlemaps&logoColor=white)](https://maps.app.goo.gl/jSTCYnfcndF1uZPV8)
+[![Location](https://img.shields.io/badge/-Physics%20of%20Fluids-4285F4?style=flat&logo=googlemaps&logoColor=white)](https://maps.app.goo.gl/jSTCYnfcndF1uZPV8)
 [![Website](https://img.shields.io/badge/-comphy--lab.org-4285F4?style=flat&logo=googlechrome&logoColor=white)](http://www.comphy-lab.org)
 [![Email](https://img.shields.io/badge/-mailto:vatsalsy@comphy--lab.org-EA4335?style=flat&logo=gmail&logoColor=white)](mailto:vatsalsy@comphy-lab.org)
 
