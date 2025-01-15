@@ -16,6 +16,7 @@
   <!-- Site styles -->
   <link rel="stylesheet" href="/assets/css/vendor.css">
   <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/team.css">
 
   <script>
     // Check if we're on localhost
@@ -38,7 +39,7 @@
   {% for member in team_members limit:1 %}
     {% if member.details contains '<img' %}
       {% assign image_src = member.details | split: 'src="' | last | split: '"' | first %}
-      <link rel="preload" as="image" href="{{ image_src | replace: '.webp', '-small.webp' }}" />
+      <link rel="preload" as="image" href="{{ image_src }}" />
     {% endif %}
   {% endfor %}
 </head>
@@ -101,14 +102,12 @@
                   {% assign image_src = image_tag | split: 'src="' | last | split: '"' | first %}
                   {% assign image_alt = image_tag | split: 'alt="' | last | split: '"' | first %}
                   <div class="member-image">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E"
-                         data-src="{{ image_src }}"
+                    <img src="{{ image_src }}"
                          alt="{{ image_alt }}"
-                         loading="lazy"
                          width="250"
                          height="250"
-                         fetchpriority="low"
-                         decoding="async">
+                         loading="lazy"
+                         class="lazy">
                   </div>
                   {% assign member_details = member_details | replace_first: image_tag, '' | replace: '<img>', '' | replace: '<img', '' %}
                 {% endif %}
@@ -127,7 +126,7 @@
     <footer id="colophon" class="s-footer">
       <div class="row">
         <div class="column lg-12 ss-copyright">
-          <span>© Copyright CoMPhy Lab {{ 'now' | date: "%Y" }}</span>
+          <span>  Copyright CoMPhy Lab {{ 'now' | date: "%Y" }}</span>
         </div>
       </div>
       <div class="ss-go-top">
@@ -140,5 +139,16 @@
   <script src="/assets/js/plugins.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="/assets/js/main.js"></script>
+  <script>
+    // Simple fade-in effect for images
+    document.addEventListener('DOMContentLoaded', function() {
+      var images = document.querySelectorAll('.lazy');
+      images.forEach(function(img) {
+        img.addEventListener('load', function() {
+          img.classList.add('loaded');
+        });
+      });
+    });
+  </script>
 </body>
-</html> 
+</html>

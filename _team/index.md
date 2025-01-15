@@ -10,7 +10,7 @@ title: Our Team & Collaborators
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?user=67aQviYAAAAJ)
 [<i class="fa-brands fa-bluesky" style="font-size: 2em; color: #0085ff;"></i>](https://bsky.app/profile/comphy-lab.org)
 
-<img src="/assets/images/team/0.jpg" alt="Vatsal Sanjay" loading="lazy" width="250" height="250">
+<img src="../assets/images/team/0.jpg" alt="Vatsal Sanjay" loading="lazy" width="250" height="250">
 
 - [Postdoc, Phys. Fluids - Univ. Twente / 2022-25](https://pof.tnw.utwente.nl/people/profile/1330)
 - [Ph.D., Phys. Fluids - Univ. Twente / 2018-22](https://doi.org/10.3990/1.9789036554077)
