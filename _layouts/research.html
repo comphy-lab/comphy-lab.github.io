@@ -190,8 +190,32 @@
         }
       });
 
-      // Rest of your existing code...
+      // Wrap paper sections in containers
       const researchContent = document.querySelector('.research-content');
+      const h3Elements = researchContent.querySelectorAll('h3');
+      
+      h3Elements.forEach((h3, index) => {
+        // Create container
+        const container = document.createElement('div');
+        container.className = 'paper-container';
+        
+        // Insert container before current h3
+        h3.parentNode.insertBefore(container, h3);
+        
+        // Move h3 into container
+        container.appendChild(h3);
+        
+        // Move all elements until next h3 or end into container
+        let currentElement = container.nextSibling;
+        while (currentElement && 
+               !(currentElement.tagName === 'H3' || currentElement.tagName === 'H2')) {
+          const nextElement = currentElement.nextSibling;
+          container.appendChild(currentElement);
+          currentElement = nextElement;
+        }
+      });
+
+      // Rest of your existing code...
       const paragraphs = researchContent.getElementsByTagName('p');
       
       for (let p of paragraphs) {
@@ -287,6 +311,73 @@
       lazyVideos.forEach(video => {
         videoObserver.observe(video);
       });
+
+      // Handle tag filtering
+      const allTags = document.querySelectorAll('.research-content tags span');
+      const paperContainers = document.querySelectorAll('.paper-container');
+      let activeTag = null;
+
+      // Check URL for tag parameter
+      const urlParams = new URLSearchParams(window.location.search);
+      const tagFromUrl = urlParams.get('tag');
+
+      // Function to highlight/unhighlight all matching tags
+      const updateMatchingTags = (tagText, shouldHighlight) => {
+        document.querySelectorAll('.research-content tags span').forEach(tag => {
+          if (tag.textContent === tagText) {
+            if (shouldHighlight) {
+              tag.classList.add('active');
+            } else {
+              tag.classList.remove('active');
+            }
+          }
+        });
+      };
+
+      allTags.forEach(tag => {
+        tag.addEventListener('click', () => {
+          const tagText = tag.textContent;
+          
+          // If clicking the active tag, deactivate it
+          if (activeTag === tagText) {
+            activeTag = null;
+            // Remove active class from all tags
+            updateMatchingTags(tagText, false);
+            paperContainers.forEach(container => container.classList.remove('hidden'));
+            history.pushState({}, '', window.location.pathname);
+            return;
+          }
+
+          // Update active tag
+          activeTag = tagText;
+          
+          // Remove active class from all tags first
+          allTags.forEach(t => t.classList.remove('active'));
+          // Then highlight all matching tags
+          updateMatchingTags(tagText, true);
+
+          // Update URL
+          history.pushState({}, '', `?tag=${encodeURIComponent(tagText)}`);
+
+          // Filter papers
+          paperContainers.forEach(container => {
+            const containerTags = container.querySelector('tags');
+            if (containerTags && containerTags.textContent.includes(tagText)) {
+              container.classList.remove('hidden');
+            } else {
+              container.classList.add('hidden');
+            }
+          });
+        });
+      });
+
+      // Apply filter from URL if present
+      if (tagFromUrl) {
+        const matchingTag = Array.from(allTags).find(tag => tag.textContent === tagFromUrl);
+        if (matchingTag) {
+          matchingTag.click();
+        }
+      }
     });
   </script>
 </body>
