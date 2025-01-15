@@ -77,14 +77,55 @@ A static website for the Computational Multiphase Physics Laboratory, built with
    ```
 
 #### Research Papers
+1. Each paper should be added to `_research/index.md` in the following format:
+
 ```markdown
-### Author1, A., **Author2, B.**, & Author3, C. Title. _J. Fluid Mech._, 999, 1-20.
+<h3 id="NUMBER">[NUMBER] Author1, A., **Author2, B.**, & Author3, C. Title. _Journal_, Volume, Pages (Year).</h3>
 
-<tags><span>Bubbles</span><span>Jets</span></tags>
+<tags><span>Tag1</span><span>Tag2</span><span>Featured</span></tags>
 
-[![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=ID&color=green)](LINK)
-[![DOI](https://img.shields.io/static/v1.svg?style=flat-square&label=DOI&message=NUMBER&color=orange)](URL)
+[![Badge1](https://img.shields.io/static/v1.svg?style=flat-square&label=LABEL&message=MESSAGE&color=COLOR)](URL)
+[![Badge2](https://img.shields.io/static/v1.svg?style=flat-square&label=LABEL&message=MESSAGE&color=COLOR)](URL)
+
+<iframe width="560" height="315" src="YOUTUBE_EMBED_URL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ```
+
+2. Important elements:
+   - `id="NUMBER"`: Unique ID for direct linking (e.g., `/research/#12`)
+   - `[NUMBER]`: Paper number in square brackets
+   - Author names: Use `<strong>` for lab members
+   - Journal names: Use italics with underscores
+   - Tags: Include relevant topic tags
+   - Badges: Use shields.io style badges for links
+   - Videos: Use YouTube embed code with privacy-enhanced mode
+
+3. Featured Papers:
+   - Add `<span>Featured</span>` to the tags to display the paper on the main page
+   - Maximum 2 papers can be featured at any time
+   - Featured papers will automatically appear in the featured section of the homepage
+
+4. Available Tags:
+   - Bubbles
+   - Drops
+   - Jets
+   - Sheets
+   - Non-Newtonian
+   - Coalescence
+   - Superamphiphobic-surfaces
+   - Impact forces
+   - Dissipative anamoly
+   - Soft-matter-singularities
+   - Featured
+   - (Add new tags as needed)
+
+5. Common Badge Types:
+   ```markdown
+   [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=ID&color=green)](URL)
+   [![DOI](https://img.shields.io/static/v1.svg?style=flat-square&label=DOI&message=NUMBER&color=orange)](URL)
+   [![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=Open%20Access&color=orange)](URL)
+   [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](URL)
+   [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](URL)
+   ```
 
 ## Part B: Back-End Documentation
 

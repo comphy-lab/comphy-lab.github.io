@@ -89,6 +89,9 @@
         <a href="https://www.utwente.nl/" target="_blank">
           <img src="/assets/logos/UT_Logo_2400_Sta_White_EN.png" alt="University of Twente" class="footer-logo">
         </a>
+        <a href="https://www.vatsalsanjay.com/" target="_blank">
+          <img src="/assets/logos/Logo_Vatsal_v3_OutLine.png" alt="Vatsal Sanjay" class="footer-logo">
+        </a>
       </div>
       <div class="footer-center">
         <p class="copyright-text">
@@ -113,15 +116,12 @@
           <i class="fa-brands fa-github"></i> Edit this page
         </a>
       </div>
+      <div class="ss-go-top">
+        <a class="smoothscroll" title="Back to Top" href="#top">
+            <i class="fa-solid fa-arrow-up"></i>
+         </a>
+      </div> <!-- end ss-go-top -->
     </footer>
-
-    <div class="ss-go-top">
-      <a class="smoothscroll" title="Back to Top" href="#top">
-          <i class="fa-solid fa-arrow-up"></i>
-      </a>
-    </div>
-
-  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="/assets/js/main.js"></script>
@@ -197,6 +197,14 @@
         // Create container
         const container = document.createElement('div');
         container.className = 'paper-container';
+        
+        // Get the ID from the h3 if it exists
+        const id = h3.getAttribute('id');
+        if (id) {
+          container.id = id;
+          // Remove ID from h3 since we moved it to container
+          h3.removeAttribute('id');
+        }
         
         // Insert container before current h3
         h3.parentNode.insertBefore(container, h3);
