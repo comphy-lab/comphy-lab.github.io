@@ -15,10 +15,17 @@ title: Research
 
 ### **Dixit, A. K.**, Oratis, A., Zinelis, K., Lohse, D., & **Sanjay, V.** Viscoelastic Worthington jets & droplets produced by bursting bubbles. Received positive reviews in _J. Fluid Mech._ (2025).
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2408.05089&color=green)](https://arxiv.org/abs/2408.05089)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/Viscoelastic-Worthington-jets-and-droplets-produced-by-bursting-bubbles)
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=SEePOSC_hY5SLxac&amp;list=PLiHEqeURsoWqT3CaVfp0Z2MswHfc7MQxE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
 ### **Sanjay, V.**, & Lohse, D. Unifying theory of scaling in drop impact: Forces & maximum spreading diameter. Received positive reviews in _Phys. Rev. Lett._ (2025).
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2408.12714&color=green)](https://arxiv.org/abs/2408.12714)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/VatsalSy/Impact-forces-of-water-drops-falling-on-superhydrophobic-surfaces.git)
+
+
+![Parameter space of drop impact](https://www.dropbox.com/scl/fi/rwrl444r73nayhw1jl4j2/SL2-theory_num.png?rlkey=ekywyjaui2n79djl4qtgevegn&dl=1){: width="75%" .center-block style="display: block; margin-left: auto; margin-right: auto;"}
 
 ### Bashkatov, A., Bürkle, F., Demirkır, Ç., Ding, W., **Sanjay, V.**, Babich, A., Yang, X., Mutschke, G., Czarske, J., Lohse, D., et al. Electrolyte spraying within H₂ bubbles during water electrolysis. Received positive reviews in _Nat. Commun._ (2025).
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2409.00515&color=green)](https://arxiv.org/abs/2409.00515)
