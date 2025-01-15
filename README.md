@@ -101,6 +101,10 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 - **Typography**
   - Libre Baskerville, Open Sans
   - Gradients for emphasis
+- **Favicon**
+  - Located in `/assets/favicon/`
+  - Multiple sizes for different devices and browsers
+  - Generated from CoMPhy Lab logo
 
 ### Fonts and Icons Attribution
 - Academicons 1.7.0 (SIL OFL 1.1, MIT)
