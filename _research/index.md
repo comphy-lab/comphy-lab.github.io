@@ -9,9 +9,13 @@ title: Research
 
 ### Demirkır, Ç., Yang, R., Bashkatov, A., **Sanjay, V.**, Lohse, D., & Krug, D. To jump or not to jump: Adhesion and viscous dissipation dictate the detachment of coalescing wall-attached bubbles. Submitted to _Phys. Rev. Lett._ (2025).
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2501.05532&color=green)](https://arxiv.org/abs/2501.05532)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/VatsalSy/jumping-bubbles)
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/49KoJwXiDl4?si=uxdpYyKFFd8E6jvN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### **Dixit, A. K.**, Oratis, A., Zinelis, K., Lohse, D., & **Sanjay, V.** Viscoelastic Worthington jets & droplets produced by bursting bubbles. Received positive reviews in _J. Fluid Mech._ (2025).
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2408.05089&color=green)](https://arxiv.org/abs/2408.05089)
+
 
 ### **Sanjay, V.**, & Lohse, D. Unifying theory of scaling in drop impact: Forces & maximum spreading diameter. Received positive reviews in _Phys. Rev. Lett._ (2025).
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2408.12714&color=green)](https://arxiv.org/abs/2408.12714)

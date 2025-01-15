@@ -116,7 +116,7 @@ To add a new team member, follow these steps:
      ```
    - Add member photo:
      ```markdown
-     <img src="../assets/images/team/X.webp" alt="Member Name" loading="lazy" width="250" height="250">
+     <img src="../assets/images/team/X.webp" alt="Member Name" loading="lazy" width="250" height="250" class="member-image">
      ```
      where X is the next available number in sequence
 
@@ -125,6 +125,12 @@ To add a new team member, follow these steps:
    - Name it as the next number in sequence (e.g., if last photo is 7.webp, name new photo 8.webp)
    - Recommended photo size: 250x250 pixels
    - Use professional headshot with clear background
+   - Photos will automatically get:
+     - A loading wave animation while the image loads
+     - Proper scaling and object-fit behavior
+     - Mobile-responsive sizing (200x200px on smaller screens)
+     - Automatic centering relative to member name
+     - Responsive layout with centered text alignment on mobile
 
 3. If jointly supervised, add the joint supervisor info:
    ```markdown
