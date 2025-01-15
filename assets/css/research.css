@@ -95,6 +95,8 @@
   transition: all 0.3s ease;
   border: 1px solid transparent;
   background-color: transparent;
+  scroll-margin-top: 120px;
+  position: relative;
 }
 
 .paper-container:hover {
@@ -506,3 +508,15 @@
     padding: 0.3rem 0.8rem;
   }
 } 
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 120px; /* Increased to account for fixed header */
+}
+
+/* Highlight the target container when navigated to via anchor */
+.paper-container:target {
+    background-color: rgba(0, 133, 255, 0.05);
+    border-color: rgba(0, 133, 255, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
