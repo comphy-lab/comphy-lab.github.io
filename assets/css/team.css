@@ -5,6 +5,8 @@
   transform: translateZ(0);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  margin: 0 auto;
+  display: block;
 }
 
 .member-image img {
@@ -64,13 +66,20 @@
   .member-image {
     width: 200px;
     height: 200px;
+    margin: 0 auto;
   }
   
   .team-container {
     padding: 1rem;
+    text-align: center;
   }
   
   .team-member {
     margin-bottom: 3rem;
+    text-align: center;
+  }
+  
+  .team-member h2 {
+    text-align: center;
   }
 }
