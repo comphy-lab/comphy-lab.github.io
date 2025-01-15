@@ -25,8 +25,9 @@ title: Research
 
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2311.03012&color=green)](https://arxiv.org/abs/2311.03012)
 
-### [16] Kayal, L., **Sanjay, V.**, Yewale, N., Kumar, A., & Dasgupta, R. Focusing of concentric free-surface waves. _J. Fluid Mech._, in press (2025).
+### [16] Kayal, L., **Sanjay, V.**, Yewale, N., Kumar, A., & Dasgupta, R. Focusing of concentric free-surface waves. _J. Fluid Mech._, 1003, A14 (2025).
 
+[![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=Open%20Access&color=orange)](https://doi.org/10.1017/jfm.2024.1089)
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2406.05416&color=green)](https://arxiv.org/abs/2406.05416)
 
 ## 2024
