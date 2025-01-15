@@ -16,6 +16,7 @@
   <!-- Site styles -->
   <link rel="stylesheet" href="/assets/css/vendor.css">
   <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/research.css">
   <script>
     // Check if we're on localhost
     if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
@@ -63,7 +64,7 @@
       <div class="row">
         <div class="column">
           <div class="research-content markdown-content">
-            {{ content }}
+            {{ content | replace: '<iframe', '<div class="video-container"><iframe loading="lazy"' | replace: '</iframe>', '</iframe></div>' }}
           </div>
         </div>
       </div>
@@ -85,5 +86,65 @@
   <script src="/assets/js/plugins.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="/assets/js/main.js"></script>
+  <script>
+    // Add badge container around consecutive badge links
+    document.addEventListener('DOMContentLoaded', function() {
+      const researchContent = document.querySelector('.research-content');
+      const paragraphs = researchContent.getElementsByTagName('p');
+      
+      for (let p of paragraphs) {
+        if (p.querySelectorAll('a img[src*="shields.io"]').length > 0) {
+          const badgeContainer = document.createElement('div');
+          badgeContainer.className = 'badge-container';
+          while (p.firstChild) {
+            badgeContainer.appendChild(p.firstChild);
+          }
+          p.appendChild(badgeContainer);
+        }
+      }
+
+      // Add intersection observer for animations
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+
+      // Observe all major elements
+      document.querySelectorAll('.research-content > h2, .research-content > h3, .video-container').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
+        observer.observe(el);
+      });
+    });
+
+    // Lazy load videos when they come into view
+    document.addEventListener('DOMContentLoaded', function() {
+      const lazyVideos = document.querySelectorAll('iframe[loading="lazy"]');
+      const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const iframe = entry.target;
+            const src = iframe.getAttribute('src');
+            if (src) {
+              iframe.setAttribute('src', src);
+            }
+            videoObserver.unobserve(iframe);
+          }
+        });
+      });
+
+      lazyVideos.forEach(video => {
+        videoObserver.observe(video);
+      });
+    });
+  </script>
 </body>
 </html> 
