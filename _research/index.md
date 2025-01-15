@@ -25,16 +25,20 @@ title: Research
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/VatsalSy/Impact-forces-of-water-drops-falling-on-superhydrophobic-surfaces.git)
 
 
-![Parameter space of drop impact](https://www.dropbox.com/scl/fi/rwrl444r73nayhw1jl4j2/SL2-theory_num.png?rlkey=ekywyjaui2n79djl4qtgevegn&dl=1){: width="75%" .center-block style="display: block; margin-left: auto; margin-right: auto;"}
+![Parameter space of drop impact](https://www.dropbox.com/scl/fi/rwrl444r73nayhw1jl4j2/SL2-theory_num.png?rlkey=ekywyjaui2n79djl4qtgevegn&raw=1){: width="75%" .center-block style="display: block; margin-left: auto; margin-right: auto;"}
 
 ### Bashkatov, A., Bürkle, F., Demirkır, Ç., Ding, W., **Sanjay, V.**, Babich, A., Yang, X., Mutschke, G., Czarske, J., Lohse, D., et al. Electrolyte spraying within H₂ bubbles during water electrolysis. Received positive reviews in _Nat. Commun._ (2025).
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2409.00515&color=green)](https://arxiv.org/abs/2409.00515)
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/QbQ4wrTjTks?si=SZsmKgXX28Fxcgru" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## 2025
 
 ### [13] **Sanjay, V.**, Zhang, B., Lv, C., & Lohse, D. The role of viscosity on drop impact forces on non-wetting surfaces. _J. Fluid Mech._, in press (2025).
 
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2311.03012&color=green)](https://arxiv.org/abs/2311.03012)
+
+
 
 ### [12] Kayal, L., **Sanjay, V.**, Yewale, N., Kumar, A., & Dasgupta, R. Focusing of concentric free-surface waves. _J. Fluid Mech._, 1003, A14 (2025).
 
