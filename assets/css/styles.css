@@ -199,7 +199,7 @@ body {
   margin-bottom: 2rem;
   opacity: 0;
   animation: fadeInUp 1s ease forwards;
-  animation-delay: 0.5s;
+  animation-delay: 0.2s;
   color: #1a1a1a;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
   font-weight: 600;
@@ -211,7 +211,7 @@ body {
   margin-bottom: 3rem;
   opacity: 0;
   animation: fadeInUp 1s ease forwards;
-  animation-delay: 0.8s;
+  animation-delay: 0.2s;
   background: linear-gradient(90deg, 
     #ff6b6b 0%, 
     #fa5252 45%, 
@@ -226,13 +226,24 @@ body {
   font-weight: 800;
 }
 
+.s-intro__subtitle {
+  font-size: 2.25rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.4s;
+  color: #1a1a1a;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+}
+
 .s-intro__caption {
   margin-top: 2rem;
   font-size: 1.6rem;
   color: #2b2b2b;
   opacity: 0;
   animation: fadeInUp 1s ease forwards;
-  animation-delay: 1s;
+  animation-delay: 0.4s;
 }
 
 .s-intro__caption p {
@@ -485,27 +496,42 @@ body {
 }
 
 .ss-go-top {
+  display: none;
   position: fixed;
-  bottom: 3rem;
-  right: 3rem;
-}
-
-.ss-go-top a {
-  display: block;
-  width: 40px;
-  height: 40px;
-  background: var(--color-primary);
-  color: white;
+  bottom: 30px;
+  right: 30px;
+  z-index: 100;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #333;
   text-decoration: none;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.ss-go-top a:hover {
-  background: var(--color-secondary);
+.ss-go-top:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.ss-go-top i {
+  font-size: 1.5em;
+  color: #333;
+  display: block;
+}
+
+.link-is-visible {
+  display: block;
+}
+
+/* Adjust footer layout */
+.footer-right {
+  padding-right: 80px; /* Make space for the go-to-top button */
 }
 
 /* Animations */

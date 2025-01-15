@@ -62,7 +62,15 @@
     <!-- Research Section -->
     <section class="s-research">
       <div class="row">
-        <div class="column">
+        <div class="research-layout">
+          <div class="toc-sidebar">
+            <nav class="toc-nav">
+              <h3>Contents</h3>
+              <ul class="toc-list">
+                <!-- Will be populated by JavaScript -->
+              </ul>
+            </nav>
+          </div>
           <div class="research-content markdown-content">
             {{ content | replace: '<iframe', '<div class="video-container"><iframe loading="lazy"' | replace: '</iframe>', '</iframe></div>' }}
           </div>
@@ -107,6 +115,12 @@
       </div>
     </footer>
 
+    <div class="ss-go-top">
+      <a class="smoothscroll" title="Back to Top" href="#top">
+          <i class="fa-solid fa-arrow-up"></i>
+      </a>
+    </div>
+
   </div>
 
   <script src="/assets/js/plugins.js"></script>
@@ -115,6 +129,68 @@
   <script>
     // Add badge container around consecutive badge links
     document.addEventListener('DOMContentLoaded', function() {
+      // Generate table of contents
+      const tocList = document.querySelector('.toc-list');
+      const headings = document.querySelectorAll('.research-content h2');
+      const tocEntries = [];
+
+      headings.forEach((heading, index) => {
+        // Create an ID if it doesn't exist
+        if (!heading.id) {
+          heading.id = `section-${index}`;
+        }
+
+        // Create TOC entry
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = `#${heading.id}`;
+        a.textContent = heading.textContent;
+        li.appendChild(a);
+        tocList.appendChild(li);
+        tocEntries.push({ element: heading, link: a });
+      });
+
+      // Handle scroll and highlight active section
+      const observerOptions = {
+        root: null,
+        rootMargin: '-100px 0px -66%',
+        threshold: 0
+      };
+
+      const headingObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const index = Array.from(headings).indexOf(entry.target);
+          const link = tocEntries[index].link;
+
+          if (entry.isIntersecting) {
+            // Remove all active classes first
+            tocEntries.forEach(item => item.link.classList.remove('active'));
+            // Add active class to current section
+            link.classList.add('active');
+          }
+        });
+      }, observerOptions);
+
+      // Observe all h2 headings
+      headings.forEach(heading => headingObserver.observe(heading));
+
+      // Smooth scroll to section when clicking TOC links
+      tocList.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A') {
+          e.preventDefault();
+          const targetId = e.target.getAttribute('href').slice(1);
+          const targetElement = document.getElementById(targetId);
+          
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        }
+      });
+
+      // Rest of your existing code...
       const researchContent = document.querySelector('.research-content');
       const paragraphs = researchContent.getElementsByTagName('p');
       
