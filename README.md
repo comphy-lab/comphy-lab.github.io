@@ -220,12 +220,41 @@ The research section is organized chronologically with the following structure:
 
 2. **Paper Entry Format**:
    ```markdown
-   * Author1, A., **Author2, B.**, & Author3, C. (YEAR). Title of the paper. _Journal Abbrev._, VOL, PAGE.
+   ### Author1, A., **Author2, B.**, & Author3, C. Title of the paper. _Journal Abbrev._, VOL, PAGE.
 
-       [![BadgeType](https://img.shields.io/static/v1.svg?style=flat-square&label=LABEL&message=MESSAGE&color=COLOR)](URL)
+   <tags><span>Tag1</span><span>Tag2</span><span>Tag3</span></tags>
+
+   [![BadgeType](https://img.shields.io/static/v1.svg?style=flat-square&label=LABEL&message=MESSAGE&color=COLOR)](URL)
    ```
 
-3. **Formatting Rules**:
+3. **Tagging System**:
+   - Each paper can have multiple tags enclosed in `<tags>` element
+   - Each tag should be wrapped in `<span>` element
+   - Tags are clickable and filter the papers list
+   - Common tags include:
+     - `Bubbles`
+     - `Drops`
+     - `Jets`
+     - `Sheets`
+     - `Non-Newtonian`
+     - `Coalescence`
+     - `Superamphiphobic-surfaces`
+     - `Impact forces`
+     - `Dissipative anamoly`
+   - Tags can be added to the top of the page for quick filtering:
+     ```markdown
+     ## Sort by topic
+     <tags><span>Tag1</span></tags>
+     <tags><span>Tag2</span></tags>
+     ```
+   - Features:
+     - Clicking a tag filters papers to show only those containing that tag
+     - All instances of the selected tag are highlighted across all papers
+     - Clicking the same tag again removes the filter
+     - The URL updates with the selected tag (e.g., `?tag=Bubbles`) for direct linking
+     - Tags have a subtle hover effect and active state styling
+
+4. **Formatting Rules**:
    - Use `**Bold**` for Vatsal Sanjay's name
    - Italicize journal names with underscores: `_J. Fluid Mech._`
    - Standard journal abbreviations: 
@@ -238,7 +267,7 @@ The research section is organized chronologically with the following structure:
      - _Build. Simul._ for Building Simulation
      - _Phys. Fluids_ for Physics of Fluids
 
-4. **Badge Styles**:
+5. **Badge Styles**:
    - Use `flat-square` style for all badges
    - Color codes:
      - `green`: arXiv preprints
@@ -251,13 +280,13 @@ The research section is organized chronologically with the following structure:
      - PDF: `[![PDF](https://img.shields.io/static/v1.svg?style=flat-square&label=PDF&message=Available&color=green)]`
      - GitHub: `[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)]`
 
-5. **Paper Status Annotations**:
+6. **Paper Status Annotations**:
    - For papers under review with no reviews: "Submitted to _Journal_"
    - For papers under review with positive reviews: "Received positive reviews in _Journal_"
    - For accepted papers: "_Journal_ (in press)"
    - For published papers: Include volume and page numbers
 
-6. **Spacing**:
+7. **Spacing**:
    - One blank line between sections
    - One blank line between papers
    - Two spaces indentation for badges
