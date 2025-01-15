@@ -1,0 +1,260 @@
+.s-research {
+  padding: 8rem 0 6rem 0;
+  background-color: #ffffff;
+}
+
+@media screen and (max-width: 800px) {
+  .s-research {
+    padding: 6rem 0 4rem 0;
+  }
+}
+
+.research-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+@media screen and (max-width: 600px) {
+  .research-content {
+    padding: 0 1rem;
+  }
+}
+
+/* Main title */
+.research-content h1 {
+  font-size: 2.5em;
+  color: #1a1a1a;
+  margin-bottom: 2rem;
+  text-align: center;
+  background: linear-gradient(45deg, #0085ff, #1a1a1a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeIn 0.8s ease-out;
+}
+
+@media screen and (max-width: 600px) {
+  .research-content h1 {
+    font-size: 2em;
+  }
+}
+
+/* Year sections */
+.research-content h2 {
+  font-size: 2.25rem;
+  color: #1a1a1a;
+  margin: 3rem 0 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: linear-gradient(to right, #f8f9fa, transparent);
+  border-left: 4px solid #0085ff;
+}
+
+@media screen and (max-width: 600px) {
+  .research-content h2 {
+    font-size: 1.75rem;
+    margin: 2rem 0 1rem;
+  }
+}
+
+/* Paper titles */
+.research-content h3 {
+  font-size: 1.75rem;
+  line-height: 1.5;
+  margin: 2rem 0 0.75rem;
+  color: #1a1a1a;
+  padding-left: 1rem;
+  border-left: 3px solid #0085ff;
+  transition: border-left-color 0.3s ease;
+  font-weight: 500;
+}
+
+.research-content h3:hover {
+  border-left-color: #0056b3;
+}
+
+@media screen and (max-width: 600px) {
+  .research-content h3 {
+    font-size: 1.4rem;
+    padding-left: 0.75rem;
+  }
+}
+
+/* Badge container */
+.badge-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.5rem 0 1rem;
+  padding-left: 1rem;
+}
+
+.badge-container a {
+  transition: transform 0.2s ease;
+}
+
+.badge-container a:hover {
+  transform: translateY(-2px);
+}
+
+/* Video container */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  margin: 1rem auto 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  background: #f8f9fa;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 8px;
+  z-index: 2;
+}
+
+/* Highlight boxes */
+.research-content h4 {
+  font-size: 1.25rem;
+  color: #0085ff;
+  margin: 1rem 0 0.5rem;
+  padding-left: 1rem;
+}
+
+.research-content h4 + p {
+  background-color: #f8f9fa;
+  border-left: 4px solid #0085ff;
+  padding: 1rem;
+  margin: 0.5rem 0 1.5rem;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+/* Images */
+.research-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 1.5rem auto;
+  display: block;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Links */
+.research-content a {
+  color: #0085ff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.research-content a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Paper status */
+.paper-status {
+  font-style: italic;
+  color: #666;
+  margin: 0.5rem 0;
+  padding-left: 1rem;
+  font-size: 0.95rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+.research-content > * {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Print styles */
+@media print {
+  .s-research {
+    padding: 0;
+  }
+  
+  .video-container {
+    display: none;
+  }
+  
+  .research-content {
+    max-width: 100%;
+    padding: 0;
+  }
+  
+  .research-content h1 {
+    -webkit-text-fill-color: initial;
+    background: none;
+    color: #1a1a1a;
+  }
+  
+  .research-content h2 {
+    background: none;
+    border-bottom: 1px solid #ddd;
+    border-left: none;
+  }
+  
+  .badge-container {
+    display: none;
+  }
+} 
+
+/* Regular text (for paper descriptions) */
+.research-content p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+  .research-content h1 {
+    font-size: 2em;
+  }
+
+  .research-content h2 {
+    font-size: 1.75rem;
+    margin: 2rem 0 1rem;
+  }
+
+  .research-content h3 {
+    font-size: 1.4rem;
+    padding-left: 0.75rem;
+  }
+
+  .research-content p {
+    font-size: 1.1rem;
+  }
+
+  .research-content h4 {
+    font-size: 1.15rem;
+  }
+
+  .research-content h4 + p {
+    font-size: 1.05rem;
+  }
+
+  .paper-status {
+    font-size: 1.05rem;
+  }
+} 
