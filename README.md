@@ -1,5 +1,13 @@
 # CoMPhy Lab Website
 
+[![Website Status](https://img.shields.io/website?url=https%3A%2F%2Fcomphy-lab.github.io&style=flat-square&logo=github&label=Website)](https://comphy-lab.org)
+[![Pages Build](https://img.shields.io/github/actions/workflow/status/comphy-lab/comphy-lab.github.io/pages/pages-build-deployment?style=flat-square&logo=github&label=Pages)](https://github.com/comphy-lab/comphy-lab.github.io/actions/workflows/pages/pages-build-deployment)
+[![Issues](https://img.shields.io/github/issues/comphy-lab/comphy-lab.github.io?style=flat-square&logo=github)](https://github.com/comphy-lab/comphy-lab.github.io/issues)
+[![PRs](https://img.shields.io/github/issues-pr/comphy-lab/comphy-lab.github.io?style=flat-square&logo=github)](https://github.com/comphy-lab/comphy-lab.github.io/pulls)
+[![License](https://img.shields.io/github/license/comphy-lab/comphy-lab.github.io?style=flat-square)](LICENSE)
+[![Last Commit](https://img.shields.io/github/last-commit/comphy-lab/comphy-lab.github.io?style=flat-square&logo=github)](https://github.com/comphy-lab/comphy-lab.github.io/commits/main)
+[![Jekyll](https://img.shields.io/badge/Jekyll-4.3.2-%23CC0000?style=flat-square&logo=jekyll)](https://jekyllrb.com/)
+
 A static website for the Computational Multiphase Physics Laboratory, built with Jekyll and designed for hosting on GitHub Pages.
 
 ## Directory Structure
@@ -15,6 +23,9 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 ├── _research                  # Research project and publication entries
 ├── _team                      # Team member profiles
 ├── assets                     # Static files (images, css, js, logos, favicon)
+├── .github                    # GitHub specific files
+│   ├── ISSUE_TEMPLATE        # Issue templates
+│   └── PULL_REQUEST_TEMPLATE # PR templates
 ├── about.md                   # About page content (markdown)
 ├── index.html                 # Homepage
 ├── Gemfile                    # Ruby dependencies
@@ -148,8 +159,41 @@ A static website for the Computational Multiphase Physics Laboratory, built with
   - Generated from CoMPhy Lab logo
 
 ### Fonts and Icons Attribution
-- Academicons 1.7.0 (SIL OFL 1.1, MIT)
-- Font Awesome (MIT)
+- [Academicons 1.7.0 (SIL OFL 1.1, MIT)](https://jpswalsh.github.io/academicons/)
+- [Font Awesome](https://fontawesome.com/)
 - Fontello (Various licenses)
 - Libre Baskerville (SIL Open Font License)
 - Open Sans (Apache License 2.0)
+
+## Contributing
+
+### Issue Templates
+The repository includes several issue templates to streamline the process of reporting problems or requesting changes:
+
+1. [🐛 Report a Bug](../../issues/new?template=bug_report.yml&labels=bug&title=%5BBug%5D%3A+): Use this template to report website issues or malfunctions
+2. [👤 Add Team Member](../../issues/new?template=add_team_member.yml&labels=team,content&title=%5BTeam%5D%3A+Add+): Template for requesting addition of new team members
+3. [📄 Add Publication](../../issues/new?template=add_publication.yml&labels=publication,content&title=%5BPublication%5D%3A+Add+): Template for adding new research publications
+4. [✨ Suggest Enhancement](../../issues/new?template=enhancement.yml&labels=enhancement&title=%5BEnhancement%5D%3A+): For suggesting improvements or new features
+
+To create a new issue:
+1. Click on one of the links above to use a template directly
+2. Or go to the Issues tab and click "New Issue"
+3. Choose the appropriate template
+4. Fill in the required information
+5. Submit the issue
+
+### Pull Request Template
+When submitting changes, use the provided PR template which includes:
+- Description of changes
+- Type of change (bug fix, feature, content update, etc.)
+- Testing checklist
+- Related issues
+- Screenshots (if applicable)
+
+To submit a PR:
+1. Fork the repository
+2. Make your changes in a new branch
+3. Test changes locally
+4. Create a PR using the template
+5. Link any related issues
+6. Wait for review
