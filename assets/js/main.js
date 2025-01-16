@@ -185,9 +185,20 @@
     const closeBtn = document.querySelector('.s-header__nav-close-btn');
     const menuLinks = document.querySelectorAll('.s-header__nav-list a');
 
+    // Handle click outside
+    document.addEventListener('click', function(e) {
+        if (nav && nav.classList.contains('is-active')) {
+            // Check if click is outside nav and not on menu toggle
+            if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
+                nav.classList.remove('is-active');
+            }
+        }
+    });
+
     if (menuToggle) {
         menuToggle.addEventListener('click', function(e) {
             e.preventDefault();
+            e.stopPropagation(); // Prevent document click from immediately closing
             nav.classList.add('is-active');
         });
     }

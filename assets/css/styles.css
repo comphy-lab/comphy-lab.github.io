@@ -154,6 +154,13 @@ body {
 
 .s-header__nav-close-btn {
   display: none;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 1.6rem;
+  margin-left: 2rem;
 }
 
 /* Intro Section */
@@ -577,6 +584,7 @@ body {
 @media screen and (max-width: 768px) {
   .s-header__menu-toggle {
     display: flex;
+    z-index: 90;
   }
 
   .s-header__nav {
@@ -585,13 +593,14 @@ body {
     right: -300px;
     width: 300px;
     height: 100vh;
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(8px);
     padding: 2rem;
     flex-direction: column;
     align-items: flex-start;
     transition: right 0.3s ease;
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
   }
 
   .s-header__nav.is-active {
@@ -662,6 +671,10 @@ body {
 
   .footer-right a:last-child {
     margin-right: 0;
+  }
+
+  .s-header__nav-list li:first-child {
+    margin-right: 4rem;
   }
 }
 
