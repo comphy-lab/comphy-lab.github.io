@@ -22,4 +22,4 @@ collections:
     permalink: /:collection/:name
   research:
     output: true
-    permalink: /:collection/:name 
+    permalink: /:collection/:name
