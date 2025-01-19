@@ -13,6 +13,8 @@
   <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-title" content="CoMPhy Lab">
+  <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
 
   <!-- Font dependencies -->
   <link rel="stylesheet" href="/assets/css/fontello/css/fontello.css">
@@ -36,37 +38,37 @@
         document.write('<script src="https://kit.fontawesome.com/b1cfd9ca75.js" crossorigin="anonymous"><\/script>');
       }
     </script>
-</head>
 
+</head>
 <body id="top">
 
-    <div id="preloader">
-      <div id="loader"></div>
-    </div>
-  
-    <div id="page" class="s-pagewrap">
-      <header class="s-header">
-        <div class="s-header__logo">
-          <a class="logo" href="/">
-            <img src="/assets/logos/CoMPhy-Lab-no-name.png" alt="CoMPhy Lab">
-          </a>
-        </div>
-        <a class="s-header__menu-toggle" href="#0">
-          <span class="s-header__menu-text">Menu</span>
-          <span class="s-header__menu-icon"></span>
+  <div id="preloader">
+    <div id="loader"></div>
+  </div>
+
+  <div id="page" class="s-pagewrap">
+    <header class="s-header">
+      <div class="s-header__logo">
+        <a class="logo" href="/">
+          <img src="/assets/logos/CoMPhy-Lab-no-name.png" alt="CoMPhy Lab">
         </a>
-        <nav class="s-header__nav">
-          <a href="#0" class="s-header__nav-close-btn"><span>Close</span></a>
-          <ul class="s-header__nav-list">
-            <li style="background: none;"><a href="https://github.com/comphy-lab" style="background: none; padding: 0;"><i class="fa-brands fa-github" style="font-size: 1.75em"></i></a></li>
-            <li><a href="#about" class="smoothscroll">About</a></li>
-            <li><a href="/team/">Team</a></li>
-            <li><a href="/research">Research</a></li>
-            <li><a href="https://publish.obsidian.md/comphy-lab/README" target="_blank">Blog</a></li>
-            <li style="background: none;"><a href="https://bsky.app/profile/comphy-lab.org" style="background: none; padding: 0;"><i class="fa-brands fa-bluesky" style="font-size: 1.75em; color: #0085ff;"></i></a></li>
-          </ul>
-        </nav>
-      </header>
+      </div>
+      <a class="s-header__menu-toggle" href="#0">
+        <span class="s-header__menu-text">Menu</span>
+        <span class="s-header__menu-icon"></span>
+      </a>
+      <nav class="s-header__nav">
+        <a href="#0" class="s-header__nav-close-btn"><span>Close</span></a>
+        <ul class="s-header__nav-list">
+          <li style="background: none;"><a href="https://github.com/comphy-lab" style="background: none; padding: 0;"><i class="fa-brands fa-github" style="font-size: 1.75em"></i></a></li>
+          <li><a href="#about" class="smoothscroll">About</a></li>
+          <li><a href="/team/">Team</a></li>
+          <li><a href="/research">Research</a></li>
+          <li><a href="https://blogs-comphy-lab.org/README" target="_blank">Blog</a></li>
+          <li style="background: none;"><a href="https://bsky.app/profile/comphy-lab.org" style="background: none; padding: 0;"><i class="fa-brands fa-bluesky" style="font-size: 1.75em; color: #0085ff;"></i></a></li>
+        </ul>
+      </nav>
+    </header>
   <!-- Main content -->
   {{ content }}
 
@@ -114,8 +116,11 @@
        </a>
     </div> <!-- end ss-go-top -->
   </footer>
+  </div>  
 
+  <!-- <script src="/assets/js/plugins.js"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="/assets/js/main.js"></script>
+
 </body>
 </html>

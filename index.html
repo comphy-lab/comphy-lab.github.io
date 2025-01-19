@@ -1,206 +1,88 @@
-<!DOCTYPE html>
-<html lang="en" class="no-js">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- <title>CoMPhy Lab</title> -->
+---
+layout: default
+title: "Home"
+permalink: /
+---
 
-  <!-- Favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
-  <link rel="manifest" href="/assets/favicon/site.webmanifest">
-  <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
-  <meta name="apple-mobile-web-app-title" content="CoMPhy Lab">
-  <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
-
-  <!-- Font dependencies -->
-  <link rel="stylesheet" href="/assets/css/fontello/css/fontello.css">
-  <link rel="stylesheet" href="/assets/css/academicons-1.7.0/css/academicons.min.css">
-
-  <!-- Site styles -->
-  <link rel="stylesheet" href="/assets/css/vendor.css">
-  <link rel="stylesheet" href="/assets/css/styles.css">
-
-  <script>
-    document.documentElement.classList.remove('no-js');
-    document.documentElement.classList.add('js');
-  </script>
-    <script>
-      // Check if we're on localhost
-      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-        // Use official Font Awesome CDN for local development with version 6.7.2
-        document.write('<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.2/css/all.css" crossorigin="anonymous">');
-      } else {
-        // Use Kit for production
-        document.write('<script src="https://kit.fontawesome.com/b1cfd9ca75.js" crossorigin="anonymous"><\/script>');
-      }
-    </script>
-
-</head>
-<body id="top">
-
-  <div id="preloader">
-    <div id="loader"></div>
-  </div>
-
-  <div id="page" class="s-pagewrap">
-    <header class="s-header">
-      <div class="s-header__logo">
-        <a class="logo" href="/">
-          <img src="/assets/logos/CoMPhy-Lab-no-name.png" alt="CoMPhy Lab">
-        </a>
-      </div>
-      <a class="s-header__menu-toggle" href="#0">
-        <span class="s-header__menu-text">Menu</span>
-        <span class="s-header__menu-icon"></span>
-      </a>
-      <nav class="s-header__nav">
-        <a href="#0" class="s-header__nav-close-btn"><span>Close</span></a>
-        <ul class="s-header__nav-list">
-          <li style="background: none;"><a href="https://github.com/comphy-lab" style="background: none; padding: 0;"><i class="fa-brands fa-github" style="font-size: 1.75em"></i></a></li>
-          <li><a href="#about" class="smoothscroll">About</a></li>
-          <li><a href="/team/">Team</a></li>
-          <li><a href="/research">Research</a></li>
-          <li><a href="https://blogs-comphy-lab.org/README" target="_blank">Blog</a></li>
-          <li style="background: none;"><a href="https://bsky.app/profile/comphy-lab.org" style="background: none; padding: 0;"><i class="fa-brands fa-bluesky" style="font-size: 1.75em; color: #0085ff;"></i></a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <section id="intro" class="s-intro target-section">
-      <div class="s-intro__bg rellax" data-rellax-speed="-5"></div>
-      <div class="row s-intro__content">
-        <div class="column">
-          <div class="s-intro__content-top">
-            <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 10px;">
-              <a href="https://orcid.org/0000-0002-4293-6099" style="text-decoration: none;">
-                <i class="ai ai-orcid" style="font-size: 2.5em; color: #e63946;"></i>
-              </a>
-              <a href="https://github.com/comphy-lab" style="text-decoration: none;">
-                <i class="fa-brands fa-github" style="font-size: 2.5em; color: #8a2be2;"></i>
-              </a>
-              <a href="https://scholar.google.com/citations?user=67aQviYAAAAJ" style="text-decoration: none;">
-                <i class="ai ai-google-scholar" style="font-size: 2.5em; color: #4169e1;"></i>
-              </a>
-            </div>
-            <h1 class="s-intro__title">
-              Computational Multiphase <br>
-              Physics (CoMPhy) Lab
-            </h1>
-            <div class="s-intro__caption">
-              <p>Picture: <a href="/research/#7">Worthington jet</a> formed due to bursting bubble.</p>
-            </div>
-            <div class="s-intro__subtitle">
-              <p style="margin-top: 30px;">
-                <a href="#featured" class="smoothscroll" style="display: inline-block; padding: 8px 16px; background-color: rgba(3, 102, 214, 0.9); color: white; text-decoration: none; border-radius: 25px; font-size: 0.9em; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.1); backdrop-filter: blur(5px);">
-                    Featured Research
-                </a>
-            </div>
-            </p>
-          </div>
+<section id="intro" class="s-intro target-section">
+  <div class="s-intro__bg rellax" data-rellax-speed="-5"></div>
+  <div class="row s-intro__content">
+    <div class="column">
+      <div class="s-intro__content-top">
+        <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 10px;">
+          <a href="https://orcid.org/0000-0002-4293-6099" style="text-decoration: none;">
+            <i class="ai ai-orcid" style="font-size: 2.5em; color: #e63946;"></i>
+          </a>
+          <a href="https://github.com/comphy-lab" style="text-decoration: none;">
+            <i class="fa-brands fa-github" style="font-size: 2.5em; color: #8a2be2;"></i>
+          </a>
+          <a href="https://scholar.google.com/citations?user=67aQviYAAAAJ" style="text-decoration: none;">
+            <i class="ai ai-google-scholar" style="font-size: 2.5em; color: #4169e1;"></i>
+          </a>
         </div>
-      </div>
-    </section>
-
-    <section id="about" class="s-about target-section">
-      <div class="row s-about__content" data-animate-block>
-        <div class="s-about__grid">
-          <div class="s-about__left">
-            <div id="about-content" class="s-about__desc" data-animate-el>
-              <!-- Markdown content will be loaded here -->
-            </div>
-          </div>
-          <div class="s-about__right">
-            <div class="s-about__social" data-animate-el>
-              <div class="s-about__social-header">
-                <img src="https://bsky.app/static/favicon-32x32.png" alt="Bluesky">
-                <h3>Bluesky Feed: <a href="https://bsky.app/profile/comphy-lab.org" target="_blank">@comphy-lab.org</a></h3>
-              </div>
-              <script type="module" src="https://cdn.jsdelivr.net/npm/bsky-embed/dist/bsky-embed.es.js" async></script>
-              <bsky-embed
-                username="comphy-lab.org"
-                limit="5"
-                load-more="true"
-              >
-              </bsky-embed>
-            </div>
-          </div>
+        <h1 class="s-intro__title">
+          Computational Multiphase <br>
+          Physics (CoMPhy) Lab
+        </h1>
+        <div class="s-intro__caption">
+          <p>Picture: <a href="/research/#7">Worthington jet</a> formed due to bursting bubble.</p>
         </div>
-      </div>
-    </section>
-
-    <section id="featured" class="s-featured target-section">
-      <div class="row s-featured__content" data-animate-block>
-        <div class="s-featured__grid">
-          <div class="s-featured__left">
-            <div class="s-featured__header">
-              <h2 class="text-pretitle" data-animate-el>
+        <div class="s-intro__subtitle">
+          <p style="margin-top: 30px;">
+            <a href="#featured" class="smoothscroll" style="display: inline-block; padding: 8px 16px; background-color: rgba(3, 102, 214, 0.9); color: white; text-decoration: none; border-radius: 25px; font-size: 0.9em; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.1); backdrop-filter: blur(5px);">
                 Featured Research
-              </h2>
+            </a>
+        </div>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section id="about" class="s-about target-section">
+    <div class="row s-about__content" data-animate-block>
+      <div class="s-about__grid">
+        <div class="s-about__left">
+          <div id="about-content" class="s-about__desc" data-animate-el>
+            <!-- Markdown content will be loaded here -->
+          </div>
+        </div>
+        <div class="s-about__right">
+          <div class="s-about__social" data-animate-el>
+            <div class="s-about__social-header">
+              <img src="https://bsky.app/static/favicon-32x32.png" alt="Bluesky">
+              <h3>Bluesky Feed: <a href="https://bsky.app/profile/comphy-lab.org" target="_blank">@comphy-lab.org</a></h3>
             </div>
-            <div class="featured-item" data-animate-el>
-              <div class="featured-item__image">
-                <!-- Featured papers will be loaded here by JavaScript -->
-              </div>
+            <script type="module" src="https://cdn.jsdelivr.net/npm/bsky-embed/dist/bsky-embed.es.js" async></script>
+            <bsky-embed
+              username="comphy-lab.org"
+              limit="5"
+              load-more="true"
+            >
+            </bsky-embed>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="featured" class="s-featured target-section">
+    <div class="row s-featured__content" data-animate-block>
+      <div class="s-featured__grid">
+        <div class="s-featured__left">
+          <div class="s-featured__header">
+            <h2 class="text-pretitle" data-animate-el>
+              Featured Research
+            </h2>
+          </div>
+          <div class="featured-item" data-animate-el>
+            <div class="featured-item__image">
+              <!-- Featured papers will be loaded here by JavaScript -->
             </div>
           </div>
         </div>
       </div>
-    </section>
-
-  </div>
-
-  <footer class="site-footer">
-    <div class="footer-left">
-      <a href="http://basilisk.fr/sandbox/vatsal/" target="_blank">
-        <img src="/assets/logos/logoBasilisk_TransparentBackground.png" alt="Basilisk C" class="footer-logo">
-      </a>
-      <a href="https://pof.tnw.utwente.nl/" target="_blank">
-        <img src="/assets/logos/LogoPof_transparent_white.png" alt="Physics of Fluids" class="footer-logo pof-logo">
-      </a>
-      <a href="https://www.utwente.nl/" target="_blank">
-        <img src="/assets/logos/UT_Logo_2400_Sta_White_EN.png" alt="University of Twente" class="footer-logo">
-      </a>
-      <a href="https://www.vatsalsanjay.com/" target="_blank">
-        <img src="/assets/logos/Logo_Vatsal_v3_OutLine.png" alt="Vatsal Sanjay" class="footer-logo">
-      </a>
     </div>
-    <div class="footer-center">
-      <p class="copyright-text">
-        &copy; Copyright<br>
-        CoMPhy Lab 2025
-      </p>
-    </div>
-    <div class="footer-right">
-      <a href="https://scholar.google.com/citations?user=67aQviYAAAAJ" target="_blank">
-        <i class="ai ai-google-scholar" style="font-size: 2.5em; color: white;"></i>
-      </a>
-      <a href="https://github.com/comphy-lab" target="_blank">
-        <i class="fa-brands fa-github" style="font-size: 2.5em; color: white;"></i>
-      </a>
-      <a href="https://www.youtube.com/@VatsalSanjay" target="_blank">
-        <i class="fa-brands fa-youtube" style="font-size: 2.5em; color: white;"></i>
-      </a>
-      <a href="https://bsky.app/profile/comphy-lab.org" target="_blank">
-        <i class="fa-brands fa-bluesky" style="font-size: 2.5em; color: white;"></i>
-      </a>
-      <a href="https://github.com/comphy-lab/comphy-lab.github.io" class="edit-link">
-        <i class="fa-brands fa-github"></i> Edit this page
-      </a>
-    </div>
-    <div class="ss-go-top">
-      <a class="smoothscroll" title="Back to Top" href="#top">
-          <i class="fa-solid fa-arrow-up"></i>
-       </a>
-    </div> <!-- end ss-go-top -->
-  </footer>
+  </section>
 
-  <!-- <script src="/assets/js/plugins.js"></script> -->
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <script src="/assets/js/main.js"></script>
 
-</body>
-</html>
