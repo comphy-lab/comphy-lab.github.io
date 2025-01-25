@@ -11,15 +11,13 @@ plugins:
   - jekyll-feed
   - jekyll-include-cache
   - jekyll-seo-tag
+  - jekyll-redirect-from
 
 # Site settings
 permalink: /:title/
 
 # Collections
 collections:
-  about:
-    output: true
-    permalink: /about/
   team:
     output: true
     permalink: /:collection/:name
