@@ -30,4 +30,10 @@ permalink: /404.html
       </div>
     </div>
   </div>
+  <script>
+    // Redirect both /about and /about/ to /#about
+    if (window.location.pathname === '/about/' || window.location.pathname === '/about') {
+      window.location.href = '/#about';
+    }
+  </script>
 </section>
