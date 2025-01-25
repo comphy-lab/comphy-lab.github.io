@@ -20,10 +20,10 @@
     /* Load About Content - Only on main page
     * -------------------------------------------------- */
     const loadAboutContent = async () => {
-        // Only load about.md if we're on the main page
+        // Only load aboutCoMPhy.md if we're on the main page
         if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
             try {
-                const response = await fetch('/about.md');
+                const response = await fetch('/aboutCoMPhy.md');
                 const text = await response.text();
                 const aboutContent = document.getElementById('about-content');
                 if (aboutContent) {
