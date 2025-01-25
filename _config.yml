@@ -1,17 +1,14 @@
 title: CoMPhy Lab
 description: Computational Multiphase Physics Laboratory
 baseurl: ""
-url: "https://comphy-lab.github.io"
+url: "https://comphy-lab.org"
 
 # Build settings
 markdown: kramdown
 plugins:
   - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
   - jekyll-include-cache
   - jekyll-seo-tag
-  - jekyll-redirect-from
 
 # Site settings
 permalink: /:title/
