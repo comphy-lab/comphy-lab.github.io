@@ -204,6 +204,15 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 
 **Collaboration on:** Non-Newtonian flows, Bubble bursting, Herschel--Bulkley fluids, Elastic coating
 
+## Radu Cimpeanu 
+[<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?user=6grZnhQAAAAJ&hl=en&inst=5726176096060060532&oi=ao)
+[<i class="fa-brands fa-x-twitter" style="font-size: 2em; color: #000000;"></i>](https://x.com/rcimpeanu)
+[<i class="fa-brands fa-github" style="font-size: 2.5em; color: #000000;"></i>](https://github.com/RaduCimpeanu)
+
+- [Assc. Professor, Univ. Warwick](https://www.raducimpeanu.com/)
+
+**Collaboration on:** Open-source code development, Non-coalescence impacts.
+
 ## Jie Feng
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?user=226dDBAAAAAJ)
 [<i class="fa-brands fa-x-twitter" style="font-size: 2em; color: #000000;"></i>](https://x.com/FengFluidsLab)
