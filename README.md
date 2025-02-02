@@ -23,6 +23,18 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 ├── _research                  # Research project and publication entries
 ├── _team                      # Team member profiles
 ├── assets                     # Static files (images, css, js, logos, favicon)
+│   ├── css                    # Stylesheets
+│   │   ├── main.css          # Main stylesheet
+│   │   └── search.css        # Search functionality styles
+│   ├── js                    # JavaScript files
+│   │   ├── main.js          # Main JavaScript
+│   │   ├── search.js        # Search functionality
+│   │   └── search_db.json   # Generated search database
+│   ├── favicon              # Favicon files
+│   └── img                  # Image assets
+├── scripts                    # Build and utility scripts
+│   ├── build.sh              # Main build script
+│   └── generate_search_db.rb  # Search database generator
 ├── .github                    # GitHub specific files
 │   ├── ISSUE_TEMPLATE        # Issue templates
 │   └── PULL_REQUEST_TEMPLATE # PR templates
@@ -30,6 +42,7 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 ├── index.html                 # Homepage
 ├── Gemfile                    # Ruby dependencies
 └── _site                      # Generated site (ignored by Git)
+    └── search_db.json        # Generated search database
 ```
 
 ## Part A: Front-End Documentation
@@ -37,7 +50,7 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 ### Local Development
 
 1. **Prerequisites**
-   - Ruby (version 2.5.0 or higher)
+   - Ruby (version 3.2.0 or higher)
    - Bundler (`gem install bundler`)
 
 2. **Install Dependencies**
@@ -45,12 +58,16 @@ A static website for the Computational Multiphase Physics Laboratory, built with
    bundle install
    ```
 
-3. **Run Local Server**
+3. **Build and Run**
    ```bash
+   # Build the site and search database
+   ./scripts/build.sh
+
+   # Run local server
    bundle exec jekyll serve
    ```
    - Visit http://localhost:4000 in the browser
-   - Changes in source files trigger automatic rebuilds
+   - Changes require rebuilding with `./scripts/build.sh`
 
 4. **Deployment**
    - Typically managed via GitHub Pages when merged/pushed to the main branch
@@ -137,6 +154,46 @@ A static website for the Computational Multiphase Physics Laboratory, built with
    [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](URL)
    [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](URL)
    ```
+
+### Search Functionality
+The website includes a powerful search feature that allows users to:
+- Search through all content including titles, text, and tags
+- Get instant search results with highlighted matching text
+- See match percentage for each result
+- Navigate directly to specific sections using anchor links
+
+Search results are prioritized in the following order:
+1. Team Members (highest priority)
+2. Research Papers
+3. Blog Posts from blogs.comphy-lab.org
+4. Content with Tags
+5. Regular content (headings and paragraphs)
+
+The search database is automatically generated during the build process by `scripts/generate_search_db.rb`. This script:
+- Indexes all HTML content
+- Identifies and prioritizes team members and research papers
+- Extracts tags from research papers
+- Fetches and indexes blog posts from blogs.comphy-lab.org
+- Generates a JSON database used by the search functionality
+
+### External Blog Integration
+The search functionality includes content from our external blog at blogs.comphy-lab.org:
+- Blog posts are fetched and indexed during build
+- Each post's title and content are searchable
+- Results link directly to the blog post
+- Blog content is refreshed with each build
+
+### Tags System
+Research papers can be tagged with multiple topics. Tags are defined in the markdown files using the following format:
+```html
+<tags><span>Tag1</span><span>Tag2</span></tags>
+```
+
+These tags are:
+- Displayed with each paper
+- Searchable through the search interface
+- Used for filtering papers by topic
+- Included in search match percentage calculations
 
 ## Part B: Back-End Documentation
 
