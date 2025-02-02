@@ -1,0 +1,40 @@
+name: Update Search Database
+
+on:
+  schedule:
+    - cron: '0 */4 * * *'  # Run every 4 hours
+  workflow_dispatch:  # Allow manual trigger
+  push:
+    branches: [ main ]
+    paths:
+      - '**/*.md'
+      - '**/*.html'
+      - 'scripts/generate_search_db.rb'
+
+jobs:
+  update-search:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.0'
+        bundler-cache: true
+    
+    - name: Install dependencies
+      run: |
+        gem install nokogiri
+        bundle install
+    
+    - name: Generate search database
+      run: ruby scripts/generate_search_db.rb
+    
+    - name: Commit and push if changed
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add assets/js/search_db.json
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Update search database" && git push)

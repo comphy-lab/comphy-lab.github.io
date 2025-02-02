@@ -2,6 +2,8 @@
 require 'json'
 require 'nokogiri'
 require 'fileutils'
+require 'open-uri'
+require 'net/http'
 
 # Get the project root directory (one level up from scripts)
 ROOT_DIR = File.expand_path('..', __dir__)
@@ -214,16 +216,98 @@ Dir.glob(File.join(ROOT_DIR, '_site', '**', '*.html')) do |file|
   end
 end
 
-# Write to JSON file in source assets/js directory first
-source_dir = File.join(ROOT_DIR, 'assets', 'js')
-FileUtils.mkdir_p(source_dir)
-source_file = File.join(source_dir, 'search_db.json')
-File.write(source_file, JSON.pretty_generate(search_db))
+# Fetch and index external blog content
+BLOG_URL = "https://blogs-comphy-lab.org"
+BLOG_API_URL = "https://publish-01.obsidian.md"
+BLOG_UID = "2b614a95ee2a1dd00a42a8bf3fab3099"
+FETCH_DELAY = 1 # seconds between requests
 
-# Also write to _site directory for immediate use
-site_dir = File.join(ROOT_DIR, '_site', 'assets', 'js')
-FileUtils.mkdir_p(site_dir)
-site_file = File.join(site_dir, 'search_db.json')
-FileUtils.cp(source_file, site_file)
+def fetch_url(url, headers = {})
+  uri = URI(url)
+  http = Net::HTTP.new(uri.host, uri.port)
+  http.use_ssl = true
+  
+  request = Net::HTTP::Get.new(uri)
+  headers.each { |k,v| request[k] = v }
+  request['User-Agent'] = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+  request['Origin'] = BLOG_URL
+  request['Accept'] = '*/*'
+  
+  response = http.request(request)
+  
+  if response.is_a?(Net::HTTPSuccess)
+    response.body
+  else
+    puts "Failed to fetch #{url}: #{response.code} #{response.message}"
+    nil
+  end
+end
 
-puts "Generated search database with #{search_db.length} entries"
+begin
+  puts "Generating search database..."
+  
+  # First get the main page to extract metadata
+  if main_page = fetch_url(BLOG_URL)
+    doc = Nokogiri::HTML(main_page)
+    
+    # Extract site info
+    site_info = nil
+    doc.css('script').each do |script|
+      if script.text =~ /window\.siteInfo\s*=\s*({.*?});/m
+        site_info = JSON.parse($1)
+        break
+      end
+    end
+    
+    if site_info
+      # Get the cache data
+      cache_url = "#{BLOG_API_URL}/access/#{site_info['uid']}/0_README.md"
+      if cache_data = fetch_url(cache_url, {
+        'Referer' => BLOG_URL,
+        'Accept' => 'text/markdown',
+        'Host' => URI(BLOG_API_URL).host
+      })
+        # Parse the README to get structure
+        sections = cache_data.split(/^#+\s+/)
+        sections.each do |section|
+          next if section.strip.empty?
+          
+          # Extract header and content
+          lines = section.lines
+          header = lines.first.strip
+          content = lines[1..].join.strip
+          
+          next if header.empty? || content.empty?
+          
+          # Create entry for blog section
+          entry = {
+            'title' => header,
+            'content' => content.gsub(/[*_]{1,2}([^*_]+)[*_]{1,2}/, '\1')  # Remove markdown formatting
+                              .gsub(/\[([^\]]+)\]\(([^\)]+)\)/, '\1'),     # Remove links
+            'url' => "#{BLOG_URL}/0_README##{header.downcase.gsub(/[^a-z0-9]+/, '-')}",
+            'type' => 'blog_post'
+          }
+          search_db << entry
+        end
+      end
+    end
+  end
+  
+  # Write to JSON file in source assets/js directory first
+  source_file = File.join(File.dirname(__FILE__), '..', 'assets', 'js', 'search_db.json')
+  File.write(source_file, JSON.pretty_generate(search_db))
+  puts "Written search database to #{source_file}"
+  
+  # Also write to _site directory if it exists (for local testing)
+  site_file = File.join(File.dirname(__FILE__), '..', '_site', 'assets', 'js', 'search_db.json')
+  if File.directory?(File.dirname(site_file))
+    File.write(site_file, JSON.pretty_generate(search_db))
+    puts "Written search database to #{site_file}"
+  end
+  
+  puts "Generated search database with #{search_db.length} entries"
+rescue => e
+  puts "Error: #{e.message}"
+  puts e.backtrace
+  exit 1
+end

@@ -53,10 +53,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 let score = 0;
                 if (entry.type === 'team_member') score += 100;
                 else if (entry.type === 'paper') score += 90;
-                else if (entry.type === 'markdown_section') score += 85;
+                else if (entry.type === 'blog_post') score += 85;
+                else if (entry.type === 'markdown_section') score += 80;
                 else if (entry.type === 'markdown_text') score += 75;
-                else if (entry.type === 'section') score += 80;
-                else if (entry.type === 'text' && entry.links?.length > 0) score += 70;
+                else if (entry.type === 'section') score += 70;
+                else if (entry.type === 'text' && entry.links?.length > 0) score += 65;
                 else if (entry.type === 'text') score += 60;
                 else if (entry.tags) score += 50;
                 else if (entry.type === 'h1') score += 40;

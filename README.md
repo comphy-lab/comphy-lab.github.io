@@ -165,14 +165,23 @@ The website includes a powerful search feature that allows users to:
 Search results are prioritized in the following order:
 1. Team Members (highest priority)
 2. Research Papers
-3. Content with Tags
-4. Regular content (headings and paragraphs)
+3. Blog Posts from blogs.comphy-lab.org
+4. Content with Tags
+5. Regular content (headings and paragraphs)
 
 The search database is automatically generated during the build process by `scripts/generate_search_db.rb`. This script:
 - Indexes all HTML content
 - Identifies and prioritizes team members and research papers
 - Extracts tags from research papers
+- Fetches and indexes blog posts from blogs.comphy-lab.org
 - Generates a JSON database used by the search functionality
+
+### External Blog Integration
+The search functionality includes content from our external blog at blogs.comphy-lab.org:
+- Blog posts are fetched and indexed during build
+- Each post's title and content are searchable
+- Results link directly to the blog post
+- Blog content is refreshed with each build
 
 ### Tags System
 Research papers can be tagged with multiple topics. Tags are defined in the markdown files using the following format:
