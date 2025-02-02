@@ -25,8 +25,41 @@ Dir.glob(File.join(ROOT_DIR, '_site', '**', '*.html')) do |file|
   # Extract page title
   title = doc.at_css('title')&.text || File.basename(file, '.html').capitalize
 
-  # Process main content sections
+  # Special handling for team members
+  doc.css('h2').each do |heading|
+    name = heading.text.strip
+    next if name.empty?
+
+    # Get content following the heading until the next h2
+    content_nodes = []
+    current = heading.next_element
+    while current && current.name != 'h2'
+      if current.text?
+        content_nodes << current.text.strip
+      elsif current.name == 'ul' || current.name == 'p'
+        content_nodes << current.text.strip
+      end
+      current = current.next_element
+    end
+    content = content_nodes.join(' ').strip
+
+    # Create entry for team member
+    if content.include?('Research Interest') || content.include?('Collaboration on') || content.match?(/Ph\.D\.|Postdoc|Professor|Student/)
+      entry = {
+        'title' => name,
+        'content' => content,
+        'url' => "#{url}##{name.downcase.gsub(/[^a-z0-9]+/, '-')}",
+        'type' => 'team_member'
+      }
+      search_db << entry
+    end
+  end
+
+  # Process other content sections
   doc.css('h1, h2, h3, h4, h5, h6').each do |heading|
+    # Skip if this is a team member heading we already processed
+    next if heading.name == 'h2' && heading.text.strip.match?(/Ph\.D\.|Postdoc|Professor|Student/)
+    
     # Get the heading text
     heading_text = heading.text.strip
     next if heading_text.empty?

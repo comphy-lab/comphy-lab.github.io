@@ -1,7 +1,7 @@
 /* Search Styles */
 .search-container {
     position: relative;
-    margin-left: 2rem;
+    margin-left: 0.1rem;
 }
 
 .search-wrapper {
@@ -11,7 +11,7 @@
 }
 
 #searchInput {
-    width: 200px;
+    width: 50px;
     padding: 0.8rem 3rem 0.8rem 1rem;
     border: none;
     border-radius: 5px;
@@ -22,7 +22,7 @@
 }
 
 #searchInput:focus {
-    width: 300px;
+    width: 150px;
     outline: none;
     background: rgba(255, 255, 255, 1);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);

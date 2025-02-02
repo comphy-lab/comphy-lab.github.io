@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ page.title }} - CoMPhy Lab</title>
+  <meta name="base-url" content="{{ site.baseurl }}">
+  <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
 
   <script>
     document.documentElement.classList.remove('no-js');
@@ -16,7 +17,9 @@
   <!-- Site styles -->
   <link rel="stylesheet" href="/assets/css/vendor.css">
   <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/search.css">
   <link rel="stylesheet" href="/assets/css/research.css">
+
   <script>
     // Check if we're on localhost
     if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
