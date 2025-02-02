@@ -74,12 +74,20 @@
       <nav class="s-header__nav">
         <a href="#0" class="s-header__nav-close-btn"><span>Close</span></a>
         <ul class="s-header__nav-list">
-          <li style="background: none;"><a href="https://github.com/comphy-lab" style="background: none; padding: 0;"><i class="fa-brands fa-github" style="font-size: 1.75em;"></i></a></li>
+          <li style="background: none;"><a href="https://github.com/comphy-lab" style="background: none; padding: 0;"><i class="fa-brands fa-github" style="font-size: 1.75em"></i></a></li>
           <li><a href="/#about">About</a></li>
           <li><a href="/team">Team</a></li>
           <li><a href="/research">Research</a></li>
           <li><a href="https://blogs-comphy-lab.org/" target="_blank">Blog <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8em;"></i></a></li>
           <li style="background: none;"><a href="https://bsky.app/profile/comphy-lab.org" style="background: none; padding: 0;"><i class="fa-brands fa-bluesky" style="font-size: 1.75em; color: #0085ff;"></i></a></li>
+          <!-- Search Container -->
+          <li class="search-container">
+            <div class="search-wrapper">
+              <input type="text" id="searchInput" placeholder="Search..." aria-label="Search">
+              <i class="fa fa-search search-icon"></i>
+            </div>
+            <div id="searchResults" class="search-results"></div>
+          </li>
         </ul>
       </nav>
     </header>
@@ -204,7 +212,13 @@
       </div> <!-- end ss-go-top -->
     </footer>
 
+  <!-- Core scripts -->
   <script src="/assets/js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <!-- Search dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+  <!-- Search functionality -->
+  <script src="/assets/js/search.js"></script>
   <script>
     // Simple fade-in effect for images
     document.addEventListener('DOMContentLoaded', function() {
