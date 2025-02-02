@@ -1,0 +1,1520 @@
+[
+  {
+    "title": "About Us",
+    "content": "We are based at the Physics of Fluids Department at the University of Twente, where we investigate [**non-Newtonian free-surface flows**](/research/?tag=Non-Newtonian) and [**soft matter singularities**](/research/?tag=Soft-matter-singularities). Our group employs a synergy of continuum simulations, experiments (through collaborations), and theoretical analysis to understand phenomena ranging involving drops, bubbles, jets, sheets, and more. We strive to connect fundamental findings with real-world applications, from industrial processes to everyday fluid dynamics.",
+    "url": "/#about",
+    "type": "markdown_section",
+    "source": "aboutCoMPhy.md"
+  },
+  {
+    "title": "About Us",
+    "content": "We are based at the Physics of Fluids Department at the University of Twente, where we investigate [**non-Newtonian free-surface flows**](/research/?tag=Non-Newtonian) and [**soft matter singularities**](/research/?tag=Soft-matter-singularities). Our group employs a synergy of continuum simulations, experiments (through collaborations), and theoretical analysis to understand phenomena ranging involving drops, bubbles, jets, sheets, and more. We strive to connect fundamental findings with real-world applications, from industrial processes to everyday fluid dynamics.",
+    "url": "/#about",
+    "type": "markdown_text",
+    "source": "aboutCoMPhy.md"
+  },
+  {
+    "title": "Soft Matter Singularities",
+    "content": "We examine topological transitions in fluid systems—such as [**droplet impact**](/research/?tag=Drops), [**bubble bursting**](/research/?tag=Bubbles), and [**sheet fragmentation**](/research/?tag=Sheets) — where local instabilities drive fast, often dramatic flow dynamics. Our goal is to expose the universal mechanisms governing these [**singular**]((/research/?tag=Soft-matter-singularities)) events in soft matter.",
+    "url": "/#about",
+    "type": "markdown_section",
+    "source": "aboutCoMPhy.md"
+  },
+  {
+    "title": "Soft Matter Singularities",
+    "content": "We examine topological transitions in fluid systems—such as [**droplet impact**](/research/?tag=Drops), [**bubble bursting**](/research/?tag=Bubbles), and [**sheet fragmentation**](/research/?tag=Sheets) — where local instabilities drive fast, often dramatic flow dynamics. Our goal is to expose the universal mechanisms governing these [**singular**]((/research/?tag=Soft-matter-singularities)) events in soft matter.",
+    "url": "/#about",
+    "type": "markdown_text",
+    "source": "aboutCoMPhy.md"
+  },
+  {
+    "title": "Non-Newtonian Flows as the `Drosophila' of Continuum Mechanics",
+    "content": "From [**elastoviscoplastic**]((/research/?tag=Non-Newtonian)) bubble bursting and elastic sheet break-up to champagne [**bubble**](/research/?tag=Bubbles) bursting and classical Taylor–Culick retractions, non-Newtonian fluids serve as model systems to explore the fundamentals of continuum mechanics. By integrating high-fidelity simulations, analytical frameworks, and collaborative experiments, we reveal how microstructural stresses affect fluid and solid dynamics. This research provides key insights for industrial and environmental applications.",
+    "url": "/#about",
+    "type": "markdown_section",
+    "source": "aboutCoMPhy.md"
+  },
+  {
+    "title": "Non-Newtonian Flows as the `Drosophila' of Continuum Mechanics",
+    "content": "From [**elastoviscoplastic**]((/research/?tag=Non-Newtonian)) bubble bursting and elastic sheet break-up to champagne [**bubble**](/research/?tag=Bubbles) bursting and classical Taylor–Culick retractions, non-Newtonian fluids serve as model systems to explore the fundamentals of continuum mechanics. By integrating high-fidelity simulations, analytical frameworks, and collaborative experiments, we reveal how microstructural stresses affect fluid and solid dynamics. This research provides key insights for industrial and environmental applications.",
+    "url": "/#about",
+    "type": "markdown_text",
+    "source": "aboutCoMPhy.md"
+  },
+  {
+    "title": "Viscous Free-Surface Flows",
+    "content": "We investigate various viscous free-surface flows including inertial contact lines, [**bubble**](/research/?tag=Bubbles) removal, and focusing of [**waves**](/research/?tag=Waves). These phenomena are critical to energy transitions and manufacturing. For instance, a key challenge is optimizing bubble detachment in electrolysis to boost efficiency. This research involves advanced numerical methods and industry partnerships, with the broader aim of advancing technologies from chemical reactors to printing processes.",
+    "url": "/#about",
+    "type": "markdown_section",
+    "source": "aboutCoMPhy.md"
+  },
+  {
+    "title": "Viscous Free-Surface Flows",
+    "content": "We investigate various viscous free-surface flows including inertial contact lines, [**bubble**](/research/?tag=Bubbles) removal, and focusing of [**waves**](/research/?tag=Waves). These phenomena are critical to energy transitions and manufacturing. For instance, a key challenge is optimizing bubble detachment in electrolysis to boost efficiency. This research involves advanced numerical methods and industry partnerships, with the broader aim of advancing technologies from chemical reactors to printing processes.",
+    "url": "/#about",
+    "type": "markdown_text",
+    "source": "aboutCoMPhy.md"
+  },
+  {
+    "title": "Commitment to Open Science",
+    "content": "Open exchange of ideas drives our progress. We share our codes from the earliest stages of development, embracing transparent research practices to foster collaboration and reproducibility. We welcome inquiries and partnerships from the broader scientific community. Watchout for [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab) and [<i class=\"fa-brands fa-github\" style=\"font-size: 1.5em; color: black;\"></i>](https://github.com/comphy-lab) on this website to interact with our codes. \n\nFeel free to contact us for discussions about our work or anything else related to fluid physics. Nothing is more exhilarating than a healthy scientific discussion.",
+    "url": "/#about",
+    "type": "markdown_section",
+    "source": "aboutCoMPhy.md"
+  },
+  {
+    "title": "Commitment to Open Science",
+    "content": "Open exchange of ideas drives our progress. We share our codes from the earliest stages of development, embracing transparent research practices to foster collaboration and reproducibility. We welcome inquiries and partnerships from the broader scientific community. Watchout for [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab) and [<i class=\"fa-brands fa-github\" style=\"font-size: 1.5em; color: black;\"></i>](https://github.com/comphy-lab) on this website to interact with our codes.",
+    "url": "/#about",
+    "type": "markdown_text",
+    "source": "aboutCoMPhy.md"
+  },
+  {
+    "title": "Commitment to Open Science",
+    "content": "Feel free to contact us for discussions about our work or anything else related to fluid physics. Nothing is more exhilarating than a healthy scientific discussion.",
+    "url": "/#about",
+    "type": "markdown_text",
+    "source": "aboutCoMPhy.md"
+  },
+  {
+    "title": "Location & Website",
+    "content": "[![Location](https://img.shields.io/badge/-Physics%20of%20Fluids-4285F4?style=flat&logo=googlemaps&logoColor=white)](https://maps.app.goo.gl/jSTCYnfcndF1uZPV8)\n[![Website](https://img.shields.io/badge/-comphy--lab.org-4285F4?style=flat&logo=googlechrome&logoColor=white)](http://www.comphy-lab.org)\n[![Email](https://img.shields.io/badge/-mailto:vatsalsy@comphy--lab.org-EA4335?style=flat&logo=gmail&logoColor=white)](mailto:vatsalsy@comphy-lab.org)\n\n<div class=\"email-container\">\n    <span class=\"email-text\">vatsalsy@comphy-lab.org</span>\n    <button class=\"copy-btn\" onclick=\"copyEmail(this)\" data-text=\"vatsalsy@comphy-lab.org\">\n        <i class=\"fas fa-copy\"></i>\n    </button>\n</div>",
+    "url": "/#about",
+    "type": "markdown_section",
+    "source": "aboutCoMPhy.md"
+  },
+  {
+    "title": "Location & Website",
+    "content": "[![Location](https://img.shields.io/badge/-Physics%20of%20Fluids-4285F4?style=flat&logo=googlemaps&logoColor=white)](https://maps.app.goo.gl/jSTCYnfcndF1uZPV8)\n[![Website](https://img.shields.io/badge/-comphy--lab.org-4285F4?style=flat&logo=googlechrome&logoColor=white)](http://www.comphy-lab.org)\n[![Email](https://img.shields.io/badge/-mailto:vatsalsy@comphy--lab.org-EA4335?style=flat&logo=gmail&logoColor=white)](mailto:vatsalsy@comphy-lab.org)",
+    "url": "/#about",
+    "type": "markdown_text",
+    "source": "aboutCoMPhy.md"
+  },
+  {
+    "title": "Academic Profiles",
+    "content": "[![Google Scholar](https://img.shields.io/badge/-Google%20Scholar-4285F4?style=flat&logo=googlescholar&logoColor=white)](https://scholar.google.com/citations?hl=en&user=67aQviYAAAAJ)\n[![ORCID](https://img.shields.io/badge/-ORCID-A6CE39?style=flat&logo=orcid&logoColor=white)](https://orcid.org/0000-0002-4293-6099)\n[![arXiv](https://img.shields.io/badge/-arXiv-B31B1B?style=flat&logo=arxiv&logoColor=white)](https://arxiv.org/search/?query=vatsal+sanjay&searchtype=all&source=header)\n[![ResearchGate](https://img.shields.io/badge/-ResearchGate-00CCBB?style=flat&logo=researchgate&logoColor=white)](https://www.researchgate.net/profile/Vatsal-Sanjay-2)",
+    "url": "/#about",
+    "type": "markdown_section",
+    "source": "aboutCoMPhy.md"
+  },
+  {
+    "title": "Academic Profiles",
+    "content": "[![Google Scholar](https://img.shields.io/badge/-Google%20Scholar-4285F4?style=flat&logo=googlescholar&logoColor=white)](https://scholar.google.com/citations?hl=en&user=67aQviYAAAAJ)\n[![ORCID](https://img.shields.io/badge/-ORCID-A6CE39?style=flat&logo=orcid&logoColor=white)](https://orcid.org/0000-0002-4293-6099)\n[![arXiv](https://img.shields.io/badge/-arXiv-B31B1B?style=flat&logo=arxiv&logoColor=white)](https://arxiv.org/search/?query=vatsal+sanjay&searchtype=all&source=header)\n[![ResearchGate](https://img.shields.io/badge/-ResearchGate-00CCBB?style=flat&logo=researchgate&logoColor=white)](https://www.researchgate.net/profile/Vatsal-Sanjay-2)",
+    "url": "/#about",
+    "type": "markdown_text",
+    "source": "aboutCoMPhy.md"
+  },
+  {
+    "title": "Social Media",
+    "content": "[![X](https://img.shields.io/badge/-@VatsalSanjay-000000?style=flat&logo=x&logoColor=white)](https://twitter.com/VatsalSanjay)\n[![Bluesky](https://img.shields.io/badge/-@comphy--lab.org-0285FF?style=flat&logo=bluesky&logoColor=white)](https://bsky.app/profile/comphy-lab.org)\n\nFor supplementary videos and teaser of our upcoming work:\n\n<a href=\"https://www.youtube.com/@VatsalSanjay\" target=\"_blank\">\n  <picture>\n    <source media=\"(prefers-color-scheme: dark)\" srcset=\"https://cust-youtube-stats-card.vercel.app/api?channelid=UC-eTdHrAM_eQrWOtNLoT19w&theme=solarized_light&cache_seconds=0\" width=\"auto\" height=\"200px\">\n    <img alt=\"Vatsal's YouTube Stats\" src=\"https://cust-youtube-stats-card.vercel.app/api?channelid=UC-eTdHrAM_eQrWOtNLoT19w&theme=vision_friendly_dark&hide_border=true\" width=\"auto\" height=\"200px\">\n  </picture>\n</a>",
+    "url": "/#about",
+    "type": "markdown_section",
+    "source": "aboutCoMPhy.md"
+  },
+  {
+    "title": "Social Media",
+    "content": "[![X](https://img.shields.io/badge/-@VatsalSanjay-000000?style=flat&logo=x&logoColor=white)](https://twitter.com/VatsalSanjay)\n[![Bluesky](https://img.shields.io/badge/-@comphy--lab.org-0285FF?style=flat&logo=bluesky&logoColor=white)](https://bsky.app/profile/comphy-lab.org)",
+    "url": "/#about",
+    "type": "markdown_text",
+    "source": "aboutCoMPhy.md"
+  },
+  {
+    "title": "Social Media",
+    "content": "For supplementary videos and teaser of our upcoming work:",
+    "url": "/#about",
+    "type": "markdown_text",
+    "source": "aboutCoMPhy.md"
+  },
+  {
+    "title": "404! But, there are no dragons either.",
+    "content": "Seems like you didn't find what you wanted. But don't worry - we've got plenty of exciting projects \n            waiting for you to explore!\n            Check Out:",
+    "url": "/404.html#404-but-there-are-no-dragons-either-",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "404! But, there are no dragons either.",
+    "content": "Take Me Home",
+    "url": "/404.html#404-but-there-are-no-dragons-either-",
+    "type": "text",
+    "links": [
+      ""
+    ]
+  },
+  {
+    "title": "404! But, there are no dragons either.",
+    "content": "© Copyright\n        CoMPhy Lab 2025",
+    "url": "/404.html#404-but-there-are-no-dragons-either-",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "About",
+    "content": "If you are not redirected automatically, please click here.",
+    "url": "/about.html#about",
+    "type": "text",
+    "links": [
+      "#about"
+    ]
+  },
+  {
+    "title": "Computational Multiphase \n          Physics (CoMPhy) Lab",
+    "content": "Picture: Worthington jet formed due to bursting bubble.",
+    "url": "/index.html#computational-multiphase-physics-comphy-lab",
+    "type": "text",
+    "links": [
+      "research/#7"
+    ]
+  },
+  {
+    "title": "Computational Multiphase \n          Physics (CoMPhy) Lab",
+    "content": "Featured Research",
+    "url": "/index.html#computational-multiphase-physics-comphy-lab",
+    "type": "text",
+    "links": [
+      "#featured"
+    ]
+  },
+  {
+    "title": "Featured Research",
+    "content": "© Copyright\n        CoMPhy Lab 2025",
+    "url": "/index.html#featured-research",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Demirkır, Ç., Yang, R., Bashkatov, A., Sanjay, V., Lohse, D., & Krug, D. To jump or not to jump: Adhesion and viscous dissipation dictate the detachment of coalescing wall-attached bubbles. Submitted to Phys. Rev. Lett. (2025).",
+    "content": "",
+    "url": "/research/index.html#demirk-r-yang-r-bashkatov-a-sanjay-v-lohse-d-krug-d-to-jump-or-not-to-jump-adhesion-and-viscous-dissipation-dictate-the-detachment-of-coalescing-wall-attached-bubbles-submitted-to-phys-rev-lett-2025-",
+    "type": "paper",
+    "tags": [
+      "Bubbles",
+      "Coalescence"
+    ]
+  },
+  {
+    "title": "Dixit, A. K., Oratis, A., Zinelis, K., Lohse, D., & Sanjay, V. Viscoelastic Worthington jets & droplets produced by bursting bubbles. Received positive reviews in J. Fluid Mech. (2025).",
+    "content": "",
+    "url": "/research/index.html#dixit-a-k-oratis-a-zinelis-k-lohse-d-sanjay-v-viscoelastic-worthington-jets-droplets-produced-by-bursting-bubbles-received-positive-reviews-in-j-fluid-mech-2025-",
+    "type": "paper",
+    "tags": [
+      "Bubbles",
+      "Non-Newtonian",
+      "Jets",
+      "Soft-matter-singularities",
+      "Drops"
+    ]
+  },
+  {
+    "title": "Sanjay, V., & Lohse, D. Unifying theory of scaling in drop impact: Forces & maximum spreading diameter. Received positive reviews in Phys. Rev. Lett. (2025).",
+    "content": "",
+    "url": "/research/index.html#sanjay-v-lohse-d-unifying-theory-of-scaling-in-drop-impact-forces-maximum-spreading-diameter-received-positive-reviews-in-phys-rev-lett-2025-",
+    "type": "paper",
+    "tags": [
+      "Drops",
+      "Dissipative anamoly",
+      "Superamphiphobic-surfaces",
+      "Impact forces"
+    ]
+  },
+  {
+    "title": "Bashkatov, A., Bürkle, F., Demirkır, Ç., Ding, W., Sanjay, V., Babich, A., Yang, X., Mutschke, G., Czarske, J., Lohse, D., et al. Electrolyte spraying within H₂ bubbles during water electrolysis. Received positive reviews in Nat. Commun. (2025).",
+    "content": "",
+    "url": "/research/index.html#bashkatov-a-b-rkle-f-demirk-r-ding-w-sanjay-v-babich-a-yang-x-mutschke-g-czarske-j-lohse-d-et-al-electrolyte-spraying-within-h-bubbles-during-water-electrolysis-received-positive-reviews-in-nat-commun-2025-",
+    "type": "paper",
+    "tags": [
+      "Bubbles",
+      "Jets",
+      "Coalescence",
+      "Soft-matter-singularities",
+      "Drops"
+    ]
+  },
+  {
+    "title": "[14] Sanjay, V., Zhang, B., Lv, C., & Lohse, D. The role of viscosity on drop impact forces on non-wetting surfaces. J. Fluid Mech., in press (2025).",
+    "content": "",
+    "url": "/research/index.html#-14-sanjay-v-zhang-b-lv-c-lohse-d-the-role-of-viscosity-on-drop-impact-forces-on-non-wetting-surfaces-j-fluid-mech-in-press-2025-",
+    "type": "paper",
+    "tags": [
+      "Drops",
+      "Jets",
+      "Superhydrophobic surfaces",
+      "Soft-matter-singularities",
+      "Impact forces"
+    ]
+  },
+  {
+    "title": "[13] Kayal, L., Sanjay, V., Yewale, N., Kumar, A., & Dasgupta, R. Focusing of concentric free-surface waves. J. Fluid Mech., 1003, A14 (2025).",
+    "content": "",
+    "url": "/research/index.html#-13-kayal-l-sanjay-v-yewale-n-kumar-a-dasgupta-r-focusing-of-concentric-free-surface-waves-j-fluid-mech-1003-a14-2025-",
+    "type": "paper",
+    "tags": [
+      "Waves",
+      "Dissipative anamoly"
+    ]
+  },
+  {
+    "title": "[12] Balasubramanian, A. G., Sanjay, V., Jalaal, M., Vinuesa, R., & Tammisola, O. Bursting bubble in an elastoviscoplastic medium. J. Fluid Mech., 1001, A9 (2024).",
+    "content": "",
+    "url": "/research/index.html#-12-balasubramanian-a-g-sanjay-v-jalaal-m-vinuesa-r-tammisola-o-bursting-bubble-in-an-elastoviscoplastic-medium-j-fluid-mech-1001-a9-2024-",
+    "type": "paper",
+    "tags": [
+      "Bubbles",
+      "Non-Newtonian",
+      "Jets",
+      "Soft-matter-singularities",
+      "Featured"
+    ]
+  },
+  {
+    "title": "[11] Sanjay, V., Chantelot, P., & Lohse, D. When does an impacting drop stop bouncing? J. Fluid Mech., 958, A26 (2023).",
+    "content": "",
+    "url": "/research/index.html#-11-sanjay-v-chantelot-p-lohse-d-when-does-an-impacting-drop-stop-bouncing-j-fluid-mech-958-a26-2023-",
+    "type": "paper",
+    "tags": [
+      "Drops",
+      "Bouncing",
+      "Dissipative anamoly",
+      "Featured"
+    ]
+  },
+  {
+    "title": "[10] Sanjay, V., Lakshman, S., Chantelot, P., Snoeijer, J. H., & Lohse, D. Drop impact on viscous liquid films. J. Fluid Mech., 958, A25 (2023).",
+    "content": "",
+    "url": "/research/index.html#-10-sanjay-v-lakshman-s-chantelot-p-snoeijer-j-h-lohse-d-drop-impact-on-viscous-liquid-films-j-fluid-mech-958-a25-2023-",
+    "type": "paper",
+    "tags": [
+      "Drops",
+      "Bouncing",
+      "Superhydrophobic surfaces"
+    ]
+  },
+  {
+    "title": "➡️ Sanjay, V. Viscous free-surface flows. Ph.D. Thesis, Physics of Fluids, University of Twente (2022).",
+    "content": "",
+    "url": "/research/index.html#-sanjay-v-viscous-free-surface-flows-ph-d-thesis-physics-of-fluids-university-of-twente-2022-",
+    "type": "paper",
+    "tags": [
+      "Drops",
+      "Jets",
+      "Sheets",
+      "Bubbles",
+      "Soft-matter-singularities",
+      "Non-Newtonian"
+    ]
+  },
+  {
+    "title": "[9] Sanjay, V. Taylor--Culick retractions and the influence of the surroundings. J. Fluid Mech., 948, A14 (2022).",
+    "content": "",
+    "url": "/research/index.html#-9-sanjay-v-taylor-culick-retractions-and-the-influence-of-the-surroundings-j-fluid-mech-948-a14-2022-",
+    "type": "paper",
+    "tags": [
+      "Sheets",
+      "Dissipative anamoly",
+      "Retraction"
+    ]
+  },
+  {
+    "title": "[8] Zhang, B., Sanjay, V., Shi, S., and Zhao, Y., and Lv, C., and Feng, X.-Q., & Lohse, D. Impact forces of water drops falling on superhydrophobic surfaces. Phys. Rev. Lett., 129(10), 104501 (2022).",
+    "content": "",
+    "url": "/research/index.html#-8-zhang-b-sanjay-v-shi-s-and-zhao-y-and-lv-c-and-feng-x-q-lohse-d-impact-forces-of-water-drops-falling-on-superhydrophobic-surfaces-phys-rev-lett-129-10-104501-2022-",
+    "type": "paper",
+    "tags": [
+      "Drops",
+      "Superhydrophobic surfaces",
+      "Impact forces"
+    ]
+  },
+  {
+    "title": "[7] Sanjay, V., Lohse, D., & Jalaal, M. Bursting bubble in a viscoplastic medium. J. Fluid Mech., 922, A2 (2021).",
+    "content": "",
+    "url": "/research/index.html#-7-sanjay-v-lohse-d-jalaal-m-bursting-bubble-in-a-viscoplastic-medium-j-fluid-mech-922-a2-2021-",
+    "type": "paper",
+    "tags": [
+      "Bubbles",
+      "Jets",
+      "Non-Newtonian",
+      "Soft-matter-singularities"
+    ]
+  },
+  {
+    "title": "[6] Ramírez-Soto, O., Sanjay, V., Lohse, D., Pham, J. T., & Vollmer, D. Lifting a sessile oil drop from a superamphiphobic surface with an impacting one. Sci. Adv., 6(34), eaba4330 (2020).",
+    "content": "",
+    "url": "/research/index.html#-6-ram-rez-soto-o-sanjay-v-lohse-d-pham-j-t-vollmer-d-lifting-a-sessile-oil-drop-from-a-superamphiphobic-surface-with-an-impacting-one-sci-adv-6-34-eaba4330-2020-",
+    "type": "paper",
+    "tags": [
+      "Drops",
+      "Superamphiphobic-surfaces",
+      "Lifting"
+    ]
+  },
+  {
+    "title": "[5] Jain, A., Sanjay, V., & Das, A. K. Consequences of inclined and dual jet impingement in stagnant liquid and stratified layers. AIChE J., 65(1), 372-384 (2019).",
+    "content": "",
+    "url": "/research/index.html#-5-jain-a-sanjay-v-das-a-k-consequences-of-inclined-and-dual-jet-impingement-in-stagnant-liquid-and-stratified-layers-aiche-j-65-1-372-384-2019-",
+    "type": "paper",
+    "tags": [
+      "Jets",
+      "Bubbles"
+    ]
+  },
+  {
+    "title": "[4] Soni, A., Sanjay, V., & Das, A. K. Formation of fluid structures due to jet-jet and jet-sheet interactions. Chem. Eng. Sci., 191, 67-77 (2018).",
+    "content": "",
+    "url": "/research/index.html#-4-soni-a-sanjay-v-das-a-k-formation-of-fluid-structures-due-to-jet-jet-and-jet-sheet-interactions-chem-eng-sci-191-67-77-2018-",
+    "type": "paper",
+    "tags": [
+      "Jets"
+    ]
+  },
+  {
+    "title": "[3] Sanjay, V., Das, A.K. Numerical assessment of hazard in compartmental fire having steady heat release rate from the source. Build. Simul. 11, 613–624 (2018).",
+    "content": "",
+    "url": "/research/index.html#-3-sanjay-v-das-a-k-numerical-assessment-of-hazard-in-compartmental-fire-having-steady-heat-release-rate-from-the-source-build-simul-11-613-624-2018-",
+    "type": "paper",
+    "tags": [
+      "Others",
+      "Fire",
+      "Evacuation"
+    ]
+  },
+  {
+    "title": "[2] Sanjay, V., & Das, A. K. Formation of liquid chain by collision of two laminar jets. Phys. Fluids, 29(11), 112101 (2017).",
+    "content": "",
+    "url": "/research/index.html#-2-sanjay-v-das-a-k-formation-of-liquid-chain-by-collision-of-two-laminar-jets-phys-fluids-29-11-112101-2017-",
+    "type": "paper",
+    "tags": [
+      "Jets",
+      "Sheets"
+    ]
+  },
+  {
+    "title": "[1] Sanjay, V., & Das, A. K. On air entrainment in a water pool by impingement of a jet. AIChE J., 63(11), 5169-5181 (2017).",
+    "content": "",
+    "url": "/research/index.html#-1-sanjay-v-das-a-k-on-air-entrainment-in-a-water-pool-by-impingement-of-a-jet-aiche-j-63-11-5169-5181-2017-",
+    "type": "paper",
+    "tags": [
+      "Jets",
+      "Bubbles"
+    ]
+  },
+  {
+    "title": "Sort by topic",
+    "content": "Click on any tag to filter papers by topic. Each paper can have multiple tags.",
+    "url": "/research/index.html#sort-by-topic",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "[1] Sanjay, V., & Das, A. K. On air entrainment in a water pool by impingement of a jet. AIChE J., 63(11), 5169-5181 (2017).",
+    "content": "© Copyright\n          CoMPhy Lab 2025",
+    "url": "/research/index.html#-1-sanjay-v-das-a-k-on-air-entrainment-in-a-water-pool-by-impingement-of-a-jet-aiche-j-63-11-5169-5181-2017-",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Research",
+    "content": "Cover of that volume of J. Fluid Mech.      As of March/April 2024, this highly cited paper received enough citations to place it in the top 1% of the academic field of Physics based on a highly cited threshold for the field and publication year. Source: Web of Science.\n  Editor’s Suggestion of that issue of Phys. Rev. Lett.\n  Research Highlight: Castelvecchi, D. The physics of a bouncing droplet’s impact. Nature, 609, 225 (2022).",
+    "url": "/research/index.html#research",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "2024",
+    "content": "Cover of that volume of J. Fluid Mech.",
+    "url": "/research/index.html#2024",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "2022",
+    "content": "As of March/April 2024, this highly cited paper received enough citations to place it in the top 1% of the academic field of Physics based on a highly cited threshold for the field and publication year. Source: Web of Science.\n  Editor’s Suggestion of that issue of Phys. Rev. Lett.\n  Research Highlight: Castelvecchi, D. The physics of a bouncing droplet’s impact. Nature, 609, 225 (2022).",
+    "url": "/research/index.html#2022",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Vatsal Sanjay (PI)",
+    "content": "Postdoc, Phys. Fluids - Univ. Twente / 2022-25\n  Ph.D., Phys. Fluids - Univ. Twente / 2018-22\n  B.Tech + M.Tech, Two-Phase Flow & Instability Lab, IIT-Roorkee / 2013-18\n  Personal Website Research Interest: See here Download CV",
+    "url": "/team/index.html#vatsal-sanjay-pi-",
+    "type": "team_member"
+  },
+  {
+    "title": "Ayush Dixit (Ph.D)",
+    "content": "Joint with Detlef Lohse Ph.D. Student, Phys. Fluids - Univ. Twente / 2023-now\n  B.Tech + M.Tech, Two-Phase Flow & Instability Lab, IIT-Roorkee / 2018-23 Research Interest: Viscoelastic Flows, Bursting Bubbles, Respiratory Drops.",
+    "url": "/team/index.html#ayush-dixit-ph-d-",
+    "type": "team_member"
+  },
+  {
+    "title": "Aman Bhargava (Ph.D)",
+    "content": "Joint with Detlef Lohse Ph.D. Student, Phys. Fluids - Univ. Twente / 2024-now\n  M.Sc. Chemical Engineering, Purdue University / 2022-23\n  B.Tech. (Hons.) Chemical Engineering, IIT-Bombay / 2018-22 Research Interest: Inertial Contact Line, Drop Retraction.",
+    "url": "/team/index.html#aman-bhargava-ph-d-",
+    "type": "team_member"
+  },
+  {
+    "title": "Jnandeep Talukdar (M.Sc.)",
+    "content": "Joint with Detlef Lohse Ph.D. Student, Phys. Fluids - Univ. Twente / starting May 2025\n  M.Sc. Student, Phys. Fluids - Univ. Twente / 2023-25\n  B.Tech. Mechanical Engineering, IIT-Patna / 2019-23 Research Interest: Surfactant Dynamics, Dissipative Anomaly, Soft Wetting.",
+    "url": "/team/index.html#jnandeep-talukdar-m-sc-",
+    "type": "team_member"
+  },
+  {
+    "title": "Saumili Jana (M.Sc.)",
+    "content": "Joint with Detlef Lohse Ph.D. Student, Phys. Fluids - Univ. Twente / starting Jul 2025\n  B.Tech.+M.Tech. Student, IIT-Kharagpur / 2020-25\n  Research Intern, Phys. Fluids - Univ. Twente / 2024 Research Interest: Soft Impact.",
+    "url": "/team/index.html#saumili-jana-m-sc-",
+    "type": "team_member"
+  },
+  {
+    "title": "Floris Hoek (M.Sc.)",
+    "content": "Joint with Martin van der Hoef and Alvaro Marin M.Sc. Student, Phys. Fluids - Univ. Twente / 2024 Research Interest: Molecular Dynamics Simulations of Evaporation-Driven Colloidal Self-Assembly.",
+    "url": "/team/index.html#floris-hoek-m-sc-",
+    "type": "team_member"
+  },
+  {
+    "title": "Milan Sent (B.Sc.)",
+    "content": "Joint with Jacco Snoeijer B.Sc. Student, Phys. Fluids - Univ. Twente / 2024 Research Interest: Spinning Pizza.",
+    "url": "/team/index.html#milan-sent-b-sc-",
+    "type": "team_member"
+  },
+  {
+    "title": "Xiangyu Zhang (Intern)",
+    "content": "Joint with Detlef Lohse Guest Researcher, Phys. Fluids - Univ. Twente / 2024\n  City University of Hong Kong, China Research Interest: Viscoplastic Drop Impact.",
+    "url": "/team/index.html#xiangyu-zhang-intern-",
+    "type": "team_member"
+  },
+  {
+    "title": "Detlef Lohse",
+    "content": "Professor, Phys. Fluids - Univ. Twente Collaboration on: Drop Impact, Viscoelastic Flows, Dissipative Anomaly, Surfactant Dynamics, Electrolysis, Bubbles, and Everything in Between.",
+    "url": "/team/index.html#detlef-lohse",
+    "type": "team_member"
+  },
+  {
+    "title": "Jacco Snoeijer",
+    "content": "Professor, Phys. Fluids - Univ. Twente Collaboration on: Elastic Sheets, Viscoelasticity vs. Elasticity, Spinning Pizza.",
+    "url": "/team/index.html#jacco-snoeijer",
+    "type": "team_member"
+  },
+  {
+    "title": "Dominik Krug",
+    "content": "Professor, RWTH Aachen University\n  Adjunct Professor, Phys. Fluids - Univ. Twente Collaboration on: Electrolysis, Bubble Coalescence, Swimming Bubbles.",
+    "url": "/team/index.html#dominik-krug",
+    "type": "team_member"
+  },
+  {
+    "title": "Maziyar Jalaal (Mazi)",
+    "content": "Associate Professor, Fluid Lab, Univ. Amsterdam Collaboration on: Plastocapillarity, Viscoplastic Flows.",
+    "url": "/team/index.html#maziyar-jalaal-mazi-",
+    "type": "team_member"
+  },
+  {
+    "title": "Uddalok Sen (Udo)",
+    "content": "Assistant Professor, PhySM, Wageningen University and Research Collaboration on: Drop Impact, Sheet Retraction.",
+    "url": "/team/index.html#uddalok-sen-udo-",
+    "type": "team_member"
+  },
+  {
+    "title": "Alvaro Marin",
+    "content": "Adjunct Professor, Phys. Fluids - Univ. Twente Collaboration on: Colloidal Systems, Evaporation, Shell Formation.",
+    "url": "/team/index.html#alvaro-marin",
+    "type": "team_member"
+  },
+  {
+    "title": "Christian Diddens",
+    "content": "Group Leader, Phys. Fluids - Univ. Twente\n  Developer of pyoomph Collaboration on: Surfactant Dynamics in Free Surface Flows, Dissipative Anomaly, Sliding Drops.",
+    "url": "/team/index.html#christian-diddens",
+    "type": "team_member"
+  },
+  {
+    "title": "Gareth McKinley",
+    "content": "Professor, MIT Collaboration on: Die-Swelling, Viscoelastic Flows.",
+    "url": "/team/index.html#gareth-mckinley",
+    "type": "team_member"
+  },
+  {
+    "title": "John Kolinski",
+    "content": "Asst. Professor, EPFL (École Polytechnique Fédérale de Lausanne) Collaboration on: Soft Impact",
+    "url": "/team/index.html#john-kolinski",
+    "type": "team_member"
+  },
+  {
+    "title": "C. Ricardo Constante-Amores",
+    "content": "Asst. Professor, Univ. Illinois Urbana-Champaign Collaboration on: Non-Newtonian Flows, Bubble Bursting, Herschel–Bulkley Fluids, Elastic Coating.",
+    "url": "/team/index.html#c-ricardo-constante-amores",
+    "type": "team_member"
+  },
+  {
+    "title": "Radu Cimpeanu",
+    "content": "Assc. Professor, Univ. Warwick Collaboration on: Open-Source Code Development, Non-Coalescence Impacts.",
+    "url": "/team/index.html#radu-cimpeanu",
+    "type": "team_member"
+  },
+  {
+    "title": "Jie Feng",
+    "content": "Asst. Professor, Univ. Illinois Urbana-Champaign Collaboration on: Elastic Coating, Bursting Bubbles.",
+    "url": "/team/index.html#jie-feng",
+    "type": "team_member"
+  },
+  {
+    "title": "Omar Matar",
+    "content": "Professor, Imperial College London Collaboration on: Surfactant Dynamics, Viscoelastic Drop Impact.",
+    "url": "/team/index.html#omar-matar",
+    "type": "team_member"
+  },
+  {
+    "title": "Ratul Dasgupta",
+    "content": "Assc. Professor, IIT-Bombay Collaboration on: Waves, Dissipative Anomaly.",
+    "url": "/team/index.html#ratul-dasgupta",
+    "type": "team_member"
+  },
+  {
+    "title": "Eric Lauga",
+    "content": "Professor, Univ. Cambridge Collaboration on: Mycofluidic Transport.",
+    "url": "/team/index.html#eric-lauga",
+    "type": "team_member"
+  },
+  {
+    "title": "Saikat Datta",
+    "content": "Senior Lecturer, Swansea University Collaboration on: Multiscale Simulation, Ice Nucleation and Removal, Hydrogen Storage.",
+    "url": "/team/index.html#saikat-datta",
+    "type": "team_member"
+  },
+  {
+    "title": "Doris Vollmer",
+    "content": "Apl. Professor, Max Planck Institute for Polymer Research, Mainz, Germany. Collaboration on: Contact Line, Drop Impact, Superhydrophobic Surfaces.",
+    "url": "/team/index.html#doris-vollmer",
+    "type": "team_member"
+  },
+  {
+    "title": "Stéphane Zaleski",
+    "content": "Professor, Sorbonne Universite Collaboration on: Holey Sheets.",
+    "url": "/team/index.html#st-phane-zaleski",
+    "type": "team_member"
+  },
+  {
+    "title": "Pierre Chantelot",
+    "content": "Postdoc, Institut Langevin, ESPCI Paris Collaboration on: Drop Impact",
+    "url": "/team/index.html#pierre-chantelot",
+    "type": "team_member"
+  },
+  {
+    "title": "Aleksandr Bashkatov",
+    "content": "Postdoc, RWTH Aachen University Collaboration on: Electrolysis, Bubble Coalescence, Swimming Bubbles.",
+    "url": "/team/index.html#aleksandr-bashkatov",
+    "type": "team_member"
+  },
+  {
+    "title": "Vincent Bertin",
+    "content": "Postdoc, University Aix-Marseille Collaboration on: Elastic Sheets, Spinning Pizza.",
+    "url": "/team/index.html#vincent-bertin",
+    "type": "team_member"
+  },
+  {
+    "title": "Alexandros Oratis",
+    "content": "Postdoc, TU Delft Collaboration on: Electrolysis, Bubble Coalescence, Swimming Bubbles.",
+    "url": "/team/index.html#alexandros-oratis",
+    "type": "team_member"
+  },
+  {
+    "title": "Arivazhagan Balasubramanian (Ari)",
+    "content": "Ph.D. Student, KTH Sweden Collaboration on: Elastoviscoplastic Flows, Bursting Bubbles",
+    "url": "/team/index.html#arivazhagan-balasubramanian-ari-",
+    "type": "team_member"
+  },
+  {
+    "title": "Konstantinos Zinelis (Costis)",
+    "content": "Postdoc, MIT Collaboration on: Viscoelastic Flows, Drop Impact.",
+    "url": "/team/index.html#konstantinos-zinelis-costis-",
+    "type": "team_member"
+  },
+  {
+    "title": "Swen van den Heuvel",
+    "content": "Now: Ph.D. Student, Phys. Fluids - Univ. Twente\n  2023: Graduated with M.Sc., Univ. Twente\n  Thesis: Hydrodynamic forces acting on vertically rising bubbles",
+    "url": "/team/index.html#swen-van-den-heuvel",
+    "type": "team_member"
+  },
+  {
+    "title": "Niels Kuipers",
+    "content": "Now: M.Sc. Student, Adv. Technology - Univ. Twente\n  2023: Graduated with B.Sc., Univ. Twente\n  Thesis: Partial coalescence of drops on viscous films",
+    "url": "/team/index.html#niels-kuipers",
+    "type": "team_member"
+  },
+  {
+    "title": "Tom Appleford",
+    "content": "Now: Ph.D. Student, Fluid Lab - Univ. Amsterdam\n  2022: Graduated with M.Sc., Univ. Amsterdam\n  Thesis: The deformation of a droplet in a viscoplastic simple shear flow",
+    "url": "/team/index.html#tom-appleford",
+    "type": "team_member"
+  },
+  {
+    "title": "Coen Verschuur",
+    "content": "Now: Ph.D. Student, Phys. Fluids - Univ. Twente\n  2020: Graduated with B.Sc., Univ. Twente\n  Thesis: Early time dynamics in immiscible drop impacts",
+    "url": "/team/index.html#coen-verschuur",
+    "type": "team_member"
+  },
+  {
+    "title": "Pim J. Dekker",
+    "content": "Now: Ph.D. Student, Phys. Fluids - Univ. Twente\n  2019: Graduated with B.Sc., Univ. Twente\n  Thesis: Spreading of a drop on a water-air interface",
+    "url": "/team/index.html#pim-j-dekker",
+    "type": "team_member"
+  },
+  {
+    "title": "Vatsal Sanjay (PI)",
+    "content": "Research Interest: See here",
+    "url": "/team/index.html#vatsal-sanjay-pi-",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Vatsal Sanjay (PI)",
+    "content": "Download CV",
+    "url": "/team/index.html#vatsal-sanjay-pi-",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Ayush Dixit (Ph.D)",
+    "content": "Joint with Detlef Lohse",
+    "url": "/team/index.html#ayush-dixit-ph-d-",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Ayush Dixit (Ph.D)",
+    "content": "Research Interest: Viscoelastic Flows, Bursting Bubbles, Respiratory Drops.",
+    "url": "/team/index.html#ayush-dixit-ph-d-",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Aman Bhargava (Ph.D)",
+    "content": "Joint with Detlef Lohse",
+    "url": "/team/index.html#aman-bhargava-ph-d-",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Aman Bhargava (Ph.D)",
+    "content": "Research Interest: Inertial Contact Line, Drop Retraction.",
+    "url": "/team/index.html#aman-bhargava-ph-d-",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Jnandeep Talukdar (M.Sc.)",
+    "content": "Joint with Detlef Lohse",
+    "url": "/team/index.html#jnandeep-talukdar-m-sc-",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Jnandeep Talukdar (M.Sc.)",
+    "content": "Research Interest: Surfactant Dynamics, Dissipative Anomaly, Soft Wetting.",
+    "url": "/team/index.html#jnandeep-talukdar-m-sc-",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Saumili Jana (M.Sc.)",
+    "content": "Joint with Detlef Lohse",
+    "url": "/team/index.html#saumili-jana-m-sc-",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Saumili Jana (M.Sc.)",
+    "content": "Research Interest: Soft Impact.",
+    "url": "/team/index.html#saumili-jana-m-sc-",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Floris Hoek (M.Sc.)",
+    "content": "Joint with Martin van der Hoef and Alvaro Marin",
+    "url": "/team/index.html#floris-hoek-m-sc-",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Floris Hoek (M.Sc.)",
+    "content": "Research Interest: Molecular Dynamics Simulations of Evaporation-Driven Colloidal Self-Assembly.",
+    "url": "/team/index.html#floris-hoek-m-sc-",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Milan Sent (B.Sc.)",
+    "content": "Joint with Jacco Snoeijer",
+    "url": "/team/index.html#milan-sent-b-sc-",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Milan Sent (B.Sc.)",
+    "content": "Research Interest: Spinning Pizza.",
+    "url": "/team/index.html#milan-sent-b-sc-",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Xiangyu Zhang (Intern)",
+    "content": "Joint with Detlef Lohse",
+    "url": "/team/index.html#xiangyu-zhang-intern-",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Xiangyu Zhang (Intern)",
+    "content": "Research Interest: Viscoplastic Drop Impact.",
+    "url": "/team/index.html#xiangyu-zhang-intern-",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "We need you!",
+    "content": "See: Join Us for ongoing projects.",
+    "url": "/team/index.html#we-need-you-",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Detlef Lohse",
+    "content": "Collaboration on: Drop Impact, Viscoelastic Flows, Dissipative Anomaly, Surfactant Dynamics, Electrolysis, Bubbles, and Everything in Between.",
+    "url": "/team/index.html#detlef-lohse",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Jacco Snoeijer",
+    "content": "Collaboration on: Elastic Sheets, Viscoelasticity vs. Elasticity, Spinning Pizza.",
+    "url": "/team/index.html#jacco-snoeijer",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Dominik Krug",
+    "content": "Collaboration on: Electrolysis, Bubble Coalescence, Swimming Bubbles.",
+    "url": "/team/index.html#dominik-krug",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Maziyar Jalaal (Mazi)",
+    "content": "Collaboration on: Plastocapillarity, Viscoplastic Flows.",
+    "url": "/team/index.html#maziyar-jalaal-mazi-",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Uddalok Sen (Udo)",
+    "content": "Collaboration on: Drop Impact, Sheet Retraction.",
+    "url": "/team/index.html#uddalok-sen-udo-",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Alvaro Marin",
+    "content": "Collaboration on: Colloidal Systems, Evaporation, Shell Formation.",
+    "url": "/team/index.html#alvaro-marin",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Christian Diddens",
+    "content": "Collaboration on: Surfactant Dynamics in Free Surface Flows, Dissipative Anomaly, Sliding Drops.",
+    "url": "/team/index.html#christian-diddens",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Gareth McKinley",
+    "content": "Collaboration on: Die-Swelling, Viscoelastic Flows.",
+    "url": "/team/index.html#gareth-mckinley",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "John Kolinski",
+    "content": "Collaboration on: Soft Impact",
+    "url": "/team/index.html#john-kolinski",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "C. Ricardo Constante-Amores",
+    "content": "Collaboration on: Non-Newtonian Flows, Bubble Bursting, Herschel–Bulkley Fluids, Elastic Coating.",
+    "url": "/team/index.html#c-ricardo-constante-amores",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Radu Cimpeanu",
+    "content": "Collaboration on: Open-Source Code Development, Non-Coalescence Impacts.",
+    "url": "/team/index.html#radu-cimpeanu",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Jie Feng",
+    "content": "Collaboration on: Elastic Coating, Bursting Bubbles.",
+    "url": "/team/index.html#jie-feng",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Omar Matar",
+    "content": "Collaboration on: Surfactant Dynamics, Viscoelastic Drop Impact.",
+    "url": "/team/index.html#omar-matar",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Ratul Dasgupta",
+    "content": "Collaboration on: Waves, Dissipative Anomaly.",
+    "url": "/team/index.html#ratul-dasgupta",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Eric Lauga",
+    "content": "Collaboration on: Mycofluidic Transport.",
+    "url": "/team/index.html#eric-lauga",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Saikat Datta",
+    "content": "Collaboration on: Multiscale Simulation, Ice Nucleation and Removal, Hydrogen Storage.",
+    "url": "/team/index.html#saikat-datta",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Doris Vollmer",
+    "content": "Collaboration on: Contact Line, Drop Impact, Superhydrophobic Surfaces.",
+    "url": "/team/index.html#doris-vollmer",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Stéphane Zaleski",
+    "content": "Collaboration on: Holey Sheets.",
+    "url": "/team/index.html#st-phane-zaleski",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Pierre Chantelot",
+    "content": "Collaboration on: Drop Impact",
+    "url": "/team/index.html#pierre-chantelot",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Aleksandr Bashkatov",
+    "content": "Collaboration on: Electrolysis, Bubble Coalescence, Swimming Bubbles.",
+    "url": "/team/index.html#aleksandr-bashkatov",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Vincent Bertin",
+    "content": "Collaboration on: Elastic Sheets, Spinning Pizza.",
+    "url": "/team/index.html#vincent-bertin",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Alexandros Oratis",
+    "content": "Collaboration on: Electrolysis, Bubble Coalescence, Swimming Bubbles.",
+    "url": "/team/index.html#alexandros-oratis",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Arivazhagan Balasubramanian (Ari)",
+    "content": "Collaboration on: Elastoviscoplastic Flows, Bursting Bubbles",
+    "url": "/team/index.html#arivazhagan-balasubramanian-ari-",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Konstantinos Zinelis (Costis)",
+    "content": "Collaboration on: Viscoelastic Flows, Drop Impact.",
+    "url": "/team/index.html#konstantinos-zinelis-costis-",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Team, collaborators, and Conference visits",
+    "content": "The locations marked on this map meet one of three criteria (in the order of preference): \n            1. Hometown of our team members (including alumni) in orange, \n            2. Base location of our collaborators in green,\n            3. Places where we have presented talks in purple, or\n            4. Places where we have visited for conferences (no talks) in gray.",
+    "url": "/team/index.html#team-collaborators-and-conference-visits",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Team, collaborators, and Conference visits",
+    "content": "© Copyright\n          CoMPhy Lab 2025",
+    "url": "/team/index.html#team-collaborators-and-conference-visits",
+    "type": "text",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Vatsal Sanjay (PI)",
+    "content": "Postdoc, Phys. Fluids - Univ. Twente / 2022-25\n  Ph.D., Phys. Fluids - Univ. Twente / 2018-22\n  B.Tech + M.Tech, Two-Phase Flow & Instability Lab, IIT-Roorkee / 2013-18\n  Personal Website Research Interest: See here Download CV",
+    "url": "/team/index.html#vatsal-sanjay-pi-",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Ayush Dixit (Ph.D)",
+    "content": "Joint with Detlef Lohse Ph.D. Student, Phys. Fluids - Univ. Twente / 2023-now\n  B.Tech + M.Tech, Two-Phase Flow & Instability Lab, IIT-Roorkee / 2018-23 Research Interest: Viscoelastic Flows, Bursting Bubbles, Respiratory Drops.",
+    "url": "/team/index.html#ayush-dixit-ph-d-",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Aman Bhargava (Ph.D)",
+    "content": "Joint with Detlef Lohse Ph.D. Student, Phys. Fluids - Univ. Twente / 2024-now\n  M.Sc. Chemical Engineering, Purdue University / 2022-23\n  B.Tech. (Hons.) Chemical Engineering, IIT-Bombay / 2018-22 Research Interest: Inertial Contact Line, Drop Retraction.",
+    "url": "/team/index.html#aman-bhargava-ph-d-",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Jnandeep Talukdar (M.Sc.)",
+    "content": "Joint with Detlef Lohse Ph.D. Student, Phys. Fluids - Univ. Twente / starting May 2025\n  M.Sc. Student, Phys. Fluids - Univ. Twente / 2023-25\n  B.Tech. Mechanical Engineering, IIT-Patna / 2019-23 Research Interest: Surfactant Dynamics, Dissipative Anomaly, Soft Wetting.",
+    "url": "/team/index.html#jnandeep-talukdar-m-sc-",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Saumili Jana (M.Sc.)",
+    "content": "Joint with Detlef Lohse Ph.D. Student, Phys. Fluids - Univ. Twente / starting Jul 2025\n  B.Tech.+M.Tech. Student, IIT-Kharagpur / 2020-25\n  Research Intern, Phys. Fluids - Univ. Twente / 2024 Research Interest: Soft Impact.",
+    "url": "/team/index.html#saumili-jana-m-sc-",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Floris Hoek (M.Sc.)",
+    "content": "Joint with Martin van der Hoef and Alvaro Marin M.Sc. Student, Phys. Fluids - Univ. Twente / 2024 Research Interest: Molecular Dynamics Simulations of Evaporation-Driven Colloidal Self-Assembly.",
+    "url": "/team/index.html#floris-hoek-m-sc-",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Milan Sent (B.Sc.)",
+    "content": "Joint with Jacco Snoeijer B.Sc. Student, Phys. Fluids - Univ. Twente / 2024 Research Interest: Spinning Pizza.",
+    "url": "/team/index.html#milan-sent-b-sc-",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Xiangyu Zhang (Intern)",
+    "content": "Joint with Detlef Lohse Guest Researcher, Phys. Fluids - Univ. Twente / 2024\n  City University of Hong Kong, China Research Interest: Viscoplastic Drop Impact.",
+    "url": "/team/index.html#xiangyu-zhang-intern-",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "We need you!",
+    "content": "See: Join Us for ongoing projects.",
+    "url": "/team/index.html#we-need-you-",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Detlef Lohse",
+    "content": "Professor, Phys. Fluids - Univ. Twente Collaboration on: Drop Impact, Viscoelastic Flows, Dissipative Anomaly, Surfactant Dynamics, Electrolysis, Bubbles, and Everything in Between.",
+    "url": "/team/index.html#detlef-lohse",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Jacco Snoeijer",
+    "content": "Professor, Phys. Fluids - Univ. Twente Collaboration on: Elastic Sheets, Viscoelasticity vs. Elasticity, Spinning Pizza.",
+    "url": "/team/index.html#jacco-snoeijer",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Dominik Krug",
+    "content": "Professor, RWTH Aachen University\n  Adjunct Professor, Phys. Fluids - Univ. Twente Collaboration on: Electrolysis, Bubble Coalescence, Swimming Bubbles.",
+    "url": "/team/index.html#dominik-krug",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Maziyar Jalaal (Mazi)",
+    "content": "Associate Professor, Fluid Lab, Univ. Amsterdam Collaboration on: Plastocapillarity, Viscoplastic Flows.",
+    "url": "/team/index.html#maziyar-jalaal-mazi-",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Uddalok Sen (Udo)",
+    "content": "Assistant Professor, PhySM, Wageningen University and Research Collaboration on: Drop Impact, Sheet Retraction.",
+    "url": "/team/index.html#uddalok-sen-udo-",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Alvaro Marin",
+    "content": "Adjunct Professor, Phys. Fluids - Univ. Twente Collaboration on: Colloidal Systems, Evaporation, Shell Formation.",
+    "url": "/team/index.html#alvaro-marin",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Christian Diddens",
+    "content": "Group Leader, Phys. Fluids - Univ. Twente\n  Developer of pyoomph Collaboration on: Surfactant Dynamics in Free Surface Flows, Dissipative Anomaly, Sliding Drops.",
+    "url": "/team/index.html#christian-diddens",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Gareth McKinley",
+    "content": "Professor, MIT Collaboration on: Die-Swelling, Viscoelastic Flows.",
+    "url": "/team/index.html#gareth-mckinley",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "John Kolinski",
+    "content": "Asst. Professor, EPFL (École Polytechnique Fédérale de Lausanne) Collaboration on: Soft Impact",
+    "url": "/team/index.html#john-kolinski",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "C. Ricardo Constante-Amores",
+    "content": "Asst. Professor, Univ. Illinois Urbana-Champaign Collaboration on: Non-Newtonian Flows, Bubble Bursting, Herschel–Bulkley Fluids, Elastic Coating.",
+    "url": "/team/index.html#c-ricardo-constante-amores",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Radu Cimpeanu",
+    "content": "Assc. Professor, Univ. Warwick Collaboration on: Open-Source Code Development, Non-Coalescence Impacts.",
+    "url": "/team/index.html#radu-cimpeanu",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Jie Feng",
+    "content": "Asst. Professor, Univ. Illinois Urbana-Champaign Collaboration on: Elastic Coating, Bursting Bubbles.",
+    "url": "/team/index.html#jie-feng",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Omar Matar",
+    "content": "Professor, Imperial College London Collaboration on: Surfactant Dynamics, Viscoelastic Drop Impact.",
+    "url": "/team/index.html#omar-matar",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Ratul Dasgupta",
+    "content": "Assc. Professor, IIT-Bombay Collaboration on: Waves, Dissipative Anomaly.",
+    "url": "/team/index.html#ratul-dasgupta",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Eric Lauga",
+    "content": "Professor, Univ. Cambridge Collaboration on: Mycofluidic Transport.",
+    "url": "/team/index.html#eric-lauga",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Saikat Datta",
+    "content": "Senior Lecturer, Swansea University Collaboration on: Multiscale Simulation, Ice Nucleation and Removal, Hydrogen Storage.",
+    "url": "/team/index.html#saikat-datta",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Doris Vollmer",
+    "content": "Apl. Professor, Max Planck Institute for Polymer Research, Mainz, Germany. Collaboration on: Contact Line, Drop Impact, Superhydrophobic Surfaces.",
+    "url": "/team/index.html#doris-vollmer",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Stéphane Zaleski",
+    "content": "Professor, Sorbonne Universite Collaboration on: Holey Sheets.",
+    "url": "/team/index.html#st-phane-zaleski",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Pierre Chantelot",
+    "content": "Postdoc, Institut Langevin, ESPCI Paris Collaboration on: Drop Impact",
+    "url": "/team/index.html#pierre-chantelot",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Aleksandr Bashkatov",
+    "content": "Postdoc, RWTH Aachen University Collaboration on: Electrolysis, Bubble Coalescence, Swimming Bubbles.",
+    "url": "/team/index.html#aleksandr-bashkatov",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Vincent Bertin",
+    "content": "Postdoc, University Aix-Marseille Collaboration on: Elastic Sheets, Spinning Pizza.",
+    "url": "/team/index.html#vincent-bertin",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Alexandros Oratis",
+    "content": "Postdoc, TU Delft Collaboration on: Electrolysis, Bubble Coalescence, Swimming Bubbles.",
+    "url": "/team/index.html#alexandros-oratis",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Arivazhagan Balasubramanian (Ari)",
+    "content": "Ph.D. Student, KTH Sweden Collaboration on: Elastoviscoplastic Flows, Bursting Bubbles",
+    "url": "/team/index.html#arivazhagan-balasubramanian-ari-",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Konstantinos Zinelis (Costis)",
+    "content": "Postdoc, MIT Collaboration on: Viscoelastic Flows, Drop Impact.",
+    "url": "/team/index.html#konstantinos-zinelis-costis-",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Valentin Rosario",
+    "content": "2024: Graduated with M.Sc., Univ. Amsterdam\n  Thesis: Modelling the Ward–Hunt ice-shelf as viscoelastic solid",
+    "url": "/team/index.html#valentin-rosario",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Swen van den Heuvel",
+    "content": "Now: Ph.D. Student, Phys. Fluids - Univ. Twente\n  2023: Graduated with M.Sc., Univ. Twente\n  Thesis: Hydrodynamic forces acting on vertically rising bubbles",
+    "url": "/team/index.html#swen-van-den-heuvel",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Niels Kuipers",
+    "content": "Now: M.Sc. Student, Adv. Technology - Univ. Twente\n  2023: Graduated with B.Sc., Univ. Twente\n  Thesis: Partial coalescence of drops on viscous films",
+    "url": "/team/index.html#niels-kuipers",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "C. H. (Luuk) Maurits",
+    "content": "2023: Graduated with M.Sc., Univ. Twente\n  Thesis: When Laplace meets Marangoni",
+    "url": "/team/index.html#c-h-luuk-maurits",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Tom Appleford",
+    "content": "Now: Ph.D. Student, Fluid Lab - Univ. Amsterdam\n  2022: Graduated with M.Sc., Univ. Amsterdam\n  Thesis: The deformation of a droplet in a viscoplastic simple shear flow",
+    "url": "/team/index.html#tom-appleford",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Twan Heijink",
+    "content": "Now: Software IVQA Engineer at Thales\n  2021: Graduated with B.Sc., Saxion Univ.\n  Thesis:  Standing waves at a fluid-fluid interface with plastocapillarity",
+    "url": "/team/index.html#twan-heijink",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Steven Meuleman",
+    "content": "Now: Mechanical Engineer at VIRO\n  2020: Graduated with B.Sc., Univ. Twente\n  Thesis: Simulations of foam generation for a custom axisymmetric core-shell nozzle",
+    "url": "/team/index.html#steven-meuleman",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Thijmen Kroeze",
+    "content": "Now: CFD Engineer, Brink Climate Systems\n  2020: Graduated with B.Sc., Univ. Twente\n  Thesis: Singular jet dynamics of drop impacts at high Bond numbers",
+    "url": "/team/index.html#thijmen-kroeze",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Coen Verschuur",
+    "content": "Now: Ph.D. Student, Phys. Fluids - Univ. Twente\n  2020: Graduated with B.Sc., Univ. Twente\n  Thesis: Early time dynamics in immiscible drop impacts",
+    "url": "/team/index.html#coen-verschuur",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Pim J. Dekker",
+    "content": "Now: Ph.D. Student, Phys. Fluids - Univ. Twente\n  2019: Graduated with B.Sc., Univ. Twente\n  Thesis: Spreading of a drop on a water-air interface",
+    "url": "/team/index.html#pim-j-dekker",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Laurence Bruggink",
+    "content": "Now: Research Engineer at Alfen\n  2019: Graduated with B.Sc., Univ. Twente\n  Thesis: Bursting bubble in a Herschel–Bulkley fluid",
+    "url": "/team/index.html#laurence-bruggink",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "Team, collaborators, and Conference visits",
+    "content": "The locations marked on this map meet one of three criteria (in the order of preference): \n            1. Hometown of our team members (including alumni) in orange, \n            2. Base location of our collaborators in green,\n            3. Places where we have presented talks in purple, or\n            4. Places where we have visited for conferences (no talks) in gray.",
+    "url": "/team/index.html#team-collaborators-and-conference-visits",
+    "type": "section",
+    "links": [
+
+    ]
+  },
+  {
+    "title": "---",
+    "content": "modified: 2025-02-02T21:29:46+01:00\ncreated: 2024-12-15T23:25:04+01:00\nwebsite: https://blogs-comphy-lab.org/\nstatus: done ✅\n---",
+    "url": "https://blogs-comphy-lab.org/0_README#-",
+    "type": "blog_post"
+  },
+  {
+    "title": "Computational Multiphase Physics (CoMPhy)",
+    "content": "Welcome to the CoMPhy Lab's documentation hub! We are based at the Physics of Fluids Department at the University of Twente, where we explore non-Newtonian free-surface flows and soft matter singularities.",
+    "url": "https://blogs-comphy-lab.org/0_README#computational-multiphase-physics-comphy-",
+    "type": "blog_post"
+  },
+  {
+    "title": "About Us",
+    "content": "See: About us",
+    "url": "https://blogs-comphy-lab.org/0_README#about-us",
+    "type": "blog_post"
+  },
+  {
+    "title": "Capillary waves:",
+    "content": "2025-01-11 [[Features-of-capillary-waves-during-asymmetric-bubble-coalescence]]: Analysis of capillary wave dynamics during bubble coalescence, focusing on energy transfer and wave propagation mechanisms.",
+    "url": "https://blogs-comphy-lab.org/0_README#capillary-waves-",
+    "type": "blog_post"
+  },
+  {
+    "title": "H-B formulation:",
+    "content": "2024-12-31 [[Herschel–Bulkley formulation]]: Mathematical formulation of the Herschel-Bulkley model for non-Newtonian flows, with emphasis on yield stress fluids.",
+    "url": "https://blogs-comphy-lab.org/0_README#h-b-formulation-",
+    "type": "blog_post"
+  },
+  {
+    "title": "Gauss' Law:",
+    "content": "2025-01-21 [[Gauss law of Electrostatics]]: Analysis of electric field flux through different surfaces using Gauss's law, with visual demonstrations.",
+    "url": "https://blogs-comphy-lab.org/0_README#gauss-law-",
+    "type": "blog_post"
+  },
+  {
+    "title": "Seminar-UIUC",
+    "content": "2025-01-19 [[Seminar-UIUC-abstract]]: UIUC fluid seminar abstract exploring polymeric flows as a tunable testbed for unsteady, nonlinear continuum mechanics.",
+    "url": "https://blogs-comphy-lab.org/0_README#seminar-uiuc",
+    "type": "blog_post"
+  },
+  {
+    "title": "Connect With Us",
+    "content": "- 🌐 Website: comphy-lab.org\n- 📧 Email:   vatsalsy@comphy-lab.org\n- 🐦 Twitter: @VatsalSanjay\n- 💻 GitHub: github.com/VatsalSy",
+    "url": "https://blogs-comphy-lab.org/0_README#connect-with-us",
+    "type": "blog_post"
+  },
+  {
+    "title": "Contributing",
+    "content": "We welcome contributions from researchers, students, and collaborators. Here's how you can contribute:\n\n1. Issues: Found a problem or have a suggestion? Choose an option below:\n   - 🗣️ Request a new blog topic\n   - 📚 Request documentation\n   - 🔍 Report content correction\n\n2. Pull Requests: Want to contribute directly? \n   - Fork the repository\n   - Make your changes (it can simply be correcting grammar or making a new post - simply write in plain text or markdown format and add it to the root folder).\n   - Submit a pull request with a clear description of your changes\n\nVisit our GitHub repository to get started.\n\n---\nNote: This documentation is maintained by the CoMPhy Lab team and is regularly updated with our latest research findings and computational methods.\n\n> [!meta] Back to main website\n> Home, Team, Research, Github",
+    "url": "https://blogs-comphy-lab.org/0_README#contributing",
+    "type": "blog_post"
+  }
+]

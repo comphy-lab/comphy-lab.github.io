@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ page.title }} - CoMPhy Lab</title>
+  <meta name="base-url" content="{{ site.baseurl }}">
+  <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
 
   <script>
     document.documentElement.classList.remove('no-js');
@@ -16,7 +17,9 @@
   <!-- Site styles -->
   <link rel="stylesheet" href="/assets/css/vendor.css">
   <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/search.css">
   <link rel="stylesheet" href="/assets/css/research.css">
+
   <script>
     // Check if we're on localhost
     if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
@@ -66,6 +69,14 @@
           <li><a href="/research">Research</a></li>
           <li><a href="https://blogs-comphy-lab.org/" target="_blank">Blog <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8em;"></i></a></li>
           <li style="background: none;"><a href="https://bsky.app/profile/comphy-lab.org" style="background: none; padding: 0;"><i class="fa-brands fa-bluesky" style="font-size: 1.75em; color: #0085ff;"></i></a></li>
+          <!-- Search Container -->
+          <li class="search-container">
+            <div class="search-wrapper">
+              <input type="text" id="searchInput" placeholder="Search..." aria-label="Search">
+              <i class="fa fa-search search-icon"></i>
+            </div>
+            <div id="searchResults" class="search-results"></div>
+          </li>
         </ul>
       </nav>
     </header>
@@ -134,8 +145,13 @@
       </div> <!-- end ss-go-top -->
     </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <!-- Core scripts -->
   <script src="/assets/js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <!-- Search dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+  <!-- Search functionality -->
+  <script src="/assets/js/search.js"></script>
   <script>
     // Add badge container around consecutive badge links
     document.addEventListener('DOMContentLoaded', function() {
