@@ -4,12 +4,34 @@ require 'nokogiri'
 require 'fileutils'
 require 'open-uri'
 require 'net/http'
+require 'uri'
 
 # Get the project root directory (one level up from scripts)
 ROOT_DIR = File.expand_path('..', __dir__)
 
 # Initialize search database
 search_db = []
+
+# Helper function to generate proper anchor links
+def generate_anchor(text)
+  # Remove date prefix if present (e.g., "2025-01-21 ")
+  text = text.sub(/^\d{4}-\d{2}-\d{2}\s+/, '')
+  
+  # Remove markdown link syntax if present [[text]]
+  text = text.gsub(/\[\[(.*?)\]\]/, '\1')
+  
+  # Remove any other markdown formatting
+  text = text.gsub(/[*_`]/, '')
+  
+  # Keep special characters that are part of the title
+  text = text.gsub(/[^\w\s\-':]/, '')
+  
+  # Replace spaces with +
+  text = text.gsub(/\s+/, '+')
+  
+  # Ensure special characters are properly encoded
+  URI.encode_www_form_component(text)
+end
 
 # Process team members first (highest priority)
 Dir.glob(File.join(ROOT_DIR, '_team', '*.md')).each do |file|
@@ -136,7 +158,7 @@ Dir.glob(File.join(ROOT_DIR, '_site', '**', '*.html')) do |file|
       entry = {
         'title' => name,
         'content' => content,
-        'url' => "#{url}##{name.downcase.gsub(/[^a-z0-9]+/, '-')}",
+        'url' => "#{url}##{generate_anchor(name)}",
         'type' => 'team_member',
         'priority' => 2  # Medium priority for team members
       }
@@ -168,7 +190,7 @@ Dir.glob(File.join(ROOT_DIR, '_site', '**', '*.html')) do |file|
     entry = {
       'title' => heading.text.strip,
       'content' => content,
-      'url' => "#{url}##{heading.text.strip.downcase.gsub(/[^a-z0-9]+/, '-')}",
+      'url' => "#{url}##{generate_anchor(heading.text.strip)}",
       'type' => 'paper',
       'tags' => tags,
       'priority' => 3  # Lower priority for papers
@@ -202,7 +224,7 @@ Dir.glob(File.join(ROOT_DIR, '_site', '**', '*.html')) do |file|
     entry = {
       'title' => heading_text,
       'content' => text,
-      'url' => "#{url}##{heading_text.downcase.gsub(/[^a-z0-9]+/, '-')}",
+      'url' => "#{url}##{generate_anchor(heading_text)}",
       'type' => 'text',
       'links' => links,
       'priority' => 3  # Lower priority for regular content
@@ -245,7 +267,7 @@ Dir.glob(File.join(ROOT_DIR, '_site', '**', '*.html')) do |file|
     entry = {
       'title' => heading_text,
       'content' => content,
-      'url' => "#{url}##{heading_text.downcase.gsub(/[^a-z0-9]+/, '-')}",
+      'url' => "#{url}##{generate_anchor(heading_text)}",
       'type' => 'section',
       'links' => links,
       'priority' => 3  # Lower priority for regular content
@@ -320,9 +342,9 @@ begin
           # Create entry for blog section
           entry = {
             'title' => header,
-            'content' => content.gsub(/[*_]{1,2}([^*_]+)[*_]{1,2}/, '\1')  # Remove markdown formatting
-                              .gsub(/\[([^\]]+)\]\(([^\)]+)\)/, '\1'),     # Remove links
-            'url' => "#{BLOG_URL}/0_README##{header.downcase.gsub(/[^a-z0-9]+/, '-')}",
+            'content' => content.gsub(/\[([^\]]+)\]\(([^\)]+)\)/, '\1')  # Remove markdown formatting
+                              .gsub(/[*_]{1,2}([^*_]+)[*_]{1,2}/, '\1'),
+            'url' => "#{BLOG_URL}/0_README##{generate_anchor(header)}",
             'type' => 'blog_post',
             'priority' => 3  # Lower priority for blog posts
           }
