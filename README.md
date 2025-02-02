@@ -162,15 +162,26 @@ The website includes a powerful search feature that allows users to:
 - See match percentage for each result
 - Navigate directly to specific sections using anchor links
 
-Search results are prioritized in the following order:
+Search results are prioritized and filtered as follows:
 1. Team Members (highest priority)
+   - Direct matches in names
+   - Research interests and affiliations
+   - Social media links and profile information
 2. Research Papers
+   - Titles and authors
+   - Tags and categories
 3. Blog Posts from blogs.comphy-lab.org
-4. Content with Tags
-5. Regular content (headings and paragraphs)
+4. Regular content (headings and paragraphs)
+
+Search behavior and restrictions:
+- Minimum query length: 2 characters
+- Shows only top 5 most relevant results
+- Requires at least 50% of query words to match
+- Prioritizes matches near the start of content
+- Properly renders markdown and HTML in results
 
 The search database is automatically generated during the build process by `scripts/generate_search_db.rb`. This script:
-- Indexes all HTML content
+- Indexes all HTML and markdown content
 - Identifies and prioritizes team members and research papers
 - Extracts tags from research papers
 - Fetches and indexes blog posts from blogs.comphy-lab.org
@@ -221,6 +232,38 @@ These tags are:
 - Fontello (Various licenses)
 - Libre Baskerville (SIL Open Font License)
 - Open Sans (Apache License 2.0)
+
+### GitHub Actions Workflows
+
+The website uses three GitHub Actions workflows for automation:
+
+1. **Jekyll site CI** (`.github/workflows/jekyll.yml`)
+   - Builds and deploys the Jekyll website
+   - Triggers on push/PR to main branch
+   - Two-step process:
+     1. Builds site and generates artifacts
+     2. Deploys to GitHub Pages
+   - Uses latest Ruby and Jekyll versions
+
+2. **pages-build-deployment** (GitHub-managed)
+   - Built-in GitHub Pages deployment workflow
+   - Handles final deployment to GitHub's servers
+   - Works automatically with Jekyll CI workflow
+   - Provides deployment status and URLs
+
+3. **Update Search Database** (`.github/workflows/update-search.yml`)
+   - Maintains site's search functionality
+   - Triggers:
+     - Every 4 hours automatically
+     - On content file changes (MD/HTML)
+     - Manual trigger available
+   - Generates and updates `search_db.json`
+   - Commits changes back to repository
+
+These workflows work together to ensure:
+- Automated site builds and deployments
+- Up-to-date search functionality
+- Consistent deployment to GitHub Pages
 
 ## Contributing
 

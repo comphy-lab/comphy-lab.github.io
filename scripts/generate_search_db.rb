@@ -11,10 +11,44 @@ ROOT_DIR = File.expand_path('..', __dir__)
 # Initialize search database
 search_db = []
 
+# Process team members first (highest priority)
+Dir.glob(File.join(ROOT_DIR, '_team', '*.md')).each do |file|
+  puts "Processing team member file #{file}..."
+  
+  content = File.read(file)
+  
+  # Split content by headers
+  sections = content.split(/^#+\s+/)
+  sections.shift # Remove content before first header
+  
+  sections.each do |section|
+    next if section.strip.empty?
+    
+    # Extract header and content
+    lines = section.lines
+    header = lines.first.strip
+    content = lines[1..].join.strip
+    
+    next if header.empty? || content.empty?
+    next unless header.match?(/^[^#]+/) # Skip if header starts with #
+    
+    # Create high-priority entry for team member
+    entry = {
+      'title' => header,
+      'content' => content,
+      'url' => '/team/#' + header.downcase.gsub(/[^a-z0-9]+/, '-'),
+      'type' => 'team_member',
+      'priority' => 1  # Highest priority for team members
+    }
+    search_db << entry
+  end
+end
+
 # Process markdown files first
 Dir.glob(File.join(ROOT_DIR, '*.md')).each do |file|
   next if file.end_with?('README.md') # Skip README
-
+  next if file.start_with?(File.join(ROOT_DIR, '_team')) # Skip team members
+  
   puts "Processing markdown file #{file}..."
   
   content = File.read(file)
@@ -39,7 +73,7 @@ Dir.glob(File.join(ROOT_DIR, '*.md')).each do |file|
       'content' => content,
       'url' => '/#about',
       'type' => 'markdown_section',
-      'source' => File.basename(file)
+      'priority' => 3  # Lower priority for regular content
     }
     search_db << entry
     
@@ -56,7 +90,7 @@ Dir.glob(File.join(ROOT_DIR, '*.md')).each do |file|
         'content' => para,
         'url' => '/#about',
         'type' => 'markdown_text',
-        'source' => File.basename(file)
+        'priority' => 3  # Lower priority for regular content
       }
       search_db << entry
     end
@@ -103,7 +137,8 @@ Dir.glob(File.join(ROOT_DIR, '_site', '**', '*.html')) do |file|
         'title' => name,
         'content' => content,
         'url' => "#{url}##{name.downcase.gsub(/[^a-z0-9]+/, '-')}",
-        'type' => 'team_member'
+        'type' => 'team_member',
+        'priority' => 2  # Medium priority for team members
       }
       search_db << entry
     end
@@ -135,7 +170,8 @@ Dir.glob(File.join(ROOT_DIR, '_site', '**', '*.html')) do |file|
       'content' => content,
       'url' => "#{url}##{heading.text.strip.downcase.gsub(/[^a-z0-9]+/, '-')}",
       'type' => 'paper',
-      'tags' => tags
+      'tags' => tags,
+      'priority' => 3  # Lower priority for papers
     }
     search_db << entry
   end
@@ -168,7 +204,8 @@ Dir.glob(File.join(ROOT_DIR, '_site', '**', '*.html')) do |file|
       'content' => text,
       'url' => "#{url}##{heading_text.downcase.gsub(/[^a-z0-9]+/, '-')}",
       'type' => 'text',
-      'links' => links
+      'links' => links,
+      'priority' => 3  # Lower priority for regular content
     }
     search_db << entry
   end
@@ -210,7 +247,8 @@ Dir.glob(File.join(ROOT_DIR, '_site', '**', '*.html')) do |file|
       'content' => content,
       'url' => "#{url}##{heading_text.downcase.gsub(/[^a-z0-9]+/, '-')}",
       'type' => 'section',
-      'links' => links
+      'links' => links,
+      'priority' => 3  # Lower priority for regular content
     }
     search_db << entry
   end
@@ -285,7 +323,8 @@ begin
             'content' => content.gsub(/[*_]{1,2}([^*_]+)[*_]{1,2}/, '\1')  # Remove markdown formatting
                               .gsub(/\[([^\]]+)\]\(([^\)]+)\)/, '\1'),     # Remove links
             'url' => "#{BLOG_URL}/0_README##{header.downcase.gsub(/[^a-z0-9]+/, '-')}",
-            'type' => 'blog_post'
+            'type' => 'blog_post',
+            'priority' => 3  # Lower priority for blog posts
           }
           search_db << entry
         end
