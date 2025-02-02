@@ -6,6 +6,21 @@
   <meta name="base-url" content="{{ site.baseurl }}">
   <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
 
+  <!-- Critical CSS for fastest paint -->
+  <style>
+    .s-intro__title {
+      visibility: visible;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    .s-header {
+      visibility: visible;
+    }
+    .s-header__logo img {
+      max-height: 48px;
+      width: auto;
+    }
+  </style>
+
   <!-- Preload critical resources -->
   <link rel="preload" href="/assets/css/styles.css" as="style">
   <link rel="preload" href="/assets/js/main.js" as="script">
@@ -50,14 +65,25 @@
   <script>
     // Check if we're on localhost
     if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-      // Use official Font Awesome CDN for local development with version 6.7.2
+      // Load only specific Font Awesome icons for local development
+      var icons = ['github', 'search', 'arrow-up-right-from-square', 'bluesky', 'youtube', 'arrow-up'];
       var link = document.createElement('link');
       link.rel = 'stylesheet';
-      link.href = 'https://use.fontawesome.com/releases/v6.7.2/css/all.css';
+      link.href = 'https://use.fontawesome.com/releases/v6.7.2/css/solid.css';
       link.crossOrigin = 'anonymous';
-      link.media = 'print';
-      link.onload = function() { this.media = 'all'; };
       document.head.appendChild(link);
+      
+      var link2 = document.createElement('link');
+      link2.rel = 'stylesheet';
+      link2.href = 'https://use.fontawesome.com/releases/v6.7.2/css/brands.css';
+      link2.crossOrigin = 'anonymous';
+      document.head.appendChild(link2);
+      
+      var link3 = document.createElement('link');
+      link3.rel = 'stylesheet';
+      link3.href = 'https://use.fontawesome.com/releases/v6.7.2/css/fontawesome.css';
+      link3.crossOrigin = 'anonymous';
+      document.head.appendChild(link3);
     } else {
       // Use Kit for production with defer
       var script = document.createElement('script');
