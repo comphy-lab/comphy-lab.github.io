@@ -23,6 +23,9 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 ├── _research                  # Research project and publication entries
 ├── _team                      # Team member profiles
 ├── assets                     # Static files (images, css, js, logos, favicon)
+├── scripts                    # Build and utility scripts
+│   ├── build.sh              # Main build script
+│   └── generate_search_db.rb  # Search database generator
 ├── .github                    # GitHub specific files
 │   ├── ISSUE_TEMPLATE        # Issue templates
 │   └── PULL_REQUEST_TEMPLATE # PR templates
@@ -30,6 +33,7 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 ├── index.html                 # Homepage
 ├── Gemfile                    # Ruby dependencies
 └── _site                      # Generated site (ignored by Git)
+    └── search_db.json        # Generated search database
 ```
 
 ## Part A: Front-End Documentation
@@ -37,7 +41,7 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 ### Local Development
 
 1. **Prerequisites**
-   - Ruby (version 2.5.0 or higher)
+   - Ruby (version 3.2.0 or higher)
    - Bundler (`gem install bundler`)
 
 2. **Install Dependencies**
@@ -45,12 +49,16 @@ A static website for the Computational Multiphase Physics Laboratory, built with
    bundle install
    ```
 
-3. **Run Local Server**
+3. **Build and Run**
    ```bash
+   # Build the site and search database
+   ./scripts/build.sh
+
+   # Run local server
    bundle exec jekyll serve
    ```
    - Visit http://localhost:4000 in the browser
-   - Changes in source files trigger automatic rebuilds
+   - Changes require rebuilding with `./scripts/build.sh`
 
 4. **Deployment**
    - Typically managed via GitHub Pages when merged/pushed to the main branch
@@ -137,6 +145,44 @@ A static website for the Computational Multiphase Physics Laboratory, built with
    [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](URL)
    [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](URL)
    ```
+
+### Search Functionality
+
+The website includes a simple search feature that allows users to search through all content. The search system consists of two main components:
+
+1. **Search Database Generation**
+   - Automatically runs during build process (`./scripts/build.sh`)
+   - Creates `_site/search_db.json` containing all indexed content
+   - Indexes all content from articles, including:
+     - Page titles
+     - Paragraphs
+     - Headers
+   - Each entry contains:
+     - Title
+     - Content
+     - URL
+     - Element type (paragraph, heading, etc.)
+
+2. **Search Implementation**
+   - Located in `assets/js/search.js`
+   - Features:
+     - Real-time search as you type
+     - Highlights matching text
+     - Shows top 10 most relevant results
+     - Debounced input handling (300ms)
+     - Direct links to search results
+
+To use the search:
+1. Type your query in the search box
+2. Results will appear automatically
+3. Click any result to go to that page/section
+
+To rebuild the search database:
+```bash
+# After building the site
+cd scripts
+ruby generate_search_db.rb
+```
 
 ## Part B: Back-End Documentation
 
