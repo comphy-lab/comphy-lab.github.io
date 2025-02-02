@@ -4,8 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchResults = document.getElementById('searchResults');
     let searchDatabase = null;
 
+    // Get the base URL from meta tag if it exists
+    const baseUrl = document.querySelector('meta[name="base-url"]')?.content || '';
+
     // Load the search database
-    fetch('/assets/js/search_db.json')
+    fetch(`${baseUrl}/assets/js/search_db.json`)
         .then(response => response.json())
         .then(data => {
             searchDatabase = data;
@@ -22,20 +25,46 @@ document.addEventListener('DOMContentLoaded', () => {
         query = query.toLowerCase();
         const words = query.split(/\s+/);
         
-        return searchDatabase
+        // Filter and score results
+        const results = searchDatabase
             .filter(entry => {
                 const content = entry.content.toLowerCase();
                 const title = entry.title.toLowerCase();
                 const tags = entry.tags ? entry.tags.join(' ').toLowerCase() : '';
                 
-                // Check if all words appear in either title, content, or tags
                 return words.every(word => 
                     content.includes(word) || 
                     title.includes(word) || 
                     tags.includes(word)
                 );
             })
-            .slice(0, 10); // Limit to top 10 results
+            .map(entry => {
+                // Calculate score based on type
+                let score = 0;
+                if (entry.type === 'team_member') score += 100;
+                else if (entry.tags) score += 50;
+                else if (entry.type === 'h1') score += 40;
+                else if (entry.type === 'h2') score += 30;
+                else if (entry.type === 'h3') score += 20;
+                else if (entry.type.startsWith('h')) score += 10;
+
+                // Boost score if title matches
+                if (entry.title.toLowerCase().includes(query)) score += 25;
+
+                return { ...entry, score };
+            })
+            .sort((a, b) => b.score - a.score);
+
+        // Deduplicate results by URL and title
+        const seen = new Set();
+        const deduped = results.filter(entry => {
+            const key = `${entry.url}|${entry.title}`;
+            if (seen.has(key)) return false;
+            seen.add(key);
+            return true;
+        });
+
+        return deduped.slice(0, 10); // Limit to top 10 results
     }
 
     // Format search results
@@ -64,11 +93,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             ` : '';
 
+            // Add base URL to result URL if it's not absolute
+            const url = result.url.startsWith('http') ? result.url : `${baseUrl}${result.url}`;
+
             return `
                 <div class="search-result">
                     <div class="search-result-header">
                         <div class="search-result-title">
-                            <a href="${result.url}">${result.title}</a>
+                            <a href="${url}">${result.title}</a>
                         </div>
                         <div class="search-result-score">
                             ${result.type}

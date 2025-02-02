@@ -23,6 +23,15 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 ├── _research                  # Research project and publication entries
 ├── _team                      # Team member profiles
 ├── assets                     # Static files (images, css, js, logos, favicon)
+│   ├── css                    # Stylesheets
+│   │   ├── main.css          # Main stylesheet
+│   │   └── search.css        # Search functionality styles
+│   ├── js                    # JavaScript files
+│   │   ├── main.js          # Main JavaScript
+│   │   ├── search.js        # Search functionality
+│   │   └── search_db.json   # Generated search database
+│   ├── favicon              # Favicon files
+│   └── img                  # Image assets
 ├── scripts                    # Build and utility scripts
 │   ├── build.sh              # Main build script
 │   └── generate_search_db.rb  # Search database generator
@@ -148,41 +157,27 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 
 ### Search Functionality
 
-The website includes a simple search feature that allows users to search through all content. The search system consists of two main components:
+The website includes a powerful search feature that allows users to:
+- Search through all content including titles, text, and tags
+- Filter research papers by topic using tags
+- Get instant search results with highlighted matching text
+- Navigate directly to specific sections using anchor links
 
-1. **Search Database Generation**
-   - Automatically runs during build process (`./scripts/build.sh`)
-   - Creates `_site/search_db.json` containing all indexed content
-   - Indexes all content from articles, including:
-     - Page titles
-     - Paragraphs
-     - Headers
-   - Each entry contains:
-     - Title
-     - Content
-     - URL
-     - Element type (paragraph, heading, etc.)
+The search database is automatically generated during the build process by `scripts/generate_search_db.rb`. This script:
+- Indexes all HTML content
+- Extracts tags from research papers
+- Generates a JSON database used by the search functionality
 
-2. **Search Implementation**
-   - Located in `assets/js/search.js`
-   - Features:
-     - Real-time search as you type
-     - Highlights matching text
-     - Shows top 10 most relevant results
-     - Debounced input handling (300ms)
-     - Direct links to search results
-
-To use the search:
-1. Type your query in the search box
-2. Results will appear automatically
-3. Click any result to go to that page/section
-
-To rebuild the search database:
-```bash
-# After building the site
-cd scripts
-ruby generate_search_db.rb
+### Tags System
+Research papers can be tagged with multiple topics. Tags are defined in the markdown files using the following format:
+```html
+<tags><span>Tag1</span><span>Tag2</span></tags>
 ```
+
+These tags are:
+- Displayed with each paper
+- Searchable through the search interface
+- Used for filtering papers by topic
 
 ## Part B: Back-End Documentation
 

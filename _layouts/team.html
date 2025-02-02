@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ page.title }} - CoMPhy Lab</title>
+  <meta name="base-url" content="{{ site.baseurl }}">
+  <title>{{ page.title }} - {{ site.title }}</title>
 
   <script>
     document.documentElement.classList.remove('no-js');
@@ -219,6 +220,42 @@
   <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
   <!-- Search functionality -->
   <script src="/assets/js/search.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Add IDs to all h2 headings that don't have them
+      document.querySelectorAll('h2').forEach(heading => {
+        if (!heading.id) {
+          // Create ID from heading text
+          const id = heading.textContent
+            .toLowerCase()
+            .trim()
+            .replace(/[^a-z0-9]+/g, '-');
+          heading.id = id;
+        }
+      });
+
+      // If there's a hash in the URL, scroll to it after a brief delay
+      if (window.location.hash) {
+        setTimeout(() => {
+          const element = document.querySelector(window.location.hash);
+          if (element) {
+            // Get the header height
+            const header = document.querySelector('.s-header');
+            const headerHeight = header ? header.offsetHeight : 0;
+            
+            // Get the element's position
+            const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+            
+            // Scroll to element with offset for header
+            window.scrollTo({
+              top: elementPosition - headerHeight - 20, // 20px extra padding
+              behavior: 'smooth'
+            });
+          }
+        }, 100);
+      }
+    });
+  </script>
   <script>
     // Simple fade-in effect for images
     document.addEventListener('DOMContentLoaded', function() {
