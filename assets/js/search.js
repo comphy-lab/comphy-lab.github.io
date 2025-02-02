@@ -20,12 +20,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Calculate match percentage
     function calculateMatchPercentage(text, query) {
-        const words = query.toLowerCase().split(/\s+/);
-        const textLower = text.toLowerCase();
+        if (!text) return 0;
+        text = text.toLowerCase();
+        query = query.toLowerCase();
+
+        // Split into words
+        const queryWords = query.split(/\s+/);
+        const textWords = text.split(/\s+/);
+
+        // Calculate word matches
+        let matchedWords = 0;
+        queryWords.forEach(qWord => {
+            if (textWords.some(tWord => tWord.includes(qWord) || qWord.includes(tWord))) {
+                matchedWords++;
+            }
+        });
+
+        // Calculate character-level match for exact matches
+        const exactMatch = text.includes(query) ? 100 : 0;
         
-        // Count how many query words appear in the text
-        const matchedWords = words.filter(word => textLower.includes(word));
-        return Math.round((matchedWords.length / words.length) * 100);
+        // Calculate word-level match percentage
+        const wordMatch = (matchedWords / queryWords.length) * 100;
+        
+        // Return the higher of the two scores
+        return Math.max(exactMatch, wordMatch);
     }
 
     // Simple search function that checks if query appears in content or tags
@@ -37,17 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Filter and score results
         const results = searchDatabase
-            .filter(entry => {
-                const content = entry.content.toLowerCase();
-                const title = entry.title.toLowerCase();
-                const tags = entry.tags ? entry.tags.join(' ').toLowerCase() : '';
-                
-                return words.every(word => 
-                    content.includes(word) || 
-                    title.includes(word) || 
-                    tags.includes(word)
-                );
-            })
             .map(entry => {
                 // Calculate base score based on type
                 let score = 0;
@@ -65,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 else if (entry.type === 'h3') score += 20;
                 else if (entry.type.startsWith('h')) score += 10;
 
-                // Calculate match percentage
+                // Calculate match percentages for different fields
                 const titleMatch = calculateMatchPercentage(entry.title, query);
                 const contentMatch = calculateMatchPercentage(entry.content, query);
                 const tagsMatch = entry.tags ? calculateMatchPercentage(entry.tags.join(' '), query) : 0;
@@ -74,26 +81,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Use the highest match percentage
                 const matchPercentage = Math.max(titleMatch, contentMatch, tagsMatch, linksMatch);
 
+                // Only include results with match percentage > 50%
+                if (matchPercentage <= 50) return null;
+
                 // Boost score based on match percentage
                 score += matchPercentage;
 
-                // Extra boost if title matches
-                if (entry.title.toLowerCase().includes(query)) score += 25;
+                // Extra boost for title matches
+                if (titleMatch > 70) score += 25;
 
                 return { ...entry, score, matchPercentage };
             })
-            .sort((a, b) => b.score - a.score);
+            .filter(entry => entry !== null) // Remove null entries (below 50% match)
+            .sort((a, b) => b.score - a.score) // Sort by score
+            .slice(0, 10); // Limit to top 10 results
 
-        // Deduplicate results by URL and title
-        const seen = new Set();
-        const deduped = results.filter(entry => {
-            const key = `${entry.url}|${entry.title}`;
-            if (seen.has(key)) return false;
-            seen.add(key);
-            return true;
-        });
-
-        return deduped.slice(0, 10); // Limit to top 10 results
+        return results;
     }
 
     // Format search results
