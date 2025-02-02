@@ -18,6 +18,9 @@
   <link rel="stylesheet" href="/assets/css/vendor.css">
   <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="stylesheet" href="/assets/css/team.css">
+  <link rel="stylesheet" href="/assets/css/search.css">
+
+  <script src="/assets/js/search.js"></script>
 
   <script>
     // Check if we're on localhost
@@ -85,7 +88,9 @@
           <li class="search-container">
             <div class="search-wrapper">
               <input type="text" id="searchInput" placeholder="Search..." aria-label="Search">
-              <i class="fa fa-search search-icon"></i>
+              <button type="button" id="searchButton" class="search-button" aria-label="Trigger search">
+                <i class="fa fa-search search-icon"></i>
+              </button>
             </div>
             <div id="searchResults" class="search-results"></div>
           </li>
@@ -218,8 +223,7 @@
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <!-- Search dependencies -->
   <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
-  <!-- Search functionality -->
-  <script src="/assets/js/search.js"></script>
+
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       // Add IDs to all h2 headings that don't have them
