@@ -1,238 +1,120 @@
-// Initialize search functionality
+// search.js
 console.log('Search script loaded');
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM Content Loaded');
-    
+
     const searchInput = document.getElementById('searchInput');
     const searchResults = document.getElementById('searchResults');
     let fuse;
 
-    // Configure Fuse.js options for better search
+    // Define Fuse.js options
     const fuseOptions = {
         includeScore: true,
+        shouldSort: true,
         threshold: 0.3, // More strict matching
         minMatchCharLength: 2,
         keys: [
-            {
-                name: 'title',
-                weight: 0.7
-            },
-            {
-                name: 'content',
-                weight: 0.5
-            },
-            {
-                name: 'metadata',
-                weight: 0.3
-            }
+            { name: 'title', weight: 2.0 },
+            { name: 'content', weight: 1.0 },
+            { name: 'keywords', weight: 2.0 }  // For links and important terms
         ]
     };
 
-    // Function to get all indexable pages
-    async function getIndexablePages() {
-        const pages = [
-            '/',              // Main page
-            '/team/',         // Team page
-            '/research/',     // Research page
-            '/team/index.html',  // Team index
-            '/research/index.html' // Research index
-        ];
+    // Function to extract text and keywords from an element
+    function extractContent(element) {
+        const keywords = new Set();
         
-        return pages.map(page => {
-            // Convert relative paths to absolute
-            const url = new URL(page, window.location.origin).href;
-            return url;
+        // Extract all link text as keywords
+        element.querySelectorAll('a').forEach(link => {
+            keywords.add(link.textContent.trim());
         });
+
+        // Extract text from spans (often used for important terms)
+        element.querySelectorAll('span').forEach(span => {
+            keywords.add(span.textContent.trim());
+        });
+
+        // Get all text content
+        const content = element.textContent.trim();
+
+        return { content, keywords: Array.from(keywords) };
     }
 
-    // Function to extract metadata from team members
-    function extractTeamMemberMetadata(memberElement) {
-        const metadata = [];
-        
-        // Extract all text content from paragraphs
-        const paragraphs = memberElement.querySelectorAll('p');
-        paragraphs.forEach(p => {
-            const text = p.textContent.trim();
-            metadata.push(text);
-        });
+    // Build search index
+    function buildSearchIndex() {
+        const searchIndex = [];
 
-        // Extract links and their text
-        const links = memberElement.querySelectorAll('a');
-        links.forEach(link => {
-            metadata.push(link.textContent.trim());
-            metadata.push(link.getAttribute('href') || '');
-        });
+        // Index all paragraphs and their content
+        document.querySelectorAll('p').forEach(para => {
+            const { content, keywords } = extractContent(para);
+            if (content) {
+                // Find the nearest heading as title
+                let title = '';
+                let current = para;
+                while (current && !title) {
+                    current = current.previousElementSibling;
+                    if (current && /^H[1-6]$/.test(current.tagName)) {
+                        title = current.textContent;
+                    }
+                }
 
-        return metadata.join(' ');
-    }
-
-    // Function to extract content based on page type
-    function extractPageSpecificContent(doc, url) {
-        let content = '';
-        let metadata = '';
-        let type = 'page';
-        let title = doc.title || '';
-
-        if (url.includes('/team/')) {
-            type = 'team';
-            // Extract all team sections
-            const teamSections = doc.querySelectorAll('.team-section');
-            content = Array.from(teamSections).map(section => {
-                const sectionTitle = section.querySelector('h1')?.textContent || '';
-                const members = Array.from(section.querySelectorAll('.team-member'));
-                const memberContent = members.map(member => {
-                    const name = member.querySelector('h2')?.textContent || '';
-                    const details = member.querySelector('.member-content')?.textContent || '';
-                    const memberMetadata = extractTeamMemberMetadata(member);
-                    metadata += ' ' + memberMetadata;
-                    return `${name} ${details}`;
-                }).join(' ');
-                return `${sectionTitle} ${memberContent}`;
-            }).join(' ');
-
-            // Also extract content from the main content area
-            const mainContent = doc.querySelector('.s-team__desc');
-            if (mainContent) {
-                content += ' ' + mainContent.textContent;
-            }
-        } else if (url.includes('/research/')) {
-            type = 'research';
-            const researchContent = doc.querySelector('.research-content');
-            if (researchContent) {
-                // Extract all text content
-                content = researchContent.textContent;
-                
-                // Extract paper titles and content
-                const papers = researchContent.querySelectorAll('.paper-container');
-                papers.forEach(paper => {
-                    const title = paper.querySelector('h3')?.textContent || '';
-                    const details = paper.textContent;
-                    // Extract tags if present
-                    const tags = Array.from(paper.querySelectorAll('tags span'))
-                        .map(tag => tag.textContent)
-                        .join(' ');
-                    metadata += ' ' + tags;
-                    content += ' ' + title + ' ' + details;
+                searchIndex.push({
+                    title: title || content.slice(0, 50),
+                    content: content,
+                    keywords: keywords,
+                    url: window.location.pathname + (para.id ? '#' + para.id : '')
                 });
-
-                title = doc.querySelector('h1')?.textContent || title;
-            }
-        } else {
-            // For main page, extract all content sections
-            const aboutSection = doc.querySelector('.s-about__desc');
-            const introSection = doc.querySelector('.s-intro__content');
-            
-            if (aboutSection) content += aboutSection.textContent + ' ';
-            if (introSection) content += introSection.textContent + ' ';
-            
-            // Extract all headings for better context
-            const headings = doc.querySelectorAll('h1, h2, h3, h4, h5, h6');
-            headings.forEach(heading => {
-                metadata += ' ' + heading.textContent;
-            });
-        }
-
-        return { 
-            type, 
-            title, 
-            content: content.trim(), 
-            metadata: metadata.trim(),
-            url 
-        };
-    }
-
-    // Function to build search index
-    async function buildSearchIndex() {
-        try {
-            const pages = await getIndexablePages();
-            const indexItems = [];
-            
-            for (const url of pages) {
-                try {
-                    const response = await fetch(url);
-                    if (!response.ok) continue;
-                    
-                    const html = await response.text();
-                    const parser = new DOMParser();
-                    const doc = parser.parseFromString(html, 'text/html');
-                    
-                    const pageData = extractPageSpecificContent(doc, url);
-                    indexItems.push(pageData);
-                    console.log('Indexed:', url, pageData); // Debug log
-                } catch (error) {
-                    console.warn(`Failed to index page ${url}:`, error);
-                }
-            }
-            
-            fuse = new Fuse(indexItems, fuseOptions);
-            console.log('Search index built with', indexItems.length, 'pages');
-        } catch (error) {
-            console.error('Error building search index:', error);
-        }
-    }
-
-    // Function to highlight matched text
-    function highlightText(text, query) {
-        if (!query) return text;
-        
-        const words = query.trim().toLowerCase().split(/\s+/);
-        let highlightedText = text;
-        
-        words.forEach(word => {
-            if (word.length < 2) return;
-            const regex = new RegExp(`(${word})`, 'gi');
-            highlightedText = highlightedText.replace(regex, '<span class="highlight">$1</span>');
-        });
-        
-        return highlightedText;
-    }
-
-    // Function to get context around matched text
-    function getContext(text, query, contextLength = 150) {
-        if (!query || !text) return text;
-        
-        const words = query.toLowerCase().split(/\s+/);
-        const textLower = text.toLowerCase();
-        let bestIndex = -1;
-        let bestMatchCount = 0;
-        
-        words.forEach(word => {
-            if (word.length < 2) return;
-            const index = textLower.indexOf(word);
-            if (index > -1) {
-                const surroundingText = textLower.slice(
-                    Math.max(0, index - 30),
-                    Math.min(text.length, index + 30)
-                );
-                const matchCount = words.filter(w => surroundingText.includes(w)).length;
-                if (matchCount > bestMatchCount) {
-                    bestMatchCount = matchCount;
-                    bestIndex = index;
-                }
             }
         });
-        
-        if (bestIndex === -1) {
-            return text.slice(0, contextLength);
-        }
-        
-        const start = Math.max(0, bestIndex - contextLength / 2);
-        const end = Math.min(text.length, bestIndex + contextLength / 2);
-        let context = text.slice(start, end);
-        
-        if (start > 0) context = '...' + context;
-        if (end < text.length) context += '...';
-        
-        return context;
+
+        // Index all headings and their following content
+        document.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(heading => {
+            const { content, keywords } = extractContent(heading);
+            
+            // Get content from next sibling until next heading
+            let nextContent = '';
+            let current = heading.nextElementSibling;
+            while (current && !/^H[1-6]$/.test(current.tagName)) {
+                nextContent += ' ' + current.textContent;
+                current = current.nextElementSibling;
+            }
+
+            if (content) {
+                searchIndex.push({
+                    title: content,
+                    content: content + ' ' + nextContent,
+                    keywords: keywords,
+                    url: window.location.pathname + (heading.id ? '#' + heading.id : '')
+                });
+            }
+        });
+
+        // Index special elements like code blocks, blockquotes, etc.
+        document.querySelectorAll('pre, blockquote, .highlight').forEach(element => {
+            const { content, keywords } = extractContent(element);
+            if (content) {
+                searchIndex.push({
+                    title: content.slice(0, 50),
+                    content: content,
+                    keywords: keywords,
+                    url: window.location.pathname + (element.id ? '#' + element.id : '')
+                });
+            }
+        });
+
+        console.log('Search index built with', searchIndex.length, 'items');
+        return searchIndex;
     }
 
-    // Function to display search results
-    function displayResults(results, query) {
-        if (!searchResults) return;
-        
+    function showResults(results, query) {
         searchResults.innerHTML = '';
         
+        if (!query.trim()) {
+            searchResults.style.display = 'none';
+            return;
+        }
+
         if (!results.length) {
             searchResults.innerHTML = '<div class="search-no-results">No results found</div>';
             searchResults.style.display = 'block';
@@ -243,63 +125,74 @@ document.addEventListener('DOMContentLoaded', function() {
 
         results.forEach(result => {
             const item = result.item;
-            const context = getContext(item.content + ' ' + item.metadata, query);
-            const highlightedContext = highlightText(context, query);
-            
-            const link = document.createElement('a');
-            link.href = item.url;
-            link.className = 'search-result';
-            
-            link.innerHTML = `
-                <div class="search-result-type">${item.type}</div>
-                <div class="search-result-title">${highlightText(item.title, query)}</div>
-                <div class="search-result-content">${highlightedContext}</div>
+            const score = result.score;
+            const matchPercentage = Math.round((1 - score) * 100);
+
+            const resultDiv = document.createElement('a');
+            resultDiv.href = item.url;
+            resultDiv.className = 'search-result';
+
+            // Find the position of the query in the content
+            const queryPos = item.content.toLowerCase().indexOf(query.toLowerCase());
+            let excerpt = item.content;
+            if (queryPos !== -1) {
+                const start = Math.max(0, queryPos - 60);
+                const end = Math.min(item.content.length, queryPos + 60);
+                excerpt = (start > 0 ? '...' : '') + 
+                         item.content.slice(start, end).trim() + 
+                         (end < item.content.length ? '...' : '');
+            } else {
+                excerpt = item.content.slice(0, 120) + '...';
+            }
+
+            resultDiv.innerHTML = `
+                <div class="search-result-header">
+                    <div class="search-result-title">${item.title || 'Untitled'}</div>
+                    <div class="search-result-score">${matchPercentage}%</div>
+                </div>
+                <div class="search-result-content">${excerpt}</div>
+                ${item.keywords.length ? `
+                    <div class="search-result-tags">
+                        ${item.keywords.map(kw => `<span class="tag">${kw}</span>`).join('')}
+                    </div>
+                ` : ''}
             `;
-            
-            fragment.appendChild(link);
+
+            fragment.appendChild(resultDiv);
         });
-        
+
         searchResults.appendChild(fragment);
         searchResults.style.display = 'block';
     }
 
-    // Initialize search functionality
+    // Initialize search
     if (searchInput && searchResults) {
-        buildSearchIndex();
+        const searchIndex = buildSearchIndex();
+        fuse = new Fuse(searchIndex, fuseOptions);
 
-        let searchTimeout;
-        searchInput.addEventListener('input', function() {
-            const query = this.value.trim();
-            
-            clearTimeout(searchTimeout);
-            
-            if (!query) {
-                searchResults.style.display = 'none';
-                return;
-            }
-            
-            searchTimeout = setTimeout(() => {
+        // Handle input
+        let typingTimeout;
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.trim();
+            clearTimeout(typingTimeout);
+
+            typingTimeout = setTimeout(() => {
                 if (fuse) {
                     const results = fuse.search(query);
-                    displayResults(results, query);
+                    showResults(results, query);
                 }
-            }, 150);
+            }, 100);
         });
 
-        // Close search results when clicking outside
-        document.addEventListener('click', function(e) {
+        // Hide results when clicking outside
+        document.addEventListener('click', (e) => {
             if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
                 searchResults.style.display = 'none';
             }
         });
 
-        // Focus input when clicking the search container
-        document.querySelector('.search-container')?.addEventListener('click', function(e) {
-            searchInput.focus();
-        });
-
-        // Handle keyboard navigation
-        searchInput.addEventListener('keydown', function(e) {
+        // Handle Escape key
+        searchInput.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 searchResults.style.display = 'none';
                 searchInput.blur();
