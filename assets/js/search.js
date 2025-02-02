@@ -28,73 +28,64 @@ document.addEventListener('DOMContentLoaded', () => {
         const queryWords = query.split(/\s+/);
         const textWords = text.split(/\s+/);
 
-        // Calculate word matches
+        // Check for exact matches first (case-insensitive)
+        if (text.includes(query)) {
+            return 100;
+        }
+
+        // Calculate word matches with position bias
         let matchedWords = 0;
+        let titleBonus = 0;
+        
         queryWords.forEach(qWord => {
-            if (textWords.some(tWord => tWord.includes(qWord) || qWord.includes(tWord))) {
+            // Check for word boundaries to avoid partial matches
+            const wordBoundaryRegex = new RegExp(`\\b${qWord}\\b`, 'i');
+            if (textWords.some(tWord => wordBoundaryRegex.test(tWord))) {
                 matchedWords++;
+                // Give bonus points for matches in the beginning of text
+                if (textWords.indexOf(qWord) < 3) {
+                    titleBonus += 20;
+                }
             }
         });
 
-        // Calculate character-level match for exact matches
-        const exactMatch = text.includes(query) ? 100 : 0;
-        
         // Calculate word-level match percentage
         const wordMatch = (matchedWords / queryWords.length) * 100;
         
-        // Return the higher of the two scores
-        return Math.max(exactMatch, wordMatch);
+        return Math.min(100, wordMatch + titleBonus);
     }
 
-    // Simple search function that checks if query appears in content or tags
+    // Search function with improved relevance scoring
     function searchContent(query) {
-        if (!searchDatabase) return [];
+        if (!searchDatabase || !query.trim()) return [];
         
-        query = query.toLowerCase();
-        const words = query.split(/\s+/);
-        
-        // Filter and score results
         const results = searchDatabase
-            .map(entry => {
-                // Calculate base score based on type
-                let score = 0;
-                if (entry.type === 'team_member') score += 100;
-                else if (entry.type === 'paper') score += 90;
-                else if (entry.type === 'blog_post') score += 85;
-                else if (entry.type === 'markdown_section') score += 80;
-                else if (entry.type === 'markdown_text') score += 75;
-                else if (entry.type === 'section') score += 70;
-                else if (entry.type === 'text' && entry.links?.length > 0) score += 65;
-                else if (entry.type === 'text') score += 60;
-                else if (entry.tags) score += 50;
-                else if (entry.type === 'h1') score += 40;
-                else if (entry.type === 'h2') score += 30;
-                else if (entry.type === 'h3') score += 20;
-                else if (entry.type.startsWith('h')) score += 10;
-
-                // Calculate match percentages for different fields
-                const titleMatch = calculateMatchPercentage(entry.title, query);
-                const contentMatch = calculateMatchPercentage(entry.content, query);
-                const tagsMatch = entry.tags ? calculateMatchPercentage(entry.tags.join(' '), query) : 0;
-                const linksMatch = entry.links ? calculateMatchPercentage(entry.links.join(' '), query) : 0;
+            .map(item => {
+                // Calculate matches in different fields
+                const titleMatch = calculateMatchPercentage(item.title, query);
+                const contentMatch = calculateMatchPercentage(item.content, query);
+                const tagsMatch = item.tags ? calculateMatchPercentage(item.tags.join(' '), query) : 0;
                 
-                // Use the highest match percentage
-                const matchPercentage = Math.max(titleMatch, contentMatch, tagsMatch, linksMatch);
-
-                // Only include results with match percentage > 50%
-                if (matchPercentage <= 50) return null;
-
-                // Boost score based on match percentage
-                score += matchPercentage;
-
-                // Extra boost for title matches
-                if (titleMatch > 70) score += 25;
-
-                return { ...entry, score, matchPercentage };
+                // Weight different match types
+                let matchScore = Math.max(
+                    titleMatch * 1.2,  // Title matches are slightly more important
+                    contentMatch,
+                    tagsMatch * 1.1
+                );
+                
+                // Apply bonuses
+                if (query.toLowerCase() === item.title.toLowerCase()) {
+                    matchScore = Math.min(100, matchScore * 1.2); // Cap at 100% even with exact match bonus
+                }
+                
+                // Only include results with meaningful matches
+                return {
+                    ...item,
+                    matchScore: Math.min(100, Math.round(matchScore)) // Ensure score never exceeds 100%
+                };
             })
-            .filter(entry => entry !== null) // Remove null entries (below 50% match)
-            .sort((a, b) => b.score - a.score) // Sort by score
-            .slice(0, 10); // Limit to top 10 results
+            .filter(item => item.matchScore > 0)
+            .sort((a, b) => b.matchScore - a.matchScore);
 
         return results;
     }
@@ -103,31 +94,21 @@ document.addEventListener('DOMContentLoaded', () => {
     function showResults(results, query) {
         if (!searchResults) return;
         
+        if (!query.trim()) {
+            searchResults.innerHTML = '';
+            return;
+        }
+
         if (results.length === 0) {
             searchResults.innerHTML = '<div class="search-no-results">No results found</div>';
             return;
         }
 
-        const html = results.map(result => {
-            // Highlight the matching text
-            let content = result.content;
-            query.split(/\s+/).forEach(word => {
-                if (word) {
-                    const regex = new RegExp(`(${word})`, 'gi');
-                    content = content.replace(regex, '<mark>$1</mark>');
-                }
-            });
-
-            // Create tags HTML if tags exist
-            const tagsHtml = result.tags ? `
-                <div class="search-result-tags">
-                    ${result.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
-                </div>
-            ` : '';
-
-            // Add base URL to result URL if it's not absolute
-            const url = result.url.startsWith('http') ? result.url : `${baseUrl}${result.url}`;
-
+        const resultsHtml = results.map(result => {
+            const url = result.url || '#';
+            const content = result.content ? `<div class="search-result-content">${result.content}</div>` : '';
+            const matchText = result.matchScore === 100 ? 'Exact match' : `${result.matchScore}% match`;
+            
             return `
                 <div class="search-result">
                     <div class="search-result-header">
@@ -135,41 +116,48 @@ document.addEventListener('DOMContentLoaded', () => {
                             <a href="${url}">${result.title}</a>
                         </div>
                         <div class="search-result-score">
-                            ${result.type} (${result.matchPercentage}% match)
+                            ${result.type} (${matchText})
                         </div>
                     </div>
-                    <div class="search-result-content">${content}</div>
-                    ${tagsHtml}
-                </div>
-            `;
+                    ${content}
+                </div>`;
         }).join('');
 
-        searchResults.innerHTML = html;
+        searchResults.innerHTML = resultsHtml;
     }
 
     // Search input handler
     if (searchInput) {
         let debounceTimeout;
         
+        // Function to perform search
+        const performSearch = () => {
+            const query = searchInput.value.trim();
+            const results = searchContent(query);
+            showResults(results, query);
+        };
+
+        // Input event handler with debounce
         searchInput.addEventListener('input', (e) => {
-            const query = e.target.value.trim();
-            
-            // Clear previous timeout
-            if (debounceTimeout) {
+            clearTimeout(debounceTimeout);
+            debounceTimeout = setTimeout(performSearch, 300);
+        });
+
+        // Add click handler for search button
+        const searchButton = document.getElementById('searchButton');
+        if (searchButton) {
+            searchButton.addEventListener('click', () => {
+                searchInput.focus();
+                performSearch();
+            });
+        }
+
+        // Add keyboard handler for search input
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
                 clearTimeout(debounceTimeout);
+                performSearch();
             }
-            
-            // Clear results if query is empty
-            if (!query) {
-                searchResults.innerHTML = '';
-                return;
-            }
-            
-            // Debounce search for 300ms
-            debounceTimeout = setTimeout(() => {
-                const results = searchContent(query);
-                showResults(results, query);
-            }, 300);
         });
     }
 });
