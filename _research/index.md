@@ -72,10 +72,11 @@ title: Research
 
 ## 2025
 
-<h3 id="14">[14] <strong>Sanjay, V.</strong>, Zhang, B., Lv, C., & Lohse, D. The role of viscosity on drop impact forces on non-wetting surfaces. J. Fluid Mech., in press (2025).</h3>
+<h3 id="14">[14] <strong>Sanjay, V.</strong>, Zhang, B., Lv, C., & Lohse, D. The role of viscosity on drop impact forces on non-wetting surfaces. J. Fluid Mech., 1004, A6 (2025).</h3>
 
-<tags><span>Drops</span><span>Jets</span><span>Superhydrophobic surfaces</span><span>Soft-matter-singularities</span><span>Impact forces</span></tags>
+<tags><span>Drops</span><span>Impact forces</span><span>Featured</span></tags>
 
+[![DOI](https://img.shields.io/badge/DOI-10.1017/jfm.2024.982-blue?style=flat-square)](https://doi.org/10.1017/jfm.2024.982)
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2311.03012&color=green)](https://arxiv.org/abs/2311.03012)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/VatsalSy/The-role-of-viscosity-on-drop-impact-forces)
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs-comphy-lab.org/0_ToDo-Blog-public)
@@ -117,7 +118,7 @@ title: Research
 
 <h3 id="11">[11] <strong>Sanjay, V.</strong>, Chantelot, P., & Lohse, D. When does an impacting drop stop bouncing? J. Fluid Mech., 958, A26 (2023).</h3>
 
-<tags><span>Drops</span><span>Bouncing</span><span>Dissipative anamoly</span><span>Featured</span></tags>
+<tags><span>Drops</span><span>Bouncing</span><span>Dissipative anamoly</span></tags>
 
 [![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=Open%20Access&color=orange)](https://doi.org/10.1017/jfm.2023.55)
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs-comphy-lab.org/0_ToDo-Blog-public)
