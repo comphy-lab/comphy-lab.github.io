@@ -1849,3 +1849,119 @@ body {
         gap: 1.5rem;
     }
 }
+
+/* Search Container */
+.search-container {
+  position: relative;
+  margin-right: 2rem;
+}
+
+.search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+#searchInput {
+  width: 200px;
+  padding: 0.8rem 1rem;
+  padding-right: 2.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 1.4rem;
+  transition: all 0.3s ease;
+}
+
+#searchInput:focus {
+  outline: none;
+  width: 300px;
+  border-color: var(--color-primary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-icon {
+  position: absolute;
+  right: 10px;
+  color: #666;
+  pointer-events: none;
+}
+
+/* Search Results Dropdown */
+.search-results {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-height: 400px;
+  overflow-y: auto;
+  z-index: 1000;
+  display: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.search-result {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: background-color 0.2s ease;
+  text-decoration: none;
+  display: block;
+}
+
+.search-result:last-child {
+  border-bottom: none;
+}
+
+.search-result:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.search-result-type {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 0.3rem;
+}
+
+.search-result-title {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+}
+
+.search-result-content {
+  font-size: 1.3rem;
+  color: #666;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* No Results Message */
+.search-no-results {
+  padding: 1.5rem;
+  text-align: center;
+  color: #666;
+  font-size: 1.4rem;
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 6px;
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+  .search-container {
+    margin-right: 1rem;
+  }
+  
+  #searchInput {
+    width: 160px;
+  }
+  
+  #searchInput:focus {
+    width: 220px;
+  }
+}

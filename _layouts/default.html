@@ -66,6 +66,14 @@
           <li><a href="/research">Research</a></li>
           <li><a href="https://blogs-comphy-lab.org/" target="_blank">Blog <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8em;"></i></a></li>
           <li style="background: none;"><a href="https://bsky.app/profile/comphy-lab.org" style="background: none; padding: 0;"><i class="fa-brands fa-bluesky" style="font-size: 1.75em; color: #0085ff;"></i></a></li>
+          <!-- Search Container -->
+          <li class="search-container">
+            <div class="search-wrapper">
+              <input type="text" id="searchInput" placeholder="Search..." aria-label="Search">
+              <i class="fa fa-search search-icon"></i>
+            </div>
+            <div id="searchResults" class="search-results"></div>
+          </li>
         </ul>
       </nav>
     </header>
@@ -121,6 +129,11 @@
   <!-- <script src="/assets/js/plugins.js"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="/assets/js/main.js"></script>
+  
+  <!-- Search dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+  <!-- Search functionality -->
+  <script src="/assets/js/search.js"></script>
 
 </body>
 </html>
