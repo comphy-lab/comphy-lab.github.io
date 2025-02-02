@@ -1462,5 +1462,59 @@
     "links": [
 
     ]
+  },
+  {
+    "title": "---",
+    "content": "modified: 2025-02-02T21:29:46+01:00\ncreated: 2024-12-15T23:25:04+01:00\nwebsite: https://blogs-comphy-lab.org/\nstatus: done ✅\n---",
+    "url": "https://blogs-comphy-lab.org/0_README#-",
+    "type": "blog_post"
+  },
+  {
+    "title": "Computational Multiphase Physics (CoMPhy)",
+    "content": "Welcome to the CoMPhy Lab's documentation hub! We are based at the Physics of Fluids Department at the University of Twente, where we explore non-Newtonian free-surface flows and soft matter singularities.",
+    "url": "https://blogs-comphy-lab.org/0_README#computational-multiphase-physics-comphy-",
+    "type": "blog_post"
+  },
+  {
+    "title": "About Us",
+    "content": "See: About us",
+    "url": "https://blogs-comphy-lab.org/0_README#about-us",
+    "type": "blog_post"
+  },
+  {
+    "title": "Capillary waves:",
+    "content": "2025-01-11 [[Features-of-capillary-waves-during-asymmetric-bubble-coalescence]]: Analysis of capillary wave dynamics during bubble coalescence, focusing on energy transfer and wave propagation mechanisms.",
+    "url": "https://blogs-comphy-lab.org/0_README#capillary-waves-",
+    "type": "blog_post"
+  },
+  {
+    "title": "H-B formulation:",
+    "content": "2024-12-31 [[Herschel–Bulkley formulation]]: Mathematical formulation of the Herschel-Bulkley model for non-Newtonian flows, with emphasis on yield stress fluids.",
+    "url": "https://blogs-comphy-lab.org/0_README#h-b-formulation-",
+    "type": "blog_post"
+  },
+  {
+    "title": "Gauss' Law:",
+    "content": "2025-01-21 [[Gauss law of Electrostatics]]: Analysis of electric field flux through different surfaces using Gauss's law, with visual demonstrations.",
+    "url": "https://blogs-comphy-lab.org/0_README#gauss-law-",
+    "type": "blog_post"
+  },
+  {
+    "title": "Seminar-UIUC",
+    "content": "2025-01-19 [[Seminar-UIUC-abstract]]: UIUC fluid seminar abstract exploring polymeric flows as a tunable testbed for unsteady, nonlinear continuum mechanics.",
+    "url": "https://blogs-comphy-lab.org/0_README#seminar-uiuc",
+    "type": "blog_post"
+  },
+  {
+    "title": "Connect With Us",
+    "content": "- 🌐 Website: comphy-lab.org\n- 📧 Email:   vatsalsy@comphy-lab.org\n- 🐦 Twitter: @VatsalSanjay\n- 💻 GitHub: github.com/VatsalSy",
+    "url": "https://blogs-comphy-lab.org/0_README#connect-with-us",
+    "type": "blog_post"
+  },
+  {
+    "title": "Contributing",
+    "content": "We welcome contributions from researchers, students, and collaborators. Here's how you can contribute:\n\n1. Issues: Found a problem or have a suggestion? Choose an option below:\n   - 🗣️ Request a new blog topic\n   - 📚 Request documentation\n   - 🔍 Report content correction\n\n2. Pull Requests: Want to contribute directly? \n   - Fork the repository\n   - Make your changes (it can simply be correcting grammar or making a new post - simply write in plain text or markdown format and add it to the root folder).\n   - Submit a pull request with a clear description of your changes\n\nVisit our GitHub repository to get started.\n\n---\nNote: This documentation is maintained by the CoMPhy Lab team and is regularly updated with our latest research findings and computational methods.\n\n> [!meta] Back to main website\n> Home, Team, Research, Github",
+    "url": "https://blogs-comphy-lab.org/0_README#contributing",
+    "type": "blog_post"
   }
 ]
