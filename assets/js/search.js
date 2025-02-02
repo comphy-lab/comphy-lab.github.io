@@ -18,6 +18,16 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('Error loading search database:', error);
         });
 
+    // Calculate match percentage
+    function calculateMatchPercentage(text, query) {
+        const words = query.toLowerCase().split(/\s+/);
+        const textLower = text.toLowerCase();
+        
+        // Count how many query words appear in the text
+        const matchedWords = words.filter(word => textLower.includes(word));
+        return Math.round((matchedWords.length / words.length) * 100);
+    }
+
     // Simple search function that checks if query appears in content or tags
     function searchContent(query) {
         if (!searchDatabase) return [];
@@ -39,19 +49,37 @@ document.addEventListener('DOMContentLoaded', () => {
                 );
             })
             .map(entry => {
-                // Calculate score based on type
+                // Calculate base score based on type
                 let score = 0;
                 if (entry.type === 'team_member') score += 100;
+                else if (entry.type === 'paper') score += 90;
+                else if (entry.type === 'markdown_section') score += 85;
+                else if (entry.type === 'markdown_text') score += 75;
+                else if (entry.type === 'section') score += 80;
+                else if (entry.type === 'text' && entry.links?.length > 0) score += 70;
+                else if (entry.type === 'text') score += 60;
                 else if (entry.tags) score += 50;
                 else if (entry.type === 'h1') score += 40;
                 else if (entry.type === 'h2') score += 30;
                 else if (entry.type === 'h3') score += 20;
                 else if (entry.type.startsWith('h')) score += 10;
 
-                // Boost score if title matches
+                // Calculate match percentage
+                const titleMatch = calculateMatchPercentage(entry.title, query);
+                const contentMatch = calculateMatchPercentage(entry.content, query);
+                const tagsMatch = entry.tags ? calculateMatchPercentage(entry.tags.join(' '), query) : 0;
+                const linksMatch = entry.links ? calculateMatchPercentage(entry.links.join(' '), query) : 0;
+                
+                // Use the highest match percentage
+                const matchPercentage = Math.max(titleMatch, contentMatch, tagsMatch, linksMatch);
+
+                // Boost score based on match percentage
+                score += matchPercentage;
+
+                // Extra boost if title matches
                 if (entry.title.toLowerCase().includes(query)) score += 25;
 
-                return { ...entry, score };
+                return { ...entry, score, matchPercentage };
             })
             .sort((a, b) => b.score - a.score);
 
@@ -103,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <a href="${url}">${result.title}</a>
                         </div>
                         <div class="search-result-score">
-                            ${result.type}
+                            ${result.type} (${result.matchPercentage}% match)
                         </div>
                     </div>
                     <div class="search-result-content">${content}</div>

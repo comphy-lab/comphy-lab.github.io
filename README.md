@@ -156,15 +156,21 @@ A static website for the Computational Multiphase Physics Laboratory, built with
    ```
 
 ### Search Functionality
-
 The website includes a powerful search feature that allows users to:
 - Search through all content including titles, text, and tags
-- Filter research papers by topic using tags
 - Get instant search results with highlighted matching text
+- See match percentage for each result
 - Navigate directly to specific sections using anchor links
+
+Search results are prioritized in the following order:
+1. Team Members (highest priority)
+2. Research Papers
+3. Content with Tags
+4. Regular content (headings and paragraphs)
 
 The search database is automatically generated during the build process by `scripts/generate_search_db.rb`. This script:
 - Indexes all HTML content
+- Identifies and prioritizes team members and research papers
 - Extracts tags from research papers
 - Generates a JSON database used by the search functionality
 
@@ -178,6 +184,7 @@ These tags are:
 - Displayed with each paper
 - Searchable through the search interface
 - Used for filtering papers by topic
+- Included in search match percentage calculations
 
 ## Part B: Back-End Documentation
 
