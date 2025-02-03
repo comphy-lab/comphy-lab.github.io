@@ -6,28 +6,129 @@
   <meta name="base-url" content="{{ site.baseurl }}">
   <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
 
+  <!-- Critical CSS for fastest paint -->
+  <style>
+    .s-header {
+      visibility: visible;
+    }
+    .s-header__logo img {
+      max-height: 48px;
+      width: auto;
+    }
+    .research-content h1, .research-content h2 {
+      visibility: visible;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    .toc-nav {
+      visibility: visible;
+    }
+    .paper-container img {
+      opacity: 0;
+      transition: opacity 0.2s ease-out;
+    }
+    .paper-container img.loaded {
+      opacity: 1;
+    }
+    /* Badge styling */
+    .badge-container {
+      display: inline-block !important;
+      vertical-align: middle;
+    }
+    .badge-container a {
+      display: inline-block;
+      text-decoration: none;
+      margin-right: 4px;
+    }
+    .badge-container img {
+      vertical-align: middle;
+      opacity: 1;
+    }
+    .paper-container p {
+      margin-bottom: 0.5em;
+    }
+    /* Tag styling */
+    tags span {
+      display: inline-block;
+      padding: 2px 8px;
+      margin: 2px;
+      border-radius: 12px;
+      background-color: #f0f0f0;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    tags span:hover {
+      background-color: #e0e0e0;
+    }
+    tags span.active {
+      background-color: #007bff;
+      color: white;
+    }
+    .paper-container.hidden {
+      display: none;
+    }
+  </style>
+
+  <!-- Preload critical resources -->
+  <link rel="preload" href="/assets/css/styles.css" as="style">
+  <link rel="preload" href="/assets/css/research.css" as="style">
+  <link rel="preload" href="/assets/css/fontello/css/fontello.css" as="style">
+  <link rel="preload" href="/assets/css/academicons-1.7.0/css/academicons.min.css" as="style">
+
+  <!-- Font dependencies with font-display: swap -->
+  <style>
+    @font-face {
+      font-display: swap;
+    }
+  </style>
+  <link rel="stylesheet" href="/assets/css/fontello/css/fontello.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/assets/css/academicons-1.7.0/css/academicons.min.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="/assets/css/fontello/css/fontello.css">
+    <link rel="stylesheet" href="/assets/css/academicons-1.7.0/css/academicons.min.css">
+  </noscript>
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/assets/css/vendor.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/research.css">
+  <link rel="stylesheet" href="/assets/css/search.css" media="print" onload="this.media='all'">
+
+  <script defer src="/assets/js/search.js"></script>
+
   <script>
     document.documentElement.classList.remove('no-js');
     document.documentElement.classList.add('js');
   </script>
 
-  <!-- Font dependencies -->
-  <link rel="stylesheet" href="/assets/css/fontello/css/fontello.css">
-  <link rel="stylesheet" href="/assets/css/academicons-1.7.0/css/academicons.min.css">
-  <!-- Site styles -->
-  <link rel="stylesheet" href="/assets/css/vendor.css">
-  <link rel="stylesheet" href="/assets/css/styles.css">
-  <link rel="stylesheet" href="/assets/css/search.css">
-  <link rel="stylesheet" href="/assets/css/research.css">
-
   <script>
     // Check if we're on localhost
     if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-      // Use official Font Awesome CDN for local development with version 6.7.2
-      document.write('<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.2/css/all.css" crossorigin="anonymous">');
+      // Load only specific Font Awesome icons for local development
+      var icons = ['github', 'search', 'arrow-up-right-from-square', 'bluesky', 'youtube', 'arrow-up'];
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = 'https://use.fontawesome.com/releases/v6.7.2/css/solid.css';
+      link.crossOrigin = 'anonymous';
+      document.head.appendChild(link);
+      
+      var link2 = document.createElement('link');
+      link2.rel = 'stylesheet';
+      link2.href = 'https://use.fontawesome.com/releases/v6.7.2/css/brands.css';
+      link2.crossOrigin = 'anonymous';
+      document.head.appendChild(link2);
+      
+      var link3 = document.createElement('link');
+      link3.rel = 'stylesheet';
+      link3.href = 'https://use.fontawesome.com/releases/v6.7.2/css/fontawesome.css';
+      link3.crossOrigin = 'anonymous';
+      document.head.appendChild(link3);
     } else {
-      // Use Kit for production
-      document.write('<script src="https://kit.fontawesome.com/b1cfd9ca75.js" crossorigin="anonymous"><\/script>');
+      // Use Kit for production with defer
+      var script = document.createElement('script');
+      script.src = 'https://kit.fontawesome.com/b1cfd9ca75.js';
+      script.crossOrigin = 'anonymous';
+      script.defer = true;
+      document.head.appendChild(script);
     }
   </script>
 
@@ -96,7 +197,11 @@
             </nav>
           </div>
           <div class="research-content markdown-content">
-            {{ content | replace: '<iframe', '<div class="video-container"><iframe loading="lazy"' | replace: '</iframe>', '</iframe></div>' }}
+            {% capture lazy_img %}<img loading="lazy" decoding="async" onload="this.classList.add('loaded')"{% endcapture %}
+            {% assign content_with_lazy = content | replace: '<img', lazy_img %}
+            {% capture lazy_iframe %}<div class="video-container"><iframe loading="lazy"{% endcapture %}
+            {% assign content_with_video = content_with_lazy | replace: '<iframe', lazy_iframe | replace: '</iframe>', '</iframe></div>' %}
+            {{ content_with_video }}
           </div>
         </div>
       </div>
@@ -146,29 +251,27 @@
          </a>
       </div> <!-- end ss-go-top -->
     </footer>
+  </div>
 
   <!-- Core scripts -->
-  <script src="/assets/js/main.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script defer src="/assets/js/main.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <!-- Search dependencies -->
-  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
-  <!-- Search functionality -->
-  <script src="/assets/js/search.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+
   <script>
-    // Add badge container around consecutive badge links
     document.addEventListener('DOMContentLoaded', function() {
       // Generate table of contents
       const tocList = document.querySelector('.toc-list');
       const headings = document.querySelectorAll('.research-content h2');
       const tocEntries = [];
 
+      // Create TOC entries
       headings.forEach((heading, index) => {
-        // Create an ID if it doesn't exist
         if (!heading.id) {
           heading.id = `section-${index}`;
         }
 
-        // Create TOC entry
         const li = document.createElement('li');
         const a = document.createElement('a');
         a.href = `#${heading.id}`;
@@ -178,31 +281,30 @@
         tocEntries.push({ element: heading, link: a });
       });
 
-      // Handle scroll and highlight active section
+      // Optimize intersection observer for headings
+      const observerCallback = (entries) => {
+        entries.forEach(entry => {
+          const index = Array.from(headings).indexOf(entry.target);
+          if (index >= 0 && tocEntries[index]) {
+            const link = tocEntries[index].link;
+            if (entry.isIntersecting) {
+              tocEntries.forEach(item => item.link.classList.remove('active'));
+              link.classList.add('active');
+            }
+          }
+        });
+      };
+
       const observerOptions = {
         root: null,
         rootMargin: '-100px 0px -66%',
-        threshold: 0
+        threshold: [0, 0.25, 0.5, 0.75, 1]
       };
 
-      const headingObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          const index = Array.from(headings).indexOf(entry.target);
-          const link = tocEntries[index].link;
-
-          if (entry.isIntersecting) {
-            // Remove all active classes first
-            tocEntries.forEach(item => item.link.classList.remove('active'));
-            // Add active class to current section
-            link.classList.add('active');
-          }
-        });
-      }, observerOptions);
-
-      // Observe all h2 headings
+      const headingObserver = new IntersectionObserver(observerCallback, observerOptions);
       headings.forEach(heading => headingObserver.observe(heading));
 
-      // Smooth scroll to section when clicking TOC links
+      // Optimize smooth scroll behavior
       tocList.addEventListener('click', (e) => {
         if (e.target.tagName === 'A') {
           e.preventDefault();
@@ -210,208 +312,125 @@
           const targetElement = document.getElementById(targetId);
           
           if (targetElement) {
-            targetElement.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
+            const header = document.querySelector('.s-header');
+            const headerHeight = header ? header.offsetHeight : 0;
+            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+            
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
             });
           }
         }
       });
 
-      // Wrap paper sections in containers
+      // Optimize paper containers
       const researchContent = document.querySelector('.research-content');
-      const h3Elements = researchContent.querySelectorAll('h3');
-      
-      h3Elements.forEach((h3, index) => {
-        // Create container
-        const container = document.createElement('div');
-        container.className = 'paper-container';
+      if (researchContent) {
+        const h3Elements = researchContent.querySelectorAll('h3');
         
-        // Get the ID from the h3 if it exists
-        const id = h3.getAttribute('id');
-        if (id) {
-          container.id = id;
-          // Remove ID from h3 since we moved it to container
-          h3.removeAttribute('id');
-        }
-        
-        // Insert container before current h3
-        h3.parentNode.insertBefore(container, h3);
-        
-        // Move h3 into container
-        container.appendChild(h3);
-        
-        // Move all elements until next h3 or end into container
-        let currentElement = container.nextSibling;
-        while (currentElement && 
-               !(currentElement.tagName === 'H3' || currentElement.tagName === 'H2')) {
-          const nextElement = currentElement.nextSibling;
-          container.appendChild(currentElement);
-          currentElement = nextElement;
-        }
-      });
-
-      // Rest of your existing code...
-      const paragraphs = researchContent.getElementsByTagName('p');
-      
-      for (let p of paragraphs) {
-        if (p.querySelectorAll('a img[src*="shields.io"]').length > 0) {
-          const badgeContainer = document.createElement('div');
-          badgeContainer.className = 'badge-container';
-          while (p.firstChild) {
-            badgeContainer.appendChild(p.firstChild);
+        h3Elements.forEach((h3) => {
+          const container = document.createElement('div');
+          container.className = 'paper-container';
+          
+          if (h3.id) {
+            container.id = h3.id;
+            h3.removeAttribute('id');
           }
-          p.appendChild(badgeContainer);
-        }
-      }
+          
+          h3.parentNode.insertBefore(container, h3);
+          container.appendChild(h3);
+          
+          let currentElement = container.nextSibling;
+          while (currentElement && 
+                 !(currentElement.tagName === 'H3' || currentElement.tagName === 'H2')) {
+            const nextElement = currentElement.nextSibling;
+            container.appendChild(currentElement);
+            currentElement = nextElement;
+          }
+        });
 
-      // Add copy buttons to paper titles
-      document.querySelectorAll('.research-content h3').forEach(titleEl => {
-        // Create container
-        const container = document.createElement('div');
-        container.className = 'paper-title-container';
-        
-        // Move the title into the container
-        titleEl.parentNode.insertBefore(container, titleEl);
-        container.appendChild(titleEl);
-        
-        // Add copy button
-        const copyBtn = document.createElement('button');
-        copyBtn.className = 'copy-button';
-        copyBtn.innerHTML = '<i class="fa-regular fa-copy"></i>';
-        copyBtn.setAttribute('aria-label', 'Copy citation');
-        copyBtn.onclick = async (e) => {
-          e.preventDefault();
-          
-          // Get the citation text (title + next paragraph)
-          const citation = titleEl.textContent + ' ' + 
-            (titleEl.nextElementSibling?.textContent || '');
-          
-          try {
-            await navigator.clipboard.writeText(citation);
+        // Handle inline badges
+        const paragraphs = researchContent.getElementsByTagName('p');
+        for (let p of paragraphs) {
+          const badges = p.querySelectorAll('a[href*="arxiv.org"], a[href*="github.com"], a[href*="blogs-comphy-lab.org"]');
+          if (badges.length > 0) {
+            const badgeContainer = document.createElement('div');
+            badgeContainer.className = 'badge-container';
+            badgeContainer.style.display = 'inline-block';
+            badgeContainer.style.marginLeft = '8px';
+            badgeContainer.style.verticalAlign = 'middle';
             
-            // Show success feedback
-            copyBtn.innerHTML = '<i class="fa-solid fa-check"></i>';
-            copyBtn.classList.add('copy-success');
+            badges.forEach(badge => {
+              badge.style.display = 'inline-block';
+              badge.style.marginRight = '4px';
+              badgeContainer.appendChild(badge);
+            });
             
-            // Reset after animation
-            setTimeout(() => {
-              copyBtn.innerHTML = '<i class="fa-regular fa-copy"></i>';
-              copyBtn.classList.remove('copy-success');
-            }, 1000);
-          } catch (err) {
-            console.error('Failed to copy:', err);
+            p.appendChild(badgeContainer);
           }
-        };
-        container.appendChild(copyBtn);
-      });
+        }
 
-      // Add intersection observer for animations
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-            observer.unobserve(entry.target);
-          }
-        });
-      }, {
-        threshold: 0.1
-      });
+        // Handle tag filtering
+        const allTags = document.querySelectorAll('tags span');
+        const paperContainers = document.querySelectorAll('.paper-container');
+        let activeTag = null;
 
-      // Observe all major elements
-      document.querySelectorAll('.research-content > h2, .research-content > h3, .video-container').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
-        observer.observe(el);
-      });
-    });
+        // Check URL for tag parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const tagFromUrl = urlParams.get('tag');
 
-    // Lazy load videos when they come into view
-    document.addEventListener('DOMContentLoaded', function() {
-      const lazyVideos = document.querySelectorAll('iframe[loading="lazy"]');
-      const videoObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const iframe = entry.target;
-            const src = iframe.getAttribute('src');
-            if (src) {
-              iframe.setAttribute('src', src);
-            }
-            videoObserver.unobserve(iframe);
-          }
-        });
-      });
-
-      lazyVideos.forEach(video => {
-        videoObserver.observe(video);
-      });
-
-      // Handle tag filtering
-      const allTags = document.querySelectorAll('.research-content tags span');
-      const paperContainers = document.querySelectorAll('.paper-container');
-      let activeTag = null;
-
-      // Check URL for tag parameter
-      const urlParams = new URLSearchParams(window.location.search);
-      const tagFromUrl = urlParams.get('tag');
-
-      // Function to highlight/unhighlight all matching tags
-      const updateMatchingTags = (tagText, shouldHighlight) => {
-        document.querySelectorAll('.research-content tags span').forEach(tag => {
-          if (tag.textContent === tagText) {
-            if (shouldHighlight) {
-              tag.classList.add('active');
-            } else {
-              tag.classList.remove('active');
-            }
-          }
-        });
-      };
-
-      allTags.forEach(tag => {
-        tag.addEventListener('click', () => {
-          const tagText = tag.textContent;
-          
-          // If clicking the active tag, deactivate it
-          if (activeTag === tagText) {
-            activeTag = null;
-            // Remove active class from all tags
-            updateMatchingTags(tagText, false);
-            paperContainers.forEach(container => container.classList.remove('hidden'));
-            history.pushState({}, '', window.location.pathname);
-            return;
-          }
-
-          // Update active tag
-          activeTag = tagText;
-          
-          // Remove active class from all tags first
-          allTags.forEach(t => t.classList.remove('active'));
-          // Then highlight all matching tags
-          updateMatchingTags(tagText, true);
-
-          // Update URL
-          history.pushState({}, '', `?tag=${encodeURIComponent(tagText)}`);
-
-          // Filter papers
-          paperContainers.forEach(container => {
-            const containerTags = container.querySelector('tags');
-            if (containerTags && containerTags.textContent.includes(tagText)) {
-              container.classList.remove('hidden');
-            } else {
-              container.classList.add('hidden');
+        // Function to highlight matching tags
+        const updateMatchingTags = (tagText, shouldHighlight) => {
+          document.querySelectorAll('tags span').forEach(tag => {
+            if (tag.textContent === tagText) {
+              tag.classList.toggle('active', shouldHighlight);
             }
           });
-        });
-      });
+        };
 
-      // Apply filter from URL if present
-      if (tagFromUrl) {
-        const matchingTag = Array.from(allTags).find(tag => tag.textContent === tagFromUrl);
-        if (matchingTag) {
-          matchingTag.click();
+        // Add click handlers to tags
+        allTags.forEach(tag => {
+          tag.addEventListener('click', () => {
+            const tagText = tag.textContent;
+            
+            // If clicking the active tag, deactivate it
+            if (activeTag === tagText) {
+              activeTag = null;
+              updateMatchingTags(tagText, false);
+              paperContainers.forEach(container => {
+                container.classList.remove('hidden');
+              });
+              history.pushState({}, '', window.location.pathname);
+              return;
+            }
+
+            // Update active tag
+            activeTag = tagText;
+            allTags.forEach(t => t.classList.remove('active'));
+            updateMatchingTags(tagText, true);
+
+            // Update URL
+            history.pushState({}, '', `?tag=${encodeURIComponent(tagText)}`);
+
+            // Filter papers
+            paperContainers.forEach(container => {
+              const containerTags = container.querySelector('tags');
+              if (containerTags && containerTags.textContent.includes(tagText)) {
+                container.classList.remove('hidden');
+              } else {
+                container.classList.add('hidden');
+              }
+            });
+          });
+        });
+
+        // Apply filter from URL if present
+        if (tagFromUrl) {
+          const matchingTag = Array.from(allTags).find(tag => tag.textContent === tagFromUrl);
+          if (matchingTag) {
+            matchingTag.click();
+          }
         }
       }
     });
