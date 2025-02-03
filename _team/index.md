@@ -87,17 +87,6 @@ Joint with [Martin van der Hoef](https://pof.tnw.utwente.nl/people/profile/244) 
 
 **Research Interest:** Molecular Dynamics Simulations of Evaporation-Driven Colloidal Self-Assembly.
 
-## Milan Sent (B.Sc.) 
-[<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/mdjsent)
-
-<img src="/assets/images/team/5.jpg" alt="Milan Sent" loading="lazy" width="200" height="200">
-
-Joint with [Jacco Snoeijer](https://pof.tnw.utwente.nl/people/profile/21)
-
-- [B.Sc. Student, Phys. Fluids - Univ. Twente / 2024](https://pof.tnw.utwente.nl/people/profile/2243)
-
-**Research Interest:** Spinning Pizza.
-
 ## Xiangyu Zhang (Intern) 
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/zhangxyPHD)
 
@@ -314,6 +303,12 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 **Collaboration on:** Viscoelastic Flows, Drop Impact.
 
 # Our Alumni
+
+## Milan Sent
+[<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/mdjsent)
+
+- **2025:** Graduated with B.Sc., Univ. Twente
+- **Thesis:** [Spinning Pizza](https://tinyurl.com/2ycunjcr)
 
 ## Valentin Rosario
 [<i class="fa-brands fa-linkedin" style="font-size: 1.5em; color: black;"></i>](https://www.linkedin.com/in/valentin-rosario-6377602b2/?originalSubdomain=nl)
