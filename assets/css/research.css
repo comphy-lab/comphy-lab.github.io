@@ -110,21 +110,42 @@
   margin-top: 0;
 }
 
-/* Badge container */
-.badge-container {
+.paper-container p {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 0.5rem;
-  margin: 0.5rem 0 1rem;
-  padding-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Badge container */
+.badge-container {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+  align-items: center;
+  line-height: inherit;
 }
 
 .badge-container a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
   transition: transform 0.2s ease;
+  line-height: 0;
+}
+
+.badge-container img {
+  height: 20px;
+  width: auto;
+  vertical-align: middle;
+  margin: 0;
 }
 
 .badge-container a:hover {
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
 /* Video container */

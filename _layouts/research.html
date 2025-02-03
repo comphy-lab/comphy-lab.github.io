@@ -31,17 +31,26 @@
     }
     /* Badge styling */
     .badge-container {
-      display: inline-block !important;
+      display: inline-flex !important;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 4px;
+      margin-left: 4px;
       vertical-align: middle;
+      line-height: 0;
     }
     .badge-container a {
-      display: inline-block;
+      display: inline-flex;
       text-decoration: none;
-      margin-right: 4px;
+      align-items: center;
+      line-height: 0;
     }
     .badge-container img {
       vertical-align: middle;
       opacity: 1;
+      height: 20px;
+      width: auto;
+      margin: 0;
     }
     .paper-container p {
       margin-bottom: 0.5em;
@@ -355,16 +364,42 @@
         for (let p of paragraphs) {
           const badges = p.querySelectorAll('a[href*="arxiv.org"], a[href*="github.com"], a[href*="blogs-comphy-lab.org"]');
           if (badges.length > 0) {
-            const badgeContainer = document.createElement('div');
+            const badgeContainer = document.createElement('span');
             badgeContainer.className = 'badge-container';
-            badgeContainer.style.display = 'inline-block';
-            badgeContainer.style.marginLeft = '8px';
-            badgeContainer.style.verticalAlign = 'middle';
             
+            // Get the text content before any badges
+            let textContent = '';
+            let hasNonBadgeContent = false;
+            
+            // First pass: collect all non-badge content
+            for (let node of p.childNodes) {
+              if (node.nodeType === 3) { // Text node
+                if (node.textContent.trim()) {
+                  textContent += node.textContent;
+                  hasNonBadgeContent = true;
+                }
+              } else if (node.nodeType === 1) { // Element node
+                const href = node.getAttribute('href');
+                if (!href || (!href.includes('arxiv.org') && !href.includes('github.com') && !href.includes('blogs-comphy-lab.org'))) {
+                  textContent += node.outerHTML;
+                  hasNonBadgeContent = true;
+                }
+              }
+            }
+            
+            // Clear the paragraph
+            p.innerHTML = '';
+            
+            // Add back the text content if it exists
+            if (hasNonBadgeContent) {
+              const textSpan = document.createElement('span');
+              textSpan.innerHTML = textContent.trim();
+              p.appendChild(textSpan);
+            }
+            
+            // Add the badges
             badges.forEach(badge => {
-              badge.style.display = 'inline-block';
-              badge.style.marginRight = '4px';
-              badgeContainer.appendChild(badge);
+              badgeContainer.appendChild(badge.cloneNode(true));
             });
             
             p.appendChild(badgeContainer);
