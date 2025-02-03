@@ -42,13 +42,6 @@
     "priority": 1
   },
   {
-    "title": "Milan Sent (B.Sc.)",
-    "content": "[<i class=\"fa-brands fa-github\" style=\"font-size: 2.5em; color: black;\"></i>](https://github.com/mdjsent)\n\n<img src=\"/assets/images/team/5.jpg\" alt=\"Milan Sent\" loading=\"lazy\" width=\"200\" height=\"200\">\n\nJoint with [Jacco Snoeijer](https://pof.tnw.utwente.nl/people/profile/21)\n\n- [B.Sc. Student, Phys. Fluids - Univ. Twente / 2024](https://pof.tnw.utwente.nl/people/profile/2243)\n\n**Research Interest:** Spinning Pizza.",
-    "url": "/team/#milan-sent-b-sc-",
-    "type": "team_member",
-    "priority": 1
-  },
-  {
     "title": "Xiangyu Zhang (Intern)",
     "content": "[<i class=\"fa-brands fa-github\" style=\"font-size: 2.5em; color: black;\"></i>](https://github.com/zhangxyPHD)\n\n<img src=\"/assets/images/team/7.jpg\" alt=\"Xiangyu Zhang\" loading=\"lazy\" width=\"200\" height=\"200\">\n\nJoint with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)\n\n- [Guest Researcher, Phys. Fluids - Univ. Twente / 2024](https://pof.tnw.utwente.nl/people/profile/2209)\n- City University of Hong Kong, China\n\n**Research Interest:** Viscoplastic Drop Impact.",
     "url": "/team/#xiangyu-zhang-intern-",
@@ -227,6 +220,13 @@
     "title": "Konstantinos Zinelis (Costis)",
     "content": "[<i class=\"ai ai-google-scholar-square\" style=\"font-size: 2.5em;\"></i>](https://scholar.google.com/citations?user=dZrR_z8AAAAJ&hl=en&inst=5726176096060060532&oi=ao)\n[<i class=\"fa-brands fa-x-twitter\" style=\"font-size: 2em; color: #000000;\"></i>](https://x.com/KZinelis)\n\n- [Postdoc, MIT](https://qigroup.mit.edu/team/)\n\n**Collaboration on:** Viscoelastic Flows, Drop Impact.",
     "url": "/team/#konstantinos-zinelis-costis-",
+    "type": "team_member",
+    "priority": 1
+  },
+  {
+    "title": "Milan Sent",
+    "content": "[<i class=\"fa-brands fa-github\" style=\"font-size: 2.5em; color: black;\"></i>](https://github.com/mdjsent)\n\n- **2025:** Graduated with B.Sc., Univ. Twente\n- **Thesis:** [Spinning Pizza](https://tinyurl.com/2ycunjcr)",
+    "url": "/team/#milan-sent",
     "type": "team_member",
     "priority": 1
   },
