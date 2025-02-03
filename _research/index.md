@@ -72,7 +72,7 @@ title: Research
 
 <tags><span>Drops</span><span>Impact forces</span><span>Featured</span></tags>
 
-[![DOI](https://img.shields.io/badge/DOI-10.1017/jfm.2024.982-blue?style=flat-square)](https://doi.org/10.1017/jfm.2024.982)
+[![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=OA&color=orange)](https://doi.org/10.1017/jfm.2024.982)
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2311.03012&color=green)](https://arxiv.org/abs/2311.03012)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/VatsalSy/The-role-of-viscosity-on-drop-impact-forces)
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs-comphy-lab.org/0_ToDo-Blog-public)
@@ -85,7 +85,7 @@ title: Research
 
 <tags><span>Waves</span><span>Dissipative anamoly</span></tags>
 
-[![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=Open%20Access&color=orange)](https://doi.org/10.1017/jfm.2024.1089)
+[![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=OA&color=orange)](https://doi.org/10.1017/jfm.2024.1089)
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2406.05416&color=green)](https://arxiv.org/abs/2406.05416)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/concentricWave)
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs-comphy-lab.org/0_ToDo-Blog-public)
@@ -98,7 +98,7 @@ title: Research
 
 <tags><span>Bubbles</span><span>Non-Newtonian</span><span>Jets</span><span>Soft-matter-singularities</span><span>Featured</span></tags>
 
-[![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=Open%20Access&color=orange)](https://doi.org/10.1017/jfm.2024.1073)
+[![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=OA&color=orange)](https://doi.org/10.1017/jfm.2024.1073)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/2023_Bubble-bursting-in-an-elasto-viscoplastic-medium)
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs-comphy-lab.org/0_ToDo-Blog-public)
 
@@ -113,7 +113,7 @@ title: Research
 
 <tags><span>Drops</span><span>Bouncing</span><span>Dissipative anamoly</span></tags>
 
-[![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=Open%20Access&color=orange)](https://doi.org/10.1017/jfm.2023.55)
+[![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=OA&color=orange)](https://doi.org/10.1017/jfm.2023.55)
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs-comphy-lab.org/0_ToDo-Blog-public)
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=EskoUUszojk07SjU&amp;list=PLf5C5HCrvhLHG5t3iPscUuEp_gbD4XHyU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -123,7 +123,7 @@ title: Research
 
 <tags><span>Drops</span><span>Bouncing</span><span>Superhydrophobic surfaces</span></tags>
 
-[![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=Open%20Access&color=orange)](https://doi.org/10.1017/jfm.2023.13)
+[![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=OA&color=orange)](https://doi.org/10.1017/jfm.2023.13)
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs-comphy-lab.org/0_ToDo-Blog-public)
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=o-jd-NqOMsXtj8HG&amp;list=PLf5C5HCrvhLHJXLqwpylEwYc2rVtTsCUX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -134,18 +134,17 @@ title: Research
 
 <tags><span>Drops</span><span>Jets</span><span>Sheets</span><span>Bubbles</span><span>Soft-matter-singularities</span><span>Non-Newtonian</span></tags>
 
-[![More information](https://img.shields.io/static/v1.svg?style=flat-square&label=More%20information&message=click%20here&color=blue)](https://www.vatsalsanjay.com/phd-thesis)
-[![PhD thesis](https://img.shields.io/static/v1.svg?logo=adobeacrobatreader&style=flat-square&label=PhD%20thesis&message=Download&color=green)](https://qrco.de/bd9SHU)
-[![DOI](https://img.shields.io/static/v1.svg?style=flat-square&label=Open%20access&message=DOI:%2010.3990/1.9789036554077&color=orange)](https://doi.org/10.3990/1.9789036554077)
-[![Defense](https://img.shields.io/static/v1.svg?style=flat-square&logo=vimeo&label=Defense&message=Watch%20online&color=green)](https://vimeo.com/730545548)
+[![PhD thesis](https://img.shields.io/static/v1.svg?logo=adobeacrobatreader&style=flat-square&label=Thesis&message=Download&color=green)](https://qrco.de/bd9SHU)
+[![DOI](https://img.shields.io/static/v1.svg?style=flat-square&label=UT&message=link&color=orange)](https://doi.org/10.3990/1.9789036554077)
 [![LaTeX](https://img.shields.io/static/v1.svg?style=flat-square&logo=github&label=LaTeX&message=source%20code)](https://github.com/VatsalSy/VatsalPhDThesis)
+[![Defense](https://img.shields.io/static/v1.svg?style=flat-square&logo=vimeo&label=Defense&message=Watch%20online&color=green)](https://vimeo.com/730545548)
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs-comphy-lab.org/0_ToDo-Blog-public)
 
 <h3 id="9">[9] <strong>Sanjay, V.</strong> Taylor--Culick retractions and the influence of the surroundings. J. Fluid Mech., 948, A14 (2022).</h3>
 
 <tags><span>Sheets</span><span>Dissipative anamoly</span><span>Retraction</span></tags>
 
-[![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=Open%20Access&color=orange)](https://doi.org/10.1017/jfm.2022.671)
+[![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=OA&color=orange)](https://doi.org/10.1017/jfm.2022.671)
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs-comphy-lab.org/0_ToDo-Blog-public)
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=tDjjLeag-69MkjG3&amp;list=PLf5C5HCrvhLHsSDmgLAql-hcAEZrejs2V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -173,7 +172,7 @@ title: Research
 
 <tags><span>Bubbles</span><span>Jets</span><span>Non-Newtonian</span><span>Soft-matter-singularities</span></tags>
 
-[![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=Open%20Access&color=orange)](https://doi.org/10.1017/jfm.2021.489)
+[![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=OA&color=orange)](https://doi.org/10.1017/jfm.2021.489)
 [![arXiv](https://img.shields.io/badge/arXiv-2101.07744-green?style=flat-square)](https://arxiv.org/abs/2101.07744)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/VatsalSy/Bursting-Bubble-In-a-Viscoplastic-Medium)
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs-comphy-lab.org/0_ToDo-Blog-public)
@@ -186,7 +185,7 @@ title: Research
 
 <tags><span>Drops</span><span>Superamphiphobic-surfaces</span><span>Lifting</span></tags>
 
-[![Sci. Adv.](https://img.shields.io/static/v1.svg?style=flat-square&label=Sci.%20Adv.&message=Open%20Access&color=orange)](https://doi.org/10.1126/sciadv.aba4330)
+[![Sci. Adv.](https://img.shields.io/static/v1.svg?style=flat-square&label=Sci.%20Adv.&message=OA&color=orange)](https://doi.org/10.1126/sciadv.aba4330)
 [![arXiv](https://img.shields.io/badge/arXiv-1912.02667-green?style=flat-square)](https://arxiv.org/abs/1912.02667)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/VatsalSy/Lifting-a-sessile-drop)
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs-comphy-lab.org/0_ToDo-Blog-public)
