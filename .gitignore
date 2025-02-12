@@ -8,4 +8,5 @@ vendor/
 # Ignore ai rules
 .windsurfrules
 .cursorrules
+**/copilot-instructions.md
 .DS_Store
