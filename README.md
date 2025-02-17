@@ -39,6 +39,7 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 │   ├── ISSUE_TEMPLATE        # Issue templates
 │   └── PULL_REQUEST_TEMPLATE # PR templates
 ├── about.md                   # About page content (markdown)
+├── join.html                  # Join Us page (opportunities)
 ├── index.html                 # Homepage
 ├── Gemfile                    # Ruby dependencies
 └── _site                      # Generated site (ignored by Git)

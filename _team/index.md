@@ -7,7 +7,7 @@ title: Our Team & Collaborators
 
 ## Vatsal Sanjay (PI) 
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/VatsalSy)
-[<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?user=67aQviYAAAAJ)
+[<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?user=tHb_qZoAAAAJ&hl=en)
 [<i class="fa-brands fa-bluesky" style="font-size: 2em; color: #0085ff;"></i>](https://bsky.app/profile/comphy-lab.org)
 
 <img src="/assets/images/team/0.jpg" alt="Vatsal Sanjay" loading="lazy" width="200" height="200">
