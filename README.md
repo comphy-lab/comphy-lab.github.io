@@ -155,7 +155,7 @@ A static website for the Computational Multiphase Physics Laboratory, built with
    [![DOI](https://img.shields.io/static/v1.svg?style=flat-square&label=DOI&message=NUMBER&color=orange)](URL)
    [![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=Open%20Access&color=orange)](URL)
    [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](URL)
-   [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](URL)
+   [![Blog](https://img.shields.io/badge/Blog-blogs.comphy--lab.org-blue?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org)
    ```
 
 ### Search Functionality

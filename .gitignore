@@ -1,3 +1,4 @@
+# Jekyll build output
 _site/
 .sass-cache/
 .jekyll-cache/
@@ -10,3 +11,28 @@ vendor/
 .cursorrules
 **/copilot-instructions.md
 .DS_Store
+
+# Node.js dependencies
+node_modules/
+scripts/node_modules/
+scripts/package-lock.json
+scripts/blog_content.json
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Search database (generated file)
+assets/js/search_db.json
+_site/assets/js/search_db.json

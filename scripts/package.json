@@ -1,0 +1,12 @@
+{
+  "name": "comphy-lab-blog-crawler",
+  "version": "1.0.0",
+  "description": "Blog content crawler for CoMPhy Lab website",
+  "private": true,
+  "scripts": {
+    "fetch": "node fetch_blog_content.js"
+  },
+  "dependencies": {
+    "puppeteer": "^22.0.0"
+  }
+} 
