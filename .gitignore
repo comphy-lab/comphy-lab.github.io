@@ -32,7 +32,3 @@ scripts/blog_content.json
 .Trashes
 ehthumbs.db
 Thumbs.db
-
-# Search database (generated file)
-assets/js/search_db.json
-_site/assets/js/search_db.json
