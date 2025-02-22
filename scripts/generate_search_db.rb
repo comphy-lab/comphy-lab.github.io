@@ -71,6 +71,7 @@ end
 # Process markdown files first
 Dir.glob(File.join(ROOT_DIR, '*.md')).each do |file|
   next if file.start_with?(File.join(ROOT_DIR, '_team')) # Skip team members
+  next if file == File.join(ROOT_DIR, 'README.md') # Skip root README.md
   
   puts "Processing markdown file #{file}..."
   
@@ -295,7 +296,122 @@ def fetch_blog_content
     begin
       blog_entries = JSON.parse(File.read(blog_content_file))
       puts "Found #{blog_entries.length} blog entries"
-      blog_entries
+      
+      processed_entries = []
+      
+      blog_entries.each do |entry|
+        # Skip empty entries
+        next if entry['content'].nil? || entry['content'].strip.empty?
+        
+        # Clean up the content first
+        content = entry['content']
+                   .gsub(/^(created|status|modified|author|date published):.*$/, '')  # Remove metadata lines
+                   .gsub(/\n+/, "\n")        # Normalize newlines
+                   .strip
+        
+        # First, try to split by headers
+        sections = content.split(/(?=^#+\s+)/).map(&:strip).reject(&:empty?)
+        
+        # If no headers found, treat the whole content as one section
+        sections = [content] if sections.empty?
+        
+        sections.each do |section|
+          # Get section title
+          title = if section.match?(/^#+\s+/)
+            # If section starts with header, use it as title
+            header = section.lines.first.strip
+            section = section.sub(/^#+\s+[^\n]+\n/, '').strip  # Remove header from content
+            header.gsub(/^#+\s+/, '')
+                 .sub(/\s*-\s*aliases:?\s*$/i, '')  # Remove "- aliases" suffix
+          else
+            # Otherwise use first sentence or phrase as title
+            first_line = section.lines.first.strip
+            first_line.split(/[.!?]/).first
+                     .sub(/\s*-\s*aliases:?\s*$/i, '')  # Remove "- aliases" suffix
+          end
+          
+          # Clean up the title
+          title = title.gsub(/\s+/, ' ').strip  # Normalize spaces
+          
+          # Generate a more descriptive title by combining blog title and section title
+          blog_title = entry['title'].sub(/\s+-\s+.*$/, '').strip
+          section_title = if title.downcase.start_with?(blog_title.downcase)
+            title  # Use section title if it already includes blog title
+          else
+            "#{blog_title} - #{title}"  # Combine blog title with section title
+          end
+          
+          # Skip if no content left after title
+          next if section.strip.empty?
+          
+          # Split content into paragraphs
+          paragraphs = section.split(/\n\n+/).map(&:strip).reject(&:empty?)
+          
+          paragraphs.each do |para|
+            # Skip code blocks and HTML
+            next if para.start_with?('```') || para.start_with?('<')
+            next if para.match?(/^[\s#*\-]+$/)  # Skip lines that are just formatting
+            
+            # Split long paragraphs into smaller chunks
+            if para.length > 300
+              # Split by sentences
+              sentences = para.split(/(?<=[.!?])\s+(?=[A-Z])/)
+              current_chunk = []
+              current_length = 0
+              
+              sentences.each do |sentence|
+                if current_length + sentence.length > 300
+                  # Store current chunk if not empty
+                  if current_chunk.any?
+                    chunk_text = current_chunk.join(' ').strip
+                    if chunk_text.length >= 50  # Only store substantial chunks
+                      processed_entries << {
+                        'title' => section_title,
+                        'content' => chunk_text,
+                        'url' => entry['url'],
+                        'type' => 'blog_excerpt',
+                        'priority' => 3
+                      }
+                    end
+                    current_chunk = []
+                    current_length = 0
+                  end
+                end
+                current_chunk << sentence
+                current_length += sentence.length
+              end
+              
+              # Store any remaining content
+              if current_chunk.any?
+                chunk_text = current_chunk.join(' ').strip
+                if chunk_text.length >= 50
+                  processed_entries << {
+                    'title' => section_title,
+                    'content' => chunk_text,
+                    'url' => entry['url'],
+                    'type' => 'blog_excerpt',
+                    'priority' => 3
+                  }
+                end
+              end
+            else
+              # For shorter paragraphs, store as is if substantial
+              if para.length >= 50
+                processed_entries << {
+                  'title' => section_title,
+                  'content' => para,
+                  'url' => entry['url'],
+                  'type' => 'blog_excerpt',
+                  'priority' => 3
+                }
+              end
+            end
+          end
+        end
+      end
+      
+      puts "Generated #{processed_entries.length} searchable entries from blog content"
+      processed_entries
     rescue JSON::ParserError => e
       puts "Error parsing blog content: #{e.message}"
       []
