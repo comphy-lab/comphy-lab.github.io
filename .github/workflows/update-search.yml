@@ -24,9 +24,13 @@ jobs:
     env:
       NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       NPM_CONFIG_CACHE: ${{ github.workspace }}/.npm
+      PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 'true'
+      PUPPETEER_EXECUTABLE_PATH: '/usr/bin/google-chrome'
     
     steps:
     - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Fetch all history for proper git operations
     
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
@@ -39,14 +43,18 @@ jobs:
       with:
         node-version: '20'
         cache: 'npm'
-        cache-dependency-path: './scripts/package.json'
+        cache-dependency-path: 'scripts/package.json'
+        registry-url: 'https://registry.npmjs.org'
 
-    - name: Debug directory structure
+    - name: Install Chrome and dependencies
       run: |
-        echo "Current directory contents:"
-        ls -la
-        echo "Scripts directory contents:"
-        ls -la scripts/
+        sudo apt-get update
+        sudo apt-get install -y wget gnupg
+        wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+        echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
+        sudo apt-get update
+        sudo apt-get install -y google-chrome-stable
+        google-chrome --version
         
     - name: Install Ruby dependencies
       run: |
@@ -58,8 +66,7 @@ jobs:
     - name: Install Node.js dependencies
       run: |
         cd scripts
-        echo "Installing dependencies in scripts directory"
-        npm ci --verbose
+        npm install
     
     - name: Fetch blog content
       run: |
