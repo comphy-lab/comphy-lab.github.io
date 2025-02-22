@@ -73,6 +73,8 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 4. **Deployment**
    - Typically managed via GitHub Pages when merged/pushed to the main branch
    - Local testing is recommended before committing changes
+   - Cloudflare cache is automatically purged on deployment via GitHub Actions
+     - Requires `CLOUDFLARE_ZONE_ID` and `CLOUDFLARE_API_TOKEN` secrets in repository settings
 
 ### Content Management
 
