@@ -277,7 +277,7 @@ Dir.glob(File.join(ROOT_DIR, '_site', '**', '*.html')) do |file|
 end
 
 # Fetch and index external blog content
-BLOG_URL = "https://blogs-comphy-lab.org"
+BLOG_URL = "https://blogs.comphy-lab.org"
 BLOG_API_URL = "https://publish-01.obsidian.md"
 BLOG_UID = "2b614a95ee2a1dd00a42a8bf3fab3099"
 FETCH_DELAY = 1 # seconds between requests
@@ -303,8 +303,9 @@ def fetch_url(url, headers = {})
   end
 end
 
-begin
-  puts "Generating search database..."
+def fetch_blog_content
+  puts "Fetching blog content..."
+  blog_entries = []
   
   # First get the main page to extract metadata
   if main_page = fetch_url(BLOG_URL)
@@ -320,39 +321,76 @@ begin
     end
     
     if site_info
-      # Get the cache data
-      cache_url = "#{BLOG_API_URL}/access/#{site_info['uid']}/0_README.md"
-      if cache_data = fetch_url(cache_url, {
+      # Get the site structure
+      structure_url = "#{BLOG_API_URL}/structure/#{site_info['uid']}"
+      if structure_data = fetch_url(structure_url, {
         'Referer' => BLOG_URL,
-        'Accept' => 'text/markdown',
+        'Accept' => 'application/json',
         'Host' => URI(BLOG_API_URL).host
       })
-        # Parse the README to get structure
-        sections = cache_data.split(/^#+\s+/)
-        sections.each do |section|
-          next if section.strip.empty?
+        structure = JSON.parse(structure_data)
+        
+        # Process each published page
+        structure['pages'].each do |page|
+          next if page['hidden'] # Skip hidden pages
           
-          # Extract header and content
-          lines = section.lines
-          header = lines.first.strip
-          content = lines[1..].join.strip
-          
-          next if header.empty? || content.empty?
-          
-          # Create entry for blog section
-          entry = {
-            'title' => header,
-            'content' => content.gsub(/\[([^\]]+)\]\(([^\)]+)\)/, '\1')  # Remove markdown formatting
-                              .gsub(/[*_]{1,2}([^*_]+)[*_]{1,2}/, '\1'),
-            'url' => "#{BLOG_URL}/0_README##{generate_anchor(header)}",
-            'type' => 'blog_post',
-            'priority' => 3  # Lower priority for blog posts
-          }
-          search_db << entry
+          # Get the page content
+          page_url = "#{BLOG_API_URL}/access/#{site_info['uid']}/#{page['slug']}"
+          if page_content = fetch_url(page_url, {
+            'Referer' => BLOG_URL,
+            'Accept' => 'text/markdown',
+            'Host' => URI(BLOG_API_URL).host
+          })
+            # Parse the content
+            sections = page_content.split(/^#+\s+/)
+            sections.each do |section|
+              next if section.strip.empty?
+              
+              # Extract header and content
+              lines = section.lines
+              header = lines.first.strip
+              content = lines[1..].join.strip
+              
+              next if header.empty? || content.empty?
+              
+              # Create entry for blog section
+              entry = {
+                'title' => header,
+                'content' => content.gsub(/\[([^\]]+)\]\(([^\)]+)\)/, '\1')  # Remove markdown formatting
+                                  .gsub(/[*_]{1,2}([^*_]+)[*_]{1,2}/, '\1'),
+                'url' => "#{BLOG_URL}/#{page['slug']}##{generate_anchor(header)}",
+                'type' => 'blog_post',
+                'priority' => 3  # Lower priority for blog posts
+              }
+              blog_entries << entry
+            end
+            
+            # Also create an entry for the whole page
+            entry = {
+              'title' => page['title'],
+              'content' => page_content.gsub(/\[([^\]]+)\]\(([^\)]+)\)/, '\1')  # Remove markdown formatting
+                                     .gsub(/[*_]{1,2}([^*_]+)[*_]{1,2}/, '\1'),
+              'url' => "#{BLOG_URL}/#{page['slug']}",
+              'type' => 'blog_page',
+              'priority' => 2  # Higher priority for full pages
+            }
+            blog_entries << entry
+            
+            sleep FETCH_DELAY # Be nice to the API
+          end
         end
       end
     end
   end
+  
+  blog_entries
+end
+
+begin
+  puts "Generating search database..."
+  
+  # Add blog entries to search database
+  search_db.concat(fetch_blog_content)
   
   # Write to JSON file in source assets/js directory first
   source_file = File.join(File.dirname(__FILE__), '..', 'assets', 'js', 'search_db.json')
