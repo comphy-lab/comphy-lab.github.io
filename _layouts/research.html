@@ -177,7 +177,8 @@
           <li><a href="/#about">About</a></li>
           <li><a href="/team">Team</a></li>
           <li><a href="/research">Research</a></li>
-          <li><a href="https://blogs-comphy-lab.org/" target="_blank">Blog <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8em;"></i></a></li>
+          <li><a href="/join">Join Us</a></li>
+          <li><a href="https://blogs.comphy-lab.org/">Blog</a></li>
           <li style="background: none;"><a href="https://bsky.app/profile/comphy-lab.org" style="background: none; padding: 0;"><i class="fa-brands fa-bluesky" style="font-size: 1.75em; color: #0085ff;"></i></a></li>
           <!-- Search Container -->
           <li class="search-container">
@@ -362,7 +363,7 @@
         // Handle inline badges
         const paragraphs = researchContent.getElementsByTagName('p');
         for (let p of paragraphs) {
-          const badges = p.querySelectorAll('a[href*="arxiv.org"], a[href*="github.com"], a[href*="blogs-comphy-lab.org"]');
+          const badges = p.querySelectorAll('a[href*="arxiv.org"], a[href*="github.com"], a[href*="blogs.comphy-lab.org"]');
           if (badges.length > 0) {
             const badgeContainer = document.createElement('span');
             badgeContainer.className = 'badge-container';
@@ -380,7 +381,7 @@
                 }
               } else if (node.nodeType === 1) { // Element node
                 const href = node.getAttribute('href');
-                if (!href || (!href.includes('arxiv.org') && !href.includes('github.com') && !href.includes('blogs-comphy-lab.org'))) {
+                if (!href || (!href.includes('arxiv.org') && !href.includes('github.com') && !href.includes('blogs.comphy-lab.org'))) {
                   textContent += node.outerHTML;
                   hasNonBadgeContent = true;
                 }

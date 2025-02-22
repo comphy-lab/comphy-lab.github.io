@@ -5,6 +5,8 @@ require 'fileutils'
 require 'open-uri'
 require 'net/http'
 require 'uri'
+require 'set'
+require 'thread'  # This provides Queue
 
 # Get the project root directory (one level up from scripts)
 ROOT_DIR = File.expand_path('..', __dir__)
@@ -68,12 +70,13 @@ end
 
 # Process markdown files first
 Dir.glob(File.join(ROOT_DIR, '*.md')).each do |file|
-  next if file.end_with?('README.md') # Skip README
   next if file.start_with?(File.join(ROOT_DIR, '_team')) # Skip team members
+  next if file == File.join(ROOT_DIR, 'README.md') # Skip root README.md
   
   puts "Processing markdown file #{file}..."
   
   content = File.read(file)
+  is_readme = file.end_with?('README.md')
   
   # Split content by headers
   sections = content.split(/^#+\s+/)
@@ -88,33 +91,41 @@ Dir.glob(File.join(ROOT_DIR, '*.md')).each do |file|
     content = lines[1..].join.strip
     
     next if header.empty? || content.empty?
+    next if content.length < 50 # Skip very short sections
+    
+    # Skip navigation-like sections
+    next if header.match?(/^(navigation|menu|contents|index)$/i)
     
     # Create entry for the section
     entry = {
       'title' => header,
       'content' => content,
-      'url' => '/#about',
-      'type' => 'markdown_section',
-      'priority' => 3  # Lower priority for regular content
+      'url' => is_readme ? '/README.md' : '/#about',
+      'type' => is_readme ? 'readme_section' : 'markdown_section',
+      'priority' => is_readme ? 4 : 3  # Lower priority for README sections
     }
     search_db << entry
     
-    # Also create entries for individual paragraphs
-    paragraphs = content.split(/\n\n+/)
-    paragraphs.each do |para|
-      para = para.strip
-      next if para.empty?
-      next if para.start_with?('```') # Skip code blocks
-      next if para.start_with?('<') # Skip HTML
-      
-      entry = {
-        'title' => header,
-        'content' => para,
-        'url' => '/#about',
-        'type' => 'markdown_text',
-        'priority' => 3  # Lower priority for regular content
-      }
-      search_db << entry
+    # Only create paragraph entries for non-README content
+    unless is_readme
+      # Also create entries for individual paragraphs
+      paragraphs = content.split(/\n\n+/)
+      paragraphs.each do |para|
+        para = para.strip
+        next if para.empty?
+        next if para.length < 100 # Only include substantial paragraphs
+        next if para.start_with?('```') # Skip code blocks
+        next if para.start_with?('<') # Skip HTML
+        
+        entry = {
+          'title' => header,
+          'content' => para,
+          'url' => '/#about',
+          'type' => 'markdown_text',
+          'priority' => 3
+        }
+        search_db << entry
+      end
     end
   end
 end
@@ -277,82 +288,145 @@ Dir.glob(File.join(ROOT_DIR, '_site', '**', '*.html')) do |file|
 end
 
 # Fetch and index external blog content
-BLOG_URL = "https://blogs-comphy-lab.org"
-BLOG_API_URL = "https://publish-01.obsidian.md"
-BLOG_UID = "2b614a95ee2a1dd00a42a8bf3fab3099"
-FETCH_DELAY = 1 # seconds between requests
-
-def fetch_url(url, headers = {})
-  uri = URI(url)
-  http = Net::HTTP.new(uri.host, uri.port)
-  http.use_ssl = true
+def fetch_blog_content
+  puts "Reading blog content from Node.js output..."
+  blog_content_file = File.join(File.dirname(__FILE__), 'blog_content.json')
   
-  request = Net::HTTP::Get.new(uri)
-  headers.each { |k,v| request[k] = v }
-  request['User-Agent'] = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
-  request['Origin'] = BLOG_URL
-  request['Accept'] = '*/*'
-  
-  response = http.request(request)
-  
-  if response.is_a?(Net::HTTPSuccess)
-    response.body
+  if File.exist?(blog_content_file)
+    begin
+      blog_entries = JSON.parse(File.read(blog_content_file))
+      puts "Found #{blog_entries.length} blog entries"
+      
+      processed_entries = []
+      
+      blog_entries.each do |entry|
+        # Skip empty entries
+        next if entry['content'].nil? || entry['content'].strip.empty?
+        
+        # Clean up the content first
+        content = entry['content']
+                   .gsub(/^(created|status|modified|author|date published):.*$/, '')  # Remove metadata lines
+                   .gsub(/\n+/, "\n")        # Normalize newlines
+                   .strip
+        
+        # First, try to split by headers
+        sections = content.split(/(?=^#+\s+)/).map(&:strip).reject(&:empty?)
+        
+        # If no headers found, treat the whole content as one section
+        sections = [content] if sections.empty?
+        
+        sections.each do |section|
+          # Get section title
+          title = if section.match?(/^#+\s+/)
+            # If section starts with header, use it as title
+            header = section.lines.first.strip
+            section = section.sub(/^#+\s+[^\n]+\n/, '').strip  # Remove header from content
+            header.gsub(/^#+\s+/, '')
+                 .sub(/\s*-\s*aliases:?\s*$/i, '')  # Remove "- aliases" suffix
+          else
+            # Otherwise use first sentence or phrase as title
+            first_line = section.lines.first.strip
+            first_line.split(/[.!?]/).first
+                     .sub(/\s*-\s*aliases:?\s*$/i, '')  # Remove "- aliases" suffix
+          end
+          
+          # Clean up the title
+          title = title.gsub(/\s+/, ' ').strip  # Normalize spaces
+          
+          # Generate a more descriptive title by combining blog title and section title
+          blog_title = entry['title'].sub(/\s+-\s+.*$/, '').strip
+          section_title = if title.downcase.start_with?(blog_title.downcase)
+            title  # Use section title if it already includes blog title
+          else
+            "#{blog_title} - #{title}"  # Combine blog title with section title
+          end
+          
+          # Skip if no content left after title
+          next if section.strip.empty?
+          
+          # Split content into paragraphs
+          paragraphs = section.split(/\n\n+/).map(&:strip).reject(&:empty?)
+          
+          paragraphs.each do |para|
+            # Skip code blocks and HTML
+            next if para.start_with?('```') || para.start_with?('<')
+            next if para.match?(/^[\s#*\-]+$/)  # Skip lines that are just formatting
+            
+            # Split long paragraphs into smaller chunks
+            if para.length > 300
+              # Split by sentences
+              sentences = para.split(/(?<=[.!?])\s+(?=[A-Z])/)
+              current_chunk = []
+              current_length = 0
+              
+              sentences.each do |sentence|
+                if current_length + sentence.length > 300
+                  # Store current chunk if not empty
+                  if current_chunk.any?
+                    chunk_text = current_chunk.join(' ').strip
+                    if chunk_text.length >= 50  # Only store substantial chunks
+                      processed_entries << {
+                        'title' => section_title,
+                        'content' => chunk_text,
+                        'url' => entry['url'],
+                        'type' => 'blog_excerpt',
+                        'priority' => 3
+                      }
+                    end
+                    current_chunk = []
+                    current_length = 0
+                  end
+                end
+                current_chunk << sentence
+                current_length += sentence.length
+              end
+              
+              # Store any remaining content
+              if current_chunk.any?
+                chunk_text = current_chunk.join(' ').strip
+                if chunk_text.length >= 50
+                  processed_entries << {
+                    'title' => section_title,
+                    'content' => chunk_text,
+                    'url' => entry['url'],
+                    'type' => 'blog_excerpt',
+                    'priority' => 3
+                  }
+                end
+              end
+            else
+              # For shorter paragraphs, store as is if substantial
+              if para.length >= 50
+                processed_entries << {
+                  'title' => section_title,
+                  'content' => para,
+                  'url' => entry['url'],
+                  'type' => 'blog_excerpt',
+                  'priority' => 3
+                }
+              end
+            end
+          end
+        end
+      end
+      
+      puts "Generated #{processed_entries.length} searchable entries from blog content"
+      processed_entries
+    rescue JSON::ParserError => e
+      puts "Error parsing blog content: #{e.message}"
+      []
+    end
   else
-    puts "Failed to fetch #{url}: #{response.code} #{response.message}"
-    nil
+    puts "No blog content file found. Run 'node scripts/fetch_blog_content.js' first."
+    []
   end
 end
 
 begin
   puts "Generating search database..."
   
-  # First get the main page to extract metadata
-  if main_page = fetch_url(BLOG_URL)
-    doc = Nokogiri::HTML(main_page)
-    
-    # Extract site info
-    site_info = nil
-    doc.css('script').each do |script|
-      if script.text =~ /window\.siteInfo\s*=\s*({.*?});/m
-        site_info = JSON.parse($1)
-        break
-      end
-    end
-    
-    if site_info
-      # Get the cache data
-      cache_url = "#{BLOG_API_URL}/access/#{site_info['uid']}/0_README.md"
-      if cache_data = fetch_url(cache_url, {
-        'Referer' => BLOG_URL,
-        'Accept' => 'text/markdown',
-        'Host' => URI(BLOG_API_URL).host
-      })
-        # Parse the README to get structure
-        sections = cache_data.split(/^#+\s+/)
-        sections.each do |section|
-          next if section.strip.empty?
-          
-          # Extract header and content
-          lines = section.lines
-          header = lines.first.strip
-          content = lines[1..].join.strip
-          
-          next if header.empty? || content.empty?
-          
-          # Create entry for blog section
-          entry = {
-            'title' => header,
-            'content' => content.gsub(/\[([^\]]+)\]\(([^\)]+)\)/, '\1')  # Remove markdown formatting
-                              .gsub(/[*_]{1,2}([^*_]+)[*_]{1,2}/, '\1'),
-            'url' => "#{BLOG_URL}/0_README##{generate_anchor(header)}",
-            'type' => 'blog_post',
-            'priority' => 3  # Lower priority for blog posts
-          }
-          search_db << entry
-        end
-      end
-    end
-  end
+  # Add blog entries to search database
+  search_db.concat(fetch_blog_content)
   
   # Write to JSON file in source assets/js directory first
   source_file = File.join(File.dirname(__FILE__), '..', 'assets', 'js', 'search_db.json')
