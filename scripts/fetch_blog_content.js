@@ -81,7 +81,15 @@ async function getInternalLinks(page) {
 }
 
 async function crawlBlog() {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || null,
+    args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+      '--disable-dev-shm-usage',
+      '--disable-gpu'
+    ]
+  });
   const page = await browser.newPage();
   
   const visitedUrls = new Set();

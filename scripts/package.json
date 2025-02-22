@@ -8,5 +8,14 @@
   },
   "dependencies": {
     "puppeteer": "^22.0.0"
-  }
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comphy-lab/comphy-lab.github.io.git"
+  },
+  "author": "CoMPhy Lab",
+  "license": "MIT"
 } 
