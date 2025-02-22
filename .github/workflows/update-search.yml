@@ -13,9 +13,17 @@ on:
       - 'scripts/fetch_blog_content.js'
       - 'scripts/package.json'
 
+# Add permissions needed for the workflow
+permissions:
+  contents: write    # This allows the action to commit and push changes
+  packages: read     # This allows the action to read from npm
+
 jobs:
   update-search:
     runs-on: ubuntu-latest
+    env:
+      NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      NPM_CONFIG_CACHE: ${{ github.workspace }}/.npm
     
     steps:
     - uses: actions/checkout@v4
@@ -32,7 +40,14 @@ jobs:
         node-version: '20'
         cache: 'npm'
         cache-dependency-path: scripts/package-lock.json
-    
+
+    - name: Debug directory structure
+      run: |
+        echo "Current directory contents:"
+        ls -la
+        echo "Scripts directory contents:"
+        ls -la scripts/
+        
     - name: Install Ruby dependencies
       run: |
         gem install bundler
@@ -43,7 +58,8 @@ jobs:
     - name: Install Node.js dependencies
       run: |
         cd scripts
-        npm ci
+        echo "Installing dependencies in scripts directory"
+        npm ci --verbose
     
     - name: Fetch blog content
       run: |
