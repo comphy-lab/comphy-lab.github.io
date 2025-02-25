@@ -8,16 +8,16 @@
 
   <!-- Critical CSS for fastest paint -->
   <style>
-    .s-intro__title {
-      visibility: visible;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    }
     .s-header {
       visibility: visible;
     }
     .s-header__logo img {
       max-height: 48px;
       width: auto;
+    }
+    .teaching-content h1, .teaching-content h2 {
+      visibility: visible;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     }
   </style>
 
@@ -54,6 +54,7 @@
   <!-- Site styles -->
   <link rel="stylesheet" href="/assets/css/vendor.css" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/teaching.css">
   <link rel="stylesheet" href="/assets/css/search.css" media="print" onload="this.media='all'">
 
   <script defer src="/assets/js/search.js"></script>
@@ -66,7 +67,7 @@
     // Check if we're on localhost
     if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
       // Load only specific Font Awesome icons for local development
-      var icons = ['github', 'search', 'arrow-up-right-from-square', 'bluesky', 'youtube', 'arrow-up'];
+      var icons = ['github', 'search', 'arrow-up-right-from-square', 'bluesky', 'youtube', 'arrow-up', 'calendar-days', 'location-dot', 'clock'];
       var link = document.createElement('link');
       link.rel = 'stylesheet';
       link.href = 'https://use.fontawesome.com/releases/v6.7.2/css/solid.css';
@@ -116,14 +117,14 @@
         <a href="#0" class="s-header__nav-close-btn"><span>Close</span></a>
         <ul class="s-header__nav-list">
           <li style="background: none;"><a href="https://scholar.google.com/citations?user=tHb_qZoAAAAJ&hl=en" style="background: none; padding: 0;"><i class="ai ai-google-scholar" style="font-size: 1.75em;"></i></a></li>
-          <li style="background: none;"><a href="https://github.com/comphy-lab" style="background: none; padding: 0;"><i class="fa-brands fa-github" style="font-size: 1.75em"></i></a></li>
-          <li><a href="#about" class="smoothscroll">About</a></li>
-          <li><a href="/team/">Team</a></li>
+          <li style="background: none;"><a href="https://github.com/comphy-lab" style="background: none; padding: 0;"><i class="fa-brands fa-github" style="font-size: 1.75em;"></i></a></li>
+          <li><a href="/#about">About</a></li>
+          <li><a href="/team">Team</a></li>
           <li><a href="/research">Research</a></li>
           <li><a href="/teaching">Teaching</a></li>
           <li><a href="/join">Join Us</a></li>
           <li><a href="https://blogs.comphy-lab.org/">Blog</a></li>
-<li style="background: none;"><a href="https://bsky.app/profile/comphy-lab.org" style="background: none; padding: 0;"><i class="fa-brands fa-bluesky" style="font-size: 1.75em; color: #0085ff;"></i></a></li>
+          <li style="background: none;"><a href="https://bsky.app/profile/comphy-lab.org" style="background: none; padding: 0;"><i class="fa-brands fa-bluesky" style="font-size: 1.75em; color: #0085ff;"></i></a></li>
           <!-- Search Container -->
           <li class="search-container">
             <div class="search-wrapper">
@@ -137,53 +138,64 @@
         </ul>
       </nav>
     </header>
-  <!-- Main content -->
-  {{ content }}
 
-  <footer class="site-footer">
-    <div class="footer-left">
-      <a href="http://basilisk.fr/sandbox/vatsal/" target="_blank">
-        <img src="/assets/logos/logoBasilisk_TransparentBackground.png" alt="Basilisk C" class="footer-logo">
-      </a>
-      <a href="https://pof.tnw.utwente.nl/" target="_blank">
-        <img src="/assets/logos/LogoPof_transparent_white.png" alt="Physics of Fluids" class="footer-logo pof-logo">
-      </a>
-      <a href="https://www.utwente.nl/" target="_blank">
-        <img src="/assets/logos/UT_Logo_2400_Sta_White_EN.png" alt="University of Twente" class="footer-logo">
-      </a>
-      <a href="https://www.vatsalsanjay.com/" target="_blank">
-        <img src="/assets/logos/Logo_Vatsal_v3_OutLine.png" alt="Vatsal Sanjay" class="footer-logo">
-      </a>
-    </div>
-    <div class="footer-center">
-      <p class="copyright-text">
-        &copy; Copyright<br>
-        CoMPhy Lab 2025
-      </p>
-    </div>
-    <div class="footer-right">
-      <a href="https://scholar.google.com/citations?user=tHb_qZoAAAAJ&hl=en" target="_blank">
-        <i class="ai ai-google-scholar" style="font-size: 2.5em; color: white;"></i>
-      </a>
-      <a href="https://github.com/comphy-lab" target="_blank">
-        <i class="fa-brands fa-github" style="font-size: 2.5em; color: white;"></i>
-      </a>
-      <a href="https://www.youtube.com/@VatsalSanjay" target="_blank">
-        <i class="fa-brands fa-youtube" style="font-size: 2.5em; color: white;"></i>
-      </a>
-      <a href="https://bsky.app/profile/comphy-lab.org" target="_blank">
-        <i class="fa-brands fa-bluesky" style="font-size: 2.5em; color: white;"></i>
-      </a>
-      <a href="https://github.com/comphy-lab/comphy-lab.github.io" class="edit-link">
-        <i class="fa-brands fa-github"></i> Edit this page
-      </a>
-    </div>
-    <div class="ss-go-top">
-      <a class="smoothscroll" title="Back to Top" href="#top">
-          <i class="fa-solid fa-arrow-up"></i>
-       </a>
-    </div> <!-- end ss-go-top -->
-  </footer>
+    <!-- Teaching Section -->
+    <section class="s-teaching">
+      <div class="row">
+        <div class="teaching-content markdown-content">
+          {% capture lazy_img %}<img loading="lazy" decoding="async" onload="this.classList.add('loaded')"{% endcapture %}
+          {% assign content_with_lazy = content | replace: '<img', lazy_img %}
+          {% capture lazy_iframe %}<div class="video-container"><iframe loading="lazy"{% endcapture %}
+          {% assign content_with_video = content_with_lazy | replace: '<iframe', lazy_iframe | replace: '</iframe>', '</iframe></div>' %}
+          {{ content_with_video }}
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-left">
+        <a href="http://basilisk.fr/sandbox/vatsal/" target="_blank">
+          <img src="/assets/logos/logoBasilisk_TransparentBackground.png" alt="Basilisk C" class="footer-logo">
+        </a>
+        <a href="https://pof.tnw.utwente.nl/" target="_blank">
+          <img src="/assets/logos/LogoPof_transparent_white.png" alt="Physics of Fluids" class="footer-logo pof-logo">
+        </a>
+        <a href="https://www.utwente.nl/" target="_blank">
+          <img src="/assets/logos/UT_Logo_2400_Sta_White_EN.png" alt="University of Twente" class="footer-logo">
+        </a>
+        <a href="https://www.vatsalsanjay.com/" target="_blank">
+          <img src="/assets/logos/Logo_Vatsal_v3_OutLine.png" alt="Vatsal Sanjay" class="footer-logo">
+        </a>
+      </div>
+      <div class="footer-center">
+        <p class="copyright-text">
+          &copy; Copyright<br>
+          CoMPhy Lab 2025
+        </p>
+      </div>
+      <div class="footer-right">
+        <a href="https://scholar.google.com/citations?user=tHb_qZoAAAAJ&hl=en" target="_blank">
+          <i class="ai ai-google-scholar" style="font-size: 2.5em; color: white;"></i>
+        </a>
+        <a href="https://github.com/comphy-lab" target="_blank">
+          <i class="fa-brands fa-github" style="font-size: 2.5em; color: white;"></i>
+        </a>
+        <a href="https://www.youtube.com/@VatsalSanjay" target="_blank">
+          <i class="fa-brands fa-youtube" style="font-size: 2.5em; color: white;"></i>
+        </a>
+        <a href="https://bsky.app/profile/comphy-lab.org" target="_blank">
+          <i class="fa-brands fa-bluesky" style="font-size: 2.5em; color: white;"></i>
+        </a>
+        <a href="https://github.com/comphy-lab/comphy-lab.github.io" class="edit-link">
+          <i class="fa-brands fa-github"></i> Edit this page
+        </a>
+      </div>
+      <div class="ss-go-top">
+        <a class="smoothscroll" title="Back to Top" href="#top">
+            <i class="fa-solid fa-arrow-up"></i>
+         </a>
+      </div> <!-- end ss-go-top -->
+    </footer>
   </div>  
 
   <!-- JavaScript dependencies -->
@@ -191,5 +203,44 @@
   <script defer src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
   <script defer src="/assets/js/main.js"></script>
 
+  <!-- Schedule Container Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Find the Course Schedule heading
+      const scheduleHeading = Array.from(document.querySelectorAll('.teaching-content h2')).find(
+        heading => heading.textContent.includes('Course Schedule')
+      );
+      
+      if (scheduleHeading) {
+        // Create a container div
+        const container = document.createElement('div');
+        container.className = 'schedule-container';
+        
+        // Start with the next element after the heading
+        let currentElement = scheduleHeading.nextElementSibling;
+        const elementsToMove = [];
+        
+        // Collect all elements until we hit the next h2 or a horizontal rule
+        while (currentElement && 
+              !(currentElement.tagName === 'H2' || 
+                (currentElement.tagName === 'HR' && !currentElement.previousElementSibling.tagName === 'H2'))) {
+          elementsToMove.push(currentElement);
+          currentElement = currentElement.nextElementSibling;
+        }
+        
+        // Move the elements into the container
+        elementsToMove.forEach(element => {
+          container.appendChild(element);
+        });
+        
+        // Insert the container after the schedule heading
+        scheduleHeading.after(container);
+        
+        // Move the heading inside the container at the beginning
+        container.insertBefore(scheduleHeading, container.firstChild);
+      }
+    });
+  </script>
+
 </body>
-</html>
+</html> 
