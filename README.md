@@ -19,12 +19,19 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 ├── _layouts                   # Page templates
 │   ├── default.html           # Base layout
 │   ├── research.html          # Research page layout
-│   └── team.html             # Team page layout
+│   ├── teaching.html          # Teaching page layout
+│   └── team.html              # Team page layout
 ├── _research                  # Research project and publication entries
 ├── _team                      # Team member profiles
+├── _teaching                  # Teaching course entries and pages
+│   ├── index.md               # Teaching landing page
+│   └── 2025-Basilisk101-Madrid.md # Course page
 ├── assets                     # Static files (images, css, js, logos, favicon)
 │   ├── css                    # Stylesheets
 │   │   ├── main.css          # Main stylesheet
+│   │   ├── research.css      # Research page styles
+│   │   ├── teaching.css      # Teaching page styles
+│   │   ├── team.css          # Team page styles
 │   │   └── search.css        # Search functionality styles
 │   ├── js                    # JavaScript files
 │   │   ├── main.js          # Main JavaScript
@@ -32,6 +39,7 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 │   │   └── search_db.json   # Generated search database
 │   ├── favicon              # Favicon files
 │   └── img                  # Image assets
+│       └── teaching         # Teaching images
 ├── scripts                    # Build and utility scripts
 │   ├── build.sh              # Main build script
 │   └── generate_search_db.rb  # Search database generator
@@ -157,6 +165,50 @@ A static website for the Computational Multiphase Physics Laboratory, built with
    [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](URL)
    [![Blog](https://img.shields.io/badge/Blog-blogs.comphy--lab.org-blue?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org)
    ```
+
+#### Teaching Content
+1. **Main Teaching Page**
+   - Located at `_teaching/index.md`
+   - Lists all available courses
+   - Uses the teaching layout
+
+2. **Individual Course Pages**
+   - Located in `_teaching/` directory (e.g., `_teaching/2025-Basilisk101-Madrid.md`)
+   - Use the teaching layout
+   - Follow this basic format:
+   
+   ```markdown
+   ---
+   layout: teaching
+   title: "Course Title"
+   permalink: /teaching/course-permalink
+   ---
+   
+   <div class="course-image">
+     <img src="/path/to/banner-image.jpg" alt="Course Title" loading="lazy">
+   </div>
+   
+   # Course Title
+   
+   <div class="course-details">
+     <div class="course-details__item">
+       <h4><i class="fa-solid fa-calendar-days"></i> Dates</h4>
+       <p>Date range</p>
+     </div>
+     <div class="course-details__item">
+       <h4><i class="fa-solid fa-location-dot"></i> Location</h4>
+       <p>Location information</p>
+     </div>
+   </div>
+   
+   ## Course content...
+   ```
+
+3. **Course Images**
+   - Store in `/assets/images/teaching/` directory
+   - Card images (600x400px): Used on the main teaching page
+   - Banner images (1200x400px): Used on individual course pages
+   - Follow naming convention: `[course-name]-[location].[extension]`
 
 ### Search Functionality
 The website includes a powerful search feature that allows users to:

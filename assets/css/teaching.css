@@ -1,0 +1,623 @@
+/* Teaching Section Styles
+-----------------------------------*/
+
+.s-teaching {
+  background-color: #ffffff;
+  padding: 8rem 0;
+  position: relative;
+  color: #333333;
+}
+
+.s-teaching__desc {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.s-teaching__desc h1 {
+  font-size: 3.6rem;
+  margin-bottom: 1.2rem;
+  background: linear-gradient(to right, #e63946, #4169e1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.teaching-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.teaching-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  color: #333333;
+}
+
+.teaching-content h2 {
+  font-size: 2.2rem;
+  margin: 2rem 0 1rem;
+  color: #333333;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 0.5rem;
+}
+
+.teaching-content h3 {
+  font-size: 1.8rem;
+  margin: 1.5rem 0 1rem;
+  color: #4169e1;
+}
+
+.teaching-content h4 {
+  font-size: 1.5rem;
+  margin: 1.2rem 0 0.8rem;
+  color: #e63946;
+}
+
+.teaching-content p {
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+}
+
+.teaching-content ul, .teaching-content ol {
+  margin-bottom: 1.5rem;
+  padding-left: 2rem;
+}
+
+.teaching-content ul li, .teaching-content ol li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.teaching-content strong {
+  font-weight: 600;
+}
+
+.markdown-content ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.markdown-content ul li {
+  margin-bottom: 0.5rem;
+}
+
+.teaching-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.course-card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.course-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.course-card__content {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.course-card__title {
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+.course-card__meta {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.course-card__meta i {
+  color: #e63946;
+}
+
+.course-card__desc {
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.course-card__link {
+  align-self: flex-start;
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  background-color: #68246D;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.course-card__link:hover {
+  background-color: #5a1e5e;
+}
+
+.course-schedule {
+  margin-top: 2rem;
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.course-schedule h2 {
+  font-size: 2.4rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+  border-bottom: none;
+}
+
+.course-schedule h3 {
+  font-size: 2rem;
+  margin: 1.5rem 0 1rem;
+  color: #4169e1;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 0.5rem;
+}
+
+.course-schedule h4 {
+  font-size: 1.6rem;
+  margin: 1.2rem 0 0.8rem;
+  color: #e63946;
+}
+
+.course-schedule ul {
+  list-style-type: none;
+  margin-left: 1.5rem;
+}
+
+.course-schedule ul li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.course-schedule ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #e63946;
+  font-weight: bold;
+}
+
+.course-schedule p {
+  margin-bottom: 1rem;
+}
+
+.course-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.course-details__item {
+  flex: 1 1 200px;
+}
+
+.course-details__item h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #4169e1;
+}
+
+.course-details__item p {
+  margin: 0;
+}
+
+.course-image {
+  margin: 2rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.course-image img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: block;
+}
+
+/* Add a hazy overlay to the course image */
+.course-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(2px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Enhanced Course Schedule Container */
+.teaching-content h2:contains("Course Schedule") {
+  margin-top: 3rem;
+}
+
+.teaching-content h2:contains("Course Schedule") + h3,
+.teaching-content h2:contains("Course Schedule") + h3 ~ h3,
+.teaching-content h2:contains("Course Schedule") + h3 ~ h4,
+.teaching-content h2:contains("Course Schedule") + h3 ~ ul {
+  position: relative;
+  z-index: 1;
+}
+
+/* Create a schedule container that wraps all schedule content */
+.schedule-container {
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  margin: 2.5rem 0;
+  border: 1px solid #e9ecef;
+  position: relative;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Main Schedule Heading */
+.schedule-container h2 {
+  font-size: 2.6rem;
+  color: #333;
+  margin-bottom: 1.8rem;
+  text-align: center;
+  border-bottom: none !important;
+}
+
+/* Day headings (h3) within schedule */
+.schedule-container h3 {
+  color: #4169e1;
+  font-size: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 1.2rem;
+  padding: 0.5rem 1.2rem;
+  border-bottom: none;
+  font-weight: 600;
+  background-color: rgba(65, 105, 225, 0.1);
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.schedule-container h3:first-of-type {
+  margin-top: 0.5rem;
+}
+
+/* Session titles (h4) within schedule */
+.schedule-container h4 {
+  color: #e63946;
+  font-size: 1.7rem;
+  margin: 1.5rem 0 1rem;
+  font-weight: 500;
+  border-left: 3px solid #e63946;
+  padding-left: 0.8rem;
+}
+
+/* Time slots styling */
+.schedule-container ul li {
+  font-size: 1.4rem;
+  margin-bottom: 0.7rem;
+  line-height: 1.7;
+}
+
+.schedule-container ul li strong {
+  display: inline-block;
+  color: #333;
+  font-family: 'Courier New', monospace;
+  background-color: rgba(65, 105, 225, 0.1);
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  margin-right: 0.4rem;
+  font-size: 1.4rem;
+}
+
+/* Session type styling */
+.schedule-container ul li strong:last-of-type:not(:first-of-type) {
+  background-color: rgba(230, 57, 70, 0.1);
+  font-family: inherit;
+  font-size: 1.4rem;
+}
+
+/* Bold italic text styling */
+.schedule-container em strong, 
+.schedule-container strong em {
+  color: #4169e1;
+}
+
+/* Main list items */
+.schedule-container > ul > li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Nested list items */
+.schedule-container ul li ul {
+  list-style-type: none;
+  margin-top: 0.7rem;
+  margin-bottom: 1.2rem;
+  margin-left: 0.5rem;
+}
+
+.schedule-container ul li ul li {
+  font-size: 1.4rem;
+  position: relative;
+  padding-left: 1.8rem;
+  margin-bottom: 0.6rem;
+  line-height: 1.6;
+}
+
+.schedule-container ul li ul li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  top: 0.3rem;
+  color: #e63946;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+/* Add a decorative element to the schedule container */
+.schedule-container:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(to right, #e63946, #4169e1);
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+/* Main list markers */
+.schedule-container > ul {
+  list-style-type: none;
+  padding-left: 0.5rem;
+}
+
+.schedule-container > ul > li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0.3rem;
+  color: #e63946;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Nested list items */
+.schedule-container ul li ul {
+  list-style-type: none;
+  margin-top: 0.7rem;
+  margin-bottom: 1.2rem;
+  margin-left: 0.5rem;
+}
+
+.schedule-container ul li ul li {
+  font-size: 1.4rem;
+  position: relative;
+  padding-left: 1.8rem;
+  margin-bottom: 0.6rem;
+  line-height: 1.6;
+}
+
+.schedule-container ul li ul li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  top: 0.3rem;
+  color: #e63946;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.schedule-container ul li ul li em {
+  color: #666;
+  font-style: italic;
+  font-size: 1.4rem;
+}
+
+/* Emphasized text styling */
+.schedule-container em {
+  color: #4169e1;
+  font-style: italic;
+  font-size: 1.4rem;
+}
+
+.schedule-container strong {
+  font-weight: 600;
+}
+
+/* Email container styles */
+.email-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  background-color: #f8f9fa;
+  padding: 1.2rem 1.5rem;
+  border-radius: 8px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #e9ecef;
+}
+
+.email-text {
+  font-size: 1.5rem;
+  font-family: 'Courier New', monospace;
+  margin-right: auto;
+  color: #444;
+}
+
+.copy-btn {
+  background-color: transparent;
+  border: none;
+  color: #4169e1;
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 0.5rem 0.8rem;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+}
+
+.copy-btn:hover {
+  background-color: rgba(65, 105, 225, 0.1);
+  color: #314b9c;
+}
+
+.copy-btn:active {
+  transform: scale(0.95);
+}
+
+.copy-btn.copied {
+  color: #27ae60;
+}
+
+@media screen and (max-width: 800px) {
+  .s-teaching {
+    padding: 5rem 0;
+  }
+  
+  .s-teaching__desc h1 {
+    font-size: 3rem;
+  }
+  
+  .teaching-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+  
+  .schedule-container {
+    padding: 1.8rem;
+  }
+  
+  .schedule-container h2 {
+    font-size: 2.3rem;
+  }
+  
+  .schedule-container ul li {
+    font-size: 1.3rem;
+  }
+  
+  .schedule-container ul li strong {
+    font-size: 1.3rem;
+  }
+  
+  .schedule-container ul li ul li {
+    font-size: 1.3rem;
+  }
+  
+  .schedule-container ul li ul li em,
+  .schedule-container em {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .s-teaching {
+    padding: 4rem 0;
+  }
+  
+  .s-teaching__desc h1 {
+    font-size: 2.4rem;
+  }
+  
+  .teaching-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .schedule-container {
+    padding: 1.5rem 1rem;
+    font-size: 1.1rem;
+  }
+  
+  .schedule-container h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .schedule-container h3 {
+    font-size: 1.7rem;
+    padding: 0.4rem 1rem;
+  }
+  
+  .schedule-container h4 {
+    font-size: 1.5rem;
+  }
+  
+  .schedule-container ul li {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+  
+  .schedule-container ul li strong {
+    font-size: 1.2rem;
+  }
+  
+  .schedule-container ul li ul li {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+  
+  .schedule-container ul li ul li::before {
+    font-size: 1.2rem;
+    top: 0.2rem;
+  }
+  
+  .schedule-container ul li ul li em,
+  .schedule-container em {
+    font-size: 1.2rem;
+  }
+  
+  .email-container {
+    max-width: 100%;
+    padding: 1rem 1.2rem;
+  }
+  
+  .email-text {
+    font-size: 1.3rem;
+    word-break: break-all;
+  }
+  
+  .copy-btn {
+    font-size: 1.3rem;
+    padding: 0.4rem 0.7rem;
+  }
+} 

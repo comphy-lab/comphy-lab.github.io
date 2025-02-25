@@ -21,3 +21,6 @@ collections:
   research:
     output: true
     permalink: /:collection/:name
+  teaching:
+    output: true
+    permalink: /:collection/:name
