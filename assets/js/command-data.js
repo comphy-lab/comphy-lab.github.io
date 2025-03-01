@@ -239,6 +239,90 @@
     });
   };
   
+  // Search database integration
+  window.searchDatabaseForCommandPalette = async function(query) {
+    // Only perform search if query is at least 3 characters long
+    if (!query || query.length < 3) {
+      return [];
+    }
+    
+    console.log('Searching database for:', query);
+    
+    try {
+      // Check if we have a searchIndex already loaded in window
+      if (!window.searchFuse && window.searchData) {
+        // If we already have search data but no Fuse object
+        try {
+          window.searchFuse = new Fuse(window.searchData, {
+            keys: ['title', 'content', 'tags', 'categories'],
+            includeScore: true,
+            threshold: 0.4
+          });
+        } catch (e) {
+          console.error('Error creating Fuse instance:', e);
+          return [];
+        }
+      } else if (!window.searchFuse) {
+        // Try to fetch search database if it doesn't exist yet
+        try {
+          const response = await fetch('/assets/js/search_db.json');
+          if (response.ok) {
+            try {
+              const searchData = await response.json();
+              if (!searchData || !Array.isArray(searchData)) {
+                console.warn('Search database has invalid format');
+                return [];
+              }
+              window.searchData = searchData;
+              window.searchFuse = new Fuse(searchData, {
+                keys: ['title', 'content', 'tags', 'categories'],
+                includeScore: true,
+                threshold: 0.4
+              });
+            } catch (e) {
+              console.error('Error parsing search database JSON:', e);
+              return [];
+            }
+          } else {
+            console.warn(`No search database found (${response.status})`);
+            return [];
+          }
+        } catch (e) {
+          console.error('Error loading search database:', e);
+          return [];
+        }
+      }
+      
+      // Perform the search
+      if (window.searchFuse) {
+        try {
+          const results = window.searchFuse.search(query);
+          
+          // Return at most 5 results to avoid cluttering the command palette
+          return results.slice(0, 5).map(result => ({
+            id: `search-result-${result.refIndex}`,
+            title: result.item.title || 'Untitled',
+            handler: () => { 
+              if (result.item.url) {
+                window.location.href = result.item.url; 
+              }
+            },
+            section: "Search Results",
+            icon: '<i class="fa-solid fa-file-lines"></i>',
+            excerpt: result.item.excerpt || (result.item.content && result.item.content.substring(0, 100) + '...') || ''
+          }));
+        } catch (e) {
+          console.error('Error performing search with Fuse:', e);
+          return [];
+        }
+      }
+    } catch (e) {
+      console.error('Error searching database:', e);
+    }
+    
+    return [];
+  };
+  
   // Add page-specific command function
   window.addContextCommands = function() {
     // Get the current path
