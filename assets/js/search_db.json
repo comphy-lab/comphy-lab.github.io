@@ -414,14 +414,14 @@
   },
   {
     "title": "Social Media",
-    "content": "[![X](https://img.shields.io/badge/-@VatsalSanjay-000000?style=flat&logo=x&logoColor=white)](https://twitter.com/VatsalSanjay)\n[![Bluesky](https://img.shields.io/badge/-@comphy--lab.org-0285FF?style=flat&logo=bluesky&logoColor=white)](https://bsky.app/profile/comphy-lab.org)\n\nFor supplementary videos and teaser of our upcoming work:\n\n<a href=\"https://www.youtube.com/@VatsalSanjay\" target=\"_blank\">\n  <picture>\n    <source media=\"(prefers-color-scheme: dark)\" srcset=\"https://cust-youtube-stats-card.vercel.app/api?channelid=UC-eTdHrAM_eQrWOtNLoT19w&theme=solarized_light&cache_seconds=0\" width=\"auto\" height=\"200px\">\n    <img alt=\"Vatsal's YouTube Stats\" src=\"https://cust-youtube-stats-card.vercel.app/api?channelid=UC-eTdHrAM_eQrWOtNLoT19w&theme=vision_friendly_dark&hide_border=true\" width=\"auto\" height=\"200px\">\n  </picture>\n</a>",
+    "content": "[![X](https://img.shields.io/badge/-@CoMPhyLab-000000?style=flat&logo=x&logoColor=white)](https://twitter.com/VatsalSanjay)\n[![Bluesky](https://img.shields.io/badge/-@comphy--lab.org-0285FF?style=flat&logo=bluesky&logoColor=white)](https://bsky.app/profile/comphy-lab.org)\n\nFor supplementary videos and teaser of our upcoming work:\n\n<a href=\"https://www.youtube.com/@CoMPhyLab\" target=\"_blank\">\n  <picture>\n    <source media=\"(prefers-color-scheme: dark)\" srcset=\"https://cust-youtube-stats-card.vercel.app/api?channelid=UC-eTdHrAM_eQrWOtNLoT19w&theme=solarized_light&cache_seconds=0\" width=\"auto\" height=\"200px\">\n    <img alt=\"Vatsal's YouTube Stats\" src=\"https://cust-youtube-stats-card.vercel.app/api?channelid=UC-eTdHrAM_eQrWOtNLoT19w&theme=vision_friendly_dark&hide_border=true\" width=\"auto\" height=\"200px\">\n  </picture>\n</a>",
     "url": "/#about",
     "type": "markdown_section",
     "priority": 3
   },
   {
     "title": "Social Media",
-    "content": "[![X](https://img.shields.io/badge/-@VatsalSanjay-000000?style=flat&logo=x&logoColor=white)](https://twitter.com/VatsalSanjay)\n[![Bluesky](https://img.shields.io/badge/-@comphy--lab.org-0285FF?style=flat&logo=bluesky&logoColor=white)](https://bsky.app/profile/comphy-lab.org)",
+    "content": "[![X](https://img.shields.io/badge/-@CoMPhyLab-000000?style=flat&logo=x&logoColor=white)](https://twitter.com/VatsalSanjay)\n[![Bluesky](https://img.shields.io/badge/-@comphy--lab.org-0285FF?style=flat&logo=bluesky&logoColor=white)](https://bsky.app/profile/comphy-lab.org)",
     "url": "/#about",
     "type": "markdown_text",
     "priority": 3
