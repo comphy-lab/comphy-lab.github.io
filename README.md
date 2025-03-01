@@ -32,11 +32,18 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 │   │   ├── research.css      # Research page styles
 │   │   ├── teaching.css      # Teaching page styles
 │   │   ├── team.css          # Team page styles
-│   │   └── search.css        # Search functionality styles
+│   │   ├── search.css        # Search functionality styles
+│   │   └── search-modal.css  # Cmd+K search modal styles
 │   ├── js                    # JavaScript files
 │   │   ├── main.js          # Main JavaScript
 │   │   ├── search.js        # Search functionality
-│   │   └── search_db.json   # Generated search database
+│   │   ├── search-data.js   # Cmd+K search data converter
+│   │   ├── search-setup.js  # Cmd+K search initialization
+│   │   ├── shortcut-key.js  # Platform detection for shortcuts
+│   │   ├── search_db.json   # Generated search database
+│   │   └── search           # Search libraries
+│   │       ├── ninja-keys.min.js       # NinjaKeys command palette
+│   │       └── hotkeys-js              # Keyboard shortcut library
 │   ├── favicon              # Favicon files
 │   └── img                  # Image assets
 │       └── teaching         # Teaching images
@@ -223,6 +230,7 @@ The website includes a powerful search feature that allows users to:
 - Get instant search results with highlighted matching text
 - See match percentage for each result
 - Navigate directly to specific sections using anchor links
+- Access search via keyboard shortcut (cmd+k on Mac, ctrl+k on Windows)
 
 Search results are prioritized and filtered as follows:
 1. Team Members (highest priority)
@@ -237,10 +245,8 @@ Search results are prioritized and filtered as follows:
 
 Search behavior and restrictions:
 - Minimum query length: 2 characters
-- Shows only top 5 most relevant results
-- Requires at least 50% of query words to match
-- Prioritizes matches near the start of content
-- Properly renders markdown and HTML in results
+- Keyboard shortcut (cmd+k / ctrl+k) opens a command palette style search interface
+- Search button in navigation also provides visual access to the command palette
 
 The search database is automatically generated during the build process by `scripts/generate_search_db.rb`. This script:
 - Indexes all HTML and markdown content
