@@ -1,0 +1,293 @@
+/* Custom Command Palette styling */
+.simple-command-palette {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  display: none;
+}
+
+.simple-command-palette-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.simple-command-palette-modal {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 640px;
+  max-width: 90vw;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+#command-palette-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  border-bottom: 1px solid #eee;
+  font-size: 16px;
+  outline: none;
+}
+
+.command-palette-results {
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.command-palette-section {
+  padding: 8px 0;
+}
+
+.command-palette-section-title {
+  padding: 4px 16px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #6366f1;
+  text-transform: uppercase;
+}
+
+.command-palette-commands {
+  margin-bottom: 8px;
+}
+
+.command-palette-command {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.command-palette-command:hover {
+  background-color: rgba(99, 102, 241, 0.1);
+}
+
+.command-palette-icon {
+  flex: 0 0 24px;
+  margin-right: 12px;
+  color: #6366f1;
+}
+
+.command-palette-title {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.command-palette-shortcut {
+  flex: 0 0 auto;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+  font-size: 12px;
+  color: #666;
+}
+
+.command-palette-no-results {
+  padding: 16px;
+  text-align: center;
+  color: #666;
+}
+
+/* Command palette button styling */
+.command-palette-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.5rem;
+  z-index: 10; /* Ensure the button is clickable */
+}
+
+.command-palette-button .btn {
+  padding: 0.4rem 0.6rem;
+  font-size: 0.9rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid #6366f1;
+  color: #6366f1;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  z-index: 20; /* Ensure clickability */
+}
+
+.command-palette-button .btn:hover {
+  background-color: rgba(99, 102, 241, 0.1);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.command-palette-button .btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.command-palette-button .btn .fa-terminal {
+  font-size: 1.1em;
+}
+
+/* Hide one of the shortcut texts depending on platform */
+.mac-theme-text, .default-theme-text {
+  display: none;
+}
+
+/* Mobile styling for command palette button */
+@media screen and (max-width: 768px) {
+  .command-palette-button {
+    margin: 0.8rem 0;
+    width: 100%;
+  }
+  
+  .command-palette-button .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.6rem;
+  }
+  
+  .simple-command-palette-modal {
+    width: 95vw;
+    max-width: 95vw;
+  }
+}
+
+/* Dark mode styling */
+@media (prefers-color-scheme: dark) {
+  .simple-command-palette-modal {
+    background-color: #222;
+    color: #eee;
+  }
+  
+  #command-palette-input {
+    background-color: #333;
+    color: #fff;
+    border-bottom-color: #444;
+  }
+  
+  .command-palette-section-title {
+    color: #818cf8;
+  }
+  
+  .command-palette-command:hover {
+    background-color: rgba(129, 140, 248, 0.1);
+  }
+  
+  .command-palette-icon {
+    color: #818cf8;
+  }
+  
+  .command-palette-shortcut {
+    background-color: #444;
+    color: #ccc;
+  }
+  
+  .command-palette-no-results {
+    color: #999;
+  }
+}
+
+/* Custom styles for the shortcut help modal */
+.shortcut-help-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shortcut-help-content {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.shortcut-help-content h2 {
+  margin-top: 0;
+}
+
+.shortcut-help-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.shortcut-help-content th,
+.shortcut-help-content td {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.shortcut-help-content kbd {
+  display: inline-block;
+  padding: 0.1em 0.6em;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: #f7f7f7;
+  box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2);
+  font-family: monospace;
+  font-size: 0.85em;
+  margin: 0 0.1em;
+}
+
+.shortcut-help-footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.shortcut-help-footer button {
+  padding: 8px 16px;
+  background-color: #6366f1;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.shortcut-help-footer button:hover {
+  background-color: #4f46e5;
+}
+
+/* Dark mode for shortcut help */
+@media (prefers-color-scheme: dark) {
+  .shortcut-help-content {
+    background-color: #222;
+    color: #eee;
+  }
+  
+  .shortcut-help-content th,
+  .shortcut-help-content td {
+    border-bottom: 1px solid #444;
+  }
+  
+  .shortcut-help-content kbd {
+    background-color: #333;
+    color: #fff;
+    border-color: #555;
+    box-shadow: 0 1px 0px rgba(255, 255, 255, 0.1);
+  }
+} 

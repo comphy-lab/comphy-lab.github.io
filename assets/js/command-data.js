@@ -1,0 +1,308 @@
+// Command data for website command palette
+(function() {
+  console.log('Loading command data');
+  
+  // Define the command data
+  window.commandData = [
+    // Navigation commands
+    {
+      id: "home",
+      title: "Go to Home",
+      handler: () => { window.location.href = '/'; },
+      section: "Navigation",
+      shortcuts: ["g h"],
+      icon: '<i class="fa-solid fa-home"></i>'
+    },
+    {
+      id: "team",
+      title: "Go to Team Page",
+      handler: () => { window.location.href = '/team/'; },
+      section: "Navigation",
+      shortcuts: ["g t"],
+      icon: '<i class="fa-solid fa-users"></i>'
+    },
+    {
+      id: "research",
+      title: "Go to Research Page",
+      handler: () => { window.location.href = '/research'; },
+      section: "Navigation",
+      shortcuts: ["g r"],
+      icon: '<i class="fa-solid fa-flask"></i>'
+    },
+    {
+      id: "teaching",
+      title: "Go to Teaching Page",
+      handler: () => { window.location.href = '/teaching'; },
+      section: "Navigation",
+      shortcuts: ["g e"],
+      icon: '<i class="fa-solid fa-chalkboard-teacher"></i>'
+    },
+    {
+      id: "join",
+      title: "Go to Join Us Page",
+      handler: () => { window.location.href = '/join'; },
+      section: "Navigation",
+      shortcuts: ["g j"],
+      icon: '<i class="fa-solid fa-handshake"></i>'
+    },
+    {
+      id: "blog",
+      title: "Go to Blog",
+      handler: () => { window.location.href = 'https://blogs.comphy-lab.org/'; },
+      section: "Navigation",
+      shortcuts: ["g b"],
+      icon: '<i class="fa-solid fa-rss"></i>'
+    },
+    {
+      id: "back",
+      title: "Go Back",
+      handler: () => { window.history.back(); },
+      section: "Navigation",
+      shortcuts: ["b"],
+      icon: '<i class="fa-solid fa-arrow-left"></i>'
+    },
+    {
+      id: "forward",
+      title: "Go Forward",
+      handler: () => { window.history.forward(); },
+      section: "Navigation",
+      shortcuts: ["f"],
+      icon: '<i class="fa-solid fa-arrow-right"></i>'
+    },
+    
+    // External links
+    {
+      id: "github",
+      title: "Visit GitHub",
+      handler: () => { window.open('https://github.com/comphy-lab', '_blank'); },
+      section: "External Links",
+      shortcuts: ["g g"],
+      icon: '<i class="fa-brands fa-github"></i>'
+    },
+    {
+      id: "scholar",
+      title: "Visit Google Scholar",
+      handler: () => { window.open('https://scholar.google.com/citations?user=tHb_qZoAAAAJ&hl=en', '_blank'); },
+      section: "External Links",
+      shortcuts: ["g s"],
+      icon: '<i class="ai ai-google-scholar"></i>'
+    },
+    {
+      id: "youtube",
+      title: "Visit YouTube Channel",
+      handler: () => { window.open('https://www.youtube.com/@CoMPhyLab', '_blank'); },
+      section: "External Links",
+      shortcuts: ["g y"],
+      icon: '<i class="fa-brands fa-youtube"></i>'
+    },
+    {
+      id: "bluesky",
+      title: "Visit Bluesky",
+      handler: () => { window.open('https://bsky.app/profile/comphy-lab.org', '_blank'); },
+      section: "External Links",
+      shortcuts: ["g l"],
+      icon: '<i class="fa-brands fa-bluesky"></i>'
+    },
+    
+    // Tools
+    {
+      id: "search",
+      title: "Search Website",
+      handler: () => { 
+        // Find and trigger the search function
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput) {
+          searchInput.focus();
+          const searchModal = document.querySelector('ninja-keys#search-modal');
+          if (searchModal) searchModal.open();
+        }
+      },
+      section: "Tools",
+      shortcuts: ["s"],
+      icon: '<i class="fa-solid fa-magnifying-glass"></i>'
+    },
+    {
+      id: "top",
+      title: "Scroll to Top",
+      handler: () => { window.scrollTo({top: 0, behavior: 'smooth'}); },
+      section: "Tools",
+      shortcuts: ["t t"],
+      icon: '<i class="fa-solid fa-arrow-up"></i>'
+    },
+    {
+      id: "bottom",
+      title: "Scroll to Bottom",
+      handler: () => { window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'}); },
+      section: "Tools",
+      shortcuts: ["t b"],
+      icon: '<i class="fa-solid fa-arrow-down"></i>'
+    },
+    
+    // Help commands
+    {
+      id: "help",
+      title: "View Keyboard Shortcuts",
+      handler: () => { window.displayShortcutsHelp(); },
+      section: "Help",
+      shortcuts: ["?"],
+      icon: '<i class="fa-solid fa-question-circle"></i>'
+    },
+    {
+      id: "repository",
+      title: "View Website Repository",
+      handler: () => { window.open('https://github.com/comphy-lab/comphy-lab.github.io', '_blank'); },
+      section: "Help",
+      shortcuts: ["h r"],
+      icon: '<i class="fa-brands fa-github"></i>'
+    }
+  ];
+  
+  console.log('Command data loaded with ' + window.commandData.length + ' commands');
+  
+  // Define the displayShortcutsHelp function globally
+  window.displayShortcutsHelp = function() {
+    console.log('Displaying shortcut help');
+    // Create a modal to show all available shortcuts
+    const modal = document.createElement('div');
+    modal.style.position = 'fixed';
+    modal.style.top = '0';
+    modal.style.left = '0';
+    modal.style.width = '100%';
+    modal.style.height = '100%';
+    modal.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+    modal.style.zIndex = '2000';
+    modal.style.display = 'flex';
+    modal.style.justifyContent = 'center';
+    modal.style.alignItems = 'center';
+    
+    const content = document.createElement('div');
+    content.style.backgroundColor = 'white';
+    content.style.borderRadius = '8px';
+    content.style.padding = '20px';
+    content.style.maxWidth = '600px';
+    content.style.maxHeight = '80vh';
+    content.style.overflow = 'auto';
+    content.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
+    
+    // Media query for dark mode
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      content.style.backgroundColor = '#333';
+      content.style.color = '#fff';
+    }
+    
+    // Group commands by section
+    const sections = {};
+    window.commandData.forEach(command => {
+      if (!sections[command.section]) {
+        sections[command.section] = [];
+      }
+      sections[command.section].push(command);
+    });
+    
+    let html = '<h2 style="margin-top: 0;">Keyboard Shortcuts</h2>';
+    html += '<p>Press Ctrl+/ (⌘/ on Mac) to open the command palette</p>';
+    
+    // Add each section and its commands
+    Object.keys(sections).forEach(section => {
+      html += `<h3>${section}</h3>`;
+      html += '<table style="width: 100%; border-collapse: collapse;">';
+      html += '<tr><th style="text-align: left; padding: 8px; border-bottom: 1px solid #ddd;">Command</th><th style="text-align: left; padding: 8px; border-bottom: 1px solid #ddd;">Shortcut</th></tr>';
+      
+      sections[section].forEach(command => {
+        const shortcuts = command.shortcuts ? command.shortcuts.map(s => `<kbd>${s}</kbd>`).join(' or ') : '';
+        html += `<tr>
+          <td style="padding: 8px; border-bottom: 1px solid #ddd;">${command.icon} ${command.title}</td>
+          <td style="padding: 8px; border-bottom: 1px solid #ddd;">${shortcuts}</td>
+        </tr>`;
+      });
+      
+      html += '</table>';
+    });
+    
+    // Add close button
+    html += '<div style="text-align: center; margin-top: 20px;"><button id="close-shortcuts-help" style="padding: 8px 16px; background-color: #5b79a8; color: white; border: none; border-radius: 4px; cursor: pointer;">Close</button></div>';
+    
+    content.innerHTML = html;
+    modal.appendChild(content);
+    document.body.appendChild(modal);
+    
+    // Add event listener to close
+    document.getElementById('close-shortcuts-help').addEventListener('click', () => {
+      document.body.removeChild(modal);
+    });
+    
+    // Close when clicking outside
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        document.body.removeChild(modal);
+      }
+    });
+  };
+  
+  // Add page-specific command function
+  window.addContextCommands = function() {
+    // Get the current path
+    const currentPath = window.location.pathname;
+    let contextCommands = [];
+    
+    // Research page specific commands
+    if (currentPath.includes('/research')) {
+      contextCommands = [
+        {
+          id: "filter-research",
+          title: "Filter Research by Tag",
+          handler: () => { 
+            // Focus on the filter input if it exists
+            const filterInput = document.querySelector('.research-filter-input');
+            if (filterInput) filterInput.focus();
+          },
+          section: "Page Actions",
+          shortcuts: ["f t"],
+          icon: '<i class="fa-solid fa-filter"></i>'
+        }
+      ];
+    } 
+    // Team page specific commands
+    else if (currentPath.includes('/team')) {
+      contextCommands = [
+        {
+          id: "email-team",
+          title: "Contact Team",
+          handler: () => { window.location.href = '/join'; },
+          section: "Page Actions",
+          shortcuts: ["c t"],
+          icon: '<i class="fa-solid fa-envelope"></i>'
+        }
+      ];
+    }
+    // Teaching page specific commands
+    else if (currentPath.includes('/teaching')) {
+      contextCommands = [
+        {
+          id: "sort-courses",
+          title: "Sort Courses by Date",
+          handler: () => {
+            // Trigger sorting function if it exists
+            if (typeof sortCoursesByDate === 'function') {
+              sortCoursesByDate();
+            }
+          },
+          section: "Page Actions",
+          shortcuts: ["s d"],
+          icon: '<i class="fa-solid fa-sort"></i>'
+        }
+      ];
+    }
+    
+    // Add context commands if there are any
+    if (contextCommands.length > 0) {
+      // Combine context commands with global commands
+      window.commandData = [...contextCommands, ...window.commandData];
+    }
+  };
+  
+  // Call addContextCommands automatically
+  document.addEventListener('DOMContentLoaded', function() {
+    window.addContextCommands();
+  });
+})(); 
