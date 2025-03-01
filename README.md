@@ -247,6 +247,35 @@ Search results are prioritized and filtered as follows:
 4. Blog Posts from blogs.comphy-lab.org
 5. Regular content (headings and paragraphs)
 
+### Command Palette Functionality
+The website includes a command palette feature that provides quick access to actions and navigation through keyboard shortcuts:
+
+- **Keyboard Shortcut**: Access via ⌘/ on Mac, ctrl+/ on Windows, or by clicking the terminal icon in the navigation
+- **Navigation Commands**: Quickly navigate to any section of the website
+- **External Link Commands**: Direct access to GitHub, Google Scholar, YouTube, and Bluesky
+- **Tool Commands**: Search, scroll to top/bottom, and other utility functions
+- **Context-Aware Commands**: Additional commands appear based on current page
+- **Recent Commands**: Track and display recently used commands
+- **Help**: View all available keyboard shortcuts with the "?" command
+
+Key features:
+- Different visual styling from search to avoid confusion (indigo accent color vs blue for search)
+- Grouping of commands by section for easy discoverability
+- Shortcuts for common tasks (g h = go home, g r = go to research, etc.)
+- Comprehensive shortcut help accessible through the "?" command
+- Command history that remembers your frequently used commands
+
+The command palette is built with:
+- NinjaKeys library for the palette UI (/assets/js/search/ninja-keys.min.js)
+- HotKeys.js for keyboard shortcut handling (/assets/js/search/hotkeys-js/hotkeys.esm.min.js)
+- Custom styling and functionality specific to the website
+
+Files:
+- `/assets/js/command-data.js`: Defines all available commands
+- `/assets/js/command-palette-setup.js`: Initializes and manages the command palette
+- `/assets/css/command-palette.css`: Styling for the command palette
+- `/assets/js/shortcut-key.js`: Detects Mac vs Windows for shortcut display
+
 Search behavior and features:
 - Minimum query length: 2 characters
 - Keyboard shortcut (⌘K / ctrl+K) opens a command palette style search interface on all pages
@@ -255,7 +284,7 @@ Search behavior and features:
 - NinjaKeys integration provides a modern command palette experience
 - Search results appear instantly as you type
 - Results are ranked by relevance and match percentage
-in
+
 The search database is automatically generated during the build process by `scripts/generate_search_db.rb`. This script:
 - Indexes all HTML and markdown content
 - Identifies and prioritizes team members, teaching content, and research papers
