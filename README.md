@@ -237,11 +237,15 @@ Search results are prioritized and filtered as follows:
    - Direct matches in names
    - Research interests and affiliations
    - Social media links and profile information
-2. Research Papers
+2. Teaching Content
+   - Course titles and descriptions
+   - Course details (dates, locations, prerequisites)
+   - Course schedules and topics
+3. Research Papers
    - Titles and authors
    - Tags and categories
-3. Blog Posts from blogs.comphy-lab.org
-4. Regular content (headings and paragraphs)
+4. Blog Posts from blogs.comphy-lab.org
+5. Regular content (headings and paragraphs)
 
 Search behavior and features:
 - Minimum query length: 2 characters
@@ -251,11 +255,12 @@ Search behavior and features:
 - NinjaKeys integration provides a modern command palette experience
 - Search results appear instantly as you type
 - Results are ranked by relevance and match percentage
-
+in
 The search database is automatically generated during the build process by `scripts/generate_search_db.rb`. This script:
 - Indexes all HTML and markdown content
-- Identifies and prioritizes team members and research papers
+- Identifies and prioritizes team members, teaching content, and research papers
 - Extracts tags from research papers
+- Processes teaching pages and course details
 - Fetches and indexes blog posts from blogs.comphy-lab.org
 - Generates a JSON database used by the search functionality
 

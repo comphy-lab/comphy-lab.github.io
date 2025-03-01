@@ -130,6 +130,79 @@ Dir.glob(File.join(ROOT_DIR, '*.md')).each do |file|
   end
 end
 
+# Process teaching content from _teaching directory
+Dir.glob(File.join(ROOT_DIR, '_teaching', '*.md')).each do |file|
+  puts "Processing teaching file #{file}..."
+  
+  content = File.read(file)
+  
+  # Extract YAML front matter to get permalink
+  front_matter = {}
+  if content.start_with?("---\n")
+    _, yaml_text, content = content.split("---\n", 3)
+    yaml_text.lines.each do |line|
+      if line.include?(":")
+        key, value = line.split(":", 2).map(&:strip)
+        front_matter[key] = value
+      end
+    end
+  end
+  
+  # Determine the URL for this teaching content
+  url = front_matter['permalink'] || '/teaching/'
+  
+  # Get the title from front matter or filename
+  title = front_matter['title'] || File.basename(file, '.md').gsub(/^\d{4}-/, '').tr('-', ' ')
+  
+  # Split content by headers
+  sections = content.split(/^#+\s+/)
+  sections.shift # Remove content before first header
+  
+  sections.each do |section|
+    next if section.strip.empty?
+    
+    # Extract header and content
+    lines = section.lines
+    header = lines.first.strip
+    content = lines[1..].join.strip
+    
+    next if header.empty? || content.empty?
+    next if content.length < 50 # Skip very short sections
+    
+    # Skip navigation-like sections
+    next if header.match?(/^(navigation|menu|contents|index)$/i)
+    
+    # Create entry for the section
+    entry = {
+      'title' => "#{title} - #{header}",
+      'content' => content,
+      'url' => "#{url}##{generate_anchor(header)}",
+      'type' => 'teaching_content',
+      'priority' => 2  # Medium-high priority for teaching content
+    }
+    search_db << entry
+    
+    # Also create entries for individual paragraphs
+    paragraphs = content.split(/\n\n+/)
+    paragraphs.each do |para|
+      para = para.strip
+      next if para.empty?
+      next if para.length < 100 # Only include substantial paragraphs
+      next if para.start_with?('```') # Skip code blocks
+      next if para.start_with?('<') # Skip HTML
+      
+      entry = {
+        'title' => "#{title} - #{header}",
+        'content' => para,
+        'url' => "#{url}##{generate_anchor(header)}",
+        'type' => 'teaching_paragraph',
+        'priority' => 2
+      }
+      search_db << entry
+    end
+  end
+end
+
 # Process each HTML file
 Dir.glob(File.join(ROOT_DIR, '_site', '**', '*.html')) do |file|
   next if file.include?('/assets/') # Skip asset files
@@ -145,6 +218,103 @@ Dir.glob(File.join(ROOT_DIR, '_site', '**', '*.html')) do |file|
   
   # Extract page title
   title = doc.at_css('title')&.text || File.basename(file, '.html').capitalize
+
+  # Special handling for teaching pages
+  if url.include?('/teaching/')
+    # Process course details
+    doc.css('.course-details__item').each do |detail|
+      heading = detail.at_css('h4')&.text.to_s.strip
+      content = detail.at_css('p')&.text.to_s.strip
+      
+      next if heading.empty? || content.empty?
+      
+      # Create entry for course detail
+      entry = {
+        'title' => "#{title} - #{heading}",
+        'content' => content,
+        'url' => url,
+        'type' => 'teaching_detail',
+        'priority' => 2  # Medium-high priority
+      }
+      search_db << entry
+    end
+    
+    # Process course schedule/sections
+    doc.css('h3').each do |heading|
+      heading_text = heading.text.strip
+      next if heading_text.empty?
+      
+      # Get content until next h3
+      content_nodes = []
+      current = heading.next_element
+      while current && current.name != 'h3'
+        content_nodes << current.text.strip unless current.text.strip.empty?
+        current = current.next_element
+      end
+      content = content_nodes.join(' ').strip
+      next if content.empty?
+      
+      # Create entry for course section
+      entry = {
+        'title' => "#{title} - #{heading_text}",
+        'content' => content,
+        'url' => "#{url}##{generate_anchor(heading_text)}",
+        'type' => 'teaching_section',
+        'priority' => 2
+      }
+      search_db << entry
+    end
+    
+    # Process specific teaching sections like Prerequisites, Course Description, etc.
+    ['Prerequisites', 'Course Description', 'Registration', 'What will you learn'].each do |section_name|
+      section = doc.xpath("//h2[contains(text(), '#{section_name}')]").first
+      next unless section
+      
+      # Get content until next h2
+      content_nodes = []
+      current = section.next_element
+      while current && current.name != 'h2'
+        content_nodes << current.text.strip unless current.text.strip.empty?
+        current = current.next_element
+      end
+      content = content_nodes.join(' ').strip
+      next if content.empty?
+      
+      # Create entry for the specific section
+      entry = {
+        'title' => "#{title} - #{section_name}",
+        'content' => content,
+        'url' => "#{url}##{generate_anchor(section_name)}",
+        'type' => 'teaching_course_info',
+        'priority' => 2
+      }
+      search_db << entry
+    end
+    
+    # Process course card content on index page
+    doc.css('.course-card').each do |card|
+      card_title = card.at_css('.course-card__title')&.text.to_s.strip
+      card_desc = card.at_css('.course-card__desc')&.text.to_s.strip
+      card_meta = card.css('.course-card__meta').map(&:text).join(' - ').strip
+      
+      next if card_title.empty? && card_desc.empty?
+      
+      content = [card_title, card_meta, card_desc].reject(&:empty?).join(' - ')
+      
+      # Get link to course page
+      course_link = card.at_css('.course-card__link')&.[]('href').to_s
+      
+      # Create entry for course card
+      entry = {
+        'title' => card_title.empty? ? "Teaching course" : card_title,
+        'content' => content,
+        'url' => course_link.empty? ? url : course_link,
+        'type' => 'teaching_course',
+        'priority' => 2
+      }
+      search_db << entry
+    end
+  end
 
   # Special handling for team members
   doc.css('h2').each do |heading|
