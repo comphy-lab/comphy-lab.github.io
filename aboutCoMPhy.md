@@ -36,12 +36,12 @@ Feel free to contact us for discussions about our work or anything else related 
 
 ### Social Media
 
-[![X](https://img.shields.io/badge/-@VatsalSanjay-000000?style=flat&logo=x&logoColor=white)](https://twitter.com/VatsalSanjay)
+[![X](https://img.shields.io/badge/-@CoMPhyLab-000000?style=flat&logo=x&logoColor=white)](https://twitter.com/VatsalSanjay)
 [![Bluesky](https://img.shields.io/badge/-@comphy--lab.org-0285FF?style=flat&logo=bluesky&logoColor=white)](https://bsky.app/profile/comphy-lab.org)
 
 For supplementary videos and teaser of our upcoming work:
 
-<a href="https://www.youtube.com/@VatsalSanjay" target="_blank">
+<a href="https://www.youtube.com/@CoMPhyLab" target="_blank">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://cust-youtube-stats-card.vercel.app/api?channelid=UC-eTdHrAM_eQrWOtNLoT19w&theme=solarized_light&cache_seconds=0" width="auto" height="200px">
     <img alt="Vatsal's YouTube Stats" src="https://cust-youtube-stats-card.vercel.app/api?channelid=UC-eTdHrAM_eQrWOtNLoT19w&theme=vision_friendly_dark&hide_border=true" width="auto" height="200px">
