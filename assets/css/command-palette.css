@@ -70,8 +70,13 @@
   flex-wrap: wrap;
 }
 
-.command-palette-command:hover {
+.command-palette-command:hover, .command-palette-command.selected {
   background-color: rgba(99, 102, 241, 0.1);
+}
+
+.command-palette-command.selected {
+  outline: 2px solid rgba(99, 102, 241, 0.3);
+  position: relative;
 }
 
 .command-palette-icon {
@@ -321,5 +326,51 @@
     color: #fff;
     border-color: #555;
     box-shadow: 0 1px 0px rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Command palette footer */
+.command-palette-footer {
+  padding: 8px 16px;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
+  color: #777;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.command-palette-footer-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.command-palette-footer kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+  border: 1px solid #ddd;
+  font-family: monospace;
+  font-size: 11px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  min-width: 16px;
+}
+
+/* Dark mode footer styling */
+@media (prefers-color-scheme: dark) {
+  .command-palette-footer {
+    border-top-color: #444;
+    color: #aaa;
+  }
+  
+  .command-palette-footer kbd {
+    background-color: #444;
+    border-color: #555;
+    color: #ddd;
   }
 } 

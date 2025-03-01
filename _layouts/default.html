@@ -298,6 +298,11 @@
     <div class="simple-command-palette-modal">
       <input type="text" id="command-palette-input" placeholder="Type a command..." autocomplete="off">
       <div id="command-palette-results" class="command-palette-results"></div>
+      <div class="command-palette-footer">
+        <span class="command-palette-footer-item"><kbd>↑</kbd> <kbd>↓</kbd> to navigate</span>
+        <span class="command-palette-footer-item"><kbd>enter</kbd> to select</span>
+        <span class="command-palette-footer-item"><kbd>esc</kbd> to close</span>
+      </div>
     </div>
   </div>
 
@@ -443,10 +448,44 @@
           if (e.key === 'Escape') {
             document.getElementById('simple-command-palette').style.display = 'none';
           } else if (e.key === 'Enter') {
-            const firstCommand = document.querySelector('.command-palette-command');
-            if (firstCommand) {
-              firstCommand.click();
+            const selectedCommand = document.querySelector('.command-palette-command.selected');
+            if (selectedCommand) {
+              selectedCommand.click();
+            } else {
+              const firstCommand = document.querySelector('.command-palette-command');
+              if (firstCommand) {
+                firstCommand.click();
+              }
             }
+          } else if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+            e.preventDefault();
+            
+            const commands = Array.from(document.querySelectorAll('.command-palette-command'));
+            if (commands.length === 0) return;
+            
+            const currentSelected = document.querySelector('.command-palette-command.selected');
+            let nextIndex = 0;
+            
+            if (currentSelected) {
+              const currentIndex = commands.indexOf(currentSelected);
+              currentSelected.classList.remove('selected');
+              
+              if (e.key === 'ArrowDown') {
+                nextIndex = (currentIndex + 1) % commands.length;
+              } else {
+                nextIndex = (currentIndex - 1 + commands.length) % commands.length;
+              }
+            } else {
+              nextIndex = e.key === 'ArrowDown' ? 0 : commands.length - 1;
+            }
+            
+            commands[nextIndex].classList.add('selected');
+            
+            // Ensure the selected element is visible in the scroll view
+            commands[nextIndex].scrollIntoView({
+              behavior: 'smooth',
+              block: 'nearest'
+            });
           }
         });
       }
