@@ -47,6 +47,7 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 │   ├── ISSUE_TEMPLATE        # Issue templates
 │   └── PULL_REQUEST_TEMPLATE # PR templates
 ├── about.md                   # About page content (markdown)
+├── contact.html               # Contact page that redirects to Join Us page
 ├── join.html                  # Join Us page (opportunities)
 ├── index.html                 # Homepage
 ├── Gemfile                    # Ruby dependencies
@@ -90,6 +91,12 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 - `about.md`: Contains the About section in markdown
 - Standard markdown elements (headers, lists, links) are supported
 - Edits automatically appear once the site is rebuilt
+
+#### Contact Page Redirect
+- `contact.html`: Automatically redirects users to the Join Us page
+- Uses JavaScript's `window.location.replace()` for a seamless redirect
+- Includes fallback content in case JavaScript is disabled
+- URL structure: `/contact/` redirects to `/join`
 
 #### Adding or Editing Team Members
 1. Open the `_team/index.md` file
