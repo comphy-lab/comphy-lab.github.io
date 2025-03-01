@@ -230,7 +230,7 @@ The website includes a powerful search feature that allows users to:
 - Get instant search results with highlighted matching text
 - See match percentage for each result
 - Navigate directly to specific sections using anchor links
-- Access search via keyboard shortcut (cmd+k on Mac, ctrl+k on Windows)
+- Access search via keyboard shortcut (⌘K on Mac, ctrl+K on Windows) or by clicking the magnifying glass icon in the navigation
 
 Search results are prioritized and filtered as follows:
 1. Team Members (highest priority)
@@ -243,10 +243,14 @@ Search results are prioritized and filtered as follows:
 3. Blog Posts from blogs.comphy-lab.org
 4. Regular content (headings and paragraphs)
 
-Search behavior and restrictions:
+Search behavior and features:
 - Minimum query length: 2 characters
-- Keyboard shortcut (cmd+k / ctrl+k) opens a command palette style search interface
-- Search button in navigation also provides visual access to the command palette
+- Keyboard shortcut (⌘K / ctrl+K) opens a command palette style search interface on all pages
+- Magnifying glass icon in navigation opens the search interface when clicked
+- Search input in navigation shows the full "⌘K (search)" text by default
+- NinjaKeys integration provides a modern command palette experience
+- Search results appear instantly as you type
+- Results are ranked by relevance and match percentage
 
 The search database is automatically generated during the build process by `scripts/generate_search_db.rb`. This script:
 - Indexes all HTML and markdown content
