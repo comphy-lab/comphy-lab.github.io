@@ -1,0 +1,46 @@
+/* Ninja Keys styling */
+ninja-keys {
+  --ninja-width: 640px;
+  --ninja-backdrop-filter: blur(16px);
+  --ninja-overflow: hidden;
+  --ninja-z-index: 1000;
+  --ninja-modal-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  --ninja-modal-background: rgba(255, 255, 255, 0.8);
+  --ninja-accent-color: #5b79a8; /* Match your site theme color */
+  --ninja-selected-background: rgba(91, 121, 168, 0.1);
+  --ninja-font-family: inherit;
+}
+
+/* Dark mode styling if needed */
+@media (prefers-color-scheme: dark) {
+  ninja-keys {
+    --ninja-modal-background: rgba(30, 30, 30, 0.8);
+    --ninja-accent-color: #7a9bc9;
+    --ninja-selected-background: rgba(122, 155, 201, 0.1);
+    --ninja-text-color: #e1e1e1;
+    --ninja-secondary-text-color: #a0a0a0;
+  }
+}
+
+/* Search button styling */
+.search-button .btn {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  border: 1px solid #5b79a8;
+  color: #5b79a8;
+}
+
+.search-button .btn:hover {
+  background-color: rgba(91, 121, 168, 0.1);
+}
+
+/* Hide one of the shortcut texts depending on platform */
+.mac-theme-text, .default-theme-text {
+  display: none;
+} 
