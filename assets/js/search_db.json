@@ -427,6 +427,1901 @@
     "priority": 3
   },
   {
+    "title": "\"High-Fidelity Simulations Using Basilisk C\" - High-Fidelity Simulations Using Basilisk C",
+    "content": "<div class=\"course-details\">\n  <div class=\"course-details__item\">\n    <h4><i class=\"fa-solid fa-calendar-days\"></i> Dates</h4>\n    <p>March 10-13, 2025</p>\n  </div>\n  <div class=\"course-details__item\">\n    <h4><i class=\"fa-solid fa-location-dot\"></i> Location</h4>\n    <p>Universidad Carlos III de Madrid, Spain</p>\n  </div>\n  <div class=\"course-details__item\">\n    <h4><i class=\"fa-solid fa-clock\"></i> Duration</h4>\n    <p>4 days, full-time</p>\n  </div>\n</div>",
+    "url": "/teaching/2025-Basilisk101-Madrid#High-Fidelity%2BSimulations%2BUsing%2BBasilisk%2BC",
+    "type": "teaching_content",
+    "priority": 2
+  },
+  {
+    "title": "\"High-Fidelity Simulations Using Basilisk C\" - What will you learn?",
+    "content": "- **Think before you compute!** Understanding the physics before implementation\n- **Writing the first code in Basilisk C** Getting comfortable with the framework\n- **Solving conservation equations** Numerical approaches to fluid dynamics\n- **Interface tracking methods** Capturing multiphase phenomena accurately\n- **Non-Newtonian flows** Modeling complex rheological behaviors",
+    "url": "/teaching/2025-Basilisk101-Madrid#What%2Bwill%2Byou%2Blearn",
+    "type": "teaching_content",
+    "priority": 2
+  },
+  {
+    "title": "\"High-Fidelity Simulations Using Basilisk C\" - What will you learn?",
+    "content": "- **Think before you compute!** Understanding the physics before implementation\n- **Writing the first code in Basilisk C** Getting comfortable with the framework\n- **Solving conservation equations** Numerical approaches to fluid dynamics\n- **Interface tracking methods** Capturing multiphase phenomena accurately\n- **Non-Newtonian flows** Modeling complex rheological behaviors",
+    "url": "/teaching/2025-Basilisk101-Madrid#What%2Bwill%2Byou%2Blearn",
+    "type": "teaching_paragraph",
+    "priority": 2
+  },
+  {
+    "title": "\"High-Fidelity Simulations Using Basilisk C\" - Course Description",
+    "content": "This intensive 4-day course provides a comprehensive introduction to high-fidelity simulations using Basilisk C, a powerful computational framework for fluid dynamics. Participants will learn to implement and solve complex fluid mechanics problems with an emphasis on multiphase flows, interface dynamics, and non-Newtonian rheology.\n\nThe course combines theoretical lectures with extensive hands-on sessions, allowing participants to immediately apply concepts through guided coding exercises. By the end of the course, you'll be able to develop your own simulations for a variety of fluid dynamics applications.",
+    "url": "/teaching/2025-Basilisk101-Madrid#Course%2BDescription",
+    "type": "teaching_content",
+    "priority": 2
+  },
+  {
+    "title": "\"High-Fidelity Simulations Using Basilisk C\" - Course Description",
+    "content": "This intensive 4-day course provides a comprehensive introduction to high-fidelity simulations using Basilisk C, a powerful computational framework for fluid dynamics. Participants will learn to implement and solve complex fluid mechanics problems with an emphasis on multiphase flows, interface dynamics, and non-Newtonian rheology.",
+    "url": "/teaching/2025-Basilisk101-Madrid#Course%2BDescription",
+    "type": "teaching_paragraph",
+    "priority": 2
+  },
+  {
+    "title": "\"High-Fidelity Simulations Using Basilisk C\" - Course Description",
+    "content": "The course combines theoretical lectures with extensive hands-on sessions, allowing participants to immediately apply concepts through guided coding exercises. By the end of the course, you'll be able to develop your own simulations for a variety of fluid dynamics applications.",
+    "url": "/teaching/2025-Basilisk101-Madrid#Course%2BDescription",
+    "type": "teaching_paragraph",
+    "priority": 2
+  },
+  {
+    "title": "\"High-Fidelity Simulations Using Basilisk C\" - Think before you compute",
+    "content": "- **10:00-11:30** | **Lecture (1a)**\n  - Conservation laws and the numerical solution of the Navier–Stokes equations\n- **11:45-13:00** | **Lecture (1b)**\n  - Advection-diffusion, diffusion-reaction, and other transport equations\n  - *Brief intro to Basilisk coding framework*",
+    "url": "/teaching/2025-Basilisk101-Madrid#Think%2Bbefore%2Byou%2Bcompute",
+    "type": "teaching_content",
+    "priority": 2
+  },
+  {
+    "title": "\"High-Fidelity Simulations Using Basilisk C\" - Think before you compute",
+    "content": "- **10:00-11:30** | **Lecture (1a)**\n  - Conservation laws and the numerical solution of the Navier–Stokes equations\n- **11:45-13:00** | **Lecture (1b)**\n  - Advection-diffusion, diffusion-reaction, and other transport equations\n  - *Brief intro to Basilisk coding framework*",
+    "url": "/teaching/2025-Basilisk101-Madrid#Think%2Bbefore%2Byou%2Bcompute",
+    "type": "teaching_paragraph",
+    "priority": 2
+  },
+  {
+    "title": "\"High-Fidelity Simulations Using Basilisk C\" - First coding steps",
+    "content": "- **15:00-18:00** | **Hybrid Session**\n  - Implementing basic transport equations in Basilisk C\n  - *Whiteboard + coding*",
+    "url": "/teaching/2025-Basilisk101-Madrid#First%2Bcoding%2Bsteps",
+    "type": "teaching_content",
+    "priority": 2
+  },
+  {
+    "title": "\"High-Fidelity Simulations Using Basilisk C\" - First coding steps",
+    "content": "- **15:00-18:00** | **Hybrid Session**\n  - Implementing basic transport equations in Basilisk C\n  - *Whiteboard + coding*",
+    "url": "/teaching/2025-Basilisk101-Madrid#First%2Bcoding%2Bsteps",
+    "type": "teaching_paragraph",
+    "priority": 2
+  },
+  {
+    "title": "\"High-Fidelity Simulations Using Basilisk C\" - Coding like a pro",
+    "content": "- **10:00-11:15** | **Hackathon (1c)**\n  - Using headers in Basilisk, modular code structure, problem setup, and compilation\n- **11:30-13:00** | **Hackathon Continued**\n  - Expanding on the morning tasks and code debugging",
+    "url": "/teaching/2025-Basilisk101-Madrid#Coding%2Blike%2Ba%2Bpro",
+    "type": "teaching_content",
+    "priority": 2
+  },
+  {
+    "title": "\"High-Fidelity Simulations Using Basilisk C\" - Coding like a pro",
+    "content": "- **10:00-11:15** | **Hackathon (1c)**\n  - Using headers in Basilisk, modular code structure, problem setup, and compilation\n- **11:30-13:00** | **Hackathon Continued**\n  - Expanding on the morning tasks and code debugging",
+    "url": "/teaching/2025-Basilisk101-Madrid#Coding%2Blike%2Ba%2Bpro",
+    "type": "teaching_paragraph",
+    "priority": 2
+  },
+  {
+    "title": "\"High-Fidelity Simulations Using Basilisk C\" - Interface tracking methods",
+    "content": "- **10:00-11:30** | **Lecture (2a)**\n  - Interface tracking methods (VoF, level set, phase-field approaches) and numerical strategies\n- **11:45-13:00** | **Hackathon (2b)**\n  - Hands-on tutorial applying interface-tracking to a simple two-phase problem",
+    "url": "/teaching/2025-Basilisk101-Madrid#Interface%2Btracking%2Bmethods",
+    "type": "teaching_content",
+    "priority": 2
+  },
+  {
+    "title": "\"High-Fidelity Simulations Using Basilisk C\" - Interface tracking methods",
+    "content": "- **10:00-11:30** | **Lecture (2a)**\n  - Interface tracking methods (VoF, level set, phase-field approaches) and numerical strategies\n- **11:45-13:00** | **Hackathon (2b)**\n  - Hands-on tutorial applying interface-tracking to a simple two-phase problem",
+    "url": "/teaching/2025-Basilisk101-Madrid#Interface%2Btracking%2Bmethods",
+    "type": "teaching_paragraph",
+    "priority": 2
+  },
+  {
+    "title": "\"High-Fidelity Simulations Using Basilisk C\" - Seminar",
+    "content": "- **13:30-14:00** | **Department seminar (2c)**\n  - A note on the thrust of airfoils by [José Mnauel Gordillo](https://scholar.google.com/citations?user=14wOsewAAAAJ&hl=en&inst=5726176096060060532&oi=ao)",
+    "url": "/teaching/2025-Basilisk101-Madrid#Seminar",
+    "type": "teaching_content",
+    "priority": 2
+  },
+  {
+    "title": "\"High-Fidelity Simulations Using Basilisk C\" - Seminar",
+    "content": "- **13:30-14:00** | **Department seminar (2c)**\n  - A note on the thrust of airfoils by [José Mnauel Gordillo](https://scholar.google.com/citations?user=14wOsewAAAAJ&hl=en&inst=5726176096060060532&oi=ao)",
+    "url": "/teaching/2025-Basilisk101-Madrid#Seminar",
+    "type": "teaching_paragraph",
+    "priority": 2
+  },
+  {
+    "title": "\"High-Fidelity Simulations Using Basilisk C\" - Non-Newtonian flows",
+    "content": "- **15:00-16:00** | **Lecture (3a)**\n  - Non-Newtonian flows: viscoplasticity and viscoelasticity\n- **16:15-18:00** | **Hackathon (3b)**\n  - Coding exercises for shear-thinning, viscoplastic, or viscoelastic fluids",
+    "url": "/teaching/2025-Basilisk101-Madrid#Non-Newtonian%2Bflows",
+    "type": "teaching_content",
+    "priority": 2
+  },
+  {
+    "title": "\"High-Fidelity Simulations Using Basilisk C\" - Non-Newtonian flows",
+    "content": "- **15:00-16:00** | **Lecture (3a)**\n  - Non-Newtonian flows: viscoplasticity and viscoelasticity\n- **16:15-18:00** | **Hackathon (3b)**\n  - Coding exercises for shear-thinning, viscoplastic, or viscoelastic fluids",
+    "url": "/teaching/2025-Basilisk101-Madrid#Non-Newtonian%2Bflows",
+    "type": "teaching_paragraph",
+    "priority": 2
+  },
+  {
+    "title": "\"High-Fidelity Simulations Using Basilisk C\" - Special topics",
+    "content": "- **10:00-11:30** | **Lecture (4a)**\n  - Special Topics: multilayer solver, lubrication equation, Marangoni flows, manifold death, and research-oriented examples\n- **11:45-13:00** | **Hackathon (4b)**\n  - Focused tutorials on the special topics introduced in the lecture\n- **15:00-16:30** | **Lecture (4c)**\n  - Open discussion, deeper dives into advanced features, final code reviews, and next steps\n\n---",
+    "url": "/teaching/2025-Basilisk101-Madrid#Special%2Btopics",
+    "type": "teaching_content",
+    "priority": 2
+  },
+  {
+    "title": "\"High-Fidelity Simulations Using Basilisk C\" - Special topics",
+    "content": "- **10:00-11:30** | **Lecture (4a)**\n  - Special Topics: multilayer solver, lubrication equation, Marangoni flows, manifold death, and research-oriented examples\n- **11:45-13:00** | **Hackathon (4b)**\n  - Focused tutorials on the special topics introduced in the lecture\n- **15:00-16:30** | **Lecture (4c)**\n  - Open discussion, deeper dives into advanced features, final code reviews, and next steps",
+    "url": "/teaching/2025-Basilisk101-Madrid#Special%2Btopics",
+    "type": "teaching_paragraph",
+    "priority": 2
+  },
+  {
+    "title": "\"High-Fidelity Simulations Using Basilisk C\" - Prerequisites",
+    "content": "- Basic knowledge of fluid mechanics\n- Experience with programming (any language, C preferred)\n- Understanding of partial differential equations\n- Laptop with ability to compile C code",
+    "url": "/teaching/2025-Basilisk101-Madrid#Prerequisites",
+    "type": "teaching_content",
+    "priority": 2
+  },
+  {
+    "title": "\"High-Fidelity Simulations Using Basilisk C\" - Prerequisites",
+    "content": "- Basic knowledge of fluid mechanics\n- Experience with programming (any language, C preferred)\n- Understanding of partial differential equations\n- Laptop with ability to compile C code",
+    "url": "/teaching/2025-Basilisk101-Madrid#Prerequisites",
+    "type": "teaching_paragraph",
+    "priority": 2
+  },
+  {
+    "title": "\"High-Fidelity Simulations Using Basilisk C\" - Registration",
+    "content": "For registration details, please contact \n<div class=\"email-container\">\n    <span class=\"email-text\">bubbles@ing.uc3m.es</span>\n    <button class=\"copy-btn\" onclick=\"copyEmail(this)\" data-text=\"bubbles@ing.uc3m.es\">\n        <i class=\"fas fa-copy\"></i>\n    </button>\n</div>\n<div class=\"email-container\">\n    <span class=\"email-text\">vatsalsy@comphy-lab.org</span>\n    <button class=\"copy-btn\" onclick=\"copyEmail(this)\" data-text=\"vatsalsy@comphy-lab.org\">\n        <i class=\"fas fa-copy\"></i>\n    </button>\n</div>\n\n<script>\nfunction copyEmail(button) {\n  const textToCopy = button.getAttribute('data-text');\n  \n  // Create a temporary textarea element to copy from\n  const textarea = document.createElement('textarea');\n  textarea.value = textToCopy;\n  textarea.setAttribute('readonly', '');\n  textarea.style.position = 'absolute';\n  textarea.style.left = '-9999px';\n  document.body.appendChild(textarea);\n  \n  // Select and copy the text\n  textarea.select();\n  document.execCommand('copy');\n  \n  // Remove the temporary element\n  document.body.removeChild(textarea);\n  \n  // Show feedback\n  const originalIcon = button.innerHTML;\n  button.innerHTML = '<i class=\"fas fa-check\"></i>';\n  button.classList.add('copied');\n  \n  // Restore original state after a delay\n  setTimeout(() => {\n    button.innerHTML = originalIcon;\n    button.classList.remove('copied');\n  }, 2000);\n}\n</script>\n\n<div style=\"margin-top: 2rem; text-align: center;\">\n  <a href=\"https://github.com/comphy-lab/Basilisk-101\" class=\"course-card__link\" target=\"_blank\">\n    <i class=\"fa-brands fa-github\" style=\"margin-right: 0.5rem; font-style: normal;\"></i>Course GitHub Repository\n  </a>\n</div>",
+    "url": "/teaching/2025-Basilisk101-Madrid#Registration",
+    "type": "teaching_content",
+    "priority": 2
+  },
+  {
+    "title": "\"High-Fidelity Simulations Using Basilisk C\" - Registration",
+    "content": "For registration details, please contact \n<div class=\"email-container\">\n    <span class=\"email-text\">bubbles@ing.uc3m.es</span>\n    <button class=\"copy-btn\" onclick=\"copyEmail(this)\" data-text=\"bubbles@ing.uc3m.es\">\n        <i class=\"fas fa-copy\"></i>\n    </button>\n</div>\n<div class=\"email-container\">\n    <span class=\"email-text\">vatsalsy@comphy-lab.org</span>\n    <button class=\"copy-btn\" onclick=\"copyEmail(this)\" data-text=\"vatsalsy@comphy-lab.org\">\n        <i class=\"fas fa-copy\"></i>\n    </button>\n</div>",
+    "url": "/teaching/2025-Basilisk101-Madrid#Registration",
+    "type": "teaching_paragraph",
+    "priority": 2
+  },
+  {
+    "title": "Teaching - Teaching",
+    "content": "Welcome to the CoMPhy Lab's educational resources. Apart from the university courses, we aim to develop and offer a range of workshops and tutorials on modern computational methods for multiphase flows and high-fidelity simulations.\n\n<div class=\"teaching-grid\">\n  <div class=\"course-card\">\n    <img src=\"/assets/images/teaching/basilisk-madrid.jpg\" alt=\"Basilisk C Course\" loading=\"lazy\">\n    <div class=\"course-card__content\">\n      <h3 class=\"course-card__title\">High-Fidelity Simulations Using Basilisk C</h3>\n      <div class=\"course-card__meta\">\n        <i class=\"fa-solid fa-location-dot\"></i> Universidad Carlos III de Madrid\n      </div>\n      <div class=\"course-card__meta\">\n        <i class=\"fa-solid fa-calendar-days\"></i> March 10-13, 2025\n      </div>\n      <p class=\"course-card__desc\">\n        A comprehensive course on using Basilisk C for simulating multiphase flows, interface tracking, and solving conservation equations. Learn to tackle complex fluid dynamics problems with high-fidelity numerical methods.\n      </p>\n      <a href=\"/teaching/2025-Basilisk101-Madrid\" class=\"course-card__link\">View Course</a>\n    </div>\n  </div>\n</div>",
+    "url": "/teaching/#Teaching",
+    "type": "teaching_content",
+    "priority": 2
+  },
+  {
+    "title": "Teaching - Teaching",
+    "content": "Welcome to the CoMPhy Lab's educational resources. Apart from the university courses, we aim to develop and offer a range of workshops and tutorials on modern computational methods for multiphase flows and high-fidelity simulations.",
+    "url": "/teaching/#Teaching",
+    "type": "teaching_paragraph",
+    "priority": 2
+  },
+  {
+    "title": "Teaching - About Our Teaching Philosophy",
+    "content": "At CoMPhy Lab, we believe in hands-on learning and deep understanding of computational methods. Our courses combine theoretical foundations with practical implementation, allowing students to develop both conceptual understanding and technical skills.\n\nOur teaching approach emphasizes:\n\n- **Think before you compute**: Understanding the underlying physics before implementation\n- **Modular code structure**: Building maintainable and extensible computational tools\n- **Advanced numerical methods**: Mastering state-of-the-art techniques for complex problems\n- **Open science**: Sharing knowledge and tools with the scientific community. Checkout <a href=\"https://github.com/comphy-lab\"><i class=\"fa-brands fa-github\" style=\"font-size: 1.5em; color: black; font-style: normal;\"></i></a>\n\nIf you're interested in hosting a course or workshop with CoMPhy Lab, please [contact us](/join) for collaboration opportunities.",
+    "url": "/teaching/#About%2BOur%2BTeaching%2BPhilosophy",
+    "type": "teaching_content",
+    "priority": 2
+  },
+  {
+    "title": "Teaching - About Our Teaching Philosophy",
+    "content": "At CoMPhy Lab, we believe in hands-on learning and deep understanding of computational methods. Our courses combine theoretical foundations with practical implementation, allowing students to develop both conceptual understanding and technical skills.",
+    "url": "/teaching/#About%2BOur%2BTeaching%2BPhilosophy",
+    "type": "teaching_paragraph",
+    "priority": 2
+  },
+  {
+    "title": "Teaching - About Our Teaching Philosophy",
+    "content": "- **Think before you compute**: Understanding the underlying physics before implementation\n- **Modular code structure**: Building maintainable and extensible computational tools\n- **Advanced numerical methods**: Mastering state-of-the-art techniques for complex problems\n- **Open science**: Sharing knowledge and tools with the scientific community. Checkout <a href=\"https://github.com/comphy-lab\"><i class=\"fa-brands fa-github\" style=\"font-size: 1.5em; color: black; font-style: normal;\"></i></a>",
+    "url": "/teaching/#About%2BOur%2BTeaching%2BPhilosophy",
+    "type": "teaching_paragraph",
+    "priority": 2
+  },
+  {
+    "title": "Teaching - About Our Teaching Philosophy",
+    "content": "If you're interested in hosting a course or workshop with CoMPhy Lab, please [contact us](/join) for collaboration opportunities.",
+    "url": "/teaching/#About%2BOur%2BTeaching%2BPhilosophy",
+    "type": "teaching_paragraph",
+    "priority": 2
+  },
+  {
+    "title": "404! But, there are no dragons either.",
+    "content": "Seems like you didn't find what you wanted. But don't worry - we've got plenty of exciting projects \n            waiting for you to explore!\n            Check Out:",
+    "url": "/404.html#404%2BBut%2Bthere%2Bare%2Bno%2Bdragons%2Beither",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "404! But, there are no dragons either.",
+    "content": "Take Me Home",
+    "url": "/404.html#404%2BBut%2Bthere%2Bare%2Bno%2Bdragons%2Beither",
+    "type": "text",
+    "links": [
+      ""
+    ],
+    "priority": 3
+  },
+  {
+    "title": "404! But, there are no dragons either.",
+    "content": "© Copyright\n        CoMPhy Lab 2025",
+    "url": "/404.html#404%2BBut%2Bthere%2Bare%2Bno%2Bdragons%2Beither",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "About",
+    "content": "If you are not redirected automatically, please click here.",
+    "url": "/about.html#About",
+    "type": "text",
+    "links": [
+      "#about"
+    ],
+    "priority": 3
+  },
+  {
+    "title": "Contact",
+    "content": "Redirecting to Join Us page...",
+    "url": "/contact/index.html#Contact",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Contact",
+    "content": "If you are not redirected automatically, click here.",
+    "url": "/contact/index.html#Contact",
+    "type": "text",
+    "links": [
+      "join"
+    ],
+    "priority": 3
+  },
+  {
+    "title": "Contact",
+    "content": "© Copyright\n        CoMPhy Lab 2025",
+    "url": "/contact/index.html#Contact",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Contact",
+    "content": "Redirecting to Join Us page... If you are not redirected automatically, click here.",
+    "url": "/contact/index.html#Contact",
+    "type": "section",
+    "links": [
+      "join"
+    ],
+    "priority": 3
+  },
+  {
+    "title": "Computational Multiphase \n          Physics (CoMPhy) Lab",
+    "content": "Picture: Worthington jet formed due to bursting bubble.",
+    "url": "/index.html#Computational%2BMultiphase%2BPhysics%2BCoMPhy%2BLab",
+    "type": "text",
+    "links": [
+      "research/#7"
+    ],
+    "priority": 3
+  },
+  {
+    "title": "Computational Multiphase \n          Physics (CoMPhy) Lab",
+    "content": "Featured Research",
+    "url": "/index.html#Computational%2BMultiphase%2BPhysics%2BCoMPhy%2BLab",
+    "type": "text",
+    "links": [
+      "#featured"
+    ],
+    "priority": 3
+  },
+  {
+    "title": "Featured Research",
+    "content": "© Copyright\n        CoMPhy Lab 2025",
+    "url": "/index.html#Featured%2BResearch",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "PhD Positions",
+    "content": "We are always looking for enthusiastic PhD students interested in:",
+    "url": "/join/index.html#PhD%2BPositions",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "PhD Positions",
+    "content": "If you are interested, please send your:",
+    "url": "/join/index.html#PhD%2BPositions",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "PhD Positions",
+    "content": "to:",
+    "url": "/join/index.html#PhD%2BPositions",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Master's Projects",
+    "content": "We have several ongoing projects suitable for master's students. Current opportunities are listed at the project page.",
+    "url": "/join/index.html#Master%27s%2BProjects",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Master's Projects",
+    "content": "Contact us to discuss these or other potential projects.",
+    "url": "/join/index.html#Master%27s%2BProjects",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Master's Projects",
+    "content": "© Copyright\n        CoMPhy Lab 2025",
+    "url": "/join/index.html#Master%27s%2BProjects",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "PhD Positions",
+    "content": "We are always looking for enthusiastic PhD students interested in: High-performance Computing\n          Multiphase flows\n          Physics-based modeling\n          Soft singularities",
+    "url": "/join/index.html#PhD%2BPositions",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Master's Projects",
+    "content": "We have several ongoing projects suitable for master's students. Current opportunities are listed at the project page. Contact us to discuss these or other potential projects.",
+    "url": "/join/index.html#Master%27s%2BProjects",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Demirkır, Ç., Yang, R., Bashkatov, A., Sanjay, V., Lohse, D., & Krug, D. To jump or not to jump: Adhesion and viscous dissipation dictate the detachment of coalescing wall-attached bubbles. Submitted to Phys. Rev. Lett. (2025).",
+    "content": "",
+    "url": "/research/index.html#Demirkr%2BYang%2BR%2BBashkatov%2BA%2BSanjay%2BV%2BLohse%2BD%2BKrug%2BD%2BTo%2Bjump%2Bor%2Bnot%2Bto%2Bjump%3A%2BAdhesion%2Band%2Bviscous%2Bdissipation%2Bdictate%2Bthe%2Bdetachment%2Bof%2Bcoalescing%2Bwall-attached%2Bbubbles%2BSubmitted%2Bto%2BPhys%2BRev%2BLett%2B2025",
+    "type": "paper",
+    "tags": [
+      "Bubbles",
+      "Coalescence"
+    ],
+    "priority": 3
+  },
+  {
+    "title": "Dixit, A. K., Oratis, A., Zinelis, K., Lohse, D., & Sanjay, V. Viscoelastic Worthington jets & droplets produced by bursting bubbles. Received positive reviews in J. Fluid Mech. (2025).",
+    "content": "",
+    "url": "/research/index.html#Dixit%2BA%2BK%2BOratis%2BA%2BZinelis%2BK%2BLohse%2BD%2BSanjay%2BV%2BViscoelastic%2BWorthington%2Bjets%2Bdroplets%2Bproduced%2Bby%2Bbursting%2Bbubbles%2BReceived%2Bpositive%2Breviews%2Bin%2BJ%2BFluid%2BMech%2B2025",
+    "type": "paper",
+    "tags": [
+      "Bubbles",
+      "Non-Newtonian",
+      "Jets",
+      "Soft-matter-singularities",
+      "Drops"
+    ],
+    "priority": 3
+  },
+  {
+    "title": "Sanjay, V., & Lohse, D. Unifying theory of scaling in drop impact: Forces & maximum spreading diameter. Received positive reviews in Phys. Rev. Lett. (2025).",
+    "content": "",
+    "url": "/research/index.html#Sanjay%2BV%2BLohse%2BD%2BUnifying%2Btheory%2Bof%2Bscaling%2Bin%2Bdrop%2Bimpact%3A%2BForces%2Bmaximum%2Bspreading%2Bdiameter%2BReceived%2Bpositive%2Breviews%2Bin%2BPhys%2BRev%2BLett%2B2025",
+    "type": "paper",
+    "tags": [
+      "Drops",
+      "Dissipative anamoly",
+      "Superamphiphobic-surfaces",
+      "Impact forces"
+    ],
+    "priority": 3
+  },
+  {
+    "title": "Bashkatov, A., Bürkle, F., Demirkır, Ç., Ding, W., Sanjay, V., Babich, A., Yang, X., Mutschke, G., Czarske, J., Lohse, D., et al. Electrolyte spraying within H₂ bubbles during water electrolysis. Received positive reviews in Nat. Commun. (2025).",
+    "content": "",
+    "url": "/research/index.html#Bashkatov%2BA%2BBrkle%2BF%2BDemirkr%2BDing%2BW%2BSanjay%2BV%2BBabich%2BA%2BYang%2BX%2BMutschke%2BG%2BCzarske%2BJ%2BLohse%2BD%2Bet%2Bal%2BElectrolyte%2Bspraying%2Bwithin%2BH%2Bbubbles%2Bduring%2Bwater%2Belectrolysis%2BReceived%2Bpositive%2Breviews%2Bin%2BNat%2BCommun%2B2025",
+    "type": "paper",
+    "tags": [
+      "Bubbles",
+      "Jets",
+      "Coalescence",
+      "Soft-matter-singularities",
+      "Drops"
+    ],
+    "priority": 3
+  },
+  {
+    "title": "[14] Sanjay, V., Zhang, B., Lv, C., & Lohse, D. The role of viscosity on drop impact forces on non-wetting surfaces. J. Fluid Mech., 1004, A6 (2025).",
+    "content": "",
+    "url": "/research/index.html#14%2BSanjay%2BV%2BZhang%2BB%2BLv%2BC%2BLohse%2BD%2BThe%2Brole%2Bof%2Bviscosity%2Bon%2Bdrop%2Bimpact%2Bforces%2Bon%2Bnon-wetting%2Bsurfaces%2BJ%2BFluid%2BMech%2B1004%2BA6%2B2025",
+    "type": "paper",
+    "tags": [
+      "Drops",
+      "Impact forces",
+      "Featured"
+    ],
+    "priority": 3
+  },
+  {
+    "title": "[13] Kayal, L., Sanjay, V., Yewale, N., Kumar, A., & Dasgupta, R. Focusing of concentric free-surface waves. J. Fluid Mech., 1003, A14 (2025).",
+    "content": "",
+    "url": "/research/index.html#13%2BKayal%2BL%2BSanjay%2BV%2BYewale%2BN%2BKumar%2BA%2BDasgupta%2BR%2BFocusing%2Bof%2Bconcentric%2Bfree-surface%2Bwaves%2BJ%2BFluid%2BMech%2B1003%2BA14%2B2025",
+    "type": "paper",
+    "tags": [
+      "Waves",
+      "Dissipative anamoly"
+    ],
+    "priority": 3
+  },
+  {
+    "title": "[12] Balasubramanian, A. G., Sanjay, V., Jalaal, M., Vinuesa, R., & Tammisola, O. Bursting bubble in an elastoviscoplastic medium. J. Fluid Mech., 1001, A9 (2024).",
+    "content": "",
+    "url": "/research/index.html#12%2BBalasubramanian%2BA%2BG%2BSanjay%2BV%2BJalaal%2BM%2BVinuesa%2BR%2BTammisola%2BO%2BBursting%2Bbubble%2Bin%2Ban%2Belastoviscoplastic%2Bmedium%2BJ%2BFluid%2BMech%2B1001%2BA9%2B2024",
+    "type": "paper",
+    "tags": [
+      "Bubbles",
+      "Non-Newtonian",
+      "Jets",
+      "Soft-matter-singularities",
+      "Featured"
+    ],
+    "priority": 3
+  },
+  {
+    "title": "[11] Sanjay, V., Chantelot, P., & Lohse, D. When does an impacting drop stop bouncing? J. Fluid Mech., 958, A26 (2023).",
+    "content": "",
+    "url": "/research/index.html#11%2BSanjay%2BV%2BChantelot%2BP%2BLohse%2BD%2BWhen%2Bdoes%2Ban%2Bimpacting%2Bdrop%2Bstop%2Bbouncing%2BJ%2BFluid%2BMech%2B958%2BA26%2B2023",
+    "type": "paper",
+    "tags": [
+      "Drops",
+      "Bouncing",
+      "Dissipative anamoly"
+    ],
+    "priority": 3
+  },
+  {
+    "title": "[10] Sanjay, V., Lakshman, S., Chantelot, P., Snoeijer, J. H., & Lohse, D. Drop impact on viscous liquid films. J. Fluid Mech., 958, A25 (2023).",
+    "content": "",
+    "url": "/research/index.html#10%2BSanjay%2BV%2BLakshman%2BS%2BChantelot%2BP%2BSnoeijer%2BJ%2BH%2BLohse%2BD%2BDrop%2Bimpact%2Bon%2Bviscous%2Bliquid%2Bfilms%2BJ%2BFluid%2BMech%2B958%2BA25%2B2023",
+    "type": "paper",
+    "tags": [
+      "Drops",
+      "Bouncing",
+      "Superhydrophobic surfaces"
+    ],
+    "priority": 3
+  },
+  {
+    "title": "➡️ Sanjay, V. Viscous free-surface flows. Ph.D. Thesis, Physics of Fluids, University of Twente (2022).",
+    "content": "",
+    "url": "/research/index.html#%2BSanjay%2BV%2BViscous%2Bfree-surface%2Bflows%2BPhD%2BThesis%2BPhysics%2Bof%2BFluids%2BUniversity%2Bof%2BTwente%2B2022",
+    "type": "paper",
+    "tags": [
+      "Drops",
+      "Jets",
+      "Sheets",
+      "Bubbles",
+      "Soft-matter-singularities",
+      "Non-Newtonian"
+    ],
+    "priority": 3
+  },
+  {
+    "title": "[9] Sanjay, V. Taylor--Culick retractions and the influence of the surroundings. J. Fluid Mech., 948, A14 (2022).",
+    "content": "",
+    "url": "/research/index.html#9%2BSanjay%2BV%2BTaylor--Culick%2Bretractions%2Band%2Bthe%2Binfluence%2Bof%2Bthe%2Bsurroundings%2BJ%2BFluid%2BMech%2B948%2BA14%2B2022",
+    "type": "paper",
+    "tags": [
+      "Sheets",
+      "Dissipative anamoly",
+      "Retraction"
+    ],
+    "priority": 3
+  },
+  {
+    "title": "[8] Zhang, B., Sanjay, V., Shi, S., and Zhao, Y., and Lv, C., and Feng, X.-Q., & Lohse, D. Impact forces of water drops falling on superhydrophobic surfaces. Phys. Rev. Lett., 129(10), 104501 (2022).",
+    "content": "",
+    "url": "/research/index.html#8%2BZhang%2BB%2BSanjay%2BV%2BShi%2BS%2Band%2BZhao%2BY%2Band%2BLv%2BC%2Band%2BFeng%2BX-Q%2BLohse%2BD%2BImpact%2Bforces%2Bof%2Bwater%2Bdrops%2Bfalling%2Bon%2Bsuperhydrophobic%2Bsurfaces%2BPhys%2BRev%2BLett%2B12910%2B104501%2B2022",
+    "type": "paper",
+    "tags": [
+      "Drops",
+      "Superhydrophobic surfaces",
+      "Impact forces"
+    ],
+    "priority": 3
+  },
+  {
+    "title": "[7] Sanjay, V., Lohse, D., & Jalaal, M. Bursting bubble in a viscoplastic medium. J. Fluid Mech., 922, A2 (2021).",
+    "content": "",
+    "url": "/research/index.html#7%2BSanjay%2BV%2BLohse%2BD%2BJalaal%2BM%2BBursting%2Bbubble%2Bin%2Ba%2Bviscoplastic%2Bmedium%2BJ%2BFluid%2BMech%2B922%2BA2%2B2021",
+    "type": "paper",
+    "tags": [
+      "Bubbles",
+      "Jets",
+      "Non-Newtonian",
+      "Soft-matter-singularities"
+    ],
+    "priority": 3
+  },
+  {
+    "title": "[6] Ramírez-Soto, O., Sanjay, V., Lohse, D., Pham, J. T., & Vollmer, D. Lifting a sessile oil drop from a superamphiphobic surface with an impacting one. Sci. Adv., 6(34), eaba4330 (2020).",
+    "content": "",
+    "url": "/research/index.html#6%2BRamrez-Soto%2BO%2BSanjay%2BV%2BLohse%2BD%2BPham%2BJ%2BT%2BVollmer%2BD%2BLifting%2Ba%2Bsessile%2Boil%2Bdrop%2Bfrom%2Ba%2Bsuperamphiphobic%2Bsurface%2Bwith%2Ban%2Bimpacting%2Bone%2BSci%2BAdv%2B634%2Beaba4330%2B2020",
+    "type": "paper",
+    "tags": [
+      "Drops",
+      "Superamphiphobic-surfaces",
+      "Lifting"
+    ],
+    "priority": 3
+  },
+  {
+    "title": "[5] Jain, A., Sanjay, V., & Das, A. K. Consequences of inclined and dual jet impingement in stagnant liquid and stratified layers. AIChE J., 65(1), 372-384 (2019).",
+    "content": "",
+    "url": "/research/index.html#5%2BJain%2BA%2BSanjay%2BV%2BDas%2BA%2BK%2BConsequences%2Bof%2Binclined%2Band%2Bdual%2Bjet%2Bimpingement%2Bin%2Bstagnant%2Bliquid%2Band%2Bstratified%2Blayers%2BAIChE%2BJ%2B651%2B372-384%2B2019",
+    "type": "paper",
+    "tags": [
+      "Jets",
+      "Bubbles"
+    ],
+    "priority": 3
+  },
+  {
+    "title": "[4] Soni, A., Sanjay, V., & Das, A. K. Formation of fluid structures due to jet-jet and jet-sheet interactions. Chem. Eng. Sci., 191, 67-77 (2018).",
+    "content": "",
+    "url": "/research/index.html#4%2BSoni%2BA%2BSanjay%2BV%2BDas%2BA%2BK%2BFormation%2Bof%2Bfluid%2Bstructures%2Bdue%2Bto%2Bjet-jet%2Band%2Bjet-sheet%2Binteractions%2BChem%2BEng%2BSci%2B191%2B67-77%2B2018",
+    "type": "paper",
+    "tags": [
+      "Jets"
+    ],
+    "priority": 3
+  },
+  {
+    "title": "[3] Sanjay, V., Das, A.K. Numerical assessment of hazard in compartmental fire having steady heat release rate from the source. Build. Simul. 11, 613–624 (2018).",
+    "content": "",
+    "url": "/research/index.html#3%2BSanjay%2BV%2BDas%2BAK%2BNumerical%2Bassessment%2Bof%2Bhazard%2Bin%2Bcompartmental%2Bfire%2Bhaving%2Bsteady%2Bheat%2Brelease%2Brate%2Bfrom%2Bthe%2Bsource%2BBuild%2BSimul%2B11%2B613624%2B2018",
+    "type": "paper",
+    "tags": [
+      "Others",
+      "Fire",
+      "Evacuation"
+    ],
+    "priority": 3
+  },
+  {
+    "title": "[2] Sanjay, V., & Das, A. K. Formation of liquid chain by collision of two laminar jets. Phys. Fluids, 29(11), 112101 (2017).",
+    "content": "",
+    "url": "/research/index.html#2%2BSanjay%2BV%2BDas%2BA%2BK%2BFormation%2Bof%2Bliquid%2Bchain%2Bby%2Bcollision%2Bof%2Btwo%2Blaminar%2Bjets%2BPhys%2BFluids%2B2911%2B112101%2B2017",
+    "type": "paper",
+    "tags": [
+      "Jets",
+      "Sheets"
+    ],
+    "priority": 3
+  },
+  {
+    "title": "[1] Sanjay, V., & Das, A. K. On air entrainment in a water pool by impingement of a jet. AIChE J., 63(11), 5169-5181 (2017).",
+    "content": "",
+    "url": "/research/index.html#1%2BSanjay%2BV%2BDas%2BA%2BK%2BOn%2Bair%2Bentrainment%2Bin%2Ba%2Bwater%2Bpool%2Bby%2Bimpingement%2Bof%2Ba%2Bjet%2BAIChE%2BJ%2B6311%2B5169-5181%2B2017",
+    "type": "paper",
+    "tags": [
+      "Jets",
+      "Bubbles"
+    ],
+    "priority": 3
+  },
+  {
+    "title": "Sort by topic",
+    "content": "Click on any tag to filter papers by topic. Each paper can have multiple tags.",
+    "url": "/research/index.html#Sort%2Bby%2Btopic",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "[1] Sanjay, V., & Das, A. K. On air entrainment in a water pool by impingement of a jet. AIChE J., 63(11), 5169-5181 (2017).",
+    "content": "© Copyright\n          CoMPhy Lab 2025",
+    "url": "/research/index.html#1%2BSanjay%2BV%2BDas%2BA%2BK%2BOn%2Bair%2Bentrainment%2Bin%2Ba%2Bwater%2Bpool%2Bby%2Bimpingement%2Bof%2Ba%2Bjet%2BAIChE%2BJ%2B6311%2B5169-5181%2B2017",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Research",
+    "content": "Cover of that volume of J. Fluid Mech.      As of March/April 2024, this highly cited paper received enough citations to place it in the top 1% of the academic field of Physics based on a highly cited threshold for the field and publication year. Source: Web of Science.\n  Editor’s Suggestion of that issue of Phys. Rev. Lett.\n  Research Highlight: Castelvecchi, D. The physics of a bouncing droplet’s impact. Nature, 609, 225 (2022).",
+    "url": "/research/index.html#Research",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "2024",
+    "content": "Cover of that volume of J. Fluid Mech.",
+    "url": "/research/index.html#2024",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "2022",
+    "content": "As of March/April 2024, this highly cited paper received enough citations to place it in the top 1% of the academic field of Physics based on a highly cited threshold for the field and publication year. Source: Web of Science.\n  Editor’s Suggestion of that issue of Phys. Rev. Lett.\n  Research Highlight: Castelvecchi, D. The physics of a bouncing droplet’s impact. Nature, 609, 225 (2022).",
+    "url": "/research/index.html#2022",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "High-Fidelity Simulations Using Basilisk C - CoMPhy Lab - Dates",
+    "content": "March 10-13, 2025",
+    "url": "/teaching/2025-Basilisk101-Madrid.html",
+    "type": "teaching_detail",
+    "priority": 2
+  },
+  {
+    "title": "High-Fidelity Simulations Using Basilisk C - CoMPhy Lab - Location",
+    "content": "Universidad Carlos III de Madrid, Spain",
+    "url": "/teaching/2025-Basilisk101-Madrid.html",
+    "type": "teaching_detail",
+    "priority": 2
+  },
+  {
+    "title": "High-Fidelity Simulations Using Basilisk C - CoMPhy Lab - Duration",
+    "content": "4 days, full-time",
+    "url": "/teaching/2025-Basilisk101-Madrid.html",
+    "type": "teaching_detail",
+    "priority": 2
+  },
+  {
+    "title": "High-Fidelity Simulations Using Basilisk C - CoMPhy Lab - Monday: Foundations",
+    "content": "Think before you compute 10:00-11:30\n          Lecture (1a)\n        \n      \n    \n    \n      Conservation laws and the numerical solution of the Navier–Stokes equations\n    \n  \n  \n    \n      \n        \n          11:45-13:00\n          Lecture (1b)\n        \n      \n    \n    \n      Advection-diffusion, diffusion-reaction, and other transport equations\n      Brief intro to Basilisk coding framework First coding steps 15:00-18:00\n          Hybrid Session\n        \n      \n    \n    \n      Implementing basic transport equations in Basilisk C\n      Whiteboard + coding",
+    "url": "/teaching/2025-Basilisk101-Madrid.html#Monday%3A%2BFoundations",
+    "type": "teaching_section",
+    "priority": 2
+  },
+  {
+    "title": "High-Fidelity Simulations Using Basilisk C - CoMPhy Lab - Tuesday: Advanced Implementation",
+    "content": "Coding like a pro 10:00-11:15\n          Hackathon (1c)\n        \n      \n    \n    \n      Using headers in Basilisk, modular code structure, problem setup, and compilation\n    \n  \n  \n    \n      \n        \n          11:30-13:00\n          Hackathon Continued\n        \n      \n    \n    \n      Expanding on the morning tasks and code debugging",
+    "url": "/teaching/2025-Basilisk101-Madrid.html#Tuesday%3A%2BAdvanced%2BImplementation",
+    "type": "teaching_section",
+    "priority": 2
+  },
+  {
+    "title": "High-Fidelity Simulations Using Basilisk C - CoMPhy Lab - Wednesday: Interface Dynamics",
+    "content": "Interface tracking methods 10:00-11:30\n          Lecture (2a)\n        \n      \n    \n    \n      Interface tracking methods (VoF, level set, phase-field approaches) and numerical strategies\n    \n  \n  \n    \n      \n        \n          11:45-13:00\n          Hackathon (2b)\n        \n      \n    \n    \n      Hands-on tutorial applying interface-tracking to a simple two-phase problem Seminar 13:30-14:00\n          Department seminar (2c)\n        \n      \n    \n    \n      A note on the thrust of airfoils by José Mnauel Gordillo Non-Newtonian flows 15:00-16:00\n          Lecture (3a)\n        \n      \n    \n    \n      Non-Newtonian flows: viscoplasticity and viscoelasticity\n    \n  \n  \n    \n      \n        \n          16:15-18:00\n          Hackathon (3b)\n        \n      \n    \n    \n      Coding exercises for shear-thinning, viscoplastic, or viscoelastic fluids",
+    "url": "/teaching/2025-Basilisk101-Madrid.html#Wednesday%3A%2BInterface%2BDynamics",
+    "type": "teaching_section",
+    "priority": 2
+  },
+  {
+    "title": "High-Fidelity Simulations Using Basilisk C - CoMPhy Lab - Thursday: Special Topics",
+    "content": "Special topics 10:00-11:30\n          Lecture (4a)\n        \n      \n    \n    \n      Special Topics: multilayer solver, lubrication equation, Marangoni flows, manifold death, and research-oriented examples\n    \n  \n  \n    \n      \n        \n          11:45-13:00\n          Hackathon (4b)\n        \n      \n    \n    \n      Focused tutorials on the special topics introduced in the lecture\n    \n  \n  \n    \n      \n        \n          15:00-16:30\n          Lecture (4c)\n        \n      \n    \n    \n      Open discussion, deeper dives into advanced features, final code reviews, and next steps Prerequisites Basic knowledge of fluid mechanics\n  Experience with programming (any language, C preferred)\n  Understanding of partial differential equations\n  Laptop with ability to compile C code Registration For registration details, please contact bubbles@ing.uc3m.es vatsalsy@comphy-lab.org function copyEmail(button) {\n  const textToCopy = button.getAttribute('data-text');\n  \n  // Create a temporary textarea element to copy from\n  const textarea = document.createElement('textarea');\n  textarea.value = textToCopy;\n  textarea.setAttribute('readonly', '');\n  textarea.style.position = 'absolute';\n  textarea.style.left = '-9999px';\n  document.body.appendChild(textarea);\n  \n  // Select and copy the text\n  textarea.select();\n  document.execCommand('copy');\n  \n  // Remove the temporary element\n  document.body.removeChild(textarea);\n  \n  // Show feedback\n  const originalIcon = button.innerHTML;\n  button.innerHTML = '<i class=\"fas fa-check\"></i>';\n  button.classList.add('copied');\n  \n  // Restore original state after a delay\n  setTimeout(() => {\n    button.innerHTML = originalIcon;\n    button.classList.remove('copied');\n  }, 2000);\n} Course GitHub Repository",
+    "url": "/teaching/2025-Basilisk101-Madrid.html#Thursday%3A%2BSpecial%2BTopics",
+    "type": "teaching_section",
+    "priority": 2
+  },
+  {
+    "title": "High-Fidelity Simulations Using Basilisk C - CoMPhy Lab - Prerequisites",
+    "content": "Basic knowledge of fluid mechanics\n  Experience with programming (any language, C preferred)\n  Understanding of partial differential equations\n  Laptop with ability to compile C code",
+    "url": "/teaching/2025-Basilisk101-Madrid.html#Prerequisites",
+    "type": "teaching_course_info",
+    "priority": 2
+  },
+  {
+    "title": "High-Fidelity Simulations Using Basilisk C - CoMPhy Lab - Course Description",
+    "content": "This intensive 4-day course provides a comprehensive introduction to high-fidelity simulations using Basilisk C, a powerful computational framework for fluid dynamics. Participants will learn to implement and solve complex fluid mechanics problems with an emphasis on multiphase flows, interface dynamics, and non-Newtonian rheology. The course combines theoretical lectures with extensive hands-on sessions, allowing participants to immediately apply concepts through guided coding exercises. By the end of the course, you’ll be able to develop your own simulations for a variety of fluid dynamics applications.",
+    "url": "/teaching/2025-Basilisk101-Madrid.html#Course%2BDescription",
+    "type": "teaching_course_info",
+    "priority": 2
+  },
+  {
+    "title": "High-Fidelity Simulations Using Basilisk C - CoMPhy Lab - Registration",
+    "content": "For registration details, please contact bubbles@ing.uc3m.es vatsalsy@comphy-lab.org function copyEmail(button) {\n  const textToCopy = button.getAttribute('data-text');\n  \n  // Create a temporary textarea element to copy from\n  const textarea = document.createElement('textarea');\n  textarea.value = textToCopy;\n  textarea.setAttribute('readonly', '');\n  textarea.style.position = 'absolute';\n  textarea.style.left = '-9999px';\n  document.body.appendChild(textarea);\n  \n  // Select and copy the text\n  textarea.select();\n  document.execCommand('copy');\n  \n  // Remove the temporary element\n  document.body.removeChild(textarea);\n  \n  // Show feedback\n  const originalIcon = button.innerHTML;\n  button.innerHTML = '<i class=\"fas fa-check\"></i>';\n  button.classList.add('copied');\n  \n  // Restore original state after a delay\n  setTimeout(() => {\n    button.innerHTML = originalIcon;\n    button.classList.remove('copied');\n  }, 2000);\n} Course GitHub Repository",
+    "url": "/teaching/2025-Basilisk101-Madrid.html#Registration",
+    "type": "teaching_course_info",
+    "priority": 2
+  },
+  {
+    "title": "High-Fidelity Simulations Using Basilisk C - CoMPhy Lab - What will you learn",
+    "content": "Think before you compute! Understanding the physics before implementation\n  Writing the first code in Basilisk C Getting comfortable with the framework\n  Solving conservation equations Numerical approaches to fluid dynamics\n  Interface tracking methods Capturing multiphase phenomena accurately\n  Non-Newtonian flows Modeling complex rheological behaviors",
+    "url": "/teaching/2025-Basilisk101-Madrid.html#What%2Bwill%2Byou%2Blearn",
+    "type": "teaching_course_info",
+    "priority": 2
+  },
+  {
+    "title": "Dates",
+    "content": "March 10-13, 2025",
+    "url": "/teaching/2025-Basilisk101-Madrid.html#Dates",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Location",
+    "content": "Universidad Carlos III de Madrid, Spain",
+    "url": "/teaching/2025-Basilisk101-Madrid.html#Location",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Duration",
+    "content": "4 days, full-time",
+    "url": "/teaching/2025-Basilisk101-Madrid.html#Duration",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Course Description",
+    "content": "This intensive 4-day course provides a comprehensive introduction to high-fidelity simulations using Basilisk C, a powerful computational framework for fluid dynamics. Participants will learn to implement and solve complex fluid mechanics problems with an emphasis on multiphase flows, interface dynamics, and non-Newtonian rheology.",
+    "url": "/teaching/2025-Basilisk101-Madrid.html#Course%2BDescription",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Course Description",
+    "content": "The course combines theoretical lectures with extensive hands-on sessions, allowing participants to immediately apply concepts through guided coding exercises. By the end of the course, you’ll be able to develop your own simulations for a variety of fluid dynamics applications.",
+    "url": "/teaching/2025-Basilisk101-Madrid.html#Course%2BDescription",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Registration",
+    "content": "For registration details, please contact",
+    "url": "/teaching/2025-Basilisk101-Madrid.html#Registration",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Registration",
+    "content": "© Copyright\n          CoMPhy Lab 2025",
+    "url": "/teaching/2025-Basilisk101-Madrid.html#Registration",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "High-Fidelity Simulations Using Basilisk C",
+    "content": "Think before you compute! Understanding the physics before implementation\n  Writing the first code in Basilisk C Getting comfortable with the framework\n  Solving conservation equations Numerical approaches to fluid dynamics\n  Interface tracking methods Capturing multiphase phenomena accurately\n  Non-Newtonian flows Modeling complex rheological behaviors This intensive 4-day course provides a comprehensive introduction to high-fidelity simulations using Basilisk C, a powerful computational framework for fluid dynamics. Participants will learn to implement and solve complex fluid mechanics problems with an emphasis on multiphase flows, interface dynamics, and non-Newtonian rheology. The course combines theoretical lectures with extensive hands-on sessions, allowing participants to immediately apply concepts through guided coding exercises. By the end of the course, you’ll be able to develop your own simulations for a variety of fluid dynamics applications. 10:00-11:30\n          Lecture (1a)\n        \n      \n    \n    \n      Conservation laws and the numerical solution of the Navier–Stokes equations\n    \n  \n  \n    \n      \n        \n          11:45-13:00\n          Lecture (1b)\n        \n      \n    \n    \n      Advection-diffusion, diffusion-reaction, and other transport equations\n      Brief intro to Basilisk coding framework 15:00-18:00\n          Hybrid Session\n        \n      \n    \n    \n      Implementing basic transport equations in Basilisk C\n      Whiteboard + coding 10:00-11:15\n          Hackathon (1c)\n        \n      \n    \n    \n      Using headers in Basilisk, modular code structure, problem setup, and compilation\n    \n  \n  \n    \n      \n        \n          11:30-13:00\n          Hackathon Continued\n        \n      \n    \n    \n      Expanding on the morning tasks and code debugging 10:00-11:30\n          Lecture (2a)\n        \n      \n    \n    \n      Interface tracking methods (VoF, level set, phase-field approaches) and numerical strategies\n    \n  \n  \n    \n      \n        \n          11:45-13:00\n          Hackathon (2b)\n        \n      \n    \n    \n      Hands-on tutorial applying interface-tracking to a simple two-phase problem 13:30-14:00\n          Department seminar (2c)\n        \n      \n    \n    \n      A note on the thrust of airfoils by José Mnauel Gordillo 15:00-16:00\n          Lecture (3a)\n        \n      \n    \n    \n      Non-Newtonian flows: viscoplasticity and viscoelasticity\n    \n  \n  \n    \n      \n        \n          16:15-18:00\n          Hackathon (3b)\n        \n      \n    \n    \n      Coding exercises for shear-thinning, viscoplastic, or viscoelastic fluids 10:00-11:30\n          Lecture (4a)\n        \n      \n    \n    \n      Special Topics: multilayer solver, lubrication equation, Marangoni flows, manifold death, and research-oriented examples\n    \n  \n  \n    \n      \n        \n          11:45-13:00\n          Hackathon (4b)\n        \n      \n    \n    \n      Focused tutorials on the special topics introduced in the lecture\n    \n  \n  \n    \n      \n        \n          15:00-16:30\n          Lecture (4c)\n        \n      \n    \n    \n      Open discussion, deeper dives into advanced features, final code reviews, and next steps Basic knowledge of fluid mechanics\n  Experience with programming (any language, C preferred)\n  Understanding of partial differential equations\n  Laptop with ability to compile C code For registration details, please contact",
+    "url": "/teaching/2025-Basilisk101-Madrid.html#High-Fidelity%2BSimulations%2BUsing%2BBasilisk%2BC",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "What will you learn?",
+    "content": "Think before you compute! Understanding the physics before implementation\n  Writing the first code in Basilisk C Getting comfortable with the framework\n  Solving conservation equations Numerical approaches to fluid dynamics\n  Interface tracking methods Capturing multiphase phenomena accurately\n  Non-Newtonian flows Modeling complex rheological behaviors",
+    "url": "/teaching/2025-Basilisk101-Madrid.html#What%2Bwill%2Byou%2Blearn",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Course Description",
+    "content": "This intensive 4-day course provides a comprehensive introduction to high-fidelity simulations using Basilisk C, a powerful computational framework for fluid dynamics. Participants will learn to implement and solve complex fluid mechanics problems with an emphasis on multiphase flows, interface dynamics, and non-Newtonian rheology. The course combines theoretical lectures with extensive hands-on sessions, allowing participants to immediately apply concepts through guided coding exercises. By the end of the course, you’ll be able to develop your own simulations for a variety of fluid dynamics applications.",
+    "url": "/teaching/2025-Basilisk101-Madrid.html#Course%2BDescription",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Course Schedule",
+    "content": "10:00-11:30\n          Lecture (1a)\n        \n      \n    \n    \n      Conservation laws and the numerical solution of the Navier–Stokes equations\n    \n  \n  \n    \n      \n        \n          11:45-13:00\n          Lecture (1b)\n        \n      \n    \n    \n      Advection-diffusion, diffusion-reaction, and other transport equations\n      Brief intro to Basilisk coding framework 15:00-18:00\n          Hybrid Session\n        \n      \n    \n    \n      Implementing basic transport equations in Basilisk C\n      Whiteboard + coding 10:00-11:15\n          Hackathon (1c)\n        \n      \n    \n    \n      Using headers in Basilisk, modular code structure, problem setup, and compilation\n    \n  \n  \n    \n      \n        \n          11:30-13:00\n          Hackathon Continued\n        \n      \n    \n    \n      Expanding on the morning tasks and code debugging 10:00-11:30\n          Lecture (2a)\n        \n      \n    \n    \n      Interface tracking methods (VoF, level set, phase-field approaches) and numerical strategies\n    \n  \n  \n    \n      \n        \n          11:45-13:00\n          Hackathon (2b)\n        \n      \n    \n    \n      Hands-on tutorial applying interface-tracking to a simple two-phase problem 13:30-14:00\n          Department seminar (2c)\n        \n      \n    \n    \n      A note on the thrust of airfoils by José Mnauel Gordillo 15:00-16:00\n          Lecture (3a)\n        \n      \n    \n    \n      Non-Newtonian flows: viscoplasticity and viscoelasticity\n    \n  \n  \n    \n      \n        \n          16:15-18:00\n          Hackathon (3b)\n        \n      \n    \n    \n      Coding exercises for shear-thinning, viscoplastic, or viscoelastic fluids 10:00-11:30\n          Lecture (4a)\n        \n      \n    \n    \n      Special Topics: multilayer solver, lubrication equation, Marangoni flows, manifold death, and research-oriented examples\n    \n  \n  \n    \n      \n        \n          11:45-13:00\n          Hackathon (4b)\n        \n      \n    \n    \n      Focused tutorials on the special topics introduced in the lecture\n    \n  \n  \n    \n      \n        \n          15:00-16:30\n          Lecture (4c)\n        \n      \n    \n    \n      Open discussion, deeper dives into advanced features, final code reviews, and next steps",
+    "url": "/teaching/2025-Basilisk101-Madrid.html#Course%2BSchedule",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Monday: Foundations",
+    "content": "10:00-11:30\n          Lecture (1a)\n        \n      \n    \n    \n      Conservation laws and the numerical solution of the Navier–Stokes equations\n    \n  \n  \n    \n      \n        \n          11:45-13:00\n          Lecture (1b)\n        \n      \n    \n    \n      Advection-diffusion, diffusion-reaction, and other transport equations\n      Brief intro to Basilisk coding framework 15:00-18:00\n          Hybrid Session\n        \n      \n    \n    \n      Implementing basic transport equations in Basilisk C\n      Whiteboard + coding",
+    "url": "/teaching/2025-Basilisk101-Madrid.html#Monday%3A%2BFoundations",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Tuesday: Advanced Implementation",
+    "content": "10:00-11:15\n          Hackathon (1c)\n        \n      \n    \n    \n      Using headers in Basilisk, modular code structure, problem setup, and compilation\n    \n  \n  \n    \n      \n        \n          11:30-13:00\n          Hackathon Continued\n        \n      \n    \n    \n      Expanding on the morning tasks and code debugging",
+    "url": "/teaching/2025-Basilisk101-Madrid.html#Tuesday%3A%2BAdvanced%2BImplementation",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Wednesday: Interface Dynamics",
+    "content": "10:00-11:30\n          Lecture (2a)\n        \n      \n    \n    \n      Interface tracking methods (VoF, level set, phase-field approaches) and numerical strategies\n    \n  \n  \n    \n      \n        \n          11:45-13:00\n          Hackathon (2b)\n        \n      \n    \n    \n      Hands-on tutorial applying interface-tracking to a simple two-phase problem 13:30-14:00\n          Department seminar (2c)\n        \n      \n    \n    \n      A note on the thrust of airfoils by José Mnauel Gordillo 15:00-16:00\n          Lecture (3a)\n        \n      \n    \n    \n      Non-Newtonian flows: viscoplasticity and viscoelasticity\n    \n  \n  \n    \n      \n        \n          16:15-18:00\n          Hackathon (3b)\n        \n      \n    \n    \n      Coding exercises for shear-thinning, viscoplastic, or viscoelastic fluids",
+    "url": "/teaching/2025-Basilisk101-Madrid.html#Wednesday%3A%2BInterface%2BDynamics",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Thursday: Special Topics",
+    "content": "10:00-11:30\n          Lecture (4a)\n        \n      \n    \n    \n      Special Topics: multilayer solver, lubrication equation, Marangoni flows, manifold death, and research-oriented examples\n    \n  \n  \n    \n      \n        \n          11:45-13:00\n          Hackathon (4b)\n        \n      \n    \n    \n      Focused tutorials on the special topics introduced in the lecture\n    \n  \n  \n    \n      \n        \n          15:00-16:30\n          Lecture (4c)\n        \n      \n    \n    \n      Open discussion, deeper dives into advanced features, final code reviews, and next steps",
+    "url": "/teaching/2025-Basilisk101-Madrid.html#Thursday%3A%2BSpecial%2BTopics",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Prerequisites",
+    "content": "Basic knowledge of fluid mechanics\n  Experience with programming (any language, C preferred)\n  Understanding of partial differential equations\n  Laptop with ability to compile C code",
+    "url": "/teaching/2025-Basilisk101-Madrid.html#Prerequisites",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Registration",
+    "content": "For registration details, please contact",
+    "url": "/teaching/2025-Basilisk101-Madrid.html#Registration",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Teaching - CoMPhy Lab - High-Fidelity Simulations Using Basilisk C",
+    "content": "Universidad Carlos III de Madrid March 10-13, 2025 A comprehensive course on using Basilisk C for simulating multiphase flows, interface tracking, and solving conservation equations. Learn to tackle complex fluid dynamics problems with high-fidelity numerical methods. View Course",
+    "url": "/teaching/index.html#High-Fidelity%2BSimulations%2BUsing%2BBasilisk%2BC",
+    "type": "teaching_section",
+    "priority": 2
+  },
+  {
+    "title": "High-Fidelity Simulations Using Basilisk C",
+    "content": "High-Fidelity Simulations Using Basilisk C - Universidad Carlos III de Madrid\n       - \n         March 10-13, 2025 - A comprehensive course on using Basilisk C for simulating multiphase flows, interface tracking, and solving conservation equations. Learn to tackle complex fluid dynamics problems with high-fidelity numerical methods.",
+    "url": "/teaching/2025-Basilisk101-Madrid",
+    "type": "teaching_course",
+    "priority": 2
+  },
+  {
+    "title": "Teaching",
+    "content": "Welcome to the CoMPhy Lab’s educational resources. Apart from the university courses, we aim to develop and offer a range of workshops and tutorials on modern computational methods for multiphase flows and high-fidelity simulations.",
+    "url": "/teaching/index.html#Teaching",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "High-Fidelity Simulations Using Basilisk C",
+    "content": "A comprehensive course on using Basilisk C for simulating multiphase flows, interface tracking, and solving conservation equations. Learn to tackle complex fluid dynamics problems with high-fidelity numerical methods.",
+    "url": "/teaching/index.html#High-Fidelity%2BSimulations%2BUsing%2BBasilisk%2BC",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "About Our Teaching Philosophy",
+    "content": "At CoMPhy Lab, we believe in hands-on learning and deep understanding of computational methods. Our courses combine theoretical foundations with practical implementation, allowing students to develop both conceptual understanding and technical skills.",
+    "url": "/teaching/index.html#About%2BOur%2BTeaching%2BPhilosophy",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "About Our Teaching Philosophy",
+    "content": "Our teaching approach emphasizes:",
+    "url": "/teaching/index.html#About%2BOur%2BTeaching%2BPhilosophy",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "About Our Teaching Philosophy",
+    "content": "If you’re interested in hosting a course or workshop with CoMPhy Lab, please contact us for collaboration opportunities.",
+    "url": "/teaching/index.html#About%2BOur%2BTeaching%2BPhilosophy",
+    "type": "text",
+    "links": [
+      "join"
+    ],
+    "priority": 3
+  },
+  {
+    "title": "About Our Teaching Philosophy",
+    "content": "© Copyright\n          CoMPhy Lab 2025",
+    "url": "/teaching/index.html#About%2BOur%2BTeaching%2BPhilosophy",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Teaching",
+    "content": "Welcome to the CoMPhy Lab’s educational resources. Apart from the university courses, we aim to develop and offer a range of workshops and tutorials on modern computational methods for multiphase flows and high-fidelity simulations. At CoMPhy Lab, we believe in hands-on learning and deep understanding of computational methods. Our courses combine theoretical foundations with practical implementation, allowing students to develop both conceptual understanding and technical skills. Our teaching approach emphasizes: Think before you compute: Understanding the underlying physics before implementation\n  Modular code structure: Building maintainable and extensible computational tools\n  Advanced numerical methods: Mastering state-of-the-art techniques for complex problems\n  Open science: Sharing knowledge and tools with the scientific community. Checkout If you’re interested in hosting a course or workshop with CoMPhy Lab, please contact us for collaboration opportunities.",
+    "url": "/teaching/index.html#Teaching",
+    "type": "section",
+    "links": [
+      "teaching/2025-Basilisk101-Madrid",
+      "join"
+    ],
+    "priority": 3
+  },
+  {
+    "title": "High-Fidelity Simulations Using Basilisk C",
+    "content": "A comprehensive course on using Basilisk C for simulating multiphase flows, interface tracking, and solving conservation equations. Learn to tackle complex fluid dynamics problems with high-fidelity numerical methods.",
+    "url": "/teaching/index.html#High-Fidelity%2BSimulations%2BUsing%2BBasilisk%2BC",
+    "type": "section",
+    "links": [
+      "teaching/2025-Basilisk101-Madrid"
+    ],
+    "priority": 3
+  },
+  {
+    "title": "About Our Teaching Philosophy",
+    "content": "At CoMPhy Lab, we believe in hands-on learning and deep understanding of computational methods. Our courses combine theoretical foundations with practical implementation, allowing students to develop both conceptual understanding and technical skills. Our teaching approach emphasizes: Think before you compute: Understanding the underlying physics before implementation\n  Modular code structure: Building maintainable and extensible computational tools\n  Advanced numerical methods: Mastering state-of-the-art techniques for complex problems\n  Open science: Sharing knowledge and tools with the scientific community. Checkout If you’re interested in hosting a course or workshop with CoMPhy Lab, please contact us for collaboration opportunities.",
+    "url": "/teaching/index.html#About%2BOur%2BTeaching%2BPhilosophy",
+    "type": "section",
+    "links": [
+      "teaching/2025-Basilisk101-Madrid",
+      "join"
+    ],
+    "priority": 3
+  },
+  {
+    "title": "Vatsal Sanjay (PI)",
+    "content": "Postdoc, Phys. Fluids - Univ. Twente / 2022-25\n  Ph.D., Phys. Fluids - Univ. Twente / 2018-22\n  B.Tech + M.Tech, Two-Phase Flow & Instability Lab, IIT-Roorkee / 2013-18\n  Personal Website Research Interest: See here Download CV",
+    "url": "/team/index.html#Vatsal%2BSanjay%2BPI",
+    "type": "team_member",
+    "priority": 2
+  },
+  {
+    "title": "Ayush Dixit (Ph.D)",
+    "content": "Joint with Detlef Lohse Ph.D. Student, Phys. Fluids - Univ. Twente / 2023-now\n  B.Tech + M.Tech, Two-Phase Flow & Instability Lab, IIT-Roorkee / 2018-23 Research Interest: Viscoelastic Flows, Bursting Bubbles, Respiratory Drops.",
+    "url": "/team/index.html#Ayush%2BDixit%2BPhD",
+    "type": "team_member",
+    "priority": 2
+  },
+  {
+    "title": "Aman Bhargava (Ph.D)",
+    "content": "Joint with Detlef Lohse Ph.D. Student, Phys. Fluids - Univ. Twente / 2024-now\n  M.Sc. Chemical Engineering, Purdue University / 2022-23\n  B.Tech. (Hons.) Chemical Engineering, IIT-Bombay / 2018-22 Research Interest: Inertial Contact Line, Drop Retraction.",
+    "url": "/team/index.html#Aman%2BBhargava%2BPhD",
+    "type": "team_member",
+    "priority": 2
+  },
+  {
+    "title": "Jnandeep Talukdar (M.Sc.)",
+    "content": "Joint with Detlef Lohse Ph.D. Student, Phys. Fluids - Univ. Twente / starting May 2025\n  M.Sc. Student, Phys. Fluids - Univ. Twente / 2023-25\n  B.Tech. Mechanical Engineering, IIT-Patna / 2019-23 Research Interest: Surfactant Dynamics, Dissipative Anomaly, Soft Wetting.",
+    "url": "/team/index.html#Jnandeep%2BTalukdar%2BMSc",
+    "type": "team_member",
+    "priority": 2
+  },
+  {
+    "title": "Saumili Jana (M.Sc.)",
+    "content": "Joint with Detlef Lohse Ph.D. Student, Phys. Fluids - Univ. Twente / starting Jul 2025\n  B.Tech.+M.Tech. Student, IIT-Kharagpur / 2020-25\n  Research Intern, Phys. Fluids - Univ. Twente / 2024 Research Interest: Soft Impact.",
+    "url": "/team/index.html#Saumili%2BJana%2BMSc",
+    "type": "team_member",
+    "priority": 2
+  },
+  {
+    "title": "Floris Hoek (M.Sc.)",
+    "content": "Joint with Martin van der Hoef and Alvaro Marin M.Sc. Student, Phys. Fluids - Univ. Twente / 2024 Research Interest: Molecular Dynamics Simulations of Evaporation-Driven Colloidal Self-Assembly.",
+    "url": "/team/index.html#Floris%2BHoek%2BMSc",
+    "type": "team_member",
+    "priority": 2
+  },
+  {
+    "title": "Xiangyu Zhang (Intern)",
+    "content": "Joint with Detlef Lohse Guest Researcher, Phys. Fluids - Univ. Twente / 2024\n  City University of Hong Kong, China Research Interest: Viscoplastic Drop Impact.",
+    "url": "/team/index.html#Xiangyu%2BZhang%2BIntern",
+    "type": "team_member",
+    "priority": 2
+  },
+  {
+    "title": "Detlef Lohse",
+    "content": "Professor, Phys. Fluids - Univ. Twente Collaboration on: Drop Impact, Viscoelastic Flows, Dissipative Anomaly, Surfactant Dynamics, Electrolysis, Bubbles, and Everything in Between.",
+    "url": "/team/index.html#Detlef%2BLohse",
+    "type": "team_member",
+    "priority": 2
+  },
+  {
+    "title": "Jacco Snoeijer",
+    "content": "Professor, Phys. Fluids - Univ. Twente Collaboration on: Elastic Sheets, Viscoelasticity vs. Elasticity, Spinning Pizza.",
+    "url": "/team/index.html#Jacco%2BSnoeijer",
+    "type": "team_member",
+    "priority": 2
+  },
+  {
+    "title": "Dominik Krug",
+    "content": "Professor, RWTH Aachen University\n  Adjunct Professor, Phys. Fluids - Univ. Twente Collaboration on: Electrolysis, Bubble Coalescence, Swimming Bubbles.",
+    "url": "/team/index.html#Dominik%2BKrug",
+    "type": "team_member",
+    "priority": 2
+  },
+  {
+    "title": "Maziyar Jalaal (Mazi)",
+    "content": "Associate Professor, Fluid Lab, Univ. Amsterdam Collaboration on: Plastocapillarity, Viscoplastic Flows.",
+    "url": "/team/index.html#Maziyar%2BJalaal%2BMazi",
+    "type": "team_member",
+    "priority": 2
+  },
+  {
+    "title": "Uddalok Sen (Udo)",
+    "content": "Assistant Professor, PhySM, Wageningen University and Research Collaboration on: Drop Impact, Sheet Retraction.",
+    "url": "/team/index.html#Uddalok%2BSen%2BUdo",
+    "type": "team_member",
+    "priority": 2
+  },
+  {
+    "title": "Alvaro Marin",
+    "content": "Adjunct Professor, Phys. Fluids - Univ. Twente Collaboration on: Colloidal Systems, Evaporation, Shell Formation.",
+    "url": "/team/index.html#Alvaro%2BMarin",
+    "type": "team_member",
+    "priority": 2
+  },
+  {
+    "title": "Christian Diddens",
+    "content": "Group Leader, Phys. Fluids - Univ. Twente\n  Developer of pyoomph Collaboration on: Surfactant Dynamics in Free Surface Flows, Dissipative Anomaly, Sliding Drops.",
+    "url": "/team/index.html#Christian%2BDiddens",
+    "type": "team_member",
+    "priority": 2
+  },
+  {
+    "title": "Gareth McKinley",
+    "content": "Professor, MIT Collaboration on: Die-Swelling, Viscoelastic Flows.",
+    "url": "/team/index.html#Gareth%2BMcKinley",
+    "type": "team_member",
+    "priority": 2
+  },
+  {
+    "title": "John Kolinski",
+    "content": "Asst. Professor, EPFL (École Polytechnique Fédérale de Lausanne) Collaboration on: Soft Impact",
+    "url": "/team/index.html#John%2BKolinski",
+    "type": "team_member",
+    "priority": 2
+  },
+  {
+    "title": "C. Ricardo Constante-Amores",
+    "content": "Asst. Professor, Univ. Illinois Urbana-Champaign Collaboration on: Non-Newtonian Flows, Bubble Bursting, Herschel–Bulkley Fluids, Elastic Coating.",
+    "url": "/team/index.html#C%2BRicardo%2BConstante-Amores",
+    "type": "team_member",
+    "priority": 2
+  },
+  {
+    "title": "Radu Cimpeanu",
+    "content": "Assc. Professor, Univ. Warwick Collaboration on: Open-Source Code Development, Non-Coalescence Impacts.",
+    "url": "/team/index.html#Radu%2BCimpeanu",
+    "type": "team_member",
+    "priority": 2
+  },
+  {
+    "title": "Jie Feng",
+    "content": "Asst. Professor, Univ. Illinois Urbana-Champaign Collaboration on: Elastic Coating, Bursting Bubbles.",
+    "url": "/team/index.html#Jie%2BFeng",
+    "type": "team_member",
+    "priority": 2
+  },
+  {
+    "title": "Omar Matar",
+    "content": "Professor, Imperial College London Collaboration on: Surfactant Dynamics, Viscoelastic Drop Impact.",
+    "url": "/team/index.html#Omar%2BMatar",
+    "type": "team_member",
+    "priority": 2
+  },
+  {
+    "title": "Ratul Dasgupta",
+    "content": "Assc. Professor, IIT-Bombay Collaboration on: Waves, Dissipative Anomaly.",
+    "url": "/team/index.html#Ratul%2BDasgupta",
+    "type": "team_member",
+    "priority": 2
+  },
+  {
+    "title": "Eric Lauga",
+    "content": "Professor, Univ. Cambridge Collaboration on: Mycofluidic Transport.",
+    "url": "/team/index.html#Eric%2BLauga",
+    "type": "team_member",
+    "priority": 2
+  },
+  {
+    "title": "Saikat Datta",
+    "content": "Senior Lecturer, Swansea University Collaboration on: Multiscale Simulation, Ice Nucleation and Removal, Hydrogen Storage.",
+    "url": "/team/index.html#Saikat%2BDatta",
+    "type": "team_member",
+    "priority": 2
+  },
+  {
+    "title": "Doris Vollmer",
+    "content": "Apl. Professor, Max Planck Institute for Polymer Research, Mainz, Germany. Collaboration on: Contact Line, Drop Impact, Superhydrophobic Surfaces.",
+    "url": "/team/index.html#Doris%2BVollmer",
+    "type": "team_member",
+    "priority": 2
+  },
+  {
+    "title": "Stéphane Zaleski",
+    "content": "Professor, Sorbonne Universite Collaboration on: Holey Sheets.",
+    "url": "/team/index.html#Stphane%2BZaleski",
+    "type": "team_member",
+    "priority": 2
+  },
+  {
+    "title": "Pierre Chantelot",
+    "content": "Postdoc, Institut Langevin, ESPCI Paris Collaboration on: Drop Impact",
+    "url": "/team/index.html#Pierre%2BChantelot",
+    "type": "team_member",
+    "priority": 2
+  },
+  {
+    "title": "Aleksandr Bashkatov",
+    "content": "Postdoc, RWTH Aachen University Collaboration on: Electrolysis, Bubble Coalescence, Swimming Bubbles.",
+    "url": "/team/index.html#Aleksandr%2BBashkatov",
+    "type": "team_member",
+    "priority": 2
+  },
+  {
+    "title": "Vincent Bertin",
+    "content": "Postdoc, University Aix-Marseille Collaboration on: Elastic Sheets, Spinning Pizza.",
+    "url": "/team/index.html#Vincent%2BBertin",
+    "type": "team_member",
+    "priority": 2
+  },
+  {
+    "title": "Alexandros Oratis",
+    "content": "Postdoc, TU Delft Collaboration on: Electrolysis, Bubble Coalescence, Swimming Bubbles.",
+    "url": "/team/index.html#Alexandros%2BOratis",
+    "type": "team_member",
+    "priority": 2
+  },
+  {
+    "title": "Arivazhagan Balasubramanian (Ari)",
+    "content": "Ph.D. Student, KTH Sweden Collaboration on: Elastoviscoplastic Flows, Bursting Bubbles",
+    "url": "/team/index.html#Arivazhagan%2BBalasubramanian%2BAri",
+    "type": "team_member",
+    "priority": 2
+  },
+  {
+    "title": "Konstantinos Zinelis (Costis)",
+    "content": "Postdoc, MIT Collaboration on: Viscoelastic Flows, Drop Impact.",
+    "url": "/team/index.html#Konstantinos%2BZinelis%2BCostis",
+    "type": "team_member",
+    "priority": 2
+  },
+  {
+    "title": "Swen van den Heuvel",
+    "content": "Now: Ph.D. Student, Phys. Fluids - Univ. Twente\n  2023: Graduated with M.Sc., Univ. Twente\n  Thesis: Hydrodynamic forces acting on vertically rising bubbles",
+    "url": "/team/index.html#Swen%2Bvan%2Bden%2BHeuvel",
+    "type": "team_member",
+    "priority": 2
+  },
+  {
+    "title": "Niels Kuipers",
+    "content": "Now: M.Sc. Student, Adv. Technology - Univ. Twente\n  2023: Graduated with B.Sc., Univ. Twente\n  Thesis: Partial coalescence of drops on viscous films",
+    "url": "/team/index.html#Niels%2BKuipers",
+    "type": "team_member",
+    "priority": 2
+  },
+  {
+    "title": "Tom Appleford",
+    "content": "Now: Ph.D. Student, Fluid Lab - Univ. Amsterdam\n  2022: Graduated with M.Sc., Univ. Amsterdam\n  Thesis: The deformation of a droplet in a viscoplastic simple shear flow",
+    "url": "/team/index.html#Tom%2BAppleford",
+    "type": "team_member",
+    "priority": 2
+  },
+  {
+    "title": "Coen Verschuur",
+    "content": "Now: Ph.D. Student, Phys. Fluids - Univ. Twente\n  2020: Graduated with B.Sc., Univ. Twente\n  Thesis: Early time dynamics in immiscible drop impacts",
+    "url": "/team/index.html#Coen%2BVerschuur",
+    "type": "team_member",
+    "priority": 2
+  },
+  {
+    "title": "Pim J. Dekker",
+    "content": "Now: Ph.D. Student, Phys. Fluids - Univ. Twente\n  2019: Graduated with B.Sc., Univ. Twente\n  Thesis: Spreading of a drop on a water-air interface",
+    "url": "/team/index.html#Pim%2BJ%2BDekker",
+    "type": "team_member",
+    "priority": 2
+  },
+  {
+    "title": "Vatsal Sanjay (PI)",
+    "content": "Research Interest: See here",
+    "url": "/team/index.html#Vatsal%2BSanjay%2BPI",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Vatsal Sanjay (PI)",
+    "content": "Download CV",
+    "url": "/team/index.html#Vatsal%2BSanjay%2BPI",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Ayush Dixit (Ph.D)",
+    "content": "Joint with Detlef Lohse",
+    "url": "/team/index.html#Ayush%2BDixit%2BPhD",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Ayush Dixit (Ph.D)",
+    "content": "Research Interest: Viscoelastic Flows, Bursting Bubbles, Respiratory Drops.",
+    "url": "/team/index.html#Ayush%2BDixit%2BPhD",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Aman Bhargava (Ph.D)",
+    "content": "Joint with Detlef Lohse",
+    "url": "/team/index.html#Aman%2BBhargava%2BPhD",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Aman Bhargava (Ph.D)",
+    "content": "Research Interest: Inertial Contact Line, Drop Retraction.",
+    "url": "/team/index.html#Aman%2BBhargava%2BPhD",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Jnandeep Talukdar (M.Sc.)",
+    "content": "Joint with Detlef Lohse",
+    "url": "/team/index.html#Jnandeep%2BTalukdar%2BMSc",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Jnandeep Talukdar (M.Sc.)",
+    "content": "Research Interest: Surfactant Dynamics, Dissipative Anomaly, Soft Wetting.",
+    "url": "/team/index.html#Jnandeep%2BTalukdar%2BMSc",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Saumili Jana (M.Sc.)",
+    "content": "Joint with Detlef Lohse",
+    "url": "/team/index.html#Saumili%2BJana%2BMSc",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Saumili Jana (M.Sc.)",
+    "content": "Research Interest: Soft Impact.",
+    "url": "/team/index.html#Saumili%2BJana%2BMSc",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Floris Hoek (M.Sc.)",
+    "content": "Joint with Martin van der Hoef and Alvaro Marin",
+    "url": "/team/index.html#Floris%2BHoek%2BMSc",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Floris Hoek (M.Sc.)",
+    "content": "Research Interest: Molecular Dynamics Simulations of Evaporation-Driven Colloidal Self-Assembly.",
+    "url": "/team/index.html#Floris%2BHoek%2BMSc",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Xiangyu Zhang (Intern)",
+    "content": "Joint with Detlef Lohse",
+    "url": "/team/index.html#Xiangyu%2BZhang%2BIntern",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Xiangyu Zhang (Intern)",
+    "content": "Research Interest: Viscoplastic Drop Impact.",
+    "url": "/team/index.html#Xiangyu%2BZhang%2BIntern",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "We need you!",
+    "content": "See: Join Us for ongoing projects.",
+    "url": "/team/index.html#We%2Bneed%2Byou",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Detlef Lohse",
+    "content": "Collaboration on: Drop Impact, Viscoelastic Flows, Dissipative Anomaly, Surfactant Dynamics, Electrolysis, Bubbles, and Everything in Between.",
+    "url": "/team/index.html#Detlef%2BLohse",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Jacco Snoeijer",
+    "content": "Collaboration on: Elastic Sheets, Viscoelasticity vs. Elasticity, Spinning Pizza.",
+    "url": "/team/index.html#Jacco%2BSnoeijer",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Dominik Krug",
+    "content": "Collaboration on: Electrolysis, Bubble Coalescence, Swimming Bubbles.",
+    "url": "/team/index.html#Dominik%2BKrug",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Maziyar Jalaal (Mazi)",
+    "content": "Collaboration on: Plastocapillarity, Viscoplastic Flows.",
+    "url": "/team/index.html#Maziyar%2BJalaal%2BMazi",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Uddalok Sen (Udo)",
+    "content": "Collaboration on: Drop Impact, Sheet Retraction.",
+    "url": "/team/index.html#Uddalok%2BSen%2BUdo",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Alvaro Marin",
+    "content": "Collaboration on: Colloidal Systems, Evaporation, Shell Formation.",
+    "url": "/team/index.html#Alvaro%2BMarin",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Christian Diddens",
+    "content": "Collaboration on: Surfactant Dynamics in Free Surface Flows, Dissipative Anomaly, Sliding Drops.",
+    "url": "/team/index.html#Christian%2BDiddens",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Gareth McKinley",
+    "content": "Collaboration on: Die-Swelling, Viscoelastic Flows.",
+    "url": "/team/index.html#Gareth%2BMcKinley",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "John Kolinski",
+    "content": "Collaboration on: Soft Impact",
+    "url": "/team/index.html#John%2BKolinski",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "C. Ricardo Constante-Amores",
+    "content": "Collaboration on: Non-Newtonian Flows, Bubble Bursting, Herschel–Bulkley Fluids, Elastic Coating.",
+    "url": "/team/index.html#C%2BRicardo%2BConstante-Amores",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Radu Cimpeanu",
+    "content": "Collaboration on: Open-Source Code Development, Non-Coalescence Impacts.",
+    "url": "/team/index.html#Radu%2BCimpeanu",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Jie Feng",
+    "content": "Collaboration on: Elastic Coating, Bursting Bubbles.",
+    "url": "/team/index.html#Jie%2BFeng",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Omar Matar",
+    "content": "Collaboration on: Surfactant Dynamics, Viscoelastic Drop Impact.",
+    "url": "/team/index.html#Omar%2BMatar",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Ratul Dasgupta",
+    "content": "Collaboration on: Waves, Dissipative Anomaly.",
+    "url": "/team/index.html#Ratul%2BDasgupta",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Eric Lauga",
+    "content": "Collaboration on: Mycofluidic Transport.",
+    "url": "/team/index.html#Eric%2BLauga",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Saikat Datta",
+    "content": "Collaboration on: Multiscale Simulation, Ice Nucleation and Removal, Hydrogen Storage.",
+    "url": "/team/index.html#Saikat%2BDatta",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Doris Vollmer",
+    "content": "Collaboration on: Contact Line, Drop Impact, Superhydrophobic Surfaces.",
+    "url": "/team/index.html#Doris%2BVollmer",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Stéphane Zaleski",
+    "content": "Collaboration on: Holey Sheets.",
+    "url": "/team/index.html#Stphane%2BZaleski",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Pierre Chantelot",
+    "content": "Collaboration on: Drop Impact",
+    "url": "/team/index.html#Pierre%2BChantelot",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Aleksandr Bashkatov",
+    "content": "Collaboration on: Electrolysis, Bubble Coalescence, Swimming Bubbles.",
+    "url": "/team/index.html#Aleksandr%2BBashkatov",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Vincent Bertin",
+    "content": "Collaboration on: Elastic Sheets, Spinning Pizza.",
+    "url": "/team/index.html#Vincent%2BBertin",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Alexandros Oratis",
+    "content": "Collaboration on: Electrolysis, Bubble Coalescence, Swimming Bubbles.",
+    "url": "/team/index.html#Alexandros%2BOratis",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Arivazhagan Balasubramanian (Ari)",
+    "content": "Collaboration on: Elastoviscoplastic Flows, Bursting Bubbles",
+    "url": "/team/index.html#Arivazhagan%2BBalasubramanian%2BAri",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Konstantinos Zinelis (Costis)",
+    "content": "Collaboration on: Viscoelastic Flows, Drop Impact.",
+    "url": "/team/index.html#Konstantinos%2BZinelis%2BCostis",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Team, collaborators, and Conference visits",
+    "content": "The locations marked on this map meet one of three criteria (in the order of preference): \n            1. Hometown of our team members (including alumni) in orange, \n            2. Base location of our collaborators in green,\n            3. Places where we have presented talks in purple, or\n            4. Places where we have visited for conferences (no talks) in gray.",
+    "url": "/team/index.html#Team%2Bcollaborators%2Band%2BConference%2Bvisits",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Team, collaborators, and Conference visits",
+    "content": "© Copyright\n          CoMPhy Lab 2025",
+    "url": "/team/index.html#Team%2Bcollaborators%2Band%2BConference%2Bvisits",
+    "type": "text",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Vatsal Sanjay (PI)",
+    "content": "Postdoc, Phys. Fluids - Univ. Twente / 2022-25\n  Ph.D., Phys. Fluids - Univ. Twente / 2018-22\n  B.Tech + M.Tech, Two-Phase Flow & Instability Lab, IIT-Roorkee / 2013-18\n  Personal Website Research Interest: See here Download CV",
+    "url": "/team/index.html#Vatsal%2BSanjay%2BPI",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Ayush Dixit (Ph.D)",
+    "content": "Joint with Detlef Lohse Ph.D. Student, Phys. Fluids - Univ. Twente / 2023-now\n  B.Tech + M.Tech, Two-Phase Flow & Instability Lab, IIT-Roorkee / 2018-23 Research Interest: Viscoelastic Flows, Bursting Bubbles, Respiratory Drops.",
+    "url": "/team/index.html#Ayush%2BDixit%2BPhD",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Aman Bhargava (Ph.D)",
+    "content": "Joint with Detlef Lohse Ph.D. Student, Phys. Fluids - Univ. Twente / 2024-now\n  M.Sc. Chemical Engineering, Purdue University / 2022-23\n  B.Tech. (Hons.) Chemical Engineering, IIT-Bombay / 2018-22 Research Interest: Inertial Contact Line, Drop Retraction.",
+    "url": "/team/index.html#Aman%2BBhargava%2BPhD",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Jnandeep Talukdar (M.Sc.)",
+    "content": "Joint with Detlef Lohse Ph.D. Student, Phys. Fluids - Univ. Twente / starting May 2025\n  M.Sc. Student, Phys. Fluids - Univ. Twente / 2023-25\n  B.Tech. Mechanical Engineering, IIT-Patna / 2019-23 Research Interest: Surfactant Dynamics, Dissipative Anomaly, Soft Wetting.",
+    "url": "/team/index.html#Jnandeep%2BTalukdar%2BMSc",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Saumili Jana (M.Sc.)",
+    "content": "Joint with Detlef Lohse Ph.D. Student, Phys. Fluids - Univ. Twente / starting Jul 2025\n  B.Tech.+M.Tech. Student, IIT-Kharagpur / 2020-25\n  Research Intern, Phys. Fluids - Univ. Twente / 2024 Research Interest: Soft Impact.",
+    "url": "/team/index.html#Saumili%2BJana%2BMSc",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Floris Hoek (M.Sc.)",
+    "content": "Joint with Martin van der Hoef and Alvaro Marin M.Sc. Student, Phys. Fluids - Univ. Twente / 2024 Research Interest: Molecular Dynamics Simulations of Evaporation-Driven Colloidal Self-Assembly.",
+    "url": "/team/index.html#Floris%2BHoek%2BMSc",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Xiangyu Zhang (Intern)",
+    "content": "Joint with Detlef Lohse Guest Researcher, Phys. Fluids - Univ. Twente / 2024\n  City University of Hong Kong, China Research Interest: Viscoplastic Drop Impact.",
+    "url": "/team/index.html#Xiangyu%2BZhang%2BIntern",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "We need you!",
+    "content": "See: Join Us for ongoing projects.",
+    "url": "/team/index.html#We%2Bneed%2Byou",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Detlef Lohse",
+    "content": "Professor, Phys. Fluids - Univ. Twente Collaboration on: Drop Impact, Viscoelastic Flows, Dissipative Anomaly, Surfactant Dynamics, Electrolysis, Bubbles, and Everything in Between.",
+    "url": "/team/index.html#Detlef%2BLohse",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Jacco Snoeijer",
+    "content": "Professor, Phys. Fluids - Univ. Twente Collaboration on: Elastic Sheets, Viscoelasticity vs. Elasticity, Spinning Pizza.",
+    "url": "/team/index.html#Jacco%2BSnoeijer",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Dominik Krug",
+    "content": "Professor, RWTH Aachen University\n  Adjunct Professor, Phys. Fluids - Univ. Twente Collaboration on: Electrolysis, Bubble Coalescence, Swimming Bubbles.",
+    "url": "/team/index.html#Dominik%2BKrug",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Maziyar Jalaal (Mazi)",
+    "content": "Associate Professor, Fluid Lab, Univ. Amsterdam Collaboration on: Plastocapillarity, Viscoplastic Flows.",
+    "url": "/team/index.html#Maziyar%2BJalaal%2BMazi",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Uddalok Sen (Udo)",
+    "content": "Assistant Professor, PhySM, Wageningen University and Research Collaboration on: Drop Impact, Sheet Retraction.",
+    "url": "/team/index.html#Uddalok%2BSen%2BUdo",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Alvaro Marin",
+    "content": "Adjunct Professor, Phys. Fluids - Univ. Twente Collaboration on: Colloidal Systems, Evaporation, Shell Formation.",
+    "url": "/team/index.html#Alvaro%2BMarin",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Christian Diddens",
+    "content": "Group Leader, Phys. Fluids - Univ. Twente\n  Developer of pyoomph Collaboration on: Surfactant Dynamics in Free Surface Flows, Dissipative Anomaly, Sliding Drops.",
+    "url": "/team/index.html#Christian%2BDiddens",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Gareth McKinley",
+    "content": "Professor, MIT Collaboration on: Die-Swelling, Viscoelastic Flows.",
+    "url": "/team/index.html#Gareth%2BMcKinley",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "John Kolinski",
+    "content": "Asst. Professor, EPFL (École Polytechnique Fédérale de Lausanne) Collaboration on: Soft Impact",
+    "url": "/team/index.html#John%2BKolinski",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "C. Ricardo Constante-Amores",
+    "content": "Asst. Professor, Univ. Illinois Urbana-Champaign Collaboration on: Non-Newtonian Flows, Bubble Bursting, Herschel–Bulkley Fluids, Elastic Coating.",
+    "url": "/team/index.html#C%2BRicardo%2BConstante-Amores",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Radu Cimpeanu",
+    "content": "Assc. Professor, Univ. Warwick Collaboration on: Open-Source Code Development, Non-Coalescence Impacts.",
+    "url": "/team/index.html#Radu%2BCimpeanu",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Jie Feng",
+    "content": "Asst. Professor, Univ. Illinois Urbana-Champaign Collaboration on: Elastic Coating, Bursting Bubbles.",
+    "url": "/team/index.html#Jie%2BFeng",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Omar Matar",
+    "content": "Professor, Imperial College London Collaboration on: Surfactant Dynamics, Viscoelastic Drop Impact.",
+    "url": "/team/index.html#Omar%2BMatar",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Ratul Dasgupta",
+    "content": "Assc. Professor, IIT-Bombay Collaboration on: Waves, Dissipative Anomaly.",
+    "url": "/team/index.html#Ratul%2BDasgupta",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Eric Lauga",
+    "content": "Professor, Univ. Cambridge Collaboration on: Mycofluidic Transport.",
+    "url": "/team/index.html#Eric%2BLauga",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Saikat Datta",
+    "content": "Senior Lecturer, Swansea University Collaboration on: Multiscale Simulation, Ice Nucleation and Removal, Hydrogen Storage.",
+    "url": "/team/index.html#Saikat%2BDatta",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Doris Vollmer",
+    "content": "Apl. Professor, Max Planck Institute for Polymer Research, Mainz, Germany. Collaboration on: Contact Line, Drop Impact, Superhydrophobic Surfaces.",
+    "url": "/team/index.html#Doris%2BVollmer",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Stéphane Zaleski",
+    "content": "Professor, Sorbonne Universite Collaboration on: Holey Sheets.",
+    "url": "/team/index.html#Stphane%2BZaleski",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Pierre Chantelot",
+    "content": "Postdoc, Institut Langevin, ESPCI Paris Collaboration on: Drop Impact",
+    "url": "/team/index.html#Pierre%2BChantelot",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Aleksandr Bashkatov",
+    "content": "Postdoc, RWTH Aachen University Collaboration on: Electrolysis, Bubble Coalescence, Swimming Bubbles.",
+    "url": "/team/index.html#Aleksandr%2BBashkatov",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Vincent Bertin",
+    "content": "Postdoc, University Aix-Marseille Collaboration on: Elastic Sheets, Spinning Pizza.",
+    "url": "/team/index.html#Vincent%2BBertin",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Alexandros Oratis",
+    "content": "Postdoc, TU Delft Collaboration on: Electrolysis, Bubble Coalescence, Swimming Bubbles.",
+    "url": "/team/index.html#Alexandros%2BOratis",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Arivazhagan Balasubramanian (Ari)",
+    "content": "Ph.D. Student, KTH Sweden Collaboration on: Elastoviscoplastic Flows, Bursting Bubbles",
+    "url": "/team/index.html#Arivazhagan%2BBalasubramanian%2BAri",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Konstantinos Zinelis (Costis)",
+    "content": "Postdoc, MIT Collaboration on: Viscoelastic Flows, Drop Impact.",
+    "url": "/team/index.html#Konstantinos%2BZinelis%2BCostis",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Milan Sent",
+    "content": "2025: Graduated with B.Sc., Univ. Twente\n  Thesis: Spinning Pizza",
+    "url": "/team/index.html#Milan%2BSent",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Valentin Rosario",
+    "content": "2024: Graduated with M.Sc., Univ. Amsterdam\n  Thesis: Modelling the Ward–Hunt ice-shelf as viscoelastic solid",
+    "url": "/team/index.html#Valentin%2BRosario",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Swen van den Heuvel",
+    "content": "Now: Ph.D. Student, Phys. Fluids - Univ. Twente\n  2023: Graduated with M.Sc., Univ. Twente\n  Thesis: Hydrodynamic forces acting on vertically rising bubbles",
+    "url": "/team/index.html#Swen%2Bvan%2Bden%2BHeuvel",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Niels Kuipers",
+    "content": "Now: M.Sc. Student, Adv. Technology - Univ. Twente\n  2023: Graduated with B.Sc., Univ. Twente\n  Thesis: Partial coalescence of drops on viscous films",
+    "url": "/team/index.html#Niels%2BKuipers",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "C. H. (Luuk) Maurits",
+    "content": "2023: Graduated with M.Sc., Univ. Twente\n  Thesis: When Laplace meets Marangoni",
+    "url": "/team/index.html#C%2BH%2BLuuk%2BMaurits",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Tom Appleford",
+    "content": "Now: Ph.D. Student, Fluid Lab - Univ. Amsterdam\n  2022: Graduated with M.Sc., Univ. Amsterdam\n  Thesis: The deformation of a droplet in a viscoplastic simple shear flow",
+    "url": "/team/index.html#Tom%2BAppleford",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Twan Heijink",
+    "content": "Now: Software IVQA Engineer at Thales\n  2021: Graduated with B.Sc., Saxion Univ.\n  Thesis:  Standing waves at a fluid-fluid interface with plastocapillarity",
+    "url": "/team/index.html#Twan%2BHeijink",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Steven Meuleman",
+    "content": "Now: Mechanical Engineer at VIRO\n  2020: Graduated with B.Sc., Univ. Twente\n  Thesis: Simulations of foam generation for a custom axisymmetric core-shell nozzle",
+    "url": "/team/index.html#Steven%2BMeuleman",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Thijmen Kroeze",
+    "content": "Now: CFD Engineer, Brink Climate Systems\n  2020: Graduated with B.Sc., Univ. Twente\n  Thesis: Singular jet dynamics of drop impacts at high Bond numbers",
+    "url": "/team/index.html#Thijmen%2BKroeze",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Coen Verschuur",
+    "content": "Now: Ph.D. Student, Phys. Fluids - Univ. Twente\n  2020: Graduated with B.Sc., Univ. Twente\n  Thesis: Early time dynamics in immiscible drop impacts",
+    "url": "/team/index.html#Coen%2BVerschuur",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Pim J. Dekker",
+    "content": "Now: Ph.D. Student, Phys. Fluids - Univ. Twente\n  2019: Graduated with B.Sc., Univ. Twente\n  Thesis: Spreading of a drop on a water-air interface",
+    "url": "/team/index.html#Pim%2BJ%2BDekker",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Laurence Bruggink",
+    "content": "Now: Research Engineer at Alfen\n  2019: Graduated with B.Sc., Univ. Twente\n  Thesis: Bursting bubble in a Herschel–Bulkley fluid",
+    "url": "/team/index.html#Laurence%2BBruggink",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
+    "title": "Team, collaborators, and Conference visits",
+    "content": "The locations marked on this map meet one of three criteria (in the order of preference): \n            1. Hometown of our team members (including alumni) in orange, \n            2. Base location of our collaborators in green,\n            3. Places where we have presented talks in purple, or\n            4. Places where we have visited for conferences (no talks) in gray.",
+    "url": "/team/index.html#Team%2Bcollaborators%2Band%2BConference%2Bvisits",
+    "type": "section",
+    "links": [],
+    "priority": 3
+  },
+  {
     "title": "0_ToDo-Blog-public - tags:",
     "content": "tags:\n  - \"#TODO-master\"Here is a list of things on our to-publish list:\nStokes waves and related topics 📅 2025-03-01 ⏳ 2025-02-05  \nShowcase bubbles, waves: 📅 2025-01-12  \nTo-Do: Blog Posts on Research Papers and Thesis Below is a list of all the papers and the thesis requiring a dedicated blog post.",
     "url": "https://blogs.comphy-lab.org/0_ToDo-Blog-public",
@@ -458,405 +2353,6 @@
     "title": "0_ToDo-Blog-public - tags:",
     "content": "Thesis: Viscous free-surface flows\nLinks: Thesis Info, DOI, move here from old website\nImpact forces of water drops falling on superhydrophobic surfaces\nHighlights: Editor's Suggestion, Research Highlight in Nature\nLink: DOI\n2021 \nBursting bubble in a viscoplastic medium\nLink: DOI\n2020 \nLifting a sessile oil drop from a superamphiphobic surface with an impacting one\nLink: DOI\n2019 \nConsequences of inclined and dual jet impingement in stagnant liquid and stratified layers\nLink: DOI\n2018 \nFormation of fluid structures due to jet-jet and jet-sheet interactions\nLink: DOI\nNumerical assessment of hazard in compartmental fire having steady heat release rate from the source\nLink: DOI\n2017 \nFormation of liquid chain by collision of two laminar jets\nLink: DOI\nOn air entrainment in a water pool by impingement of a jet\nLink: DOI\nBack to main website\nHome, Team, Research, Github",
     "url": "https://blogs.comphy-lab.org/0_ToDo-Blog-public",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "tags:\n  - arrowhead\n  - narwhal\n  - Coherent\n  - Elastoinertial\n  - Turbulence\nCoherent structures could explain the pathway to elastoinertial turbulence.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "Arrowhead (one such traveling wave coherent solution of viscoelastic channel flow) structures are unstable in 3D flows\nLack of experimental validation. Numerical artifacts play significant role − presence or lack of polymeric diffusion. Transient appearances may still influence flow dynamics.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "Problem Statement \nCentral Issue: The existence and significance of arrowhead structures in elastoinertial turbulence. Importance: Understanding these structures could reveal fundamental mechanisms of polymer-flow interactions and turbulence development. Historical note The two Phys. Rev.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "Lett. outline the exact traveling wave solutions − now commonly called arrowheads or narwhals. J. Page, Y. Dubief & R. R. Kerswell, Phys. Rev. Lett., 125:15, 154501 (2020)\nA. Morozov, Phys. Rev.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "Lett., 129:1, 017801 (2022)Methodology The research community has employed multiple approaches to study arrowhead structures:Research Methods\n2D and 3D numerical simulations\nLinear stability analysis\nFlow visualization experiments\nPolymer diffusion modeling\nWhat are arrowheads?",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "Elastoinertial turbulence (EIT) is a chaotic flow state in dilute polymer solutions that arises when fluid inertia and polymer elasticity jointly drive instabilities.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "In this regime, simulations have revealed distinctive arrowhead-shaped coherent structures (nicknamed “narwhal” structures for their horn-like appearance).",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "These are highly organized patterns embedded within the turbulence, consisting of a polymer stress distribution coupled with a vortical flow pattern.An arrowhead structure has\nLocalized polymer stretch: a thin sheet of highly stretched polymer (high elastic stress) forming a triangular, arrowhead-like region spanning from the near-wall area to the channel center (symmetric about the mid-plane).",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "Flanking vortices: a pair of counter-rotating vortices on either side of this polymer sheet. These vortices pull fluid (and polymers) up from the walls toward the center, feeding and elongating the polymer-rich “horn” of the arrowhead.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "Coherent propagation: the structure travels downstream as a traveling wave, maintaining its shape over time rather than dissipating like a random eddy. Why do arrowheads form? Arrowhead structures emerge from a flow instability driven by polymer elasticity.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "At high Weissenberg number (Wi, dimensionless stress relaxation time − high Wi imply strong elastic effects) and moderate Reynolds number (Re), an otherwise laminar channel flow becomes unstable to disturbances at the channel center.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "This center-mode instability begins as a pattern of vortices and polymer stretch in the middle of the channel, which grows and nonlinearly saturates into the arrowhead form.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "Above a critical Wi, the flow spontaneously develops arrowhead patterns; at higher Wi, these patterns persist and can dominate as a stable wave.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "At sufficiently large Wi, the chaotic EIT can give way to a single steady arrowhead state, indicating that this coherent structure becomes a stable attractor when elasticity dominates.Polymer–flow coupling: The self-sustaining nature of an arrowhead comes from a feedback loop between polymer stretching and fluid motion.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "The polymer’s evolution equation captures this interplay:DCDt=C⋅(∇u)T+(∇u)⋅C−1Wi(C−I)where C is the polymer conformation tensor. In an arrowhead, the vortex pair generates strong shear and extensional flow that continuously amplifies polymer stretch along its arms.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "Because relaxation is slow at high Wi, a persistent high-tension polymer zone forms instead of relaxing away. That stretched-polymer zone exerts elastic stress back on the fluid, reinforcing the vortices that created it.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "Thus the vortices and polymer sheet sustain each other: the flow keeps the polymers stretched, and the polymer tension keeps the flow organized in the arrowhead pattern.Different types of arrowheads \nFig. Different realizations of arrowheads. Figure taken from Y. Dubief, J. Page, R. R. Kerswell, V. E.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "Terrapon & V. Steinberg, Phys. Rev. Fluids, 7:7, 073301 (2022) Why are arrowheads important? Identifying arrowhead structures can be pivotal for understanding EIT.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "They are the viscoelastic analog of coherent structures in Newtonian turbulence (like near-wall streaks and rolls), providing a clear skeleton for the turbulence. This shows that EIT is not just random; it is built around repeatable polymer–flow patterns.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "Arrowhead structures also showcase a new route to sustain turbulence: they show that elastic forces can maintain complex flow structures even at Reynolds numbers where a Newtonian flow would stay laminar.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "Finally, they offer a bridge between regimes, connecting purely elastic turbulence (Re≈0) with elastoinertial turbulence at higher Re with Wi≫1.Numerical vs. Experimental Evidence: Do Arrowheads Exist in 3D or in Reality?",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "A critical question is whether these arrowhead structures are present in 3D flows and experiments, or if they are artifacts of idealized 2D simulations.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "It has been claimed – and largely supported by evidence – that a single arrowhead wave disappears in fully 3D simulations and has never been observed in experiments. Recent studies confirm that in a 3D domain, an arrowhead (narwhal) state is linearly unstable and quickly breaks down into turbulence.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "Morozov and co-workers performed a linear stability analysis of the 2D travelling-wave solution and found it unstable to spanwise perturbations when embedded in a 3D domain (M. Lellep, M. Linkmann & A. Morozov, Proc. Natl. Acad. Sci., 121:9, e2318851121 (2024)).",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "In other words, “unlike 2D, in 3D the narwhal in a channel appears to become unstable, leading to chaotic flows”. This means that a coherent arrowhead structure cannot persist as a steady state in a wide 3D channel; it inevitably triggers its own demise into disordered motion.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "Indeed, direct 3D simulations of EIT show the flow filled with multiscale, transient structures rather than a single arrowhead.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "The characteristic structures of 3D EIT are sheet-like regions of high polymer stretch and streamwise vortices (often aligned in the spanwise direction) – no long-lived arrowhead pattern is evident. Experimentally, too, no arrowhead or narwhal-shaped structures have been directly observed.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "Laboratory studies (using techniques like flow visualization or velocimetry in polymer solutions) report chaotic fluctuations and elastic “sheets” of polymer stretch, but not a stable arrowhead wave.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "For example, experimental and high-Reynolds 3D DNS studies show polymers stretched in thin sheets inclined to the flow and emerging vortex tubes, with no mention of a sustained arrowhead structure. Recent research largely supports these claims.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "The consensus is that the arrowhead/narwhal is a 2D artifact in the sense that it cannot survive the spanwise degrees of freedom of a real 3D flow.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "Additionally, no experimental evidence of arrowheads has emerged, despite the intensive study of EIT in channels and pipes over the past decade – reinforcing the idea that such structures, if they form, are immediately disrupted in real flows.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "However, recent findings do nuance this picture: even though a stable narwhal does not exist in 3D, researchers have noted that transient arrowhead-like patterns can appear fleetingly within a 3D turbulent flow.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "For instance, simulations of low-Re viscoelastic turbulence sometimes display instantaneous polymer-stress contours resembling the arrowhead shape (J. R. C. King, R. J. Poole, C. P. Fonte & S. J. Lind, arXiv:2501.09421 (2025)).",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "These transient appearances suggest that the arrowhead solution still exists as an organizing saddle or ephemeral structure in phase space, even if it’s not sustained.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "In summary, the latest evidence indicates that arrowhead/narwhal structures do not persist in fully 3D EIT or experiments – they are replaced by more complex chaotic dynamics – but they may manifest momentarily, hinting that they influence the flow as part of its underlying state space (rather than as an observable steady feature).Role of Diffusion, Resolution, and Modeling Choices: Physical Feature or Numerical Artifact?",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "The formation and persistence of arrowhead structures are highly sensitive to modeling choices like polymer diffusion and domain dimensionality, raising the question of whether these structures are genuine physical features or numerical artifacts.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "Polymer stress diffusion in particular plays a pivotal role. In simulations of viscoelastic fluids (Oldroyd-B or FENE-P models), a small artificial diffusion term is often added to the polymer constitutive equations for numerical stability.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "Recent work showed that even an infinitesimal polymer diffusion can qualitatively change the flow’s stability characteristics. M. Beneitez, J. Page, Y. Dubief & R. R. Kerswell, J.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "Fluid Mech., 981, A30 (2024) discovered a polymer diffusive instability (PDI): with a nonzero diffusion, the laminar flow becomes linearly unstable, producing a small-scale traveling wave at the wall as the primary bifurcation.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "Notably, this instability does not exist when polymer diffusion is strictly zero – the base flow would be linearly stable in the absence of diffusion. The implication is that the arrowhead structure in 2D simulations can arise from the PDI – essentially a numerical artifact of including diffusion.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "The diffusive term “triggers” a finite-amplitude arrowhead-like wave that would not naturally appear at that parameter set without diffusion.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "In reality, molecular diffusion of polymers is extremely small, so such an instability might never dominate the transition; the flow could bypass it via a subcritical route.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "Thus, one must be cautious: the beautiful arrowhead patterns seen in some simulations may owe their existence to an unphysically large diffusion or other numerical regularization.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "In that sense, they are partly a numerical artifact.Numerical resolution and dimensionality further affect arrowhead formation.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "Insufficient resolution can introduce excessive numerical diffusion (smoothing out small scales), potentially artificially stabilizing a large-scale structure like the arrowhead.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "Likewise, restricting the simulation to 2D (as was done in the initial arrowhead studies) removes the 3D disturbances that would break up the arrowhead. The 2D assumption is a strong modeling simplification that essentially locks in the coherent structure. As M. Lellep, M. Linkmann & A. Morozov, Proc.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "Natl. Acad. Sci., 121:9, e2318851121 (2024) note, one cannot draw reliable conclusions about EIT dynamics from strictly 2D simulations. In 2D, the narwhal is “benign” and can remain as a steady state, but this is sustained only because the normal 3D instability modes are disallowed.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "In a fully resolved 3D simulation, that arrowhead state sits on a razor’s edge – any slight spanwise perturbation will cause it to oscillate or breakdown. Thus, the arrowhead’s longevity in 2D is not reflective of physical reality; it’s a consequence of an artificially constrained simulation.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "On the other hand, it’s too strong to dismiss arrowheads entirely as a “mere artifact.” They are mathematically legitimate nonlinear solutions of the viscoelastic flow equations (even if attained under special conditions) and they capture real physics – notably, a mechanism of polymer stretching and feedback.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "The consensus view is that arrowhead/narwhal structures are embedded but unstable features of the real system. They are “real” solutions, but one that the unconstrained system will only transiently visit. Diffusion and other numerical choices can exaggerate their prominence.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "In summary, high-fidelity simulations indicate that arrowheads do not represent a permanent physical flow pattern; rather, they are a byproduct of low-dimensional or diffusive modeling that nonetheless offer insight into the polymer–flow interactions in EIT.Conclusion Recent research converges on a nuanced view of arrowhead (narwhal) structures in EIT.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "They were a landmark discovery as a coherent viscoelastic wave, and they have deepened our insight into polymer–flow interactions. However, both simulations and theory now indicate that they are transient players in fully developed 3D turbulence rather than the primary architects of it.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "In fact, the energy transfer analysis between flow and polymer reveals that both chaotic regimes maintain through the same near-wall mechanism, independent of the weak arrowhead structure.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "These findings indicate that the arrowhead represents a passive flow structure, detached from the self-sustaining mechanics of elastic turbulence inertia (EIT) (M. Beneitez, J. Page, Y. Dubief & R. R. Kerswell, J. Fluid Mech., 981, A30 (2024)).",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "The community’s focus has shifted to how such structures populate the state space and trigger transitions, rather than expecting them to appear as steady patterns in experiments.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "Ongoing work continues to unravel the multi-stage transition to elastic and elasto-inertial turbulence – with arrowhead/narwhal waves serving as a valuable piece of the puzzle, albeit one with clear limitations.",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
-    "type": "blog_excerpt",
-    "priority": 3
-  },
-  {
-    "title": "Arrowheads in elastoinertial turbulence - tags:",
-    "content": "This critical understanding ensures that we appreciate the arrowhead structures for what they are: insightful and pedagogical solutions that illuminate EIT’s mechanics, but ultimately unstable in the wild chaos of real 3D turbulence.Metadata\nAuthor:: Vatsal Sanjay\nDate published:: Feb 24, 2025\nBack to main website\nHome, Team, Research, Github, Blogs\nLinks to this page0_README",
-    "url": "https://blogs.comphy-lab.org/Blog/Arrowheads+in+elastoinertial+turbulence",
     "type": "blog_excerpt",
     "priority": 3
   },
