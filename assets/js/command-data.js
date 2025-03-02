@@ -340,9 +340,168 @@
           id: "filter-research",
           title: "Filter Research by Tag",
           handler: () => { 
-            // Focus on the filter input if it exists
-            const filterInput = document.querySelector('.research-filter-input');
-            if (filterInput) filterInput.focus();
+            // Create and display a modal showing all available tags
+            const modal = document.createElement('div');
+            modal.style.position = 'fixed';
+            modal.style.top = '0';
+            modal.style.left = '0';
+            modal.style.width = '100%';
+            modal.style.height = '100%';
+            modal.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+            modal.style.zIndex = '2000';
+            modal.style.display = 'flex';
+            modal.style.justifyContent = 'center';
+            modal.style.alignItems = 'center';
+            
+            const content = document.createElement('div');
+            content.style.backgroundColor = 'white';
+            content.style.borderRadius = '8px';
+            content.style.padding = '20px';
+            content.style.maxWidth = '600px';
+            content.style.maxHeight = '80vh';
+            content.style.overflow = 'auto';
+            content.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
+            content.setAttribute('tabindex', '-1'); // Make the content focusable for keyboard events
+            
+            // Media query for dark mode
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+              content.style.backgroundColor = '#333';
+              content.style.color = '#fff';
+            }
+            
+            // Collect all unique tags from the page
+            const tagElements = document.querySelectorAll('tags span');
+            const tags = new Set();
+            tagElements.forEach(tag => {
+              tags.add(tag.textContent);
+            });
+            
+            let html = '<h2 style="margin-top: 0;">Filter Research by Tag</h2>';
+            html += '<div class="tag-filter-container" style="display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0;">';
+            
+            // Add clickable tag buttons
+            tags.forEach(tag => {
+              html += `<button class="tag-filter-btn" style="padding: 8px 12px; background-color: #5b79a8; color: white; border: none; border-radius: 4px; cursor: pointer; margin: 5px;">${tag}</button>`;
+            });
+            
+            html += '</div>';
+            
+            // Add keyboard navigation info
+            html += `<div style="margin-top: 15px; font-size: 0.9em; text-align: center; color: #888;">
+              <span style="margin-right: 15px;"><kbd>←</kbd> <kbd>→</kbd> <kbd>↑</kbd> <kbd>↓</kbd> to navigate</span>
+              <span style="margin-right: 15px;"><kbd>enter</kbd> to select</span>
+              <span><kbd>esc</kbd> to close</span>
+            </div>`;
+            
+            // Add close button
+            html += '<div style="text-align: center; margin-top: 20px;"><button id="close-tag-filter" style="padding: 8px 16px; background-color: #333; color: white; border: none; border-radius: 4px; cursor: pointer;">Close</button></div>';
+            
+            content.innerHTML = html;
+            modal.appendChild(content);
+            document.body.appendChild(modal);
+            
+            // Get all tag buttons
+            const tagButtons = content.querySelectorAll('.tag-filter-btn');
+            let selectedButtonIndex = 0;
+            
+            // Function to update the visual selection
+            const updateSelectedButton = (newIndex) => {
+              // Remove selection from all buttons
+              tagButtons.forEach(btn => {
+                btn.style.outline = 'none';
+                btn.style.boxShadow = 'none';
+              });
+              
+              // Add selection to the current button
+              if (tagButtons[newIndex]) {
+                tagButtons[newIndex].style.outline = '2px solid white';
+                tagButtons[newIndex].style.boxShadow = '0 0 5px rgba(255, 255, 255, 0.5)';
+                
+                // Make sure the selected button is visible
+                tagButtons[newIndex].scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'nearest'
+                });
+              }
+            };
+            
+            // Select the first button initially
+            if (tagButtons.length > 0) {
+              updateSelectedButton(selectedButtonIndex);
+            }
+            
+            // Add event listeners to tag buttons
+            tagButtons.forEach((btn, index) => {
+              // Mouse hover should update selection
+              btn.addEventListener('mouseenter', () => {
+                selectedButtonIndex = index;
+                updateSelectedButton(selectedButtonIndex);
+              });
+              
+              btn.addEventListener('click', () => {
+                // Find the actual tag in the document and simulate a click on it
+                const tagText = btn.textContent;
+                const matchingTag = Array.from(document.querySelectorAll('tags span')).find(
+                  tag => tag.textContent === tagText
+                );
+                
+                if (matchingTag) {
+                  // Remove the modal first
+                  document.body.removeChild(modal);
+                  // Then trigger the click
+                  matchingTag.click();
+                }
+              });
+            });
+            
+            // Add keyboard navigation
+            content.addEventListener('keydown', (e) => {
+              const buttonRows = 4; // Approximate number of buttons per row
+              const numButtons = tagButtons.length;
+              
+              if (e.key === 'Escape') {
+                // Close the modal
+                document.body.removeChild(modal);
+              } else if (e.key === 'Enter') {
+                // Click the selected button
+                if (tagButtons[selectedButtonIndex]) {
+                  tagButtons[selectedButtonIndex].click();
+                }
+              } else if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                selectedButtonIndex = (selectedButtonIndex + 1) % numButtons;
+                updateSelectedButton(selectedButtonIndex);
+              } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                selectedButtonIndex = (selectedButtonIndex - 1 + numButtons) % numButtons;
+                updateSelectedButton(selectedButtonIndex);
+              } else if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                // Move down by approximate number of buttons per row
+                selectedButtonIndex = Math.min(selectedButtonIndex + buttonRows, numButtons - 1);
+                updateSelectedButton(selectedButtonIndex);
+              } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                // Move up by approximate number of buttons per row
+                selectedButtonIndex = Math.max(selectedButtonIndex - buttonRows, 0);
+                updateSelectedButton(selectedButtonIndex);
+              }
+            });
+            
+            // Add event listener to close button
+            document.getElementById('close-tag-filter').addEventListener('click', () => {
+              document.body.removeChild(modal);
+            });
+            
+            // Close when clicking outside
+            modal.addEventListener('click', (e) => {
+              if (e.target === modal) {
+                document.body.removeChild(modal);
+              }
+            });
+            
+            // Focus the content element to capture keyboard events
+            content.focus();
           },
           section: "Page Actions",
           shortcuts: ["f t"],
