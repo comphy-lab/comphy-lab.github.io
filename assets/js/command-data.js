@@ -10,7 +10,6 @@
       title: "Go to Home",
       handler: () => { window.location.href = '/'; },
       section: "Navigation",
-      shortcuts: ["g h"],
       icon: '<i class="fa-solid fa-home"></i>'
     },
     {
@@ -18,7 +17,6 @@
       title: "Go to Team Page",
       handler: () => { window.location.href = '/team/'; },
       section: "Navigation",
-      shortcuts: ["g t"],
       icon: '<i class="fa-solid fa-users"></i>'
     },
     {
@@ -26,7 +24,6 @@
       title: "Go to Research Page",
       handler: () => { window.location.href = '/research'; },
       section: "Navigation",
-      shortcuts: ["g r"],
       icon: '<i class="fa-solid fa-flask"></i>'
     },
     {
@@ -34,7 +31,6 @@
       title: "Go to Teaching Page",
       handler: () => { window.location.href = '/teaching'; },
       section: "Navigation",
-      shortcuts: ["g e"],
       icon: '<i class="fa-solid fa-chalkboard-teacher"></i>'
     },
     {
@@ -42,7 +38,6 @@
       title: "Go to Join Us Page",
       handler: () => { window.location.href = '/join'; },
       section: "Navigation",
-      shortcuts: ["g j"],
       icon: '<i class="fa-solid fa-handshake"></i>'
     },
     {
@@ -50,7 +45,6 @@
       title: "Go to Blog",
       handler: () => { window.location.href = 'https://blogs.comphy-lab.org/'; },
       section: "Navigation",
-      shortcuts: ["g b"],
       icon: '<i class="fa-solid fa-rss"></i>'
     },
     {
@@ -58,7 +52,6 @@
       title: "Go Back",
       handler: () => { window.history.back(); },
       section: "Navigation",
-      shortcuts: ["b"],
       icon: '<i class="fa-solid fa-arrow-left"></i>'
     },
     {
@@ -66,7 +59,6 @@
       title: "Go Forward",
       handler: () => { window.history.forward(); },
       section: "Navigation",
-      shortcuts: ["f"],
       icon: '<i class="fa-solid fa-arrow-right"></i>'
     },
     
@@ -76,7 +68,6 @@
       title: "Visit GitHub",
       handler: () => { window.open('https://github.com/comphy-lab', '_blank'); },
       section: "External Links",
-      shortcuts: ["g g"],
       icon: '<i class="fa-brands fa-github"></i>'
     },
     {
@@ -84,7 +75,6 @@
       title: "Visit Google Scholar",
       handler: () => { window.open('https://scholar.google.com/citations?user=tHb_qZoAAAAJ&hl=en', '_blank'); },
       section: "External Links",
-      shortcuts: ["g s"],
       icon: '<i class="ai ai-google-scholar"></i>'
     },
     {
@@ -92,7 +82,6 @@
       title: "Visit YouTube Channel",
       handler: () => { window.open('https://www.youtube.com/@CoMPhyLab', '_blank'); },
       section: "External Links",
-      shortcuts: ["g y"],
       icon: '<i class="fa-brands fa-youtube"></i>'
     },
     {
@@ -100,7 +89,6 @@
       title: "Visit Bluesky",
       handler: () => { window.open('https://bsky.app/profile/comphy-lab.org', '_blank'); },
       section: "External Links",
-      shortcuts: ["g l"],
       icon: '<i class="fa-brands fa-bluesky"></i>'
     },
     
@@ -122,7 +110,6 @@
         }
       },
       section: "Tools",
-      shortcuts: ["s"],
       icon: '<i class="fa-solid fa-magnifying-glass"></i>'
     },
     {
@@ -130,7 +117,6 @@
       title: "Scroll to Top",
       handler: () => { window.scrollTo({top: 0, behavior: 'smooth'}); },
       section: "Tools",
-      shortcuts: ["t t"],
       icon: '<i class="fa-solid fa-arrow-up"></i>'
     },
     {
@@ -138,7 +124,6 @@
       title: "Scroll to Bottom",
       handler: () => { window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'}); },
       section: "Tools",
-      shortcuts: ["t b"],
       icon: '<i class="fa-solid fa-arrow-down"></i>'
     },
     
@@ -148,7 +133,6 @@
       title: "View Keyboard Shortcuts",
       handler: () => { window.displayShortcutsHelp(); },
       section: "Help",
-      shortcuts: ["?"],
       icon: '<i class="fa-solid fa-question-circle"></i>'
     },
     {
@@ -156,7 +140,6 @@
       title: "View Website Repository",
       handler: () => { window.open('https://github.com/comphy-lab/comphy-lab.github.io', '_blank'); },
       section: "Help",
-      shortcuts: ["h r"],
       icon: '<i class="fa-brands fa-github"></i>'
     }
   ];
@@ -203,20 +186,18 @@
       sections[command.section].push(command);
     });
     
-    let html = '<h2 style="margin-top: 0;">Keyboard Shortcuts</h2>';
+    let html = '<h2 style="margin-top: 0;">Commands</h2>';
     html += '<p>Press Ctrl+/ (⌘/ on Mac) to open the command palette</p>';
     
     // Add each section and its commands
     Object.keys(sections).forEach(section => {
       html += `<h3>${section}</h3>`;
       html += '<table style="width: 100%; border-collapse: collapse;">';
-      html += '<tr><th style="text-align: left; padding: 8px; border-bottom: 1px solid #ddd;">Command</th><th style="text-align: left; padding: 8px; border-bottom: 1px solid #ddd;">Shortcut</th></tr>';
+      html += '<tr><th style="text-align: left; padding: 8px; border-bottom: 1px solid #ddd;">Command</th></tr>';
       
       sections[section].forEach(command => {
-        const shortcuts = command.shortcuts ? command.shortcuts.map(s => `<kbd>${s}</kbd>`).join(' or ') : '';
         html += `<tr>
           <td style="padding: 8px; border-bottom: 1px solid #ddd;">${command.icon} ${command.title}</td>
-          <td style="padding: 8px; border-bottom: 1px solid #ddd;">${shortcuts}</td>
         </tr>`;
       });
       
@@ -504,7 +485,6 @@
             content.focus();
           },
           section: "Page Actions",
-          shortcuts: ["f t"],
           icon: '<i class="fa-solid fa-filter"></i>'
         }
       ];
@@ -517,7 +497,6 @@
           title: "Contact Team",
           handler: () => { window.location.href = '/join'; },
           section: "Page Actions",
-          shortcuts: ["c t"],
           icon: '<i class="fa-solid fa-envelope"></i>'
         }
       ];
@@ -535,7 +514,6 @@
             }
           },
           section: "Page Actions",
-          shortcuts: ["s d"],
           icon: '<i class="fa-solid fa-sort"></i>'
         }
       ];
