@@ -168,7 +168,7 @@
     });
     
     let html = '<h2 style="margin-top: 0;">Commands</h2>';
-    html += '<p>Press Ctrl+/ (⌘/ on Mac) to open the command palette</p>';
+    html += '<p>Press Ctrl+K (⌘K on Mac) to open the command palette</p>';
     
     // Add each section and its commands
     Object.keys(sections).forEach(section => {
