@@ -6,21 +6,102 @@
   <meta name="base-url" content="{{ site.baseurl }}">
   <title>{{ page.title }} - {{ site.title }}</title>
 
+  <!-- Critical CSS for fastest paint -->
+  <style>
+    .s-header {
+      visibility: visible;
+    }
+    .s-header__logo img {
+      max-height: 48px;
+      width: auto;
+    }
+    .team-content h1, .team-content h2 {
+      visibility: visible;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+  </style>
+
+  <!-- Preload critical resources -->
+  <link rel="preload" href="/assets/css/styles.css" as="style">
+  <link rel="preload" href="/assets/js/main.js" as="script">
+  <link rel="preload" href="/assets/css/fontello/css/fontello.css" as="style">
+  <link rel="preload" href="/assets/css/academicons-1.7.0/css/academicons.min.css" as="style">
+  
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-title" content="CoMPhy Lab">
+  <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+
+  <!-- Font dependencies with font-display: swap -->
+  <style>
+    @font-face {
+      font-display: swap;
+    }
+  </style>
+  <link rel="stylesheet" href="/assets/css/fontello/css/fontello.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/assets/css/academicons-1.7.0/css/academicons.min.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="/assets/css/fontello/css/fontello.css">
+    <link rel="stylesheet" href="/assets/css/academicons-1.7.0/css/academicons.min.css">
+  </noscript>
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/assets/css/vendor.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/team.css">
+  <link rel="stylesheet" href="/assets/css/command-palette.css" media="print" onload="this.media='all'">
+
+  <!-- Simple command palette initialization -->
+  <script>
+    // Make the command palette opening function globally available
+    window.openCommandPalette = function() {
+      const palette = document.getElementById('simple-command-palette');
+      if (palette) {
+        palette.style.display = 'block';
+        const input = document.getElementById('command-palette-input');
+        if (input) {
+          input.value = '';
+          input.focus();
+          if (typeof renderCommandResults === 'function') {
+            renderCommandResults('');
+          }
+        }
+      }
+    };
+    
+    // Ensure search database is preloaded for command palette search functionality
+    window.addEventListener('DOMContentLoaded', function() {
+      // Try to prefetch the search database if it exists
+      fetch('/assets/js/search_db.json').then(response => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error('Search database not found');
+      }).then(data => {
+        console.log('Search database prefetched for command palette');
+        window.searchData = data;
+      }).catch(err => {
+        console.warn('Could not prefetch search database for command palette:', err.message);
+      });
+    });
+  </script>
+
+  <!-- JavaScript dependencies -->
+  <script defer src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+  <script defer src="/assets/js/main.js"></script>
+  <script defer src="/assets/js/command-data.js"></script>
+
   <script>
     document.documentElement.classList.remove('no-js');
     document.documentElement.classList.add('js');
   </script>
-
-  <!-- Font dependencies -->
-  <link rel="stylesheet" href="/assets/css/fontello/css/fontello.css">
-  <link rel="stylesheet" href="/assets/css/academicons-1.7.0/css/academicons.min.css">
-  
-  <!-- Site styles - moved before preload tags to prioritize loading -->
-  <link rel="stylesheet" href="/assets/css/vendor.css">
-  <link rel="stylesheet" href="/assets/css/styles.css">
-  <link rel="stylesheet" href="/assets/css/team.css">
-  <link rel="stylesheet" href="/assets/css/command-palette.css">
-
   <script>
     // Check if we're on localhost
     if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
@@ -52,42 +133,6 @@
       document.head.appendChild(script);
     }
   </script>
-
-  <!-- Preload critical assets -->
-  <link rel="preload" as="script" href="/assets/js/main.js">
-  
-  <!-- Preconnect to external domains -->
-  <link rel="preconnect" href="https://github.com">
-
-  <!-- Preload first few team member images -->
-  {% assign content_html = content | markdownify %}
-  {% assign sections = content_html | split: '<h1' %}
-  {% assign first_section = sections[1] | split: '</h1>' %}
-  {% assign first_members = first_section[1] | split: '<h2' %}
-  {% for member in first_members limit:3 %}
-    {% if member contains '<img' %}
-      {% assign image_src = member | split: 'src="' | last | split: '"' | first %}
-      <link rel="preload" as="image" href="{{ image_src }}" fetchpriority="high">
-    {% endif %}
-  {% endfor %}
-
-  <!-- Favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
-  <link rel="manifest" href="/assets/favicon/site.webmanifest">
-  <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
-  <meta name="apple-mobile-web-app-title" content="CoMPhy Lab">
-  <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
-
-  <!-- Font dependencies with font-display: swap -->
-  <style>
-    @font-face {
-      font-display: swap;
-    }
-  </style>
 </head>
 <body id="top">
 
