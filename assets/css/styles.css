@@ -128,10 +128,17 @@ body {
 
 .s-header__nav-list {
   display: flex;
-  gap: 2rem;
+  gap: 0.8rem;
   list-style: none;
   margin: 0;
   padding: 0;
+  align-items: center;
+}
+
+.s-header__nav-list li {
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 .s-header__nav-list a {
@@ -144,6 +151,9 @@ body {
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(8px);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  height: 40px;
 }
 
 .s-header__nav-list a:hover {
@@ -152,15 +162,50 @@ body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
+/* Special styling for the Bluesky icon */
+.s-header__nav-list li[style="background: none;"] a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
 .s-header__nav-close-btn {
   display: none;
   position: absolute;
   top: 2rem;
   right: 2rem;
-  color: var(--color-text);
+  color: #000000;
   text-decoration: none;
   font-size: 1.6rem;
-  margin-left: 2rem;
+  transition: all 0.3s ease;
+  padding: 0.8rem 1.6rem;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-left: 0.8rem;
+}
+
+.s-header__nav-close-btn:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Dark mode styling */
+@media (prefers-color-scheme: dark) {
+  /* Dark mode for the navigation close button */
+  .s-header__nav-close-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: #000000; /* Keep text black in dark mode too to match command palette */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .s-header__nav-close-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
 }
 
 /* Intro Section */
@@ -625,24 +670,53 @@ body {
   .s-header__nav-list {
     flex-direction: column;
     width: 100%;
+    align-items: flex-start;
   }
 
   .s-header__nav-list li {
     margin: 1rem 0;
+    height: auto;
+    width: 100%;
   }
 
   .s-header__nav-list a {
-    display: block;
+    display: flex;
     padding: 1rem 0;
     font-size: 1.8rem;
     background: none;
     box-shadow: none;
     width: 100%;
     text-align: center;
+    justify-content: center;
+    height: auto;
   }
 
   .s-header__nav-list a:hover {
     background: rgba(255, 255, 255, 0.35);
+  }
+
+  /* Special handling for Bluesky icon in mobile view */
+  .s-header__nav-list li[style="background: none;"] {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .s-header__nav-list li[style="background: none;"] a {
+    width: auto;
+    justify-content: center;
+  }
+
+  /* Mobile command palette button */
+  .command-palette-button {
+    width: 100%;
+    margin: 1rem 0;
+  }
+
+  .command-k-style-btn {
+    width: 100%;
+    height: auto;
+    padding: 1rem 0;
   }
 
   .s-about__grid {
@@ -1962,4 +2036,42 @@ body {
   .position-section h3 {
     font-size: 1.6rem;
   }
+}
+
+/* Ensure consistent height and alignment for all header items including icons */
+.s-header__nav-list li[style="background: none;"] {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.s-header__nav-list li[style="background: none;"] a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+}
+
+/* Ensure the Bluesky icon is centered */
+.s-header__nav-list .fa-bluesky {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ensure all nav links have consistent height */
+.s-header__nav-list a {
+  color: #1a1a1a;
+  text-decoration: none;
+  font-size: 1.6rem;
+  transition: all 0.3s ease;
+  padding: 0.8rem 1.6rem;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  height: 40px;
 }

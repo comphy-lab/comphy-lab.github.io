@@ -152,24 +152,22 @@
 
 /* Command palette button styling */
 .command-palette-button {
-  position: relative;
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  margin-left: 0.5rem;
-  z-index: 10; /* Ensure the button is clickable */
+  height: 100%;
 }
 
 .command-wrapper {
   display: flex;
   align-items: center;
-  position: relative;
+  height: 100%;
 }
 
 .command-k-style-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #1a1a1a;
+  color: #000000;
   text-decoration: none;
   font-size: 1.6rem;
   transition: all 0.3s ease;
@@ -183,6 +181,8 @@
   gap: 6px;
   font-weight: 500;
   cursor: pointer;
+  height: 40px; /* Set a fixed height to match navigation links */
+  margin: auto 0; /* Center vertically in the container */
 }
 
 .command-k-style-btn:hover {
