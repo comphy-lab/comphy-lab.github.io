@@ -33,7 +33,7 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 │   │   ├── research.css      # Research page styles
 │   │   ├── teaching.css      # Teaching page styles
 │   │   ├── team.css          # Team page styles
-│   │   └── command-palette.css # Command palette styles (⌘/)
+│   │   └── command-palette.css # Command palette styles (⌘K)
 │   ├── js                    # JavaScript files
 │   │   ├── main.js          # Main JavaScript
 │   │   ├── command-data.js  # Command palette data and functionality
@@ -249,7 +249,7 @@ Search results are prioritized and filtered as follows:
 ### Command Palette Functionality
 The website includes a command palette feature that provides quick access to actions and navigation through keyboard shortcuts:
 
-- **Keyboard Shortcut**: Access via ⌘/ on Mac, ctrl+/ on Windows, or by clicking the terminal icon in the navigation
+- **Keyboard Shortcut**: Access via ⌘K on Mac, ctrl+K on Windows, or by clicking the terminal icon in the navigation
 - **Navigation Commands**: Quickly navigate to any section of the website
 - **External Link Commands**: Direct access to GitHub, Google Scholar, YouTube, and Bluesky
 - **Tool Commands**: Scroll to top/bottom and other utility functions
