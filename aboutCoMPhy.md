@@ -12,7 +12,7 @@ From [**elastoviscoplastic**]((/research/?tag=Non-Newtonian)) bubble bursting an
 We investigate various viscous free-surface flows including inertial contact lines, [**bubble**](/research/?tag=Bubbles) removal, and focusing of [**waves**](/research/?tag=Waves). These phenomena are critical to energy transitions and manufacturing. For instance, a key challenge is optimizing bubble detachment in electrolysis to boost efficiency. This research involves advanced numerical methods and industry partnerships, with the broader aim of advancing technologies from chemical reactors to printing processes.
 
 ## Commitment to Open Science
-Open exchange of ideas drives our progress. We share our codes from the earliest stages of development, embracing transparent research practices to foster collaboration and reproducibility. We welcome inquiries and partnerships from the broader scientific community. Watchout for [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab) and [<i class="fa-brands fa-github" style="font-size: 1.5em; color: black;"></i>](https://github.com/comphy-lab) on this website to interact with our codes. 
+Open exchange of ideas drives our progress. We share our codes from the earliest stages of development, embracing transparent research practices to foster collaboration and reproducibility. We welcome inquiries and partnerships from the broader scientific community. Watchout for [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab) and [<i class="fa-brands fa-github" style="font-size: 1.5em; color: black;"></i>](https://github.com/comphy-lab "Visit our GitHub organization") on this website to interact with our codes. 
 
 Feel free to contact us for discussions about our work or anything else related to fluid physics. Nothing is more exhilarating than a healthy scientific discussion.
 
@@ -23,7 +23,7 @@ Feel free to contact us for discussions about our work or anything else related 
 
 <div class="email-container">
     <span class="email-text">vatsalsy@comphy-lab.org</span>
-    <button class="copy-btn" onclick="copyEmail(this)" data-text="vatsalsy@comphy-lab.org">
+    <button class="copy-btn" onclick="copyEmail(this)" data-text="vatsalsy@comphy-lab.org" aria-label="Copy email address vatsalsy@comphy-lab.org">
         <i class="fas fa-copy"></i>
     </button>
 </div>
@@ -41,7 +41,7 @@ Feel free to contact us for discussions about our work or anything else related 
 
 For supplementary videos and teaser of our upcoming work:
 
-<a href="https://www.youtube.com/@CoMPhyLab" target="_blank">
+<a href="https://www.youtube.com/@CoMPhyLab" target="_blank" aria-label="Visit our YouTube channel">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://cust-youtube-stats-card.vercel.app/api?channelid=UC-eTdHrAM_eQrWOtNLoT19w&theme=solarized_light&cache_seconds=0" width="auto" height="200px">
     <img alt="Vatsal's YouTube Stats" src="https://cust-youtube-stats-card.vercel.app/api?channelid=UC-eTdHrAM_eQrWOtNLoT19w&theme=vision_friendly_dark&hide_border=true" width="auto" height="200px">
