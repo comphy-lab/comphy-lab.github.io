@@ -102,13 +102,13 @@ The course combines theoretical lectures with extensive hands-on sessions, allow
 For registration details, please contact 
 <div class="email-container">
     <span class="email-text">bubbles@ing.uc3m.es</span>
-    <button class="copy-btn" onclick="copyEmail(this)" data-text="bubbles@ing.uc3m.es">
+    <button class="copy-btn" onclick="copyEmail(this)" data-text="bubbles@ing.uc3m.es" aria-label="Copy email address bubbles@ing.uc3m.es">
         <i class="fas fa-copy"></i>
     </button>
 </div>
 <div class="email-container">
     <span class="email-text">vatsalsy@comphy-lab.org</span>
-    <button class="copy-btn" onclick="copyEmail(this)" data-text="vatsalsy@comphy-lab.org">
+    <button class="copy-btn" onclick="copyEmail(this)" data-text="vatsalsy@comphy-lab.org" aria-label="Copy email address vatsalsy@comphy-lab.org">
         <i class="fas fa-copy"></i>
     </button>
 </div>

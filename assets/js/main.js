@@ -288,12 +288,22 @@
                 }
             });
         });
+
+        // Add accessible names to all copy buttons on document load
+        copyButtons.forEach(button => {
+            // Get the email text from data-text or data-clipboard-text attribute
+            const emailText = button.getAttribute('data-text') || button.getAttribute('data-clipboard-text');
+            // Add aria-label if it doesn't exist
+            if (!button.hasAttribute('aria-label') && emailText) {
+                button.setAttribute('aria-label', `Copy email address ${emailText}`);
+            }
+        });
     });
 
     /* Copy Email Functionality
     * -------------------------------------------------- */
     window.copyEmail = function(button) {
-        const text = button.getAttribute('data-text');
+        const text = button.getAttribute('data-text') || button.getAttribute('data-clipboard-text');
         navigator.clipboard.writeText(text).then(() => {
             const icon = button.querySelector('i');
             button.classList.add('copied');
