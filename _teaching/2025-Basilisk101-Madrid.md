@@ -1,5 +1,5 @@
 ---
-layout: teaching
+layout: teaching-course
 title: "High-Fidelity Simulations Using Basilisk C"
 permalink: /teaching/2025-Basilisk101-Madrid
 ---

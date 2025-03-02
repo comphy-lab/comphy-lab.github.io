@@ -11,10 +11,6 @@
     .s-header {
       visibility: visible;
     }
-    .s-header__logo img {
-      max-height: 48px;
-      width: auto;
-    }
     .research-content h1, .research-content h2 {
       visibility: visible;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -79,9 +75,20 @@
 
   <!-- Preload critical resources -->
   <link rel="preload" href="/assets/css/styles.css" as="style">
-  <link rel="preload" href="/assets/css/research.css" as="style">
+  <link rel="preload" href="/assets/js/main.js" as="script">
   <link rel="preload" href="/assets/css/fontello/css/fontello.css" as="style">
   <link rel="preload" href="/assets/css/academicons-1.7.0/css/academicons.min.css" as="style">
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-title" content="CoMPhy Lab">
+  <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
 
   <!-- Font dependencies with font-display: swap -->
   <style>
@@ -100,15 +107,50 @@
   <link rel="stylesheet" href="/assets/css/vendor.css" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="stylesheet" href="/assets/css/research.css">
-  <link rel="stylesheet" href="/assets/css/search.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/assets/css/command-palette.css">
 
-  <script defer src="/assets/js/search.js"></script>
+  <!-- Simple command palette initialization -->
+  <script>
+    // Make the command palette opening function globally available
+    window.openCommandPalette = function() {
+      const palette = document.getElementById('simple-command-palette');
+      if (palette) {
+        palette.style.display = 'block';
+        const input = document.getElementById('command-palette-input');
+        if (input) {
+          input.value = '';
+          input.focus();
+          renderCommandResults('');
+        }
+      }
+    };
+    
+    // Ensure search database is preloaded for command palette search functionality
+    window.addEventListener('DOMContentLoaded', function() {
+      // Try to prefetch the search database if it exists
+      fetch('/assets/js/search_db.json').then(response => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error('Search database not found');
+      }).then(data => {
+        console.log('Search database prefetched for command palette');
+        window.searchData = data;
+      }).catch(err => {
+        console.warn('Could not prefetch search database for command palette:', err.message);
+      });
+    });
+  </script>
 
+  <!-- JavaScript dependencies -->
+  <script defer src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+  <script defer src="/assets/js/main.js"></script>
+  <script defer src="/assets/js/command-data.js"></script>  
   <script>
     document.documentElement.classList.remove('no-js');
     document.documentElement.classList.add('js');
   </script>
-
   <script>
     // Check if we're on localhost
     if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
@@ -140,23 +182,63 @@
       document.head.appendChild(script);
     }
   </script>
-
-  <!-- Favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
-  <link rel="manifest" href="/assets/favicon/site.webmanifest">
-  <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
-  <meta name="apple-mobile-web-app-title" content="CoMPhy Lab">
-  <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
 </head>
 <body id="top">
 
   <div id="preloader">
     <div id="loader"></div>
   </div>
+
+  <!-- Command Palette Button Handler -->
+  <script>
+    window.addEventListener('load', function() {
+      const commandPaletteButton = document.getElementById('command-palette-button');
+      if (commandPaletteButton) {
+        // Set the appropriate shortcut hint based on platform
+        const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
+        const shortcutHint = document.getElementById('command-palette-shortcut');
+        if (shortcutHint) {
+          shortcutHint.textContent = isMac ? '⌘K' : 'Ctrl+K';
+        }
+
+        // Add click event listener to the command palette button
+        commandPaletteButton.addEventListener('click', function() {
+          console.log('Command palette button clicked');
+          if (typeof window.openCommandPalette === 'function') {
+            window.openCommandPalette();
+          } else {
+            // Fallback to simple command palette
+            const simpleCommandPalette = document.querySelector('.simple-command-palette');
+            if (simpleCommandPalette) {
+              simpleCommandPalette.classList.add('visible');
+              const input = simpleCommandPalette.querySelector('input');
+              if (input) input.focus();
+            }
+          }
+        });
+      }
+
+      // Add keyboard shortcut listener
+      document.addEventListener('keydown', function(e) {
+        // Check for Ctrl+K or Cmd+K (Mac)
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+          e.preventDefault();
+          console.log('Command palette keyboard shortcut detected');
+          if (typeof window.openCommandPalette === 'function') {
+            window.openCommandPalette();
+          } else {
+            // Fallback to simple command palette
+            const simpleCommandPalette = document.querySelector('.simple-command-palette');
+            if (simpleCommandPalette) {
+              simpleCommandPalette.classList.add('visible');
+              const input = simpleCommandPalette.querySelector('input');
+              if (input) input.focus();
+            }
+          }
+        }
+      });
+    });
+  </script>
 
   <div id="page" class="s-pagewrap">
     <header class="s-header">
@@ -173,23 +255,23 @@
         <a href="#0" class="s-header__nav-close-btn"><span>Close</span></a>
         <ul class="s-header__nav-list">
           <li style="background: none;"><a href="https://scholar.google.com/citations?user=tHb_qZoAAAAJ&hl=en" style="background: none; padding: 0;"><i class="ai ai-google-scholar" style="font-size: 1.75em;"></i></a></li>
-          <li style="background: none;"><a href="https://github.com/comphy-lab" style="background: none; padding: 0;"><i class="fa-brands fa-github" style="font-size: 1.75em;"></i></a></li>
-          <li><a href="/#about">About</a></li>
-          <li><a href="/team">Team</a></li>
+          <li style="background: none;"><a href="https://github.com/comphy-lab" style="background: none; padding: 0;"><i class="fa-brands fa-github" style="font-size: 1.75em"></i></a></li>
+          <li><a href="/#about" class="smoothscroll">About</a></li>
+          <li><a href="/team/">Team</a></li>
           <li><a href="/research">Research</a></li>
           <li><a href="/teaching">Teaching</a></li>
           <li><a href="/join">Join Us</a></li>
           <li><a href="https://blogs.comphy-lab.org/">Blog</a></li>
           <li style="background: none;"><a href="https://bsky.app/profile/comphy-lab.org" style="background: none; padding: 0;"><i class="fa-brands fa-bluesky" style="font-size: 1.75em; color: #0085ff;"></i></a></li>
-          <!-- Search Container -->
-          <li class="search-container">
-            <div class="search-wrapper">
-              <input type="text" id="searchInput" placeholder="Search..." aria-label="Search">
-              <button type="button" id="searchButton" class="search-button" aria-label="Trigger search">
-                <i class="fa fa-search search-icon"></i>
+          <!-- Command Palette Button (Styled like search) -->
+          <li class="command-palette-button">
+            <div class="command-wrapper">
+              <button class="command-k-style-btn" id="command-palette-btn" aria-label="Open command palette">
+                <span class="default-theme-text">ctrl K</span>
+                <span class="mac-theme-text">⌘ K</span>
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
               </button>
             </div>
-            <div id="searchResults" class="search-results"></div>
           </li>
         </ul>
       </nav>
@@ -470,6 +552,217 @@
           }
         }
       }
+    });
+  </script>
+  
+  <!-- Command Palette -->
+  <div id="simple-command-palette" class="simple-command-palette" style="display: none;">
+    <div class="simple-command-palette-backdrop"></div>
+    <div class="simple-command-palette-modal">
+      <input type="text" id="command-palette-input" placeholder="Type a command..." autocomplete="off">
+      <div id="command-palette-results" class="command-palette-results"></div>
+      <div class="command-palette-footer">
+        <span class="command-palette-footer-item"><kbd>↑</kbd> <kbd>↓</kbd> to navigate</span>
+        <span class="command-palette-footer-item"><kbd>enter</kbd> to select</span>
+        <span class="command-palette-footer-item"><kbd>esc</kbd> to close</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Command Palette Script -->
+  <script>
+    // Make the command palette opening function globally available
+    window.openCommandPalette = function() {
+      const palette = document.getElementById('simple-command-palette');
+      if (palette) {
+        palette.style.display = 'block';
+        const input = document.getElementById('command-palette-input');
+        if (input) {
+          input.value = '';
+          input.focus();
+          renderCommandResults('');
+        }
+      }
+    };
+    
+    // Function to render command results based on search
+    function renderCommandResults(query) {
+      const resultsContainer = document.getElementById('command-palette-results');
+      if (!resultsContainer) return;
+      
+      // Clear results
+      resultsContainer.innerHTML = '';
+      
+      // Get commands
+      const commands = window.commandData || [];
+      
+      // Filter commands based on query
+      const filteredCommands = query ? 
+        commands.filter(cmd => 
+          cmd.title.toLowerCase().includes(query.toLowerCase()) ||
+          (cmd.section && cmd.section.toLowerCase().includes(query.toLowerCase()))
+        ) : 
+        commands;
+      
+      // Group by section
+      const sections = {};
+      filteredCommands.forEach(cmd => {
+        if (!sections[cmd.section]) {
+          sections[cmd.section] = [];
+        }
+        sections[cmd.section].push(cmd);
+      });
+      
+      // Render the sections
+      renderSections(sections, resultsContainer);
+      
+      // Show message if no results
+      if (Object.keys(sections).length === 0) {
+        const noResults = document.createElement('div');
+        noResults.className = 'command-palette-no-results';
+        noResults.textContent = 'No commands found';
+        resultsContainer.appendChild(noResults);
+      }
+    }
+    
+    // Helper function to render sections
+    function renderSections(sections, container) {
+      // Clear container first
+      container.innerHTML = '';
+      
+      // Create DOM elements for results
+      Object.keys(sections).forEach(section => {
+        const sectionEl = document.createElement('div');
+        sectionEl.className = 'command-palette-section';
+        
+        const sectionTitle = document.createElement('div');
+        sectionTitle.className = 'command-palette-section-title';
+        sectionTitle.textContent = section;
+        sectionEl.appendChild(sectionTitle);
+        
+        const commandsList = document.createElement('div');
+        commandsList.className = 'command-palette-commands';
+        
+        sections[section].forEach(cmd => {
+          const cmdEl = document.createElement('div');
+          cmdEl.className = 'command-palette-command';
+          
+          let cmdContent = `
+            <div class="command-palette-icon">${cmd.icon || ''}</div>
+            <div class="command-palette-title">${cmd.title}</div>
+          `;
+          
+          // Add excerpt for search results if available
+          if (cmd.excerpt) {
+            cmdContent += `<div class="command-palette-excerpt">${cmd.excerpt.substring(0, 120)}${cmd.excerpt.length > 120 ? '...' : ''}</div>`;
+          }
+          
+          cmdEl.innerHTML = cmdContent;
+          
+          cmdEl.addEventListener('click', function() {
+            if (typeof cmd.handler === 'function') {
+              document.getElementById('simple-command-palette').style.display = 'none';
+              cmd.handler();
+            }
+          });
+          
+          commandsList.appendChild(cmdEl);
+        });
+        
+        sectionEl.appendChild(commandsList);
+        container.appendChild(sectionEl);
+      });
+    }
+    
+    // Set up command palette functionality when DOM is loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      // Set up backdrop click to close
+      const backdrop = document.querySelector('.simple-command-palette-backdrop');
+      if (backdrop) {
+        backdrop.addEventListener('click', function() {
+          document.getElementById('simple-command-palette').style.display = 'none';
+        });
+      }
+      
+      // Set up input handler
+      const input = document.getElementById('command-palette-input');
+      if (input) {
+        input.addEventListener('input', function() {
+          renderCommandResults(this.value);
+        });
+        
+        // Handle keyboard navigation
+        input.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape') {
+            document.getElementById('simple-command-palette').style.display = 'none';
+          } else if (e.key === 'Enter') {
+            const selectedCommand = document.querySelector('.command-palette-command.selected');
+            if (selectedCommand) {
+              selectedCommand.click();
+            } else {
+              const firstCommand = document.querySelector('.command-palette-command');
+              if (firstCommand) {
+                firstCommand.click();
+              }
+            }
+          } else if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+            e.preventDefault();
+            
+            const commands = Array.from(document.querySelectorAll('.command-palette-command'));
+            if (commands.length === 0) return;
+            
+            const currentSelected = document.querySelector('.command-palette-command.selected');
+            let nextIndex = 0;
+            
+            if (currentSelected) {
+              const currentIndex = commands.indexOf(currentSelected);
+              currentSelected.classList.remove('selected');
+              
+              if (e.key === 'ArrowDown') {
+                nextIndex = (currentIndex + 1) % commands.length;
+              } else {
+                nextIndex = (currentIndex - 1 + commands.length) % commands.length;
+              }
+            } else {
+              nextIndex = e.key === 'ArrowDown' ? 0 : commands.length - 1;
+            }
+            
+            commands[nextIndex].classList.add('selected');
+            
+            // Ensure the selected element is visible in the scroll view
+            commands[nextIndex].scrollIntoView({
+              behavior: 'smooth',
+              block: 'nearest'
+            });
+          }
+        });
+      }
+      
+      // Register command palette keyboard shortcut
+      document.addEventListener('keydown', function(e) {
+        if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+          e.preventDefault();
+          window.openCommandPalette();
+        }
+      });
+      
+      // Make command palette button work
+      const commandPaletteBtn = document.getElementById('command-palette-btn');
+      if (commandPaletteBtn) {
+        commandPaletteBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          window.openCommandPalette();
+        });
+      }
+      
+      // Show appropriate shortcut text based on platform
+      const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
+      document.querySelectorAll('.mac-theme-text').forEach(el => {
+        el.style.display = isMac ? 'inline' : 'none';
+      });
+      document.querySelectorAll('.default-theme-text').forEach(el => {
+        el.style.display = isMac ? 'none' : 'inline';
+      });
     });
   </script>
 </body>
