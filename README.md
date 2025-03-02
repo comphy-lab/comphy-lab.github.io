@@ -19,7 +19,8 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 ├── _layouts                   # Page templates
 │   ├── default.html           # Base layout
 │   ├── research.html          # Research page layout
-│   ├── teaching.html          # Teaching page layout
+│   ├── teaching.html          # Teaching page layout (for main teaching page with course listing)
+│   ├── teaching-course.html   # Individual course page layout (without sorting functionality)
 │   └── team.html              # Team page layout
 ├── _research                  # Research project and publication entries
 ├── _team                      # Team member profiles
@@ -32,11 +33,12 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 │   │   ├── research.css      # Research page styles
 │   │   ├── teaching.css      # Teaching page styles
 │   │   ├── team.css          # Team page styles
-│   │   └── search.css        # Search functionality styles
+│   │   └── command-palette.css # Command palette styles (⌘/)
 │   ├── js                    # JavaScript files
 │   │   ├── main.js          # Main JavaScript
-│   │   ├── search.js        # Search functionality
-│   │   └── search_db.json   # Generated search database
+│   │   ├── command-data.js  # Command palette data and functionality
+│   │   ├── shortcut-key.js  # Platform detection for shortcuts
+│   │   └── search_db.json   # Generated search database (used by command palette)
 │   ├── favicon              # Favicon files
 │   └── img                  # Image assets
 │       └── teaching         # Teaching images
@@ -177,16 +179,16 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 1. **Main Teaching Page**
    - Located at `_teaching/index.md`
    - Lists all available courses
-   - Uses the teaching layout
+   - Uses the `teaching` layout with sorting functionality
 
 2. **Individual Course Pages**
    - Located in `_teaching/` directory (e.g., `_teaching/2025-Basilisk101-Madrid.md`)
-   - Use the teaching layout
+   - Use the `teaching-course` layout (optimized for single course display without sorting functionality)
    - Follow this basic format:
    
    ```markdown
    ---
-   layout: teaching
+   layout: teaching-course
    title: "Course Title"
    permalink: /teaching/course-permalink
    ---
@@ -223,29 +225,71 @@ The website includes a powerful search feature that allows users to:
 - Get instant search results with highlighted matching text
 - See match percentage for each result
 - Navigate directly to specific sections using anchor links
+- Access search via keyboard shortcut (⌘K on Mac, ctrl+K on Windows) or by clicking the magnifying glass icon in the navigation
 
 Search results are prioritized and filtered as follows:
 1. Team Members (highest priority)
    - Direct matches in names
    - Research interests and affiliations
    - Social media links and profile information
-2. Research Papers
+2. Teaching Content
+   - Course titles and descriptions
+   - Course details (dates, locations, prerequisites)
+   - Course schedules and topics
+3. Research Papers
    - Titles and authors
    - Tags and categories
-3. Blog Posts from blogs.comphy-lab.org
-4. Regular content (headings and paragraphs)
+4. Blog Posts from [blogs.comphy-lab.org](https://blogs.comphy-lab.org)
+   - Indexed directly from the GitHub repository (comphy-lab/CoMPhy-Lab-Blogs)
+   - Only indexes markdown files where the publish flag is not set to false
+   - Excludes todo markdown files (case-insensitive)
+   - Updated automatically every 12 hours via GitHub Actions
+5. Regular content (headings and paragraphs)
 
-Search behavior and restrictions:
+### Command Palette Functionality
+The website includes a command palette feature that provides quick access to actions and navigation through keyboard shortcuts:
+
+- **Keyboard Shortcut**: Access via ⌘/ on Mac, ctrl+/ on Windows, or by clicking the terminal icon in the navigation
+- **Navigation Commands**: Quickly navigate to any section of the website
+- **External Link Commands**: Direct access to GitHub, Google Scholar, YouTube, and Bluesky
+- **Tool Commands**: Search, scroll to top/bottom, and other utility functions
+- **Context-Aware Commands**: Additional commands appear based on current page
+- **Search Integration**: Search the site content directly from the command palette
+- **Keyboard Navigation**: Use arrow keys to navigate through commands, Enter to select, and Esc to close
+
+Key features:
+- Custom implementation with vanilla JavaScript for better control and performance
+- Different visual styling from search to avoid confusion (indigo accent color vs blue for search)
+- Grouping of commands by section for easy discoverability
+- Shortcuts for common tasks (g h = go home, g r = go to research, etc.)
+- Full keyboard navigation with arrow keys, Enter, and Escape
+- Integrated search functionality that searches the site content
+- Footer with keyboard shortcut hints for better usability
+
+The command palette is built with:
+- Custom vanilla JavaScript implementation
+- Responsive and accessible design
+- Integration with the site search database for content discovery
+- Complete keyboard navigation support
+
+Files:
+- `/assets/js/command-data.js`: Defines all available commands and search database integration
+- `/assets/css/command-palette.css`: Styling for the command palette
+
+Search behavior and features:
 - Minimum query length: 2 characters
-- Shows only top 5 most relevant results
-- Requires at least 50% of query words to match
-- Prioritizes matches near the start of content
-- Properly renders markdown and HTML in results
+- Keyboard shortcut (⌘K / ctrl+K) opens a command palette style search interface on all pages
+- Magnifying glass icon in navigation opens the search interface when clicked
+- Search input in navigation shows the full "⌘K (search)" text by default
+- Custom command palette implementation provides a modern command palette experience
+- Search results appear instantly as you type
+- Results are ranked by relevance and match percentage
 
 The search database is automatically generated during the build process by `scripts/generate_search_db.rb`. This script:
 - Indexes all HTML and markdown content
-- Identifies and prioritizes team members and research papers
+- Identifies and prioritizes team members, teaching content, and research papers
 - Extracts tags from research papers
+- Processes teaching pages and course details
 - Fetches and indexes blog posts from blogs.comphy-lab.org
 - Generates a JSON database used by the search functionality
 
@@ -359,3 +403,28 @@ To submit a PR:
 4. Create a PR using the template
 5. Link any related issues
 6. Wait for review
+
+3. **Blog Content Indexing**
+   - Blog content from [blogs.comphy-lab.org](https://blogs.comphy-lab.org) is now indexed directly from the GitHub repository
+   - Source: [comphy-lab/CoMPhy-Lab-Blogs](https://github.com/comphy-lab/CoMPhy-Lab-Blogs)
+   - Filtering criteria:
+     - Only indexes markdown files where `publish: false` is NOT set in frontmatter
+     - Automatically excludes any files with "todo" in the filename (case-insensitive)
+   - The search index is automatically updated:
+     - Every 12 hours via GitHub Actions
+     - When changes are pushed to markdown or HTML files
+     - Can be manually triggered from the Actions tab
+   - To manually update the search index locally:
+     ```bash
+     # From the project root directory
+     cd scripts
+     npm install
+     node fetch_github_blog_content.js
+     cd ..
+     ruby scripts/generate_search_db.rb
+     ```
+   - This approach improves search quality by:
+     - Accessing the raw markdown directly from the source
+     - Respecting publish status in frontmatter
+     - Processing content in a more structured way
+     - Avoiding web scraping issues or rate limits

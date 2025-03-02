@@ -10,7 +10,7 @@ on:
       - '**/*.md'
       - '**/*.html'
       - 'scripts/generate_search_db.rb'
-      - 'scripts/fetch_blog_content.js'
+      - 'scripts/fetch_github_blog_content.js'
       - 'scripts/package.json'
 
 # Add permissions needed for the workflow
@@ -24,8 +24,6 @@ jobs:
     env:
       NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       NPM_CONFIG_CACHE: ${{ github.workspace }}/.npm
-      PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 'true'
-      PUPPETEER_EXECUTABLE_PATH: '/usr/bin/google-chrome'
     
     steps:
     - uses: actions/checkout@v4
@@ -45,17 +43,7 @@ jobs:
         cache: 'npm'
         cache-dependency-path: 'scripts/package.json'
         registry-url: 'https://registry.npmjs.org'
-
-    - name: Install Chrome and dependencies
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y wget gnupg
-        wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-        echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
-        sudo apt-get update
-        sudo apt-get install -y google-chrome-stable
-        google-chrome --version
-        
+    
     - name: Install Ruby dependencies
       run: |
         gem install bundler
@@ -68,10 +56,10 @@ jobs:
         cd scripts
         npm install
     
-    - name: Fetch blog content
+    - name: Fetch blog content from GitHub repository
       run: |
         cd scripts
-        node fetch_blog_content.js
+        node fetch_github_blog_content.js
     
     - name: Generate search database
       run: ruby scripts/generate_search_db.rb

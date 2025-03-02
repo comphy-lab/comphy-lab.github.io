@@ -4,9 +4,13 @@
   "description": "Blog content crawler for CoMPhy Lab website",
   "private": true,
   "scripts": {
-    "fetch": "node fetch_blog_content.js"
+    "fetch": "node fetch_blog_content.js",
+    "fetch-github": "node fetch_github_blog_content.js"
   },
   "dependencies": {
+    "gray-matter": "^4.0.3"
+  },
+  "optionalDependencies": {
     "puppeteer": "^22.0.0"
   },
   "engines": {

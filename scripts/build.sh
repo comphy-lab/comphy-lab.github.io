@@ -9,6 +9,18 @@ echo "Starting build process..."
 echo "Installing dependencies..."
 bundle install
 
+# Install Node.js dependencies for blog content fetching
+echo "Installing Node.js dependencies..."
+cd scripts
+npm install
+cd ..
+
+# Fetch blog content from GitHub repository
+echo "Fetching blog content from GitHub repository..."
+cd scripts
+npm run fetch-github
+cd ..
+
 # Build the Jekyll site
 echo "Building Jekyll site..."
 JEKYLL_ENV=production bundle exec jekyll build
