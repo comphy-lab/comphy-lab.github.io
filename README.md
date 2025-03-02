@@ -19,7 +19,8 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 ├── _layouts                   # Page templates
 │   ├── default.html           # Base layout
 │   ├── research.html          # Research page layout
-│   ├── teaching.html          # Teaching page layout
+│   ├── teaching.html          # Teaching page layout (for main teaching page with course listing)
+│   ├── teaching-course.html   # Individual course page layout (without sorting functionality)
 │   └── team.html              # Team page layout
 ├── _research                  # Research project and publication entries
 ├── _team                      # Team member profiles
@@ -178,16 +179,16 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 1. **Main Teaching Page**
    - Located at `_teaching/index.md`
    - Lists all available courses
-   - Uses the teaching layout
+   - Uses the `teaching` layout with sorting functionality
 
 2. **Individual Course Pages**
    - Located in `_teaching/` directory (e.g., `_teaching/2025-Basilisk101-Madrid.md`)
-   - Use the teaching layout
+   - Use the `teaching-course` layout (optimized for single course display without sorting functionality)
    - Follow this basic format:
    
    ```markdown
    ---
-   layout: teaching
+   layout: teaching-course
    title: "Course Title"
    permalink: /teaching/course-permalink
    ---
