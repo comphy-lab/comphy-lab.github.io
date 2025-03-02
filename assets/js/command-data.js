@@ -493,7 +493,7 @@
     else if (currentPath.includes('/team')) {
       contextCommands = [
         {
-          id: "email-team",
+          id: "contact-team",
           title: "Contact Team",
           handler: () => { window.location.href = '/join'; },
           section: "Page Actions",
