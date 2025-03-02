@@ -113,8 +113,12 @@
         const searchInput = document.getElementById('searchInput');
         if (searchInput) {
           searchInput.focus();
-          const searchModal = document.querySelector('ninja-keys#search-modal');
-          if (searchModal) searchModal.open();
+          const searchModal = document.querySelector('.simple-command-palette');
+          if (searchModal) {
+            searchModal.classList.add('visible');
+            const searchModalInput = searchModal.querySelector('input');
+            if (searchModalInput) searchModalInput.focus();
+          }
         }
       },
       section: "Tools",

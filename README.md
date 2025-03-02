@@ -32,18 +32,12 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 │   │   ├── research.css      # Research page styles
 │   │   ├── teaching.css      # Teaching page styles
 │   │   ├── team.css          # Team page styles
-│   │   ├── search.css        # Search functionality styles
-│   │   └── search-modal.css  # Cmd+K search modal styles
+│   │   └── command-palette.css # Command palette styles (⌘/)
 │   ├── js                    # JavaScript files
 │   │   ├── main.js          # Main JavaScript
-│   │   ├── search.js        # Search functionality
-│   │   ├── search-data.js   # Cmd+K search data converter
-│   │   ├── search-setup.js  # Cmd+K search initialization
+│   │   ├── command-data.js  # Command palette data and functionality
 │   │   ├── shortcut-key.js  # Platform detection for shortcuts
-│   │   ├── search_db.json   # Generated search database
-│   │   └── search           # Search libraries
-│   │       ├── ninja-keys.min.js       # NinjaKeys command palette
-│   │       └── hotkeys-js              # Keyboard shortcut library
+│   │   └── search_db.json   # Generated search database (used by command palette)
 │   ├── favicon              # Favicon files
 │   └── img                  # Image assets
 │       └── teaching         # Teaching images
@@ -257,6 +251,7 @@ The website includes a command palette feature that provides quick access to act
 - **Context-Aware Commands**: Additional commands appear based on current page
 - **Recent Commands**: Track and display recently used commands
 - **Help**: View all available keyboard shortcuts with the "?" command
+- **Keyboard Navigation**: Use arrow keys to navigate through commands, Enter to select, and Esc to close
 
 Key features:
 - Different visual styling from search to avoid confusion (indigo accent color vs blue for search)
@@ -264,24 +259,25 @@ Key features:
 - Shortcuts for common tasks (g h = go home, g r = go to research, etc.)
 - Comprehensive shortcut help accessible through the "?" command
 - Command history that remembers your frequently used commands
+- Full keyboard navigation with arrow keys, Enter, and Escape
+- Integrated search functionality that searches the site content
 
 The command palette is built with:
-- NinjaKeys library for the palette UI (/assets/js/search/ninja-keys.min.js)
-- HotKeys.js for keyboard shortcut handling (/assets/js/search/hotkeys-js/hotkeys.esm.min.js)
-- Custom styling and functionality specific to the website
+- Custom vanilla JavaScript implementation
+- Responsive and accessible design
+- Integration with the site search database for content discovery
+- Complete keyboard navigation support
 
 Files:
-- `/assets/js/command-data.js`: Defines all available commands
-- `/assets/js/command-palette-setup.js`: Initializes and manages the command palette
+- `/assets/js/command-data.js`: Defines all available commands and search database integration
 - `/assets/css/command-palette.css`: Styling for the command palette
-- `/assets/js/shortcut-key.js`: Detects Mac vs Windows for shortcut display
 
 Search behavior and features:
 - Minimum query length: 2 characters
 - Keyboard shortcut (⌘K / ctrl+K) opens a command palette style search interface on all pages
 - Magnifying glass icon in navigation opens the search interface when clicked
 - Search input in navigation shows the full "⌘K (search)" text by default
-- NinjaKeys integration provides a modern command palette experience
+- Custom command palette implementation provides a modern command palette experience
 - Search results appear instantly as you type
 - Results are ranked by relevance and match percentage
 
