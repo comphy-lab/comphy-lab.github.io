@@ -14,7 +14,8 @@
   <!-- Font dependencies -->
   <link rel="stylesheet" href="/assets/css/fontello/css/fontello.css">
   <link rel="stylesheet" href="/assets/css/academicons-1.7.0/css/academicons.min.css">
-  <!-- Site styles -->
+  
+  <!-- Site styles - moved before preload tags to prioritize loading -->
   <link rel="stylesheet" href="/assets/css/vendor.css">
   <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="stylesheet" href="/assets/css/team.css">
@@ -53,7 +54,6 @@
   </script>
 
   <!-- Preload critical assets -->
-  <link rel="preload" as="style" href="/assets/css/styles.css">
   <link rel="preload" as="script" href="/assets/js/main.js">
   
   <!-- Preconnect to external domains -->
@@ -251,14 +251,59 @@
             <span class="gray">4. <span class="bold">Places</span> where we have visited for conferences (no talks) in gray</span>.
           </p>
           <div class="map-container">
-            <iframe src="https://www.google.nl/maps/d/u/0/embed?mid=1Q3oMIgCTo6VpokHytehTMhj4UVKF5Bc&ehbc=2E312F&noprof=1&z=3&ll=42,-10" 
+            <div id="team-map" style="width:100%; height:480px; border:0;">
+              <!-- Map will be loaded here -->
+              <div style="display:flex; align-items:center; justify-content:center; height:100%; background-color:#f5f5f5;">
+                <p>Loading map...</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Google Maps async loading script -->
+          <script>
+            // Create a more reliable approach to load the map
+            document.addEventListener('DOMContentLoaded', function() {
+              const mapContainer = document.querySelector('.map-container');
+              const teamMap = document.getElementById('team-map');
+              
+              if (!mapContainer || !teamMap) return;
+              
+              // Function to load the map iframe directly
+              function loadMapIframe() {
+                teamMap.innerHTML = `
+                  <iframe 
+                    src="https://www.google.nl/maps/d/u/0/embed?mid=1Q3oMIgCTo6VpokHytehTMhj4UVKF5Bc&ehbc=2E312F&noprof=1&z=3&ll=42,-10" 
                     width="100%" 
-                    height="480" 
+                    height="100%" 
                     style="border:0;" 
                     allowfullscreen="" 
-                    loading="lazy">
-            </iframe>
-          </div>
+                    loading="lazy"
+                    title="CoMPhy Lab - Team, Collaborators and Conference Visits"
+                    referrerpolicy="no-referrer-when-downgrade">
+                  </iframe>
+                `;
+              }
+              
+              // Only load the map when it's about to come into view
+              if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                  entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                      // Load iframe directly without Google Maps API
+                      loadMapIframe();
+                      observer.disconnect();
+                    }
+                  });
+                }, { rootMargin: '200px' });
+                
+                observer.observe(mapContainer);
+              } else {
+                // Fallback for browsers without IntersectionObserver
+                // Add a slight delay to not block page rendering
+                setTimeout(loadMapIframe, 1000);
+              }
+            });
+          </script>
         </div>
       </div>
     </section>
