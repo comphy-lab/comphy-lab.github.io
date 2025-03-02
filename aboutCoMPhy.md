@@ -23,7 +23,7 @@ Feel free to contact us for discussions about our work or anything else related 
 
 <div class="email-container">
     <span class="email-text">vatsalsy@comphy-lab.org</span>
-    <button class="copy-btn" onclick="copyEmail(this)" data-text="vatsalsy@comphy-lab.org">
+    <button class="copy-btn" onclick="copyEmail(this)" data-text="vatsalsy@comphy-lab.org" aria-label="Copy email address vatsalsy@comphy-lab.org">
         <i class="fas fa-copy"></i>
     </button>
 </div>
