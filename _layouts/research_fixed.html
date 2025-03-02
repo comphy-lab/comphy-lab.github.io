@@ -400,6 +400,13 @@
               <div class="command-palette-title">${cmd.title}</div>
             `;
             
+            // Add shortcut if available
+            if (cmd.shortcuts && cmd.shortcuts.length > 0) {
+              cmdContent += `<div class="command-palette-shortcut">
+                ${cmd.shortcuts[0].split(' ').map(key => `<kbd>${key}</kbd>`).join(' ')}
+              </div>`;
+            }
+            
             // Add excerpt for search results if available
             if (cmd.excerpt) {
               cmdContent += `<div class="command-palette-excerpt">${cmd.excerpt.substring(0, 120)}${cmd.excerpt.length > 120 ? '...' : ''}</div>`;
@@ -481,6 +488,58 @@
                 behavior: 'smooth',
                 block: 'nearest'
               });
+            } else {
+              // Check for keyboard shortcuts
+              const key = e.key.toLowerCase();
+              
+              // If input field is empty and key is a letter, check for shortcuts
+              if (input.value === '' && /^[a-z]$/.test(key)) {
+                const allCommands = window.commandData || [];
+                
+                // Look for shortcuts that start with this key
+                const matchingCommands = allCommands.filter(cmd => 
+                  cmd.shortcuts && cmd.shortcuts.some(shortcut => 
+                    shortcut.startsWith(key)
+                  )
+                );
+                
+                // If there are matching commands, filter the command palette to show them
+                if (matchingCommands.length > 0) {
+                  // Update input to show the key
+                  input.value = key;
+                  // Filter to show commands that start with this shortcut
+                  renderCommandResults(key);
+                  
+                  // Set a one-time event listener for the next key in the sequence
+                  const handleNextKey = function(e2) {
+                    const nextKey = e2.key.toLowerCase();
+                    
+                    // If key is a letter, check for matches
+                    if (/^[a-z]$/.test(nextKey)) {
+                      const sequence = key + ' ' + nextKey;
+                      
+                      // Find commands that match this sequence
+                      const exactMatch = allCommands.find(cmd => 
+                        cmd.shortcuts && cmd.shortcuts.includes(sequence)
+                      );
+                      
+                      if (exactMatch) {
+                        // Execute the matching command
+                        document.getElementById('simple-command-palette').style.display = 'none';
+                        if (typeof exactMatch.handler === 'function') {
+                          exactMatch.handler();
+                        }
+                      }
+                    }
+                    
+                    // Remove this event listener after handling the next key
+                    input.removeEventListener('keydown', handleNextKey);
+                  };
+                  
+                  // Add the one-time listener for the next key
+                  input.addEventListener('keydown', handleNextKey);
+                }
+              }
             }
           });
         }

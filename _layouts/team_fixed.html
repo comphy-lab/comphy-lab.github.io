@@ -4,27 +4,108 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="base-url" content="{{ site.baseurl }}">
-  <title>{{ page.title }} - {{ site.title }}</title>
+  <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+
+  <!-- Critical CSS for fastest paint -->
+  <style>
+    .s-intro__title {
+      visibility: visible;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    .s-header {
+      visibility: visible;
+    }
+    .s-header__logo img {
+      max-height: 48px;
+      width: auto;
+    }
+  </style>
+
+  <!-- Preload critical resources -->
+  <link rel="preload" href="/assets/css/styles.css" as="style">
+  <link rel="preload" href="/assets/js/main.js" as="script">
+  <link rel="preload" href="/assets/css/fontello/css/fontello.css" as="style">
+  <link rel="preload" href="/assets/css/academicons-1.7.0/css/academicons.min.css" as="style">
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-title" content="CoMPhy Lab">
+  <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+
+  <!-- Font dependencies with font-display: swap -->
+  <style>
+    @font-face {
+      font-display: swap;
+    }
+  </style>
+  <link rel="stylesheet" href="/assets/css/fontello/css/fontello.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/assets/css/academicons-1.7.0/css/academicons.min.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="/assets/css/fontello/css/fontello.css">
+    <link rel="stylesheet" href="/assets/css/academicons-1.7.0/css/academicons.min.css">
+  </noscript>
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/assets/css/vendor.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/command-palette.css" media="print" onload="this.media='all'">
+
+  <!-- Simple command palette initialization -->
+  <script>
+    // Make the command palette opening function globally available
+    window.openCommandPalette = function() {
+      const palette = document.getElementById('simple-command-palette');
+      if (palette) {
+        palette.style.display = 'block';
+        const input = document.getElementById('command-palette-input');
+        if (input) {
+          input.value = '';
+          input.focus();
+          if (typeof renderCommandResults === 'function') {
+            renderCommandResults('');
+          }
+        }
+      }
+    };
+    
+    // Ensure search database is preloaded for command palette search functionality
+    window.addEventListener('DOMContentLoaded', function() {
+      // Try to prefetch the search database if it exists
+      fetch('/assets/js/search_db.json').then(response => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error('Search database not found');
+      }).then(data => {
+        console.log('Search database prefetched for command palette');
+        window.searchData = data;
+      }).catch(err => {
+        console.warn('Could not prefetch search database for command palette:', err.message);
+      });
+    });
+  </script>
+
+  <!-- JavaScript dependencies -->
+  <script defer src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+  <script defer src="/assets/js/main.js"></script>
+  <script defer src="/assets/js/command-data.js"></script>
 
   <script>
     document.documentElement.classList.remove('no-js');
     document.documentElement.classList.add('js');
   </script>
-
-  <!-- Font dependencies -->
-  <link rel="stylesheet" href="/assets/css/fontello/css/fontello.css">
-  <link rel="stylesheet" href="/assets/css/academicons-1.7.0/css/academicons.min.css">
-  <!-- Site styles -->
-  <link rel="stylesheet" href="/assets/css/vendor.css">
-  <link rel="stylesheet" href="/assets/css/styles.css">
-  <link rel="stylesheet" href="/assets/css/team.css">
-  <link rel="stylesheet" href="/assets/css/command-palette.css">
-
   <script>
     // Check if we're on localhost
     if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
       // Load only specific Font Awesome icons for local development
-      var icons = ['github', 'search', 'arrow-up-right-from-square', 'bluesky', 'youtube', 'arrow-up', 'calendar-days', 'location-dot', 'clock'];
+      var icons = ['github', 'search', 'arrow-up-right-from-square', 'bluesky', 'youtube', 'arrow-up'];
       var link = document.createElement('link');
       link.rel = 'stylesheet';
       link.href = 'https://use.fontawesome.com/releases/v6.7.2/css/solid.css';
@@ -52,42 +133,6 @@
     }
   </script>
 
-  <!-- Preload critical assets -->
-  <link rel="preload" as="style" href="/assets/css/styles.css">
-  <link rel="preload" as="script" href="/assets/js/main.js">
-  
-  <!-- Preconnect to external domains -->
-  <link rel="preconnect" href="https://github.com">
-
-  <!-- Preload first few team member images -->
-  {% assign content_html = content | markdownify %}
-  {% assign sections = content_html | split: '<h1' %}
-  {% assign first_section = sections[1] | split: '</h1>' %}
-  {% assign first_members = first_section[1] | split: '<h2' %}
-  {% for member in first_members limit:3 %}
-    {% if member contains '<img' %}
-      {% assign image_src = member | split: 'src="' | last | split: '"' | first %}
-      <link rel="preload" as="image" href="{{ image_src }}" fetchpriority="high">
-    {% endif %}
-  {% endfor %}
-
-  <!-- Favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
-  <link rel="manifest" href="/assets/favicon/site.webmanifest">
-  <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
-  <meta name="apple-mobile-web-app-title" content="CoMPhy Lab">
-  <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
-
-  <!-- Font dependencies with font-display: swap -->
-  <style>
-    @font-face {
-      font-display: swap;
-    }
-  </style>
 </head>
 <body id="top">
 
@@ -162,7 +207,7 @@
         <ul class="s-header__nav-list">
           <li style="background: none;"><a href="https://scholar.google.com/citations?user=tHb_qZoAAAAJ&hl=en" style="background: none; padding: 0;"><i class="ai ai-google-scholar" style="font-size: 1.75em;"></i></a></li>
           <li style="background: none;"><a href="https://github.com/comphy-lab" style="background: none; padding: 0;"><i class="fa-brands fa-github" style="font-size: 1.75em"></i></a></li>
-          <li><a href="/#about" class="smoothscroll">About</a></li>
+          <li><a href="#about" class="smoothscroll">About</a></li>
           <li><a href="/team/">Team</a></li>
           <li><a href="/research">Research</a></li>
           <li><a href="/teaching">Teaching</a></li>
@@ -182,255 +227,56 @@
         </ul>
       </nav>
     </header>
+  <!-- Main content -->
+  {{ content }}
 
-    <!-- Team Section -->
-    <section class="s-team">
-      <div class="s-team__desc">
-        <h1>{{ page.title }}</h1>
-      </div>
-      
-      {% assign content_html = content | markdownify %}
-      {% assign sections = content_html | split: '<h1' %}
-      
-      {% for section in sections offset:1 %}
-        {% assign section_content = section | split: '</h1>' %}
-        {% assign section_title = section_content[0] | split: '>' | last %}
-        {% assign section_members = section_content[1] | split: '<h2' %}
-        
-        <div class="team-section">
-          <h1>{{ section_title }}</h1>
-          <div class="team-grid">
-            {% for member in section_members offset:1 %}
-              <div class="team-member">
-                {% assign member_content = member | split: '</h2>' %}
-                {% assign member_name = member_content[0] | split: '>' | last %}
-                {% assign member_details = member_content[1] %}
-                
-                {% if member_details contains '<img' %}
-                  {% assign image_parts = member_details | split: '<img' %}
-                  {% assign image_tag = image_parts[1] | split: '>' | first %}
-                  {% assign image_src = image_tag | split: 'src="' | last | split: '"' | first %}
-                  {% assign image_alt = image_tag | split: 'alt="' | last | split: '"' | first %}
-                  <div class="member-image">
-                    {% assign forloop_index = forloop.index | plus: 0 %}
-                    <img src="{{ image_src }}"
-                         alt="{{ image_alt }}"
-                         width="200"
-                         height="200"
-                         loading="{% if forloop_index <= 3 %}eager{% else %}lazy{% endif %}"
-                         fetchpriority="{% if forloop_index <= 3 %}high{% else %}auto{% endif %}"
-                         decoding="{% if forloop_index <= 3 %}sync{% else %}async{% endif %}"
-                         onload="this.classList.add('loaded'); this.parentElement.classList.add('loaded')"
-                         onerror="this.parentElement.classList.add('error')"
-                         class="team-photo">
-                  </div>
-                  {% assign member_details = member_details | replace_first: image_tag, '' | replace: '<img>', '' | replace: '<img', '' %}
-                {% endif %}
-                
-                <div class="member-content">
-                  <h2>{{ member_name }}</h2>
-                  {{ member_details }}
-                </div>
-              </div>
-            {% endfor %}
-          </div>
-        </div>
-      {% endfor %}
-    </section>
+  <footer class="site-footer">
+    <div class="footer-left">
+      <a href="http://basilisk.fr/sandbox/vatsal/" target="_blank">
+        <img src="/assets/logos/logoBasilisk_TransparentBackground.png" alt="Basilisk C" class="footer-logo">
+      </a>
+      <a href="https://pof.tnw.utwente.nl/" target="_blank">
+        <img src="/assets/logos/LogoPof_transparent_white.png" alt="Physics of Fluids" class="footer-logo pof-logo">
+      </a>
+      <a href="https://www.utwente.nl/" target="_blank">
+        <img src="/assets/logos/UT_Logo_2400_Sta_White_EN.png" alt="University of Twente" class="footer-logo">
+      </a>
+      <a href="https://www.vatsalsanjay.com/" target="_blank">
+        <img src="/assets/logos/Logo_Vatsal_v3_OutLine.png" alt="Vatsal Sanjay" class="footer-logo">
+      </a>
+    </div>
+    <div class="footer-center">
+      <p class="copyright-text">
+        &copy; Copyright<br>
+        CoMPhy Lab 2025
+      </p>
+    </div>
+    <div class="footer-right">
+      <a href="https://scholar.google.com/citations?user=tHb_qZoAAAAJ&hl=en" target="_blank">
+        <i class="ai ai-google-scholar" style="font-size: 2.5em; color: white;"></i>
+      </a>
+      <a href="https://github.com/comphy-lab" target="_blank">
+        <i class="fa-brands fa-github" style="font-size: 2.5em; color: white;"></i>
+      </a>
+      <a href="https://www.youtube.com/@CoMPhyLab" target="_blank">
+        <i class="fa-brands fa-youtube" style="font-size: 2.5em; color: white;"></i>
+      </a>
+      <a href="https://bsky.app/profile/comphy-lab.org" target="_blank">
+        <i class="fa-brands fa-bluesky" style="font-size: 2.5em; color: white;"></i>
+      </a>
+      <a href="https://github.com/comphy-lab/comphy-lab.github.io" class="edit-link">
+        <i class="fa-brands fa-github"></i> Edit this page
+      </a>
+    </div>
+    <div class="ss-go-top">
+      <a class="smoothscroll" title="Back to Top" href="#top">
+          <i class="fa-solid fa-arrow-up"></i>
+       </a>
+    </div> <!-- end ss-go-top -->
+  </footer>
+  </div>  
 
-    <!-- Map Section -->
-    <section class="s-map">
-      <div class="row">
-        <div class="column">
-          <h2>Team, collaborators, and Conference visits</h2>
-          <p class="map-description">
-            The locations marked on this map meet one of three criteria (in the order of preference): 
-            <span class="orange">1. <span class="bold">Hometown</span> of our team members (including alumni) in orange</span>, 
-            <span class="green">2. <span class="bold">Base location</span> of our collaborators in green</span>,
-            <span class="purple">3. <span class="bold">Places</span> where we have presented talks in purple</span>, or
-            <span class="gray">4. <span class="bold">Places</span> where we have visited for conferences (no talks) in gray</span>.
-          </p>
-          <div class="map-container">
-            <iframe src="https://www.google.nl/maps/d/u/0/embed?mid=1Q3oMIgCTo6VpokHytehTMhj4UVKF5Bc&ehbc=2E312F&noprof=1&z=3&ll=42,-10" 
-                    width="100%" 
-                    height="480" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy">
-            </iframe>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer class="site-footer">
-      <div class="footer-left">
-        <a href="http://basilisk.fr/sandbox/vatsal/" target="_blank">
-          <img src="/assets/logos/logoBasilisk_TransparentBackground.png" alt="Basilisk C" class="footer-logo">
-        </a>
-        <a href="https://pof.tnw.utwente.nl/" target="_blank">
-          <img src="/assets/logos/LogoPof_transparent_white.png" alt="Physics of Fluids" class="footer-logo pof-logo">
-        </a>
-        <a href="https://www.utwente.nl/" target="_blank">
-          <img src="/assets/logos/UT_Logo_2400_Sta_White_EN.png" alt="University of Twente" class="footer-logo">
-        </a>
-        <a href="https://www.vatsalsanjay.com/" target="_blank">
-          <img src="/assets/logos/Logo_Vatsal_v3_OutLine.png" alt="Vatsal Sanjay" class="footer-logo">
-        </a>
-      </div>
-      <div class="footer-center">
-        <p class="copyright-text">
-          &copy; Copyright<br>
-          CoMPhy Lab 2025
-        </p>
-      </div>
-      <div class="footer-right">
-        <a href="https://scholar.google.com/citations?user=tHb_qZoAAAAJ&hl=en" target="_blank">
-          <i class="ai ai-google-scholar" style="font-size: 2.5em; color: white;"></i>
-        </a>
-        <a href="https://github.com/comphy-lab" target="_blank">
-          <i class="fa-brands fa-github" style="font-size: 2.5em; color: white;"></i>
-        </a>
-        <a href="https://www.youtube.com/@CoMPhyLab" target="_blank">
-          <i class="fa-brands fa-youtube" style="font-size: 2.5em; color: white;"></i>
-        </a>
-        <a href="https://bsky.app/profile/comphy-lab.org" target="_blank">
-          <i class="fa-brands fa-bluesky" style="font-size: 2.5em; color: white;"></i>
-        </a>
-        <a href="https://github.com/comphy-lab/comphy-lab.github.io" class="edit-link">
-          <i class="fa-brands fa-github"></i> Edit this page
-        </a>
-      </div>
-      <div class="ss-go-top">
-        <a class="smoothscroll" title="Back to Top" href="#top">
-            <i class="fa-solid fa-arrow-up"></i>
-         </a>
-      </div> <!-- end ss-go-top -->
-    </footer>
-
-  <!-- Core scripts -->
-  <script defer src="/assets/js/main.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <!-- Search dependencies -->
-  <script defer src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Add IDs to all h2 headings that don't have them
-      document.querySelectorAll('h2').forEach(heading => {
-        if (!heading.id) {
-          // Create ID from heading text
-          const id = heading.textContent
-            .toLowerCase()
-            .trim()
-            .replace(/[^a-z0-9]+/g, '-');
-          heading.id = id;
-        }
-      });
-
-      // If there's a hash in the URL, scroll to it after a brief delay
-      if (window.location.hash) {
-        setTimeout(() => {
-          const element = document.querySelector(window.location.hash);
-          if (element) {
-            // Get the header height
-            const header = document.querySelector('.s-header');
-            const headerHeight = header ? header.offsetHeight : 0;
-            
-            // Get the element's position
-            const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-            
-            // Scroll to element with offset for header
-            window.scrollTo({
-              top: elementPosition - headerHeight - 20, // 20px extra padding
-              behavior: 'smooth'
-            });
-          }
-        }, 100);
-      }
-    });
-  </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Handle image loading
-      const images = document.querySelectorAll('.team-photo');
-      const maxRetries = 3;
-      
-      images.forEach(img => {
-        let retries = 0;
-        
-        function tryLoadImage() {
-          if (retries < maxRetries && !img.classList.contains('loaded')) {
-            retries++;
-            img.src = img.src + '?' + new Date().getTime(); // Cache bust
-          }
-        }
-        
-        // Retry on error
-        img.addEventListener('error', () => {
-          setTimeout(tryLoadImage, 1000 * retries); // Exponential backoff
-        });
-        
-        // Force load if image is in viewport
-        if ('IntersectionObserver' in window) {
-          const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting && !img.classList.contains('loaded')) {
-                tryLoadImage();
-              }
-            });
-          });
-          observer.observe(img);
-        }
-      });
-      
-      // Rest of your existing DOMContentLoaded code...
-    });
-  </script>
-  
-  <!-- Schedule Container Script -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Handle image loading
-      const images = document.querySelectorAll('.team-photo');
-      const maxRetries = 3;
-      
-      images.forEach(img => {
-        let retries = 0;
-        
-        function tryLoadImage() {
-          if (retries < maxRetries && !img.classList.contains('loaded')) {
-            retries++;
-            img.src = img.src + '?' + new Date().getTime(); // Cache bust
-          }
-        }
-        
-        // Retry on error
-        img.addEventListener('error', () => {
-          setTimeout(tryLoadImage, 1000 * retries); // Exponential backoff
-        });
-        
-        // Force load if image is in viewport
-        if ('IntersectionObserver' in window) {
-          const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting && !img.classList.contains('loaded')) {
-                tryLoadImage();
-              }
-            });
-          });
-          observer.observe(img);
-        }
-      });
-      
-      // Rest of your existing DOMContentLoaded code...
-    });
-  </script>
-  
-  <!-- Command palette scripts -->
-  <script src="/assets/js/command-data.js" defer></script>
-
-  <!-- Simple Command Palette -->
+  <!-- Command Palette -->
   <div id="simple-command-palette" class="simple-command-palette" style="display: none;">
     <div class="simple-command-palette-backdrop"></div>
     <div class="simple-command-palette-modal">
@@ -444,7 +290,7 @@
     </div>
   </div>
 
-  <!-- Command Palette Scripts -->
+  <!-- Ensure ninja-keys.open method exists -->
   <script>
     // Replace ninja-keys implementation with our own simple command palette
     window.openCommandPalette = function() {
@@ -543,6 +389,13 @@
             <div class="command-palette-title">${cmd.title}</div>
           `;
           
+          // Add shortcut if available
+          if (cmd.shortcuts && cmd.shortcuts.length > 0) {
+            cmdContent += `<div class="command-palette-shortcut">
+              ${cmd.shortcuts[0].split(' ').map(key => `<kbd>${key}</kbd>`).join(' ')}
+            </div>`;
+          }
+          
           // Add excerpt for search results if available
           if (cmd.excerpt) {
             cmdContent += `<div class="command-palette-excerpt">${cmd.excerpt.substring(0, 120)}${cmd.excerpt.length > 120 ? '...' : ''}</div>`;
@@ -582,7 +435,6 @@
           renderCommandResults(this.value);
         });
         
-        // Handle keyboard navigation
         input.addEventListener('keydown', function(e) {
           if (e.key === 'Escape') {
             document.getElementById('simple-command-palette').style.display = 'none';
@@ -625,9 +477,69 @@
               behavior: 'smooth',
               block: 'nearest'
             });
+          } else {
+            // Check for keyboard shortcuts
+            const key = e.key.toLowerCase();
+            
+            // If input field is empty and key is a letter, check for shortcuts
+            if (input.value === '' && /^[a-z]$/.test(key)) {
+              const allCommands = window.commandData || [];
+              
+              // Look for shortcuts that start with this key
+              const matchingCommands = allCommands.filter(cmd => 
+                cmd.shortcuts && cmd.shortcuts.some(shortcut => 
+                  shortcut.startsWith(key)
+                )
+              );
+              
+              // If there are matching commands, filter the command palette to show them
+              if (matchingCommands.length > 0) {
+                // Update input to show the key
+                input.value = key;
+                // Filter to show commands that start with this shortcut
+                renderCommandResults(key);
+                
+                // Set a one-time event listener for the next key in the sequence
+                const handleNextKey = function(e2) {
+                  const nextKey = e2.key.toLowerCase();
+                  
+                  // If key is a letter, check for matches
+                  if (/^[a-z]$/.test(nextKey)) {
+                    const sequence = key + ' ' + nextKey;
+                    
+                    // Find commands that match this sequence
+                    const exactMatch = allCommands.find(cmd => 
+                      cmd.shortcuts && cmd.shortcuts.includes(sequence)
+                    );
+                    
+                    if (exactMatch) {
+                      // Execute the matching command
+                      document.getElementById('simple-command-palette').style.display = 'none';
+                      if (typeof exactMatch.handler === 'function') {
+                        exactMatch.handler();
+                      }
+                    }
+                  }
+                  
+                  // Remove this event listener after handling the next key
+                  input.removeEventListener('keydown', handleNextKey);
+                };
+                
+                // Add the one-time listener for the next key
+                input.addEventListener('keydown', handleNextKey);
+              }
+            }
           }
         });
       }
+      
+      // Register command palette keyboard shortcut
+      document.addEventListener('keydown', function(e) {
+        if ((e.metaKey || e.ctrlKey) && e.key === '/') {
+          e.preventDefault();
+          window.openCommandPalette();
+        }
+      });
       
       // Make command palette button work
       const commandPaletteBtn = document.getElementById('command-palette-btn');
