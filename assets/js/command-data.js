@@ -94,25 +94,6 @@
     
     // Tools
     {
-      id: "search",
-      title: "Search Website",
-      handler: () => { 
-        // Find and trigger the search function
-        const searchInput = document.getElementById('searchInput');
-        if (searchInput) {
-          searchInput.focus();
-          const searchModal = document.querySelector('.simple-command-palette');
-          if (searchModal) {
-            searchModal.classList.add('visible');
-            const searchModalInput = searchModal.querySelector('input');
-            if (searchModalInput) searchModalInput.focus();
-          }
-        }
-      },
-      section: "Tools",
-      icon: '<i class="fa-solid fa-magnifying-glass"></i>'
-    },
-    {
       id: "top",
       title: "Scroll to Top",
       handler: () => { window.scrollTo({top: 0, behavior: 'smooth'}); },

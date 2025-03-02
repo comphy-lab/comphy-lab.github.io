@@ -252,9 +252,9 @@ The website includes a command palette feature that provides quick access to act
 - **Keyboard Shortcut**: Access via ⌘/ on Mac, ctrl+/ on Windows, or by clicking the terminal icon in the navigation
 - **Navigation Commands**: Quickly navigate to any section of the website
 - **External Link Commands**: Direct access to GitHub, Google Scholar, YouTube, and Bluesky
-- **Tool Commands**: Search, scroll to top/bottom, and other utility functions
+- **Tool Commands**: Scroll to top/bottom and other utility functions
 - **Context-Aware Commands**: Additional commands appear based on current page
-- **Search Integration**: Search the site content directly from the command palette
+- **Search Integration**: Search is available separately via the ⌘K shortcut
 - **Keyboard Navigation**: Use arrow keys to navigate through commands, Enter to select, and Esc to close
 
 Key features:
@@ -263,7 +263,6 @@ Key features:
 - Grouping of commands by section for easy discoverability
 - Shortcuts for common tasks (g h = go home, g r = go to research, etc.)
 - Full keyboard navigation with arrow keys, Enter, and Escape
-- Integrated search functionality that searches the site content
 - Footer with keyboard shortcut hints for better usability
 
 The command palette is built with:
