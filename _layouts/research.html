@@ -202,7 +202,7 @@
         const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
         const shortcutHint = document.getElementById('command-palette-shortcut');
         if (shortcutHint) {
-          shortcutHint.textContent = isMac ? '⌘/' : 'Ctrl+/';
+          shortcutHint.textContent = isMac ? '⌘K' : 'Ctrl+K';
         }
 
         // Add click event listener to the command palette button
@@ -224,8 +224,8 @@
 
       // Add keyboard shortcut listener
       document.addEventListener('keydown', function(e) {
-        // Check for Ctrl+/ or Cmd+/ (Mac)
-        if ((e.ctrlKey || e.metaKey) && e.key === '/') {
+        // Check for Ctrl+K or Cmd+K (Mac)
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
           e.preventDefault();
           console.log('Command palette keyboard shortcut detected');
           if (typeof window.openCommandPalette === 'function') {
@@ -271,8 +271,8 @@
           <li class="command-palette-button">
             <div class="command-wrapper">
               <button class="command-k-style-btn" id="command-palette-btn" aria-label="Open command palette">
-                <span class="default-theme-text">ctrl /</span>
-                <span class="mac-theme-text">⌘ /</span>
+                <span class="default-theme-text">ctrl K</span>
+                <span class="mac-theme-text">⌘ K</span>
                 <i class="fa-solid fa-magnifying-glass search-icon"></i>
               </button>
             </div>
@@ -744,7 +744,7 @@
       
       // Register command palette keyboard shortcut
       document.addEventListener('keydown', function(e) {
-        if ((e.metaKey || e.ctrlKey) && e.key === '/') {
+        if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
           e.preventDefault();
           window.openCommandPalette();
         }
