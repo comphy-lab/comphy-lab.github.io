@@ -249,18 +249,17 @@ The website includes a command palette feature that provides quick access to act
 - **External Link Commands**: Direct access to GitHub, Google Scholar, YouTube, and Bluesky
 - **Tool Commands**: Search, scroll to top/bottom, and other utility functions
 - **Context-Aware Commands**: Additional commands appear based on current page
-- **Recent Commands**: Track and display recently used commands
-- **Help**: View all available keyboard shortcuts with the "?" command
+- **Search Integration**: Search the site content directly from the command palette
 - **Keyboard Navigation**: Use arrow keys to navigate through commands, Enter to select, and Esc to close
 
 Key features:
+- Custom implementation with vanilla JavaScript for better control and performance
 - Different visual styling from search to avoid confusion (indigo accent color vs blue for search)
 - Grouping of commands by section for easy discoverability
 - Shortcuts for common tasks (g h = go home, g r = go to research, etc.)
-- Comprehensive shortcut help accessible through the "?" command
-- Command history that remembers your frequently used commands
 - Full keyboard navigation with arrow keys, Enter, and Escape
 - Integrated search functionality that searches the site content
+- Footer with keyboard shortcut hints for better usability
 
 The command palette is built with:
 - Custom vanilla JavaScript implementation

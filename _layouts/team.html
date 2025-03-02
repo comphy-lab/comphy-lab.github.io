@@ -18,18 +18,37 @@
   <link rel="stylesheet" href="/assets/css/vendor.css">
   <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="stylesheet" href="/assets/css/team.css">
-  <link rel="stylesheet" href="/assets/css/search.css">
-
-  <script src="/assets/js/search.js"></script>
+  <link rel="stylesheet" href="/assets/css/command-palette.css">
 
   <script>
     // Check if we're on localhost
     if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-      // Use official Font Awesome CDN for local development with version 6.7.2
-      document.write('<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.2/css/all.css" crossorigin="anonymous">');
+      // Load only specific Font Awesome icons for local development
+      var icons = ['github', 'search', 'arrow-up-right-from-square', 'bluesky', 'youtube', 'arrow-up', 'calendar-days', 'location-dot', 'clock'];
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = 'https://use.fontawesome.com/releases/v6.7.2/css/solid.css';
+      link.crossOrigin = 'anonymous';
+      document.head.appendChild(link);
+      
+      var link2 = document.createElement('link');
+      link2.rel = 'stylesheet';
+      link2.href = 'https://use.fontawesome.com/releases/v6.7.2/css/brands.css';
+      link2.crossOrigin = 'anonymous';
+      document.head.appendChild(link2);
+      
+      var link3 = document.createElement('link');
+      link3.rel = 'stylesheet';
+      link3.href = 'https://use.fontawesome.com/releases/v6.7.2/css/fontawesome.css';
+      link3.crossOrigin = 'anonymous';
+      document.head.appendChild(link3);
     } else {
-      // Use Kit for production
-      document.write('<script src="https://kit.fontawesome.com/b1cfd9ca75.js" crossorigin="anonymous"><\/script>');
+      // Use Kit for production with defer
+      var script = document.createElement('script');
+      script.src = 'https://kit.fontawesome.com/b1cfd9ca75.js';
+      script.crossOrigin = 'anonymous';
+      script.defer = true;
+      document.head.appendChild(script);
     }
   </script>
 
@@ -76,6 +95,57 @@
     <div id="loader"></div>
   </div>
 
+  <!-- Command Palette Button Handler -->
+  <script>
+    window.addEventListener('load', function() {
+      const commandPaletteButton = document.getElementById('command-palette-button');
+      if (commandPaletteButton) {
+        // Set the appropriate shortcut hint based on platform
+        const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
+        const shortcutHint = document.getElementById('command-palette-shortcut');
+        if (shortcutHint) {
+          shortcutHint.textContent = isMac ? '⌘/' : 'Ctrl+/';
+        }
+
+        // Add click event listener to the command palette button
+        commandPaletteButton.addEventListener('click', function() {
+          console.log('Command palette button clicked');
+          if (typeof window.openCommandPalette === 'function') {
+            window.openCommandPalette();
+          } else {
+            // Fallback to simple command palette
+            const simpleCommandPalette = document.querySelector('.simple-command-palette');
+            if (simpleCommandPalette) {
+              simpleCommandPalette.classList.add('visible');
+              const input = simpleCommandPalette.querySelector('input');
+              if (input) input.focus();
+            }
+          }
+        });
+      }
+
+      // Add keyboard shortcut listener
+      document.addEventListener('keydown', function(e) {
+        // Check for Ctrl+/ or Cmd+/ (Mac)
+        if ((e.ctrlKey || e.metaKey) && e.key === '/') {
+          e.preventDefault();
+          console.log('Command palette keyboard shortcut detected');
+          if (typeof window.openCommandPalette === 'function') {
+            window.openCommandPalette();
+          } else {
+            // Fallback to simple command palette
+            const simpleCommandPalette = document.querySelector('.simple-command-palette');
+            if (simpleCommandPalette) {
+              simpleCommandPalette.classList.add('visible');
+              const input = simpleCommandPalette.querySelector('input');
+              if (input) input.focus();
+            }
+          }
+        }
+      });
+    });
+  </script>
+
   <div id="page" class="s-pagewrap">
     <header class="s-header">
       <div class="s-header__logo">
@@ -92,22 +162,22 @@
         <ul class="s-header__nav-list">
           <li style="background: none;"><a href="https://scholar.google.com/citations?user=tHb_qZoAAAAJ&hl=en" style="background: none; padding: 0;"><i class="ai ai-google-scholar" style="font-size: 1.75em;"></i></a></li>
           <li style="background: none;"><a href="https://github.com/comphy-lab" style="background: none; padding: 0;"><i class="fa-brands fa-github" style="font-size: 1.75em"></i></a></li>
-          <li><a href="/#about">About</a></li>
-          <li><a href="/team">Team</a></li>
+          <li><a href="#about" class="smoothscroll">About</a></li>
+          <li><a href="/team/">Team</a></li>
           <li><a href="/research">Research</a></li>
           <li><a href="/teaching">Teaching</a></li>
           <li><a href="/join">Join Us</a></li>
           <li><a href="https://blogs.comphy-lab.org/">Blog</a></li>
           <li style="background: none;"><a href="https://bsky.app/profile/comphy-lab.org" style="background: none; padding: 0;"><i class="fa-brands fa-bluesky" style="font-size: 1.75em; color: #0085ff;"></i></a></li>
-          <!-- Search Container -->
-          <li class="search-container">
-            <div class="search-wrapper">
-              <input type="text" id="searchInput" placeholder="⌘K" aria-label="Search">
-              <button type="button" id="searchButton" class="search-button" aria-label="Trigger search">
+          <!-- Command Palette Button (Styled like search) -->
+          <li class="command-palette-button">
+            <div class="command-wrapper">
+              <button class="command-k-style-btn" id="command-palette-btn" aria-label="Open command palette">
+                <span class="default-theme-text">ctrl /</span>
+                <span class="mac-theme-text">⌘ /</span>
                 <i class="fa-solid fa-magnifying-glass search-icon"></i>
               </button>
             </div>
-            <div id="searchResults" class="search-results"></div>
           </li>
         </ul>
       </nav>
@@ -359,5 +429,332 @@
   
   <!-- Command palette scripts -->
   <script src="/assets/js/command-data.js" defer></script>
+
+  <!-- Simple Command Palette -->
+  <div class="simple-command-palette">
+    <div class="simple-command-palette-backdrop"></div>
+    <div class="simple-command-palette-modal">
+      <input type="text" class="command-palette-input" placeholder="Type a command or search..." autofocus>
+      <div class="command-palette-results"></div>
+      <div class="command-palette-footer">
+        <span class="command-palette-footer-item"><kbd>↑</kbd> <kbd>↓</kbd> to navigate</span>
+        <span class="command-palette-footer-item"><kbd>enter</kbd> to select</span>
+        <span class="command-palette-footer-item"><kbd>esc</kbd> to close</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Command Palette Scripts -->
+  <script>
+    // Function to open the command palette
+    window.openCommandPalette = function() {
+      const commandPalette = document.querySelector('.simple-command-palette');
+      if (commandPalette) {
+        commandPalette.classList.add('visible');
+        const input = commandPalette.querySelector('input');
+        if (input) {
+          input.value = '';
+          input.focus();
+          if (typeof window.renderCommandResults === 'function') {
+            window.renderCommandResults('');
+          }
+        }
+      }
+    };
+
+    // Render command results based on input
+    window.renderCommandResults = function(query) {
+      const resultsContainer = document.querySelector('.command-palette-results');
+      if (!resultsContainer) return;
+      
+      // Clear previous results
+      resultsContainer.innerHTML = '';
+      
+      // Get commands from command data
+      const commands = window.commandData || [];
+      
+      // Filter commands based on query
+      let filteredCommands = commands;
+      if (query) {
+        const lowerQuery = query.toLowerCase();
+        filteredCommands = commands.filter(cmd => 
+          cmd.title.toLowerCase().includes(lowerQuery) || 
+          (cmd.section && cmd.section.toLowerCase().includes(lowerQuery)) ||
+          (cmd.id && cmd.id.toLowerCase().includes(lowerQuery))
+        );
+      }
+      
+      // Group commands by section
+      const sections = {};
+      filteredCommands.forEach(cmd => {
+        const section = cmd.section || 'Other';
+        if (!sections[section]) {
+          sections[section] = [];
+        }
+        sections[section].push(cmd);
+      });
+      
+      // Create elements for each section
+      let hasResults = false;
+      Object.keys(sections).forEach(section => {
+        if (sections[section].length > 0) {
+          hasResults = true;
+          
+          // Create section header
+          const sectionHeader = document.createElement('div');
+          sectionHeader.className = 'command-palette-section';
+          sectionHeader.textContent = section;
+          resultsContainer.appendChild(sectionHeader);
+          
+          // Create command items
+          sections[section].forEach(cmd => {
+            const commandItem = document.createElement('div');
+            commandItem.className = 'command-palette-command';
+            commandItem.dataset.id = cmd.id;
+            
+            // Left side (icon and title)
+            const leftSide = document.createElement('div');
+            leftSide.className = 'command-left';
+            
+            if (cmd.icon) {
+              const iconSpan = document.createElement('span');
+              iconSpan.className = 'command-icon';
+              iconSpan.innerHTML = cmd.icon;
+              leftSide.appendChild(iconSpan);
+            }
+            
+            const titleSpan = document.createElement('span');
+            titleSpan.className = 'command-title';
+            titleSpan.textContent = cmd.title;
+            leftSide.appendChild(titleSpan);
+            
+            // Add excerpt if available (for search results)
+            if (cmd.excerpt) {
+              const excerptDiv = document.createElement('div');
+              excerptDiv.className = 'command-excerpt';
+              excerptDiv.textContent = cmd.excerpt;
+              leftSide.appendChild(excerptDiv);
+            }
+            
+            commandItem.appendChild(leftSide);
+            
+            // Right side (shortcut)
+            if (cmd.shortcuts && cmd.shortcuts.length > 0) {
+              const rightSide = document.createElement('div');
+              rightSide.className = 'command-right';
+              
+              const shortcutSpan = document.createElement('span');
+              shortcutSpan.className = 'command-shortcut';
+              shortcutSpan.textContent = cmd.shortcuts[0];
+              rightSide.appendChild(shortcutSpan);
+              
+              commandItem.appendChild(rightSide);
+            }
+            
+            // Add click handler
+            commandItem.addEventListener('click', () => {
+              if (typeof cmd.handler === 'function') {
+                cmd.handler();
+                document.querySelector('.simple-command-palette').classList.remove('visible');
+              }
+            });
+            
+            resultsContainer.appendChild(commandItem);
+          });
+        }
+      });
+      
+      // If no results and query is long enough, search the database
+      if (!hasResults && query && query.length >= 2) {
+        if (window.searchDatabaseForCommandPalette) {
+          window.searchDatabaseForCommandPalette(query)
+            .then(searchResults => {
+              if (searchResults && searchResults.length > 0) {
+                // Create section header
+                const sectionHeader = document.createElement('div');
+                sectionHeader.className = 'command-palette-section';
+                sectionHeader.textContent = 'Search Results';
+                resultsContainer.appendChild(sectionHeader);
+                
+                // Add search results
+                searchResults.forEach(result => {
+                  const commandItem = document.createElement('div');
+                  commandItem.className = 'command-palette-command';
+                  commandItem.dataset.id = result.id;
+                  
+                  // Left side (icon and title)
+                  const leftSide = document.createElement('div');
+                  leftSide.className = 'command-left';
+                  
+                  if (result.icon) {
+                    const iconSpan = document.createElement('span');
+                    iconSpan.className = 'command-icon';
+                    iconSpan.innerHTML = result.icon;
+                    leftSide.appendChild(iconSpan);
+                  }
+                  
+                  const titleSpan = document.createElement('span');
+                  titleSpan.className = 'command-title';
+                  titleSpan.textContent = result.title;
+                  leftSide.appendChild(titleSpan);
+                  
+                  if (result.excerpt) {
+                    const excerptDiv = document.createElement('div');
+                    excerptDiv.className = 'command-excerpt';
+                    excerptDiv.textContent = result.excerpt;
+                    leftSide.appendChild(excerptDiv);
+                  }
+                  
+                  commandItem.appendChild(leftSide);
+                  
+                  // Add click handler
+                  commandItem.addEventListener('click', () => {
+                    if (typeof result.handler === 'function') {
+                      result.handler();
+                      document.querySelector('.simple-command-palette').classList.remove('visible');
+                    }
+                  });
+                  
+                  resultsContainer.appendChild(commandItem);
+                });
+              } else if (query.length >= 2) {
+                // No results message
+                const noResults = document.createElement('div');
+                noResults.className = 'command-palette-no-results';
+                noResults.textContent = 'No matching commands or content found';
+                resultsContainer.appendChild(noResults);
+              }
+            })
+            .catch(err => {
+              console.error('Error searching database:', err);
+              // Show error message
+              const errorMsg = document.createElement('div');
+              errorMsg.className = 'command-palette-no-results';
+              errorMsg.textContent = 'Error searching content';
+              resultsContainer.appendChild(errorMsg);
+            });
+        } else {
+          // No search function available
+          const noResults = document.createElement('div');
+          noResults.className = 'command-palette-no-results';
+          noResults.textContent = 'No matching commands found';
+          resultsContainer.appendChild(noResults);
+        }
+      } else if (!hasResults) {
+        // No results message
+        const noResults = document.createElement('div');
+        noResults.className = 'command-palette-no-results';
+        noResults.textContent = 'No matching commands found';
+        resultsContainer.appendChild(noResults);
+      }
+    };
+
+    // Command palette input handler
+    document.addEventListener('DOMContentLoaded', function() {
+      const palette = document.querySelector('.simple-command-palette');
+      if (!palette) return;
+
+      const input = palette.querySelector('input');
+      const backdrop = palette.querySelector('.simple-command-palette-backdrop');
+      
+      // Input handler
+      if (input) {
+        input.addEventListener('input', function() {
+          window.renderCommandResults(this.value);
+        });
+        
+        // Initialize with empty query
+        window.renderCommandResults('');
+      }
+      
+      // Close when clicking backdrop
+      if (backdrop) {
+        backdrop.addEventListener('click', function() {
+          palette.classList.remove('visible');
+        });
+      }
+      
+      // Escape key to close
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && palette.classList.contains('visible')) {
+          palette.classList.remove('visible');
+        }
+        
+        // Enter key to select first item if none selected
+        if (e.key === 'Enter' && palette.classList.contains('visible')) {
+          const selected = palette.querySelector('.command-palette-command.selected');
+          if (selected) {
+            selected.click();
+          } else {
+            const first = palette.querySelector('.command-palette-command');
+            if (first) first.click();
+          }
+        }
+        
+        // Arrow keys for navigation
+        if ((e.key === 'ArrowDown' || e.key === 'ArrowUp') && palette.classList.contains('visible')) {
+          e.preventDefault();
+          
+          const commands = Array.from(palette.querySelectorAll('.command-palette-command'));
+          if (commands.length === 0) return;
+          
+          const selected = palette.querySelector('.command-palette-command.selected');
+          let nextIndex = 0;
+          
+          if (selected) {
+            const currentIndex = commands.indexOf(selected);
+            selected.classList.remove('selected');
+            
+            if (e.key === 'ArrowDown') {
+              nextIndex = (currentIndex + 1) % commands.length;
+            } else {
+              nextIndex = (currentIndex - 1 + commands.length) % commands.length;
+            }
+          } else if (e.key === 'ArrowUp') {
+            nextIndex = commands.length - 1;
+          }
+          
+          commands[nextIndex].classList.add('selected');
+          
+          // Ensure the selected item is visible
+          commands[nextIndex].scrollIntoView({
+            behavior: 'smooth',
+            block: 'nearest'
+          });
+        }
+      });
+    });
+
+    // Command Palette Button Handler
+    document.addEventListener('DOMContentLoaded', function() {
+      const commandPaletteButton = document.getElementById('command-palette-button');
+      if (commandPaletteButton) {
+        // Set the appropriate shortcut hint based on platform
+        const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
+        const shortcutHint = document.getElementById('command-palette-shortcut');
+        if (shortcutHint) {
+          shortcutHint.textContent = isMac ? '⌘/' : 'Ctrl+/';
+        }
+
+        // Add click event listener to the command palette button
+        commandPaletteButton.addEventListener('click', function() {
+          console.log('Command palette button clicked');
+          window.openCommandPalette();
+        });
+      }
+    });
+  </script>
+
+  <!-- Add keyboard shortcut listener - moved outside DOMContentLoaded to ensure it's always active -->
+  <script>
+  document.addEventListener('keydown', function(e) {
+    // Check for Ctrl+/ or Cmd+/ (Mac)
+    if ((e.ctrlKey || e.metaKey) && e.key === '/') {
+      e.preventDefault();
+      console.log('Command palette keyboard shortcut detected');
+      window.openCommandPalette();
+    }
+  });
+  </script>
 </body>
 </html>
