@@ -238,7 +238,11 @@ Search results are prioritized and filtered as follows:
 3. Research Papers
    - Titles and authors
    - Tags and categories
-4. Blog Posts from blogs.comphy-lab.org
+4. Blog Posts from [blogs.comphy-lab.org](https://blogs.comphy-lab.org)
+   - Indexed directly from the GitHub repository (comphy-lab/CoMPhy-Lab-Blogs)
+   - Only indexes markdown files where the publish flag is not set to false
+   - Excludes todo markdown files (case-insensitive)
+   - Updated automatically every 12 hours via GitHub Actions
 5. Regular content (headings and paragraphs)
 
 ### Command Palette Functionality
@@ -398,3 +402,28 @@ To submit a PR:
 4. Create a PR using the template
 5. Link any related issues
 6. Wait for review
+
+3. **Blog Content Indexing**
+   - Blog content from [blogs.comphy-lab.org](https://blogs.comphy-lab.org) is now indexed directly from the GitHub repository
+   - Source: [comphy-lab/CoMPhy-Lab-Blogs](https://github.com/comphy-lab/CoMPhy-Lab-Blogs)
+   - Filtering criteria:
+     - Only indexes markdown files where `publish: false` is NOT set in frontmatter
+     - Automatically excludes any files with "todo" in the filename (case-insensitive)
+   - The search index is automatically updated:
+     - Every 12 hours via GitHub Actions
+     - When changes are pushed to markdown or HTML files
+     - Can be manually triggered from the Actions tab
+   - To manually update the search index locally:
+     ```bash
+     # From the project root directory
+     cd scripts
+     npm install
+     node fetch_github_blog_content.js
+     cd ..
+     ruby scripts/generate_search_db.rb
+     ```
+   - This approach improves search quality by:
+     - Accessing the raw markdown directly from the source
+     - Respecting publish status in frontmatter
+     - Processing content in a more structured way
+     - Avoiding web scraping issues or rate limits
