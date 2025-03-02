@@ -74,11 +74,12 @@ body {
 }
 
 .s-header__logo {
-  height: 50px;
+  height: 65px;
 }
 
 .s-header__logo img {
   height: 100%;
+  max-height: 65px;
   width: auto;
 }
 
