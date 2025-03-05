@@ -70,7 +70,7 @@ The course combines theoretical lectures with extensive hands-on sessions, allow
 
 #### Seminar
 - **13:30-14:00** | **Department seminar (2c)**
-  - A note on the thrust of airfoils by [José Mnauel Gordillo](https://scholar.google.com/citations?user=14wOsewAAAAJ&hl=en&inst=5726176096060060532&oi=ao)
+  - A note on the thrust of airfoils by [José Manuel Gordillo](https://scholar.google.com/citations?user=14wOsewAAAAJ&hl=en&inst=5726176096060060532&oi=ao)
 
 #### Non-Newtonian flows
 - **15:00-16:00** | **Lecture (3a)**
