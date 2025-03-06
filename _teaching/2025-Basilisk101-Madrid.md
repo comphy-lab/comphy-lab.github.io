@@ -5,8 +5,40 @@ permalink: /teaching/2025-Basilisk101-Madrid
 ---
 
 <div class="course-image">
-  <img src="/assets/images/teaching/basilisk-madrid-banner.jpg" alt="High-Fidelity Simulations Using Basilisk C" loading="lazy">
+  <img src="/assets/images/teaching/basilisk-madrid-banner.jpg" alt="High-Fidelity Simulations Using Basilisk C" loading="lazy" class="light-mode-img">
+  <img src="/assets/images/teaching/courseBanner-dark.jpg" alt="High-Fidelity Simulations Using Basilisk C" loading="lazy" class="dark-mode-img">
 </div>
+
+<script>
+  // Function to update image visibility based on theme
+  function updateBannerImages() {
+    const theme = document.documentElement.getAttribute('data-theme') || 'light';
+    const lightImages = document.querySelectorAll('.light-mode-img');
+    const darkImages = document.querySelectorAll('.dark-mode-img');
+    
+    if (theme === 'dark') {
+      lightImages.forEach(img => img.style.display = 'none');
+      darkImages.forEach(img => img.style.display = 'block');
+    } else {
+      lightImages.forEach(img => img.style.display = 'block');
+      darkImages.forEach(img => img.style.display = 'none');
+    }
+  }
+  
+  // Run on page load
+  document.addEventListener('DOMContentLoaded', updateBannerImages);
+  
+  // Watch for theme changes
+  const observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+      if (mutation.attributeName === 'data-theme') {
+        updateBannerImages();
+      }
+    });
+  });
+  
+  observer.observe(document.documentElement, { attributes: true });
+</script>
 
 # High-Fidelity Simulations Using Basilisk C
 
@@ -43,48 +75,48 @@ The course combines theoretical lectures with extensive hands-on sessions, allow
 
 ### Monday: Foundations
 #### Think before you compute
-- **10:00-11:30** | **Lecture (1a)**
+- **10:00-11:30** &nbsp;|&nbsp; **Lecture (1a)**
   - Conservation laws and the numerical solution of the Navier–Stokes equations
-- **11:45-13:00** | **Lecture (1b)**
+- **11:45-13:00** &nbsp;|&nbsp; **Lecture (1b)**
   - Advection-diffusion, diffusion-reaction, and other transport equations
   - *Brief intro to Basilisk coding framework*
 
 #### First coding steps
-- **15:00-18:00** | **Hybrid Session**
+- **15:00-18:00** &nbsp;|&nbsp; **Hybrid Session**
   - Implementing basic transport equations in Basilisk C
   - *Whiteboard + coding*
 
 ### Tuesday: Advanced Implementation
 #### Coding like a pro
-- **10:00-11:15** | **Hackathon (1c)**
+- **10:00-11:15** &nbsp;|&nbsp; **Hackathon (1c)**
   - Using headers in Basilisk, modular code structure, problem setup, and compilation
-- **11:30-13:00** | **Hackathon Continued**
+- **11:30-13:00** &nbsp;|&nbsp; **Hackathon Continued**
   - Expanding on the morning tasks and code debugging
 
 ### Wednesday: Interface Dynamics
 #### Interface tracking methods
-- **10:00-11:30** | **Lecture (2a)**
+- **10:00-11:30** &nbsp;|&nbsp; **Lecture (2a)**
   - Interface tracking methods (VoF, level set, phase-field approaches) and numerical strategies
-- **11:45-13:00** | **Hackathon (2b)**
+- **11:45-13:00** &nbsp;|&nbsp; **Hackathon (2b)**
   - Hands-on tutorial applying interface-tracking to a simple two-phase problem
 
 #### Seminar
-- **13:30-14:00** | **Department seminar (2c)**
-  - A note on the thrust of airfoils by [José Mnauel Gordillo](https://scholar.google.com/citations?user=14wOsewAAAAJ&hl=en&inst=5726176096060060532&oi=ao)
+- **13:30-14:00** &nbsp;|&nbsp; **Department seminar (2c)**
+  - A note on the thrust of airfoils by [José Manuel Gordillo](https://scholar.google.com/citations?user=14wOsewAAAAJ&hl=en&inst=5726176096060060532&oi=ao)
 
 #### Non-Newtonian flows
-- **15:00-16:00** | **Lecture (3a)**
+- **15:00-16:00** &nbsp;|&nbsp; **Lecture (3a)**
   - Non-Newtonian flows: viscoplasticity and viscoelasticity
-- **16:15-18:00** | **Hackathon (3b)**
+- **16:15-18:00** &nbsp;|&nbsp; **Hackathon (3b)**
   - Coding exercises for shear-thinning, viscoplastic, or viscoelastic fluids
 
 ### Thursday: Special Topics
 #### Special topics
-- **10:00-11:30** | **Lecture (4a)**
+- **10:00-11:30** &nbsp;|&nbsp; **Lecture (4a)**
   - Special Topics: multilayer solver, lubrication equation, Marangoni flows, manifold death, and research-oriented examples
-- **11:45-13:00** | **Hackathon (4b)**
+- **11:45-13:00** &nbsp;|&nbsp; **Hackathon (4b)**
   - Focused tutorials on the special topics introduced in the lecture
-- **15:00-16:30** | **Lecture (4c)**
+- **15:00-16:30** &nbsp;|&nbsp; **Lecture (4c)**
   - Open discussion, deeper dives into advanced features, final code reviews, and next steps
 
 ---

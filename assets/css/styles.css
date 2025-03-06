@@ -8,6 +8,35 @@
   --color-primary-hover: #004494;
   --color-link: #0056b3;
   --color-link-hover: #004494;
+  
+  /* Header elements */
+  --header-bg: rgba(104, 35, 109, 0.15);
+  --header-shadow: rgba(104, 35, 109, 0.2);
+  --nav-item-bg: rgba(255, 255, 255, 0.25);
+  --nav-item-color: #1a1a1a;
+  --nav-item-hover-bg: rgba(255, 255, 255, 0.35);
+  --nav-item-shadow: rgba(0, 0, 0, 0.1);
+  --nav-item-hover-shadow: rgba(0, 0, 0, 0.15);
+}
+
+/* Dark theme variables */
+[data-theme="dark"] {
+  --color-text: #e0e0e0;
+  --color-background: #121212;
+  --color-primary: #4c8dff;
+  --color-secondary: #a0a0a0;
+  --color-primary-hover: #6fa1ff;
+  --color-link: #4c8dff;
+  --color-link-hover: #6fa1ff;
+  
+  /* Header elements */
+  --header-bg: rgba(40, 15, 45, 0.75);
+  --header-shadow: rgba(0, 0, 0, 0.4);
+  --nav-item-bg: rgba(30, 30, 30, 0.6);
+  --nav-item-color: #ffffff;
+  --nav-item-hover-bg: rgba(40, 40, 40, 0.8);
+  --nav-item-shadow: rgba(0, 0, 0, 0.3);
+  --nav-item-hover-shadow: rgba(0, 0, 0, 0.4);
 }
 
 html {
@@ -27,6 +56,105 @@ body {
   background-color: var(--color-background);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Make icons white in dark mode */
+[data-theme="dark"] .s-header__nav i,
+[data-theme="dark"] .s-header__nav-list i,
+[data-theme="dark"] .fa-brands,
+[data-theme="dark"] .fa-solid,
+[data-theme="dark"] .ai,
+[data-theme="dark"] .s-footer i,
+[data-theme="dark"] .site-footer i,
+[data-theme="dark"] .footer-left i,
+[data-theme="dark"] .footer-right i {
+  color: white !important;
+}
+
+/* Theme-aware content styling */
+[data-theme="dark"] #about-content a,
+[data-theme="dark"] #news-content a,
+[data-theme="dark"] .teaching-content a,
+[data-theme="dark"] .s-teaching a {
+  color: #78AAFF;
+  text-decoration: none;
+}
+
+[data-theme="dark"] #about-content h1,
+[data-theme="dark"] #about-content h2,
+[data-theme="dark"] #about-content h3,
+[data-theme="dark"] #news-content h1,
+[data-theme="dark"] #news-content h2,
+[data-theme="dark"] #news-content h3 {
+  color: var(--color-text);
+}
+
+/* Handle specific link and icon coloring in news */
+[data-theme="dark"] #news-content a[href$=".pdf"] {
+  color: #6fa1ff !important;
+}
+
+[data-theme="dark"] #news-content a[href^="https://doi.org"] {
+  color: #ff8650 !important;
+}
+
+[data-theme="dark"] #news-content a[href$=".pdf"] i,
+[data-theme="dark"] #news-content a[href^="https://doi.org"] i {
+  color: inherit !important;
+}
+
+/* Fix image shadows in dark mode */
+[data-theme="dark"] #news-content img {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Fix section backgrounds in dark mode */
+[data-theme="dark"] .s-about,
+[data-theme="dark"] .s-featured,
+[data-theme="dark"] .s-featured__left,
+[data-theme="dark"] .s-featured__right,
+[data-theme="dark"] .featured-paper {
+  background-color: var(--color-background) !important;
+}
+
+/* Match About and News container styles in dark mode */
+[data-theme="dark"] .s-about__grid {
+  background: linear-gradient(145deg, rgba(35, 35, 45, 0.7), rgba(30, 30, 38, 0.8)) !important;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Fix h3 headings in dark mode */
+[data-theme="dark"] h3 {
+  color: #e0e0e0 !important;
+}
+
+/* YouTube stats card theme switching */
+.youtube-stats-light {
+  display: block;
+}
+
+.youtube-stats-dark {
+  display: none;
+}
+
+[data-theme="dark"] .youtube-stats-light {
+  display: none;
+}
+
+[data-theme="dark"] .youtube-stats-dark {
+  display: block;
+}
+
+/* Fix box shadows and borders in dark mode */
+[data-theme="dark"] .featured-paper,
+[data-theme="dark"] .s-about__grid {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-theme="dark"] .s-about__social-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Preloader */
@@ -63,14 +191,15 @@ body {
   top: 0;
   width: 100%;
   height: 80px;
-  background: rgba(104, 35, 109, 0.15);
+  background: var(--header-bg);
   backdrop-filter: blur(8px);
   z-index: 100;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 3rem;
-  box-shadow: 0 4px 16px rgba(104, 35, 109, 0.2);
+  box-shadow: 0 4px 16px var(--header-shadow);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .s-header__logo {
@@ -158,9 +287,9 @@ body {
 }
 
 .s-header__nav-list a:hover {
-  background: rgba(255, 255, 255, 0.35);
+  background: var(--nav-item-hover-bg);
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 15px var(--nav-item-hover-shadow);
 }
 
 /* Special styling for the Bluesky icon */
@@ -195,7 +324,76 @@ body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* Dark mode styling */
+/* Theme toggle button */
+.theme-toggle {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  background: var(--nav-item-bg);
+  box-shadow: 0 2px 10px var(--nav-item-shadow);
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  position: relative;
+}
+
+/* Special styling for dark theme text and icons */
+[data-theme="dark"] .s-header__nav-list a,
+[data-theme="dark"] .s-header__nav-list a i,
+[data-theme="dark"] .command-k-style-btn,
+[data-theme="dark"] .command-k-style-btn span,
+[data-theme="dark"] .command-k-style-btn i,
+[data-theme="dark"] .s-header__menu-text,
+[data-theme="dark"] .s-header__menu-icon,
+[data-theme="dark"] .s-header__menu-icon::before,
+[data-theme="dark"] .s-header__menu-icon::after {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .fa-bluesky {
+  color: #0085ff !important;
+}
+
+[data-theme="dark"] .theme-toggle-icon {
+  stroke: #ffffff;
+}
+
+.theme-toggle:hover {
+  background: var(--nav-item-hover-bg);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px var(--nav-item-hover-shadow);
+}
+
+.theme-toggle-icon {
+  width: 24px;
+  height: 24px;
+  transition: opacity 0.3s ease, transform 0.5s ease;
+}
+
+.theme-toggle-icon.moon {
+  position: absolute;
+  opacity: 1;
+}
+
+.theme-toggle-icon.sun {
+  position: absolute;
+  opacity: 0;
+  transform: rotate(90deg);
+}
+
+[data-theme="dark"] .theme-toggle-icon.moon {
+  opacity: 0;
+  transform: rotate(-90deg);
+}
+
+[data-theme="dark"] .theme-toggle-icon.sun {
+  opacity: 1;
+  transform: rotate(0);
+}
+
+/* Dark mode styling for browsers that support media queries */
 @media (prefers-color-scheme: dark) {
   /* Dark mode for the navigation close button */
   .s-header__nav-close-btn {
@@ -235,6 +433,12 @@ body {
   filter: brightness(0.9) contrast(1.1);
 }
 
+[data-theme="dark"] .s-intro__bg {
+  background-image: url('../../featured/GraphicalAbstract_v7_FrontOnly-darkTheme.jpg');
+  opacity: 0.9;
+  filter: brightness(0.85) contrast(1.15);
+}
+
 .s-intro__content {
   max-width: 800px;
   margin: 0 auto;
@@ -245,6 +449,37 @@ body {
   padding: 4rem;
   border-radius: 10px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .s-intro__content {
+  background: linear-gradient(145deg, rgba(35, 35, 45, 0.75), rgba(30, 30, 38, 0.85));
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Social icons styling - matching title gradient in dark mode */
+[data-theme="dark"] .ai-orcid {
+  color: #ff8888 !important; /* Match left side of gradient (red) */
+}
+
+[data-theme="dark"] .fa-github {
+  color: #9077ff !important; /* Match middle of gradient (purple/blue mix) */
+}
+
+[data-theme="dark"] .ai-google-scholar {
+  color: #546cff !important; /* Match right side of gradient (blue) */
+}
+
+/* Make Google Scholar icon white in command palette dark theme */
+[data-theme="dark"] .cmdk-item .ai-google-scholar,
+[data-theme="dark"] [cmdk-item] .ai-google-scholar,
+[data-theme="dark"] [data-cmdk-item] .ai-google-scholar,
+[data-theme="dark"] .cmdk-list .ai-google-scholar,
+[data-theme="dark"] [role="dialog"] .ai-google-scholar,
+[data-theme="dark"] #command-modal .ai-google-scholar,
+[data-theme="dark"] .command-palette-icon .ai-google-scholar,
+[data-theme="dark"] .command-palette-command .ai-google-scholar {
+  color: white !important;
 }
 
 .s-intro__pretitle {
@@ -275,8 +510,25 @@ body {
   background-clip: text;
   color: transparent;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.015em;
   font-weight: 800;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+[data-theme="dark"] .s-intro__title {
+  background: linear-gradient(90deg, 
+    #ff8888 0%, 
+    #ff6666 35%, 
+    #8897ff 65%, 
+    #514880 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.15);
+  text-shadow: none;
+  letter-spacing: 0.015em;
 }
 
 .s-intro__subtitle {
@@ -290,6 +542,43 @@ body {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
+[data-theme="dark"] .s-intro__subtitle {
+  color: #e0e0e0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* Featured Research button styling */
+.s-intro__subtitle a.smoothscroll {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: rgba(3, 102, 214, 0.9); 
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 0.9em;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  backdrop-filter: blur(5px);
+}
+
+.s-intro__subtitle a.smoothscroll:hover {
+  background-color: rgba(3, 102, 214, 1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transform: translateY(-2px);
+}
+
+[data-theme="dark"] .s-intro__subtitle a.smoothscroll {
+  background-color: rgba(33, 107, 255, 0.8);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  color: #ffffff;
+  text-shadow: 0px 1px 2px rgba(0,0,0,0.2);
+}
+
+[data-theme="dark"] .s-intro__subtitle a.smoothscroll:hover {
+  background-color: rgba(59, 130, 255, 0.9);
+  box-shadow: 0 4px 12px rgba(59, 130, 255, 0.3);
+}
+
 .s-intro__caption {
   margin-top: 2rem;
   font-size: 1.6rem;
@@ -298,6 +587,18 @@ body {
   animation: fadeInUp 1s ease forwards;
   animation-delay: 0.4s;
   font-weight: 500;
+}
+
+[data-theme="dark"] .s-intro__caption {
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .s-intro__caption a {
+  color: #6fa1ff;
+}
+
+[data-theme="dark"] .s-intro__caption a:hover {
+  color: #8bb5ff;
 }
 
 .s-intro__caption p {
@@ -314,7 +615,7 @@ body {
 
 .s-intro__caption a:hover {
   color: #364fc7;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* Make sure the Learn More button is visible */
@@ -358,47 +659,78 @@ body {
 }
 
 .s-about__grid {
-  display: grid;
-  grid-template-columns: minmax(450px, 1.2fr) minmax(500px, 1fr);
+  display: flex;
   gap: 4rem;
-  align-items: start;
+  align-items: flex-start;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  border-radius: 15px;
+  justify-content: space-between;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  padding: 3rem;
+  overflow: hidden;
+}
+
+@media (max-width: 900px) {
+  .s-about__grid {
+    flex-direction: column;
+    gap: 3rem;
+  }
 }
 
 .s-about__left {
-  padding-right: 2rem;
   display: flex;
   flex-direction: column;
   height: auto;
+  width: 60%;
+}
+
+@media (max-width: 900px) {
+  .s-about__left {
+    width: 100%;
+  }
 }
 
 .s-about__right {
-  padding-left: 2rem;
-  border-left: 1px solid rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 10rem;
-  height: calc(100vh - 20rem);
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 42%;
+}
+
+@media (max-width: 900px) {
+  .s-about__right {
+    width: 100%;
+  }
 }
 
 .s-about__social {
-  height: 100%;
   display: flex;
   flex-direction: column;
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(8px);
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  background-color: white;
+}
+
+[data-theme="dark"] .s-about__social {
+  background-color: #1e1e1e;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .s-about__social-header {
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 1.5rem 2rem;
+  padding: 1.2rem 2rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 10px 10px 0 0;
+  margin-bottom: 0.5rem;
+}
+
+[data-theme="dark"] .s-about__social-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
 }
 
 .s-about__social-header img {
@@ -421,7 +753,7 @@ body {
 
 .s-about__social-header a:hover {
   color: #364fc7;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .s-about__social bsky-embed {
@@ -431,6 +763,22 @@ body {
   padding: 2rem;
   scrollbar-width: thin;
   scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+
+/* News content padding to match About section */
+#news-content {
+  padding: 1.5rem 2rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+  overflow-y: auto;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  flex: 1;
+}
+
+[data-theme="dark"] #news-content {
+  color: #e0e0e0;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
 }
 
 /* Force all content inside bsky-embed to fit */
@@ -489,6 +837,10 @@ body {
   color: #4c6ef5;
 }
 
+[data-theme="dark"] .s-about__desc h2 {
+  color: #6e8aff;
+}
+
 .s-about__desc h3 {
   font-size: 2rem;
   margin: 0 0 0.5rem;
@@ -496,6 +848,12 @@ body {
   border-bottom: 2px solid rgba(250, 82, 82, 0.2);
   padding-bottom: 0.5rem;
   display: inline-block;
+}
+
+[data-theme="dark"] .s-about__desc h3 {
+  color: #ff8989 !important;
+  border-bottom: 2px solid rgba(255, 137, 137, 0.3);
+  text-shadow: 0 0 10px rgba(255, 137, 137, 0.2);
 }
 
 .s-about__desc p {
@@ -512,6 +870,11 @@ body {
   margin-bottom: 0.5rem;
 }
 
+/* Prevent unwanted line breaks in list items */
+.s-about__desc li p {
+  display: inline;
+}
+
 .s-about__desc a {
   color: #4c6ef5;
   text-decoration: none;
@@ -520,7 +883,7 @@ body {
 
 .s-about__desc a:hover {
   color: #364fc7;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* Add styles for code blocks if needed */
@@ -756,7 +1119,7 @@ body {
 /* Team Section */
 .s-team {
   padding: 10rem 2rem;
-  background: white;
+  background: var(--color-background);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -773,7 +1136,7 @@ body {
 .s-team__desc h1 {
   font-size: 4rem;
   margin-bottom: 4rem;
-  color: #2b2b2b;
+  color: var(--color-text);
 }
 
 .team-grid {
@@ -887,6 +1250,41 @@ body {
   overflow: hidden;
   content-visibility: auto;
   contain: layout paint;
+}
+
+/* Dark theme text color fixes for team section */
+[data-theme="dark"] .team-member h2,
+[data-theme="dark"] .team-member p,
+[data-theme="dark"] .team-member strong,
+[data-theme="dark"] .team-member ul,
+[data-theme="dark"] .team-member li,
+[data-theme="dark"] .team-section h1 {
+  color: var(--color-text);
+}
+
+/* Fix link colors in team section for dark theme */
+[data-theme="dark"] .team-member a:not(.cv-button):not([href^="https://github"]):not([href^="https://scholar.google"]):not([href^="https://orcid"]):not([href^="https://bsky"]) {
+  color: var(--color-link);
+}
+
+[data-theme="dark"] .team-member a:not(.cv-button):not([href^="https://github"]):not([href^="https://scholar.google"]):not([href^="https://orcid"]):not([href^="https://bsky"]):hover {
+  color: var(--color-link-hover);
+}
+
+[data-theme="dark"] .member-image {
+  background-color: #2a2a2a;
+}
+
+[data-theme="dark"] .team-member {
+  background: rgba(30, 30, 38, 0.7);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Make GitHub and Bluesky icons white in dark theme */
+[data-theme="dark"] .fa-github,
+[data-theme="dark"] .fa-bluesky {
+  color: white !important;
 }
 
 .member-image::before {
@@ -1043,7 +1441,7 @@ body {
 
 .member-content a:hover {
   color: #364fc7;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .member-cv {
@@ -1168,7 +1566,7 @@ body {
 
 .research-content a:hover {
     color: #364fc7;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 /* Responsive adjustments */
@@ -1928,7 +2326,7 @@ body {
 /* Join Us Section Styles */
 .s-join {
   padding: 12rem 0 8rem;
-  background-color: white;
+  background-color: var(--color-background);
 }
 
 .join-content {
@@ -1941,11 +2339,20 @@ body {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
+[data-theme="dark"] .join-content {
+  background: rgba(30, 30, 30, 0.4);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
 .join-content h1 {
   font-size: 3.6rem;
   margin-bottom: 4rem;
   color: #2b2b2b;
   text-align: center;
+}
+
+[data-theme="dark"] .join-content h1 {
+  color: #ffffff;
 }
 
 .position-section {
@@ -1960,10 +2367,19 @@ body {
   border-bottom: 2px solid rgba(76, 110, 245, 0.2);
 }
 
+[data-theme="dark"] .position-section h2 {
+  color: #6fa1ff;
+  border-bottom: 2px solid rgba(111, 161, 255, 0.3);
+}
+
 .position-section h3 {
   font-size: 1.8rem;
   color: #2b2b2b;
   margin-bottom: 0.5rem;
+}
+
+[data-theme="dark"] .position-section h3 {
+  color: #e0e0e0;
 }
 
 .position-section p {
@@ -1990,15 +2406,28 @@ body {
   margin-top: 2rem;
 }
 
+[data-theme="dark"] .application-info {
+  background: rgba(76, 110, 245, 0.15);
+}
+
 .external-links a {
   color: #4c6ef5;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
+[data-theme="dark"] .external-links a {
+  color: #6fa1ff;
+}
+
 .external-links a:hover {
   color: #364fc7;
-  text-decoration: underline;
+  text-decoration: none;
+}
+
+[data-theme="dark"] .external-links a:hover {
+  color: #9cbeff;
+  text-decoration: none;
 }
 
 .project-list li {

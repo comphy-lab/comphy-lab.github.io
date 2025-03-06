@@ -30,9 +30,10 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 ├── assets                     # Static files (images, css, js, logos, favicon)
 │   ├── css                    # Stylesheets
 │   │   ├── main.css          # Main stylesheet
-│   │   ├── research.css      # Research page styles
-│   │   ├── teaching.css      # Teaching page styles
-│   │   ├── team.css          # Team page styles
+│   │   ├── research.css      # Research page styles with dark mode support
+│   │   ├── teaching.css      # Teaching page styles with dark mode support
+│   │   ├── team.css          # Team page styles with dark mode support
+│   │   ├── styles.css        # Global styles with light/dark theme variables
 │   │   └── command-palette.css # Command palette styles (⌘K)
 │   ├── js                    # JavaScript files
 │   │   ├── main.js          # Main JavaScript
@@ -48,7 +49,8 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 ├── .github                    # GitHub specific files
 │   ├── ISSUE_TEMPLATE        # Issue templates
 │   └── PULL_REQUEST_TEMPLATE # PR templates
-├── about.md                   # About page content (markdown)
+├── aboutCoMPhy.md              # About page content (markdown)
+├── News.md                     # Lab news and announcements (markdown)
 ├── contact.html               # Contact page that redirects to Join Us page
 ├── join.html                  # Join Us page (opportunities)
 ├── index.html                 # Homepage
@@ -90,9 +92,15 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 ### Content Management
 
 #### About Page
-- `about.md`: Contains the About section in markdown
+- `aboutCoMPhy.md`: Contains the About section in markdown
 - Standard markdown elements (headers, lists, links) are supported
 - Edits automatically appear once the site is rebuilt
+
+#### News Page
+- `News.md`: Contains the lab's news and announcements in markdown
+- News items are displayed on the homepage in the right sidebar
+- Format each news item with a date and brief description
+- The news content is loaded dynamically using JavaScript
 
 #### Contact Page Redirect
 - `contact.html`: Automatically redirects users to the Join Us page
@@ -319,13 +327,40 @@ These tags are:
 - Partial Includes in `_includes/`
 - Assets in `assets/`
 
+### Theme Toggle
+
+The website supports both light and dark themes with an easy toggle switch in the header navigation:
+
+1. **Theme Preferences**
+   - Automatically detects user's system preference (light/dark mode)
+   - Remembers user's manual selection using localStorage
+   - Maintains theme consistency across page navigation
+
+2. **Implementation Details**
+   - Theme toggle button in the header of all layouts (default, team, research, teaching, teaching-course)
+   - CSS variables for theme colors in `styles.css` and page-specific stylesheets
+   - JavaScript to handle theme switching and user preferences
+
+3. **Customizing Theme Colors**
+   - Light and dark theme variables are defined in `assets/css/styles.css`
+   - Page-specific theme colors in respective CSS files (research.css, teaching.css, team.css)
+   - Theme is applied using the `data-theme` attribute on the HTML element
+
 ### Design Elements
 - **Color Scheme**
   - Gradient text (Red to Blue) for lab name
   - Warm orange tint + blur for header
+  - Dark theme support with adjusted colors for better night viewing
+- **Theme Toggle**
+  - Located in the header next to the Google Scholar icon
+  - Switches between light (default) and dark themes
+  - Uses SVG icons (moon/sun) with smooth transitions
+  - Persists user preference via localStorage
+  - Falls back to system preference when no user selection exists
 - **Typography**
   - Libre Baskerville, Open Sans
   - Gradients for emphasis
+  - White text in dark theme for improved readability
 - **Favicon**
   - Located in `/assets/favicon/`
   - Multiple sizes for different devices and browsers
