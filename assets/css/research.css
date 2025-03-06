@@ -13,15 +13,15 @@
 }
 
 [data-theme="dark"] {
-  --research-bg-color: #121212;
-  --research-text-color: #e0e0e0;
+  --research-bg-color: #1E1E25;
+  --research-text-color: #ffffff;
   --research-heading-color: #ffffff;
-  --research-subheading-color: #6fa1ff;
-  --research-border-color: #333333;
-  --research-section-bg: linear-gradient(to right, #252525, transparent);
-  --research-paper-bg: #1e1e1e;
-  --research-paper-highlight: rgba(0, 133, 255, 0.1);
-  --research-paper-highlight-border: rgba(0, 133, 255, 0.3);
+  --research-subheading-color: #7fb5ff;
+  --research-border-color: #444455;
+  --research-section-bg: linear-gradient(to right, #272736, #1E1E25);
+  --research-paper-bg: #272736;
+  --research-paper-highlight: rgba(40, 120, 255, 0.15);
+  --research-paper-highlight-border: rgba(70, 140, 255, 0.4);
   --research-shadow: rgba(0, 0, 0, 0.3);
 }
 
@@ -30,6 +30,41 @@
   padding: 8rem 0 6rem 0;
   background-color: var(--research-bg-color);
   position: relative;
+}
+
+/* Improve bold text visibility in dark mode */
+[data-theme="dark"] .research-content strong,
+[data-theme="dark"] .research-content b {
+  color: #ffffff;
+  font-weight: 700;
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
+}
+
+/* Add more solid background in dark mode */
+[data-theme="dark"] .s-research {
+  background-color: #1E1E25;
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.3);
+}
+
+/* Improve blockquote visibility in dark mode */
+[data-theme="dark"] .research-content blockquote {
+  background-color: #272736;
+  border-left: 4px solid #4d8dff;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  color: #ffffff;
+  border-radius: 0 4px 4px 0;
+}
+
+/* Improve list item visibility in dark mode */
+[data-theme="dark"] .research-content ul,
+[data-theme="dark"] .research-content ol {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .research-content li {
+  color: #ffffff;
+  margin-bottom: 0.5rem;
 }
 
 @media screen and (max-width: 800px) {
@@ -48,6 +83,15 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+}
+
+/* Improve content visibility in dark mode */
+[data-theme="dark"] .research-content {
+  background-color: #272736;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(80, 80, 120, 0.2);
 }
 
 @media screen and (max-width: 600px) {
@@ -307,6 +351,11 @@
   margin-bottom: 1rem;
 }
 
+/* Dark mode text color */
+[data-theme="dark"] .research-content p {
+  color: var(--research-text-color);
+}
+
 @media screen and (max-width: 600px) {
   .research-content h1 {
     font-size: 2em;
@@ -410,12 +459,25 @@
   border: 1px solid rgba(76, 110, 245, 0.1);
 }
 
+/* Dark theme styles for the table of contents */
+[data-theme="dark"] .toc-nav {
+  background: #1E1E25;
+  backdrop-filter: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(76, 110, 245, 0.2);
+}
+
 .toc-nav h3 {
   font-size: 1.8rem;
   color: #2b2b2b;
   margin-bottom: 1rem;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid rgba(76, 110, 245, 0.2);
+}
+
+[data-theme="dark"] .toc-nav h3 {
+  color: #ffffff;
+  border-bottom: 2px solid rgba(127, 181, 255, 0.3);
 }
 
 .toc-list {
@@ -439,10 +501,20 @@
   border-left: 2px solid transparent;
 }
 
+[data-theme="dark"] .toc-list a {
+  color: #ffffff;
+}
+
 .toc-list a:hover {
   color: #4c6ef5;
   background: rgba(76, 110, 245, 0.05);
   border-left-color: #4c6ef5;
+}
+
+[data-theme="dark"] .toc-list a:hover {
+  color: #7fb5ff;
+  background: rgba(127, 181, 255, 0.15);
+  border-left-color: #7fb5ff;
 }
 
 .toc-list a.active {
@@ -450,6 +522,12 @@
   background: rgba(76, 110, 245, 0.1);
   border-left-color: #4c6ef5;
   font-weight: 500;
+}
+
+[data-theme="dark"] .toc-list a.active {
+  color: #7fb5ff;
+  background: rgba(127, 181, 255, 0.2);
+  border-left-color: #7fb5ff;
 }
 
 /* Custom scrollbar for the TOC */
@@ -512,9 +590,19 @@
   user-select: none;
 }
 
+[data-theme="dark"] .research-content tags span {
+  background: rgba(120, 170, 255, 0.2);
+  color: #78AAFF;
+  border: 1px solid rgba(120, 170, 255, 0.3);
+}
+
 /* First tag - brightest background */
 .research-content tags span:nth-of-type(1) {
   background: rgba(147, 51, 234, 0.15);
+}
+
+[data-theme="dark"] .research-content tags span:nth-of-type(1) {
+  background: rgba(120, 170, 255, 0.25);
 }
 
 /* Second tag - slightly lighter background */
@@ -522,9 +610,17 @@
   background: rgba(147, 51, 234, 0.1);
 }
 
+[data-theme="dark"] .research-content tags span:nth-of-type(2) {
+  background: rgba(120, 170, 255, 0.2);
+}
+
 /* Third tag - even lighter background */
 .research-content tags span:nth-of-type(3) {
   background: rgba(147, 51, 234, 0.07);
+}
+
+[data-theme="dark"] .research-content tags span:nth-of-type(3) {
+  background: rgba(120, 170, 255, 0.15);
 }
 
 /* Fourth and subsequent tags - lightest background */
@@ -532,9 +628,18 @@
   background: rgba(147, 51, 234, 0.04);
 }
 
+[data-theme="dark"] .research-content tags span:nth-of-type(n+4) {
+  background: rgba(120, 170, 255, 0.1);
+}
+
 .research-content tags span:hover {
   transform: scale(1.1);
   box-shadow: 0 2px 5px rgba(147, 51, 234, 0.1);
+}
+
+[data-theme="dark"] .research-content tags span:hover {
+  box-shadow: 0 2px 5px rgba(120, 170, 255, 0.3);
+  background: rgba(120, 170, 255, 0.3);
 }
 
 .research-content tags span.active {
@@ -542,6 +647,12 @@
   color: white;
   transform: scale(1.1);
   box-shadow: 0 2px 5px rgba(147, 51, 234, 0.2);
+}
+
+[data-theme="dark"] .research-content tags span.active {
+  background: #4d8dff;
+  color: white;
+  box-shadow: 0 2px 6px rgba(77, 141, 255, 0.4);
 }
 
 /* Hide paper containers when filtering */
