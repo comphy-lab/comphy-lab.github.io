@@ -8,6 +8,35 @@
   --color-primary-hover: #004494;
   --color-link: #0056b3;
   --color-link-hover: #004494;
+  
+  /* Header elements */
+  --header-bg: rgba(104, 35, 109, 0.15);
+  --header-shadow: rgba(104, 35, 109, 0.2);
+  --nav-item-bg: rgba(255, 255, 255, 0.25);
+  --nav-item-color: #1a1a1a;
+  --nav-item-hover-bg: rgba(255, 255, 255, 0.35);
+  --nav-item-shadow: rgba(0, 0, 0, 0.1);
+  --nav-item-hover-shadow: rgba(0, 0, 0, 0.15);
+}
+
+/* Dark theme variables */
+[data-theme="dark"] {
+  --color-text: #e0e0e0;
+  --color-background: #121212;
+  --color-primary: #4c8dff;
+  --color-secondary: #a0a0a0;
+  --color-primary-hover: #6fa1ff;
+  --color-link: #4c8dff;
+  --color-link-hover: #6fa1ff;
+  
+  /* Header elements */
+  --header-bg: rgba(40, 15, 45, 0.75);
+  --header-shadow: rgba(0, 0, 0, 0.4);
+  --nav-item-bg: rgba(30, 30, 30, 0.6);
+  --nav-item-color: #ffffff;
+  --nav-item-hover-bg: rgba(40, 40, 40, 0.8);
+  --nav-item-shadow: rgba(0, 0, 0, 0.3);
+  --nav-item-hover-shadow: rgba(0, 0, 0, 0.4);
 }
 
 html {
@@ -27,6 +56,19 @@ body {
   background-color: var(--color-background);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Make icons white in dark mode */
+[data-theme="dark"] .s-header__nav i,
+[data-theme="dark"] .s-header__nav-list i,
+[data-theme="dark"] .fa-brands,
+[data-theme="dark"] .fa-solid,
+[data-theme="dark"] .ai,
+[data-theme="dark"] .s-footer i,
+[data-theme="dark"] .site-footer i,
+[data-theme="dark"] .footer-left i,
+[data-theme="dark"] .footer-right i {
+  color: white !important;
 }
 
 /* Preloader */
@@ -63,14 +105,15 @@ body {
   top: 0;
   width: 100%;
   height: 80px;
-  background: rgba(104, 35, 109, 0.15);
+  background: var(--header-bg);
   backdrop-filter: blur(8px);
   z-index: 100;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 3rem;
-  box-shadow: 0 4px 16px rgba(104, 35, 109, 0.2);
+  box-shadow: 0 4px 16px var(--header-shadow);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .s-header__logo {
@@ -158,9 +201,9 @@ body {
 }
 
 .s-header__nav-list a:hover {
-  background: rgba(255, 255, 255, 0.35);
+  background: var(--nav-item-hover-bg);
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 15px var(--nav-item-hover-shadow);
 }
 
 /* Special styling for the Bluesky icon */
@@ -195,7 +238,76 @@ body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* Dark mode styling */
+/* Theme toggle button */
+.theme-toggle {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  background: var(--nav-item-bg);
+  box-shadow: 0 2px 10px var(--nav-item-shadow);
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  position: relative;
+}
+
+/* Special styling for dark theme text and icons */
+[data-theme="dark"] .s-header__nav-list a,
+[data-theme="dark"] .s-header__nav-list a i,
+[data-theme="dark"] .command-k-style-btn,
+[data-theme="dark"] .command-k-style-btn span,
+[data-theme="dark"] .command-k-style-btn i,
+[data-theme="dark"] .s-header__menu-text,
+[data-theme="dark"] .s-header__menu-icon,
+[data-theme="dark"] .s-header__menu-icon::before,
+[data-theme="dark"] .s-header__menu-icon::after {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .fa-bluesky {
+  color: #0085ff !important;
+}
+
+[data-theme="dark"] .theme-toggle-icon {
+  stroke: #ffffff;
+}
+
+.theme-toggle:hover {
+  background: var(--nav-item-hover-bg);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px var(--nav-item-hover-shadow);
+}
+
+.theme-toggle-icon {
+  width: 24px;
+  height: 24px;
+  transition: opacity 0.3s ease, transform 0.5s ease;
+}
+
+.theme-toggle-icon.moon {
+  position: absolute;
+  opacity: 1;
+}
+
+.theme-toggle-icon.sun {
+  position: absolute;
+  opacity: 0;
+  transform: rotate(90deg);
+}
+
+[data-theme="dark"] .theme-toggle-icon.moon {
+  opacity: 0;
+  transform: rotate(-90deg);
+}
+
+[data-theme="dark"] .theme-toggle-icon.sun {
+  opacity: 1;
+  transform: rotate(0);
+}
+
+/* Dark mode styling for browsers that support media queries */
 @media (prefers-color-scheme: dark) {
   /* Dark mode for the navigation close button */
   .s-header__nav-close-btn {
@@ -433,6 +545,16 @@ body {
   scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
 }
 
+/* News content padding to match About section */
+#news-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 2rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+
 /* Force all content inside bsky-embed to fit */
 .s-about__social bsky-embed * {
   max-width: 100%;
@@ -510,6 +632,11 @@ body {
 
 .s-about__desc li {
   margin-bottom: 0.5rem;
+}
+
+/* Prevent unwanted line breaks in list items */
+.s-about__desc li p {
+  display: inline;
 }
 
 .s-about__desc a {

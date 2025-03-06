@@ -1,11 +1,35 @@
 /* Teaching Section Styles
 -----------------------------------*/
 
+/* Dark theme variables for teaching page */
+:root {
+  --teaching-bg-color: #ffffff;
+  --teaching-text-color: #333333;
+  --teaching-heading-color: #333333;
+  --teaching-subheading-color: #4169e1;
+  --teaching-card-bg: #ffffff;
+  --teaching-border-color: #eaeaea;
+  --teaching-shadow: rgba(0, 0, 0, 0.08);
+  --teaching-course-border: #4169e1;
+}
+
+[data-theme="dark"] {
+  --teaching-bg-color: #121212;
+  --teaching-text-color: #e0e0e0;
+  --teaching-heading-color: #ffffff;
+  --teaching-subheading-color: #6fa1ff;
+  --teaching-card-bg: #1e1e1e;
+  --teaching-border-color: #333333;
+  --teaching-shadow: rgba(0, 0, 0, 0.3);
+  --teaching-course-border: #6fa1ff;
+}
+
+/* Teaching page styles with dark mode support */
 .s-teaching {
-  background-color: #ffffff;
+  background-color: var(--teaching-bg-color);
   padding: 8rem 0;
   position: relative;
-  color: #333333;
+  color: var(--teaching-text-color);
 }
 
 .s-teaching__desc {
@@ -31,27 +55,27 @@
 .teaching-content h1 {
   font-size: 3rem;
   margin-bottom: 1.5rem;
-  color: #333333;
+  color: var(--teaching-heading-color);
 }
 
 .teaching-content h2 {
   font-size: 2.2rem;
   margin: 2rem 0 1rem;
-  color: #333333;
-  border-bottom: 1px solid #eaeaea;
+  color: var(--teaching-heading-color);
+  border-bottom: 1px solid var(--teaching-border-color);
   padding-bottom: 0.5rem;
 }
 
 .teaching-content h3 {
   font-size: 1.8rem;
   margin: 1.5rem 0 1rem;
-  color: #4169e1;
+  color: var(--teaching-subheading-color);
 }
 
 .teaching-content h4 {
   font-size: 1.5rem;
   margin: 1.2rem 0 0.8rem;
-  color: #e63946;
+  color: var(--teaching-subheading-color);
 }
 
 .teaching-content p {
@@ -91,10 +115,10 @@
 }
 
 .course-card {
-  background-color: #fff;
+  background-color: var(--teaching-card-bg);
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px var(--teaching-shadow);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   display: flex;

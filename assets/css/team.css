@@ -1,3 +1,25 @@
+/* Dark theme variables for team page */
+:root {
+  --team-bg-color: #ffffff;
+  --team-text-color: #333333;
+  --team-heading-color: #1a1a1a;
+  --team-subheading-color: #4c6ef5;
+  --team-image-bg: #f5f5f5;
+  --team-member-bg: rgba(255, 255, 255, 0.7);
+  --team-shadow: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+  --team-bg-color: #121212;
+  --team-text-color: #e0e0e0;
+  --team-heading-color: #ffffff;
+  --team-subheading-color: #6fa1ff;
+  --team-image-bg: #2a2a2a;
+  --team-member-bg: rgba(40, 40, 40, 0.7);
+  --team-shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* Team page general styles with dark mode support */
 .member-image {
   position: relative;
   overflow: hidden;
@@ -6,7 +28,7 @@
   margin: 0 auto;
   display: block;
   border-radius: 4px;
-  background-color: #f5f5f5;
+  background-color: var(--team-image-bg);
   contain: layout style paint;
   content-visibility: auto;
   contain-intrinsic-size: 200px;
@@ -33,7 +55,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 12px;
-  color: #666;
+  color: var(--team-text-color);
   text-align: center;
   width: 90%;
 }
