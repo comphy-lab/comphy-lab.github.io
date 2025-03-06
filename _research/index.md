@@ -75,11 +75,18 @@ title: Research
 [![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=OA&color=orange)](https://doi.org/10.1017/jfm.2024.982)
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2311.03012&color=green)](https://arxiv.org/abs/2311.03012)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/VatsalSy/The-role-of-viscosity-on-drop-impact-forces)
-[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/Blog/2025-JFM-viscous-drop-impact)
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=ffq7kMMX3_ijm5ZP&amp;list=PLf5C5HCrvhLH8BwyeMSusdvyFmQYGP2qt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+#### Highlights
+* Cover of that volume of J. Fluid Mech.
 
+<div style="text-align: center; margin: 15px 0;">
+    <a href="https://blogs.comphy-lab.org/Blog/2025-JFM-viscous-drop-impact#Cover+of+J.+Fluid+Mech.+vol+1004">
+      <img src="/assets/images/covers/2025-02-JFM_Vol1004.jpeg" alt="JFM cover" style="max-width: 80%; border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); cursor: pointer;">
+    </a>
+</div>
 
 <h3 id="13">[13] Kayal, L., <strong>Sanjay, V.</strong>, Yewale, N., Kumar, A., & Dasgupta, R. Focusing of concentric free-surface waves. J. Fluid Mech., 1003, A14 (2025).</h3>
 
@@ -106,6 +113,12 @@ title: Research
 
 #### Highlights
 * Cover of that volume of J. Fluid Mech.
+
+<div style="text-align: center; margin: 15px 0;">
+    <a href="https://doi.org/10.1017/jfm.2024.1073">
+      <img src="/assets/images/covers/2024-12-JFM_Vol1001.jpeg" alt="JFM cover" style="max-width: 80%; border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); cursor: pointer;">
+    </a>
+</div>
 
 ## 2023
 

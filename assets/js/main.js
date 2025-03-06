@@ -45,6 +45,7 @@
                 const text = await response.text();
                 const newsContent = document.getElementById('news-content');
                 if (newsContent) {
+                    // Parse the markdown content
                     newsContent.innerHTML = marked.parse(text);
                     
                     // Fix line breaks in list items after parsing
@@ -59,6 +60,8 @@
             }
         }
     };
+    
+    // No need for a resize event handler as the CSS will handle everything
 
     // Load about content when page loads
     window.addEventListener('load', loadAboutContent);
