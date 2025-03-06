@@ -308,6 +308,34 @@
     "priority": 1
   },
   {
+    "title": "2025",
+    "content": "**February**: [<strong>Sanjay, V.</strong>, Zhang, B., Lv, C., & Lohse, D. J. Fluid Mech., 1004, A6 (2025) selected as the cover article.](/research#14)\n\n<div style=\"text-align: center; margin: 15px 0;\">\n  <a href=\"/research#14\">\n    <img src=\"/assets/images/covers/2025-02-JFM_Vol1004.jpeg\" alt=\"JFM cover\" style=\"max-width: 80%; border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); cursor: pointer;\">\n  </a>\n    \n  <div style=\"margin-top: 10px; display: flex; gap: 15px; justify-content: center;\">\n    <a href=\"/assets/images/covers/2025-02-JFM_Vol1004.pdf\" style=\"display: flex; align-items: center; text-decoration: none; color: #0056b3; font-size: 1em; font-weight: 500;\"><i class=\"fa-solid fa-download\" style=\"margin-right: 8px; font-size: 1.2em;\"></i>Download Cover</a>\n    <a href=\"https://doi.org/10.1017/jfm.2024.982\" style=\"display: flex; align-items: center; text-decoration: none; color: #cf4900; font-size: 1em; font-weight: 500;\"><i class=\"fa-solid fa-arrow-up-right-from-square\" style=\"margin-right: 8px; font-size: 1.2em;\"></i>View Paper</a>\n  </div>\n</div>",
+    "url": "/#about",
+    "type": "markdown_section",
+    "priority": 3
+  },
+  {
+    "title": "2025",
+    "content": "**February**: [<strong>Sanjay, V.</strong>, Zhang, B., Lv, C., & Lohse, D. J. Fluid Mech., 1004, A6 (2025) selected as the cover article.](/research#14)",
+    "url": "/#about",
+    "type": "markdown_text",
+    "priority": 3
+  },
+  {
+    "title": "2024",
+    "content": "**December**: [Balasubramanian, A. G., <strong>Sanjay, V.</strong>, Jalaal, M., Vinuesa, R., & Tammisola, O. J. Fluid Mech., 1001, A9 (2024). selected as the cover article.](/research#14)\n\n<div style=\"text-align: center; margin: 15px 0;\">\n  <a href=\"/research#12\">\n    <img src=\"/assets/images/covers/2024-12-JFM_Vol1001.jpeg\" alt=\"JFM cover\" style=\"max-width: 80%; border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); cursor: pointer;\">\n  </a>\n  \n  <div style=\"margin-top: 10px; display: flex; gap: 15px; justify-content: center;\">\n    <a href=\"/assets/images/covers/2024-12-JFM_Vol1001.pdf\" style=\"display: flex; align-items: center; text-decoration: none; color: #0056b3; font-size: 1em; font-weight: 500;\"><i class=\"fa-solid fa-download\" style=\"margin-right: 8px; font-size: 1.2em;\"></i>Download Cover</a>\n    <a href=\"https://doi.org/10.1017/jfm.2024.1073\" style=\"display: flex; align-items: center; text-decoration: none; color: #cf4900; font-size: 1em; font-weight: 500;\"><i class=\"fa-solid fa-arrow-up-right-from-square\" style=\"margin-right: 8px; font-size: 1.2em;\"></i>View Paper</a>\n  </div>\n</div>",
+    "url": "/#about",
+    "type": "markdown_section",
+    "priority": 3
+  },
+  {
+    "title": "2024",
+    "content": "**December**: [Balasubramanian, A. G., <strong>Sanjay, V.</strong>, Jalaal, M., Vinuesa, R., & Tammisola, O. J. Fluid Mech., 1001, A9 (2024). selected as the cover article.](/research#14)",
+    "url": "/#about",
+    "type": "markdown_text",
+    "priority": 3
+  },
+  {
     "title": "About Us",
     "content": "We are based at the Physics of Fluids Department at the University of Twente, where we investigate [**non-Newtonian free-surface flows**](/research/?tag=Non-Newtonian) and [**soft matter singularities**](/research/?tag=Soft-matter-singularities). Our group employs a synergy of continuum simulations, experiments (through collaborations), and theoretical analysis to understand phenomena ranging involving drops, bubbles, jets, sheets, and more. We strive to connect fundamental findings with real-world applications, from industrial processes to everyday fluid dynamics.",
     "url": "/#about",
@@ -414,7 +442,7 @@
   },
   {
     "title": "Social Media",
-    "content": "[![X](https://img.shields.io/badge/-@CoMPhyLab-000000?style=flat&logo=x&logoColor=white)](https://twitter.com/VatsalSanjay)\n[![Bluesky](https://img.shields.io/badge/-@comphy--lab.org-0285FF?style=flat&logo=bluesky&logoColor=white)](https://bsky.app/profile/comphy-lab.org)\n\nFor supplementary videos and teaser of our upcoming work:\n\n<a href=\"https://www.youtube.com/@CoMPhyLab\" target=\"_blank\" aria-label=\"Visit our YouTube channel\">\n  <picture>\n    <source media=\"(prefers-color-scheme: dark)\" srcset=\"https://cust-youtube-stats-card.vercel.app/api?channelid=UC-eTdHrAM_eQrWOtNLoT19w&theme=solarized_light&cache_seconds=0\" width=\"auto\" height=\"200px\">\n    <img alt=\"Vatsal's YouTube Stats\" src=\"https://cust-youtube-stats-card.vercel.app/api?channelid=UC-eTdHrAM_eQrWOtNLoT19w&theme=vision_friendly_dark&hide_border=true\" width=\"auto\" height=\"200px\">\n  </picture>\n</a>",
+    "content": "[![X](https://img.shields.io/badge/-@CoMPhyLab-000000?style=flat&logo=x&logoColor=white)](https://twitter.com/VatsalSanjay)\n[![Bluesky](https://img.shields.io/badge/-@comphy--lab.org-0285FF?style=flat&logo=bluesky&logoColor=white)](https://bsky.app/profile/comphy-lab.org)\n\nFor supplementary videos and teaser of our upcoming work:\n\n<a href=\"https://www.youtube.com/@CoMPhyLab\" target=\"_blank\" aria-label=\"Visit our YouTube channel\">\n  <img class=\"youtube-stats-light\" alt=\"Vatsal's YouTube Stats\" src=\"https://cust-youtube-stats-card.vercel.app/api?channelid=UC-eTdHrAM_eQrWOtNLoT19w&theme=solarized_light&hide_border=true\" width=\"auto\" height=\"200px\">\n  <img class=\"youtube-stats-dark\" alt=\"Vatsal's YouTube Stats\" src=\"https://cust-youtube-stats-card.vercel.app/api?channelid=UC-eTdHrAM_eQrWOtNLoT19w&theme=vision_friendly_dark&hide_border=true\" width=\"auto\" height=\"200px\">\n</a>",
     "url": "/#about",
     "type": "markdown_section",
     "priority": 3
@@ -470,98 +498,98 @@
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - Think before you compute",
-    "content": "- **10:00-11:30** | **Lecture (1a)**\n  - Conservation laws and the numerical solution of the Navier–Stokes equations\n- **11:45-13:00** | **Lecture (1b)**\n  - Advection-diffusion, diffusion-reaction, and other transport equations\n  - *Brief intro to Basilisk coding framework*",
+    "content": "- **10:00-11:30** &nbsp;|&nbsp; **Lecture (1a)**\n  - Conservation laws and the numerical solution of the Navier–Stokes equations\n- **11:45-13:00** &nbsp;|&nbsp; **Lecture (1b)**\n  - Advection-diffusion, diffusion-reaction, and other transport equations\n  - *Brief intro to Basilisk coding framework*",
     "url": "/teaching/2025-Basilisk101-Madrid#Think%2Bbefore%2Byou%2Bcompute",
     "type": "teaching_content",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - Think before you compute",
-    "content": "- **10:00-11:30** | **Lecture (1a)**\n  - Conservation laws and the numerical solution of the Navier–Stokes equations\n- **11:45-13:00** | **Lecture (1b)**\n  - Advection-diffusion, diffusion-reaction, and other transport equations\n  - *Brief intro to Basilisk coding framework*",
+    "content": "- **10:00-11:30** &nbsp;|&nbsp; **Lecture (1a)**\n  - Conservation laws and the numerical solution of the Navier–Stokes equations\n- **11:45-13:00** &nbsp;|&nbsp; **Lecture (1b)**\n  - Advection-diffusion, diffusion-reaction, and other transport equations\n  - *Brief intro to Basilisk coding framework*",
     "url": "/teaching/2025-Basilisk101-Madrid#Think%2Bbefore%2Byou%2Bcompute",
     "type": "teaching_paragraph",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - First coding steps",
-    "content": "- **15:00-18:00** | **Hybrid Session**\n  - Implementing basic transport equations in Basilisk C\n  - *Whiteboard + coding*",
+    "content": "- **15:00-18:00** &nbsp;|&nbsp; **Hybrid Session**\n  - Implementing basic transport equations in Basilisk C\n  - *Whiteboard + coding*",
     "url": "/teaching/2025-Basilisk101-Madrid#First%2Bcoding%2Bsteps",
     "type": "teaching_content",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - First coding steps",
-    "content": "- **15:00-18:00** | **Hybrid Session**\n  - Implementing basic transport equations in Basilisk C\n  - *Whiteboard + coding*",
+    "content": "- **15:00-18:00** &nbsp;|&nbsp; **Hybrid Session**\n  - Implementing basic transport equations in Basilisk C\n  - *Whiteboard + coding*",
     "url": "/teaching/2025-Basilisk101-Madrid#First%2Bcoding%2Bsteps",
     "type": "teaching_paragraph",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - Coding like a pro",
-    "content": "- **10:00-11:15** | **Hackathon (1c)**\n  - Using headers in Basilisk, modular code structure, problem setup, and compilation\n- **11:30-13:00** | **Hackathon Continued**\n  - Expanding on the morning tasks and code debugging",
+    "content": "- **10:00-11:15** &nbsp;|&nbsp; **Hackathon (1c)**\n  - Using headers in Basilisk, modular code structure, problem setup, and compilation\n- **11:30-13:00** &nbsp;|&nbsp; **Hackathon Continued**\n  - Expanding on the morning tasks and code debugging",
     "url": "/teaching/2025-Basilisk101-Madrid#Coding%2Blike%2Ba%2Bpro",
     "type": "teaching_content",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - Coding like a pro",
-    "content": "- **10:00-11:15** | **Hackathon (1c)**\n  - Using headers in Basilisk, modular code structure, problem setup, and compilation\n- **11:30-13:00** | **Hackathon Continued**\n  - Expanding on the morning tasks and code debugging",
+    "content": "- **10:00-11:15** &nbsp;|&nbsp; **Hackathon (1c)**\n  - Using headers in Basilisk, modular code structure, problem setup, and compilation\n- **11:30-13:00** &nbsp;|&nbsp; **Hackathon Continued**\n  - Expanding on the morning tasks and code debugging",
     "url": "/teaching/2025-Basilisk101-Madrid#Coding%2Blike%2Ba%2Bpro",
     "type": "teaching_paragraph",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - Interface tracking methods",
-    "content": "- **10:00-11:30** | **Lecture (2a)**\n  - Interface tracking methods (VoF, level set, phase-field approaches) and numerical strategies\n- **11:45-13:00** | **Hackathon (2b)**\n  - Hands-on tutorial applying interface-tracking to a simple two-phase problem",
+    "content": "- **10:00-11:30** &nbsp;|&nbsp; **Lecture (2a)**\n  - Interface tracking methods (VoF, level set, phase-field approaches) and numerical strategies\n- **11:45-13:00** &nbsp;|&nbsp; **Hackathon (2b)**\n  - Hands-on tutorial applying interface-tracking to a simple two-phase problem",
     "url": "/teaching/2025-Basilisk101-Madrid#Interface%2Btracking%2Bmethods",
     "type": "teaching_content",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - Interface tracking methods",
-    "content": "- **10:00-11:30** | **Lecture (2a)**\n  - Interface tracking methods (VoF, level set, phase-field approaches) and numerical strategies\n- **11:45-13:00** | **Hackathon (2b)**\n  - Hands-on tutorial applying interface-tracking to a simple two-phase problem",
+    "content": "- **10:00-11:30** &nbsp;|&nbsp; **Lecture (2a)**\n  - Interface tracking methods (VoF, level set, phase-field approaches) and numerical strategies\n- **11:45-13:00** &nbsp;|&nbsp; **Hackathon (2b)**\n  - Hands-on tutorial applying interface-tracking to a simple two-phase problem",
     "url": "/teaching/2025-Basilisk101-Madrid#Interface%2Btracking%2Bmethods",
     "type": "teaching_paragraph",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - Seminar",
-    "content": "- **13:30-14:00** | **Department seminar (2c)**\n  - A note on the thrust of airfoils by [José Mnauel Gordillo](https://scholar.google.com/citations?user=14wOsewAAAAJ&hl=en&inst=5726176096060060532&oi=ao)",
+    "content": "- **13:30-14:00** &nbsp;|&nbsp; **Department seminar (2c)**\n  - A note on the thrust of airfoils by [José Manuel Gordillo](https://scholar.google.com/citations?user=14wOsewAAAAJ&hl=en&inst=5726176096060060532&oi=ao)",
     "url": "/teaching/2025-Basilisk101-Madrid#Seminar",
     "type": "teaching_content",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - Seminar",
-    "content": "- **13:30-14:00** | **Department seminar (2c)**\n  - A note on the thrust of airfoils by [José Mnauel Gordillo](https://scholar.google.com/citations?user=14wOsewAAAAJ&hl=en&inst=5726176096060060532&oi=ao)",
+    "content": "- **13:30-14:00** &nbsp;|&nbsp; **Department seminar (2c)**\n  - A note on the thrust of airfoils by [José Manuel Gordillo](https://scholar.google.com/citations?user=14wOsewAAAAJ&hl=en&inst=5726176096060060532&oi=ao)",
     "url": "/teaching/2025-Basilisk101-Madrid#Seminar",
     "type": "teaching_paragraph",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - Non-Newtonian flows",
-    "content": "- **15:00-16:00** | **Lecture (3a)**\n  - Non-Newtonian flows: viscoplasticity and viscoelasticity\n- **16:15-18:00** | **Hackathon (3b)**\n  - Coding exercises for shear-thinning, viscoplastic, or viscoelastic fluids",
+    "content": "- **15:00-16:00** &nbsp;|&nbsp; **Lecture (3a)**\n  - Non-Newtonian flows: viscoplasticity and viscoelasticity\n- **16:15-18:00** &nbsp;|&nbsp; **Hackathon (3b)**\n  - Coding exercises for shear-thinning, viscoplastic, or viscoelastic fluids",
     "url": "/teaching/2025-Basilisk101-Madrid#Non-Newtonian%2Bflows",
     "type": "teaching_content",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - Non-Newtonian flows",
-    "content": "- **15:00-16:00** | **Lecture (3a)**\n  - Non-Newtonian flows: viscoplasticity and viscoelasticity\n- **16:15-18:00** | **Hackathon (3b)**\n  - Coding exercises for shear-thinning, viscoplastic, or viscoelastic fluids",
+    "content": "- **15:00-16:00** &nbsp;|&nbsp; **Lecture (3a)**\n  - Non-Newtonian flows: viscoplasticity and viscoelasticity\n- **16:15-18:00** &nbsp;|&nbsp; **Hackathon (3b)**\n  - Coding exercises for shear-thinning, viscoplastic, or viscoelastic fluids",
     "url": "/teaching/2025-Basilisk101-Madrid#Non-Newtonian%2Bflows",
     "type": "teaching_paragraph",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - Special topics",
-    "content": "- **10:00-11:30** | **Lecture (4a)**\n  - Special Topics: multilayer solver, lubrication equation, Marangoni flows, manifold death, and research-oriented examples\n- **11:45-13:00** | **Hackathon (4b)**\n  - Focused tutorials on the special topics introduced in the lecture\n- **15:00-16:30** | **Lecture (4c)**\n  - Open discussion, deeper dives into advanced features, final code reviews, and next steps\n\n---",
+    "content": "- **10:00-11:30** &nbsp;|&nbsp; **Lecture (4a)**\n  - Special Topics: multilayer solver, lubrication equation, Marangoni flows, manifold death, and research-oriented examples\n- **11:45-13:00** &nbsp;|&nbsp; **Hackathon (4b)**\n  - Focused tutorials on the special topics introduced in the lecture\n- **15:00-16:30** &nbsp;|&nbsp; **Lecture (4c)**\n  - Open discussion, deeper dives into advanced features, final code reviews, and next steps\n\n---",
     "url": "/teaching/2025-Basilisk101-Madrid#Special%2Btopics",
     "type": "teaching_content",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - Special topics",
-    "content": "- **10:00-11:30** | **Lecture (4a)**\n  - Special Topics: multilayer solver, lubrication equation, Marangoni flows, manifold death, and research-oriented examples\n- **11:45-13:00** | **Hackathon (4b)**\n  - Focused tutorials on the special topics introduced in the lecture\n- **15:00-16:30** | **Lecture (4c)**\n  - Open discussion, deeper dives into advanced features, final code reviews, and next steps",
+    "content": "- **10:00-11:30** &nbsp;|&nbsp; **Lecture (4a)**\n  - Special Topics: multilayer solver, lubrication equation, Marangoni flows, manifold death, and research-oriented examples\n- **11:45-13:00** &nbsp;|&nbsp; **Hackathon (4b)**\n  - Focused tutorials on the special topics introduced in the lecture\n- **15:00-16:30** &nbsp;|&nbsp; **Lecture (4c)**\n  - Open discussion, deeper dives into advanced features, final code reviews, and next steps",
     "url": "/teaching/2025-Basilisk101-Madrid#Special%2Btopics",
     "type": "teaching_paragraph",
     "priority": 2
