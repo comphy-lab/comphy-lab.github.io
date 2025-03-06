@@ -50,16 +50,12 @@ permalink: /
         <div class="s-about__right">
           <div class="s-about__social" data-animate-el>
             <div class="s-about__social-header">
-              <img src="https://bsky.app/static/favicon-32x32.png" alt="Bluesky">
-              <h3>Bluesky Feed: <a href="https://bsky.app/profile/comphy-lab.org" target="_blank">@comphy-lab.org</a></h3>
+              <i class="fa-solid fa-newspaper" style="font-size: 1.75em;"></i>
+              <h3>News</h3>
             </div>
-            <script type="module" src="https://cdn.jsdelivr.net/npm/bsky-embed/dist/bsky-embed.es.js" async></script>
-            <bsky-embed
-              username="comphy-lab.org"
-              limit="5"
-              load-more="true"
-            >
-            </bsky-embed>
+            <div id="news-content" class="s-about__desc" data-animate-el>
+              <!-- News content will be loaded here -->
+            </div>
           </div>
         </div>
       </div>

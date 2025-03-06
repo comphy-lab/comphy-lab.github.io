@@ -1,11 +1,35 @@
 /* Teaching Section Styles
 -----------------------------------*/
 
+/* Dark theme variables for teaching page */
+:root {
+  --teaching-bg-color: #ffffff;
+  --teaching-text-color: #333333;
+  --teaching-heading-color: #333333;
+  --teaching-subheading-color: #4169e1;
+  --teaching-card-bg: #ffffff;
+  --teaching-border-color: #eaeaea;
+  --teaching-shadow: rgba(0, 0, 0, 0.08);
+  --teaching-course-border: #4169e1;
+}
+
+[data-theme="dark"] {
+  --teaching-bg-color: #121212;
+  --teaching-text-color: #e0e0e0;
+  --teaching-heading-color: #ffffff;
+  --teaching-subheading-color: #6fa1ff;
+  --teaching-card-bg: #1e1e1e;
+  --teaching-border-color: #333333;
+  --teaching-shadow: rgba(0, 0, 0, 0.3);
+  --teaching-course-border: #6fa1ff;
+}
+
+/* Teaching page styles with dark mode support */
 .s-teaching {
-  background-color: #ffffff;
+  background-color: var(--teaching-bg-color);
   padding: 8rem 0;
   position: relative;
-  color: #333333;
+  color: var(--teaching-text-color);
 }
 
 .s-teaching__desc {
@@ -31,27 +55,41 @@
 .teaching-content h1 {
   font-size: 3rem;
   margin-bottom: 1.5rem;
-  color: #333333;
+  color: var(--teaching-heading-color);
 }
 
 .teaching-content h2 {
   font-size: 2.2rem;
   margin: 2rem 0 1rem;
-  color: #333333;
-  border-bottom: 1px solid #eaeaea;
+  color: var(--teaching-heading-color);
+  border-bottom: 1px solid var(--teaching-border-color);
   padding-bottom: 0.5rem;
+}
+
+/* Ensure horizontal rules are visible in both light and dark modes */
+.teaching-content hr {
+  border: 0;
+  height: 1px;
+  background: var(--teaching-border-color);
+  margin: 2rem 0;
+}
+
+[data-theme="dark"] .teaching-content hr {
+  background: #444444;
+  height: 1px;
+  opacity: 1;
 }
 
 .teaching-content h3 {
   font-size: 1.8rem;
   margin: 1.5rem 0 1rem;
-  color: #4169e1;
+  color: var(--teaching-subheading-color);
 }
 
 .teaching-content h4 {
   font-size: 1.5rem;
   margin: 1.2rem 0 0.8rem;
-  color: #e63946;
+  color: var(--teaching-subheading-color);
 }
 
 .teaching-content p {
@@ -73,6 +111,13 @@
   font-weight: 600;
 }
 
+/* Ensure bold text is white in dark mode */
+[data-theme="dark"] .teaching-content strong,
+[data-theme="dark"] .teaching-content b {
+  color: #ffffff;
+  font-weight: 700;
+}
+
 .markdown-content ul {
   list-style-type: disc;
   margin-left: 1.5rem;
@@ -91,10 +136,10 @@
 }
 
 .course-card {
-  background-color: #fff;
+  background-color: var(--teaching-card-bg);
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px var(--teaching-shadow);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   display: flex;
@@ -224,6 +269,13 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
+/* Dark mode styling for course details banner */
+[data-theme="dark"] .course-details {
+  background-color: #2a2a2a;
+  border: 1px solid #3a3a3a;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
 .course-details__item {
   flex: 1 1 200px;
 }
@@ -234,8 +286,17 @@
   color: #4169e1;
 }
 
+[data-theme="dark"] .course-details__item h4 {
+  color: #6fa1ff;
+}
+
 .course-details__item p {
   margin: 0;
+}
+
+[data-theme="dark"] .course-details__item p {
+  color: #ffffff;
+  font-weight: 500;
 }
 
 .course-image {
@@ -244,6 +305,24 @@
   position: relative;
   overflow: hidden;
   border-radius: 8px;
+}
+
+/* Light/dark mode image toggle styling */
+.light-mode-img {
+  display: block; /* Default to visible */
+}
+
+.dark-mode-img {
+  display: none; /* Hidden by default */
+}
+
+/* These styles will be overridden by JavaScript, but provide a fallback */
+[data-theme="dark"] .light-mode-img {
+  display: none;
+}
+
+[data-theme="dark"] .dark-mode-img {
+  display: block;
 }
 
 .course-image img {
