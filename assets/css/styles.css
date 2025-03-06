@@ -77,7 +77,7 @@ body {
 [data-theme="dark"] .teaching-content a,
 [data-theme="dark"] .s-teaching a {
   color: #78AAFF;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 [data-theme="dark"] #about-content h1,
@@ -470,6 +470,18 @@ body {
   color: #546cff !important; /* Match right side of gradient (blue) */
 }
 
+/* Make Google Scholar icon white in command palette dark theme */
+[data-theme="dark"] .cmdk-item .ai-google-scholar,
+[data-theme="dark"] [cmdk-item] .ai-google-scholar,
+[data-theme="dark"] [data-cmdk-item] .ai-google-scholar,
+[data-theme="dark"] .cmdk-list .ai-google-scholar,
+[data-theme="dark"] [role="dialog"] .ai-google-scholar,
+[data-theme="dark"] #command-modal .ai-google-scholar,
+[data-theme="dark"] .command-palette-icon .ai-google-scholar,
+[data-theme="dark"] .command-palette-command .ai-google-scholar {
+  color: white !important;
+}
+
 .s-intro__pretitle {
   font-size: 2.4rem;
   margin-bottom: 2rem;
@@ -603,7 +615,7 @@ body {
 
 .s-intro__caption a:hover {
   color: #364fc7;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* Make sure the Learn More button is visible */
@@ -741,7 +753,7 @@ body {
 
 .s-about__social-header a:hover {
   color: #364fc7;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .s-about__social bsky-embed {
@@ -871,7 +883,7 @@ body {
 
 .s-about__desc a:hover {
   color: #364fc7;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* Add styles for code blocks if needed */
@@ -1429,7 +1441,7 @@ body {
 
 .member-content a:hover {
   color: #364fc7;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .member-cv {
@@ -1554,7 +1566,7 @@ body {
 
 .research-content a:hover {
     color: #364fc7;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 /* Responsive adjustments */
@@ -2410,12 +2422,12 @@ body {
 
 .external-links a:hover {
   color: #364fc7;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 [data-theme="dark"] .external-links a:hover {
   color: #9cbeff;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .project-list li {
