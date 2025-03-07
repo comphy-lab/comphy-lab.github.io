@@ -494,7 +494,7 @@ h2::after {
   background-image: url('../../featured/GraphicalAbstract_v7_FrontOnly.jpg');
   background-size: cover;
   background-position: center;
-  opacity: 0.75;
+  opacity: 0.65;
   z-index: -1;
   filter: brightness(0.9) contrast(1.1);
   backdrop-filter: blur(5px);
@@ -502,7 +502,7 @@ h2::after {
 
 [data-theme="dark"] .s-intro__bg {
   background-image: url('../../featured/GraphicalAbstract_v7_FrontOnly-darkTheme.jpg');
-  opacity: 0.5;
+  opacity: 0.42;
   filter: brightness(0.85) contrast(1.15);
   backdrop-filter: blur(8px);
 }
@@ -1321,13 +1321,22 @@ h2::after {
 }
 
 /* Dark theme text color fixes for team section */
-[data-theme="dark"] .team-member h2,
 [data-theme="dark"] .team-member p,
 [data-theme="dark"] .team-member strong,
 [data-theme="dark"] .team-member ul,
 [data-theme="dark"] .team-member li,
 [data-theme="dark"] .team-section h1 {
   color: var(--color-text);
+}
+
+/* Apply the enhanced h2 styling to team page */
+[data-theme="dark"] .team-member h2 {
+  background: linear-gradient(to right, var(--h2-gradient-start), var(--h2-gradient-end));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 1px 2px rgba(74, 125, 255, 0.5);
+  filter: drop-shadow(0 0 2px rgba(120, 170, 255, 0.3));
 }
 
 /* Fix link colors in team section for dark theme */
