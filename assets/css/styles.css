@@ -36,10 +36,10 @@
   --color-link-hover: #6fa1ff;
   
   /* Heading styling */
-  --h2-gradient-start: #5e8bff;
-  --h2-gradient-end: #3d6de0;
-  --h2-border-color: #4a7dff;
-  --h2-shadow-color: rgba(62, 109, 224, 0.3);
+  --h2-gradient-start: #78aaff;
+  --h2-gradient-end: #4a7dff;
+  --h2-border-color: #589fff;
+  --h2-shadow-color: rgba(74, 125, 255, 0.4);
   
   /* Header elements */
   --header-bg: rgba(40, 15, 45, 0.75);
@@ -93,10 +93,8 @@ body {
 }
 
 [data-theme="dark"] #about-content h1,
-[data-theme="dark"] #about-content h2,
 [data-theme="dark"] #about-content h3,
 [data-theme="dark"] #news-content h1,
-[data-theme="dark"] #news-content h2,
 [data-theme="dark"] #news-content h3 {
   color: var(--color-text);
 }
@@ -180,6 +178,16 @@ h2::after {
   width: 50%;
   height: 2px;
   background: linear-gradient(to right, var(--h2-border-color), transparent);
+}
+
+/* Enhanced h2 styling for dark theme */
+[data-theme="dark"] h2 {
+  background: linear-gradient(to right, var(--h2-gradient-start), var(--h2-gradient-end));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 1px 2px rgba(74, 125, 255, 0.5);
+  filter: drop-shadow(0 0 2px rgba(120, 170, 255, 0.3));
 }
 
 /* Fix h3 headings in dark mode */
