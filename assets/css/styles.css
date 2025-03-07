@@ -9,6 +9,12 @@
   --color-link: #0056b3;
   --color-link-hover: #004494;
   
+  /* Heading styling */
+  --h2-gradient-start: #2b65c6;
+  --h2-gradient-end: #0e4594;
+  --h2-border-color: #2278d4;
+  --h2-shadow-color: rgba(14, 69, 148, 0.2);
+  
   /* Header elements */
   --header-bg: rgba(104, 35, 109, 0.15);
   --header-shadow: rgba(104, 35, 109, 0.2);
@@ -28,6 +34,12 @@
   --color-primary-hover: #6fa1ff;
   --color-link: #4c8dff;
   --color-link-hover: #6fa1ff;
+  
+  /* Heading styling */
+  --h2-gradient-start: #78aaff;
+  --h2-gradient-end: #4a7dff;
+  --h2-border-color: #589fff;
+  --h2-shadow-color: rgba(74, 125, 255, 0.4);
   
   /* Header elements */
   --header-bg: rgba(40, 15, 45, 0.75);
@@ -81,10 +93,8 @@ body {
 }
 
 [data-theme="dark"] #about-content h1,
-[data-theme="dark"] #about-content h2,
 [data-theme="dark"] #about-content h3,
 [data-theme="dark"] #news-content h1,
-[data-theme="dark"] #news-content h2,
 [data-theme="dark"] #news-content h3 {
   color: var(--color-text);
 }
@@ -122,6 +132,62 @@ body {
   background: linear-gradient(145deg, rgba(35, 35, 45, 0.7), rgba(30, 30, 38, 0.8)) !important;
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Global strong element styling */
+strong:not(a strong):not(h1 strong):not(h2 strong):not(h3 strong):not(h4 strong):not(h5 strong):not(h6 strong),
+#news-content strong:not(a strong):not(a *),
+.s-about__desc strong:not(a strong):not(a *) {
+  font-weight: 600;
+  color: #8B4513;
+  background: linear-gradient(transparent 80%, rgba(205, 133, 63, 0.35) 100%);
+  padding: 0 2px;
+  border-radius: 2px;
+}
+
+[data-theme="dark"] strong:not(a strong):not(h1 strong):not(h2 strong):not(h3 strong):not(h4 strong):not(h5 strong):not(h6 strong),
+[data-theme="dark"] #news-content strong:not(a strong):not(a *),
+[data-theme="dark"] .s-about__desc strong:not(a strong):not(a *) {
+  color: #e5c070;
+  background: linear-gradient(transparent 80%, rgba(205, 133, 63, 0.35) 100%);
+  border-radius: 2px;
+}
+
+/* Global heading styles */
+h2 {
+  position: relative;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--color-text);
+  padding-bottom: 0.5rem;
+  margin: 1.5rem 0 1rem;
+  background: linear-gradient(to right, var(--h2-gradient-start), var(--h2-gradient-end));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  border-bottom: 2px solid var(--h2-border-color);
+  letter-spacing: 0.01em;
+  text-shadow: 0 1px 1px var(--h2-shadow-color);
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 50%;
+  height: 2px;
+  background: linear-gradient(to right, var(--h2-border-color), transparent);
+}
+
+/* Enhanced h2 styling for dark theme */
+[data-theme="dark"] h2 {
+  background: linear-gradient(to right, var(--h2-gradient-start), var(--h2-gradient-end));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 1px 2px rgba(74, 125, 255, 0.5);
+  filter: drop-shadow(0 0 2px rgba(120, 170, 255, 0.3));
 }
 
 /* Fix h3 headings in dark mode */
@@ -428,15 +494,17 @@ body {
   background-image: url('../../featured/GraphicalAbstract_v7_FrontOnly.jpg');
   background-size: cover;
   background-position: center;
-  opacity: 0.85;
+  opacity: 0.65;
   z-index: -1;
   filter: brightness(0.9) contrast(1.1);
+  backdrop-filter: blur(5px);
 }
 
 [data-theme="dark"] .s-intro__bg {
   background-image: url('../../featured/GraphicalAbstract_v7_FrontOnly-darkTheme.jpg');
-  opacity: 0.9;
+  opacity: 0.42;
   filter: brightness(0.85) contrast(1.15);
+  backdrop-filter: blur(8px);
 }
 
 .s-intro__content {
@@ -1253,13 +1321,19 @@ body {
 }
 
 /* Dark theme text color fixes for team section */
-[data-theme="dark"] .team-member h2,
 [data-theme="dark"] .team-member p,
 [data-theme="dark"] .team-member strong,
 [data-theme="dark"] .team-member ul,
 [data-theme="dark"] .team-member li,
 [data-theme="dark"] .team-section h1 {
   color: var(--color-text);
+}
+
+/* Apply the enhanced h2 styling to team page (without hover effects) */
+[data-theme="dark"] .team-member h2 {
+  /* Simplified styling to prevent blurriness */
+  color: var(--h2-gradient-start);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 /* Fix link colors in team section for dark theme */
@@ -1367,8 +1441,16 @@ body {
   transition: color 0.3s ease;
 }
 
+/* Removed hover effect and transitions to prevent blurriness */
+.member-content h2 {
+  transition: none;
+}
+
 .member-content h2:hover {
-  color: #364fc7;
+  /* Disable any hover effects */
+  color: inherit;
+  filter: none;
+  transform: none;
 }
 
 /* Responsive breakpoints */
