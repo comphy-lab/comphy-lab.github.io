@@ -1329,14 +1329,11 @@ h2::after {
   color: var(--color-text);
 }
 
-/* Apply the enhanced h2 styling to team page */
+/* Apply the enhanced h2 styling to team page (without hover effects) */
 [data-theme="dark"] .team-member h2 {
-  background: linear-gradient(to right, var(--h2-gradient-start), var(--h2-gradient-end));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  text-shadow: 0 1px 2px rgba(74, 125, 255, 0.5);
-  filter: drop-shadow(0 0 2px rgba(120, 170, 255, 0.3));
+  /* Simplified styling to prevent blurriness */
+  color: var(--h2-gradient-start);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 /* Fix link colors in team section for dark theme */
@@ -1444,8 +1441,16 @@ h2::after {
   transition: color 0.3s ease;
 }
 
+/* Removed hover effect and transitions to prevent blurriness */
+.member-content h2 {
+  transition: none;
+}
+
 .member-content h2:hover {
-  color: #364fc7;
+  /* Disable any hover effects */
+  color: inherit;
+  filter: none;
+  transform: none;
 }
 
 /* Responsive breakpoints */
