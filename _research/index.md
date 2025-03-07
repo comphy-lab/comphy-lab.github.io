@@ -84,7 +84,7 @@ title: Research
 
 <div style="text-align: center; margin: 15px 0;">
     <a href="https://blogs.comphy-lab.org/Blog/2025-JFM-viscous-drop-impact#Cover+of+J.+Fluid+Mech.+vol+1004">
-      <img src="/assets/images/covers/2025-02-JFM_Vol1004.jpeg" alt="JFM cover" style="max-width: 80%; border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); cursor: pointer;">
+      <img src="/assets/images/covers/2025-02-JFM_Vol1004.jpeg" alt="JFM cover" style="max-width: 256px; border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); cursor: pointer;">
     </a>
 </div>
 
@@ -116,7 +116,7 @@ title: Research
 
 <div style="text-align: center; margin: 15px 0;">
     <a href="https://doi.org/10.1017/jfm.2024.1073">
-      <img src="/assets/images/covers/2024-12-JFM_Vol1001.jpeg" alt="JFM cover" style="max-width: 80%; border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); cursor: pointer;">
+      <img src="/assets/images/covers/2024-12-JFM_Vol1001.jpeg" alt="JFM cover" style="max-width: 256px; border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); cursor: pointer;">
     </a>
 </div>
 
