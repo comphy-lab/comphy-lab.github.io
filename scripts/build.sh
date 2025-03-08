@@ -31,4 +31,8 @@ cd scripts
 bundle exec ruby generate_search_db.rb
 cd ..
 
+# Generate pre-filtered research pages
+echo "Generating pre-filtered research pages..."
+bundle exec ruby scripts/generate_filtered_research.rb
+
 echo "Build completed successfully!"
