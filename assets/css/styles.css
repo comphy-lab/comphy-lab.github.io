@@ -1079,6 +1079,11 @@ h2::after {
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
     z-index: 100;
   }
+  
+  [data-theme="dark"] .s-header__nav {
+    background: rgba(30, 30, 35, 0.95);
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+  }
 
   .s-header__nav.is-active {
     right: 0;
@@ -1125,6 +1130,10 @@ h2::after {
 
   .s-header__nav-list a:hover {
     background: rgba(255, 255, 255, 0.35);
+  }
+  
+  [data-theme="dark"] .s-header__nav-list a:hover {
+    background: rgba(60, 60, 70, 0.5);
   }
 
   /* Special handling for Bluesky icon in mobile view */
