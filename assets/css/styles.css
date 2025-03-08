@@ -127,6 +127,32 @@ body {
   background-color: var(--color-background) !important;
 }
 
+/* Ensure content is contained within viewport on all screens */
+.s-about, 
+.s-about__grid,
+.s-about__left,
+.s-about__desc,
+.s-about__right,
+.s-about__desc p,
+.s-about__desc li,
+.s-about__desc a,
+.s-about__desc h1,
+.s-about__desc h2,
+.s-about__desc h3,
+.s-about__desc strong,
+.s-about__desc ul,
+.s-research,
+.s-research p,
+.s-featured,
+.s-featured p,
+.s-teaching,
+.s-teaching p {
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
 /* Match About and News container styles in dark mode */
 [data-theme="dark"] .s-about__grid {
   background: linear-gradient(145deg, rgba(35, 35, 45, 0.7), rgba(30, 30, 38, 0.8)) !important;
@@ -891,6 +917,12 @@ h2::after {
   line-height: 1.8;
   max-width: 800px;
   margin: 0 auto;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .s-about__desc h1 {
@@ -926,6 +958,9 @@ h2::after {
 
 .s-about__desc p {
   margin-bottom: 1.5rem;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .s-about__desc ul {
@@ -1059,6 +1094,12 @@ h2::after {
 }
 
 @media screen and (max-width: 768px) {
+  /* General mobile responsiveness improvements */
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
   .s-header__menu-toggle {
     display: flex;
     z-index: 90;
@@ -1163,10 +1204,16 @@ h2::after {
   .s-about__grid {
     grid-template-columns: 1fr;
     gap: 4rem;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    padding: 0 1rem;
   }
 
   .s-about__left {
     padding-right: 0;
+    width: 100%;
+    overflow-x: hidden;
   }
 
   .s-about__right {
@@ -1306,6 +1353,8 @@ h2::after {
   .team-grid {
     grid-template-columns: 1fr;
   }
+
+
   
   .team-member {
     width: 100%;
@@ -1806,6 +1855,8 @@ h2::after {
   .team-grid {
     grid-template-columns: 1fr;
   }
+
+
   
   .team-member {
     width: 100%;
