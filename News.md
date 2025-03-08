@@ -1,5 +1,9 @@
 ## 2025
 
+### March 
+
+- Join us for a hybrid online+offline course: [High-Fidelity Simulations Using Basilisk C](/teaching/2025-Basilisk101-Madrid) in Madrid, Spain (March 10-13). Learn some computational (colorful) fluid dynamics with hands-on coding sessions.
+
 ### February
 
 - [<strong>Sanjay, V.</strong>, Zhang, B., Lv, C., & Lohse, D. J. Fluid Mech., 1004, A6 (2025) selected as the cover article.](/research#14)
@@ -46,4 +50,4 @@
 
 ### May
 
-<strong>Vatsal Sanjay</strong> awarded the <a href="https://www.tudelft.nl/2024/jm-burgerscentrum/kivi-hoogendoorn-fluid-mechanics-award-2023" style="text-decoration: none; color: #0056b3; font-weight: 500;">KIVI Hoogendoorn Fluid Mechanics Award 2023</a> for his PhD thesis "Viscous Free-Surface Flows". The award ceremony will take place at the Burgers Symposium on 29–30 May 2024 in Lunteren.
+<strong>Vatsal Sanjay</strong> awarded the <a href="https://www.tudelft.nl/2024/jm-burgerscentrum/kivi-hoogendoorn-fluid-mechanics-award-2023" style="text-decoration: none; color: #0056b3; font-weight: 500;">KIVI Hoogendoorn Fluid Mechanics Award 2023</a> for his PhD thesis "Viscous Free-Surface Flows". The award ceremony took place at the Burgers Symposium on 29–30 May 2024 in Lunteren.
