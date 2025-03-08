@@ -30,41 +30,66 @@
   padding: 8rem 0 6rem 0;
   background-color: var(--research-bg-color);
   position: relative;
+  transition: background-color 0.1s linear;
+  box-shadow: none;
 }
 
-/* Improve bold text visibility in dark mode */
+/* Improve bold text visibility across all modes */
+.research-content strong,
+.research-content b {
+  font-weight: 700;
+  transition: none;
+}
+
+/* Dark mode color changes only */
 [data-theme="dark"] .research-content strong,
 [data-theme="dark"] .research-content b {
   color: #ffffff;
-  font-weight: 700;
   text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
 }
 
-/* Add more solid background in dark mode */
+/* Add more solid background in dark mode - color only */
 [data-theme="dark"] .s-research {
   background-color: #1E1E25;
   box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.3);
 }
 
-/* Improve blockquote visibility in dark mode */
-[data-theme="dark"] .research-content blockquote {
-  background-color: #272736;
-  border-left: 4px solid #4d8dff;
+/* Blockquote styling consistent across themes */
+.research-content blockquote {
+  background-color: var(--research-paper-bg);
+  border-left: 4px solid var(--research-subheading-color);
   padding: 1rem;
   margin: 1.5rem 0;
-  color: #ffffff;
+  color: var(--research-text-color);
   border-radius: 0 4px 4px 0;
+  transition: background-color 0.15s linear;
 }
 
-/* Improve list item visibility in dark mode */
-[data-theme="dark"] .research-content ul,
-[data-theme="dark"] .research-content ol {
+/* Dark mode color changes only */
+[data-theme="dark"] .research-content blockquote {
+  background-color: #272736;
+  border-left-color: #4d8dff;
   color: #ffffff;
 }
 
+/* List item styling consistent across themes */
+.research-content ul,
+.research-content ol {
+  color: var(--research-text-color);
+  transition: none;
+}
+
+.research-content li {
+  color: var(--research-text-color);
+  margin-bottom: 0.5rem;
+  transition: none;
+}
+
+/* Dark mode color changes only */
+[data-theme="dark"] .research-content ul,
+[data-theme="dark"] .research-content ol,
 [data-theme="dark"] .research-content li {
   color: #ffffff;
-  margin-bottom: 0.5rem;
 }
 
 @media screen and (max-width: 800px) {
@@ -86,12 +111,17 @@
 }
 
 /* Improve content visibility in dark mode */
-[data-theme="dark"] .research-content {
-  background-color: #272736;
+.research-content {
   border-radius: 8px;
   padding: 2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(80, 80, 120, 0.2);
+  box-shadow: 0 4px 20px var(--research-shadow);
+  border: 1px solid transparent;
+  transition: background-color 0.15s linear;
+}
+
+[data-theme="dark"] .research-content {
+  background-color: #272736;
+  border-color: rgba(80, 80, 120, 0.2);
 }
 
 @media screen and (max-width: 600px) {
@@ -108,8 +138,10 @@
   text-align: center;
   background: linear-gradient(45deg, #0085ff, var(--research-heading-color));
   -webkit-background-clip: text;
+  background-clip: text; /* Standard property for compatibility */
   -webkit-text-fill-color: transparent;
   animation: fadeIn 0.8s ease-out;
+  transition: none;
 }
 
 @media screen and (max-width: 600px) {
@@ -164,12 +196,15 @@
   padding: 1.5rem;
   margin: 2rem 0;
   border-radius: 8px;
-  transition: all 0.3s ease;
+  transition: transform 0.2s ease;
+  /* Only keep transform transition for hover effect, remove theme-switching transitions */
   border: 1px solid transparent;
   background-color: transparent;
   scroll-margin-top: 120px;
   position: relative;
   color: var(--research-text-color);
+  /* Add consistent box-shadow with 0 opacity by default */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0);
 }
 
 .paper-container:hover {
@@ -177,6 +212,12 @@
   border-color: rgba(0, 133, 255, 0.1);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] .paper-container:hover {
+  background-color: rgba(70, 140, 255, 0.1);
+  border-color: rgba(70, 140, 255, 0.2);
+  /* keep transform and box-shadow the same to avoid layout shifts */
 }
 
 .paper-container h3 {

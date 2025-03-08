@@ -127,6 +127,32 @@ body {
   background-color: var(--color-background) !important;
 }
 
+/* Ensure content is contained within viewport on all screens */
+.s-about, 
+.s-about__grid,
+.s-about__left,
+.s-about__desc,
+.s-about__right,
+.s-about__desc p,
+.s-about__desc li,
+.s-about__desc a,
+.s-about__desc h1,
+.s-about__desc h2,
+.s-about__desc h3,
+.s-about__desc strong,
+.s-about__desc ul,
+.s-research,
+.s-research p,
+.s-featured,
+.s-featured p,
+.s-teaching,
+.s-teaching p {
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
 /* Match About and News container styles in dark mode */
 [data-theme="dark"] .s-about__grid {
   background: linear-gradient(145deg, rgba(35, 35, 45, 0.7), rgba(30, 30, 38, 0.8)) !important;
@@ -198,10 +224,14 @@ h2::after {
 /* YouTube stats card theme switching */
 .youtube-stats-light {
   display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .youtube-stats-dark {
   display: none;
+  max-width: 100%;
+  height: auto;
 }
 
 [data-theme="dark"] .youtube-stats-light {
@@ -210,6 +240,23 @@ h2::after {
 
 [data-theme="dark"] .youtube-stats-dark {
   display: block;
+}
+
+/* Make YouTube stats card responsive */
+img.youtube-stats-light,
+img.youtube-stats-dark {
+  max-width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+  img.youtube-stats-light,
+  img.youtube-stats-dark {
+    max-width: 100%;
+    height: auto !important;
+    width: 100% !important;
+  }
 }
 
 /* Fix box shadows and borders in dark mode */
@@ -494,7 +541,7 @@ h2::after {
   background-image: url('../../featured/GraphicalAbstract_v7_FrontOnly.jpg');
   background-size: cover;
   background-position: center;
-  opacity: 0.65;
+  opacity: 0.75;
   z-index: -1;
   filter: brightness(0.9) contrast(1.1);
   backdrop-filter: blur(5px);
@@ -891,6 +938,12 @@ h2::after {
   line-height: 1.8;
   max-width: 800px;
   margin: 0 auto;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .s-about__desc h1 {
@@ -926,6 +979,9 @@ h2::after {
 
 .s-about__desc p {
   margin-bottom: 1.5rem;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .s-about__desc ul {
@@ -1059,6 +1115,12 @@ h2::after {
 }
 
 @media screen and (max-width: 768px) {
+  /* General mobile responsiveness improvements */
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
   .s-header__menu-toggle {
     display: flex;
     z-index: 90;
@@ -1078,6 +1140,11 @@ h2::after {
     transition: right 0.3s ease;
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
     z-index: 100;
+  }
+  
+  [data-theme="dark"] .s-header__nav {
+    background: rgba(30, 30, 35, 0.95);
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
   }
 
   .s-header__nav.is-active {
@@ -1126,6 +1193,10 @@ h2::after {
   .s-header__nav-list a:hover {
     background: rgba(255, 255, 255, 0.35);
   }
+  
+  [data-theme="dark"] .s-header__nav-list a:hover {
+    background: rgba(60, 60, 70, 0.5);
+  }
 
   /* Special handling for Bluesky icon in mobile view */
   .s-header__nav-list li[style="background: none;"] {
@@ -1154,10 +1225,16 @@ h2::after {
   .s-about__grid {
     grid-template-columns: 1fr;
     gap: 4rem;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    padding: 0 1rem;
   }
 
   .s-about__left {
     padding-right: 0;
+    width: 100%;
+    overflow-x: hidden;
   }
 
   .s-about__right {
@@ -1297,6 +1374,8 @@ h2::after {
   .team-grid {
     grid-template-columns: 1fr;
   }
+
+
   
   .team-member {
     width: 100%;
@@ -1797,6 +1876,8 @@ h2::after {
   .team-grid {
     grid-template-columns: 1fr;
   }
+
+
   
   .team-member {
     width: 100%;
