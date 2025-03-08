@@ -3,14 +3,19 @@
     "short_name": "CoMPhy",
     "icons": [
         {
-            "src": "/assets/favicon/android-chrome-192x192.png",
-            "sizes": "192x192",
+            "src": "/assets/favicon/favicon-96x96.png",
+            "sizes": "96x96",
             "type": "image/png"
         },
         {
-            "src": "/assets/favicon/android-chrome-512x512.png",
-            "sizes": "512x512",
-            "type": "image/png"
+            "src": "/assets/favicon/favicon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml"
+        },
+        {
+            "src": "/assets/favicon/favicon.ico",
+            "sizes": "48x48",
+            "type": "image/x-icon"
         }
     ],
     "theme_color": "#ffffff",
