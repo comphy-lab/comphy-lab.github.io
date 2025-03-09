@@ -78,18 +78,21 @@ The course combines theoretical lectures with extensive hands-on sessions, allow
 - **10:00-11:30** &nbsp;|&nbsp; **Lecture (1a)**
   - Conservation laws and the numerical solution of the Navier–Stokes equations
 - **11:45-13:00** &nbsp;|&nbsp; **Lecture (1b)**
-  - Advection-diffusion, diffusion-reaction, and other transport equations
+  - Transport equations
   - *Brief intro to Basilisk coding framework*
 
 #### First coding steps
 - **15:00-18:00** &nbsp;|&nbsp; **Hybrid Session**
-  - Implementing basic transport equations in Basilisk C
+  - Implementing basic transport equations in Basilisk C.
+  - Using headers in Basilisk, modular code structure, problem setup, and compilation
   - *Whiteboard + coding*
+  - [1st Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1st-workingAssignment)
 
 ### Tuesday: Advanced Implementation
 #### Coding like a pro
 - **10:00-11:15** &nbsp;|&nbsp; **Hackathon (1c)**
-  - Using headers in Basilisk, modular code structure, problem setup, and compilation
+  - Solving Navier–Stokes equations in Basilisk C. 
+  - [2nd Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/2nd-workingAssignment)
 - **11:30-13:00** &nbsp;|&nbsp; **Hackathon Continued**
   - Expanding on the morning tasks and code debugging
 
@@ -98,7 +101,8 @@ The course combines theoretical lectures with extensive hands-on sessions, allow
 - **10:00-11:30** &nbsp;|&nbsp; **Lecture (2a)**
   - Interface tracking methods (VoF, level set, phase-field approaches) and numerical strategies
 - **11:45-13:00** &nbsp;|&nbsp; **Hackathon (2b)**
-  - Hands-on tutorial applying interface-tracking to a simple two-phase problem
+  - Hands-on tutorial with interface-tracking to a simple two-phase problem
+  - [3rd Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment)
 
 #### Seminar
 - **13:30-14:00** &nbsp;|&nbsp; **Department seminar (2c)**
@@ -106,18 +110,20 @@ The course combines theoretical lectures with extensive hands-on sessions, allow
 
 #### Non-Newtonian flows
 - **15:00-16:00** &nbsp;|&nbsp; **Lecture (3a)**
-  - Non-Newtonian flows: viscoplasticity and viscoelasticity
+  - Non-Newtonian flows: viscoelasticity.
 - **16:15-18:00** &nbsp;|&nbsp; **Hackathon (3b)**
-  - Coding exercises for shear-thinning, viscoplastic, or viscoelastic fluids
+  - Coding exercises for viscoelastic fluids.
+  - [4th Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment)
 
 ### Thursday: Special Topics
 #### Special topics
 - **10:00-11:30** &nbsp;|&nbsp; **Lecture (4a)**
-  - Special Topics: multilayer solver, lubrication equation, Marangoni flows, manifold death, and research-oriented examples
+  - Review and catching up on [4th Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment).
+  - Special Topics: Three-phase flows, 
 - **11:45-13:00** &nbsp;|&nbsp; **Hackathon (4b)**
-  - Focused tutorials on the special topics introduced in the lecture
+  - Special Topics: Holey Sheets, Contact line dynamics. 
 - **15:00-16:30** &nbsp;|&nbsp; **Lecture (4c)**
-  - Open discussion, deeper dives into advanced features, final code reviews, and next steps
+  - Open discussion, deeper dives into advanced features, final code reviews, and next steps.
 
 ---
 
