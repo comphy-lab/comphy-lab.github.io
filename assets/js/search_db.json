@@ -533,56 +533,56 @@
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - Think before you compute",
-    "content": "- **10:00-11:30** &nbsp;|&nbsp; **Lecture (1a)**\n  - Conservation laws and the numerical solution of the Navier–Stokes equations\n- **11:45-13:00** &nbsp;|&nbsp; **Lecture (1b)**\n  - Advection-diffusion, diffusion-reaction, and other transport equations\n  - *Brief intro to Basilisk coding framework*",
+    "content": "- **10:00-11:30** &nbsp;|&nbsp; **Lecture (1a)**\n  - Conservation laws and the numerical solution of the Navier–Stokes equations\n- **11:45-13:00** &nbsp;|&nbsp; **Lecture (1b)**\n  - Transport equations\n  - *Brief intro to Basilisk coding framework*",
     "url": "/teaching/2025-Basilisk101-Madrid#Think%2Bbefore%2Byou%2Bcompute",
     "type": "teaching_content",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - Think before you compute",
-    "content": "- **10:00-11:30** &nbsp;|&nbsp; **Lecture (1a)**\n  - Conservation laws and the numerical solution of the Navier–Stokes equations\n- **11:45-13:00** &nbsp;|&nbsp; **Lecture (1b)**\n  - Advection-diffusion, diffusion-reaction, and other transport equations\n  - *Brief intro to Basilisk coding framework*",
+    "content": "- **10:00-11:30** &nbsp;|&nbsp; **Lecture (1a)**\n  - Conservation laws and the numerical solution of the Navier–Stokes equations\n- **11:45-13:00** &nbsp;|&nbsp; **Lecture (1b)**\n  - Transport equations\n  - *Brief intro to Basilisk coding framework*",
     "url": "/teaching/2025-Basilisk101-Madrid#Think%2Bbefore%2Byou%2Bcompute",
     "type": "teaching_paragraph",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - First coding steps",
-    "content": "- **15:00-18:00** &nbsp;|&nbsp; **Hybrid Session**\n  - Implementing basic transport equations in Basilisk C\n  - *Whiteboard + coding*",
+    "content": "- **15:00-18:00** &nbsp;|&nbsp; **Hybrid Session**\n  - Implementing basic transport equations in Basilisk C.\n  - Using headers in Basilisk, modular code structure, problem setup, and compilation\n  - *Whiteboard + coding*\n  - [1st Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1st-workingAssignment)",
     "url": "/teaching/2025-Basilisk101-Madrid#First%2Bcoding%2Bsteps",
     "type": "teaching_content",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - First coding steps",
-    "content": "- **15:00-18:00** &nbsp;|&nbsp; **Hybrid Session**\n  - Implementing basic transport equations in Basilisk C\n  - *Whiteboard + coding*",
+    "content": "- **15:00-18:00** &nbsp;|&nbsp; **Hybrid Session**\n  - Implementing basic transport equations in Basilisk C.\n  - Using headers in Basilisk, modular code structure, problem setup, and compilation\n  - *Whiteboard + coding*\n  - [1st Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1st-workingAssignment)",
     "url": "/teaching/2025-Basilisk101-Madrid#First%2Bcoding%2Bsteps",
     "type": "teaching_paragraph",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - Coding like a pro",
-    "content": "- **10:00-11:15** &nbsp;|&nbsp; **Hackathon (1c)**\n  - Using headers in Basilisk, modular code structure, problem setup, and compilation\n- **11:30-13:00** &nbsp;|&nbsp; **Hackathon Continued**\n  - Expanding on the morning tasks and code debugging",
+    "content": "- **10:00-11:15** &nbsp;|&nbsp; **Hackathon (1c)**\n  - Solving Navier–Stokes equations in Basilisk C. \n  - [2nd Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/2nd-workingAssignment)\n- **11:30-13:00** &nbsp;|&nbsp; **Hackathon Continued**\n  - Expanding on the morning tasks and code debugging",
     "url": "/teaching/2025-Basilisk101-Madrid#Coding%2Blike%2Ba%2Bpro",
     "type": "teaching_content",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - Coding like a pro",
-    "content": "- **10:00-11:15** &nbsp;|&nbsp; **Hackathon (1c)**\n  - Using headers in Basilisk, modular code structure, problem setup, and compilation\n- **11:30-13:00** &nbsp;|&nbsp; **Hackathon Continued**\n  - Expanding on the morning tasks and code debugging",
+    "content": "- **10:00-11:15** &nbsp;|&nbsp; **Hackathon (1c)**\n  - Solving Navier–Stokes equations in Basilisk C. \n  - [2nd Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/2nd-workingAssignment)\n- **11:30-13:00** &nbsp;|&nbsp; **Hackathon Continued**\n  - Expanding on the morning tasks and code debugging",
     "url": "/teaching/2025-Basilisk101-Madrid#Coding%2Blike%2Ba%2Bpro",
     "type": "teaching_paragraph",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - Interface tracking methods",
-    "content": "- **10:00-11:30** &nbsp;|&nbsp; **Lecture (2a)**\n  - Interface tracking methods (VoF, level set, phase-field approaches) and numerical strategies\n- **11:45-13:00** &nbsp;|&nbsp; **Hackathon (2b)**\n  - Hands-on tutorial applying interface-tracking to a simple two-phase problem",
+    "content": "- **10:00-11:30** &nbsp;|&nbsp; **Lecture (2a)**\n  - Interface tracking methods (VoF, level set, phase-field approaches) and numerical strategies\n- **11:45-13:00** &nbsp;|&nbsp; **Hackathon (2b)**\n  - Hands-on tutorial with interface-tracking to a simple two-phase problem\n  - [3rd Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment)",
     "url": "/teaching/2025-Basilisk101-Madrid#Interface%2Btracking%2Bmethods",
     "type": "teaching_content",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - Interface tracking methods",
-    "content": "- **10:00-11:30** &nbsp;|&nbsp; **Lecture (2a)**\n  - Interface tracking methods (VoF, level set, phase-field approaches) and numerical strategies\n- **11:45-13:00** &nbsp;|&nbsp; **Hackathon (2b)**\n  - Hands-on tutorial applying interface-tracking to a simple two-phase problem",
+    "content": "- **10:00-11:30** &nbsp;|&nbsp; **Lecture (2a)**\n  - Interface tracking methods (VoF, level set, phase-field approaches) and numerical strategies\n- **11:45-13:00** &nbsp;|&nbsp; **Hackathon (2b)**\n  - Hands-on tutorial with interface-tracking to a simple two-phase problem\n  - [3rd Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment)",
     "url": "/teaching/2025-Basilisk101-Madrid#Interface%2Btracking%2Bmethods",
     "type": "teaching_paragraph",
     "priority": 2
@@ -603,28 +603,28 @@
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - Non-Newtonian flows",
-    "content": "- **15:00-16:00** &nbsp;|&nbsp; **Lecture (3a)**\n  - Non-Newtonian flows: viscoplasticity and viscoelasticity\n- **16:15-18:00** &nbsp;|&nbsp; **Hackathon (3b)**\n  - Coding exercises for shear-thinning, viscoplastic, or viscoelastic fluids",
+    "content": "- **15:00-16:00** &nbsp;|&nbsp; **Lecture (3a)**\n  - Non-Newtonian flows: viscoelasticity.\n- **16:15-18:00** &nbsp;|&nbsp; **Hackathon (3b)**\n  - Coding exercises for viscoelastic fluids.\n  - [4th Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment)",
     "url": "/teaching/2025-Basilisk101-Madrid#Non-Newtonian%2Bflows",
     "type": "teaching_content",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - Non-Newtonian flows",
-    "content": "- **15:00-16:00** &nbsp;|&nbsp; **Lecture (3a)**\n  - Non-Newtonian flows: viscoplasticity and viscoelasticity\n- **16:15-18:00** &nbsp;|&nbsp; **Hackathon (3b)**\n  - Coding exercises for shear-thinning, viscoplastic, or viscoelastic fluids",
+    "content": "- **15:00-16:00** &nbsp;|&nbsp; **Lecture (3a)**\n  - Non-Newtonian flows: viscoelasticity.\n- **16:15-18:00** &nbsp;|&nbsp; **Hackathon (3b)**\n  - Coding exercises for viscoelastic fluids.\n  - [4th Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment)",
     "url": "/teaching/2025-Basilisk101-Madrid#Non-Newtonian%2Bflows",
     "type": "teaching_paragraph",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - Special topics",
-    "content": "- **10:00-11:30** &nbsp;|&nbsp; **Lecture (4a)**\n  - Special Topics: multilayer solver, lubrication equation, Marangoni flows, manifold death, and research-oriented examples\n- **11:45-13:00** &nbsp;|&nbsp; **Hackathon (4b)**\n  - Focused tutorials on the special topics introduced in the lecture\n- **15:00-16:30** &nbsp;|&nbsp; **Lecture (4c)**\n  - Open discussion, deeper dives into advanced features, final code reviews, and next steps\n\n---",
+    "content": "- **10:00-11:30** &nbsp;|&nbsp; **Lecture (4a)**\n  - Review and catching up on [4th Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment).\n  - Special Topics: Three-phase flows, \n- **11:45-13:00** &nbsp;|&nbsp; **Hackathon (4b)**\n  - Special Topics: Holey Sheets, Contact line dynamics. \n- **15:00-16:30** &nbsp;|&nbsp; **Lecture (4c)**\n  - Open discussion, deeper dives into advanced features, final code reviews, and next steps.\n\n---",
     "url": "/teaching/2025-Basilisk101-Madrid#Special%2Btopics",
     "type": "teaching_content",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - Special topics",
-    "content": "- **10:00-11:30** &nbsp;|&nbsp; **Lecture (4a)**\n  - Special Topics: multilayer solver, lubrication equation, Marangoni flows, manifold death, and research-oriented examples\n- **11:45-13:00** &nbsp;|&nbsp; **Hackathon (4b)**\n  - Focused tutorials on the special topics introduced in the lecture\n- **15:00-16:30** &nbsp;|&nbsp; **Lecture (4c)**\n  - Open discussion, deeper dives into advanced features, final code reviews, and next steps",
+    "content": "- **10:00-11:30** &nbsp;|&nbsp; **Lecture (4a)**\n  - Review and catching up on [4th Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment).\n  - Special Topics: Three-phase flows, \n- **11:45-13:00** &nbsp;|&nbsp; **Hackathon (4b)**\n  - Special Topics: Holey Sheets, Contact line dynamics. \n- **15:00-16:30** &nbsp;|&nbsp; **Lecture (4c)**\n  - Open discussion, deeper dives into advanced features, final code reviews, and next steps.",
     "url": "/teaching/2025-Basilisk101-Madrid#Special%2Btopics",
     "type": "teaching_paragraph",
     "priority": 2
