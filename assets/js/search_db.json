@@ -1708,828 +1708,1234 @@
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Early Life and Education",
-    "content": "James Gardner Oldroyd (25 April 1921 – 22 November 1982) demonstrated exceptional mathematical aptitude in Bradford, England. He entered Bradford Grammar School at age 10, matriculating in nine subjects by age 14.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "0-README - - Conservation laws and the numerical solution of the Navier–Stokes equations",
+    "content": "- Conservation laws and the numerical solution of the Navier–Stokes equations\n- Transport equations\n- *Brief intro to Basilisk coding framework*",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/0-README",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Early Life and Education",
-    "content": "Unable to advance immediately to university due to his youth, he dedicated four years in sixth form to developing mathematical expertise while acquiring fluency in German and French.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "0-README - First coding steps",
+    "content": "- Implementing basic transport equations in Basilisk C.\n- Using headers in Basilisk, modular code structure, problem setup, and compilation\n- [1st Working Assignment](1st-workingAssignment)",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/0-README",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Early Life and Education",
-    "content": "In 1939, Oldroyd secured a state scholarship to Trinity College, Cambridge, where he established an exemplary academic record. He received the Rouse Ball Prize in 1941 and the Mayhew Prize in 1942 as Cambridge's outstanding student in applied mathematics, graduating with first-class honors.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "0-README - Next coding steps",
+    "content": "- Solving Navier–Stokes equations in Basilisk C: [2nd Working Assignment](2nd-workingAssignment.md)",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/0-README",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Early Life and Education",
-    "content": "Oldroyd maintained strong academic affiliations with Trinity College post-graduation, returning as a research scholar (1945–46) and securing a junior fellowship (1947).",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "0-README - Interface Dynamics",
+    "content": "- Interface tracking methods (VoF, level set, phase-field approaches) and numerical strategies\n- Hands-on tutorial with interface-tracking to a simple two-phase problem: [3rd Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment)",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/0-README",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Early Life and Education",
-    "content": "During this period, he completed his PhD thesis titled *“A mathematical discussion of some rheological problems,”* with guidance and critiques from W. R. Dean (of *Dean flow* fame) and Alan H. Wilson.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "0-README - Non-Newtonian flows",
+    "content": "- Non-Newtonian flows: viscoelasticity.\n  - Coding exercises for viscoelastic fluids: [4th Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment)",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/0-README",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Early Life and Education",
-    "content": "Dean and Wilson $-$ both Cambridge trained mathematicians significantly influenced Oldroyd's approach to fluid mechanics and solid mechanics.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "0-README - Special topics",
+    "content": "- Three-phase flows.\n  - Holey Sheets.\n  - Contact line dynamics.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/0-README",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Early Life and Education",
-    "content": "His doctoral work (PhD awarded 1949) established fundamental principles in non-Newtonian fluid mechanics, culminating in his Cambridge Sc.D. in 1958 for his substantial contributions to the field ( ([JNNFM spl. ed.](https://doi.org/10.1016/j.jnnfm.2022.104749)).",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "1-conduction-takeaways - After examining the implementation of heat conduction problems in both vanilla C and Basilisk, several significant advantages of using Basilisk become apparent",
+    "content": "After examining the implementation of heat conduction problems in both vanilla C and Basilisk, several significant advantages of using Basilisk become apparent.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1-conduction-takeaways",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Wartime Work and the Path to Rheology",
-    "content": "World War II interrupted Oldroyd’s academic pursuits but also broadened his experience. From 1942 to 1945 he worked at the Ministry of Supply in Aberporth, Wales, conducting rocket research for Britain’s war effort.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "1-conduction-takeaways - After examining the implementation of heat conduction problems in both vanilla C and Basilisk, several significant advantages of using Basilisk become apparent",
+    "content": "This document outlines these benefits to help new users understand why Basilisk is a powerful tool for computational fluid dynamics (CFD) simulations.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1-conduction-takeaways",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Wartime Work and the Path to Rheology",
-    "content": "This foray into applied physics and engineering gave him practical insight into fluid and material behavior under extreme conditions. After the war, Oldroyd transitioned back to research in emerging areas of fluid mechanics.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "1-conduction-takeaways - 1. Simplified Domain and Grid Management",
+    "content": "**Vanilla C:**\n- Requires manual definition of grid points, cell spacings, and domain extents\n- Needs explicit calculation of physical coordinates for each point\n- Requires manual array allocation and deallocation\n**Basilisk:**\n- Simple declaration of domain parameters (`L0`, `X0`, `N`)\n- Automatic grid generation and management\n- No need for explicit memory allocation/deallocation for grid points",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1-conduction-takeaways",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Wartime Work and the Path to Rheology",
-    "content": "In 1945 he joined the Fundamental Research Laboratory of **Courtaulds** in Maidenhead, a major industrial lab focused on artificial fibers and polymers ([James G. Oldroyd – Wikipedia](https://de.wikipedia.org/wiki/James_G._Oldroyd#:~:text=Rouse%20Ball%20Preis%20und%201942,Teil%20seiner)).",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "1-conduction-takeaways - 2. Declarative Boundary Conditions",
+    "content": "**Vanilla C:**\n- Requires explicit functions to apply boundary conditions\n- Boundary conditions must be repeatedly applied during solution\n- Error-prone due to manual indexing\n**Basilisk:**\n- Declarative boundary conditions using a simple, intuitive syntax:\n  ```c\n  T[left] = dirichlet(0.0);\n  T[right] = dirichlet(1.0);\n  ```\n- Applied automatically during computation",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1-conduction-takeaways",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Wartime Work and the Path to Rheology",
-    "content": "Notably, his former Cambridge tutor, Alan H. Wilson, had also moved to Courtaulds, and likely helped recruit Oldroyd to this innovative environment ([JNNFM spl. ed.](https://doi.org/10.1016/j.jnnfm.2022.104749)). At Courtaulds, Oldroyd worked closely with experimental rheologists **D. J.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "1-conduction-takeaways - 3. Event-Based Programming Model",
+    "content": "**Vanilla C:**\n- Procedural, sequential code execution\n- Complex control flow for time-stepping, initialization, and output\n- Difficult to separate logical components\n**Basilisk:**\n- Event-based programming model that separates concerns:\n  - `event init` for initialization\n  - `event integration/marching` for time stepping\n  - `event end` for final output\n- Events can be scheduled to occur at specific times or intervals\n- Cleaner, more modular code structure",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1-conduction-takeaways",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Wartime Work and the Path to Rheology",
-    "content": "Strawbridge** and **B. A. Toms**, who were investigating the unusual flow behavior of polymer solutions ([James G. Oldroyd – Wikipedia](https://de.wikipedia.org/wiki/James_G._Oldroyd#:~:text=Wales%20in%20der%20Raketenforschung%20und,im%20selben%20Jahr%20wurde%20er)).",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "1-conduction-takeaways - 4. Automatic Time Step Management",
+    "content": "**Vanilla C:**\n- Manual implementation of time step calculations\n- Explicit checks to ensure numerical stability (CFL condition)\n- Manual logic to hit specific output times exactly\n**Basilisk:**\n- Automatic time step management with `dtnext(DT)`\n- Built-in tools for maintaining numerical stability\n- Events can be scheduled at specific times with `t += tsnap`",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1-conduction-takeaways",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Wartime Work and the Path to Rheology",
-    "content": "These collaborations exposed Oldroyd to cutting-edge rheometry and puzzling phenomena – for example, B. A. Toms had just discovered the drag reduction effect (later called the *Toms effect*) where tiny polymer additives dramatically lower turbulent friction.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "1-conduction-takeaways - 5. Stencil Operations and Spatial Discretization",
+    "content": "**Vanilla C:**\n- Explicit array indexing for neighbor access\n- Manual implementation of finite difference/volume stencils\n- Error-prone due to index arithmetic\n**Basilisk:**\n- Intuitive stencil notation: `T[1]`, `T[-1]` for neighbors\n- `foreach()` iterator for grid traversal without manual indexing\n- Automatic handling of boundary conditions during stencil operations",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1-conduction-takeaways",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Wartime Work and the Path to Rheology",
-    "content": "Oldroyd became fascinated by such non-Newtonian effects and even suggested early on that *wall slip* at the pipe boundary might explain Toms’s observations [^1].",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "1-conduction-takeaways - 6. Reduced Boilerplate Code",
+    "content": "**Vanilla C:**\n- Lengthy implementations even for simple problems\n- Requires explicit implementations of utility functions\n- Verbose memory management\n**Basilisk:**\n- Significantly shorter code for equivalent functionality\n- Built-in functions for common operations\n- Less cognitive load due to reduced complexity",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1-conduction-takeaways",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Wartime Work and the Path to Rheology",
-    "content": "This period at Courtaulds was formative: it immersed Oldroyd in real-world rheological problems, from the processing of viscose fibers to the oddities of polymer solution flows, inspiring him to seek a deeper theoretical framework for these `elastic` liquids.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "1-conduction-takeaways - 7. Scalar Field Declaration and Management",
+    "content": "**Vanilla C:**\n- Manual array allocation for each field\n- Explicit memory management to prevent leaks\n- No standard methods for field operations\n**Basilisk:**\n- Simple scalar field declaration: `scalar T[]`\n- Automatic memory management\n- Built-in methods for field operations",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1-conduction-takeaways",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Wartime Work and the Path to Rheology",
-    "content": "Oldroyd’s first publications in the late 1940s already show him tackling non-Newtonian fluid mechanics with a blend of mathematical rigor and practical insight.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "1-conduction-takeaways - 8. Flux Computation and Conservative Formulation",
+    "content": "**Vanilla C:**\n- Manual flux computation at interfaces\n- Error-prone implementation of conservation laws\n- Complex indexing for interface values\n**Basilisk:**\n- Simplified flux computation with stencil notation\n- Natural expression of conservation laws\n- Automatic handling of flux boundary conditions",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1-conduction-takeaways",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Wartime Work and the Path to Rheology",
-    "content": "He initially focused on *viscoplasticity*, analyzing the flow of **Bingham solids** (materials that behave as a solid until a yield stress is exceeded when they flow).",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "1-conduction-takeaways - 9. Extensibility and Library Integration",
+    "content": "**Vanilla C:**\n- Limited reusability of code components\n- Need to reimplement common algorithms\n- Difficult to extend to more complex problems\n**Basilisk:**\n- Modular design allows easy extension\n- Rich library of pre-implemented physics modules\n- Natural pathway to more complex simulations",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1-conduction-takeaways",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Wartime Work and the Path to Rheology",
-    "content": "In 1947, while still in Cambridge, he published a series of papers on the *plastic flow of Bingham materials*, developing a `rational formulation` of their equations of flow and solving flow problems between moving cylinders.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "1-conduction-takeaways - Conclusion",
+    "content": "The Basilisk computational environment provides significant advantages over vanilla C for fluid dynamics simulations.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1-conduction-takeaways",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Wartime Work and the Path to Rheology",
-    "content": "These early works, drawn from his dissertation, addressed how yield-stress fluids deform, essentially bridging solid plasticity and fluid flow.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "1-conduction-takeaways - Conclusion",
+    "content": "By abstracting away the implementation details of grid management, boundary conditions, and numerical methods, Basilisk allows researchers and engineers to focus on the physics of their problems rather than the computational details.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1-conduction-takeaways",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Wartime Work and the Path to Rheology",
-    "content": "By 1949, Oldroyd had broadened his scope to other types of non-Newtonian fluids: he examined steady laminar flows in non-Newtonian liquids and noted anomalies like pressure gradients in pipe flow that couldn’t be explained by classical viscosity alone ([Microsoft Word - Document1](https://nnf.mit.edu/sites/default/files/publications/files/Oldroyd_SI_Editorial_FINAL.pdf#:~:text=Applications%2C%20Volume%201%20%28pp.%20653,of%20solids%E2%80%9D%20held%20in%20Madrid)) ([Microsoft Word - Document1](https://nnf.mit.edu/sites/default/files/publications/files/Oldroyd_SI_Editorial_FINAL.pdf#:~:text=,dimensional%20disperse)).",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "1-conduction-takeaways - Conclusion",
+    "content": "This leads to more readable, maintainable, and correct code with significantly less development effort.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1-conduction-takeaways",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Wartime Work and the Path to Rheology",
-    "content": "He even proposed experimental methods to detect wall slip and other flow peculiarities at the first International Congress on Rheology in 1948 ([Microsoft Word - Document1](https://nnf.mit.edu/sites/default/files/publications/files/Oldroyd_SI_Editorial_FINAL.pdf#:~:text=Applications%2C%20Volume%201%20%28pp.%20653,of%20solids%E2%80%9D%20held%20in%20Madrid)).",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "1-conduction-takeaways - Conclusion",
+    "content": "The comparison of the heat conduction examples shows that equivalent problems can be solved with much less code in Basilisk, while simultaneously providing a more intuitive and robust framework for extending to more complex physical phenomena.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1-conduction-takeaways",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Wartime Work and the Path to Rheology",
-    "content": "These experiences convinced Oldroyd that a unifying theoretical description for *complex fluids* was needed – one that could encompass the behavior of elastic liquids (polymer solutions), viscous suspensions, and even solids with memory.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "1st-workingAssignment - GitHub repository",
+    "content": "[Click here](https://github.com/comphy-lab/Basilisk-101)\n> [!tldr] TL;DR: \n> Heat Conduction Simulation Tutorial This tutorial walks through implementing heat conduction simulations, starting with basic vanilla C implementations and progressing to more powerful Basilisk C versions.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1st-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Wartime Work and the Path to Rheology",
-    "content": "This realization set the stage for his groundbreaking work in 1950.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "1st-workingAssignment - GitHub repository",
+    "content": "We build from 1D steady-state problems to 2D, annular, and axisymmetric geometries, demonstrating how Basilisk's domain-specific language dramatically simplifies code while adding powerful features like adaptive mesh refinement and embedded boundaries.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1st-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - The 1950 Breakthrough: Formulating Rheological Equations of State",
-    "content": "In 1950, James G. Oldroyd published what is now considered **“probably the most important single paper in theoretical rheology.”** ([James G.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "1st-workingAssignment - GitHub repository",
+    "content": "The tutorial includes eight progressive simulation cases, showing how the same physics can be implemented with increasingly sophisticated numerical methods, and concludes with custom post-processing tools for data extraction and visualization.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1st-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - The 1950 Breakthrough: Formulating Rheological Equations of State",
-    "content": "Oldroyd - Wikipedia](https://en.wikipedia.org/wiki/James_G._Oldroyd#:~:text=In%201950%20he%20published%20a,6)) Titled *“On the Formulation of Rheological Equations of State,”* this paper established the basic principles for mathematical models of complex fluids ([James G.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "1st-workingAssignment - GitHub repository",
+    "content": "Basilisk ultimately reduces hundreds of lines of vanilla C code to concise, readable implementations that handle complex geometries with minimal effort.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1st-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - The 1950 Breakthrough: Formulating Rheological Equations of State",
-    "content": "Oldroyd - Wikipedia](https://en.wikipedia.org/wiki/James_G._Oldroyd#:~:text=In%201950%20he%20published%20a,6)).",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "1st-workingAssignment - Introduction",
+    "content": "This guide walks you through implementing heat conduction simulations using both vanilla C and the Basilisk framework.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1st-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - The 1950 Breakthrough: Formulating Rheological Equations of State",
-    "content": "Oldroyd addressed a fundamental issue: existing viscoelastic models at the time (such as the Jeffreys model) were not *frame-invariant* – their predictions could depend on the observer’s frame of reference, which is unphysical ([](http://www.damtp.cam.ac.uk/user/hinch/publications/Oldroyd12b.pdf#:~:text=Sack%20%281946%29%20,would%20climb%20the%20rod%2C%20as)).",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "1st-workingAssignment - Introduction",
+    "content": "We'll progress from simple steady-state problems to more complex transient simulations in multiple dimensions, highlighting the advantages of Basilisk for computational fluid dynamics (CFD) and heat transfer applications.\n> [!info] Learning Objectives\n> \n> - Implement basic heat conduction solvers in vanilla C\n> - Transition to equivalent implementations in Basilisk C\n> - Understand the advantages of Basilisk's domain-specific language\n> - Develop simulations with increasing complexity (1D → 2D → axisymmetric)\n> - Appreciate how Basilisk simplifies numerical methods implementation\n> - Learn to analyze and visualize simulation results with post-processing tools\nThroughout this tutorial, we'll follow a logical progression across eight core simulation cases:\n1.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1st-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - The 1950 Breakthrough: Formulating Rheological Equations of State",
-    "content": "Influenced by earlier work of Sir Harold Jeffreys and by a 1946 study of bitumen by H. Fröhlich and R.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "1st-workingAssignment - Introduction",
+    "content": "Steady-state heat conduction in vanilla C (`1-conduction-simple.c`)\n2. Transient heat conduction in vanilla C (`1-conduction-transient.c`)\n3. Steady-state heat conduction in Basilisk (`1-conduction-simple-basilisk.c`)\n4.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1st-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - The 1950 Breakthrough: Formulating Rheological Equations of State",
-    "content": "Sack, Oldroyd recognized that the way one computes the time-derivative of stress in a flowing material is crucial ([](http://www.damtp.cam.ac.uk/user/hinch/publications/Oldroyd12b.pdf#:~:text=Sack%20%281946%29%20,would%20climb%20the%20rod%2C%20as)).",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "1st-workingAssignment - Introduction",
+    "content": "Transient heat conduction in Basilisk (fill-in exercise) (`1-conduction-transient-basilisk.c`)\n5. Enhanced transient solution with diffusion module (`1-conduction-transient-basilisk-withHeaders.c`)\n6. 2D heat conduction (`1-conduction-2D.c`)\n7.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1st-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - The 1950 Breakthrough: Formulating Rheological Equations of State",
-    "content": "In essence, he argued that when a material element moves, rotates, and deforms, the rate-of-change of stress must be evaluated in a *convected frame* moving with the material.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "1st-workingAssignment - Introduction",
+    "content": "Heat conduction in an annulus (`1-conduction-2D-annulus.c`)\n8. Axisymmetric heat conduction (`1-conduction-Axi.c`)\nAfter completing the simulations, we'll also cover how to post-process and visualize the results using custom tools.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1st-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - The 1950 Breakthrough: Formulating Rheological Equations of State",
-    "content": "To achieve this, Oldroyd introduced two new definitions of the stress derivative – the **upper-convected** and **lower-convected** time derivatives – which account for material rotation and stretching in different ways ([](http://www.damtp.cam.ac.uk/user/hinch/publications/Oldroyd12b.pdf#:~:text=Sack%20%281946%29%20,would%20climb%20the%20rod%2C%20as)).",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "1st-workingAssignment - Exercise 1: Modify the Vanilla C Code",
+    "content": "> [!task] Suggested Tasks\n> \n> 1. Modify `1-conduction-simple.c` to solve a 2D steady-state problem\n>     - Add a second spatial dimension to the grid\n>     - Update the Gauss-Seidel iteration for 2D\n>     - Modify the boundary conditions for all four edges\n> 2.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1st-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - The 1950 Breakthrough: Formulating Rheological Equations of State",
-    "content": "Applying these ideas, Oldroyd showed that if one takes the classical *Jeffreys model* (a combination of an elastic spring and two viscous dashpots) and replaces the ordinary time derivatives with his convected derivatives, one obtains two consistent viscoelastic models ([](http://www.damtp.cam.ac.uk/user/hinch/publications/Oldroyd12b.pdf#:~:text=Sack%20%281946%29%20,would%20climb%20the%20rod%2C%20as)).",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "1st-workingAssignment - Exercise 1: Modify the Vanilla C Code",
+    "content": "Modify `1-conduction-transient.c` to use a different initial condition\n>     - Replace the Dirac delta with a Gaussian profile: $T(x,0) = e^{-x^2/\\sigma^2}$\n>     - Compare the numerical and analytical solutions at different times",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1st-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - The 1950 Breakthrough: Formulating Rheological Equations of State",
-    "content": "These he called “Model A” (using the lower-convected derivative) and “Model B” (using the upper-convected derivative) – known today as the **Oldroyd-A and Oldroyd-B models** ([](http://www.damtp.cam.ac.uk/user/hinch/publications/Oldroyd12b.pdf#:~:text=Sack%20%281946%29%20,would%20climb%20the%20rod%2C%20as)).",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "1st-workingAssignment - 2.2 Understanding Basilisk's Event System",
+    "content": "Basilisk uses an event-based programming model that separates concerns:\n- `event init (t = 0)`: Initialization at t=0\n- `event marching/integration (i++)`: Time integration at each step\n- `event end (t = end)`: Final operations at the end of the simulation\nEvents can also be scheduled at specific times or intervals:\n```c\n// Execute every 0.1 time units\nevent writingFiles (t = 0.0; t += 0.1; t < 1.0) {\n  // Save output\n}\n```\n> [!note] Event Scheduling Syntax The event scheduling syntax in Basilisk follows this pattern:\n> \n> ```c\n> event name (condition) { ... }\n> ```\n> \n> Where condition can be:\n> \n> - `t = 0` - Single execution at t=0\n> - `i++` - Every iteration\n> - `t += tsnap` - At regular time intervals\n> - `t = end` - At the end of simulation\n> - Combinations like `t = 0; t += 0.1; t < 1.0` for repeated execution",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1st-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - The 1950 Breakthrough: Formulating Rheological Equations of State",
-    "content": "Both models reduce to the same behavior in a stationary reference frame, but they differ in how they predict stresses in flows involving rotation or deformation of the fluid parcel.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "1st-workingAssignment - Exercise 2: Understand Basilisk Code Structure",
+    "content": "> [!task] Tasks\n> \n> 1. Compare the structure and length of `1-conduction-simple.c` and `1-conduction-simple-basilisk.c`\n>     - How many lines of code are in each?\n>     - Which sections of code are simplified or eliminated in the Basilisk version?\n> 2.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1st-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - The 1950 Breakthrough: Formulating Rheological Equations of State",
-    "content": "Oldroyd’s 1950 paper thus laid down a clear *frame-indifference* requirement for rheological equations, a cornerstone for modern continuum mechanics of fluids. It was a bold theoretical leap that immediately gave researchers two plausible constitutive equations for viscoelastic liquids.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "1st-workingAssignment - Exercise 2: Understand Basilisk Code Structure",
+    "content": "Identify the advantages of the Basilisk implementation\n>     - List at least three specific advantages\n>     - For each advantage, explain how it simplifies code development or maintenance\n> 3.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1st-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - The 1950 Breakthrough: Formulating Rheological Equations of State",
-    "content": "Oldroyd, characteristically cautious, noted that choosing between Model A and B “depends on the physics” of the material, though he offered no immediate criteria for selection ([](http://www.damtp.cam.ac.uk/user/hinch/publications/Oldroyd12b.pdf#:~:text=However%2C%20the%20problem%20is%20how,3)).",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "1st-workingAssignment - Exercise 2: Understand Basilisk Code Structure",
+    "content": "Modify `1-conduction-simple-basilisk.c` to output the relative error\n>     - Add code to calculate and print the error relative to the analytical solution\n>     - Use the formula: $error = |T_{numerical} - T_{analytical}|/|T_{analytical}|$",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1st-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - The 1950 Breakthrough: Formulating Rheological Equations of State",
-    "content": "Nonetheless, the mere formulation of these models was a watershed moment.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "1st-workingAssignment - Exercise 4: Advanced Heat Conduction Problems",
+    "content": "> [!task] Tasks\n> \n> 1. Modify the 2D heat conduction problem\n>     - Change boundary conditions to have a sinusoidal temperature on top: `T[top] = dirichlet(sin(π*x/L0))`\n>     - Compare the steady-state solution with the new boundary condition\n> 2.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1st-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - The 1950 Breakthrough: Formulating Rheological Equations of State",
-    "content": "It provided, for the first time, a concrete mathematical language to describe fluids with both viscous and elastic characteristics (*viscoelastic* fluids) in a way that was invariant under changes of frame ([](http://www.damtp.cam.ac.uk/user/hinch/publications/Oldroyd12b.pdf#:~:text=Sack%20%281946%29%20,would%20climb%20the%20rod%2C%20as)).",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "1st-workingAssignment - Exercise 4: Advanced Heat Conduction Problems",
+    "content": "Experiment with the annulus problem\n>     - Try different inner and outer radius values\n>     - Implement a time-dependent boundary condition on the inner boundary\n> 3.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1st-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - The 1950 Breakthrough: Formulating Rheological Equations of State",
-    "content": "This achievement earned Oldroyd international recognition – including the Gold Medal of the British Society of Rheology and a special issue of the BSR Bulletin honoring his 60th birthday ([James G.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "1st-workingAssignment - Exercise 4: Advanced Heat Conduction Problems",
+    "content": "Extend the axisymmetric problem\n>     - Add a heat source term using `source(T, dt)`\n>     - Visualize the results with different flux profiles",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1st-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - The 1950 Breakthrough: Formulating Rheological Equations of State",
-    "content": "Oldroyd - Wikipedia](https://en.wikipedia.org/wiki/James_G._Oldroyd#:~:text=paper%20in%20theoretical%20rheology,6)) – and it set the stage for much of the theoretical rheology that followed.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "1st-workingAssignment - Part 6: Post-Processing and Visualization",
+    "content": "After running simulations, we need tools to extract and visualize the results. We'll use two key tools:\n1. `getData-generic-heatEq.c` - A Basilisk program to extract data from simulation snapshots\n2. `Video-generic-heatEq.py` - A Python script to create visualizations",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1st-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Oldroyd-A vs. Oldroyd-B: Weissenberg’s Rod-Climbing and the Preferred Model",
-    "content": "While Oldroyd initially presented **Models A and B** as two equally plausible formulations, subsequent insights and experiments soon favored one over the other.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "1st-workingAssignment - 6.2 Visualization with Video-generic-heatEq.py",
+    "content": "The Python script processes the extracted data and creates visualizations:\n```python",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1st-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Oldroyd-A vs. Oldroyd-B: Weissenberg’s Rod-Climbing and the Preferred Model",
-    "content": "In the very same 1950 paper, at the end, Oldroyd himself included a telling calculation: the flow of an elastic liquid around a rotating rod ([](http://www.damtp.cam.ac.uk/user/hinch/publications/Oldroyd12b.pdf#:~:text=However%2C%20the%20problem%20is%20how,3)).",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "1st-workingAssignment - Conclusion",
+    "content": "Throughout this tutorial, we've progressed from simple 1D steady-state heat conduction problems in vanilla C to complex geometries and dimensions using Basilisk C. The key takeaways include:\n1. Basilisk significantly reduces the complexity and verbosity of numerical simulation code\n2.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1st-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Oldroyd-A vs. Oldroyd-B: Weissenberg’s Rod-Climbing and the Preferred Model",
-    "content": "This was not an arbitrary choice – it related to a famous experiment by **Karl Weissenberg** a few years earlier.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "1st-workingAssignment - Conclusion",
+    "content": "The event-based programming model provides a clean separation of concerns\n3. Basilisk's domain-specific language makes numerical methods more intuitive\n4. Built-in modules like `diffusion.h` and `embed.h` provide powerful, optimized solvers\n5.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1st-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Oldroyd-A vs. Oldroyd-B: Weissenberg’s Rod-Climbing and the Preferred Model",
-    "content": "Weissenberg had observed that when a rod is rotated in a polymer solution, the fluid *climbs up* the rod against gravity (now known as the **Weissenberg effect** or rod-climbing effect) due to the elastic normal stresses generated in the fluid.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "1st-workingAssignment - Conclusion",
+    "content": "Extending to higher dimensions and complex geometries is straightforward\n6.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1st-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Oldroyd-A vs. Oldroyd-B: Weissenberg’s Rod-Climbing and the Preferred Model",
-    "content": "Oldroyd wanted to see how his two model fluids would behave in this scenario.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "1st-workingAssignment - Conclusion",
+    "content": "Post-processing tools are essential for analyzing and interpreting simulation results\n> [!tip] Next Steps\n> \n> - Explore other physical phenomena like advection-diffusion\n> - Implement variable diffusion coefficients (e.g., temperature-dependent)\n> - Combine with Navier-Stokes solvers for natural convection problems\n> - Add source terms for heat generation\n> - Experiment with more complex geometries using the embedded boundary method\n> - Create interactive visualizations using tools like Plotly or ParaView",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1st-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Oldroyd-A vs. Oldroyd-B: Weissenberg’s Rod-Climbing and the Preferred Model",
-    "content": "The result was striking: **Oldroyd-B (upper-convected)** predicted the fluid would climb the rod, matching Weissenberg’s observations, whereas **Oldroyd-A (lower-convected)** predicted the opposite – the fluid would be pushed downwards (a “rod-dropping” effect) ([](http://www.damtp.cam.ac.uk/user/hinch/publications/Oldroyd12b.pdf#:~:text=However%2C%20the%20problem%20is%20how,3)).",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "2nd-workingAssignment - > [",
+    "content": "> [!tldr] TL;DR \n> This assignment explores fundamental fluid dynamics problems using Basilisk, progressing from simple Poiseuille flow to complex Rayleigh-Bénard convection.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/2nd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Oldroyd-A vs. Oldroyd-B: Weissenberg’s Rod-Climbing and the Preferred Model",
-    "content": "The latter phenomenon had never been observed in polymer fluids. Thus, by comparing both models against empirical reality, **Oldroyd-B emerged as the more physically relevant model for polymeric (viscoelastic) fluids**.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "2nd-workingAssignment - > [",
+    "content": "We study both Newtonian and non-Newtonian (Bingham) fluids, examine lid-driven cavity flow with flow visualization, and conclude with thermal convection simulation.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/2nd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Oldroyd-A vs. Oldroyd-B: Weissenberg’s Rod-Climbing and the Preferred Model",
-    "content": "As Oldroyd and others noted, the *rod-climbing test* essentially singled out Model B as the correct choice for liquids like dilute polymer solutions ([](http://www.damtp.cam.ac.uk/user/hinch/publications/Oldroyd12b.pdf#:~:text=However%2C%20the%20problem%20is%20how,3)).",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "2nd-workingAssignment - > [",
+    "content": "The hands-on exercises with incrementally complex implementations help develop practical CFD skills while exploring rich physical phenomena, all through Basilisk's efficient simulation framework.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/2nd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Oldroyd-A vs. Oldroyd-B: Weissenberg’s Rod-Climbing and the Preferred Model",
-    "content": "Oldroyd commented that Model B should *“be favoured”* in such cases ([](http://www.damtp.cam.ac.uk/user/hinch/publications/Oldroyd12b.pdf#:~:text=However%2C%20the%20problem%20is%20how,3)), aligning with Weissenberg’s findings. (Indeed, the inverse “rod-dipping” behavior of Model A was only realized decades later in very different materials, such as dense suspensions of particles ([](http://www.damtp.cam.ac.uk/user/hinch/publications/Oldroyd12b.pdf#:~:text=frustratingly%20offered%20no%20example%20nor,3)), confirming Oldroyd’s intuition that the choice depends on the material’s microphysics.)\n ([fluids.ac.uk](https://fluids.ac.uk/gallery/zoomify/665)) *A classic demonstration of the **Weissenberg rod-climbing effect**.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "2nd-workingAssignment - Introduction",
+    "content": "In this working class, we'll explore advanced fluid dynamics simulations using the Basilisk framework.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/2nd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Oldroyd-A vs. Oldroyd-B: Weissenberg’s Rod-Climbing and the Preferred Model",
-    "content": "A rotating rod in a viscoelastic polymer solution causes the fluid to climb up along the rod, due to positive normal stress differences.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "2nd-workingAssignment - Introduction",
+    "content": "Building on our previous work with heat conduction ([[1st-workingAssignment]]), we'll now tackle more complex fluid flow problems that incorporate viscosity, non-Newtonian behavior, and thermal effects.\n> [!info] Learning Objectives\n> \n> - Implement and analyze Poiseuille flow simulations for Newtonian and non-Newtonian fluids\n> - Understand the lid-driven cavity benchmark problem and its implementation\n> - Extend simulations with flow visualization techniques\n> - Explore thermal convection through the Rayleigh-Bénard configuration\n> - Develop skills in modifying Basilisk code for different physical scenarios\nThroughout this tutorial, we'll follow a logical progression from simple to complex simulations:\n1.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/2nd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Oldroyd-A vs. Oldroyd-B: Weissenberg’s Rod-Climbing and the Preferred Model",
-    "content": "Oldroyd’s upper-convected Model B correctly captures this effect ([](http://www.damtp.cam.ac.uk/user/hinch/publications/Oldroyd12b.pdf#:~:text=However%2C%20the%20problem%20is%20how,3)), whereas Model A would predict a downward dip, which is not observed in polymer fluids.*  \nBeyond qualitative rod-climbing, more detailed **microstructural studies** in subsequent years reinforced the supremacy of Oldroyd-B for polymeric liquids.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "2nd-workingAssignment - Introduction",
+    "content": "Poiseuille flow with Newtonian fluids\n2. Poiseuille flow with Bingham/non-Newtonian fluids\n3. Lid-driven cavity with Newtonian fluids\n4. Lid-driven cavity with Bingham fluids (exercise)\n5. Flow visualization in lid-driven cavity\n6. Rayleigh-Bénard convection (exercise)",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/2nd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Oldroyd-A vs. Oldroyd-B: Weissenberg’s Rod-Climbing and the Preferred Model",
-    "content": "In the 1960s, rheologists developed molecular models of polymer solutions – envisioning long polymer molecules as tiny spring–dashpot elements or “dumbbells” dispersed in a solvent.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "2nd-workingAssignment - 2.1 Newtonian Lid-Driven Cavity (2-LidDrivenCavity-Newtonian.c)",
+    "content": "The lid-driven cavity is a classic benchmark problem in computational fluid dynamics.\n> [!tldr] Problem Statement \n> Solve for the steady-state flow in a square cavity with a moving top lid.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/2nd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Oldroyd-A vs. Oldroyd-B: Weissenberg’s Rod-Climbing and the Preferred Model",
-    "content": "When **John Hinch** and others revisited Oldroyd’s models in light of these developments, they found a remarkable connection: the simplest molecular model of a polymer chain in flow (the **elastic dumbbell model**) leads mathematically **directly to the Oldroyd-B constitutive equation** ([](http://www.damtp.cam.ac.uk/user/hinch/publications/Oldroyd12b.pdf#:~:text=the%20stress%20was%20convected,are%20presented%20in%20section%20%C2%A77)) ([](http://www.damtp.cam.ac.uk/user/hinch/publications/Oldroyd12b.pdf#:~:text=match%20at%20L887%20numerical%20calculations,and%20zero%20second%20normal%20stress)).",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "2nd-workingAssignment - 2.1 Newtonian Lid-Driven Cavity (2-LidDrivenCavity-Newtonian.c)",
+    "content": "The fluid is Newtonian with a constant viscosity, and all walls have no-slip boundary conditions except for the top wall, which moves at a constant velocity $u = 1$.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/2nd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Oldroyd-A vs. Oldroyd-B: Weissenberg’s Rod-Climbing and the Preferred Model",
-    "content": "In other words, if one treats a polymer molecule as two beads connected by a spring dragged through a viscous solvent, the macroscopic stress evolution follows Oldroyd’s upper-convected form (with the polymer’s finite relaxation time corresponding to Oldroyd-B’s parameters).",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "2nd-workingAssignment - 2.1 Newtonian Lid-Driven Cavity (2-LidDrivenCavity-Newtonian.c)",
+    "content": "The simulation setup is straightforward:\n```c\n#include \"navier-stokes/centered.h\"\n// Constants\n#define LEVEL   8       // Grid refinement level\n#define MAXDT   (1e-4)  // Maximum timestep\n#define ERROR   (1e-6)  // Convergence error threshold\n// Boundary conditions\n// Top moving wall (lid)\nu.t[top] = dirichlet(1);\n// Other no-slip boundaries\nu.t[bottom] = dirichlet(0);\nu.t[left]   = dirichlet(0);\nu.t[right]  = dirichlet(0);\n```\n> [!note] Lid-Driven Cavity Characteristics The lid-driven cavity flow exhibits several key features:\n> \n> - Primary vortex in the center of the cavity\n> - Secondary corner vortices at low Reynolds numbers\n> - Benchmark for testing numerical schemes\n> - Reynolds number defined as Re = ρUL/μ = 1/μ (with ρ=1, U=1, L=1)\n> \n> At low Reynolds numbers (high viscosity), the flow reaches a steady state with well-defined vortex structures.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/2nd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Oldroyd-A vs. Oldroyd-B: Weissenberg’s Rod-Climbing and the Preferred Model",
-    "content": "This result explained why Oldroyd-B captured many polymer solution behaviors so well – it was essentially *derived from first principles* of polymer micro-dynamics ([](http://www.damtp.cam.ac.uk/user/hinch/publications/Oldroyd12b.pdf#:~:text=match%20at%20L887%20numerical%20calculations,and%20zero%20second%20normal%20stress)).",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "2nd-workingAssignment - 2.1 Newtonian Lid-Driven Cavity (2-LidDrivenCavity-Newtonian.c)",
+    "content": "As Re increases, the flow becomes increasingly complex.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/2nd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Oldroyd-A vs. Oldroyd-B: Weissenberg’s Rod-Climbing and the Preferred Model",
-    "content": "Oldroyd-A, in contrast, did not emerge from any analogous physical picture for flexible polymers.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "2nd-workingAssignment - 3.2 Modifying 2-Rayleigh-Benard.c for Exercise",
+    "content": "> [!task] Exercise: Implement Rayleigh-Bénard Convection\n> \n> In this exercise, you'll implement a simulation of Rayleigh-Bénard convection using the Boussinesq approximation. Complete the missing parts of the code to:\n> \n> 1. Set up the domain and boundary conditions\n> 2.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/2nd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Oldroyd-A vs. Oldroyd-B: Weissenberg’s Rod-Climbing and the Preferred Model",
-    "content": "By the late 20th century, therefore, Oldroyd-B had become the **standard viscoelastic fluid model** for dilute polymer solutions in rheology and computational fluid dynamics, whereas Oldroyd-A largely faded from use ([](http://www.damtp.cam.ac.uk/user/hinch/publications/Oldroyd12b.pdf#:~:text=Highlights%20%E2%80%A2%20Oldroyd%E2%80%99s%201950%20paper,Those%20devel%02opments%20are)).",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "2nd-workingAssignment - 3.2 Modifying 2-Rayleigh-Benard.c for Exercise",
+    "content": "Initialize the temperature field with a small perturbation\n> 3. Implement the buoyancy force in the acceleration event\n> 4. Set up temperature diffusion\n> 5.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/2nd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Oldroyd-A vs. Oldroyd-B: Weissenberg’s Rod-Climbing and the Preferred Model",
-    "content": "As Hinch humorously noted, a survey of literature reveals thousands of papers employing “Oldroyd-B” in their title or keywords, but only a handful mentioning “Oldroyd-A” ([](http://www.damtp.cam.ac.uk/user/hinch/publications/Oldroyd12b.pdf#:~:text=Highlights%20%E2%80%A2%20Oldroyd%E2%80%99s%201950%20paper,Those%20devel%02opments%20are)).",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "2nd-workingAssignment - 3.2 Modifying 2-Rayleigh-Benard.c for Exercise",
+    "content": "Calculate and monitor the Nusselt number\n> \n> You'll explore how the Rayleigh number affects convection patterns.\n- [2-Rayleigh-Benard.c](https://github.com/comphy-lab/Basilisk-101/blob/main/testCases/2-Rayleigh-Benard.c)\n- [convection-Boussinesq_QUES.h](https://github.com/comphy-lab/Basilisk-101/blob/main/src-local/convection-Boussinesq_QUES.h)\nAdditional challenges:\n1.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/2nd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Oldroyd-A vs. Oldroyd-B: Weissenberg’s Rod-Climbing and the Preferred Model",
-    "content": "The reason is clear: Oldroyd-B not only passes key experimental tests but also has a firm basis in polymer molecular theory, making it the preferred tool for scientists and engineers modeling viscoelastic flows.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "2nd-workingAssignment - 3.2 Modifying 2-Rayleigh-Benard.c for Exercise",
+    "content": "Calculating and plotting the Rayleigh number vs. number of convection cells\n2. Investigating the effect of aspect ratio on convection patterns\n3. Measuring the critical Rayleigh number where convection begins\n4.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/2nd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Oldroyd-A vs. Oldroyd-B: Weissenberg’s Rod-Climbing and the Preferred Model",
-    "content": "The **legacy of Oldroyd’s 1950 insight** is thus encapsulated in the ubiquity of the Oldroyd-B model – a tribute to his ability to capture the essential physics of elastic fluids in a simple equation.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "2nd-workingAssignment - 3.2 Modifying 2-Rayleigh-Benard.c for Exercise",
+    "content": "Implementing different thermal boundary conditions\n> [!hint] Solution Hints:\n> \n> - The Boussinesq approximation adds a buoyancy term to the y-momentum equation\n> - Temperature should be initialized with a linear profile plus a small random perturbation\n> - The acceleration term should be: $a_y = g\\beta(T-T_0)$\n> - Use the diffusion() function from diffusion.h for temperature evolution\n> - The Nusselt number can be calculated from the vertical heat flux at the boundaries",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/2nd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Later Contributions and Evolving Work",
-    "content": "After 1950, Oldroyd continued to build on his framework and ventured into new problems, further cementing his status as a leader in rheology.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "2nd-workingAssignment - 4.1 Common Basilisk Patterns",
+    "content": "Throughout these simulations, you'll notice some common patterns in Basilisk code:\n> [!note] Common Basilisk Patterns\n> \n> 1. **Grid initialization**:\n>     \n>     ```c\n>     init_grid(1<<LEVEL);  // Powers of 2 for efficiency\n>     ```\n>     \n> 2. **Boundary conditions**:\n>     \n>     ```c\n>     u.t[top] = dirichlet(1);     // Tangential velocity\n>     u.n[bottom] = dirichlet(0);  // Normal velocity\n>     ```\n>     \n> 3. **Events for different stages**:\n>     \n>     ```c\n>     event init(t = 0) { ... }                 // Initialization\n>     event properties(i++) { ... }            // Property updates\n>     event integration/marching(i++) { ... }  // Time stepping\n>     event logfile(i += 100) { ... }          // Logging\n>     ```\n>     \n> 4. **Grid traversal with foreach()**:\n>     \n>     ```c\n>     foreach() {\n>       // Operation on each cell\n>     }\n>     foreach_face() {\n>       // Operation on each face\n>     }\n>     ```\n>     \n> 5. **Convergence monitoring**:\n>     \n>     ```c\n>     double du = change(u.x, un);\n>     if (du < ERROR) return 1; /* stop */\n>     ```\n>",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/2nd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Later Contributions and Evolving Work",
-    "content": "In 1953, he published a notable paper on *“The elastic and viscous properties of emulsions and suspensions.”* Here, Oldroyd extended his constitutive modeling to **multiphase systems**, showing how a mixture of a liquid with dispersed droplets or particles could exhibit viscoelastic behavior ([Microsoft Word - Document1](https://nnf.mit.edu/sites/default/files/publications/files/Oldroyd_SI_Editorial_FINAL.pdf#:~:text=,122)).",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "2nd-workingAssignment - 4.2 Tips for Successful Simulations",
+    "content": "Here are some tips to help you succeed with these simulations:\n> [!tip] Simulation Tips\n> \n> - **Timestep selection**: For explicit schemes, ensure the timestep satisfies the relevant stability criterion (e.g., CFL condition)\n>     \n> - **Convergence monitoring**: Always check convergence by tracking changes in key variables\n>     \n> - **Grid resolution**: Start with a coarse grid for quick tests, then refine for accuracy\n>     \n> - **Boundary conditions**: Double-check that boundary conditions are correctly implemented\n>     \n> - **Regularization parameters**: For non-Newtonian fluids, choose appropriate regularization parameters to balance accuracy and stability\n>     \n> - **Initial conditions**: Use appropriate initial conditions to avoid unnecessary transients\n>     \n> - **Output frequency**: Balance output frequency with computational resources and storage needs\n>",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/2nd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Later Contributions and Evolving Work",
-    "content": "He demonstrated (for a dilute emulsion of liquid droplets) that the interfacial tension of the droplets provides a restoring force against deformation, effectively giving the emulsion an elastic component ([Rheology: An Historical Perspective (Rheology Series) - PDF Free Download](https://epdf.pub/rheology-an-historical-perspective-rheology-series.html#:~:text=and%20Oldroyd%20,To%20accommodate%20%27interfacial)).",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "2nd-workingAssignment - Conclusion",
+    "content": "> [!question] Further Exploration\n> \n> Once you've completed the basic exercises, consider these extensions:\n> \n> 1. How does the convergence behavior change with increasing yield stress in Bingham fluids?\n>     \n> 2.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/2nd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Later Contributions and Evolving Work",
-    "content": "This work was an early example of **micro-rheology** – linking microscopic structure to macroscopic rheological properties – and it illustrated Oldroyd’s knack for generalizing his models to diverse materials.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "2nd-workingAssignment - Conclusion",
+    "content": "Can you identify the critical Rayleigh number where convection cells first appear?\n>     \n> 3. How would you modify the lid-driven cavity to include temperature effects (thermally-driven cavity)?\n>     \n> 4.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/2nd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Later Contributions and Evolving Work",
-    "content": "He also investigated the effect of surfactant films on droplet interfaces in emulsions, recognizing that a stabilizing film could alter the combined fluid’s elasticity ([Microsoft Word - Document1](https://nnf.mit.edu/sites/default/files/publications/files/Oldroyd_SI_Editorial_FINAL.pdf#:~:text=,577)).",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "2nd-workingAssignment - Conclusion",
+    "content": "What happens if you implement an oscillating lid velocity instead of constant velocity?\n>     \n> 5.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/2nd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Later Contributions and Evolving Work",
-    "content": "These studies by Oldroyd in the 1950s are considered pioneering, as they connected continuum rheology with micro-scale mechanisms in suspensions and emulsions ([Rheology: An Historical Perspective (Rheology Series) - PDF Free Download](https://epdf.pub/rheology-an-historical-perspective-rheology-series.html#:~:text=and%20Oldroyd%20,To%20accommodate%20%27interfacial)).",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "2nd-workingAssignment - Conclusion",
+    "content": "Can you extend the Poiseuille flow simulation to include time-dependent pressure gradients?\n>     \n> [!significance]- Metadata \n> Author:: [Vatsal Sanjay](https://vatsalsanjay.com/) \n> Date published:: March 11, 2025 \n> Date modified:: March 11, 2025 at 08:48 CET\n> [!meta] Back to main website \n> [Home](https://comphy-lab.org/), [Team](https://comphy-lab.org/team), [Research](https://comphy-lab.org/research), [Github](https://github.com/comphy-lab)",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/2nd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Later Contributions and Evolving Work",
-    "content": "Oldroyd’s theoretical explorations in the mid-1950s also produced insights into what we now call **“second-order fluids.”** In a 1958 paper, he analyzed normal stress effects (differences in normal stresses) in steady flows of idealized viscoelastic liquids, using a general invariant formulation that included up to quadratic terms in stresses ([Non-Newtonian effects in steady motion of some idealized elastico-viscous liquids | Proceedings of the Royal Society of London.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "3rd-workingAssignment - > [",
+    "content": "> [!tldr] TL;DR \n> This tutorial explores computational approaches to multiphase flow phenomena using Basilisk's axisymmetric framework.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Later Contributions and Evolving Work",
-    "content": "Series A. Mathematical and Physical Sciences](https://royalsocietypublishing.org/doi/10.1098/rspa.1958.0083#:~:text=Normal,in%20a%20circular%20pipe%2C%20or)) ([Non-Newtonian effects in steady motion of some idealized elastico-viscous liquids | Proceedings of the Royal Society of London. Series A.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "3rd-workingAssignment - > [",
+    "content": "We examine five progressively complex simulations: bubble bursting, drop impact on pools, drop impact on solid surfaces, liquid lens equilibrium, and heated drop impact.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Later Contributions and Evolving Work",
-    "content": "Mathematical and Physical Sciences](https://royalsocietypublishing.org/doi/10.1098/rspa.1958.0083#:~:text=normal%20stresses%20which%2C%20in%20addition,a%20straight%20pipe%20of%20arbitrary)).",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "3rd-workingAssignment - > [",
+    "content": "Each simulation incorporates different physical aspects – surface tension, inertia, viscosity, thermal effects – characterized by dimensionless parameters including Ohnesorge, Bond, Weber, and Froude numbers.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Later Contributions and Evolving Work",
-    "content": "Notably, he examined the conditions for the Weissenberg effect (rod-climbing) to occur “in a positive or negative sense,” essentially exploring the parameter space where a fluid would climb or dip around a rod ([Non-Newtonian effects in steady motion of some idealized elastico-viscous liquids | Proceedings of the Royal Society of London.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "3rd-workingAssignment - > [",
+    "content": "Through these simulations, we develop practical skills in handling complex interfaces, implementing boundary conditions, and visualizing flow features using adaptive mesh refinement techniques specifically designed for multiphase problems.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Later Contributions and Evolving Work",
-    "content": "Series A. Mathematical and Physical Sciences](https://royalsocietypublishing.org/doi/10.1098/rspa.1958.0083#:~:text=physical%20constants,a%20straight%20pipe%20of%20arbitrary)).",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "3rd-workingAssignment - Introduction",
+    "content": "In this tutorial, we explore multiphase flow phenomena through computational simulations using the Basilisk framework. Multiphase flows – involving interactions between different fluids or phases – represent some of the most complex and visually striking phenomena in fluid dynamics.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Later Contributions and Evolving Work",
-    "content": "This comprehensive study brought clarity to how **non-Newtonian normal stresses** arise in shear and rotational flows, and it introduced what became known as the **Oldroyd 8-constant model** (a generalized linear viscoelastic model with eight material constants) ([Non-Newtonian effects in steady motion of some idealized elastico-viscous liquids | Proceedings of the Royal Society of London.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "3rd-workingAssignment - Introduction",
+    "content": "From bursting bubbles in champagne to raindrops impacting puddles, these phenomena are ubiquitous in both natural processes and industrial applications.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Later Contributions and Evolving Work",
-    "content": "Series A. Mathematical and Physical Sciences](https://royalsocietypublishing.org/doi/10.1098/rspa.1958.0083#:~:text=Normal,in%20a%20circular%20pipe%2C%20or)).",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "3rd-workingAssignment - Introduction",
+    "content": "Building on our previous work with heat conduction ([[1st-workingAssignment]]) and single-phase flows ([[2nd-workingAssignment]]), we now tackle the additional complexity introduced by fluid interfaces, surface tension, and multiple interacting phases.\n> [!info] Learning Objectives\n> - Implement and analyze axisymmetric multiphase flow simulations\n> - Understand key dimensionless parameters governing multiphase dynamics\n> - Develop skills in handling complex interfaces and boundary conditions\n> - Visualize and interpret dynamic interface evolution\n> - Apply adaptive mesh refinement strategies for multiphase problems\n> - Extend simulations to incorporate thermal effects\nThroughout this tutorial, we'll progress through five core simulation cases:\n1.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Later Contributions and Evolving Work",
-    "content": "Such work laid the groundwork for later researchers like Coleman, Noll, and Rivlin, who in the same era were developing the modern continuum mechanics of fluids.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "3rd-workingAssignment - Introduction",
+    "content": "Bubble bursting at a free surface\n2. Drop impact on a liquid pool\n3. Drop impact on a solid surface\n4. Equilibrium of liquid lenses\n5.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Later Contributions and Evolving Work",
-    "content": "Oldroyd’s approach was always characterized by careful attention to invariant formulation (he cited the earlier convected-coordinate ideas of F.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "3rd-workingAssignment - Introduction",
+    "content": "Heated drop impact on a solid surface\nEach case introduces new physical aspects and numerical challenges, providing a comprehensive overview of computational multiphase fluid dynamics.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Later Contributions and Evolving Work",
-    "content": "Hencky and others ([Rheology: An Historical Perspective (Rheology Series) - PDF Free Download](https://epdf.pub/rheology-an-historical-perspective-rheology-series.html#:~:text=%28Hencky%201925%29,He))) and by a desire to keep models as simple as possible while capturing the essential physics.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "3rd-workingAssignment - 1.3 Heated Drop Impact (3-HeatedDropImpact.c)",
+    "content": "This advanced simulation extends the drop impact problem to include thermal effects, modeling the heat transfer that occurs when a cold drop impacts a heated surface.\n> [!tldr] Problem Statement \n> Simulate the thermal-fluid dynamics of a cold liquid drop impacting a heated solid surface.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Later Contributions and Evolving Work",
-    "content": "In 1961, he published a survey in *Rheologica Acta* on *“the hydrodynamics of materials whose rheological properties are complicated,”* reflecting on how to extend classical hydrodynamics to fluids with memory and elasticity ([Microsoft Word - Document1](https://nnf.mit.edu/sites/default/files/publications/files/Oldroyd_SI_Editorial_FINAL.pdf#:~:text=Pergamon.%20New%20York.%20pp.%20699,297)).",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "3rd-workingAssignment - 1.3 Heated Drop Impact (3-HeatedDropImpact.c)",
+    "content": "In addition to the mechanical parameters (We, Oh, Bo), the simulation includes thermal parameters:\n> \n> - Prandtl number (Pr = ν/α): Ratio of momentum diffusivity to thermal diffusivity\n> - Thermal diffusivity ratio (D1/D2): Ratio of thermal diffusivities between the phases\nThe simulation solves both the Navier-Stokes equations and the heat transfer equation:\n```c\n#include \"axi.h\"                // Axisymmetric coordinates\n#include \"navier-stokes/centered.h\"  // NS solver with centered discretization\n#define FILTERED                // Use filtered VOF advection\n#include \"two-phase-thermal.h\"  // Two-phase flow with heat transfer\n#include \"navier-stokes/conserving.h\"  // Conservative momentum advection\n#include \"tension.h\"            // Surface tension model\n#include \"reduced.h\"            // Reduced gravity approach\n```\nThe thermal boundary conditions specify a constant heat flux from the hot substrate to the cold drop:\n```c\n// Thermal boundary condition: constant heat flux from the hot substrate\nT[left] = neumann(10.0);        // Fixed positive temperature gradient (heating the cold drop)\n```\nPhysical properties include thermal diffusivity for both phases:\n```c\n// Drop phase (1) properties\nrho1 = 1.0;                   // Density of drop (reference value)\nmu1 = Ohd/sqrt(We);           // Viscosity derived from Ohnesorge number\nD1 = 1.0;                     // Thermal diffusivity of drop (reference value)\n// Surrounding phase (2) properties\nrho2 = Rho21;                 // Density ratio (air/water)\nmu2 = Ohs/sqrt(We);           // Viscosity derived from Ohnesorge number\nD2 = 1e-3;                    // Thermal diffusivity ratio (air/water ~ 10^-3)\n```\n> [!note] Thermal Gradients and Adaptive Refinement The adaptive mesh refinement criteria now include temperature gradients alongside interface position, curvature, and velocity gradients:\n> \n> ```c\n> adapt_wavelet((scalar *){f, KAPPA, u.x, u.y, D2c, T},\n>               (double[]){fErr, KErr, VelErr, VelErr, DissErr, TErr},\n>               MAXlevel, MINlevel);\n> ```\n> \n> This ensures that thermal boundary layers and temperature gradients are properly resolved.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Later Contributions and Evolving Work",
-    "content": "He even ventured into esoteric territory by exploring constitutive equations in a general relativistic context (a 1970 paper on equations of state in general relativity) ([Microsoft Word - Document1](https://nnf.mit.edu/sites/default/files/publications/files/Oldroyd_SI_Editorial_FINAL.pdf#:~:text=102,133)), showing the breadth of his mathematical curiosity.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "3rd-workingAssignment - 2.2 Physical Background",
+    "content": "When a bubble reaches a free surface, a thin film separates it from the surrounding atmosphere. This film eventually ruptures, leading to capillary waves traveling along the interface, followed by the collapse of the cavity and potentially the ejection of droplets.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Later Contributions and Evolving Work",
-    "content": "Throughout the 1960s and 1970s, Oldroyd remained an active, though not prolific, author.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "3rd-workingAssignment - 2.2 Physical Background",
+    "content": "This phenomenon is relevant to numerous natural and industrial processes:\n- Aerosol production from ocean waves\n- Champagne bubbles and carbonated beverages\n- Volcanic eruptions\n- Industrial foaming processes\n> [!note] Key Physical Parameters Two dimensionless numbers primarily govern bubble bursting dynamics:\n> \n> - **Ohnesorge number (Oh)**: $\\text{Oh} = \\frac{\\mu}{\\sqrt{\\rho \\sigma R}}$ Relates viscous forces to inertial and surface tension forces\n>     \n> - **Bond number (Bo)**: $\\text{Bo} = \\frac{\\rho g R^2}{\\sigma}$ Relates gravitational forces to surface tension forces\n>     \n> \n> Where $\\mu$ is viscosity, $\\rho$ is density, $\\sigma$ is surface tension, $R$ is bubble radius, and $g$ is gravitational acceleration.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Later Contributions and Evolving Work",
-    "content": "He was selective in his publications, preferring depth over quantity – in nearly 40 years he published fewer than 30 papers ([Microsoft Word - Document1](https://nnf.mit.edu/sites/default/files/publications/files/Oldroyd_SI_Editorial_FINAL.pdf#:~:text=bibliography%20at%20the%20end%20of,year%20period%20from%201945%20to)), mostly as a single author.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "3rd-workingAssignment - 2.3 Expected Results",
+    "content": "For low Ohnesorge numbers (low viscosity), we expect to see:\n1. Rapid retraction of the film after rupture\n2. Capillary waves traveling along the interface\n3. Formation of a central jet (Worthington jet)\n4.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Later Contributions and Evolving Work",
-    "content": "Yet those papers are dense with ideas that continued to influence rheology.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "3rd-workingAssignment - 2.3 Expected Results",
+    "content": "Possible pinch-off of droplets from the jet\nFor higher Ohnesorge numbers (higher viscosity), viscous damping suppresses these features, resulting in a more gradual collapse of the cavity.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Later Contributions and Evolving Work",
-    "content": "For example, Oldroyd contributed chapters to **Marcus Reiner’s** *Rheology* series, summarizing the state of non-Newtonian flow theory ([Microsoft Word - Document1](https://nnf.mit.edu/sites/default/files/publications/files/Oldroyd_SI_Editorial_FINAL.pdf#:~:text=pp.%20514,Internationale%20Union%20f%C3%BCr%20Theoretische%20und)).",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "3rd-workingAssignment - Part 4: Exercises and Extensions",
+    "content": "Now that we've explored the fundamentals of these multiphase flow simulations, let's develop your skills further with some practical exercises.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Later Contributions and Evolving Work",
-    "content": "He developed a theory of **viscoplastic boundary layers** (involving Bingham fluids) at a time when such topics lay dormant until much later ([Microsoft Word - Document1](https://nnf.mit.edu/sites/default/files/publications/files/Oldroyd_SI_Editorial_FINAL.pdf#:~:text=common%20in%20fluid%20mechanics%29,There%20are%20also)).",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "3rd-workingAssignment - 4.1 Bubble Bursting Exercise",
+    "content": "> [!task] Exercise: Investigating Ohnesorge Number Effects\n> \n> Modify the bubble bursting simulation to explore different Ohnesorge numbers:\n> \n> 1. Run simulations with Oh = 1e-3, 1e-2, and 1e-1, keeping Bo constant\n> 2.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Later Contributions and Evolving Work",
-    "content": "He also revisited thermodynamics and continuum mechanics, searching for rheological models consistent with the laws of thermodynamics (as seen in his 1976 reflections) ([Microsoft Word - Document1](https://nnf.mit.edu/sites/default/files/publications/files/Oldroyd_SI_Editorial_FINAL.pdf#:~:text=,of%20continuous%20matter%20in%20general)).",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "3rd-workingAssignment - 4.1 Bubble Bursting Exercise",
+    "content": "Track and compare the following:\n>     - Maximum jet height\n>     - Time to first droplet pinch-off (if it occurs)\n>     - Maximum kinetic energy during the process\n> 3. Create plots showing these metrics as functions of Oh\n> 4.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Later Contributions and Evolving Work",
-    "content": "Even in his final years, Oldroyd continued to synthesize his lifetime of insights: his last paper, published posthumously in 1984, was titled *“An approach to non-Newtonian fluid mechanics,”* offering a grand overview of the field ([Microsoft Word - Document1](https://nnf.mit.edu/sites/default/files/publications/files/Oldroyd_SI_Editorial_FINAL.pdf#:~:text=Bibliography%20of%20J%20G%20Oldroyd%E2%80%99s,Gothenburg)).",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "3rd-workingAssignment - 4.1 Bubble Bursting Exercise",
+    "content": "Explain the physical mechanisms behind the observed trends\n> \n> This exercise will help you understand how viscosity affects capillary-inertial dynamics.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Influence on the Rheology Community and Honors",
-    "content": "Oldroyd’s influence extended beyond his written work; he was also a guiding figure and mentor in the rheology community. In 1953, the same year he took up a professorship, he served as **Treasurer of the 2nd International Congress of Rheology** held in Cambridge ([James G.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "3rd-workingAssignment - 4.2 Drop Impact Exercise",
+    "content": "> [!task] Exercise: Comparing Pool and Solid Surface Impact\n> \n> Conduct a comparative study between drop impact on a pool and on a solid surface:\n> \n> 1.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Influence on the Rheology Community and Honors",
-    "content": "Oldroyd – Wikipedia](https://de.wikipedia.org/wiki/James_G._Oldroyd#:~:text=eine%20Arbeit%20%C3%BCber%20die%20Formulierung,und%20ohne%20Vorwarnung%20auf%20dem)) – a gathering of the world’s top rheologists.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "3rd-workingAssignment - 4.2 Drop Impact Exercise",
+    "content": "Set up equivalent simulations for both scenarios:\n>     - Use the same Weber number and Ohnesorge number\n>     - Match other parameters (domain size, resolution, etc.)\n> 2.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Influence on the Rheology Community and Honors",
-    "content": "This role at an international conference demonstrated the esteem in which his peers held him at a relatively early stage in his career.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "3rd-workingAssignment - 4.2 Drop Impact Exercise",
+    "content": "Track and compare the following:\n>     - Maximum spread diameter\n>     - Crater depth (for pool impact)\n>     - Energy dissipation rate\n> 3. Visualize the differences in flow patterns using streamlines or velocity magnitude contours\n> 4.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Influence on the Rheology Community and Honors",
-    "content": "He later became President of the British Society of Rheology (BSR) from 1955 to 1957, helping to shape the direction of rheological research in the UK ([Former BSR Presidents | British Society of Rheology](https://www.bsr.org.uk/pages/former-bsr-presidents#:~:text=Image%3A%20Photo%20of%20Oldroyd)).",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "3rd-workingAssignment - 4.2 Drop Impact Exercise",
+    "content": "Explain why the outcomes differ based on the underlying physics\n> \n> Hint: Pay special attention to the boundary conditions and how they affect momentum transfer.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Influence on the Rheology Community and Honors",
-    "content": "Oldroyd had moved to academia in 1953 as Professor of Mathematics at the University of Wales, Swansea, where he also headed the Applied Mathematics Department from 1957 ([James G. Oldroyd - Wikipedia](https://en.wikipedia.org/wiki/James_G._Oldroyd#:~:text=War%20%2C%20he%20worked%20for,1)).",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "3rd-workingAssignment - 4.3 Advanced Exercise: Thermal Effects",
+    "content": "> [!task] Exercise: Temperature-Dependent Surface Tension\n> \n> Modify the heated drop impact simulation to include temperature-dependent surface tension:\n> \n> 1.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Influence on the Rheology Community and Honors",
-    "content": "In 1965, he was appointed Professor at Liverpool University, eventually becoming Head of the Department of Applied Mathematics and Theoretical Physics there ([James G. Oldroyd - Wikipedia](https://en.wikipedia.org/wiki/James_G._Oldroyd#:~:text=War%20%2C%20he%20worked%20for,1)).",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "3rd-workingAssignment - 4.3 Advanced Exercise: Thermal Effects",
+    "content": "Implement the linear relationship: $\\sigma(T) = \\sigma_0(1 - \\gamma(T - T_0))$\n>     - $\\sigma_0$ is the reference surface tension at temperature $T_0$\n>     - $\\gamma$ is the temperature coefficient (typically positive)\n> 2.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Influence on the Rheology Community and Honors",
-    "content": "In these roles, Oldroyd supervised a small number of doctoral students – notably **Kenneth Walters**, who completed his PhD under Oldroyd at Swansea.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "3rd-workingAssignment - 4.3 Advanced Exercise: Thermal Effects",
+    "content": "Run simulations with $\\gamma = 0$ (constant surface tension) and $\\gamma = 0.01$ (temperature-dependent)\n> 3. Analyze how Marangoni effects (surface tension gradients) affect the spreading dynamics\n> 4.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Influence on the Rheology Community and Honors",
-    "content": "Walters would go on to become a prominent rheologist himself (co-founding the *Journal of Non-Newtonian Fluid Mechanics* in 1976) and later reminisced that although Oldroyd guided only *“half a dozen”* PhD students, his impact on them – and on the field – was profound ([Oral History Interviews | Kenneth Walters | American Institute of Physics](https://www.aip.org/history-programs/niels-bohr-library/oral-histories/47534#:~:text=match%20at%20L1785%20The%20amazing,Fluid%20Mechanics%2C%E2%80%99%E2%80%99%20Journal%20of%20Non)) ([Oral History Interviews | Kenneth Walters | American Institute of Physics](https://www.aip.org/history-programs/niels-bohr-library/oral-histories/47534#:~:text=match%20at%20L696%20Jim%20Oldroyd,the%20British%20Society%20of%20Rheology)).",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "3rd-workingAssignment - 4.3 Advanced Exercise: Thermal Effects",
+    "content": "Visualize temperature and velocity fields to identify regions where thermal effects are most significant\n> \n> This extension introduces thermocapillary phenomena, which are important in many industrial processes.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Influence on the Rheology Community and Honors",
-    "content": "Oldroyd’s students and colleagues admired his deep physical intuition and his knack for reducing complex problems to their core elements.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "3rd-workingAssignment - Part 5: Implementation Tips and Best Practices",
+    "content": "Based on our exploration of these multiphase simulations, here are some key insights and best practices:\n> [!tip] Multiphase Simulation Tips\n> \n> 1. **Interface resolution**: Always ensure sufficient resolution near interfaces, especially in regions of high curvature.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Influence on the Rheology Community and Honors",
-    "content": "Amusingly, Walters recalled that Oldroyd was *“no sportsman,”* yet somehow many of his research students were star cricket players – a coincidence that Oldroyd, with his gentle humor, tolerated even if he didn’t share their sporting enthusiasm ([Oral History Interviews | Kenneth Walters | American Institute of Physics](https://www.aip.org/history-programs/niels-bohr-library/oral-histories/47534#:~:text=Do%20you%20know%2C%20I%20can%27t,of%20the%20university%20cricket%20team)).",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "3rd-workingAssignment - Part 5: Implementation Tips and Best Practices",
+    "content": "The `adapt_wavelet()` function with appropriate error thresholds is crucial.\n>     \n> 2. **Numerical stability**: For high-density and viscosity ratios (typical in air-water systems), use:\n>     \n>     - The `FILTERED` option to smooth property jumps\n>     - The `navier-stokes/conserving.h` module for better momentum conservation\n>     - Appropriate timestep limitations (CFL < 0.5 is often necessary)\n> 3. **Boundary conditions**: Pay careful attention to boundary conditions, especially for solid surfaces.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Influence on the Rheology Community and Honors",
-    "content": "In recognition of his scientific contributions, Oldroyd received numerous honors. Cambridge University awarded him the **Adams Prize in 1964**, one of its highest accolades in mathematics, likely for his work on the mechanics of non-Newtonian fluids ([James G.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "3rd-workingAssignment - Part 5: Implementation Tips and Best Practices",
+    "content": "Use `dirichlet()` and `neumann()` appropriately.\n>     \n> 4. **Initial conditions**: Start with a well-resolved and physically reasonable initial condition.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Influence on the Rheology Community and Honors",
-    "content": "Oldroyd – Wikipedia](https://de.wikipedia.org/wiki/James_G._Oldroyd#:~:text=Er%20erhielt%201964%20den%20Adams,der%20British%20Society%20of%20Rheology)).",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "3rd-workingAssignment - Part 5: Implementation Tips and Best Practices",
+    "content": "For drop impact, position the drop slightly above the surface.\n>     \n> 5. **Convergence monitoring**: Track relevant physical quantities (kinetic energy, interface position) to determine when the simulation has reached a quasi-steady state.\n>     \n> 6. **Parameter sensitivity**: Multiphase flows can be sensitive to small parameter changes.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Influence on the Rheology Community and Honors",
-    "content": "The British Society of Rheology bestowed upon him its **Gold Medal** in 1984 (the year after what would have been Oldroyd’s retirement), celebrating a lifetime of achievement in rheology ([James G.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "3rd-workingAssignment - Part 5: Implementation Tips and Best Practices",
+    "content": "Conduct parameter sweeps to understand the system behavior.\n>     \n> [!important] Dimensionless Parameters\n> \n> Understanding the key dimensionless parameters is essential for characterizing multiphase flows:\n> \n> - **Weber number (We)**: Inertia vs. surface tension\n> - **Ohnesorge number (Oh)**: Viscosity vs. inertia and surface tension\n> - **Bond number (Bo)**: Gravity vs. surface tension\n> - **Froude number (Fr)**: Inertia vs. gravity\n> - **Capillary number (Ca)**: Viscosity vs. surface tension\n> \n> These parameters form a framework for classifying and predicting multiphase flow behavior across different scales and fluid properties.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Influence on the Rheology Community and Honors",
-    "content": "Oldroyd - Wikipedia](https://en.wikipedia.org/wiki/James_G._Oldroyd#:~:text=paper%20in%20theoretical%20rheology,6)). Tributes poured in as he reached his 60th birthday in 1981 – the BSR dedicated a special issue of its bulletin to him, and luminaries like professor R. B.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "3rd-workingAssignment - Conclusion",
+    "content": "In this tutorial, we've explored a range of fascinating multiphase flow phenomena through computational simulations using Basilisk. From bubble bursting to heated drop impact, these simulations capture complex interfacial dynamics that would be challenging to study experimentally.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Influence on the Rheology Community and Honors",
-    "content": "Bird lauded Oldroyd’s contributions. In fact, at the 1988 International Congress on Rheology in Sydney, Bob Bird gave an opening lecture entitled *“The Two JG’s”* in honor of **J. G. Oldroyd** and **J. G.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "3rd-workingAssignment - Conclusion",
+    "content": "Key insights from our exploration include:\n1. The importance of surface tension in driving capillary-inertial phenomena\n2. The role of viscosity in damping interfacial oscillations and jet formation\n3. The complex interplay between solid boundaries and fluid interfaces\n4.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Influence on the Rheology Community and Honors",
-    "content": "Kirkwood** – comparing Oldroyd, the continuum mechanician, and Kirkwood, the molecular theorist, as two giants who bridged the gap between macroscopic and microscopic understandings of fluid behavior ([James G.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "3rd-workingAssignment - Conclusion",
+    "content": "The additional complexity introduced by thermal effects\n5.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Influence on the Rheology Community and Honors",
-    "content": "Oldroyd – Wikipedia](https://de.wikipedia.org/wiki/James_G._Oldroyd#:~:text=%5BBearbeiten%20%20)). This was a testament to how Oldroyd’s work, particularly the Oldroyd-B model, had become a cornerstone that linked molecular theory with continuum modeling. James G.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "3rd-workingAssignment - Conclusion",
+    "content": "The power of adaptive mesh refinement in efficiently resolving multiscale features\nThese multiphase flow simulations demonstrate the capability of modern computational methods to capture complex physics with remarkable detail, providing insights into phenomena that occur too quickly or at scales too small for easy experimental observation.\n> [!question] Further Exploration\n> \n> Consider these questions for deeper investigation:\n> \n> 1.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Influence on the Rheology Community and Honors",
-    "content": "Oldroyd’s life was cut short in 1982 – he died suddenly of an apparent heart attack while on his way to the university in Liverpool ([James G.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "3rd-workingAssignment - Conclusion",
+    "content": "How would adding surfactants affect bubble bursting or drop impact dynamics?\n> 2. What happens when the drop and pool liquids have different properties (e.g., immiscible liquids)?\n> 3. How do contact angle effects influence drop impact on solid surfaces?\n> 4.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Influence on the Rheology Community and Honors",
-    "content": "Oldroyd – Wikipedia](https://de.wikipedia.org/wiki/James_G._Oldroyd#:~:text=1957%20als%20Leiter%20der%20Abteilung,auf%20dem%20Weg%20zur%20Universit%C3%A4t)) – but his legacy endures vibrantly.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "3rd-workingAssignment - Conclusion",
+    "content": "What role does the ambient gas play in drop impact phenomena?\n> 5.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Influence on the Rheology Community and Honors",
-    "content": "His name is forever attached to the **Oldroyd-B model**, a staple in rheology textbooks and simulations, and his ideas on convected derivatives underpin all modern viscoelastic fluid theories.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "3rd-workingAssignment - Conclusion",
+    "content": "How would phase change (evaporation or solidification) alter these dynamics?\n> [!significance]- Metadata \n> Author:: [Vatsal Sanjay](https://vatsalsanjay.com/) \n> Date published:: March 12, 2025<br> \n> Date modified:: March 12, 2025 at 09:30 CET\n> [!meta] Back to main website \n> [Home](https://comphy-lab.org/), [Team](https://comphy-lab.org/team), [Research](https://comphy-lab.org/research), [Github](https://github.com/comphy-lab)",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Influence on the Rheology Community and Honors",
-    "content": "In computational fluid dynamics and engineering today, Oldroyd’s models are routinely used to simulate polymer processing, biological fluid flows, and complex material behavior, enabling predictions of how materials will respond under flow with both viscous and elastic forces at play.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "4th-workingAssignment - > [",
+    "content": "> [!tldr] TL;DR \n> This assignment explores computational approaches to viscoelastic fluid dynamics using Basilisk.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Influence on the Rheology Community and Honors",
-    "content": "In hindsight, John Hinch and other colleagues note that Oldroyd’s genius was in formulating simple yet physically sound models – *“the first twelve pages”* of his 1950 paper, as Bob Bird once remarked, *contained the seeds of an entire field*.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "4th-workingAssignment - > [",
+    "content": "We investigate four advanced multiphase flow phenomena involving complex rheology: bursting bubbles in polymer solutions, viscoplastic drop impact, soft material impacts, and Taylor-Culick retraction of viscoelastic filaments.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Influence on the Rheology Community and Honors",
-    "content": "By following a historical narrative from classical mechanics to modern rheology, Oldroyd essentially wrote the chapter that connects **Isaac Newton’s** fluid (ideal viscous) to **James Clerk Maxwell’s** elastic solid, and in doing so, he helped create the science of rheology as we know it.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "4th-workingAssignment - > [",
+    "content": "Each simulation incorporates non-Newtonian behavior characterized by dimensionless parameters including Weissenberg, Deborah, Ohnesorge, and elasto-capillary numbers.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Influence on the Rheology Community and Honors",
-    "content": "His work evolved from early studies of idealized plastic solids to the elegant Oldroyd-B equation, reflecting a consistent vision: to understand and predict the behavior of materials that are not purely solid nor liquid, but something in between.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "4th-workingAssignment - > [",
+    "content": "Through these simulations, we develop practical skills in implementing log-conformation formulations for numerical stability, handling complex interfaces with adaptive mesh refinement, and visualizing rheologically complex flows.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Influence on the Rheology Community and Honors",
-    "content": "This vision, shaped by great mentors, wartime experiences, industrial collaboration, and personal insight, makes James G.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "4th-workingAssignment - > [",
+    "content": "This assignment represents the culmination of our computational fluid dynamics progression, building on earlier work with heat conduction, single-phase flows, and simple multiphase systems.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Influence on the Rheology Community and Honors",
-    "content": "Oldroyd a towering figure in the history of rheology and fluid mechanics – one whose influence is still climbing upward, much like the fluid on Weissenberg’s spinning rod. ([](http://www.damtp.cam.ac.uk/user/hinch/publications/Oldroyd12b.pdf#:~:text=However%2C%20the%20problem%20is%20how,3)) ([](http://www.damtp.cam.ac.uk/user/hinch/publications/Oldroyd12b.pdf#:~:text=6.%20The%20elastic,not%20all%2C%20of%20the%20flow))\n**Sources:** J.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "4th-workingAssignment - Introduction",
+    "content": "In this final assignment, we explore the fascinating world of viscoelastic fluid dynamics using computational simulations.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Influence on the Rheology Community and Honors",
-    "content": "G. Oldroyd’s biography and obituary notes ([James G. Oldroyd - Wikipedia](https://en.wikipedia.org/wiki/James_G._Oldroyd#:~:text=Oldroyd%20was%20born%20in%201921,by%20his%20wife%20Katryn%20and)) ([James G.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "4th-workingAssignment - Introduction",
+    "content": "Viscoelastic materials—from polymer solutions to biological fluids, food products, and advanced materials—exhibit both viscous (fluid-like) and elastic (solid-like) properties, leading to complex and often counterintuitive behaviors.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Influence on the Rheology Community and Honors",
-    "content": "Oldroyd - Wikipedia](https://en.wikipedia.org/wiki/James_G._Oldroyd#:~:text=In%201950%20he%20published%20a,6)) ([James G. Oldroyd – Wikipedia](https://de.wikipedia.org/wiki/James_G._Oldroyd#:~:text=Oldroyd%20besuchte%20die%20Bradford%20,A)); Editorial by I. A.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "4th-workingAssignment - Introduction",
+    "content": "Understanding these behaviors is crucial for applications ranging from inkjet printing and food processing to biological systems and advanced manufacturing.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Influence on the Rheology Community and Honors",
-    "content": "Frigaard *et al.* on Oldroyd’s centenary ([Microsoft Word - Document1](https://nnf.mit.edu/sites/default/files/publications/files/Oldroyd_SI_Editorial_FINAL.pdf#:~:text=James%20Gardner%20Oldroyd1%20%E2%80%93%20known,and%20went%20up%20to%20Trinity)) ([Microsoft Word - Document1](https://nnf.mit.edu/sites/default/files/publications/files/Oldroyd_SI_Editorial_FINAL.pdf#:~:text=astrophysicist%29%2C%20and%20Fritz%20Ursell%20,Thus)) ([Microsoft Word - Document1](https://nnf.mit.edu/sites/default/files/publications/files/Oldroyd_SI_Editorial_FINAL.pdf#:~:text=Jim%20Oldroyd%27s%20professional%20career%20began,1)); John Hinch and O.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "4th-workingAssignment - Introduction",
+    "content": "Building on our previous work with heat conduction ([[1st-workingAssignment]]), single-phase flows ([[2nd-workingAssignment]]), and simple multiphase flows ([[3rd-workingAssignment]]), we now tackle the additional complexity introduced by non-Newtonian rheology, viscoelasticity, and viscoplasticity.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Influence on the Rheology Community and Honors",
-    "content": "Harlen’s analysis *“Oldroyd B, and not A?”* ([](http://www.damtp.cam.ac.uk/user/hinch/publications/Oldroyd12b.pdf#:~:text=Sack%20%281946%29%20,would%20climb%20the%20rod%2C%20as)) ([](http://www.damtp.cam.ac.uk/user/hinch/publications/Oldroyd12b.pdf#:~:text=However%2C%20the%20problem%20is%20how,3)); K.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "4th-workingAssignment - Introduction",
+    "content": "These phenomena represent some of the most challenging aspects of computational fluid dynamics, requiring specialized numerical techniques for stable and accurate simulations.\n> [!info] Learning Objectives\n> \n> - Understand key mathematical models for viscoelastic and viscoplastic fluid behavior\n> - Implement log-conformation formulations for numerical stability in viscoelastic simulations\n> - Analyze how elasticity affects interfacial dynamics in multiphase flows\n> - Apply adaptive mesh refinement strategies to resolve complex interface evolution\n> - Develop skills in visualizing and interpreting non-Newtonian flow phenomena\n> - Relate dimensionless parameters to physical behaviors in complex fluids\nThroughout this assignment, we'll explore four complex multiphase flow simulations:\n1.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Influence on the Rheology Community and Honors",
-    "content": "Walters’ oral history interview ([Oral History Interviews | Kenneth Walters | American Institute of Physics](https://www.aip.org/history-programs/niels-bohr-library/oral-histories/47534#:~:text=match%20at%20L1785%20The%20amazing,Fluid%20Mechanics%2C%E2%80%99%E2%80%99%20Journal%20of%20Non)); R. I.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "4th-workingAssignment - Introduction",
+    "content": "Bursting bubbles in viscoelastic media\n2. Viscoplastic drop impact on a solid surface\n3. Soft impact dynamics with viscoelastic fluids\n4.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Influence on the Rheology Community and Honors",
-    "content": "Walters, *Rheology: An Historical Perspective*, 1998 ([Rheology: An Historical Perspective (Rheology Series) - PDF Free Download](https://epdf.pub/rheology-an-historical-perspective-rheology-series.html#:~:text=West%20Germany%20in%201958,B%20A%20Toms%2C%20Mrs%20Toms)) ([Rheology: An Historical Perspective (Rheology Series) - PDF Free Download](https://epdf.pub/rheology-an-historical-perspective-rheology-series.html#:~:text=have%20been%20viewed%20as%20complementary,influential%20work%20of%20C%20o)); British Society of Rheology archives ([Former BSR Presidents | British Society of Rheology](https://www.bsr.org.uk/pages/former-bsr-presidents#:~:text=Image%3A%20Photo%20of%20Oldroyd)); and others as cited above.\n[^1]: R.",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "4th-workingAssignment - Introduction",
+    "content": "Taylor-Culick retraction of viscoelastic filaments\nEach case presents unique physical phenomena and numerical challenges, providing a comprehensive overview of computational approaches to viscoelastic fluid dynamics.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
   {
-    "title": "James G. Oldroyd - Influence on the Rheology Community and Honors",
-    "content": "I. Tanner & K. Walters, Rheology: An Historical Perspective, Elsevier (1998). [Link to access book](https://bit.ly/4bohW0t).",
-    "url": "https://blogs.comphy-lab.org/James G. Oldroyd",
+    "title": "4th-workingAssignment - Part 1: Viscoelastic Fluid Fundamentals",
+    "content": "Before diving into specific simulations, let's establish the mathematical framework for understanding viscoelastic fluid behavior.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - 1.1 Constitutive Equations for Complex Fluids",
+    "content": "Traditional Newtonian fluids are characterized by a linear relationship between stress and strain rate, governed by a constant viscosity:\n$$\\boldsymbol{\\tau} = \\mu \\dot{\\boldsymbol{\\gamma}}$$\nwhere $\\boldsymbol{\\tau}$ is the stress tensor, $\\mu$ is the viscosity, and $\\dot{\\boldsymbol{\\gamma}}$ is the strain rate tensor.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - 1.1 Constitutive Equations for Complex Fluids",
+    "content": "For non-Newtonian fluids, this relationship becomes more complex:\n1. **Viscoplastic fluids (e.g., Bingham plastics, Herschel-Bulkley fluids)** exhibit a yield stress $\\tau_y$ that must be exceeded before flow occurs:\n$$\\boldsymbol{\\tau} = \\begin{cases} \\tau_{y}\\frac{\\dot{\\boldsymbol{\\gamma}}}{|\\dot{\\boldsymbol{\\gamma}}|} + K|\\dot{\\boldsymbol{\\gamma}}|^{n-1}\\dot{\\boldsymbol{\\gamma}}, & \\text{if } |\\boldsymbol{\\tau}| > \\tau_y \\ \\dot{\\boldsymbol{\\gamma}} = 0, & \\text{if } |\\boldsymbol{\\tau}| \\leq \\tau_y \\end{cases} $$\n2. **Viscoelastic fluids** exhibit memory effects, with stress depending on the deformation history.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - 1.1 Constitutive Equations for Complex Fluids",
+    "content": "A common model is the Oldroyd-B model:\n$$\\boldsymbol{\\tau} + \\lambda \\overset{\\nabla}{\\boldsymbol{\\tau}} = \\mu \\left( \\dot{\\boldsymbol{\\gamma}} + \\lambda_r \\overset{\\nabla}{\\dot{\\boldsymbol{\\gamma}}} \\right)$$\nwhere $\\lambda$ is the relaxation time, $\\lambda_r$ is the retardation time, and $\\overset{\\nabla}{\\boldsymbol{\\tau}}$ denotes the upper-convected derivative of the stress tensor.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - 1.3 The Log-Conformation Approach",
+    "content": "In our simulations, we employ the log-conformation approach, which transforms the conformation tensor $\\mathbf{A}$ logarithmically:\n$$\\mathbf{\\Psi} = \\log(\\mathbf{A})$$\nThe evolution equation is then solved for $\\mathbf{\\Psi}$ rather than directly for $\\mathbf{A}$, which ensures that the reconstructed conformation tensor remains positive-definite.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - 1.3 The Log-Conformation Approach",
+    "content": "This approach significantly improves numerical stability, especially for high Weissenberg number flows.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - 1.3 The Log-Conformation Approach",
+    "content": "The total stress in the fluid is the sum of the Newtonian solvent contribution and the polymer stress:\n$$\\boldsymbol{\\tau} = \\mu_s (\\nabla \\mathbf{u} + \\nabla \\mathbf{u}^T) + \\mathbf{G}(\\mathbf{A} - \\mathbf{I})$$\nwhere $\\mu_s$ is the solvent viscosity, $\\mathbf{G}$ is the elastic modulus, and $\\mathbf{I}$ is the identity tensor.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - Part 2: Bursting Bubbles in Viscoelastic Media",
+    "content": "Our first simulation explores the dynamics of bubble bursting in viscoelastic fluids, a phenomenon that differs significantly from the Newtonian case due to elastic memory effects.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - 2.1 Physical Description",
+    "content": "When a bubble reaches a free surface, the thin film separating it from the surrounding atmosphere eventually ruptures. This triggers a series of events:\n1. Capillary waves travel along the interface\n2. The bubble cavity collapses\n3. A central jet may form and rise upward (Worthington jet)\n4.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - 2.1 Physical Description",
+    "content": "Depending on conditions, the jet may break into droplets\nIn viscoelastic fluids, elastic stresses dramatically alter these dynamics, often leading to enhanced jet formation and reduced droplet breakup due to elastic resistance to extensional deformation.\n> [!tldr] Problem Statement Simulate the bursting of a bubble at the interface between a viscoelastic fluid and air, examining how elasticity affects the jet dynamics and potential droplet formation.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - 2.1 Physical Description",
+    "content": "Key dimensionless parameters include:\n> \n> - **Deborah number (De)**: Ratio of relaxation time to flow time scale\n> - **Elasto-capillary number (Ec)**: Ratio of elastic forces to surface tension\n> - **Ohnesorge number (Oh)**: Ratio of viscous forces to inertial and capillary forces\n> - **Bond number (Bond)**: Ratio of gravitational forces to surface tension",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - 2.3 Expected Results",
+    "content": "For Newtonian fluids (De = 0), bubble bursting typically results in:\n1. Rapid retraction of the film\n2. Formation of capillary waves\n3. Collapse of the cavity\n4. Potential formation of a Worthington jet\n5. Possible droplet pinch-off from the jet\nFor viscoelastic fluids (De > 0), we expect to observe:\n1.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - 2.3 Expected Results",
+    "content": "Enhanced jet formation due to elastic stresses\n2. Delayed or suppressed droplet pinch-off\n3. Longer and thinner jets at high Deborah numbers\n4.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - 2.3 Expected Results",
+    "content": "Beads-on-a-string morphology for moderate elasticity\n> [!task] Exercise: Investigating Deborah Number Effects\n> \n> Modify the bubble bursting simulation to explore different Deborah numbers:\n> \n> 1.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - 2.3 Expected Results",
+    "content": "Run simulations with De = 0 (Newtonian), De = 1 (moderate elasticity), and De = 10 (high elasticity), keeping other parameters constant\n> 2. Track and compare:\n>     - Maximum jet height\n>     - Time to first droplet pinch-off (if it occurs)\n>     - Jet morphology (thickness, length, shape)\n> 3.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - 2.3 Expected Results",
+    "content": "Explain the physical mechanisms behind the observed differences\n> \n> This exercise will help you understand how elastic memory affects interfacial dynamics.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - Part 3: Viscoplastic Drop Impact",
+    "content": "Our second simulation investigates the dynamics of a viscoplastic (yield-stress fluid) drop impacting a solid surface.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - 3.1 Physical Background",
+    "content": "When a viscoplastic drop impacts a surface, its behavior differs significantly from Newtonian drops due to the yield stress, which creates unyielded (solid-like) regions within the fluid. Key features include:\n1. Initial deformation driven by inertia\n2.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - 3.1 Physical Background",
+    "content": "Formation of unyielded regions where stress falls below the yield stress\n3. Limited spreading compared to Newtonian drops\n4. Potential formation of a solid-like cap at the drop apex\n5.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - 3.1 Physical Background",
+    "content": "Asymmetric retractions and frozen interfaces after impact\n> [!tldr] Problem Statement Simulate the axisymmetric impact of a viscoplastic drop onto a solid surface.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - 3.1 Physical Background",
+    "content": "Key dimensionless parameters include:\n> \n> - **Weber number (We)**: $\\text{We} = \\frac{\\rho U^2 D}{\\sigma}$ Ratio of inertial to surface tension forces\n> - **Ohnesorge number (Oh)**: $\\text{Oh} = \\frac{\\mu}{\\sqrt{\\rho \\sigma D}}$ Ratio of viscous to inertial and surface tension forces\n> - **Plasto-capillary number (J)**: $\\mathcal{J} = \\frac{\\tau_yR_0}{\\sigma}$ Ratio of yield stress to capillary pressure",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - 3.2 Mathematical Formulation",
+    "content": "For the viscoplastic fluid, we employ the Herschel-Bulkley model with regularization:\n$$ \\boldsymbol{\\tau} = 2\\biggl[\\frac{\\mathcal{J}}{2|\\boldsymbol{\\mathcal{D}}|+\\epsilon} + \\mathcal{O}h (2|\\boldsymbol{\\mathcal{D}}|+\\epsilon)^{n-1}\\biggr]\\boldsymbol{\\mathcal{D}} $$\nwhere:\n- $\\boldsymbol{\\mathcal{D}}$ is the deformation rate tensor\n- $|\\boldsymbol{\\mathcal{D}}|$ is its second invariant\n- $\\epsilon$ is a regularization parameter\n- $n$ is the power law index (n = 1 for Bingham model)\n- $\\mathcal{J}$ is the dimensionless yield stress\n- $\\mathcal{O}h$ is the Ohnesorge number\nThe regularization ensures numerical stability by avoiding the mathematical singularity at zero deformation rate.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - 3.3 Implementation Details",
+    "content": "The simulation leverages a modified two-phase flow solver for viscoplastic fluids:\n```c\n#include \"axi.h\"\n#include \"navier-stokes/centered.h\"\n#define FILTERED // Smear density and viscosity jumps\n#include \"two-phaseVP-HB.h\"\n#include \"navier-stokes/conserving.h\"\n#include \"tension.h\"\n#include \"reduced.h\"\n```\nBoundary conditions specify a solid wall at the left boundary:\n```c\n// Left boundary: solid wall (no-slip and no flux)\nu.t[left] = dirichlet(0.0);  // Tangential velocity = 0 (no-slip)\nf[left] = dirichlet(0.0);    // Volume fraction = 0 (solid wall)\n```\nThe drop is initialized with a downward velocity and positioned slightly above the wall:\n```c\nevent init (t = 0) {\n  if (!restore (file = dumpFile)){\n    refine((R2Drop(x, y) < 1.05) && (level < MAXlevel));\n    fraction(f, 1. - R2Drop(x, y));\n    foreach() {\n      u.x[] = -1.0 * f[];  // Initial velocity in x-direction (toward wall)\n      u.y[] = 0.0;         // No initial velocity in y-direction\n    }\n  }\n}\n```\n> [!important] Adaptive Refinement Strategy The simulation employs a sophisticated adaptive refinement strategy that changes based on the simulation stage:\n> \n> ```c\n> event adapt(i++){\n>   if (t < 1e-2){\n>     // Early impact phase: focus on interface and velocity fields\n>     adapt_wavelet ((scalar *){f, u.x, u.y},\n>     (double[]){fErr, VelErr, VelErr},\n>     MAXlevel);\n>   } else {\n>     // Later stages: add refinement based on curvature and deformation\n>     scalar KAPPA[], D2c[];\n>     curvature(f, KAPPA);\n>     foreach() {\n>       // Calculate deformation tensor components\n>       double D11 = (u.y[0,1] - u.y[0,-1])/(2*Delta);\n>       double D22 = (u.y[]/y);\n>       double D33 = (u.x[1,0] - u.x[-1,0])/(2*Delta);\n>       double D13 = 0.5*((u.y[1,0] - u.y[-1,0] + u.x[0,1] - u.x[0,-1])/(2*Delta));\n>       double D2 = (sq(D11)+sq(D22)+sq(D33)+2.0*sq(D13));\n>       D2c[] = f[]*(D2);  // Deformation rate in the drop phase\n>     }\n>     adapt_wavelet ((scalar *){f, u.x, u.y, KAPPA, D2c},\n>     (double[]){fErr, VelErr, VelErr, KAPPAErr, D2Err},\n>     MAXlevel);\n>   }\n> }\n> ```\n> \n> This strategy ensures fine resolution near the interface and in regions of high deformation, which is critical for accurately capturing the yield surfaces where the stress transitions across the yield threshold.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - 3.4 Expected Results",
+    "content": "For viscoplastic drops, the impact dynamics depend strongly on the plasto-capillary number J:\n1. **Low J (J << 1)**: Behavior approaches Newtonian drops with nearly complete spreading\n2. **Moderate J (J ~ 0.1-1)**: Limited spreading with formation of unyielded regions\n3. **High J (J > 1)**: Minimal deformation, approaching solid-like behavior\nA key feature to observe is the formation of unyielded regions where the stress falls below the yield stress.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - 3.4 Expected Results",
+    "content": "These regions behave as solid-like domains embedded within the flowing fluid.\n> [!task] Exercise: Non-Newtonian Impact Dynamics\n> \n> Compare viscoplastic drop impact with Newtonian drop impact:\n> \n> 1.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - 3.4 Expected Results",
+    "content": "Run simulations with J = 0 (Newtonian), J = 0.1 (moderate yield stress), and J = 0.5 (high yield stress)\n> 2. Compare:\n>     - Maximum spread factor (ratio of maximum diameter to initial diameter)\n>     - Final equilibrium shape\n>     - Locations of unyielded regions (where applicable)\n> 3.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - 3.4 Expected Results",
+    "content": "Plot the spread factor vs. time for each case on a single graph\n> 4. Explain how yield stress affects the impact dynamics\n> \n> This exercise will help you understand how yield stress modifies impact behavior compared to Newtonian fluids.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - Part 4: Soft Impact Dynamics with Viscoelastic Fluids",
+    "content": "Our third simulation explores the dynamics of viscoelastic drop impact, focusing on the effects of elasticity on the impact behavior.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - 4.1 Physical Background",
+    "content": "When a viscoelastic drop impacts a surface, elastic stresses can lead to behaviors not seen in Newtonian impacts:\n1. Enhanced rebound due to elastic energy storage and recovery\n2. Suppression of satellite droplet formation\n3. Extended filament formation during rebound\n4.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - 4.1 Physical Background",
+    "content": "Complex fingering patterns during spreading\n5. Beads-on-a-string morphology in retracting filaments\n> [!tldr] Problem Statement Simulate the impact of a viscoelastic drop on a solid surface, examining how elasticity affects the impact dynamics.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - 4.1 Physical Background",
+    "content": "Key dimensionless parameters include:\n> \n> - **Weber number (We)**: Ratio of inertial to surface tension forces\n> - **Ohnesorge number (Oh)**: Ratio of viscous to inertial and surface tension forces\n> - **Weissenberg number (Wi)**: Ratio of elastic to viscous forces\n> - **Elasticity number (El)**: Ratio of elastic to inertial effects\n> - **Bond number (Bo)**: Ratio of gravitational to surface tension forces",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - 4.3 Expected Results",
+    "content": "Viscoelastic drop impact exhibits several distinctive behaviors compared to Newtonian impact:\n1. **Weissenberg = 0 (Newtonian)**: Standard impact dynamics with spreading, potential rebound depending on Oh and We\n2. **Low Weissenberg**: Enhanced rebound due to elastic recovery\n3. **Moderate Weissenberg**: Formation of extended filaments during rebound\n4. **High Weissenberg**: Dramatic enhancement of rebound with possible beads-on-a-string formation in filaments\n> [!task] Exercise: Elasticity Effects on Impact\n> \n> Investigate how elasticity affects drop impact behavior:\n> \n> 1.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - 4.3 Expected Results",
+    "content": "Run simulations with Wi = 0 (Newtonian), Wi = 1 (moderate elasticity), and Wi = 10 (high elasticity)\n> 2. For each case, track:\n>     - Maximum spread factor\n>     - Rebound height (if applicable)\n>     - Time evolution of kinetic and elastic energy\n> 3.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - 4.3 Expected Results",
+    "content": "Visualize the stress distribution during impact for different Wi values\n> 4. Explain the physical mechanisms behind the observed differences\n> \n> This exercise will help you understand how elasticity modifies impact dynamics through storage and recovery of elastic energy.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - Part 5: Taylor-Culick Viscoelastic Retraction",
+    "content": "Our final simulation explores the capillary-driven retraction of a viscoelastic fluid filament, known as Taylor-Culick flow.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - 5.1 Physical Background",
+    "content": "When a cylindrical fluid filament with a free surface is suddenly released, surface tension causes it to retract.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - 5.1 Physical Background",
+    "content": "For Newtonian fluids, the retraction velocity reaches a constant value known as the Taylor-Culick velocity:\n$$v_{TC} = \\sqrt{\\frac{2\\sigma}{\\rho h}}$$\nwhere $\\sigma$ is the surface tension, $\\rho$ is the density, and $h$ is the filament thickness.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - 5.1 Physical Background",
+    "content": "For viscoelastic fluids, the retraction dynamics are more complex due to elastic effects:\n1. Initial acceleration phase similar to Newtonian fluids\n2. Development of a bulbous end that grows as it collects fluid\n3. Formation of a neck behind the bulbous end\n4.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - 5.1 Physical Background",
+    "content": "Potential development of beads-on-a-string morphology\n5. Modified retraction velocity due to elastic stresses\n> [!tldr] Problem Statement Simulate the retraction of a viscoelastic fluid filament under capillary action, examining how elasticity affects the retraction dynamics.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - 5.1 Physical Background",
+    "content": "Key dimensionless parameters include:\n> \n> - **Deborah number (De)**: Ratio of relaxation time to capillary time\n> - **Ohnesorge number (Oh)**: Ratio of viscous to inertial and capillary forces\n> - **Elasticity number (El)**: Ratio of elastic to inertial effects",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - Part 6: Numerical Considerations for Viscoelastic Simulations",
+    "content": "Simulating viscoelastic flows presents unique numerical challenges that require special attention:",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - 6.1 The High Weissenberg Number Problem",
+    "content": "As mentioned earlier, traditional numerical methods often fail at high Weissenberg numbers due to the loss of positive-definiteness of the conformation tensor. This manifests as:\n1. Unbounded growth of stress values\n2. Numerical instabilities\n3.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - 6.1 The High Weissenberg Number Problem",
+    "content": "Simulation divergence\nThe log-conformation approach addresses this by:\n1. Working with the logarithm of the conformation tensor\n2. Ensuring the reconstructed tensor remains positive-definite\n3. Allowing stable simulations at much higher Weissenberg numbers",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - 6.2 Adaptive Mesh Refinement Strategies",
+    "content": "Effective adaptive mesh refinement is critical for viscoelastic simulations.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - 6.2 Adaptive Mesh Refinement Strategies",
+    "content": "Key refinement criteria include:\n1. **Interface location**: Captured by volume fraction gradients\n2. **Velocity gradients**: Important for capturing flow features\n3. **Interface curvature**: Critical for surface tension effects\n4. **Conformation tensor gradients**: Essential for capturing elastic stress variations\nBalancing these criteria is important for efficiency and accuracy.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - 6.3 Multiphase Interface Treatment",
+    "content": "For multiphase viscoelastic simulations, proper treatment of interfaces is crucial:\n1. **Filtered approach**: Smooths property jumps across interfaces for numerical stability\n2. **Conservative formulation**: Ensures momentum conservation during rapid interface deformation\n3. **Tension model**: Accurately captures surface tension forces",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - 6.4 Stability Tips",
+    "content": "Based on experience with these simulations, here are some tips for ensuring stability:\n1. Use a sufficiently small CFL number (typically 0.1 or less)\n2. Start with a moderate Weissenberg/Deborah number and gradually increase\n3.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - 6.4 Stability Tips",
+    "content": "Ensure sufficient mesh resolution near interfaces and regions of high stress gradients\n4. Monitor energy conservation and stress growth for early signs of instability\n5.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - 6.4 Stability Tips",
+    "content": "Use the tensor implementation for complex flows, switching to scalar only when necessary for performance\n> [!tip] Debugging Strategy If your viscoelastic simulation becomes unstable:\n> \n> 1. Check the kinetic energy for exponential growth\n> 2.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - 6.4 Stability Tips",
+    "content": "Examine the conformation tensor components for unbounded growth\n> 3. Reduce the time step (lower CFL number)\n> 4. Increase mesh resolution near problematic regions\n> 5. Consider reducing the Weissenberg/Deborah number temporarily\n> 6. Ensure boundary conditions are properly implemented",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - Conclusion",
+    "content": "In this assignment, we've explored the fascinating world of computational viscoelastic fluid dynamics through four complex multiphase flow simulations.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - Conclusion",
+    "content": "These simulations demonstrate the rich and often counterintuitive behaviors that emerge when elastic and viscoplastic effects are introduced into fluid flows. Key insights from our exploration include:\n1.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - Conclusion",
+    "content": "The critical importance of specialized numerical techniques (like the log-conformation approach) for stable viscoelastic simulations\n2. The profound impact of elasticity on interfacial dynamics, from enhanced jet formation in bubble bursting to modified retraction behavior in filaments\n3.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - Conclusion",
+    "content": "The formation of unyielded regions in viscoplastic flows, creating complex solid-fluid transitions\n4.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - Conclusion",
+    "content": "The challenges and strategies for adaptive mesh refinement in flows with multiple time and length scales\nThese complex fluid simulations represent the culmination of our progression through computational fluid dynamics, building on earlier foundations in heat conduction, single-phase flows, and simple multiphase systems.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - Conclusion",
+    "content": "The techniques and insights gained are applicable to a wide range of real-world phenomena, from polymer processing and food science to biological flows and advanced manufacturing.\n> [!question] Further Exploration\n> \n> Consider these questions for deeper investigation:\n> \n> 1.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - Conclusion",
+    "content": "How would viscoelasticity and viscoplasticity interact in a combined model (e.g., an elasto-viscoplastic fluid)?\n> 2. What role does fluid microstructure play in determining macroscopic rheological behavior?\n> 3. How could these models be extended to incorporate temperature-dependent properties?\n> 4.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - Conclusion",
+    "content": "What experimental techniques could validate the computational predictions made by these simulations?\n> 5.",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
+    "type": "blog_excerpt",
+    "priority": 3
+  },
+  {
+    "title": "4th-workingAssignment - Conclusion",
+    "content": "How might machine learning approaches be used to develop more accurate constitutive models for complex fluids?\n> [!significance]- Metadata Author:: [Vatsal Sanjay](https://vatsalsanjay.com/) Date published:: March 12, 2025<br> Date modified:: March 12, 2025 at 10:15 CET\n> [!meta] Back to main website [Home](https://comphy-lab.org/), [Team](https://comphy-lab.org/team), [Research](https://comphy-lab.org/research), [Github](https://github.com/comphy-lab)",
+    "url": "https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment",
     "type": "blog_excerpt",
     "priority": 3
   },
