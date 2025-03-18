@@ -33,11 +33,19 @@
   <meta name="theme-color" content="#ffffff">
   <meta name="apple-mobile-web-app-title" content="CoMPhy Lab">
   <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Meet the team of researchers and scientists at the Computational Multiphase Physics Laboratory">
+  <meta name="author" content="CoMPhy Lab">
+  <meta name="robots" content="index, follow">
+  <meta name="keywords" content="research team, computational physics team, multiphase physics, researchers, scientists">
 
   <!-- Font dependencies with font-display: swap -->
   <style>
     @font-face {
       font-display: swap;
+      font-family: 'System Font';
+      src: local('system-ui');
     }
   </style>
   <link rel="stylesheet" href="/assets/css/fontello/css/fontello.css" media="print" onload="this.media='all'">
@@ -52,6 +60,17 @@
   <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="stylesheet" href="/assets/css/team.css">
   <link rel="stylesheet" href="/assets/css/command-palette.css" media="print" onload="this.media='all'">
+  
+  <!-- Structured Data for Team -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ResearchOrganization",
+    "name": "CoMPhy Lab Research Team",
+    "description": "Research team members of the Computational Multiphase Physics Laboratory.",
+    "url": "{{ site.url }}/team"
+  }
+  </script>
 
   <!-- Simple command palette initialization -->
   <script>

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Sitemap: https://comphy-lab.org/sitemap.xml
+
+# Allow all robots complete access
+Disallow:
