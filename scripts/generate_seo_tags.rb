@@ -159,37 +159,9 @@ def update_html_with_metadata(file_path, keywords, description)
     head = doc.at_css('head')
     return unless head
     
-    # Check for existing metadata
-    existing_keywords = doc.css('meta[name="keywords"]')
-    existing_description = doc.css('meta[name="description"]')
-    
-    # Update or add keywords meta tag
-    if !keywords.empty?
-      keywords_str = keywords.to_a.uniq.join(', ')
-      if existing_keywords.empty?
-        # Add new meta tag for keywords
-        head.add_child("<meta name=\"keywords\" content=\"#{CGI.escape_html(keywords_str)}\">")
-      else
-        # Update existing keywords
-        existing_keywords.first['content'] = CGI.escape_html(keywords_str)
-      end
-    end
-    
-    # Update or add description meta tag if we have a good one
-    if !description.empty?
-      desc_str = description.to_a.first
-      
-      # Add if no description meta or if the existing one is too short
-      if existing_description.empty? || existing_description.first['content'].to_s.length < 50
-        if existing_description.empty?
-          # Add new meta tag for description
-          head.add_child("<meta name=\"description\" content=\"#{CGI.escape_html(desc_str)}\">")
-        else
-          # Update existing description
-          existing_description.first['content'] = CGI.escape_html(desc_str)
-        end
-      end
-    end
+    # Update meta tags
+    update_keywords_meta(doc, head, keywords)
+    update_description_meta(doc, head, description)
     
     # Write updated content back to file
     File.write(file_path, doc.to_html)
@@ -197,6 +169,41 @@ def update_html_with_metadata(file_path, keywords, description)
   rescue => e
     puts "Error updating metadata for #{file_path}: #{e.message}"
     return false
+  end
+end
+
+# Update keywords meta tag
+def update_keywords_meta(doc, head, keywords)
+  return if keywords.empty?
+  
+  existing_keywords = doc.css('meta[name="keywords"]')
+  keywords_str = keywords.to_a.uniq.join(', ')
+  
+  if existing_keywords.empty?
+    # Add new meta tag for keywords
+    head.add_child("<meta name=\"keywords\" content=\"#{CGI.escape_html(keywords_str)}\">")
+  else
+    # Update existing keywords
+    existing_keywords.first['content'] = CGI.escape_html(keywords_str)
+  end
+end
+
+# Update description meta tag
+def update_description_meta(doc, head, description)
+  return if description.empty?
+  
+  existing_description = doc.css('meta[name="description"]')
+  desc_str = description.to_a.first
+  
+  # Add if no description meta or if the existing one is too short
+  if existing_description.empty? || existing_description.first['content'].to_s.length < 50
+    if existing_description.empty?
+      # Add new meta tag for description
+      head.add_child("<meta name=\"description\" content=\"#{CGI.escape_html(desc_str)}\">")
+    else
+      # Update existing description
+      existing_description.first['content'] = CGI.escape_html(desc_str)
+    end
   end
 end
 
