@@ -71,12 +71,15 @@ end
 # Process markdown files first
 Dir.glob(File.join(ROOT_DIR, '*.md')).each do |file|
   next if file.start_with?(File.join(ROOT_DIR, '_team')) # Skip team members
-  next if file == File.join(ROOT_DIR, 'README.md') # Skip root README.md
+  next if File.basename(file).downcase == 'readme.md' # Skip README.md file (improved check)
   
   puts "Processing markdown file #{file}..."
   
   content = File.read(file)
   is_readme = file.end_with?('README.md')
+  
+  # Skip processing completely if it's README.md
+  next if is_readme
   
   # Split content by headers
   sections = content.split(/^#+\s+/)
