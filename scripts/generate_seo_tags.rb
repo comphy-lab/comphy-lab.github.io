@@ -9,6 +9,16 @@ require 'cgi'
 # Get the project root directory (one level up from scripts)
 ROOT_DIR = File.expand_path('..', __dir__)
 
+# Load site configuration for domain
+config_path = File.join(ROOT_DIR, '_config.yml')
+site_config = {}
+if File.exist?(config_path)
+  site_config = YAML.load_file(config_path)
+end
+
+# Site domain configuration
+SITE_DOMAIN = ENV['SITE_DOMAIN'] || site_config['url']&.gsub(/^https?:\/\//, '') || 'comphy-lab.org'
+
 # Load search database
 search_db_path = File.join(ROOT_DIR, 'assets', 'js', 'search_db.json')
 unless File.exist?(search_db_path)
@@ -250,7 +260,7 @@ def generate_sitemapindex(site_dir)
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
-    <loc>https://comphy-lab.org/sitemap.xml</loc>
+    <loc>https://#{SITE_DOMAIN}/sitemap.xml</loc>
     <lastmod>#{last_mod}</lastmod>
   </sitemap>
 </sitemapindex>
