@@ -16,7 +16,7 @@ title: Research
 <tags><span>Coalescence</span></tags>
 <tags><span>Superamphiphobic-surfaces</span></tags>
 <tags><span>Impact forces</span></tags>
-<tags><span>Dissipative anamoly</span></tags>
+<tags><span>Dissipative anomaly</span></tags>
 <tags><span>Soft-matter-singularities</span></tags>
 <tags><span>Featured</span></tags>
 
@@ -58,7 +58,7 @@ title: Research
 
 <h3 id="15">[15] <strong>Sanjay, V.</strong>, & Lohse, D. Unifying theory of scaling in drop impact: Forces & maximum spreading diameter. Phys. Rev. Lett., 134, 104003 (2025).</h3>
 
-<tags><span>Drops</span><span>Dissipative anamoly</span><span>Superamphiphobic-surfaces</span><span>Impact forces</span><span>Featured</span></tags>
+<tags><span>Drops</span><span>Dissipative anomaly</span><span>Superamphiphobic-surfaces</span><span>Impact forces</span><span>Featured</span></tags>
 
 [![PRL](https://img.shields.io/static/v1.svg?style=flat-square&label=PRL&message=OA&color=orange)](https://doi.org/10.1103/PhysRevLett.134.104003)
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2408.12714&color=green)](https://arxiv.org/abs/2408.12714)
@@ -90,7 +90,7 @@ title: Research
 
 <h3 id="13">[13] Kayal, L., <strong>Sanjay, V.</strong>, Yewale, N., Kumar, A., & Dasgupta, R. Focusing of concentric free-surface waves. J. Fluid Mech., 1003, A14 (2025).</h3>
 
-<tags><span>Waves</span><span>Dissipative anamoly</span></tags>
+<tags><span>Waves</span><span>Dissipative anomaly</span></tags>
 
 [![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=OA&color=orange)](https://doi.org/10.1017/jfm.2024.1089)
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2406.05416&color=green)](https://arxiv.org/abs/2406.05416)
@@ -124,7 +124,7 @@ title: Research
 
 <h3 id="11">[11] <strong>Sanjay, V.</strong>, Chantelot, P., & Lohse, D. When does an impacting drop stop bouncing? J. Fluid Mech., 958, A26 (2023).</h3>
 
-<tags><span>Drops</span><span>Bouncing</span><span>Dissipative anamoly</span></tags>
+<tags><span>Drops</span><span>Bouncing</span><span>Dissipative anomaly</span></tags>
 
 [![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=OA&color=orange)](https://doi.org/10.1017/jfm.2023.55)
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
@@ -155,7 +155,7 @@ title: Research
 
 <h3 id="9">[9] <strong>Sanjay, V.</strong> Taylor--Culick retractions and the influence of the surroundings. J. Fluid Mech., 948, A14 (2022).</h3>
 
-<tags><span>Sheets</span><span>Dissipative anamoly</span><span>Retraction</span></tags>
+<tags><span>Sheets</span><span>Dissipative anomaly</span><span>Retraction</span></tags>
 
 [![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=OA&color=orange)](https://doi.org/10.1017/jfm.2022.671)
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
