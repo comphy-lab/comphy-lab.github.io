@@ -16,7 +16,7 @@ title: Research
 <tags><span>Coalescence</span></tags>
 <tags><span>Superamphiphobic-surfaces</span></tags>
 <tags><span>Impact forces</span></tags>
-<tags><span>Dissipative anamoly</span></tags>
+<tags><span>Dissipative anomaly</span></tags>
 <tags><span>Soft-matter-singularities</span></tags>
 <tags><span>Featured</span></tags>
 
@@ -44,18 +44,6 @@ title: Research
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=SEePOSC_hY5SLxac&amp;list=PLiHEqeURsoWqT3CaVfp0Z2MswHfc7MQxE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-
-### <strong>Sanjay, V.</strong>, & Lohse, D. Unifying theory of scaling in drop impact: Forces & maximum spreading diameter. Received positive reviews in Phys. Rev. Lett. (2025).
-
-<tags><span>Drops</span><span>Dissipative anamoly</span><span>Superamphiphobic-surfaces</span><span>Impact forces</span></tags>
-
-[![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2408.12714&color=green)](https://arxiv.org/abs/2408.12714)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/VatsalSy/Impact-forces-of-water-drops-falling-on-superhydrophobic-surfaces.git)
-[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
-
-
-![Parameter space of drop impact](https://www.dropbox.com/scl/fi/rwrl444r73nayhw1jl4j2/SL2-theory_num.png?rlkey=ekywyjaui2n79djl4qtgevegn&raw=1){: width="75%" .center-block style="display: block; margin-left: auto; margin-right: auto;"}
-
 ### Bashkatov, A., Bürkle, F., Demirkır, Ç., Ding, W., <strong>Sanjay, V.</strong>, Babich, A., Yang, X., Mutschke, G., Czarske, J., Lohse, D., et al. Electrolyte spraying within H₂ bubbles during water electrolysis. Received positive reviews in Nat. Commun. (2025).
 
 <tags><span>Bubbles</span><span>Jets</span><span>Coalescence</span><span>Soft-matter-singularities</span><span>Drops</span></tags>
@@ -67,6 +55,18 @@ title: Research
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/QbQ4wrTjTks?si=SZsmKgXX28Fxcgru" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## 2025
+
+<h3 id="15">[15] <strong>Sanjay, V.</strong>, & Lohse, D. Unifying theory of scaling in drop impact: Forces & maximum spreading diameter. Phys. Rev. Lett., 134, 104003 (2025).</h3>
+
+<tags><span>Drops</span><span>Dissipative anomaly</span><span>Superamphiphobic-surfaces</span><span>Impact forces</span><span>Featured</span></tags>
+
+[![PRL](https://img.shields.io/static/v1.svg?style=flat-square&label=PRL&message=OA&color=orange)](https://doi.org/10.1103/PhysRevLett.134.104003)
+[![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2408.12714&color=green)](https://arxiv.org/abs/2408.12714)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/VatsalSy/Impact-forces-of-water-drops-falling-on-superhydrophobic-surfaces.git)
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
+
+
+![Parameter space of drop impact](https://www.dropbox.com/scl/fi/rwrl444r73nayhw1jl4j2/SL2-theory_num.png?rlkey=ekywyjaui2n79djl4qtgevegn&raw=1){: width="75%" .center-block style="display: block; margin-left: auto; margin-right: auto;"}
 
 <h3 id="14">[14] <strong>Sanjay, V.</strong>, Zhang, B., Lv, C., & Lohse, D. The role of viscosity on drop impact forces on non-wetting surfaces. J. Fluid Mech., 1004, A6 (2025).</h3>
 
@@ -90,7 +90,7 @@ title: Research
 
 <h3 id="13">[13] Kayal, L., <strong>Sanjay, V.</strong>, Yewale, N., Kumar, A., & Dasgupta, R. Focusing of concentric free-surface waves. J. Fluid Mech., 1003, A14 (2025).</h3>
 
-<tags><span>Waves</span><span>Dissipative anamoly</span></tags>
+<tags><span>Waves</span><span>Dissipative anomaly</span></tags>
 
 [![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=OA&color=orange)](https://doi.org/10.1017/jfm.2024.1089)
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2406.05416&color=green)](https://arxiv.org/abs/2406.05416)
@@ -103,7 +103,7 @@ title: Research
 
 <h3 id="12">[12] Balasubramanian, A. G., <strong>Sanjay, V.</strong>, Jalaal, M., Vinuesa, R., & Tammisola, O. Bursting bubble in an elastoviscoplastic medium. J. Fluid Mech., 1001, A9 (2024).</h3>
 
-<tags><span>Bubbles</span><span>Non-Newtonian</span><span>Jets</span><span>Soft-matter-singularities</span><span>Featured</span></tags>
+<tags><span>Bubbles</span><span>Non-Newtonian</span><span>Jets</span><span>Soft-matter-singularities</span></tags>
 
 [![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=OA&color=orange)](https://doi.org/10.1017/jfm.2024.1073)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/2023_Bubble-bursting-in-an-elasto-viscoplastic-medium)
@@ -124,7 +124,7 @@ title: Research
 
 <h3 id="11">[11] <strong>Sanjay, V.</strong>, Chantelot, P., & Lohse, D. When does an impacting drop stop bouncing? J. Fluid Mech., 958, A26 (2023).</h3>
 
-<tags><span>Drops</span><span>Bouncing</span><span>Dissipative anamoly</span></tags>
+<tags><span>Drops</span><span>Bouncing</span><span>Dissipative anomaly</span></tags>
 
 [![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=OA&color=orange)](https://doi.org/10.1017/jfm.2023.55)
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
@@ -155,7 +155,7 @@ title: Research
 
 <h3 id="9">[9] <strong>Sanjay, V.</strong> Taylor--Culick retractions and the influence of the surroundings. J. Fluid Mech., 948, A14 (2022).</h3>
 
-<tags><span>Sheets</span><span>Dissipative anamoly</span><span>Retraction</span></tags>
+<tags><span>Sheets</span><span>Dissipative anomaly</span><span>Retraction</span></tags>
 
 [![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=OA&color=orange)](https://doi.org/10.1017/jfm.2022.671)
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)

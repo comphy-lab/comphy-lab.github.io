@@ -35,4 +35,9 @@ cd ..
 echo "Generating pre-filtered research pages..."
 bundle exec ruby scripts/generate_filtered_research.rb
 
+# Generate SEO metadata from search database
+echo "Generating SEO metadata..."
+chmod +x scripts/generate_seo_tags.rb
+bundle exec ruby scripts/generate_seo_tags.rb
+
 echo "Build completed successfully!"

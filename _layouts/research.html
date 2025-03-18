@@ -106,11 +106,19 @@
   <meta name="theme-color" content="#ffffff">
   <meta name="apple-mobile-web-app-title" content="CoMPhy Lab">
   <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Research projects and publications from the Computational Multiphase Physics Laboratory">
+  <meta name="author" content="CoMPhy Lab">
+  <meta name="robots" content="index, follow">
+  <meta name="keywords" content="computational physics, multiphase physics, fluid dynamics, research papers, scientific publications">
 
   <!-- Font dependencies with font-display: swap -->
   <style>
     @font-face {
       font-display: swap;
+      font-family: 'System Font';
+      src: local('system-ui');
     }
   </style>
   <link rel="stylesheet" href="/assets/css/fontello/css/fontello.css" media="print" onload="this.media='all'">
@@ -125,6 +133,17 @@
   <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="stylesheet" href="/assets/css/research.css">
   <link rel="stylesheet" href="/assets/css/command-palette.css">
+  
+  <!-- Structured Data for Research -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ResearchProject",
+    "name": "Computational Multiphase Physics Research",
+    "description": "Research in computational multiphase physics applications and methods.",
+    "url": "{{ site.url }}/research"
+  }
+  </script>
 
   <!-- Simple command palette initialization -->
   <script>
