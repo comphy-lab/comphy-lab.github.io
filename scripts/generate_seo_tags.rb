@@ -4,6 +4,7 @@ require 'fileutils'
 require 'nokogiri'
 require 'set'
 require 'yaml'
+require 'cgi'
 
 # Get the project root directory (one level up from scripts)
 ROOT_DIR = File.expand_path('..', __dir__)
@@ -167,10 +168,10 @@ def update_html_with_metadata(file_path, keywords, description)
       keywords_str = keywords.to_a.uniq.join(', ')
       if existing_keywords.empty?
         # Add new meta tag for keywords
-        head.add_child("<meta name=\"keywords\" content=\"#{keywords_str}\">")
+        head.add_child("<meta name=\"keywords\" content=\"#{CGI.escape_html(keywords_str)}\">")
       else
         # Update existing keywords
-        existing_keywords.first['content'] = keywords_str
+        existing_keywords.first['content'] = CGI.escape_html(keywords_str)
       end
     end
     
@@ -182,10 +183,10 @@ def update_html_with_metadata(file_path, keywords, description)
       if existing_description.empty? || existing_description.first['content'].to_s.length < 50
         if existing_description.empty?
           # Add new meta tag for description
-          head.add_child("<meta name=\"description\" content=\"#{desc_str}\">")
+          head.add_child("<meta name=\"description\" content=\"#{CGI.escape_html(desc_str)}\">")
         else
           # Update existing description
-          existing_description.first['content'] = desc_str
+          existing_description.first['content'] = CGI.escape_html(desc_str)
         end
       end
     end
