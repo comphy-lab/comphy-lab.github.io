@@ -2,7 +2,7 @@ name: Update Search Database
 
 on:
   schedule:
-    - cron: '0 */12 * * *'  # Run every 12 hours
+    - cron: '0 4 * * *'  # Run daily at 4:00 UTC
   workflow_dispatch:  # Allow manual trigger
   push:
     branches: [ main ]
@@ -63,6 +63,7 @@ jobs:
     
     - name: Generate search database
       run: ruby scripts/generate_search_db.rb
+    
     
     - name: Commit and push if changed
       run: |
