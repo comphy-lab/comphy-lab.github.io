@@ -27,7 +27,18 @@ content_by_url = {}
 # Track URL normalizations
 normalized_urls = {}
 
-# Helper method to normalize URLs
+##
+# Normalizes a URL into a file path by removing fragments,
+# ensuring a leading slash, appending "index.html" for directory URLs or URLs missing an extension,
+# and then stripping the leading slash for file operations.
+#
+# @param url [String] the URL to be normalized.
+# @return [String] the normalized relative file path.
+#
+# @example
+#   normalize_url("about")         #=> "about/index.html"
+#   normalize_url("/contact#team")   #=> "contact/index.html"
+#   normalize_url("/index.html")     #=> "index.html"
 def normalize_url(url)
   # Remove anchor
   url = url.split('#').first
@@ -119,7 +130,20 @@ descriptions_by_url.each do |url, descriptions|
   end
 end
 
-# Function to update HTML files with metadata
+##
+# Updates an HTML file with SEO metadata by modifying its keywords and description meta tags.
+#
+# This method reads the HTML file at the specified path and uses Nokogiri to parse and update—or add—meta tags for keywords and description based on the provided collections. It concatenates unique keywords and uses the first description when appropriate, updating the meta description only if it is missing or too short.
+#
+# @param file_path [String] Path to the HTML file to update.
+# @param keywords [#to_a] A collection of keywords to include in the meta keywords tag.
+# @param description [#to_a] A collection where the first element is used for the meta description tag.
+#
+# @return [Boolean, nil] Returns true if the update was successful, false if an error occurred, or nil if the file
+#   does not exist or its HTML lacks a head element.
+#
+# @example
+#   update_successful = update_html_with_metadata("public/index.html", Set.new(["ruby", "seo"]), Set.new(["Enhance page visibility with Ruby"]))
 def update_html_with_metadata(file_path, keywords, description)
   return unless File.exist?(file_path)
   
@@ -196,7 +220,15 @@ end
 
 puts "Updated #{files_updated} HTML files with SEO metadata"
 
-# Generate sitemapindex.xml
+##
+# Generates a sitemap index XML file from an existing sitemap.
+#
+# This method checks for a sitemap.xml file in the specified directory. If found, it retrieves the file's last modified timestamp,
+# creates a sitemapindex.xml file linking to the sitemap with the last modification date, writes the file to disk, and returns true.
+# If sitemap.xml is not present, the method logs a message and returns false.
+#
+# @param site_dir [String] The directory containing the sitemap.xml file.
+# @return [Boolean] True if sitemapindex.xml is generated successfully; false otherwise.
 def generate_sitemapindex(site_dir)
   sitemap_path = File.join(site_dir, 'sitemap.xml')
   sitemapindex_path = File.join(site_dir, 'sitemapindex.xml')
