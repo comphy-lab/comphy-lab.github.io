@@ -407,9 +407,16 @@
   },
   {
     "title": "March",
-    "content": "- Join us for a hybrid online+offline course: [High-Fidelity Simulations Using Basilisk C](/teaching/2025-Basilisk101-Madrid) in Madrid, Spain (March 10-13). Learn some computational (colorful) fluid dynamics with hands-on coding sessions.",
+    "content": "- [<strong>Sanjay, V.</strong>, & Lohse, D. Unifying theory of scaling in drop impact: Forces & maximum spreading diameter. Published in Physical Review Letters.](/research#15)\n\n  <div style=\"text-align: center; margin: 15px 0;\">\n    <a href=\"/research#15\">\n      <img src=\"/assets/images/research/drop-impact-prl.png\" alt=\"Drop impact PRL paper\" style=\"max-width: 256px; border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); cursor: pointer;\">\n    </a>\n    <div style=\"margin-top: 10px; display: flex; gap: 15px; justify-content: center;\">\n      <a href=\"https://doi.org/10.1103/PhysRevLett.134.104003\" style=\"display: flex; align-items: center; text-decoration: none; color: #cf4900; font-size: 1em; font-weight: 500;\"><i class=\"fa-solid fa-arrow-up-right-from-square\" style=\"margin-right: 8px; font-size: 1.2em;\"></i>View Paper</a>\n    </div>\n  </div>\n\n- Join us for a hybrid online+offline course: [High-Fidelity Simulations Using Basilisk C](/teaching/2025-Basilisk101-Madrid) in Madrid, Spain (March 10-13). Learn some computational (colorful) fluid dynamics with hands-on coding sessions.",
     "url": "/#about",
     "type": "markdown_section",
+    "priority": 3
+  },
+  {
+    "title": "March",
+    "content": "- [<strong>Sanjay, V.</strong>, & Lohse, D. Unifying theory of scaling in drop impact: Forces & maximum spreading diameter. Published in Physical Review Letters.](/research#15)",
+    "url": "/#about",
+    "type": "markdown_text",
     "priority": 3
   },
   {
@@ -1013,19 +1020,6 @@
     "priority": 3
   },
   {
-    "title": "Sanjay, V., & Lohse, D. Unifying theory of scaling in drop impact: Forces & maximum spreading diameter. Received positive reviews in Phys. Rev. Lett. (2025).",
-    "content": "",
-    "url": "/research/index.html#Sanjay%2BV%2BLohse%2BD%2BUnifying%2Btheory%2Bof%2Bscaling%2Bin%2Bdrop%2Bimpact%3A%2BForces%2Bmaximum%2Bspreading%2Bdiameter%2BReceived%2Bpositive%2Breviews%2Bin%2BPhys%2BRev%2BLett%2B2025",
-    "type": "paper",
-    "tags": [
-      "Drops",
-      "Dissipative anamoly",
-      "Superamphiphobic-surfaces",
-      "Impact forces"
-    ],
-    "priority": 3
-  },
-  {
     "title": "Bashkatov, A., Bürkle, F., Demirkır, Ç., Ding, W., Sanjay, V., Babich, A., Yang, X., Mutschke, G., Czarske, J., Lohse, D., et al. Electrolyte spraying within H₂ bubbles during water electrolysis. Received positive reviews in Nat. Commun. (2025).",
     "content": "",
     "url": "/research/index.html#Bashkatov%2BA%2BBrkle%2BF%2BDemirkr%2BDing%2BW%2BSanjay%2BV%2BBabich%2BA%2BYang%2BX%2BMutschke%2BG%2BCzarske%2BJ%2BLohse%2BD%2Bet%2Bal%2BElectrolyte%2Bspraying%2Bwithin%2BH%2Bbubbles%2Bduring%2Bwater%2Belectrolysis%2BReceived%2Bpositive%2Breviews%2Bin%2BNat%2BCommun%2B2025",
@@ -1036,6 +1030,20 @@
       "Coalescence",
       "Soft-matter-singularities",
       "Drops"
+    ],
+    "priority": 3
+  },
+  {
+    "title": "[15] Sanjay, V., & Lohse, D. Unifying theory of scaling in drop impact: Forces & maximum spreading diameter. Phys. Rev. Lett., 134, 104003 (2025).",
+    "content": "",
+    "url": "/research/index.html#15%2BSanjay%2BV%2BLohse%2BD%2BUnifying%2Btheory%2Bof%2Bscaling%2Bin%2Bdrop%2Bimpact%3A%2BForces%2Bmaximum%2Bspreading%2Bdiameter%2BPhys%2BRev%2BLett%2B134%2B104003%2B2025",
+    "type": "paper",
+    "tags": [
+      "Drops",
+      "Dissipative anamoly",
+      "Superamphiphobic-surfaces",
+      "Impact forces",
+      "Featured"
     ],
     "priority": 3
   },
@@ -1071,8 +1079,7 @@
       "Bubbles",
       "Non-Newtonian",
       "Jets",
-      "Soft-matter-singularities",
-      "Featured"
+      "Soft-matter-singularities"
     ],
     "priority": 3
   },

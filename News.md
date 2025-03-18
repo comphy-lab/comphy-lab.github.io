@@ -2,6 +2,17 @@
 
 ### March 
 
+- [<strong>Sanjay, V.</strong>, & Lohse, D. Unifying theory of scaling in drop impact: Forces & maximum spreading diameter. Published in Physical Review Letters.](/research#15)
+
+  <div style="text-align: center; margin: 15px 0;">
+    <a href="/research#15">
+      <img src="/assets/images/research/drop-impact-prl.png" alt="Drop impact PRL paper" style="max-width: 256px; border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); cursor: pointer;">
+    </a>
+    <div style="margin-top: 10px; display: flex; gap: 15px; justify-content: center;">
+      <a href="https://doi.org/10.1103/PhysRevLett.134.104003" style="display: flex; align-items: center; text-decoration: none; color: #cf4900; font-size: 1em; font-weight: 500;"><i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 8px; font-size: 1.2em;"></i>View Paper</a>
+    </div>
+  </div>
+
 - Join us for a hybrid online+offline course: [High-Fidelity Simulations Using Basilisk C](/teaching/2025-Basilisk101-Madrid) in Madrid, Spain (March 10-13). Learn some computational (colorful) fluid dynamics with hands-on coding sessions.
 
 ### February
