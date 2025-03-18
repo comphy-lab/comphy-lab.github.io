@@ -32,11 +32,19 @@
   <meta name="theme-color" content="#ffffff">
   <meta name="apple-mobile-web-app-title" content="CoMPhy Lab">
   <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="author" content="CoMPhy Lab">
+  <meta name="robots" content="index, follow">
+  {% if page.tags %}<meta name="keywords" content="{{ page.tags | join: ', ' }}{% if site.keywords %}, {{ site.keywords | join: ', ' }}{% endif %}">{% endif %}
 
   <!-- Font dependencies with font-display: swap -->
   <style>
     @font-face {
       font-display: swap;
+      font-family: 'System Font';
+      src: local('system-ui');
     }
   </style>
   <link rel="stylesheet" href="/assets/css/fontello/css/fontello.css" media="print" onload="this.media='all'">
@@ -49,6 +57,30 @@
   <!-- Site styles -->
   <link rel="stylesheet" href="/assets/css/vendor.css" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="/assets/css/styles.css">
+  
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Computational Multiphase Physics Laboratory",
+    "alternateName": "CoMPhy Lab",
+    "url": "{{ site.url }}",
+    "logo": "{{ site.url }}/assets/logos/CoMPhy-Lab-no-name.png",
+    "sameAs": []
+  }
+  </script>
+  {% if page.layout == 'research' %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ResearchProject",
+    "name": "Computational Multiphase Physics Research",
+    "description": "Research in computational multiphase physics applications and methods.",
+    "url": "{{ site.url }}/research"
+  }
+  </script>
+  {% endif %}
   <link rel="stylesheet" href="/assets/css/command-palette.css" media="print" onload="this.media='all'">
 
   <!-- Simple command palette initialization -->
