@@ -120,7 +120,7 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 
 - [Professor, Phys. Fluids - Univ. Twente](https://pof.tnw.utwente.nl/people/profile/21)
 
-**Collaboration on:** Elastic Sheets, Viscoelasticity vs. Elasticity, Spinning Pizza.
+**Collaboration on:** Elastic Sheets, Viscoelasticity vs. Elasticity, Surfactant Dynamics, Spinning Pizza.
 
 ## Dominik Krug
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?user=qGEpq7IAAAAJ&hl=en&inst=5726176096060060532&oi=ao)
