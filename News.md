@@ -2,6 +2,12 @@
 
 ### March 
 
+- <a href="https://en.wikipedia.org/wiki/Detlef_Lohse" style="text-decoration: none;"><strong>Prof. Detlef Lohse</strong></a> shares his scientific journey in <a href="https://www.youtube.com/@TheLivingHistoriesSeries" style="text-decoration: none; color: #0056b3; font-weight: 500;">The Living Histories Series</a>. His inspiring discussion on curiosity, mentorship, and the "puzzle solving" joy of science offers valuable insights for researchers at all career stages.
+
+  <div style="text-align: center; margin: 15px 0;">
+    <a href="https://bit.ly/3DXBixh" style="display: flex; align-items: center; justify-content: center; text-decoration: none; color: #cf4900; font-size: 1em; font-weight: 500;"><i class="fa-brands fa-youtube" style="margin-right: 8px; font-size: 1.2em;"></i>Watch on YouTube</a>
+  </div>
+
 - [<strong>Sanjay, V.</strong>, & Lohse, D. Unifying theory of scaling in drop impact: Forces & maximum spreading diameter. Published in Physical Review Letters.](/research#15)
 
   <div style="text-align: center; margin: 15px 0;">
