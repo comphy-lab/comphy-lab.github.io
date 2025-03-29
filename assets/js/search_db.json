@@ -358,14 +358,14 @@
   },
   {
     "title": "December",
-    "content": "[Balasubramanian, A. G., <strong>Sanjay, V.</strong>, Jalaal, M., Vinuesa, R., & Tammisola, O. J. Fluid Mech., 1001, A9 (2024). selected as the cover article.](/research#14)\n\n<div style=\"text-align: center; margin: 15px 0;\">\n  <a href=\"/research#12\">\n    <img src=\"/assets/images/covers/2024-12-JFM_Vol1001.jpeg\" alt=\"JFM cover\" style=\"max-width: 256px; border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); cursor: pointer;\">\n  </a>\n  \n  <div style=\"margin-top: 10px; display: flex; gap: 15px; justify-content: center;\">\n    <a href=\"/assets/images/covers/2024-12-JFM_Vol1001.pdf\" style=\"display: flex; align-items: center; text-decoration: none; color: #0056b3; font-size: 1em; font-weight: 500;\"><i class=\"fa-solid fa-download\" style=\"margin-right: 8px; font-size: 1.2em;\"></i>Download Cover</a>\n    <a href=\"https://doi.org/10.1017/jfm.2024.1073\" style=\"display: flex; align-items: center; text-decoration: none; color: #cf4900; font-size: 1em; font-weight: 500;\"><i class=\"fa-solid fa-arrow-up-right-from-square\" style=\"margin-right: 8px; font-size: 1.2em;\"></i>View Paper</a>\n  </div>\n</div>",
+    "content": "[Balasubramanian, A. G., <strong>Sanjay, V.</strong>, Jalaal, M., Vinuesa, R., & Tammisola, O. J. Fluid Mech., 1001, A9 (2024). selected as the cover article.](/research#12)\n\n<div style=\"text-align: center; margin: 15px 0;\">\n  <a href=\"/research#12\">\n    <img src=\"/assets/images/covers/2024-12-JFM_Vol1001.jpeg\" alt=\"JFM cover\" style=\"max-width: 256px; border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); cursor: pointer;\">\n  </a>\n  \n  <div style=\"margin-top: 10px; display: flex; gap: 15px; justify-content: center;\">\n    <a href=\"/assets/images/covers/2024-12-JFM_Vol1001.pdf\" style=\"display: flex; align-items: center; text-decoration: none; color: #0056b3; font-size: 1em; font-weight: 500;\"><i class=\"fa-solid fa-download\" style=\"margin-right: 8px; font-size: 1.2em;\"></i>Download Cover</a>\n    <a href=\"https://doi.org/10.1017/jfm.2024.1073\" style=\"display: flex; align-items: center; text-decoration: none; color: #cf4900; font-size: 1em; font-weight: 500;\"><i class=\"fa-solid fa-arrow-up-right-from-square\" style=\"margin-right: 8px; font-size: 1.2em;\"></i>View Paper</a>\n  </div>\n</div>",
     "url": "/#about",
     "type": "markdown_section",
     "priority": 3
   },
   {
     "title": "December",
-    "content": "[Balasubramanian, A. G., <strong>Sanjay, V.</strong>, Jalaal, M., Vinuesa, R., & Tammisola, O. J. Fluid Mech., 1001, A9 (2024). selected as the cover article.](/research#14)",
+    "content": "[Balasubramanian, A. G., <strong>Sanjay, V.</strong>, Jalaal, M., Vinuesa, R., & Tammisola, O. J. Fluid Mech., 1001, A9 (2024). selected as the cover article.](/research#12)",
     "url": "/#about",
     "type": "markdown_text",
     "priority": 3
