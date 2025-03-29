@@ -65,9 +65,15 @@ jobs:
       run: ruby scripts/generate_search_db.rb
     
     
-    - name: Commit and push if changed
+    - name: Commit and push changes directly (bypassing branch protection)
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add assets/js/search_db.json
-        git diff --quiet && git diff --staged --quiet || (git commit -m "Update search database" && git push)
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "Update search database"
+          # Use PAT to bypass branch protection
+          git push https://${{ secrets.BYPASS_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git HEAD:main
+        fi
