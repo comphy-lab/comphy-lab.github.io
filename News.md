@@ -7,7 +7,7 @@
   <div style="margin: 15px 0;">
     <div style="display: flex; align-items: center; justify-content: start; gap: 20px;">
       <div>
-        <img src="/assets/images/news/vatsal-ammodo-2025.jpg" alt="Vatsal Sanjay - Ammodo Science Fellowship" style="max-width: 150px; border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); cursor: pointer;">
+        <img src="/assets/images/news/vatsal-ammodo-2025.jpg" alt="Vatsal Sanjay - Ammodo Science Fellowship" style="max-width: 175px; border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); cursor: pointer;">
       </div>
       <div>
         <a href="https://ammodo-science.webflow.io/researches/vatsal-sanjay" style="display: flex; align-items: center; text-decoration: none; color: #cf4900; font-size: 1em; font-weight: 500;"><i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 8px; font-size: 1.2em;"></i>Read More</a>
@@ -39,7 +39,7 @@
     </div>
   </div> -->
 
-<!-- - Join us for a hybrid online+offline course: [High-Fidelity Simulations Using Basilisk C](/teaching/2025-Basilisk101-Madrid) in Madrid, Spain (March 10-13). Learn some computational (colorful) fluid dynamics with hands-on coding sessions. -->
+- Join us for a hybrid online+offline course: [High-Fidelity Simulations Using Basilisk C](/teaching/2025-Basilisk101-Madrid) in Madrid, Spain (March 10-13). Learn some computational (colorful) fluid dynamics with hands-on coding sessions.
 
 ### February
 
