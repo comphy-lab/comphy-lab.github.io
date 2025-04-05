@@ -124,31 +124,9 @@
     })();
   </script>
 
-  <!-- Simple command palette initialization -->
-  <script>
-    // Make the command palette opening function globally available
-    window.openCommandPalette = function() {
-      const palette = document.getElementById('simple-command-palette');
-      if (palette) {
-        palette.style.display = 'block';
-        const input = document.getElementById('command-palette-input');
-        if (input) {
-          input.value = '';
-          input.focus();
-          if (typeof renderCommandResults === 'function') {
-            renderCommandResults('');
-          }
-        }
-      }
-    };
+  <!-- Command palette (implementation in assets/js/command-palette.js) -->
+  <script defer src="/assets/js/command-palette.js"></script>
     
-    // Function to render command results based on search
-    function renderCommandResults(query) {
-      const resultsContainer = document.getElementById('command-palette-results');
-      if (!resultsContainer) return;
-      
-      // Clear results
-      resultsContainer.innerHTML = '';
       
       // Get commands
       const commands = window.commandData || [];
