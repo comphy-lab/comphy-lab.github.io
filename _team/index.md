@@ -87,18 +87,6 @@ Joint with [Martin van der Hoef](https://pof.tnw.utwente.nl/people/profile/244) 
 
 **Research Interest:** Molecular Dynamics Simulations of Evaporation-Driven Colloidal Self-Assembly.
 
-## Xiangyu Zhang (Intern) 
-[<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/zhangxyPHD)
-
-<img src="/assets/images/team/7.jpg" alt="Xiangyu Zhang" loading="lazy" width="200" height="200">
-
-Joint with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
-
-- [Guest Researcher, Phys. Fluids - Univ. Twente / 2024](https://pof.tnw.utwente.nl/people/profile/2209)
-- City University of Hong Kong, China
-
-**Research Interest:** Viscoplastic Drop Impact.
-
 ## We need you!
 
 <img src="/assets/images/team/placeholder.jpg" alt="Join Us" loading="lazy" width="200" height="200">
@@ -375,6 +363,14 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 - **Now:** [Ph.D. Student, Phys. Fluids - Univ. Twente](https://pof.tnw.utwente.nl/people/profile/1431)
 - **2019:** [Graduated with B.Sc., Univ. Twente](https://pof.tnw.utwente.nl/people/profile/1431)
 - **Thesis:** [Spreading of a drop on a water-air interface](https://bit.ly/ThesisPimDekker)
+
+<!-- ## Xiangyu Zhang
+[<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/zhangxyPHD)
+
+- **2024:** [Guest Researcher, Phys. Fluids - Univ. Twente](https://pof.tnw.utwente.nl/people/profile/2209)
+- City University of Hong Kong, China
+
+**Research Interest:** Viscoplastic Drop Impact. -->
 
 ## Laurence Bruggink
 [<i class="fa-brands fa-linkedin" style="font-size: 1.5em; color: black;"></i>](https://www.linkedin.com/in/laurence-bruggink-b733b222a/)
