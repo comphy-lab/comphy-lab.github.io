@@ -9,61 +9,29 @@ on:
     paths:
       - '**/*.md'
       - '**/*.html'
-      - 'scripts/generate_search_db.rb'
-      - 'scripts/fetch_github_blog_content.js'
-      - 'scripts/package.json'
+      - '.github/workflows/update-search.yml'
 
 # Add permissions needed for the workflow
 permissions:
   contents: write    # This allows the action to commit and push changes
-  packages: read     # This allows the action to read from npm
 
 jobs:
   update-search:
     runs-on: ubuntu-latest
-    env:
-      NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      NPM_CONFIG_CACHE: ${{ github.workspace }}/.npm
     
     steps:
     - uses: actions/checkout@v4
       with:
         fetch-depth: 0  # Fetch all history for proper git operations
     
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: '3.2'
-        bundler-cache: true
-    
-    - name: Set up Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20'
-        cache: 'npm'
-        cache-dependency-path: 'scripts/package.json'
-        registry-url: 'https://registry.npmjs.org'
-    
-    - name: Install Ruby dependencies
+    - name: Clone comphy-search repository
       run: |
-        gem install bundler
-        bundle config path vendor/bundle
-        bundle install
-        gem install nokogiri
+        git clone https://github.com/comphy-lab/comphy-search.git
+        mkdir -p assets/js
     
-    - name: Install Node.js dependencies
+    - name: Copy search database
       run: |
-        cd scripts
-        npm install
-    
-    - name: Fetch blog content from GitHub repository
-      run: |
-        cd scripts
-        node fetch_github_blog_content.js
-    
-    - name: Generate search database
-      run: ruby scripts/generate_search_db.rb
-    
+        cp comphy-search/search_db.json assets/js/search_db.json
     
     - name: Commit and push changes directly (bypassing branch protection)
       run: |
@@ -73,7 +41,7 @@ jobs:
         if git diff --staged --quiet; then
           echo "No changes to commit"
         else
-          git commit -m "Update search database"
+          git commit -m "Update search database from comphy-search repository"
           # Use PAT to bypass branch protection
           git push https://${{ secrets.BYPASS_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git HEAD:main
         fi
