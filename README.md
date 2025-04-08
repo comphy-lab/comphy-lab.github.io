@@ -260,6 +260,21 @@ The search database is maintained in a separate repository [comphy-lab/comphy-se
 - Automatically updates the search database daily or when content changes
 - Simplifies maintenance by separating search logic from the website code
 
+#### Search Result Prioritization
+Search results are prioritized using a two-step process:
+1. **Priority Field**: Each entry in the search database has a priority field (1-5, with 1 being highest priority)
+   - Priority 1: Team members
+   - Priority 2: Featured papers and teaching content
+   - Priority 3: Regular papers and blog posts
+   - Priority 4-5: Other content
+
+2. **Relevance Scoring**: Within each priority level, results are further ranked by relevance using:
+   - Title matches (70% weight)
+   - Content matches (20% weight)
+   - Tag and category matches (10% weight)
+
+This ensures that higher-priority content (like team members) always appears before lower-priority content, even if the lower-priority content has a better text match.
+
 ### Command Palette Functionality
 The website includes a command palette feature that provides quick access to actions and navigation through keyboard shortcuts:
 
