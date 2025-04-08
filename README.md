@@ -254,6 +254,12 @@ Search results are prioritized and filtered as follows:
    - Updated automatically every 12 hours via GitHub Actions
 5. Regular content (headings and paragraphs)
 
+The search database is maintained in a separate repository [comphy-lab/comphy-search](https://github.com/comphy-lab/comphy-search) and is automatically updated in this website via GitHub Actions. This approach:
+- Centralizes search database generation in a dedicated repository
+- Ensures consistent search functionality across the website
+- Automatically updates the search database daily or when content changes
+- Simplifies maintenance by separating search logic from the website code
+
 ### Command Palette Functionality
 The website includes a command palette feature that provides quick access to actions and navigation through keyboard shortcuts:
 
@@ -292,20 +298,12 @@ Search behavior and features:
 - Search results appear instantly as you type
 - Results are ranked by relevance and match percentage
 
-The search database is automatically generated during the build process by `scripts/generate_search_db.rb`. This script:
-- Indexes all HTML and markdown content
-- Identifies and prioritizes team members, teaching content, and research papers
-- Extracts tags from research papers
-- Processes teaching pages and course details
-- Fetches and indexes blog posts from blogs.comphy-lab.org
-- Generates a JSON database used by the search functionality
-
 ### External Blog Integration
 The search functionality includes content from our external blog at blogs.comphy-lab.org:
-- Blog posts are fetched and indexed during build
+- Blog posts are fetched and indexed in the comphy-search repository
 - Each post's title and content are searchable
 - Results link directly to the blog post
-- Blog content is refreshed with each build
+- Blog content is refreshed with each update to the search database
 
 ### Tags System
 Research papers can be tagged with multiple topics. Tags are defined in the markdown files using the following format:
@@ -394,16 +392,34 @@ The website uses three GitHub Actions workflows for automation:
 3. **Update Search Database** (`.github/workflows/update-search.yml`)
    - Maintains site's search functionality
    - Triggers:
-     - Every 4 hours automatically
+     - Daily at 4:00 UTC automatically
      - On content file changes (MD/HTML)
      - Manual trigger available
-   - Generates and updates `search_db.json`
+   - Fetches the search database from [comphy-lab/comphy-search](https://github.com/comphy-lab/comphy-search)
+   - Updates `search_db.json` in the website repository
    - Commits changes back to repository
 
 These workflows work together to ensure:
 - Automated site builds and deployments
 - Up-to-date search functionality
 - Consistent deployment to GitHub Pages
+
+3. **Blog Content Indexing**
+   - Blog content from [blogs.comphy-lab.org](https://blogs.comphy-lab.org) is indexed in the [comphy-search](https://github.com/comphy-lab/comphy-search) repository
+   - Source: [comphy-lab/CoMPhy-Lab-Blogs](https://github.com/comphy-lab/CoMPhy-Lab-Blogs)
+   - Filtering criteria:
+     - Only indexes markdown files where `publish: false` is NOT set in frontmatter
+     - Automatically excludes any files with "todo" in the filename (case-insensitive)
+   - The search index is automatically updated:
+     - Daily via GitHub Actions
+     - When changes are pushed to markdown or HTML files
+     - Can be manually triggered from the Actions tab
+   - This approach improves search quality by:
+     - Centralizing search database generation
+     - Accessing the raw markdown directly from the source
+     - Respecting publish status in frontmatter
+     - Processing content in a more structured way
+     - Avoiding web scraping issues or rate limits
 
 ## Contributing
 
@@ -437,28 +453,3 @@ To submit a PR:
 4. Create a PR using the template
 5. Link any related issues
 6. Wait for review
-
-3. **Blog Content Indexing**
-   - Blog content from [blogs.comphy-lab.org](https://blogs.comphy-lab.org) is now indexed directly from the GitHub repository
-   - Source: [comphy-lab/CoMPhy-Lab-Blogs](https://github.com/comphy-lab/CoMPhy-Lab-Blogs)
-   - Filtering criteria:
-     - Only indexes markdown files where `publish: false` is NOT set in frontmatter
-     - Automatically excludes any files with "todo" in the filename (case-insensitive)
-   - The search index is automatically updated:
-     - Every 12 hours via GitHub Actions
-     - When changes are pushed to markdown or HTML files
-     - Can be manually triggered from the Actions tab
-   - To manually update the search index locally:
-     ```bash
-     # From the project root directory
-     cd scripts
-     npm install
-     node fetch_github_blog_content.js
-     cd ..
-     ruby scripts/generate_search_db.rb
-     ```
-   - This approach improves search quality by:
-     - Accessing the raw markdown directly from the source
-     - Respecting publish status in frontmatter
-     - Processing content in a more structured way
-     - Avoiding web scraping issues or rate limits
