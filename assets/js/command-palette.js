@@ -136,6 +136,18 @@ function initCommandPalette() {
   }).then(data => {
     console.log('Search database prefetched for command palette');
     window.searchData = data;
+    
+    // Initialize Fuse.js with weighted keys
+    window.searchFuse = new Fuse(data, {
+      keys: [
+        { name: 'title', weight: 0.7 },
+        { name: 'content', weight: 0.2 },
+        { name: 'tags', weight: 0.1 },
+        { name: 'categories', weight: 0.1 }
+      ],
+      includeScore: true,
+      threshold: 0.4
+    });
   }).catch(err => {
     console.warn('Could not prefetch search database for command palette:', err.message);
   });
@@ -258,3 +270,46 @@ document.addEventListener('DOMContentLoaded', function() {
 // Make functions available globally
 window.renderCommandResults = renderCommandResults;
 window.renderSections = renderSections;
+
+// Function to search the database with priority sorting
+window.searchDatabaseForCommandPalette = async function(query) {
+  if (!window.searchFuse) {
+    return [];
+  }
+  
+  try {
+    const results = window.searchFuse.search(query);
+    
+    // Sort results by priority first, then by Fuse.js score
+    // Lower priority number = higher priority (1 is highest, 5 is lowest)
+    const sortedResults = results.sort((a, b) => {
+      // First compare by priority
+      const priorityA = a.item.priority || 5; // Default to lowest priority if not specified
+      const priorityB = b.item.priority || 5;
+      
+      if (priorityA !== priorityB) {
+        return priorityA - priorityB; // Lower priority number comes first
+      }
+      
+      // If priorities are equal, use Fuse.js score (lower score = better match)
+      return a.score - b.score;
+    });
+    
+    // Return at most 5 results
+    return sortedResults.slice(0, 5).map(result => ({
+      id: `search-result-${result.refIndex}`,
+      title: result.item.title || 'Untitled',
+      handler: () => { 
+        if (result.item.url) {
+          window.location.href = result.item.url; 
+        }
+      },
+      section: "Search Results",
+      icon: '<i class="fa-solid fa-file-lines"></i>',
+      excerpt: result.item.excerpt || (result.item.content && result.item.content.substring(0, 100) + '...') || ''
+    }));
+  } catch (e) {
+    console.error('Error searching database:', e);
+    return [];
+  }
+};
