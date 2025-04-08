@@ -254,6 +254,15 @@ Search results are prioritized and filtered as follows:
    - Updated automatically every 12 hours via GitHub Actions
 5. Regular content (headings and paragraphs)
 
+The search database is automatically generated during the build process by `scripts/generate_search_db.rb`. This script:
+- Processes markdown content directly from source files
+- Extracts front matter for metadata (titles, permalinks)
+- Prioritizes team member profiles, teaching content, and research papers
+- Handles special HTML elements within markdown such as tags and divs
+- Extracts tags from research papers
+- Generates a JSON database used by the search functionality
+- Fetches and indexes blog posts from blogs.comphy-lab.org
+
 ### Command Palette Functionality
 The website includes a command palette feature that provides quick access to actions and navigation through keyboard shortcuts:
 
@@ -291,14 +300,6 @@ Search behavior and features:
 - Custom command palette implementation provides a modern command palette experience
 - Search results appear instantly as you type
 - Results are ranked by relevance and match percentage
-
-The search database is automatically generated during the build process by `scripts/generate_search_db.rb`. This script:
-- Indexes all HTML and markdown content
-- Identifies and prioritizes team members, teaching content, and research papers
-- Extracts tags from research papers
-- Processes teaching pages and course details
-- Fetches and indexes blog posts from blogs.comphy-lab.org
-- Generates a JSON database used by the search functionality
 
 ### External Blog Integration
 The search functionality includes content from our external blog at blogs.comphy-lab.org:
