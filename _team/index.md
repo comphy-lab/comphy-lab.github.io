@@ -118,19 +118,19 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 
 **Collaboration on:** Electrolysis, Bubble Coalescence, Swimming Bubbles.
 
-## Maziyar Jalaal (Mazi)
+## Maziyar Jalaal
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?user=FE8TQeUAAAAJ)
 [<i class="fa-brands fa-x-twitter" style="font-size: 2em; color: #000000;"></i>](https://x.com/maziyarj)
 [<i class="fa-brands fa-bluesky" style="font-size: 2em; color: #0085ff;"></i>](https://bsky.app/profile/mazi1.bsky.social)
 
-- [Associate Professor, Fluid Lab, Univ. Amsterdam](https://www.fluidlab.nl/)
+- **Mazi** [Associate Professor, Fluid Lab, Univ. Amsterdam](https://www.fluidlab.nl/)
 
 **Collaboration on:** Plastocapillarity, Viscoplastic Flows.
 
-## Uddalok Sen (Udo)
+## Uddalok Sen
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?user=a6h2uMQAAAAJ)
 
-- [Assistant Professor, PhySM, Wageningen University and Research](https://www.physm-lab.org/)
+- **Udo** [Assistant Professor, PhySM, Wageningen University and Research](https://www.physm-lab.org/)
 
 **Collaboration on:** Drop Impact, Sheet Retraction.
 
