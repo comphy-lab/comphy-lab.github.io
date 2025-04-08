@@ -36,7 +36,7 @@ title: Research
 
 ### <strong>Dixit, A. K.</strong>, Oratis, A., Zinelis, K., Lohse, D., & <strong>Sanjay, V.</strong> Viscoelastic Worthington jets & droplets produced by bursting bubbles. Received positive reviews in J. Fluid Mech. (2025).
 
-<tags><span>Bubbles</span><span>Non-Newtonian</span><span>Jets</span><span>Soft-matter-singularities</span><span>Drops</span></tags>
+<tags><span>Bubbles</span><span>Non-Newtonian</span><span>Jets</span><span>Soft-matter-singularities</span><span>Drops</span><span>Featured</span></tags>
 
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2408.05089&color=green)](https://arxiv.org/abs/2408.05089)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/Viscoelastic-Worthington-jets-and-droplets-produced-by-bursting-bubbles)
@@ -70,7 +70,7 @@ title: Research
 
 <h3 id="14">[14] <strong>Sanjay, V.</strong>, Zhang, B., Lv, C., & Lohse, D. The role of viscosity on drop impact forces on non-wetting surfaces. J. Fluid Mech., 1004, A6 (2025).</h3>
 
-<tags><span>Drops</span><span>Impact forces</span><span>Featured</span></tags>
+<tags><span>Drops</span><span>Impact forces</span></tags>
 
 [![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=OA&color=orange)](https://doi.org/10.1017/jfm.2024.982)
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2311.03012&color=green)](https://arxiv.org/abs/2311.03012)
