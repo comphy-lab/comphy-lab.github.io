@@ -35,11 +35,27 @@ def generate_anchor(text)
   URI.encode_www_form_component(text)
 end
 
+# Parse markdown frontmatter to extract metadata
+def parse_frontmatter(content)
+  front_matter = {}
+  if content.start_with?("---\n")
+    _, yaml_text, content = content.split("---\n", 3)
+    yaml_text.lines.each do |line|
+      if line.include?(":")
+        key, value = line.split(":", 2).map(&:strip)
+        front_matter[key] = value
+      end
+    end
+  end
+  [front_matter, content]
+end
+
 # Process team members first (highest priority)
 Dir.glob(File.join(ROOT_DIR, '_team', '*.md')).each do |file|
   puts "Processing team member file #{file}..."
   
   content = File.read(file)
+  front_matter, content = parse_frontmatter(content)
   
   # Split content by headers
   sections = content.split(/^#+\s+/)
@@ -68,67 +84,43 @@ Dir.glob(File.join(ROOT_DIR, '_team', '*.md')).each do |file|
   end
 end
 
-# Process markdown files first
-Dir.glob(File.join(ROOT_DIR, '*.md')).each do |file|
-  next if file.start_with?(File.join(ROOT_DIR, '_team')) # Skip team members
-  next if File.basename(file).downcase == 'readme.md' # Skip README.md file (improved check)
-  
-  puts "Processing markdown file #{file}..."
+# Process research content from _research directory
+Dir.glob(File.join(ROOT_DIR, '_research', '*.md')).each do |file|
+  puts "Processing research file #{file}..."
   
   content = File.read(file)
-  is_readme = file.end_with?('README.md')
+  front_matter, content = parse_frontmatter(content)
   
-  # Skip processing completely if it's README.md
-  next if is_readme
+  # Get the layout and permalink from front matter
+  layout = front_matter['layout'] || 'research'
+  permalink = front_matter['permalink'] || '/research/'
   
-  # Split content by headers
-  sections = content.split(/^#+\s+/)
-  sections.shift # Remove content before first header
+  # Process paper entries (h3 tags with ids)
+  paper_sections = content.scan(/<h3 id="([^"]+)">\[([\d]+)\](.*?)<\/h3>(.*?)(?=<h3|\z)/m)
   
-  sections.each do |section|
-    next if section.strip.empty?
+  paper_sections.each do |id, number, title, section_content|
+    # Extract tags
+    tags = []
+    if section_content.match(/<tags>(.*?)<\/tags>/m)
+      tag_content = $1
+      tags = tag_content.scan(/<span>(.*?)<\/span>/).flatten
+    end
     
-    # Extract header and content
-    lines = section.lines
-    header = lines.first.strip
-    content = lines[1..].join.strip
-    
-    next if header.empty? || content.empty?
-    next if content.length < 50 # Skip very short sections
-    
-    # Skip navigation-like sections
-    next if header.match?(/^(navigation|menu|contents|index)$/i)
-    
-    # Create entry for the section
+    # Create entry for paper
     entry = {
-      'title' => header,
-      'content' => content,
-      'url' => is_readme ? '/README.md' : '/#about',
-      'type' => is_readme ? 'readme_section' : 'markdown_section',
-      'priority' => is_readme ? 4 : 3  # Lower priority for README sections
+      'title' => "[#{number}]#{title.strip}",
+      'content' => section_content.gsub(/<[^>]+>/, ' ').gsub(/\s+/, ' ').strip,
+      'url' => "#{permalink}##{id}",
+      'type' => 'paper',
+      'tags' => tags,
+      'priority' => 3  # Medium priority for papers
     }
     search_db << entry
     
-    # Only create paragraph entries for non-README content
-    unless is_readme
-      # Also create entries for individual paragraphs
-      paragraphs = content.split(/\n\n+/)
-      paragraphs.each do |para|
-        para = para.strip
-        next if para.empty?
-        next if para.length < 100 # Only include substantial paragraphs
-        next if para.start_with?('```') # Skip code blocks
-        next if para.start_with?('<') # Skip HTML
-        
-        entry = {
-          'title' => header,
-          'content' => para,
-          'url' => '/#about',
-          'type' => 'markdown_text',
-          'priority' => 3
-        }
-        search_db << entry
-      end
+    # Check if this is a featured paper
+    if tags.include?('Featured')
+      # Boost priority for featured papers
+      entry['priority'] = 2
     end
   end
 end
@@ -138,24 +130,34 @@ Dir.glob(File.join(ROOT_DIR, '_teaching', '*.md')).each do |file|
   puts "Processing teaching file #{file}..."
   
   content = File.read(file)
-  
-  # Extract YAML front matter to get permalink
-  front_matter = {}
-  if content.start_with?("---\n")
-    _, yaml_text, content = content.split("---\n", 3)
-    yaml_text.lines.each do |line|
-      if line.include?(":")
-        key, value = line.split(":", 2).map(&:strip)
-        front_matter[key] = value
-      end
-    end
-  end
+  front_matter, content = parse_frontmatter(content)
   
   # Determine the URL for this teaching content
   url = front_matter['permalink'] || '/teaching/'
   
   # Get the title from front matter or filename
   title = front_matter['title'] || File.basename(file, '.md').gsub(/^\d{4}-/, '').tr('-', ' ')
+  
+  # Process course details (div sections)
+  if content.match(/<div class="course-details">(.*?)<\/div>/m)
+    course_details = $1
+    details_sections = course_details.scan(/<div class="course-details__item">\s*<h4>(.*?)<\/h4>\s*<p>(.*?)<\/p>\s*<\/div>/m)
+    
+    details_sections.each do |heading, detail_content|
+      # Clean up heading (remove HTML tags)
+      clean_heading = heading.gsub(/<[^>]+>/, '').strip
+      
+      # Create entry for course detail
+      entry = {
+        'title' => "#{title} - #{clean_heading}",
+        'content' => detail_content.strip,
+        'url' => url,
+        'type' => 'teaching_detail',
+        'priority' => 2  # Medium-high priority for teaching content
+      }
+      search_db << entry
+    end
+  end
   
   # Split content by headers
   sections = content.split(/^#+\s+/)
@@ -167,18 +169,21 @@ Dir.glob(File.join(ROOT_DIR, '_teaching', '*.md')).each do |file|
     # Extract header and content
     lines = section.lines
     header = lines.first.strip
-    content = lines[1..].join.strip
+    section_content = lines[1..].join.strip
     
-    next if header.empty? || content.empty?
-    next if content.length < 50 # Skip very short sections
+    next if header.empty? || section_content.empty?
+    next if section_content.length < 50 # Skip very short sections
     
     # Skip navigation-like sections
     next if header.match?(/^(navigation|menu|contents|index)$/i)
     
+    # Clean HTML tags for indexing
+    clean_content = section_content.gsub(/<[^>]+>/, ' ').gsub(/\s+/, ' ').strip
+    
     # Create entry for the section
     entry = {
       'title' => "#{title} - #{header}",
-      'content' => content,
+      'content' => clean_content,
       'url' => "#{url}##{generate_anchor(header)}",
       'type' => 'teaching_content',
       'priority' => 2  # Medium-high priority for teaching content
@@ -186,7 +191,7 @@ Dir.glob(File.join(ROOT_DIR, '_teaching', '*.md')).each do |file|
     search_db << entry
     
     # Also create entries for individual paragraphs
-    paragraphs = content.split(/\n\n+/)
+    paragraphs = clean_content.split(/\n\n+/)
     paragraphs.each do |para|
       para = para.strip
       next if para.empty?
@@ -206,257 +211,74 @@ Dir.glob(File.join(ROOT_DIR, '_teaching', '*.md')).each do |file|
   end
 end
 
-# Process each HTML file
-Dir.glob(File.join(ROOT_DIR, '_site', '**', '*.html')) do |file|
-  next if file.include?('/assets/') # Skip asset files
+# Process markdown files from root directory
+Dir.glob(File.join(ROOT_DIR, '*.md')).each do |file|
+  next if file.start_with?(File.join(ROOT_DIR, '_team')) # Skip team members already processed
+  next if file.start_with?(File.join(ROOT_DIR, '_teaching')) # Skip teaching already processed
+  next if file.start_with?(File.join(ROOT_DIR, '_research')) # Skip research already processed
+  next if File.basename(file).downcase == 'readme.md' # Skip README.md file
   
-  puts "Processing HTML file #{file}..."
+  puts "Processing markdown file #{file}..."
   
-  # Read and parse HTML
-  html = File.read(file)
-  doc = Nokogiri::HTML(html)
+  content = File.read(file)
+  front_matter, content = parse_frontmatter(content)
   
-  # Get relative URL
-  url = file.sub(File.join(ROOT_DIR, '_site'), '')
+  # Get the layout and permalink from front matter
+  layout = front_matter['layout'] || 'default'
+  permalink = front_matter['permalink'] || "/#{File.basename(file, '.md').downcase}/"
   
-  # Extract page title
-  title = doc.at_css('title')&.text || File.basename(file, '.html').capitalize
-
-  # Special handling for teaching pages
-  if url.include?('/teaching/')
-    # Process course details
-    doc.css('.course-details__item').each do |detail|
-      heading = detail.at_css('h4')&.text.to_s.strip
-      content = detail.at_css('p')&.text.to_s.strip
-      
-      next if heading.empty? || content.empty?
-      
-      # Create entry for course detail
-      entry = {
-        'title' => "#{title} - #{heading}",
-        'content' => content,
-        'url' => url,
-        'type' => 'teaching_detail',
-        'priority' => 2  # Medium-high priority
-      }
-      search_db << entry
-    end
+  # Get the title from front matter or filename
+  title = front_matter['title'] || File.basename(file, '.md').capitalize
+  
+  # Split content by headers
+  sections = content.split(/^#+\s+/)
+  sections.shift # Remove content before first header
+  
+  sections.each do |section|
+    next if section.strip.empty?
     
-    # Process course schedule/sections
-    doc.css('h3').each do |heading|
-      heading_text = heading.text.strip
-      next if heading_text.empty?
-      
-      # Get content until next h3
-      content_nodes = []
-      current = heading.next_element
-      while current && current.name != 'h3'
-        content_nodes << current.text.strip unless current.text.strip.empty?
-        current = current.next_element
-      end
-      content = content_nodes.join(' ').strip
-      next if content.empty?
-      
-      # Create entry for course section
-      entry = {
-        'title' => "#{title} - #{heading_text}",
-        'content' => content,
-        'url' => "#{url}##{generate_anchor(heading_text)}",
-        'type' => 'teaching_section',
-        'priority' => 2
-      }
-      search_db << entry
-    end
+    # Extract header and content
+    lines = section.lines
+    header = lines.first.strip
+    section_content = lines[1..].join.strip
     
-    # Process specific teaching sections like Prerequisites, Course Description, etc.
-    ['Prerequisites', 'Course Description', 'Registration', 'What will you learn'].each do |section_name|
-      section = doc.xpath("//h2[contains(text(), '#{section_name}')]").first
-      next unless section
-      
-      # Get content until next h2
-      content_nodes = []
-      current = section.next_element
-      while current && current.name != 'h2'
-        content_nodes << current.text.strip unless current.text.strip.empty?
-        current = current.next_element
-      end
-      content = content_nodes.join(' ').strip
-      next if content.empty?
-      
-      # Create entry for the specific section
-      entry = {
-        'title' => "#{title} - #{section_name}",
-        'content' => content,
-        'url' => "#{url}##{generate_anchor(section_name)}",
-        'type' => 'teaching_course_info',
-        'priority' => 2
-      }
-      search_db << entry
-    end
+    next if header.empty? || section_content.empty?
+    next if section_content.length < 50 # Skip very short sections
     
-    # Process course card content on index page
-    doc.css('.course-card').each do |card|
-      card_title = card.at_css('.course-card__title')&.text.to_s.strip
-      card_desc = card.at_css('.course-card__desc')&.text.to_s.strip
-      card_meta = card.css('.course-card__meta').map(&:text).join(' - ').strip
-      
-      next if card_title.empty? && card_desc.empty?
-      
-      content = [card_title, card_meta, card_desc].reject(&:empty?).join(' - ')
-      
-      # Get link to course page
-      course_link = card.at_css('.course-card__link')&.[]('href').to_s
-      
-      # Create entry for course card
-      entry = {
-        'title' => card_title.empty? ? "Teaching course" : card_title,
-        'content' => content,
-        'url' => course_link.empty? ? url : course_link,
-        'type' => 'teaching_course',
-        'priority' => 2
-      }
-      search_db << entry
-    end
-  end
-
-  # Special handling for team members
-  doc.css('h2').each do |heading|
-    name = heading.text.strip
-    next if name.empty?
-
-    # Get content following the heading until the next h2
-    content_nodes = []
-    current = heading.next_element
-    while current && current.name != 'h2'
-      if current.text?
-        content_nodes << current.text.strip
-      elsif current.name == 'ul' || current.name == 'p'
-        content_nodes << current.text.strip
-      end
-      current = current.next_element
-    end
-    content = content_nodes.join(' ').strip
-
-    # Create entry for team member
-    if content.include?('Research Interest') || content.include?('Collaboration on') || content.match?(/Ph\.D\.|Postdoc|Professor|Student/)
-      entry = {
-        'title' => name,
-        'content' => content,
-        'url' => "#{url}##{generate_anchor(name)}",
-        'type' => 'team_member',
-        'priority' => 2  # Medium priority for team members
-      }
-      search_db << entry
-    end
-  end
-
-  # Special handling for research papers (h3 with tags)
-  doc.css('h3').each do |heading|
-    next if heading.text.strip.empty?
-
-    # Find the next tags element after this heading
-    tags_element = heading.xpath('following-sibling::tags[1]')
-    next unless tags_element.any?
-
-    # Get tags
-    tags = tags_element.css('span').map(&:text).map(&:strip)
-
-    # Get content between this heading and the next heading or tags
-    content_nodes = []
-    current = heading.next_element
-    while current && !['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].include?(current.name) && current.name != 'tags'
-      content_nodes << current.text.strip if current.text?
-      current = current.next_element
-    end
-    content = content_nodes.join(' ').strip
-
-    # Create entry for paper
+    # Skip navigation-like sections
+    next if header.match?(/^(navigation|menu|contents|index)$/i)
+    
+    # Clean HTML tags for indexing
+    clean_content = section_content.gsub(/<[^>]+>/, ' ').gsub(/\s+/, ' ').strip
+    
+    # Create entry for the section
     entry = {
-      'title' => heading.text.strip,
-      'content' => content,
-      'url' => "#{url}##{generate_anchor(heading.text.strip)}",
-      'type' => 'paper',
-      'tags' => tags,
-      'priority' => 3  # Lower priority for papers
+      'title' => header,
+      'content' => clean_content,
+      'url' => "#{permalink}##{generate_anchor(header)}",
+      'type' => 'markdown_section',
+      'priority' => 3  # Medium priority for regular content
     }
     search_db << entry
-  end
-
-  # Process text content in chunks
-  doc.css('p').each do |para|
-    # Skip if this paragraph is part of a team member or paper section
-    next if para.ancestors('section').any? { |s| s['class']&.include?('team-member') }
-    next if para.xpath('./preceding-sibling::tags[1]').any?
-    next if para.xpath('./following-sibling::tags[1]').any?
-
-    text = para.text.strip
-    next if text.empty?
-
-    # Extract links from this paragraph
-    links = []
-    para.css('a').each do |link|
-      href = link['href']
-      next unless href && !href.start_with?('http')
-      links << href.sub(/^\//, '').sub(/\/$/, '')
+    
+    # Also create entries for individual paragraphs
+    paragraphs = clean_content.split(/\n\n+/)
+    paragraphs.each do |para|
+      para = para.strip
+      next if para.empty?
+      next if para.length < 100 # Only include substantial paragraphs
+      next if para.start_with?('```') # Skip code blocks
+      next if para.start_with?('<') # Skip HTML
+      
+      entry = {
+        'title' => header,
+        'content' => para,
+        'url' => "#{permalink}##{generate_anchor(header)}",
+        'type' => 'markdown_text',
+        'priority' => 3
+      }
+      search_db << entry
     end
-
-    # Find the nearest heading
-    heading = para.xpath('./preceding::h1|./preceding::h2|./preceding::h3|./preceding::h4|./preceding::h5|./preceding::h6').last
-    heading_text = heading ? heading.text.strip : title
-
-    # Create entry for text chunk
-    entry = {
-      'title' => heading_text,
-      'content' => text,
-      'url' => "#{url}##{generate_anchor(heading_text)}",
-      'type' => 'text',
-      'links' => links,
-      'priority' => 3  # Lower priority for regular content
-    }
-    search_db << entry
-  end
-
-  # Process sections with headings
-  doc.css('h1, h2, h3').each do |heading|
-    # Skip team members and papers
-    next if heading.name == 'h2' && heading.text.strip.match?(/Ph\.D\.|Postdoc|Professor|Student/)
-    next if heading.name == 'h3' && heading.xpath('following-sibling::tags[1]').any?
-
-    heading_text = heading.text.strip
-    next if heading_text.empty?
-
-    # Get content until next heading of same or higher level
-    content_nodes = []
-    current = heading.next_element
-    while current && !(current.name == heading.name || (current.name[1].to_i < heading.name[1].to_i && current.name.match?(/h[1-6]/)))
-      if current.text?
-        content_nodes << current.text.strip
-      elsif current.name == 'p' || current.name == 'ul' || current.name == 'ol'
-        content_nodes << current.text.strip
-      end
-      current = current.next_element
-    end
-    content = content_nodes.join(' ').strip
-    next if content.empty?
-
-    # Extract links
-    links = []
-    heading.parent.css('a').each do |link|
-      href = link['href']
-      next unless href && !href.start_with?('http')
-      links << href.sub(/^\//, '').sub(/\/$/, '')
-    end
-
-    # Create entry for section
-    entry = {
-      'title' => heading_text,
-      'content' => content,
-      'url' => "#{url}##{generate_anchor(heading_text)}",
-      'type' => 'section',
-      'links' => links,
-      'priority' => 3  # Lower priority for regular content
-    }
-    search_db << entry
   end
 end
 

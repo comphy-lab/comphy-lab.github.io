@@ -301,417 +301,665 @@
     "priority": 1
   },
   {
-    "title": "April",
-    "content": "- <strong>Vatsal Sanjay</strong> awarded the <a href=\"https://www.ammodo.org/story/ammodo-science-fellowship-2024\" style=\"text-decoration: none; color: #0056b3; font-weight: 500;\">Ammodo Science Fellowship</a>. His research will focus on understanding fluid dynamics in fungal networks—investigating how these vast underground systems transport water, nutrients, and genetic information across ecosystems.\n\n  <div style=\"margin: 15px 0;\">\n    <div style=\"display: flex; align-items: center; justify-content: start; gap: 20px;\">\n      <div>\n        <img src=\"/assets/images/news/vatsal-ammodo-2025.jpg\" alt=\"Vatsal Sanjay - Ammodo Science Fellowship\" style=\"max-width: 175px; border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); cursor: pointer;\">\n      </div>\n      <div>\n        <a href=\"https://ammodo-science.webflow.io/researches/vatsal-sanjay\" style=\"display: flex; align-items: center; text-decoration: none; color: #cf4900; font-size: 1em; font-weight: 500;\"><i class=\"fa-solid fa-arrow-up-right-from-square\" style=\"margin-right: 8px; font-size: 1.2em;\"></i>Read More</a>\n      </div>\n    </div>\n    <div style=\"font-size: 0.75em; color: #666; margin-top: 5px; font-style: italic;\">\n      Image credit: J. Heitman, B. J. Howlett, P. W. Crous, E. H. Stukenbrock, T. Y. James & N. A. R. Gow, The fungal kingdom, John Wiley & Sons (2020)\n    </div>\n  </div>",
-    "url": "/#about",
-    "type": "markdown_section",
+    "title": "[15]<strong>Sanjay, V.</strong>, & Lohse, D. Unifying theory of scaling in drop impact: Forces & maximum spreading diameter. Phys. Rev. Lett., 134, 104003 (2025).",
+    "content": "Drops Dissipative anomaly Superamphiphobic-surfaces Impact forces Featured [![PRL](https://img.shields.io/static/v1.svg?style=flat-square&label=PRL&message=OA&color=orange)](https://doi.org/10.1103/PhysRevLett.134.104003) [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2408.12714&color=green)](https://arxiv.org/abs/2408.12714) [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/VatsalSy/Impact-forces-of-water-drops-falling-on-superhydrophobic-surfaces.git) [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public) ![Parameter space of drop impact](https://www.dropbox.com/scl/fi/rwrl444r73nayhw1jl4j2/SL2-theory_num.png?rlkey=ekywyjaui2n79djl4qtgevegn&raw=1){: width=\"75%\" .center-block style=\"display: block; margin-left: auto; margin-right: auto;\"}",
+    "url": "/research/#15",
+    "type": "paper",
+    "tags": [
+      "Drops",
+      "Dissipative anomaly",
+      "Superamphiphobic-surfaces",
+      "Impact forces",
+      "Featured"
+    ],
+    "priority": 2
+  },
+  {
+    "title": "[14]<strong>Sanjay, V.</strong>, Zhang, B., Lv, C., & Lohse, D. The role of viscosity on drop impact forces on non-wetting surfaces. J. Fluid Mech., 1004, A6 (2025).",
+    "content": "Drops Impact forces Featured [![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=OA&color=orange)](https://doi.org/10.1017/jfm.2024.982) [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2311.03012&color=green)](https://arxiv.org/abs/2311.03012) [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/VatsalSy/The-role-of-viscosity-on-drop-impact-forces) [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/Blog/2025-JFM-viscous-drop-impact) #### Highlights * Cover of that volume of J. Fluid Mech.",
+    "url": "/research/#14",
+    "type": "paper",
+    "tags": [
+      "Drops",
+      "Impact forces",
+      "Featured"
+    ],
+    "priority": 2
+  },
+  {
+    "title": "[13]Kayal, L., <strong>Sanjay, V.</strong>, Yewale, N., Kumar, A., & Dasgupta, R. Focusing of concentric free-surface waves. J. Fluid Mech., 1003, A14 (2025).",
+    "content": "Waves Dissipative anomaly [![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=OA&color=orange)](https://doi.org/10.1017/jfm.2024.1089) [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2406.05416&color=green)](https://arxiv.org/abs/2406.05416) [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/concentricWave) [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public) ## 2024",
+    "url": "/research/#13",
+    "type": "paper",
+    "tags": [
+      "Waves",
+      "Dissipative anomaly"
+    ],
     "priority": 3
   },
   {
-    "title": "April",
-    "content": "- <strong>Vatsal Sanjay</strong> awarded the <a href=\"https://www.ammodo.org/story/ammodo-science-fellowship-2024\" style=\"text-decoration: none; color: #0056b3; font-weight: 500;\">Ammodo Science Fellowship</a>. His research will focus on understanding fluid dynamics in fungal networks—investigating how these vast underground systems transport water, nutrients, and genetic information across ecosystems.",
-    "url": "/#about",
-    "type": "markdown_text",
+    "title": "[12]Balasubramanian, A. G., <strong>Sanjay, V.</strong>, Jalaal, M., Vinuesa, R., & Tammisola, O. Bursting bubble in an elastoviscoplastic medium. J. Fluid Mech., 1001, A9 (2024).",
+    "content": "Bubbles Non-Newtonian Jets Soft-matter-singularities [![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=OA&color=orange)](https://doi.org/10.1017/jfm.2024.1073) [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/2023_Bubble-bursting-in-an-elasto-viscoplastic-medium) [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public) #### Highlights * Cover of that volume of J. Fluid Mech. ## 2023",
+    "url": "/research/#12",
+    "type": "paper",
+    "tags": [
+      "Bubbles",
+      "Non-Newtonian",
+      "Jets",
+      "Soft-matter-singularities"
+    ],
     "priority": 3
   },
   {
-    "title": "March",
-    "content": "- <a href=\"https://en.wikipedia.org/wiki/Detlef_Lohse\" style=\"text-decoration: none;\"><strong>Prof. Detlef Lohse</strong></a> shares his scientific journey in <a href=\"https://www.youtube.com/@TheLivingHistoriesSeries\" style=\"text-decoration: none; color: #0056b3; font-weight: 500;\">The Living Histories Series</a>. His inspiring discussion on curiosity, mentorship, and the \"puzzle solving\" joy of science offers valuable insights for researchers at all career stages.\n\n  <div style=\"margin: 15px 0;\">\n    <div style=\"display: flex; align-items: center; justify-content: start; gap: 20px;\">\n      <a href=\"https://bit.ly/3DXBixh\" style=\"display: flex; align-items: center; text-decoration: none; color: #cf4900; font-size: 1em; font-weight: 500;\"><i class=\"fa-brands fa-youtube\" style=\"margin-right: 8px; font-size: 1.2em;\"></i>Watch on YouTube</a>\n    </div>\n  </div>\n\n<!-- - [<strong>Sanjay, V.</strong>, & Lohse, D. Unifying theory of scaling in drop impact: Forces & maximum spreading diameter. Published in Physical Review Letters.](/research#15)\n\n  <div style=\"text-align: center; margin: 15px 0;\">\n    <a href=\"/research#15\">\n      <img src=\"/assets/images/research/drop-impact-prl.png\" alt=\"Drop impact PRL paper\" style=\"max-width: 256px; border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); cursor: pointer;\">\n    </a>\n    <div style=\"margin-top: 10px; display: flex; gap: 15px; justify-content: center;\">\n      <a href=\"https://doi.org/10.1103/PhysRevLett.134.104003\" style=\"display: flex; align-items: center; text-decoration: none; color: #cf4900; font-size: 1em; font-weight: 500;\"><i class=\"fa-solid fa-arrow-up-right-from-square\" style=\"margin-right: 8px; font-size: 1.2em;\"></i>View Paper</a>\n    </div>\n  </div> -->\n\n- Join us for a hybrid online+offline course: [High-Fidelity Simulations Using Basilisk C](/teaching/2025-Basilisk101-Madrid) in Madrid, Spain (March 10-13). Learn some computational (colorful) fluid dynamics with hands-on coding sessions.",
-    "url": "/#about",
-    "type": "markdown_section",
+    "title": "[11]<strong>Sanjay, V.</strong>, Chantelot, P., & Lohse, D. When does an impacting drop stop bouncing? J. Fluid Mech., 958, A26 (2023).",
+    "content": "Drops Bouncing Dissipative anomaly [![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=OA&color=orange)](https://doi.org/10.1017/jfm.2023.55) [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)",
+    "url": "/research/#11",
+    "type": "paper",
+    "tags": [
+      "Drops",
+      "Bouncing",
+      "Dissipative anomaly"
+    ],
     "priority": 3
   },
   {
-    "title": "March",
-    "content": "- <a href=\"https://en.wikipedia.org/wiki/Detlef_Lohse\" style=\"text-decoration: none;\"><strong>Prof. Detlef Lohse</strong></a> shares his scientific journey in <a href=\"https://www.youtube.com/@TheLivingHistoriesSeries\" style=\"text-decoration: none; color: #0056b3; font-weight: 500;\">The Living Histories Series</a>. His inspiring discussion on curiosity, mentorship, and the \"puzzle solving\" joy of science offers valuable insights for researchers at all career stages.",
-    "url": "/#about",
-    "type": "markdown_text",
+    "title": "[10]<strong>Sanjay, V.</strong>, Lakshman, S., Chantelot, P., Snoeijer, J. H., & Lohse, D. Drop impact on viscous liquid films. J. Fluid Mech., 958, A25 (2023).",
+    "content": "Drops Bouncing Superhydrophobic surfaces [![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=OA&color=orange)](https://doi.org/10.1017/jfm.2023.13) [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public) ## 2022",
+    "url": "/research/#10",
+    "type": "paper",
+    "tags": [
+      "Drops",
+      "Bouncing",
+      "Superhydrophobic surfaces"
+    ],
     "priority": 3
   },
   {
-    "title": "March",
-    "content": "- Join us for a hybrid online+offline course: [High-Fidelity Simulations Using Basilisk C](/teaching/2025-Basilisk101-Madrid) in Madrid, Spain (March 10-13). Learn some computational (colorful) fluid dynamics with hands-on coding sessions.",
-    "url": "/#about",
-    "type": "markdown_text",
+    "title": "[9]<strong>Sanjay, V.</strong> Taylor--Culick retractions and the influence of the surroundings. J. Fluid Mech., 948, A14 (2022).",
+    "content": "Sheets Dissipative anomaly Retraction [![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=OA&color=orange)](https://doi.org/10.1017/jfm.2022.671) [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)",
+    "url": "/research/#9",
+    "type": "paper",
+    "tags": [
+      "Sheets",
+      "Dissipative anomaly",
+      "Retraction"
+    ],
     "priority": 3
   },
   {
-    "title": "February",
-    "content": "- [<strong>Sanjay, V.</strong>, Zhang, B., Lv, C., & Lohse, D. J. Fluid Mech., 1004, A6 (2025) selected as the cover article.](/research#14)\n\n  <div style=\"margin: 15px 0;\">\n    <div style=\"display: flex; align-items: center; justify-content: start; gap: 20px;\">\n      <div>\n        <a href=\"/research#14\">\n          <img src=\"/assets/images/covers/2025-02-JFM_Vol1004.jpeg\" alt=\"JFM cover\" style=\"max-width: 175px; border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); cursor: pointer;\">\n        </a>\n      </div>\n      <div style=\"display: flex; flex-direction: column; gap: 10px;\">\n        <a href=\"/assets/images/covers/2025-02-JFM_Vol1004.pdf\" style=\"display: flex; align-items: center; text-decoration: none; color: #0056b3; font-size: 1em; font-weight: 500;\"><i class=\"fa-solid fa-download\" style=\"margin-right: 8px; font-size: 1.2em;\"></i>Download Cover</a>\n        <a href=\"https://doi.org/10.1017/jfm.2024.982\" style=\"display: flex; align-items: center; text-decoration: none; color: #cf4900; font-size: 1em; font-weight: 500;\"><i class=\"fa-solid fa-arrow-up-right-from-square\" style=\"margin-right: 8px; font-size: 1.2em;\"></i>View Paper</a>\n      </div>\n    </div>\n  </div>\n\n- <strong>Milan Sent</strong> <a href=\"https://github.com/mdjsent\" style=\"text-decoration: none;\">\n  <i class=\"fa-brands fa-github\" style=\"font-size: 1.5em; color: #8a2be2;\"></i>\n  </a> graduated with a bachelor's degree from University of Twente. <strong>Thesis:</strong> \n  <a href=\"https://tinyurl.com/2ycunjcr\" style=\"display: inline-flex; align-items: center; text-decoration: none; color: #0056b3; font-weight: 500;\">\n  <i class=\"fa-solid fa-file-pdf\" style=\"margin-right: 8px; font-size: 1.2em; color: #e63946;\"></i>Spinning Pizza\n  </a>",
-    "url": "/#about",
-    "type": "markdown_section",
+    "title": "[8]Zhang, B., <strong>Sanjay, V.</strong>, Shi, S., and Zhao, Y., and Lv, C., and Feng, X.-Q., & Lohse, D. Impact forces of water drops falling on superhydrophobic surfaces. Phys. Rev. Lett., 129(10), 104501 (2022).",
+    "content": "Drops Superhydrophobic surfaces Impact forces [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/VatsalSy/Impact-forces-of-water-drops-falling-on-superhydrophobic-surfaces) [![PDF](https://img.shields.io/static/v1.svg?logo=adobeacrobatreader&style=flat-square&label=PDF&message=Download&color=green)](https://qrco.de/bd9aV3) [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2202.02437&color=green)](https://arxiv.org/abs/2202.02437) [![DOI](https://img.shields.io/static/v1.svg?style=flat-square&label=Phys.%20Rev.%20Lett.&message=DOI:%2010.1103/PhysRevLett.129.104501&color=orange)](https://doi.org/10.1103/PhysRevLett.129.104501) [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public) #### Highlights * As of March/April 2024, this highly cited paper received enough citations to place it in the top 1% of the academic field of Physics based on a highly cited threshold for the field and publication year. Source: Web of Science. * Editor's Suggestion of that issue of Phys. Rev. Lett. * Research Highlight: Castelvecchi, D. The physics of a bouncing droplet's impact. _Nature_, 609, 225 (2022). [![DOI](https://img.shields.io/static/v1.svg?style=flat-square&label=DOI:&message=10.1038/d41586-022-02302-w&color=green)](https://doi.org/10.1038/d41586-022-02302-w) ## 2021",
+    "url": "/research/#8",
+    "type": "paper",
+    "tags": [
+      "Drops",
+      "Superhydrophobic surfaces",
+      "Impact forces"
+    ],
     "priority": 3
   },
   {
-    "title": "February",
-    "content": "- [<strong>Sanjay, V.</strong>, Zhang, B., Lv, C., & Lohse, D. J. Fluid Mech., 1004, A6 (2025) selected as the cover article.](/research#14)",
-    "url": "/#about",
-    "type": "markdown_text",
+    "title": "[7]<strong>Sanjay, V.</strong>, Lohse, D., & Jalaal, M. Bursting bubble in a viscoplastic medium. J. Fluid Mech., 922, A2 (2021).",
+    "content": "Bubbles Jets Non-Newtonian Soft-matter-singularities [![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=OA&color=orange)](https://doi.org/10.1017/jfm.2021.489) [![arXiv](https://img.shields.io/badge/arXiv-2101.07744-green?style=flat-square)](https://arxiv.org/abs/2101.07744) [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/VatsalSy/Bursting-Bubble-In-a-Viscoplastic-Medium) [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public) ## 2020",
+    "url": "/research/#7",
+    "type": "paper",
+    "tags": [
+      "Bubbles",
+      "Jets",
+      "Non-Newtonian",
+      "Soft-matter-singularities"
+    ],
     "priority": 3
   },
   {
-    "title": "February",
-    "content": "- <strong>Milan Sent</strong> <a href=\"https://github.com/mdjsent\" style=\"text-decoration: none;\">\n  <i class=\"fa-brands fa-github\" style=\"font-size: 1.5em; color: #8a2be2;\"></i>\n  </a> graduated with a bachelor's degree from University of Twente. <strong>Thesis:</strong> \n  <a href=\"https://tinyurl.com/2ycunjcr\" style=\"display: inline-flex; align-items: center; text-decoration: none; color: #0056b3; font-weight: 500;\">\n  <i class=\"fa-solid fa-file-pdf\" style=\"margin-right: 8px; font-size: 1.2em; color: #e63946;\"></i>Spinning Pizza\n  </a>",
-    "url": "/#about",
-    "type": "markdown_text",
+    "title": "[6]Ramírez-Soto, O., <strong>Sanjay, V.</strong>, Lohse, D., Pham, J. T., & Vollmer, D. Lifting a sessile oil drop from a superamphiphobic surface with an impacting one. Sci. Adv., 6(34), eaba4330 (2020).",
+    "content": "Drops Superamphiphobic-surfaces Lifting [![Sci. Adv.](https://img.shields.io/static/v1.svg?style=flat-square&label=Sci.%20Adv.&message=OA&color=orange)](https://doi.org/10.1126/sciadv.aba4330) [![arXiv](https://img.shields.io/badge/arXiv-1912.02667-green?style=flat-square)](https://arxiv.org/abs/1912.02667) [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/VatsalSy/Lifting-a-sessile-drop) [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public) ## 2019",
+    "url": "/research/#6",
+    "type": "paper",
+    "tags": [
+      "Drops",
+      "Superamphiphobic-surfaces",
+      "Lifting"
+    ],
     "priority": 3
   },
   {
-    "title": "December",
-    "content": "[Balasubramanian, A. G., <strong>Sanjay, V.</strong>, Jalaal, M., Vinuesa, R., & Tammisola, O. J. Fluid Mech., 1001, A9 (2024). selected as the cover article.](/research#12)\n\n<div style=\"margin: 15px 0;\">\n  <div style=\"display: flex; align-items: center; justify-content: start; gap: 20px;\">\n    <div>\n      <a href=\"/research#12\">\n        <img src=\"/assets/images/covers/2024-12-JFM_Vol1001.jpeg\" alt=\"JFM cover\" style=\"max-width: 175px; border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); cursor: pointer;\">\n      </a>\n    </div>\n    <div style=\"display: flex; flex-direction: column; gap: 10px;\">\n      <a href=\"/assets/images/covers/2024-12-JFM_Vol1001.pdf\" style=\"display: flex; align-items: center; text-decoration: none; color: #0056b3; font-size: 1em; font-weight: 500;\"><i class=\"fa-solid fa-download\" style=\"margin-right: 8px; font-size: 1.2em;\"></i>Download Cover</a>\n      <a href=\"https://doi.org/10.1017/jfm.2024.1073\" style=\"display: flex; align-items: center; text-decoration: none; color: #cf4900; font-size: 1em; font-weight: 500;\"><i class=\"fa-solid fa-arrow-up-right-from-square\" style=\"margin-right: 8px; font-size: 1.2em;\"></i>View Paper</a>\n    </div>\n  </div>\n</div>",
-    "url": "/#about",
-    "type": "markdown_section",
+    "title": "[5]Jain, A., <strong>Sanjay, V.</strong>, & Das, A. K. Consequences of inclined and dual jet impingement in stagnant liquid and stratified layers. AIChE J., 65(1), 372-384 (2019).",
+    "content": "Jets Bubbles [![PDF](https://img.shields.io/static/v1.svg?style=flat-square&label=PDF&message=Available&color=green)](https://www.dropbox.com/s/ug7njhulcy9zq8lib911j/2019-Vatsal-_Consequences-of-Inclined-and-Dual-Jet-Impingement-in-Stagnant-Liquid-and-Stratified-Layers.pdf?rlkey=l00thknv7wt55sb0bcuiy8isw&dl=0) [![DOI](https://img.shields.io/static/v1.svg?style=flat-square&label=DOI&message=10.1002/aic.16373&color=orange)](https://doi.org/10.1002/aic.16373) [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public) ## 2018",
+    "url": "/research/#5",
+    "type": "paper",
+    "tags": [
+      "Jets",
+      "Bubbles"
+    ],
     "priority": 3
   },
   {
-    "title": "December",
-    "content": "[Balasubramanian, A. G., <strong>Sanjay, V.</strong>, Jalaal, M., Vinuesa, R., & Tammisola, O. J. Fluid Mech., 1001, A9 (2024). selected as the cover article.](/research#12)",
-    "url": "/#about",
-    "type": "markdown_text",
+    "title": "[4]Soni, A., <strong>Sanjay, V.</strong>, & Das, A. K. Formation of fluid structures due to jet-jet and jet-sheet interactions. Chem. Eng. Sci., 191, 67-77 (2018).",
+    "content": "Jets [![PDF](https://img.shields.io/static/v1.svg?style=flat-square&label=PDF&message=Available&color=green)](https://www.dropbox.com/s/ranuyet8h7nub3s/%5B2018-Vatsal-preprint%5D_Formation%20of%20fluid%20structures%20due%20to%20jet-jet%20and%20jet-sheet%20interactions.pdf?dl=0) [![DOI](https://img.shields.io/static/v1.svg?style=flat-square&label=DOI&message=10.1016/j.ces.2018.06.055&color=orange)](https://doi.org/10.1016/j.ces.2018.06.055) [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)",
+    "url": "/research/#4",
+    "type": "paper",
+    "tags": [
+      "Jets"
+    ],
     "priority": 3
   },
   {
-    "title": "November",
-    "content": "<strong>Vatsal Sanjay</strong> recognized as an <a href=\"https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/announcements/prizes-and-awards/outstanding-reviewers-2023\" style=\"text-decoration: none; color: #0056b3; font-weight: 500;\">Outstanding Reviewer 2023</a> by the Journal of Fluid Mechanics for his contributions to the peer review process.",
-    "url": "/#about",
-    "type": "markdown_section",
+    "title": "[3]<strong>Sanjay, V.</strong>, Das, A.K. Numerical assessment of hazard in compartmental fire having steady heat release rate from the source. Build. Simul. 11, 613–624 (2018).",
+    "content": "Others Fire Evacuation [![PDF](https://img.shields.io/static/v1.svg?style=flat-square&label=PDF&message=Available&color=green)](https://www.dropbox.com/s/6kfiem9zcvjr2vf/%5B2018-Vatsal%5D_Numerical%20assessment%20of%20hazard%20in%20compartmental%20fire%20having%20steady%20heat%20release%20rate%20from%20the%20source.pdf?dl=0) [![DOI](https://img.shields.io/static/v1.svg?style=flat-square&label=DOI&message=10.1007/s12273-017-0411-y&color=orange)](https://doi.org/10.1007/s12273-017-0411-y) [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public) ## 2017",
+    "url": "/research/#3",
+    "type": "paper",
+    "tags": [
+      "Others",
+      "Fire",
+      "Evacuation"
+    ],
     "priority": 3
   },
   {
-    "title": "May",
-    "content": "<strong>Vatsal Sanjay</strong> awarded the <a href=\"https://www.tudelft.nl/2024/jm-burgerscentrum/kivi-hoogendoorn-fluid-mechanics-award-2023\" style=\"text-decoration: none; color: #0056b3; font-weight: 500;\">KIVI Hoogendoorn Fluid Mechanics Award 2023</a> for his PhD thesis \"Viscous Free-Surface Flows\". The award ceremony took place at the Burgers Symposium on 29–30 May 2024 in Lunteren.",
-    "url": "/#about",
-    "type": "markdown_section",
+    "title": "[2]<strong>Sanjay, V.</strong>, & Das, A. K. Formation of liquid chain by collision of two laminar jets. Phys. Fluids, 29(11), 112101 (2017).",
+    "content": "Jets Sheets [![PDF](https://img.shields.io/static/v1.svg?style=flat-square&label=PDF&message=Available&color=green)](https://www.dropbox.com/s/e9uo0hcrm9es8hr/%5B2017-Vatsal-preprint%5D_Formation%20of%20liquid%20chain%20by%20collision%20of%20two%20laminar%20jets.pdf?dl=0) [![DOI](https://img.shields.io/static/v1.svg?style=flat-square&label=DOI&message=10.1063/1.4998288&color=orange)](https://doi.org/10.1063/1.4998288) [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/VatsalSy/FluidChains) [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)",
+    "url": "/research/#2",
+    "type": "paper",
+    "tags": [
+      "Jets",
+      "Sheets"
+    ],
     "priority": 3
   },
   {
-    "title": "About Us",
-    "content": "We are based at the Physics of Fluids Department at the University of Twente, where we investigate [**non-Newtonian free-surface flows**](/research/?tag=Non-Newtonian) and [**soft matter singularities**](/research/?tag=Soft-matter-singularities). Our group employs a synergy of continuum simulations, experiments (through collaborations), and theoretical analysis to understand phenomena ranging involving drops, bubbles, jets, sheets, and more. We strive to connect fundamental findings with real-world applications, from industrial processes to everyday fluid dynamics.",
-    "url": "/#about",
-    "type": "markdown_section",
-    "priority": 3
-  },
-  {
-    "title": "About Us",
-    "content": "We are based at the Physics of Fluids Department at the University of Twente, where we investigate [**non-Newtonian free-surface flows**](/research/?tag=Non-Newtonian) and [**soft matter singularities**](/research/?tag=Soft-matter-singularities). Our group employs a synergy of continuum simulations, experiments (through collaborations), and theoretical analysis to understand phenomena ranging involving drops, bubbles, jets, sheets, and more. We strive to connect fundamental findings with real-world applications, from industrial processes to everyday fluid dynamics.",
-    "url": "/#about",
-    "type": "markdown_text",
-    "priority": 3
-  },
-  {
-    "title": "Soft Matter Singularities",
-    "content": "We examine topological transitions in fluid systems—such as [**droplet impact**](/research/?tag=Drops), [**bubble bursting**](/research/?tag=Bubbles), and [**sheet fragmentation**](/research/?tag=Sheets) — where local instabilities drive fast, often dramatic flow dynamics. Our goal is to expose the universal mechanisms governing these [**singular**]((/research/?tag=Soft-matter-singularities)) events in soft matter.",
-    "url": "/#about",
-    "type": "markdown_section",
-    "priority": 3
-  },
-  {
-    "title": "Soft Matter Singularities",
-    "content": "We examine topological transitions in fluid systems—such as [**droplet impact**](/research/?tag=Drops), [**bubble bursting**](/research/?tag=Bubbles), and [**sheet fragmentation**](/research/?tag=Sheets) — where local instabilities drive fast, often dramatic flow dynamics. Our goal is to expose the universal mechanisms governing these [**singular**]((/research/?tag=Soft-matter-singularities)) events in soft matter.",
-    "url": "/#about",
-    "type": "markdown_text",
-    "priority": 3
-  },
-  {
-    "title": "Non-Newtonian Flows as the `Drosophila' of Continuum Mechanics",
-    "content": "From [**elastoviscoplastic**]((/research/?tag=Non-Newtonian)) bubble bursting and elastic sheet break-up to champagne [**bubble**](/research/?tag=Bubbles) bursting and classical Taylor–Culick retractions, non-Newtonian fluids serve as model systems to explore the fundamentals of continuum mechanics. By integrating high-fidelity simulations, analytical frameworks, and collaborative experiments, we reveal how microstructural stresses affect fluid and solid dynamics. This research provides key insights for industrial and environmental applications.",
-    "url": "/#about",
-    "type": "markdown_section",
-    "priority": 3
-  },
-  {
-    "title": "Non-Newtonian Flows as the `Drosophila' of Continuum Mechanics",
-    "content": "From [**elastoviscoplastic**]((/research/?tag=Non-Newtonian)) bubble bursting and elastic sheet break-up to champagne [**bubble**](/research/?tag=Bubbles) bursting and classical Taylor–Culick retractions, non-Newtonian fluids serve as model systems to explore the fundamentals of continuum mechanics. By integrating high-fidelity simulations, analytical frameworks, and collaborative experiments, we reveal how microstructural stresses affect fluid and solid dynamics. This research provides key insights for industrial and environmental applications.",
-    "url": "/#about",
-    "type": "markdown_text",
-    "priority": 3
-  },
-  {
-    "title": "Viscous Free-Surface Flows",
-    "content": "We investigate various viscous free-surface flows including inertial contact lines, [**bubble**](/research/?tag=Bubbles) removal, and focusing of [**waves**](/research/?tag=Waves). These phenomena are critical to energy transitions and manufacturing. For instance, a key challenge is optimizing bubble detachment in electrolysis to boost efficiency. This research involves advanced numerical methods and industry partnerships, with the broader aim of advancing technologies from chemical reactors to printing processes.",
-    "url": "/#about",
-    "type": "markdown_section",
-    "priority": 3
-  },
-  {
-    "title": "Viscous Free-Surface Flows",
-    "content": "We investigate various viscous free-surface flows including inertial contact lines, [**bubble**](/research/?tag=Bubbles) removal, and focusing of [**waves**](/research/?tag=Waves). These phenomena are critical to energy transitions and manufacturing. For instance, a key challenge is optimizing bubble detachment in electrolysis to boost efficiency. This research involves advanced numerical methods and industry partnerships, with the broader aim of advancing technologies from chemical reactors to printing processes.",
-    "url": "/#about",
-    "type": "markdown_text",
-    "priority": 3
-  },
-  {
-    "title": "Commitment to Open Science",
-    "content": "Open exchange of ideas drives our progress. We share our codes from the earliest stages of development, embracing transparent research practices to foster collaboration and reproducibility. We welcome inquiries and partnerships from the broader scientific community. Watchout for [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab) and [<i class=\"fa-brands fa-github\" style=\"font-size: 1.5em; color: black;\"></i>](https://github.com/comphy-lab \"Visit our GitHub organization\") on this website to interact with our codes. \n\nFeel free to contact us for discussions about our work or anything else related to fluid physics. Nothing is more exhilarating than a healthy scientific discussion.",
-    "url": "/#about",
-    "type": "markdown_section",
-    "priority": 3
-  },
-  {
-    "title": "Commitment to Open Science",
-    "content": "Open exchange of ideas drives our progress. We share our codes from the earliest stages of development, embracing transparent research practices to foster collaboration and reproducibility. We welcome inquiries and partnerships from the broader scientific community. Watchout for [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab) and [<i class=\"fa-brands fa-github\" style=\"font-size: 1.5em; color: black;\"></i>](https://github.com/comphy-lab \"Visit our GitHub organization\") on this website to interact with our codes.",
-    "url": "/#about",
-    "type": "markdown_text",
-    "priority": 3
-  },
-  {
-    "title": "Commitment to Open Science",
-    "content": "Feel free to contact us for discussions about our work or anything else related to fluid physics. Nothing is more exhilarating than a healthy scientific discussion.",
-    "url": "/#about",
-    "type": "markdown_text",
-    "priority": 3
-  },
-  {
-    "title": "Location & Website",
-    "content": "[![Location](https://img.shields.io/badge/-Physics%20of%20Fluids-4285F4?style=flat&logo=googlemaps&logoColor=white)](https://maps.app.goo.gl/jSTCYnfcndF1uZPV8)\n[![Website](https://img.shields.io/badge/-comphy--lab.org-4285F4?style=flat&logo=googlechrome&logoColor=white)](http://www.comphy-lab.org)\n[![Email](https://img.shields.io/badge/-mailto:vatsalsy@comphy--lab.org-EA4335?style=flat&logo=gmail&logoColor=white)](mailto:vatsalsy@comphy-lab.org)\n\n<div class=\"email-container\">\n    <span class=\"email-text\">vatsalsy@comphy-lab.org</span>\n    <button class=\"copy-btn\" onclick=\"copyEmail(this)\" data-text=\"vatsalsy@comphy-lab.org\" aria-label=\"Copy email address vatsalsy@comphy-lab.org\">\n        <i class=\"fas fa-copy\"></i>\n    </button>\n</div>",
-    "url": "/#about",
-    "type": "markdown_section",
-    "priority": 3
-  },
-  {
-    "title": "Location & Website",
-    "content": "[![Location](https://img.shields.io/badge/-Physics%20of%20Fluids-4285F4?style=flat&logo=googlemaps&logoColor=white)](https://maps.app.goo.gl/jSTCYnfcndF1uZPV8)\n[![Website](https://img.shields.io/badge/-comphy--lab.org-4285F4?style=flat&logo=googlechrome&logoColor=white)](http://www.comphy-lab.org)\n[![Email](https://img.shields.io/badge/-mailto:vatsalsy@comphy--lab.org-EA4335?style=flat&logo=gmail&logoColor=white)](mailto:vatsalsy@comphy-lab.org)",
-    "url": "/#about",
-    "type": "markdown_text",
-    "priority": 3
-  },
-  {
-    "title": "Academic Profiles",
-    "content": "[![Google Scholar](https://img.shields.io/badge/-Google%20Scholar-4285F4?style=flat&logo=googlescholar&logoColor=white)](https://scholar.google.com/citations?user=tHb_qZoAAAAJ&hl=en)\n[![ORCID](https://img.shields.io/badge/-ORCID-A6CE39?style=flat&logo=orcid&logoColor=white)](https://orcid.org/0000-0002-4293-6099)\n[![arXiv](https://img.shields.io/badge/-arXiv-B31B1B?style=flat&logo=arxiv&logoColor=white)](https://arxiv.org/search/?query=vatsal+sanjay&searchtype=all&source=header)\n[![ResearchGate](https://img.shields.io/badge/-ResearchGate-00CCBB?style=flat&logo=researchgate&logoColor=white)](https://www.researchgate.net/profile/Vatsal-Sanjay-2)",
-    "url": "/#about",
-    "type": "markdown_section",
-    "priority": 3
-  },
-  {
-    "title": "Academic Profiles",
-    "content": "[![Google Scholar](https://img.shields.io/badge/-Google%20Scholar-4285F4?style=flat&logo=googlescholar&logoColor=white)](https://scholar.google.com/citations?user=tHb_qZoAAAAJ&hl=en)\n[![ORCID](https://img.shields.io/badge/-ORCID-A6CE39?style=flat&logo=orcid&logoColor=white)](https://orcid.org/0000-0002-4293-6099)\n[![arXiv](https://img.shields.io/badge/-arXiv-B31B1B?style=flat&logo=arxiv&logoColor=white)](https://arxiv.org/search/?query=vatsal+sanjay&searchtype=all&source=header)\n[![ResearchGate](https://img.shields.io/badge/-ResearchGate-00CCBB?style=flat&logo=researchgate&logoColor=white)](https://www.researchgate.net/profile/Vatsal-Sanjay-2)",
-    "url": "/#about",
-    "type": "markdown_text",
-    "priority": 3
-  },
-  {
-    "title": "Social Media",
-    "content": "[![X](https://img.shields.io/badge/-@CoMPhyLab-000000?style=flat&logo=x&logoColor=white)](https://twitter.com/VatsalSanjay)\n[![Bluesky](https://img.shields.io/badge/-@comphy--lab.org-0285FF?style=flat&logo=bluesky&logoColor=white)](https://bsky.app/profile/comphy-lab.org)\n\nFor supplementary videos and teaser of our upcoming work:\n\n<a href=\"https://www.youtube.com/@CoMPhyLab\" target=\"_blank\" aria-label=\"Visit our YouTube channel\">\n  <img class=\"youtube-stats-light\" alt=\"Vatsal's YouTube Stats\" src=\"https://cust-youtube-stats-card.vercel.app/api?channelid=UC-eTdHrAM_eQrWOtNLoT19w&theme=solarized_light&hide_border=true\" width=\"auto\" height=\"200px\">\n  <img class=\"youtube-stats-dark\" alt=\"Vatsal's YouTube Stats\" src=\"https://cust-youtube-stats-card.vercel.app/api?channelid=UC-eTdHrAM_eQrWOtNLoT19w&theme=vision_friendly_dark&hide_border=true\" width=\"auto\" height=\"200px\">\n</a>",
-    "url": "/#about",
-    "type": "markdown_section",
-    "priority": 3
-  },
-  {
-    "title": "Social Media",
-    "content": "[![X](https://img.shields.io/badge/-@CoMPhyLab-000000?style=flat&logo=x&logoColor=white)](https://twitter.com/VatsalSanjay)\n[![Bluesky](https://img.shields.io/badge/-@comphy--lab.org-0285FF?style=flat&logo=bluesky&logoColor=white)](https://bsky.app/profile/comphy-lab.org)",
-    "url": "/#about",
-    "type": "markdown_text",
+    "title": "[1]<strong>Sanjay, V.</strong>, & Das, A. K. On air entrainment in a water pool by impingement of a jet. AIChE J., 63(11), 5169-5181 (2017).",
+    "content": "Jets Bubbles [![PDF](https://img.shields.io/static/v1.svg?style=flat-square&label=PDF&message=Available&color=green)](https://www.dropbox.com/s/bm49xi8ic6i3icf/%5B2017-Vatsal-preprint%5D_On%20Air%20Entrainment%20in%20a%20Water%20pool%20by%20Impingement%20of%20a%20Jet.pdf?dl=0) [![DOI](https://img.shields.io/static/v1.svg?style=flat-square&label=DOI&message=10.1002/aic.15828&color=orange)](https://doi.org/10.1002/aic.15828) [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)",
+    "url": "/research/#1",
+    "type": "paper",
+    "tags": [
+      "Jets",
+      "Bubbles"
+    ],
     "priority": 3
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - High-Fidelity Simulations Using Basilisk C",
-    "content": "<div class=\"course-details\">\n  <div class=\"course-details__item\">\n    <h4><i class=\"fa-solid fa-calendar-days\"></i> Dates</h4>\n    <p>March 10-13, 2025</p>\n  </div>\n  <div class=\"course-details__item\">\n    <h4><i class=\"fa-solid fa-location-dot\"></i> Location</h4>\n    <p>Universidad Carlos III de Madrid, Spain</p>\n  </div>\n  <div class=\"course-details__item\">\n    <h4><i class=\"fa-solid fa-clock\"></i> Duration</h4>\n    <p>4 days, full-time</p>\n  </div>\n</div>",
+    "content": "Dates March 10-13, 2025 Location Universidad Carlos III de Madrid, Spain Duration 4 days, full-time",
     "url": "/teaching/2025-Basilisk101-Madrid#High-Fidelity%2BSimulations%2BUsing%2BBasilisk%2BC",
     "type": "teaching_content",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - What will you learn?",
-    "content": "- **Think before you compute!** Understanding the physics before implementation\n- **Writing the first code in Basilisk C** Getting comfortable with the framework\n- **Solving conservation equations** Numerical approaches to fluid dynamics\n- **Interface tracking methods** Capturing multiphase phenomena accurately\n- **Non-Newtonian flows** Modeling complex rheological behaviors",
+    "content": "- **Think before you compute!** Understanding the physics before implementation - **Writing the first code in Basilisk C** Getting comfortable with the framework - **Solving conservation equations** Numerical approaches to fluid dynamics - **Interface tracking methods** Capturing multiphase phenomena accurately - **Non-Newtonian flows** Modeling complex rheological behaviors",
     "url": "/teaching/2025-Basilisk101-Madrid#What%2Bwill%2Byou%2Blearn",
     "type": "teaching_content",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - What will you learn?",
-    "content": "- **Think before you compute!** Understanding the physics before implementation\n- **Writing the first code in Basilisk C** Getting comfortable with the framework\n- **Solving conservation equations** Numerical approaches to fluid dynamics\n- **Interface tracking methods** Capturing multiphase phenomena accurately\n- **Non-Newtonian flows** Modeling complex rheological behaviors",
+    "content": "- **Think before you compute!** Understanding the physics before implementation - **Writing the first code in Basilisk C** Getting comfortable with the framework - **Solving conservation equations** Numerical approaches to fluid dynamics - **Interface tracking methods** Capturing multiphase phenomena accurately - **Non-Newtonian flows** Modeling complex rheological behaviors",
     "url": "/teaching/2025-Basilisk101-Madrid#What%2Bwill%2Byou%2Blearn",
     "type": "teaching_paragraph",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - Course Description",
-    "content": "This intensive 4-day course provides a comprehensive introduction to high-fidelity simulations using Basilisk C, a powerful computational framework for fluid dynamics. Participants will learn to implement and solve complex fluid mechanics problems with an emphasis on multiphase flows, interface dynamics, and non-Newtonian rheology.\n\nThe course combines theoretical lectures with extensive hands-on sessions, allowing participants to immediately apply concepts through guided coding exercises. By the end of the course, you'll be able to develop your own simulations for a variety of fluid dynamics applications.",
+    "content": "This intensive 4-day course provides a comprehensive introduction to high-fidelity simulations using Basilisk C, a powerful computational framework for fluid dynamics. Participants will learn to implement and solve complex fluid mechanics problems with an emphasis on multiphase flows, interface dynamics, and non-Newtonian rheology. The course combines theoretical lectures with extensive hands-on sessions, allowing participants to immediately apply concepts through guided coding exercises. By the end of the course, you'll be able to develop your own simulations for a variety of fluid dynamics applications.",
     "url": "/teaching/2025-Basilisk101-Madrid#Course%2BDescription",
     "type": "teaching_content",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - Course Description",
-    "content": "This intensive 4-day course provides a comprehensive introduction to high-fidelity simulations using Basilisk C, a powerful computational framework for fluid dynamics. Participants will learn to implement and solve complex fluid mechanics problems with an emphasis on multiphase flows, interface dynamics, and non-Newtonian rheology.",
-    "url": "/teaching/2025-Basilisk101-Madrid#Course%2BDescription",
-    "type": "teaching_paragraph",
-    "priority": 2
-  },
-  {
-    "title": "\"High-Fidelity Simulations Using Basilisk C\" - Course Description",
-    "content": "The course combines theoretical lectures with extensive hands-on sessions, allowing participants to immediately apply concepts through guided coding exercises. By the end of the course, you'll be able to develop your own simulations for a variety of fluid dynamics applications.",
+    "content": "This intensive 4-day course provides a comprehensive introduction to high-fidelity simulations using Basilisk C, a powerful computational framework for fluid dynamics. Participants will learn to implement and solve complex fluid mechanics problems with an emphasis on multiphase flows, interface dynamics, and non-Newtonian rheology. The course combines theoretical lectures with extensive hands-on sessions, allowing participants to immediately apply concepts through guided coding exercises. By the end of the course, you'll be able to develop your own simulations for a variety of fluid dynamics applications.",
     "url": "/teaching/2025-Basilisk101-Madrid#Course%2BDescription",
     "type": "teaching_paragraph",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - Think before you compute",
-    "content": "- **10:00-11:30** &nbsp;|&nbsp; **Lecture (1a)**\n  - Conservation laws and the numerical solution of the Navier–Stokes equations\n- **11:45-13:00** &nbsp;|&nbsp; **Lecture (1b)**\n  - Transport equations\n  - *Brief intro to Basilisk coding framework*",
+    "content": "- **10:00-11:30** &nbsp;|&nbsp; **Lecture (1a)** - Conservation laws and the numerical solution of the Navier–Stokes equations - **11:45-13:00** &nbsp;|&nbsp; **Lecture (1b)** - Transport equations - *Brief intro to Basilisk coding framework*",
     "url": "/teaching/2025-Basilisk101-Madrid#Think%2Bbefore%2Byou%2Bcompute",
     "type": "teaching_content",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - Think before you compute",
-    "content": "- **10:00-11:30** &nbsp;|&nbsp; **Lecture (1a)**\n  - Conservation laws and the numerical solution of the Navier–Stokes equations\n- **11:45-13:00** &nbsp;|&nbsp; **Lecture (1b)**\n  - Transport equations\n  - *Brief intro to Basilisk coding framework*",
+    "content": "- **10:00-11:30** &nbsp;|&nbsp; **Lecture (1a)** - Conservation laws and the numerical solution of the Navier–Stokes equations - **11:45-13:00** &nbsp;|&nbsp; **Lecture (1b)** - Transport equations - *Brief intro to Basilisk coding framework*",
     "url": "/teaching/2025-Basilisk101-Madrid#Think%2Bbefore%2Byou%2Bcompute",
     "type": "teaching_paragraph",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - First coding steps",
-    "content": "- **15:00-18:00** &nbsp;|&nbsp; **Hybrid Session**\n  - Implementing basic transport equations in Basilisk C.\n  - Using headers in Basilisk, modular code structure, problem setup, and compilation\n  - *Whiteboard + coding*\n  - [1st Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1st-workingAssignment)",
+    "content": "- **15:00-18:00** &nbsp;|&nbsp; **Hybrid Session** - Implementing basic transport equations in Basilisk C. - Using headers in Basilisk, modular code structure, problem setup, and compilation - *Whiteboard + coding* - [1st Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1st-workingAssignment)",
     "url": "/teaching/2025-Basilisk101-Madrid#First%2Bcoding%2Bsteps",
     "type": "teaching_content",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - First coding steps",
-    "content": "- **15:00-18:00** &nbsp;|&nbsp; **Hybrid Session**\n  - Implementing basic transport equations in Basilisk C.\n  - Using headers in Basilisk, modular code structure, problem setup, and compilation\n  - *Whiteboard + coding*\n  - [1st Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1st-workingAssignment)",
+    "content": "- **15:00-18:00** &nbsp;|&nbsp; **Hybrid Session** - Implementing basic transport equations in Basilisk C. - Using headers in Basilisk, modular code structure, problem setup, and compilation - *Whiteboard + coding* - [1st Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1st-workingAssignment)",
     "url": "/teaching/2025-Basilisk101-Madrid#First%2Bcoding%2Bsteps",
     "type": "teaching_paragraph",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - Coding like a pro",
-    "content": "- **10:00-11:15** &nbsp;|&nbsp; **Hackathon (1c)**\n  - Solving Navier–Stokes equations in Basilisk C. \n  - [2nd Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/2nd-workingAssignment)\n- **11:30-13:00** &nbsp;|&nbsp; **Hackathon Continued**\n  - Expanding on the morning tasks and code debugging",
+    "content": "- **10:00-11:15** &nbsp;|&nbsp; **Hackathon (1c)** - Solving Navier–Stokes equations in Basilisk C. - [2nd Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/2nd-workingAssignment) - **11:30-13:00** &nbsp;|&nbsp; **Hackathon Continued** - Expanding on the morning tasks and code debugging",
     "url": "/teaching/2025-Basilisk101-Madrid#Coding%2Blike%2Ba%2Bpro",
     "type": "teaching_content",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - Coding like a pro",
-    "content": "- **10:00-11:15** &nbsp;|&nbsp; **Hackathon (1c)**\n  - Solving Navier–Stokes equations in Basilisk C. \n  - [2nd Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/2nd-workingAssignment)\n- **11:30-13:00** &nbsp;|&nbsp; **Hackathon Continued**\n  - Expanding on the morning tasks and code debugging",
+    "content": "- **10:00-11:15** &nbsp;|&nbsp; **Hackathon (1c)** - Solving Navier–Stokes equations in Basilisk C. - [2nd Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/2nd-workingAssignment) - **11:30-13:00** &nbsp;|&nbsp; **Hackathon Continued** - Expanding on the morning tasks and code debugging",
     "url": "/teaching/2025-Basilisk101-Madrid#Coding%2Blike%2Ba%2Bpro",
     "type": "teaching_paragraph",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - Interface tracking methods",
-    "content": "- **10:00-11:30** &nbsp;|&nbsp; **Lecture (2a)**\n  - Interface tracking methods (VoF, level set, phase-field approaches) and numerical strategies\n- **11:45-13:00** &nbsp;|&nbsp; **Hackathon (2b)**\n  - Hands-on tutorial with interface-tracking to a simple two-phase problem\n  - [3rd Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment)",
+    "content": "- **10:00-11:30** &nbsp;|&nbsp; **Lecture (2a)** - Interface tracking methods (VoF, level set, phase-field approaches) and numerical strategies - **11:45-13:00** &nbsp;|&nbsp; **Hackathon (2b)** - Hands-on tutorial with interface-tracking to a simple two-phase problem - [3rd Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment)",
     "url": "/teaching/2025-Basilisk101-Madrid#Interface%2Btracking%2Bmethods",
     "type": "teaching_content",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - Interface tracking methods",
-    "content": "- **10:00-11:30** &nbsp;|&nbsp; **Lecture (2a)**\n  - Interface tracking methods (VoF, level set, phase-field approaches) and numerical strategies\n- **11:45-13:00** &nbsp;|&nbsp; **Hackathon (2b)**\n  - Hands-on tutorial with interface-tracking to a simple two-phase problem\n  - [3rd Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment)",
+    "content": "- **10:00-11:30** &nbsp;|&nbsp; **Lecture (2a)** - Interface tracking methods (VoF, level set, phase-field approaches) and numerical strategies - **11:45-13:00** &nbsp;|&nbsp; **Hackathon (2b)** - Hands-on tutorial with interface-tracking to a simple two-phase problem - [3rd Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment)",
     "url": "/teaching/2025-Basilisk101-Madrid#Interface%2Btracking%2Bmethods",
     "type": "teaching_paragraph",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - Seminar",
-    "content": "- **13:30-14:00** &nbsp;|&nbsp; **Department seminar (2c)**\n  - A note on the thrust of airfoils by [José Manuel Gordillo](https://scholar.google.com/citations?user=14wOsewAAAAJ&hl=en&inst=5726176096060060532&oi=ao)",
+    "content": "- **13:30-14:00** &nbsp;|&nbsp; **Department seminar (2c)** - A note on the thrust of airfoils by [José Manuel Gordillo](https://scholar.google.com/citations?user=14wOsewAAAAJ&hl=en&inst=5726176096060060532&oi=ao)",
     "url": "/teaching/2025-Basilisk101-Madrid#Seminar",
     "type": "teaching_content",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - Seminar",
-    "content": "- **13:30-14:00** &nbsp;|&nbsp; **Department seminar (2c)**\n  - A note on the thrust of airfoils by [José Manuel Gordillo](https://scholar.google.com/citations?user=14wOsewAAAAJ&hl=en&inst=5726176096060060532&oi=ao)",
+    "content": "- **13:30-14:00** &nbsp;|&nbsp; **Department seminar (2c)** - A note on the thrust of airfoils by [José Manuel Gordillo](https://scholar.google.com/citations?user=14wOsewAAAAJ&hl=en&inst=5726176096060060532&oi=ao)",
     "url": "/teaching/2025-Basilisk101-Madrid#Seminar",
     "type": "teaching_paragraph",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - Non-Newtonian flows",
-    "content": "- **15:00-16:00** &nbsp;|&nbsp; **Lecture (3a)**\n  - Non-Newtonian flows: viscoelasticity.\n- **16:15-18:00** &nbsp;|&nbsp; **Hackathon (3b)**\n  - Coding exercises for viscoelastic fluids.\n  - [4th Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment)",
+    "content": "- **15:00-16:00** &nbsp;|&nbsp; **Lecture (3a)** - Non-Newtonian flows: viscoelasticity. - **16:15-18:00** &nbsp;|&nbsp; **Hackathon (3b)** - Coding exercises for viscoelastic fluids. - [4th Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment)",
     "url": "/teaching/2025-Basilisk101-Madrid#Non-Newtonian%2Bflows",
     "type": "teaching_content",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - Non-Newtonian flows",
-    "content": "- **15:00-16:00** &nbsp;|&nbsp; **Lecture (3a)**\n  - Non-Newtonian flows: viscoelasticity.\n- **16:15-18:00** &nbsp;|&nbsp; **Hackathon (3b)**\n  - Coding exercises for viscoelastic fluids.\n  - [4th Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment)",
+    "content": "- **15:00-16:00** &nbsp;|&nbsp; **Lecture (3a)** - Non-Newtonian flows: viscoelasticity. - **16:15-18:00** &nbsp;|&nbsp; **Hackathon (3b)** - Coding exercises for viscoelastic fluids. - [4th Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment)",
     "url": "/teaching/2025-Basilisk101-Madrid#Non-Newtonian%2Bflows",
     "type": "teaching_paragraph",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - Special topics",
-    "content": "- **10:00-11:30** &nbsp;|&nbsp; **Lecture (4a)**\n  - Review and catching up on [4th Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment).\n  - Special Topics: Three-phase flows, \n- **11:45-13:00** &nbsp;|&nbsp; **Hackathon (4b)**\n  - Special Topics: Holey Sheets, Contact line dynamics. \n- **15:00-16:30** &nbsp;|&nbsp; **Lecture (4c)**\n  - Open discussion, deeper dives into advanced features, final code reviews, and next steps.\n\n---",
+    "content": "- **10:00-11:30** &nbsp;|&nbsp; **Lecture (4a)** - Review and catching up on [4th Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment). - Special Topics: Three-phase flows, - **11:45-13:00** &nbsp;|&nbsp; **Hackathon (4b)** - Special Topics: Holey Sheets, Contact line dynamics. - **15:00-16:30** &nbsp;|&nbsp; **Lecture (4c)** - Open discussion, deeper dives into advanced features, final code reviews, and next steps. ---",
     "url": "/teaching/2025-Basilisk101-Madrid#Special%2Btopics",
     "type": "teaching_content",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - Special topics",
-    "content": "- **10:00-11:30** &nbsp;|&nbsp; **Lecture (4a)**\n  - Review and catching up on [4th Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment).\n  - Special Topics: Three-phase flows, \n- **11:45-13:00** &nbsp;|&nbsp; **Hackathon (4b)**\n  - Special Topics: Holey Sheets, Contact line dynamics. \n- **15:00-16:30** &nbsp;|&nbsp; **Lecture (4c)**\n  - Open discussion, deeper dives into advanced features, final code reviews, and next steps.",
+    "content": "- **10:00-11:30** &nbsp;|&nbsp; **Lecture (4a)** - Review and catching up on [4th Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment). - Special Topics: Three-phase flows, - **11:45-13:00** &nbsp;|&nbsp; **Hackathon (4b)** - Special Topics: Holey Sheets, Contact line dynamics. - **15:00-16:30** &nbsp;|&nbsp; **Lecture (4c)** - Open discussion, deeper dives into advanced features, final code reviews, and next steps. ---",
     "url": "/teaching/2025-Basilisk101-Madrid#Special%2Btopics",
     "type": "teaching_paragraph",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - Prerequisites",
-    "content": "- Basic knowledge of fluid mechanics\n- Experience with programming (any language, C preferred)\n- Understanding of partial differential equations\n- Laptop with ability to compile C code",
+    "content": "- Basic knowledge of fluid mechanics - Experience with programming (any language, C preferred) - Understanding of partial differential equations - Laptop with ability to compile C code",
     "url": "/teaching/2025-Basilisk101-Madrid#Prerequisites",
     "type": "teaching_content",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - Prerequisites",
-    "content": "- Basic knowledge of fluid mechanics\n- Experience with programming (any language, C preferred)\n- Understanding of partial differential equations\n- Laptop with ability to compile C code",
+    "content": "- Basic knowledge of fluid mechanics - Experience with programming (any language, C preferred) - Understanding of partial differential equations - Laptop with ability to compile C code",
     "url": "/teaching/2025-Basilisk101-Madrid#Prerequisites",
     "type": "teaching_paragraph",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - Registration",
-    "content": "For registration details, please contact \n<div class=\"email-container\">\n    <span class=\"email-text\">bubbles@ing.uc3m.es</span>\n    <button class=\"copy-btn\" onclick=\"copyEmail(this)\" data-text=\"bubbles@ing.uc3m.es\" aria-label=\"Copy email address bubbles@ing.uc3m.es\">\n        <i class=\"fas fa-copy\"></i>\n    </button>\n</div>\n<div class=\"email-container\">\n    <span class=\"email-text\">vatsalsy@comphy-lab.org</span>\n    <button class=\"copy-btn\" onclick=\"copyEmail(this)\" data-text=\"vatsalsy@comphy-lab.org\" aria-label=\"Copy email address vatsalsy@comphy-lab.org\">\n        <i class=\"fas fa-copy\"></i>\n    </button>\n</div>\n\n<script>\nfunction copyEmail(button) {\n  const textToCopy = button.getAttribute('data-text');\n  \n  // Create a temporary textarea element to copy from\n  const textarea = document.createElement('textarea');\n  textarea.value = textToCopy;\n  textarea.setAttribute('readonly', '');\n  textarea.style.position = 'absolute';\n  textarea.style.left = '-9999px';\n  document.body.appendChild(textarea);\n  \n  // Select and copy the text\n  textarea.select();\n  document.execCommand('copy');\n  \n  // Remove the temporary element\n  document.body.removeChild(textarea);\n  \n  // Show feedback\n  const originalIcon = button.innerHTML;\n  button.innerHTML = '<i class=\"fas fa-check\"></i>';\n  button.classList.add('copied');\n  \n  // Restore original state after a delay\n  setTimeout(() => {\n    button.innerHTML = originalIcon;\n    button.classList.remove('copied');\n  }, 2000);\n}\n</script>\n\n<div style=\"margin-top: 2rem; text-align: center;\">\n  <a href=\"https://github.com/comphy-lab/Basilisk-101\" class=\"course-card__link\" target=\"_blank\" aria-label=\"Course GitHub Repository\">\n    <i class=\"fa-brands fa-github\" style=\"margin-right: 0.5rem; font-style: normal;\"></i>Course GitHub Repository\n  </a>\n</div>",
+    "content": "For registration details, please contact bubbles@ing.uc3m.es vatsalsy@comphy-lab.org function copyEmail(button) { const textToCopy = button.getAttribute('data-text'); // Create a temporary textarea element to copy from const textarea = document.createElement('textarea'); textarea.value = textToCopy; textarea.setAttribute('readonly', ''); textarea.style.position = 'absolute'; textarea.style.left = '-9999px'; document.body.appendChild(textarea); // Select and copy the text textarea.select(); document.execCommand('copy'); // Remove the temporary element document.body.removeChild(textarea); // Show feedback const originalIcon = button.innerHTML; button.innerHTML = ' '; button.classList.add('copied'); // Restore original state after a delay setTimeout(() => { button.innerHTML = originalIcon; button.classList.remove('copied'); }, 2000); } Course GitHub Repository",
     "url": "/teaching/2025-Basilisk101-Madrid#Registration",
     "type": "teaching_content",
     "priority": 2
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - Registration",
-    "content": "For registration details, please contact \n<div class=\"email-container\">\n    <span class=\"email-text\">bubbles@ing.uc3m.es</span>\n    <button class=\"copy-btn\" onclick=\"copyEmail(this)\" data-text=\"bubbles@ing.uc3m.es\" aria-label=\"Copy email address bubbles@ing.uc3m.es\">\n        <i class=\"fas fa-copy\"></i>\n    </button>\n</div>\n<div class=\"email-container\">\n    <span class=\"email-text\">vatsalsy@comphy-lab.org</span>\n    <button class=\"copy-btn\" onclick=\"copyEmail(this)\" data-text=\"vatsalsy@comphy-lab.org\" aria-label=\"Copy email address vatsalsy@comphy-lab.org\">\n        <i class=\"fas fa-copy\"></i>\n    </button>\n</div>",
+    "content": "For registration details, please contact bubbles@ing.uc3m.es vatsalsy@comphy-lab.org function copyEmail(button) { const textToCopy = button.getAttribute('data-text'); // Create a temporary textarea element to copy from const textarea = document.createElement('textarea'); textarea.value = textToCopy; textarea.setAttribute('readonly', ''); textarea.style.position = 'absolute'; textarea.style.left = '-9999px'; document.body.appendChild(textarea); // Select and copy the text textarea.select(); document.execCommand('copy'); // Remove the temporary element document.body.removeChild(textarea); // Show feedback const originalIcon = button.innerHTML; button.innerHTML = ' '; button.classList.add('copied'); // Restore original state after a delay setTimeout(() => { button.innerHTML = originalIcon; button.classList.remove('copied'); }, 2000); } Course GitHub Repository",
     "url": "/teaching/2025-Basilisk101-Madrid#Registration",
     "type": "teaching_paragraph",
     "priority": 2
   },
   {
     "title": "Teaching - Teaching",
-    "content": "Welcome to the CoMPhy Lab's educational resources. Apart from the university courses, we aim to develop and offer a range of workshops and tutorials on modern computational methods for multiphase flows and high-fidelity simulations.\n\n<div class=\"teaching-grid\">\n  <div class=\"course-card\">\n    <img src=\"/assets/images/teaching/basilisk-madrid.jpg\" alt=\"Basilisk C Course\" loading=\"lazy\">\n    <div class=\"course-card__content\">\n      <h3 class=\"course-card__title\">High-Fidelity Simulations Using Basilisk C</h3>\n      <div class=\"course-card__meta\">\n        <i class=\"fa-solid fa-location-dot\"></i> Universidad Carlos III de Madrid\n      </div>\n      <div class=\"course-card__meta\">\n        <i class=\"fa-solid fa-calendar-days\"></i> March 10-13, 2025\n      </div>\n      <p class=\"course-card__desc\">\n        A comprehensive course on using Basilisk C for simulating multiphase flows, interface tracking, and solving conservation equations. Learn to tackle complex fluid dynamics problems with high-fidelity numerical methods.\n      </p>\n      <a href=\"/teaching/2025-Basilisk101-Madrid\" class=\"course-card__link\">View Course</a>\n    </div>\n  </div>\n</div>",
+    "content": "Welcome to the CoMPhy Lab's educational resources. Apart from the university courses, we aim to develop and offer a range of workshops and tutorials on modern computational methods for multiphase flows and high-fidelity simulations. High-Fidelity Simulations Using Basilisk C Universidad Carlos III de Madrid March 10-13, 2025 A comprehensive course on using Basilisk C for simulating multiphase flows, interface tracking, and solving conservation equations. Learn to tackle complex fluid dynamics problems with high-fidelity numerical methods. View Course",
     "url": "/teaching/#Teaching",
     "type": "teaching_content",
     "priority": 2
   },
   {
     "title": "Teaching - Teaching",
-    "content": "Welcome to the CoMPhy Lab's educational resources. Apart from the university courses, we aim to develop and offer a range of workshops and tutorials on modern computational methods for multiphase flows and high-fidelity simulations.",
+    "content": "Welcome to the CoMPhy Lab's educational resources. Apart from the university courses, we aim to develop and offer a range of workshops and tutorials on modern computational methods for multiphase flows and high-fidelity simulations. High-Fidelity Simulations Using Basilisk C Universidad Carlos III de Madrid March 10-13, 2025 A comprehensive course on using Basilisk C for simulating multiphase flows, interface tracking, and solving conservation equations. Learn to tackle complex fluid dynamics problems with high-fidelity numerical methods. View Course",
     "url": "/teaching/#Teaching",
     "type": "teaching_paragraph",
     "priority": 2
   },
   {
     "title": "Teaching - About Our Teaching Philosophy",
-    "content": "At CoMPhy Lab, we believe in hands-on learning and deep understanding of computational methods. Our courses combine theoretical foundations with practical implementation, allowing students to develop both conceptual understanding and technical skills.\n\nOur teaching approach emphasizes:\n\n- **Think before you compute**: Understanding the underlying physics before implementation\n- **Modular code structure**: Building maintainable and extensible computational tools\n- **Advanced numerical methods**: Mastering state-of-the-art techniques for complex problems\n- **Open science**: Sharing knowledge and tools with the scientific community. Checkout <a href=\"https://github.com/comphy-lab\"><i class=\"fa-brands fa-github\" style=\"font-size: 1.5em; color: black; font-style: normal;\"></i></a>\n\nIf you're interested in hosting a course or workshop with CoMPhy Lab, please [contact us](/join) for collaboration opportunities.",
+    "content": "At CoMPhy Lab, we believe in hands-on learning and deep understanding of computational methods. Our courses combine theoretical foundations with practical implementation, allowing students to develop both conceptual understanding and technical skills. Our teaching approach emphasizes: - **Think before you compute**: Understanding the underlying physics before implementation - **Modular code structure**: Building maintainable and extensible computational tools - **Advanced numerical methods**: Mastering state-of-the-art techniques for complex problems - **Open science**: Sharing knowledge and tools with the scientific community. Checkout If you're interested in hosting a course or workshop with CoMPhy Lab, please [contact us](/join) for collaboration opportunities.",
     "url": "/teaching/#About%2BOur%2BTeaching%2BPhilosophy",
     "type": "teaching_content",
     "priority": 2
   },
   {
     "title": "Teaching - About Our Teaching Philosophy",
-    "content": "At CoMPhy Lab, we believe in hands-on learning and deep understanding of computational methods. Our courses combine theoretical foundations with practical implementation, allowing students to develop both conceptual understanding and technical skills.",
+    "content": "At CoMPhy Lab, we believe in hands-on learning and deep understanding of computational methods. Our courses combine theoretical foundations with practical implementation, allowing students to develop both conceptual understanding and technical skills. Our teaching approach emphasizes: - **Think before you compute**: Understanding the underlying physics before implementation - **Modular code structure**: Building maintainable and extensible computational tools - **Advanced numerical methods**: Mastering state-of-the-art techniques for complex problems - **Open science**: Sharing knowledge and tools with the scientific community. Checkout If you're interested in hosting a course or workshop with CoMPhy Lab, please [contact us](/join) for collaboration opportunities.",
     "url": "/teaching/#About%2BOur%2BTeaching%2BPhilosophy",
     "type": "teaching_paragraph",
     "priority": 2
   },
   {
-    "title": "Teaching - About Our Teaching Philosophy",
-    "content": "- **Think before you compute**: Understanding the underlying physics before implementation\n- **Modular code structure**: Building maintainable and extensible computational tools\n- **Advanced numerical methods**: Mastering state-of-the-art techniques for complex problems\n- **Open science**: Sharing knowledge and tools with the scientific community. Checkout <a href=\"https://github.com/comphy-lab\"><i class=\"fa-brands fa-github\" style=\"font-size: 1.5em; color: black; font-style: normal;\"></i></a>",
-    "url": "/teaching/#About%2BOur%2BTeaching%2BPhilosophy",
-    "type": "teaching_paragraph",
-    "priority": 2
+    "title": "Build and Development Commands",
+    "content": "- **Install dependencies:** `bundle install && cd scripts && npm install && cd ..` - **Build site and search database:** `./scripts/build.sh` - **Run local server:** `bundle exec jekyll serve` (don't run this automatically, user will do manually) - **Fetch blog content:** `cd scripts && npm run fetch-github && cd ..` - **Generate search database:** `ruby scripts/generate_search_db.rb`",
+    "url": "/claude/#Build%2Band%2BDevelopment%2BCommands",
+    "type": "markdown_section",
+    "priority": 3
   },
   {
-    "title": "Teaching - About Our Teaching Philosophy",
-    "content": "If you're interested in hosting a course or workshop with CoMPhy Lab, please [contact us](/join) for collaboration opportunities.",
-    "url": "/teaching/#About%2BOur%2BTeaching%2BPhilosophy",
-    "type": "teaching_paragraph",
-    "priority": 2
+    "title": "Build and Development Commands",
+    "content": "- **Install dependencies:** `bundle install && cd scripts && npm install && cd ..` - **Build site and search database:** `./scripts/build.sh` - **Run local server:** `bundle exec jekyll serve` (don't run this automatically, user will do manually) - **Fetch blog content:** `cd scripts && npm run fetch-github && cd ..` - **Generate search database:** `ruby scripts/generate_search_db.rb`",
+    "url": "/claude/#Build%2Band%2BDevelopment%2BCommands",
+    "type": "markdown_text",
+    "priority": 3
+  },
+  {
+    "title": "Repository Guidelines",
+    "content": "- Refer to README.md to understand the codebase structure and organization - After adding or deleting files, update README.md accordingly - Keep README.md up-to-date whenever changes affect what's documented there - Templates are in _layouts/*.html with corresponding CSS files: - default.html uses styles.css in /assets/css - research.html uses research.css - team.html uses team.css - All layouts use styles.css as base styling",
+    "url": "/claude/#Repository%2BGuidelines",
+    "type": "markdown_section",
+    "priority": 3
+  },
+  {
+    "title": "Repository Guidelines",
+    "content": "- Refer to README.md to understand the codebase structure and organization - After adding or deleting files, update README.md accordingly - Keep README.md up-to-date whenever changes affect what's documented there - Templates are in _layouts/*.html with corresponding CSS files: - default.html uses styles.css in /assets/css - research.html uses research.css - team.html uses team.css - All layouts use styles.css as base styling",
+    "url": "/claude/#Repository%2BGuidelines",
+    "type": "markdown_text",
+    "priority": 3
+  },
+  {
+    "title": "General",
+    "content": "- Use 2-space indentation across all files - Follow DRY principles: reuse components, variables, and styles - Add comments for complex logic, but keep code self-documenting - Support both light and dark themes for all new features and changes - Test all UI changes in both themes before committing - Use CSS variables for theme-specific colors (defined in styles.css)",
+    "url": "/claude/#General",
+    "type": "markdown_section",
+    "priority": 3
+  },
+  {
+    "title": "General",
+    "content": "- Use 2-space indentation across all files - Follow DRY principles: reuse components, variables, and styles - Add comments for complex logic, but keep code self-documenting - Support both light and dark themes for all new features and changes - Test all UI changes in both themes before committing - Use CSS variables for theme-specific colors (defined in styles.css)",
+    "url": "/claude/#General",
+    "type": "markdown_text",
+    "priority": 3
+  },
+  {
+    "title": "HTML/Markdown",
+    "content": "- Use semantic HTML elements - Follow BEM naming convention for CSS classes (e.g., `s-header__nav-list`) - Keep content files in markdown format where possible",
+    "url": "/claude/#HTMLMarkdown",
+    "type": "markdown_section",
+    "priority": 3
+  },
+  {
+    "title": "HTML/Markdown",
+    "content": "- Use semantic HTML elements - Follow BEM naming convention for CSS classes (e.g., `s-header__nav-list`) - Keep content files in markdown format where possible",
+    "url": "/claude/#HTMLMarkdown",
+    "type": "markdown_text",
+    "priority": 3
+  },
+  {
+    "title": "CSS",
+    "content": "- Use CSS variables for colors and typography (defined in `:root`) - Use responsive breakpoints at 1700px, 1300px, 900px, 768px, 500px - Use `rem` units for font sizes and spacing - Follow mobile-first approach for media queries - Implement dark theme styles using the [data-theme=\"dark\"] selector - Theme colors are defined in styles.css and page-specific CSS files",
+    "url": "/claude/#CSS",
+    "type": "markdown_section",
+    "priority": 3
+  },
+  {
+    "title": "CSS",
+    "content": "- Use CSS variables for colors and typography (defined in `:root`) - Use responsive breakpoints at 1700px, 1300px, 900px, 768px, 500px - Use `rem` units for font sizes and spacing - Follow mobile-first approach for media queries - Implement dark theme styles using the [data-theme=\"dark\"] selector - Theme colors are defined in styles.css and page-specific CSS files",
+    "url": "/claude/#CSS",
+    "type": "markdown_text",
+    "priority": 3
+  },
+  {
+    "title": "JavaScript",
+    "content": "- Use ES6+ features (arrow functions, const/let, template literals) - Always include 'use strict' mode - Use async/await for asynchronous operations - Implement error handling with try/catch blocks - Use camelCase for variable and function names - Prefer event delegation for multiple similar elements",
+    "url": "/claude/#JavaScript",
+    "type": "markdown_section",
+    "priority": 3
+  },
+  {
+    "title": "JavaScript",
+    "content": "- Use ES6+ features (arrow functions, const/let, template literals) - Always include 'use strict' mode - Use async/await for asynchronous operations - Implement error handling with try/catch blocks - Use camelCase for variable and function names - Prefer event delegation for multiple similar elements",
+    "url": "/claude/#JavaScript",
+    "type": "markdown_text",
+    "priority": 3
+  },
+  {
+    "title": "Images",
+    "content": "- Optimize images for web (compress to reduce file size) - Follow naming convention: `[name]-[descriptor].[extension]` - Include alt text for all images",
+    "url": "/claude/#Images",
+    "type": "markdown_section",
+    "priority": 3
+  },
+  {
+    "title": "Images",
+    "content": "- Optimize images for web (compress to reduce file size) - Follow naming convention: `[name]-[descriptor].[extension]` - Include alt text for all images",
+    "url": "/claude/#Images",
+    "type": "markdown_text",
+    "priority": 3
+  },
+  {
+    "title": "April",
+    "content": "- Vatsal Sanjay awarded the Ammodo Science Fellowship . His research will focus on understanding fluid dynamics in fungal networks—investigating how these vast underground systems transport water, nutrients, and genetic information across ecosystems. Read More Image credit: J. Heitman, B. J. Howlett, P. W. Crous, E. H. Stukenbrock, T. Y. James & N. A. R. Gow, The fungal kingdom, John Wiley & Sons (2020)",
+    "url": "/news/#April",
+    "type": "markdown_section",
+    "priority": 3
+  },
+  {
+    "title": "April",
+    "content": "- Vatsal Sanjay awarded the Ammodo Science Fellowship . His research will focus on understanding fluid dynamics in fungal networks—investigating how these vast underground systems transport water, nutrients, and genetic information across ecosystems. Read More Image credit: J. Heitman, B. J. Howlett, P. W. Crous, E. H. Stukenbrock, T. Y. James & N. A. R. Gow, The fungal kingdom, John Wiley & Sons (2020)",
+    "url": "/news/#April",
+    "type": "markdown_text",
+    "priority": 3
+  },
+  {
+    "title": "March",
+    "content": "- Prof. Detlef Lohse shares his scientific journey in The Living Histories Series . His inspiring discussion on curiosity, mentorship, and the \"puzzle solving\" joy of science offers valuable insights for researchers at all career stages. Watch on YouTube Sanjay, V. , & Lohse, D. Unifying theory of scaling in drop impact: Forces & maximum spreading diameter. Published in Physical Review Letters.](/research#15) View Paper --> - Join us for a hybrid online+offline course: [High-Fidelity Simulations Using Basilisk C](/teaching/2025-Basilisk101-Madrid) in Madrid, Spain (March 10-13). Learn some computational (colorful) fluid dynamics with hands-on coding sessions.",
+    "url": "/news/#March",
+    "type": "markdown_section",
+    "priority": 3
+  },
+  {
+    "title": "March",
+    "content": "- Prof. Detlef Lohse shares his scientific journey in The Living Histories Series . His inspiring discussion on curiosity, mentorship, and the \"puzzle solving\" joy of science offers valuable insights for researchers at all career stages. Watch on YouTube Sanjay, V. , & Lohse, D. Unifying theory of scaling in drop impact: Forces & maximum spreading diameter. Published in Physical Review Letters.](/research#15) View Paper --> - Join us for a hybrid online+offline course: [High-Fidelity Simulations Using Basilisk C](/teaching/2025-Basilisk101-Madrid) in Madrid, Spain (March 10-13). Learn some computational (colorful) fluid dynamics with hands-on coding sessions.",
+    "url": "/news/#March",
+    "type": "markdown_text",
+    "priority": 3
+  },
+  {
+    "title": "February",
+    "content": "- [ Sanjay, V. , Zhang, B., Lv, C., & Lohse, D. J. Fluid Mech., 1004, A6 (2025) selected as the cover article.](/research#14) Download Cover View Paper - Milan Sent graduated with a bachelor's degree from University of Twente. Thesis: Spinning Pizza",
+    "url": "/news/#February",
+    "type": "markdown_section",
+    "priority": 3
+  },
+  {
+    "title": "February",
+    "content": "- [ Sanjay, V. , Zhang, B., Lv, C., & Lohse, D. J. Fluid Mech., 1004, A6 (2025) selected as the cover article.](/research#14) Download Cover View Paper - Milan Sent graduated with a bachelor's degree from University of Twente. Thesis: Spinning Pizza",
+    "url": "/news/#February",
+    "type": "markdown_text",
+    "priority": 3
+  },
+  {
+    "title": "December",
+    "content": "[Balasubramanian, A. G., Sanjay, V. , Jalaal, M., Vinuesa, R., & Tammisola, O. J. Fluid Mech., 1001, A9 (2024). selected as the cover article.](/research#12) Download Cover View Paper",
+    "url": "/news/#December",
+    "type": "markdown_section",
+    "priority": 3
+  },
+  {
+    "title": "December",
+    "content": "[Balasubramanian, A. G., Sanjay, V. , Jalaal, M., Vinuesa, R., & Tammisola, O. J. Fluid Mech., 1001, A9 (2024). selected as the cover article.](/research#12) Download Cover View Paper",
+    "url": "/news/#December",
+    "type": "markdown_text",
+    "priority": 3
+  },
+  {
+    "title": "November",
+    "content": "Vatsal Sanjay recognized as an Outstanding Reviewer 2023 by the Journal of Fluid Mechanics for his contributions to the peer review process.",
+    "url": "/news/#November",
+    "type": "markdown_section",
+    "priority": 3
+  },
+  {
+    "title": "November",
+    "content": "Vatsal Sanjay recognized as an Outstanding Reviewer 2023 by the Journal of Fluid Mechanics for his contributions to the peer review process.",
+    "url": "/news/#November",
+    "type": "markdown_text",
+    "priority": 3
+  },
+  {
+    "title": "May",
+    "content": "Vatsal Sanjay awarded the KIVI Hoogendoorn Fluid Mechanics Award 2023 for his PhD thesis \"Viscous Free-Surface Flows\". The award ceremony took place at the Burgers Symposium on 29–30 May 2024 in Lunteren.",
+    "url": "/news/#May",
+    "type": "markdown_section",
+    "priority": 3
+  },
+  {
+    "title": "May",
+    "content": "Vatsal Sanjay awarded the KIVI Hoogendoorn Fluid Mechanics Award 2023 for his PhD thesis \"Viscous Free-Surface Flows\". The award ceremony took place at the Burgers Symposium on 29–30 May 2024 in Lunteren.",
+    "url": "/news/#May",
+    "type": "markdown_text",
+    "priority": 3
+  },
+  {
+    "title": "About Us",
+    "content": "We are based at the Physics of Fluids Department at the University of Twente, where we investigate [**non-Newtonian free-surface flows**](/research/?tag=Non-Newtonian) and [**soft matter singularities**](/research/?tag=Soft-matter-singularities). Our group employs a synergy of continuum simulations, experiments (through collaborations), and theoretical analysis to understand phenomena ranging involving drops, bubbles, jets, sheets, and more. We strive to connect fundamental findings with real-world applications, from industrial processes to everyday fluid dynamics.",
+    "url": "/aboutcomphy/#About%2BUs",
+    "type": "markdown_section",
+    "priority": 3
+  },
+  {
+    "title": "About Us",
+    "content": "We are based at the Physics of Fluids Department at the University of Twente, where we investigate [**non-Newtonian free-surface flows**](/research/?tag=Non-Newtonian) and [**soft matter singularities**](/research/?tag=Soft-matter-singularities). Our group employs a synergy of continuum simulations, experiments (through collaborations), and theoretical analysis to understand phenomena ranging involving drops, bubbles, jets, sheets, and more. We strive to connect fundamental findings with real-world applications, from industrial processes to everyday fluid dynamics.",
+    "url": "/aboutcomphy/#About%2BUs",
+    "type": "markdown_text",
+    "priority": 3
+  },
+  {
+    "title": "Soft Matter Singularities",
+    "content": "We examine topological transitions in fluid systems—such as [**droplet impact**](/research/?tag=Drops), [**bubble bursting**](/research/?tag=Bubbles), and [**sheet fragmentation**](/research/?tag=Sheets) — where local instabilities drive fast, often dramatic flow dynamics. Our goal is to expose the universal mechanisms governing these [**singular**]((/research/?tag=Soft-matter-singularities)) events in soft matter.",
+    "url": "/aboutcomphy/#Soft%2BMatter%2BSingularities",
+    "type": "markdown_section",
+    "priority": 3
+  },
+  {
+    "title": "Soft Matter Singularities",
+    "content": "We examine topological transitions in fluid systems—such as [**droplet impact**](/research/?tag=Drops), [**bubble bursting**](/research/?tag=Bubbles), and [**sheet fragmentation**](/research/?tag=Sheets) — where local instabilities drive fast, often dramatic flow dynamics. Our goal is to expose the universal mechanisms governing these [**singular**]((/research/?tag=Soft-matter-singularities)) events in soft matter.",
+    "url": "/aboutcomphy/#Soft%2BMatter%2BSingularities",
+    "type": "markdown_text",
+    "priority": 3
+  },
+  {
+    "title": "Non-Newtonian Flows as the `Drosophila' of Continuum Mechanics",
+    "content": "From [**elastoviscoplastic**]((/research/?tag=Non-Newtonian)) bubble bursting and elastic sheet break-up to champagne [**bubble**](/research/?tag=Bubbles) bursting and classical Taylor–Culick retractions, non-Newtonian fluids serve as model systems to explore the fundamentals of continuum mechanics. By integrating high-fidelity simulations, analytical frameworks, and collaborative experiments, we reveal how microstructural stresses affect fluid and solid dynamics. This research provides key insights for industrial and environmental applications.",
+    "url": "/aboutcomphy/#Non-Newtonian%2BFlows%2Bas%2Bthe%2BDrosophila%27%2Bof%2BContinuum%2BMechanics",
+    "type": "markdown_section",
+    "priority": 3
+  },
+  {
+    "title": "Non-Newtonian Flows as the `Drosophila' of Continuum Mechanics",
+    "content": "From [**elastoviscoplastic**]((/research/?tag=Non-Newtonian)) bubble bursting and elastic sheet break-up to champagne [**bubble**](/research/?tag=Bubbles) bursting and classical Taylor–Culick retractions, non-Newtonian fluids serve as model systems to explore the fundamentals of continuum mechanics. By integrating high-fidelity simulations, analytical frameworks, and collaborative experiments, we reveal how microstructural stresses affect fluid and solid dynamics. This research provides key insights for industrial and environmental applications.",
+    "url": "/aboutcomphy/#Non-Newtonian%2BFlows%2Bas%2Bthe%2BDrosophila%27%2Bof%2BContinuum%2BMechanics",
+    "type": "markdown_text",
+    "priority": 3
+  },
+  {
+    "title": "Viscous Free-Surface Flows",
+    "content": "We investigate various viscous free-surface flows including inertial contact lines, [**bubble**](/research/?tag=Bubbles) removal, and focusing of [**waves**](/research/?tag=Waves). These phenomena are critical to energy transitions and manufacturing. For instance, a key challenge is optimizing bubble detachment in electrolysis to boost efficiency. This research involves advanced numerical methods and industry partnerships, with the broader aim of advancing technologies from chemical reactors to printing processes.",
+    "url": "/aboutcomphy/#Viscous%2BFree-Surface%2BFlows",
+    "type": "markdown_section",
+    "priority": 3
+  },
+  {
+    "title": "Viscous Free-Surface Flows",
+    "content": "We investigate various viscous free-surface flows including inertial contact lines, [**bubble**](/research/?tag=Bubbles) removal, and focusing of [**waves**](/research/?tag=Waves). These phenomena are critical to energy transitions and manufacturing. For instance, a key challenge is optimizing bubble detachment in electrolysis to boost efficiency. This research involves advanced numerical methods and industry partnerships, with the broader aim of advancing technologies from chemical reactors to printing processes.",
+    "url": "/aboutcomphy/#Viscous%2BFree-Surface%2BFlows",
+    "type": "markdown_text",
+    "priority": 3
+  },
+  {
+    "title": "Commitment to Open Science",
+    "content": "Open exchange of ideas drives our progress. We share our codes from the earliest stages of development, embracing transparent research practices to foster collaboration and reproducibility. We welcome inquiries and partnerships from the broader scientific community. Watchout for [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab) and [ ](https://github.com/comphy-lab \"Visit our GitHub organization\") on this website to interact with our codes. Feel free to contact us for discussions about our work or anything else related to fluid physics. Nothing is more exhilarating than a healthy scientific discussion.",
+    "url": "/aboutcomphy/#Commitment%2Bto%2BOpen%2BScience",
+    "type": "markdown_section",
+    "priority": 3
+  },
+  {
+    "title": "Commitment to Open Science",
+    "content": "Open exchange of ideas drives our progress. We share our codes from the earliest stages of development, embracing transparent research practices to foster collaboration and reproducibility. We welcome inquiries and partnerships from the broader scientific community. Watchout for [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab) and [ ](https://github.com/comphy-lab \"Visit our GitHub organization\") on this website to interact with our codes. Feel free to contact us for discussions about our work or anything else related to fluid physics. Nothing is more exhilarating than a healthy scientific discussion.",
+    "url": "/aboutcomphy/#Commitment%2Bto%2BOpen%2BScience",
+    "type": "markdown_text",
+    "priority": 3
+  },
+  {
+    "title": "Location & Website",
+    "content": "[![Location](https://img.shields.io/badge/-Physics%20of%20Fluids-4285F4?style=flat&logo=googlemaps&logoColor=white)](https://maps.app.goo.gl/jSTCYnfcndF1uZPV8) [![Website](https://img.shields.io/badge/-comphy--lab.org-4285F4?style=flat&logo=googlechrome&logoColor=white)](http://www.comphy-lab.org) [![Email](https://img.shields.io/badge/-mailto:vatsalsy@comphy--lab.org-EA4335?style=flat&logo=gmail&logoColor=white)](mailto:vatsalsy@comphy-lab.org) vatsalsy@comphy-lab.org",
+    "url": "/aboutcomphy/#Location%2BWebsite",
+    "type": "markdown_section",
+    "priority": 3
+  },
+  {
+    "title": "Location & Website",
+    "content": "[![Location](https://img.shields.io/badge/-Physics%20of%20Fluids-4285F4?style=flat&logo=googlemaps&logoColor=white)](https://maps.app.goo.gl/jSTCYnfcndF1uZPV8) [![Website](https://img.shields.io/badge/-comphy--lab.org-4285F4?style=flat&logo=googlechrome&logoColor=white)](http://www.comphy-lab.org) [![Email](https://img.shields.io/badge/-mailto:vatsalsy@comphy--lab.org-EA4335?style=flat&logo=gmail&logoColor=white)](mailto:vatsalsy@comphy-lab.org) vatsalsy@comphy-lab.org",
+    "url": "/aboutcomphy/#Location%2BWebsite",
+    "type": "markdown_text",
+    "priority": 3
+  },
+  {
+    "title": "Academic Profiles",
+    "content": "[![Google Scholar](https://img.shields.io/badge/-Google%20Scholar-4285F4?style=flat&logo=googlescholar&logoColor=white)](https://scholar.google.com/citations?user=tHb_qZoAAAAJ&hl=en) [![ORCID](https://img.shields.io/badge/-ORCID-A6CE39?style=flat&logo=orcid&logoColor=white)](https://orcid.org/0000-0002-4293-6099) [![arXiv](https://img.shields.io/badge/-arXiv-B31B1B?style=flat&logo=arxiv&logoColor=white)](https://arxiv.org/search/?query=vatsal+sanjay&searchtype=all&source=header) [![ResearchGate](https://img.shields.io/badge/-ResearchGate-00CCBB?style=flat&logo=researchgate&logoColor=white)](https://www.researchgate.net/profile/Vatsal-Sanjay-2)",
+    "url": "/aboutcomphy/#Academic%2BProfiles",
+    "type": "markdown_section",
+    "priority": 3
+  },
+  {
+    "title": "Academic Profiles",
+    "content": "[![Google Scholar](https://img.shields.io/badge/-Google%20Scholar-4285F4?style=flat&logo=googlescholar&logoColor=white)](https://scholar.google.com/citations?user=tHb_qZoAAAAJ&hl=en) [![ORCID](https://img.shields.io/badge/-ORCID-A6CE39?style=flat&logo=orcid&logoColor=white)](https://orcid.org/0000-0002-4293-6099) [![arXiv](https://img.shields.io/badge/-arXiv-B31B1B?style=flat&logo=arxiv&logoColor=white)](https://arxiv.org/search/?query=vatsal+sanjay&searchtype=all&source=header) [![ResearchGate](https://img.shields.io/badge/-ResearchGate-00CCBB?style=flat&logo=researchgate&logoColor=white)](https://www.researchgate.net/profile/Vatsal-Sanjay-2)",
+    "url": "/aboutcomphy/#Academic%2BProfiles",
+    "type": "markdown_text",
+    "priority": 3
+  },
+  {
+    "title": "Social Media",
+    "content": "[![X](https://img.shields.io/badge/-@CoMPhyLab-000000?style=flat&logo=x&logoColor=white)](https://twitter.com/VatsalSanjay) [![Bluesky](https://img.shields.io/badge/-@comphy--lab.org-0285FF?style=flat&logo=bluesky&logoColor=white)](https://bsky.app/profile/comphy-lab.org) For supplementary videos and teaser of our upcoming work:",
+    "url": "/aboutcomphy/#Social%2BMedia",
+    "type": "markdown_section",
+    "priority": 3
+  },
+  {
+    "title": "Social Media",
+    "content": "[![X](https://img.shields.io/badge/-@CoMPhyLab-000000?style=flat&logo=x&logoColor=white)](https://twitter.com/VatsalSanjay) [![Bluesky](https://img.shields.io/badge/-@comphy--lab.org-0285FF?style=flat&logo=bluesky&logoColor=white)](https://bsky.app/profile/comphy-lab.org) For supplementary videos and teaser of our upcoming work:",
+    "url": "/aboutcomphy/#Social%2BMedia",
+    "type": "markdown_text",
+    "priority": 3
   },
   {
     "title": "0_README - Welcome to the CoMPhy Lab's documentation hub",
