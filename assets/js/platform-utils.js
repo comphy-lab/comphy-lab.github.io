@@ -9,7 +9,13 @@ function isMacPlatform() {
 }
 
 /**
- * Update UI elements based on platform (Mac vs non-Mac)
+ * Updates UI elements to reflect the user's platform.
+ *
+ * This function determines whether the current platform is a Mac by calling `isMacPlatform()`
+ * and adjusts the visibility of UI elements accordingly:
+ * - Elements with the class `.default-theme-text` are hidden on Mac platforms.
+ * - Elements with the class `.mac-theme-text` are shown on Mac platforms.
+ * On non-Mac platforms, the visibility settings are reversed.
  */
 function updatePlatformSpecificElements() {
   const isMac = isMacPlatform();
