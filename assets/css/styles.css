@@ -137,9 +137,12 @@ body {
 
 /* Apply exceptions for colored icons */
 .s-header__nav-list .fa-bluesky,
-.team-member .fa-bluesky,
-.footer-right .fa-bluesky {
+.team-member .fa-bluesky {
   color: #0085ff !important;
+}
+
+.footer-right .fa-bluesky {
+  color: white !important;
 }
 
 .s-header__nav-list .fa-linkedin,
@@ -150,9 +153,12 @@ body {
 }
 
 .s-header__nav-list .fa-x-twitter,
-.team-member .fa-x-twitter,
-.footer-right .fa-x-twitter {
+.team-member .fa-x-twitter {
   color: #000000 !important;
+}
+
+.footer-right .fa-x-twitter {
+  color: white !important;
 }
 
 .s-header__nav-list .fa-wikipedia-w,
