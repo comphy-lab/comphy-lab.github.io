@@ -1,6 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
   // Platform detection is now handled by platform-utils.js
-  // Update the displayed shortcut text is now handled by platform-utils.js
+  /**
+   * Dynamically loads a stylesheet into the document's head.
+   *
+   * Creates a <link> element with the specified URL, sets attributes necessary for secure loading,
+   * and appends it to the document's head. If the stylesheet fails to load, an error is logged
+   * to the console.
+   *
+   * @param {string} href - The URL of the stylesheet to be loaded.
+   * @returns {HTMLLinkElement} The created and appended link element.
+   */
   
   function loadStylesheet(href) {
     const link = document.createElement('link');
