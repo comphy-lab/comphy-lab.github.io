@@ -251,10 +251,7 @@
 /* Dark mode styles for command-k button that we aren't using in the main palette */
 /* Dark mode styles for command-k button that we aren't using in the main palette */
 
-.command-palette-footer {
-  background-color: rgba(104, 35, 109, 0.1);
-  border-top-color: rgba(104, 35, 109, 0.3);
-}
+/* Command palette footer styles are defined below */
 
 /* Custom styles for the shortcut help modal */
 .shortcut-help-overlay {
