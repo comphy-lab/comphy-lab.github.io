@@ -101,16 +101,22 @@ body {
 }
 
 /* Make icons use theme colors */
-.s-header__nav i,
-.s-header__nav-list i,
-.fa-brands,
-.fa-solid,
-.ai,
 .s-footer i,
 .site-footer i,
 .footer-left i,
-.footer-right i {
+.footer-right i,
+.fa-solid:not(.s-header__nav-list .fa-solid),
+.fa-brands:not(.s-header__nav-list .fa-brands),
+.ai:not(.s-header__nav-list .ai) {
   color: var(--icon-color);
+  font-size: 1.5em;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Header icons in command palette retain their natural colors */
+.s-header__nav i,
+.s-header__nav-list i {
+  /* Use their natural colors */
   font-size: 1.5em;
   transition: transform 0.3s ease, color 0.3s ease;
 }
