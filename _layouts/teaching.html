@@ -81,6 +81,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
   <script defer src="/assets/js/main.js"></script>
+  <script defer src="/assets/js/platform-utils.js"></script>
   <script defer src="/assets/js/command-data.js"></script>
 
   <!-- Theme toggle functionality -->
@@ -127,15 +128,6 @@
   <!-- Command palette (implementation in assets/js/command-palette.js) -->
   <script defer src="/assets/js/command-palette.js"></script>
 
-
-
-
-  </script>
-
-  <script>
-    document.documentElement.classList.remove('no-js');
-    document.documentElement.classList.add('js');
-  </script>
   <script>
     // Check if we're on localhost
     if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
@@ -177,33 +169,8 @@
   <!-- Command Palette Button Handler -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Set platform-specific shortcut text visibility
-      const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
-      
-      // Show/hide the appropriate shortcut text based on platform
-      const defaultText = document.querySelector('.default-theme-text');
-      const macText = document.querySelector('.mac-theme-text');
-      
-      if (defaultText && macText) {
-        if (isMac) {
-          defaultText.style.display = 'none';
-          macText.style.display = 'inline-block';
-        } else {
-          defaultText.style.display = 'inline-block';
-          macText.style.display = 'none';
-        }
-      }
-      
-      // Add click handler for command palette button
-      const commandButton = document.getElementById('command-palette-btn');
-      if (commandButton) {
-        commandButton.addEventListener('click', function(e) {
-          e.preventDefault();
-          if (typeof window.openCommandPalette === 'function') {
-            window.openCommandPalette();
-          }
-        });
-      }
+      // Platform detection is now handled by platform-utils.js
+      // Update the displayed shortcut text is now handled by platform-utils.js
     });
   </script>
 

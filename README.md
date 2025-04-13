@@ -38,7 +38,8 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 │   ├── js                    # JavaScript files
 │   │   ├── main.js          # Main JavaScript
 │   │   ├── command-data.js  # Command palette data and functionality
-│   │   ├── shortcut-key.js  # Platform detection for shortcuts
+│   │   ├── platform-utils.js # Platform detection and UI utilities
+│   │   ├── shortcut-key.js  # Keyboard shortcut handling
 │   │   └── search_db.json   # Generated search database (used by command palette)
 │   ├── favicon              # Favicon files
 │   └── img                  # Image assets
