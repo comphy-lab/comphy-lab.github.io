@@ -111,6 +111,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
   <script defer src="/assets/js/main.js"></script>
+  <script defer src="/assets/js/platform-utils.js"></script>
   <script defer src="/assets/js/command-data.js"></script>
 
   <script>
@@ -195,49 +196,9 @@
     window.addEventListener('load', function() {
       const commandPaletteButton = document.getElementById('command-palette-button');
       if (commandPaletteButton) {
-        // Set the appropriate shortcut hint based on platform
-        const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
-        const shortcutHint = document.getElementById('command-palette-shortcut');
-        if (shortcutHint) {
-          shortcutHint.textContent = isMac ? '⌘K' : 'Ctrl+K';
-        }
-
-        // Add click event listener to the command palette button
-        commandPaletteButton.addEventListener('click', function() {
-          console.log('Command palette button clicked');
-          if (typeof window.openCommandPalette === 'function') {
-            window.openCommandPalette();
-          } else {
-            // Fallback to simple command palette
-            const simpleCommandPalette = document.querySelector('.simple-command-palette');
-            if (simpleCommandPalette) {
-              simpleCommandPalette.classList.add('visible');
-              const input = simpleCommandPalette.querySelector('input');
-              if (input) input.focus();
-            }
-          }
-        });
+        // Platform detection is now handled by platform-utils.js
+        // Update the displayed shortcut text is now handled by platform-utils.js
       }
-
-      // Add keyboard shortcut listener
-      document.addEventListener('keydown', function(e) {
-        // Check for Ctrl+K or Cmd+K (Mac)
-        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
-          e.preventDefault();
-          console.log('Command palette keyboard shortcut detected');
-          if (typeof window.openCommandPalette === 'function') {
-            window.openCommandPalette();
-          } else {
-            // Fallback to simple command palette
-            const simpleCommandPalette = document.querySelector('.simple-command-palette');
-            if (simpleCommandPalette) {
-              simpleCommandPalette.classList.add('visible');
-              const input = simpleCommandPalette.querySelector('input');
-              if (input) input.focus();
-            }
-          }
-        }
-      });
     });
   </script>
 
