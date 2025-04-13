@@ -107,7 +107,7 @@ body {
 .footer-right i,
 .fa-solid:not(.s-header__nav-list .fa-solid),
 .fa-brands:not(.s-header__nav-list .fa-brands),
-.ai:not(.s-header__nav-list .ai) {
+.ai:not(.s-header__nav-list .ai):not(.team-member .ai) {
   color: var(--icon-color);
   font-size: 1.5em;
   transition: transform 0.3s ease, color 0.3s ease;
@@ -2493,4 +2493,14 @@ img.youtube-stats-dark {
 
 .copy-btn i {
   pointer-events: none;
+}
+
+/* Team member Google Scholar icon */
+.team-member .ai-google-scholar {
+  color: #e76b39 !important;
+}
+
+/* Dark theme - make Google Scholar icon white */
+[data-theme="dark"] .team-member .ai-google-scholar {
+  color: #ffffff !important;
 }
