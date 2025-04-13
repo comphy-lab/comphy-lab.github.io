@@ -13,7 +13,7 @@
         <a href="https://ammodo-science.webflow.io/researches/vatsal-sanjay" style="display: flex; align-items: center; text-decoration: none; color: #cf4900; font-size: 1em; font-weight: 500;"><i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 8px; font-size: 1.2em;"></i>Read More</a>
       </div>
     </div>
-    <div style="font-size: 0.75em; color: #666; margin-top: 5px; font-style: italic;">
+    <div style="font-size: 0.75em; color: var(--color-text); opacity: 0.7; margin-top: 5px; font-style: italic;">
       Image credit: J. Heitman, B. J. Howlett, P. W. Crous, E. H. Stukenbrock, T. Y. James & N. A. R. Gow, The fungal kingdom, John Wiley & Sons (2020)
     </div>
   </div>
