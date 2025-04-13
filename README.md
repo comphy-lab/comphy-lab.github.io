@@ -33,12 +33,13 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 │   │   ├── research.css      # Research page styles with dark mode support
 │   │   ├── teaching.css      # Teaching page styles with dark mode support
 │   │   ├── team.css          # Team page styles with dark mode support
-│   │   ├── styles.css        # Global styles with light/dark theme variables
+│   │   ├── styles.css        # Global styles with light/dark theme variables (optimized)
 │   │   └── command-palette.css # Command palette styles (⌘K)
 │   ├── js                    # JavaScript files
 │   │   ├── main.js          # Main JavaScript
 │   │   ├── command-data.js  # Command palette data and functionality
-│   │   ├── shortcut-key.js  # Platform detection for shortcuts
+│   │   ├── platform-utils.js # Platform detection and UI utilities
+│   │   ├── shortcut-key.js  # Keyboard shortcut handling
 │   │   └── search_db.json   # Generated search database (used by command palette)
 │   ├── favicon              # Favicon files
 │   └── img                  # Image assets
@@ -468,3 +469,64 @@ To submit a PR:
 4. Create a PR using the template
 5. Link any related issues
 6. Wait for review
+
+### Code Style
+
+#### General
+- Use 2-space indentation across all files
+- Follow DRY principles: reuse components, variables, and styles
+- Add comments for complex logic, but keep code self-documenting
+
+#### HTML/Markdown
+- Use semantic HTML elements
+- Follow BEM naming convention for CSS classes (e.g., `s-header__nav-list`)
+- Keep content files in markdown format where possible
+
+#### CSS
+- Use CSS variables for colors and typography (defined in `:root`)
+- Use responsive breakpoints at 1700px, 1300px, 900px, 768px, 500px
+- Use `rem` units for font sizes and spacing
+- Follow mobile-first approach for media queries
+- Leverage CSS custom properties for theme switching
+- Organize media queries by breakpoint for better maintainability
+- Use standardized variable naming for consistent styling
+
+#### JavaScript
+- Use ES6+ features (arrow functions, const/let, template literals)
+- Always include 'use strict' mode
+- Use async/await for asynchronous operations
+- Implement error handling with try/catch blocks
+- Use camelCase for variable and function names
+- Prefer event delegation for multiple similar elements
+
+#### Images
+- Optimize images for web (compress to reduce file size)
+- Follow naming convention: `[name]-[descriptor].[extension]`
+- Include alt text for all images
+
+### CSS Architecture
+
+The website's CSS has been optimized for better performance and maintainability:
+
+1. **Variable System**
+   - Color variables for both light and dark themes
+   - Typography variables for consistent font sizing
+   - Spacing variables for layout consistency
+   - Shadow and transition presets for unified effects
+
+2. **Consolidated Media Queries**
+   - Queries organized by breakpoint rather than by component
+   - Shared breakpoints at 1700px, 1300px, 1200px, 900px, 768px, and 500px
+   - Mobile-first approach throughout
+
+3. **Optimized Dark Theme Support**
+   - CSS variables for seamless theme switching
+   - Fallback values for older browsers
+   - Theme-specific accent colors and contrasts
+   - Consistent text and background colors across components
+
+4. **Performance Improvements**
+   - Reduced redundant selectors
+   - Consolidated duplicate styles
+   - Optimized transitions and animations
+   - Simplified box shadows for better rendering
