@@ -110,13 +110,6 @@
     
     // Help commands
     {
-      id: "help",
-      title: "View Keyboard Shortcuts",
-      handler: () => { window.displayShortcutsHelp(); },
-      section: "Help",
-      icon: '<i class="fa-solid fa-question-circle"></i>'
-    },
-    {
       id: "repository",
       title: "View Website Repository",
       handler: () => { window.open('https://github.com/comphy-lab/comphy-lab.github.io', '_blank'); },
