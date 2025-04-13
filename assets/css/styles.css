@@ -111,17 +111,104 @@ body {
 .footer-left i,
 .footer-right i {
   color: var(--icon-color);
+  font-size: 1.5em;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-/* Ensure GitHub icons are white in dark theme */
+/* Ensure social media icons are white in dark theme */
 [data-theme="dark"] .fa-brands.fa-github,
-[data-theme="dark"] .team-member .fa-brands.fa-github {
+[data-theme="dark"] .team-member .fa-brands.fa-github,
+[data-theme="dark"] .fa-brands.fa-linkedin,
+[data-theme="dark"] .team-member .fa-brands.fa-linkedin,
+[data-theme="dark"] .fa-brands.fa-x-twitter,
+[data-theme="dark"] .team-member .fa-brands.fa-x-twitter,
+[data-theme="dark"] .fa-brands.fa-bluesky,
+[data-theme="dark"] .team-member .fa-brands.fa-bluesky,
+[data-theme="dark"] .fa-brands.fa-wikipedia-w,
+[data-theme="dark"] .team-member .fa-brands.fa-wikipedia-w {
   color: #ffffff !important;
 }
 
 /* Apply exceptions for colored icons */
-.s-header__nav-list .fa-bluesky {
+.s-header__nav-list .fa-bluesky,
+.team-member .fa-bluesky,
+.footer-right .fa-bluesky {
   color: #0085ff !important;
+}
+
+.s-header__nav-list .fa-linkedin,
+.team-member .fa-linkedin,
+.footer-right .fa-linkedin {
+  color: #0077b5 !important;
+  font-size: 1.7em;
+}
+
+.s-header__nav-list .fa-x-twitter,
+.team-member .fa-x-twitter,
+.footer-right .fa-x-twitter {
+  color: #000000 !important;
+}
+
+.s-header__nav-list .fa-wikipedia-w,
+.team-member .fa-wikipedia-w,
+.footer-right .fa-wikipedia-w {
+  color: #000000 !important;
+  font-size: 1.4em;
+}
+
+[data-theme="dark"] .s-header__nav-list .fa-x-twitter,
+[data-theme="dark"] .team-member .fa-x-twitter,
+[data-theme="dark"] .footer-right .fa-x-twitter,
+[data-theme="dark"] .s-header__nav-list .fa-wikipedia-w,
+[data-theme="dark"] .team-member .fa-wikipedia-w,
+[data-theme="dark"] .footer-right .fa-wikipedia-w {
+  color: #ffffff !important;
+}
+
+/* Hover effects for social media icons */
+.s-header__nav-list i:hover,
+.team-member i:hover,
+.footer-right i:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* Ensure consistent sizing in navigation */
+.s-header__nav-list li[style="background: none;"] a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+}
+
+/* Footer social icons specific styles */
+.footer-right i {
+  font-size: 1.6em;
+}
+
+.footer-right .fa-linkedin {
+  font-size: 1.8em;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+  .footer-right i {
+    font-size: 1.5em;
+  }
+  
+  .footer-right .fa-linkedin {
+    font-size: 1.7em;
+  }
+  
+  .s-header__nav-list i {
+    font-size: 1.4em;
+  }
+  
+  .s-header__nav-list .fa-linkedin {
+    font-size: 1.6em;
+  }
 }
 
 /* Theme-aware content styling */
