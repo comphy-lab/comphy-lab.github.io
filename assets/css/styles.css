@@ -113,6 +113,12 @@ body {
   color: var(--icon-color);
 }
 
+/* Ensure GitHub icons are white in dark theme */
+[data-theme="dark"] .fa-brands.fa-github,
+[data-theme="dark"] .team-member .fa-brands.fa-github {
+  color: #ffffff !important;
+}
+
 /* Apply exceptions for colored icons */
 .s-header__nav-list .fa-bluesky {
   color: #0085ff !important;
