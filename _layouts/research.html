@@ -208,25 +208,22 @@
   <script>
     // Check if we're on localhost
     if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-      // Load only specific Font Awesome icons for local development
-      var icons = ['github', 'search', 'arrow-up-right-from-square', 'bluesky', 'youtube', 'arrow-up'];
-      var link = document.createElement('link');
-      link.rel = 'stylesheet';
-      link.href = 'https://use.fontawesome.com/releases/v6.7.2/css/solid.css';
-      link.crossOrigin = 'anonymous';
-      document.head.appendChild(link);
+      // Load Font Awesome stylesheets with improved error handling and version extraction
+      function loadStylesheet(href) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = href;
+        link.crossOrigin = 'anonymous';
+        link.onerror = () => console.error(`Failed to load stylesheet: ${href}`);
+        document.head.appendChild(link);
+        return link;
+      }
+
+      const FA_VERSION = '6.7.2';  // Extract version to a constant for easier updates
       
-      var link2 = document.createElement('link');
-      link2.rel = 'stylesheet';
-      link2.href = 'https://use.fontawesome.com/releases/v6.7.2/css/brands.css';
-      link2.crossOrigin = 'anonymous';
-      document.head.appendChild(link2);
-      
-      var link3 = document.createElement('link');
-      link3.rel = 'stylesheet';
-      link3.href = 'https://use.fontawesome.com/releases/v6.7.2/css/fontawesome.css';
-      link3.crossOrigin = 'anonymous';
-      document.head.appendChild(link3);
+      loadStylesheet(`https://use.fontawesome.com/releases/v${FA_VERSION}/css/solid.css`);
+      loadStylesheet(`https://use.fontawesome.com/releases/v${FA_VERSION}/css/brands.css`);
+      loadStylesheet(`https://use.fontawesome.com/releases/v${FA_VERSION}/css/fontawesome.css`);
     } else {
       // Use Kit for production with defer
       var script = document.createElement('script');
