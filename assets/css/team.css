@@ -261,9 +261,6 @@
   color: #ffffff !important;
 }
 
-[data-theme="dark"] .team-member .fa-bluesky {
-  color: #0085ff !important;
-}
 
 [data-theme="dark"] .team-member .fa-linkedin {
   color: #0077b5 !important;
