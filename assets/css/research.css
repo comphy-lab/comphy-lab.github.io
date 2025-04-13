@@ -651,6 +651,16 @@
   border-color: rgba(111, 161, 255, 0.6) !important;
 }
 
+/* Fix for active tags in dark theme */
+[data-theme="dark"] tags span.active, 
+[data-theme="dark"] tags a.tag-link.active {
+  background: rgba(76, 110, 245, 0.8) !important;
+  color: #ffffff !important;
+  border-color: rgba(111, 161, 255, 0.8) !important;
+  transform: scale(1.1);
+  box-shadow: 0 2px 5px rgba(111, 161, 255, 0.5) !important;
+}
+
 /* First tag - brightest background */
 .research-content tags span:nth-of-type(1) {
   background: rgba(147, 51, 234, 0.15);

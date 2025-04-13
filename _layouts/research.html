@@ -528,7 +528,12 @@
         const updateMatchingTags = (tagText, shouldHighlight) => {
           document.querySelectorAll('tags span').forEach(tag => {
             if (tag.textContent === tagText) {
-              tag.classList.toggle('active', shouldHighlight);
+              // First remove any active class
+              tag.classList.remove('active');
+              // Then add it back if needed
+              if (shouldHighlight) {
+                tag.classList.add('active');
+              }
             }
           });
         };
@@ -541,7 +546,8 @@
             // If clicking the active tag, deactivate it
             if (activeTag === tagText) {
               activeTag = null;
-              updateMatchingTags(tagText, false);
+              // Remove active class from all tags
+              allTags.forEach(t => t.classList.remove('active'));
               paperContainers.forEach(container => {
                 container.classList.remove('hidden');
               });
@@ -551,7 +557,9 @@
 
             // Update active tag
             activeTag = tagText;
+            // Remove active class from all tags
             allTags.forEach(t => t.classList.remove('active'));
+            // Add active class to matching tags
             updateMatchingTags(tagText, true);
 
             // Update URL
