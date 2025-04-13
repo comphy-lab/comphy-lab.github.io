@@ -7,6 +7,7 @@
   --team-image-bg: #f5f5f5;
   --team-member-bg: rgba(255, 255, 255, 0.7);
   --team-shadow: rgba(0, 0, 0, 0.1);
+  --team-icon-color: #333333;
 }
 
 [data-theme="dark"] {
@@ -17,6 +18,7 @@
   --team-image-bg: #2a2a2a;
   --team-member-bg: rgba(40, 40, 40, 0.7);
   --team-shadow: rgba(0, 0, 0, 0.3);
+  --team-icon-color: #ffffff;
 }
 
 /* Team page general styles with dark mode support */
@@ -210,4 +212,24 @@
   .s-map .map-description .gray {
     font-size: 1.3rem;
   }
+}
+
+/* Style for social icons */
+.team-member .fa,
+.team-member .ai {
+  display: inline-block;
+  margin: 0 5px;
+  color: var(--team-icon-color);
+  transition: color 0.3s ease;
+}
+
+/* Specific styling for GitHub icon */
+.team-member .fa-github,
+[data-theme="dark"] .team-member .fa-github {
+  color: var(--team-icon-color) !important;
+}
+
+/* Ensure GitHub icon is white in dark theme */
+[data-theme="dark"] .team-member .fa-brands.fa-github {
+  color: #ffffff !important;
 }
