@@ -2504,3 +2504,12 @@ img.youtube-stats-dark {
 [data-theme="dark"] .team-member .ai-google-scholar {
   color: #ffffff !important;
 }
+
+/* Newspaper icon - black in light theme, white in dark theme */
+.fa-newspaper {
+  color: #000000 !important;
+}
+
+[data-theme="dark"] .fa-newspaper {
+  color: #ffffff !important;
+}
