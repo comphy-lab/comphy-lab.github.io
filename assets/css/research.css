@@ -637,6 +637,20 @@
   border: 1px solid rgba(120, 170, 255, 0.3);
 }
 
+/* Fix for top filter tags in dark theme */
+[data-theme="dark"] tags span, 
+[data-theme="dark"] tags a.tag-link {
+  background: rgba(40, 44, 52, 0.8) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(111, 161, 255, 0.4) !important;
+}
+
+[data-theme="dark"] tags span:hover, 
+[data-theme="dark"] tags a.tag-link:hover {
+  background: rgba(76, 110, 245, 0.5) !important;
+  border-color: rgba(111, 161, 255, 0.6) !important;
+}
+
 /* First tag - brightest background */
 .research-content tags span:nth-of-type(1) {
   background: rgba(147, 51, 234, 0.15);

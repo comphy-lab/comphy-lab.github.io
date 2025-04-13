@@ -1839,18 +1839,31 @@ img.youtube-stats-dark {
 .featured-paper tags span {
   display: inline-block;
   padding: 0.4rem 0.8rem;
-  background: rgba(76, 110, 245, 0.1);
-  color: var(--color-primary);
+  background: rgba(76, 110, 245, 0.15);
+  color: #4c6ef5;
   border-radius: 4px;
   font-size: 1.4rem;
   cursor: pointer;
   transition: var(--transition-medium);
   text-decoration: none;
+  border: 1px solid rgba(76, 110, 245, 0.2);
+}
+
+[data-theme="dark"] .featured-paper tags span {
+  background: rgba(40, 44, 52, 0.8) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(111, 161, 255, 0.4) !important;
 }
 
 .featured-paper tags span:hover {
-  background: rgba(76, 110, 245, 0.2);
+  background: rgba(76, 110, 245, 0.25);
   transform: translateY(-2px);
+  border-color: rgba(76, 110, 245, 0.3);
+}
+
+[data-theme="dark"] .featured-paper tags span:hover {
+  background: rgba(76, 110, 245, 0.5) !important;
+  border-color: rgba(111, 161, 255, 0.6) !important;
 }
 
 .featured-paper iframe {
