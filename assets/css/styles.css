@@ -114,7 +114,7 @@ body {
 }
 
 /* Apply exceptions for colored icons */
-.fa-bluesky {
+.s-header__nav-list .fa-bluesky {
   color: #0085ff !important;
 }
 
