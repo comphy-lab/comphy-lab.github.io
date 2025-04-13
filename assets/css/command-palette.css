@@ -249,10 +249,7 @@
    consistently use the dark purple theme across all browsers. */
 
 /* Dark mode styles for command-k button that we aren't using in the main palette */
-.command-k-style-btn:focus,
-.command-k-style-btn.focused {
-  outline: 2px solid rgba(212, 165, 219, 0.6);
-}
+/* Dark mode styles for command-k button that we aren't using in the main palette */
 
 .command-palette-footer {
   background-color: rgba(104, 35, 109, 0.1);
