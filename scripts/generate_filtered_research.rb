@@ -1,11 +1,12 @@
 #!/usr/bin/env ruby
 require 'nokogiri'
 require 'fileutils'
+require 'cgi'
 
 # Path to the built research page
 research_page_path = File.join(Dir.pwd, '_site', 'research', 'index.html')
 
-# Output directory for filtered pages
+# Output directory for SEO-friendly tag pages that redirect to URL parameters
 filtered_dir = File.join(Dir.pwd, '_site', 'research', 'tags')
 FileUtils.mkdir_p(filtered_dir)
 
@@ -21,59 +22,110 @@ end
 
 puts "Found #{all_tags.length} unique tags: #{all_tags.join(', ')}"
 
-# Create filtered pages for each tag
+# Create a sitemap entry for each tag filter
+sitemap_path = File.join(Dir.pwd, '_site', 'sitemap.xml')
+if File.exist?(sitemap_path)
+  sitemap = File.read(sitemap_path)
+  sitemap_doc = Nokogiri::XML(sitemap)
+  
+  # Add entries for each tag filter
+  all_tags.each do |tag|
+    # Create file-safe slug (lowercase, hyphenated) for the static file paths
+    file_slug = tag.downcase.gsub(/\s+/, '-')
+    # Use the original tag for the URL parameter (URL-encoded)
+    url_param = CGI.escape(tag)
+    
+    # Add URL parameter version (main one that users will use)
+    url1 = sitemap_doc.create_element('url')
+    loc1 = sitemap_doc.create_element('loc')
+    loc1.content = "https://comphy-lab.org/research/?tag=#{url_param}"
+    url1.add_child(loc1)
+    sitemap_doc.at_css('urlset').add_child(url1)
+    
+    # Add static page version (for SEO)
+    url2 = sitemap_doc.create_element('url')
+    loc2 = sitemap_doc.create_element('loc')
+    loc2.content = "https://comphy-lab.org/research/tags/#{file_slug}.html"
+    url2.add_child(loc2)
+    sitemap_doc.at_css('urlset').add_child(url2)
+  end
+  
+  # Write the updated sitemap
+  File.write(sitemap_path, sitemap_doc.to_xml)
+  puts "Updated sitemap with tag filter URLs"
+end
+
+# Add meta tags for SEO to the research page
+head = doc.at_css('head')
+if head
+  # Add meta description for the main research page if it doesn't exist
+  unless head.at_css('meta[name="description"]')
+    meta_desc = doc.create_element('meta')
+    meta_desc['name'] = 'description'
+    meta_desc['content'] = 'Research publications from the CoMPhy Lab, covering topics in fluid dynamics, soft matter, and complex systems.'
+    head.add_child(meta_desc)
+  end
+  
+  # Add meta keywords if they don't exist
+  unless head.at_css('meta[name="keywords"]')
+    meta_keywords = doc.create_element('meta')
+    meta_keywords['name'] = 'keywords'
+    meta_keywords['content'] = "#{all_tags.join(', ')}, fluid dynamics, research, publications, CoMPhy Lab"
+    head.add_child(meta_keywords)
+  end
+end
+
+# Write the modified research page with SEO metadata
+File.write(research_page_path, doc.to_html)
+puts "Updated research page with SEO metadata"
+
+# Create SEO-friendly static HTML pages that redirect to the URL parameter version
 all_tags.each do |tag|
-  # Clone the document for this tag
-  tag_doc = Nokogiri::HTML(html)
+  # Create file-safe slug for the static file path
+  file_slug = tag.downcase.gsub(/\s+/, '-')
+  hyphenated_tag = tag.gsub(/\s+/, '-')
+  # Use the original tag for the URL parameter (URL-encoded)
+  url_param = CGI.escape(tag)
   
-  # Find all paper containers
-  paper_containers = tag_doc.css('.paper-container')
+  # Create HTML for a page that redirects to the URL parameter version
+  redirect_html = <<~HTML
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>#{tag} Research - CoMPhy Lab</title>
+    <meta name="description" content="Research publications on #{tag} from the CoMPhy Lab, covering topics in fluid dynamics, soft matter, and complex systems.">
+    <meta name="keywords" content="#{tag}, research, publications, fluid dynamics, CoMPhy Lab">
+    <link rel="canonical" href="https://comphy-lab.org/research/?tag=#{url_param}">
+    <meta http-equiv="refresh" content="0;url=/research/?tag=#{url_param}">
+    <script>
+      window.location.href = "/research/?tag=#{url_param}";
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to <a href="/research/?tag=#{url_param}">#{tag} research papers</a>...</p>
+  </body>
+  </html>
+  HTML
   
-  # Hide paper containers that don't contain the current tag
-  paper_containers.each do |container|
-    container_tags = container.css('tags')
-    if container_tags.empty? || !container_tags.text.include?(tag)
-      container['class'] = "#{container['class']} hidden"
-    end
+  # Generate lowercase version (canonical)
+  output_path = File.join(filtered_dir, "#{file_slug}.html")
+  File.write(output_path, redirect_html)
+  puts "Created SEO-friendly redirect page for tag '#{tag}' at #{output_path}"
+  
+  # Generate capitalized versions
+  [
+    tag.capitalize.gsub(/\s+/, '-'), # First letter capitalized: "Bubbles"
+    hyphenated_tag, # Original case with hyphens: "Soft-matter-singularities"
+    tag.split.map(&:capitalize).join('-') # Title case: "Soft-Matter-Singularities"
+  ].uniq.each do |variant|
+    next if variant.downcase == file_slug # Skip if it's the same as the canonical lowercase version
+    
+    variant_path = File.join(filtered_dir, "#{variant}.html")
+    File.write(variant_path, redirect_html)
+    puts "Created capitalized variant redirect for tag '#{tag}' at #{variant_path}"
   end
-  
-  # Highlight the current tag in the tag list and convert tags to links
-  tag_doc.css('tags span').each do |span|
-    tag_text = span.text
-    tag_slug = tag_text.downcase.gsub(/\s+/, '-')
-    
-    # Create a link element
-    link = tag_doc.create_element('a')
-    link['href'] = "/research/tags/#{tag_slug}.html"
-    
-    # Preserve existing classes
-    span_classes = span['class'] || ""
-    
-    # Add active class if this is the current tag
-    if tag_text == tag
-      span_classes = "#{span_classes} active".strip
-    end
-    
-    link['class'] = "#{span_classes} tag-link".strip
-    link.inner_html = span.inner_html
-    
-    # Replace the span with the link
-    span.replace(link)
-  end
-  
-  # Add a note about the active filter
-  filter_note = tag_doc.create_element('div')
-  filter_note['class'] = 'filter-note'
-  filter_note.inner_html = "<p>Currently filtered by tag: <strong>#{tag}</strong> <a href=\"/research/\">Clear filter</a></p>"
-  
-  # Insert the filter note after the tag list section
-  tag_list_section = tag_doc.at_css('tags').parent
-  tag_list_section.add_next_sibling(filter_note)
-  
-  # Write the filtered page
-  output_path = File.join(filtered_dir, "#{tag.downcase.gsub(/\s+/, '-')}.html")
-  File.write(output_path, tag_doc.to_html)
-  puts "Created filtered page for tag '#{tag}' at #{output_path}"
 end
 
 # Create a tag index page
@@ -83,11 +135,20 @@ index_html = <<~HTML
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research Tags - CoMPhy Lab</title>
+  <meta name="description" content="Browse research publications by topic from the CoMPhy Lab.">
+  <meta name="keywords" content="#{all_tags.join(', ')}, research tags, publications, fluid dynamics, CoMPhy Lab">
+  <link rel="canonical" href="https://comphy-lab.org/research/">
   <meta http-equiv="refresh" content="0;url=/research/">
-  <title>Research Tags</title>
+  <script>
+    window.location.href = "/research/";
+  </script>
 </head>
 <body>
   <p>Redirecting to <a href="/research/">research page</a>...</p>
+  <ul>
+    #{all_tags.map { |tag| "<li><a href=\"/research/?tag=#{CGI.escape(tag)}\">#{tag}</a></li>" }.join("\n    ")}
+  </ul>
 </body>
 </html>
 HTML
@@ -96,28 +157,34 @@ index_path = File.join(filtered_dir, 'index.html')
 File.write(index_path, index_html)
 puts "Created tags index page at #{index_path}"
 
-# Modify the original research page to link to the pre-filtered pages
-original_doc = Nokogiri::HTML(html)
-original_doc.css('tags span').each do |span|
-  tag_text = span.text
-  tag_slug = tag_text.downcase.gsub(/\s+/, '-')
-  
-  # Create a link element
-  link = original_doc.create_element('a')
-  link['href'] = "/research/tags/#{tag_slug}.html"
-  
-  # Preserve any existing classes and add tag-link
-  span_classes = span['class'] || ""
-  link['class'] = "#{span_classes} tag-link".strip
-  
-  link.inner_html = span.inner_html
-  
-  # Replace the span with the link
-  span.replace(link)
-end
+# Create a 404 catch-all page for tag directory
+catchall_html = <<~HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research Tags - CoMPhy Lab</title>
+  <meta name="description" content="Browse research publications by topic from the CoMPhy Lab.">
+  <link rel="canonical" href="https://comphy-lab.org/research/">
+  <meta http-equiv="refresh" content="0;url=/research/">
+  <script>
+    window.location.href = "/research/";
+  </script>
+</head>
+<body>
+  <p>Tag not found. Redirecting to <a href="/research/">research page</a>...</p>
+  <p>Available tags:</p>
+  <ul>
+    #{all_tags.map { |tag| "<li><a href=\"/research/?tag=#{CGI.escape(tag)}\">#{tag}</a></li>" }.join("\n    ")}
+  </ul>
+</body>
+</html>
+HTML
 
-# Write the modified original page
-File.write(research_page_path, original_doc.to_html)
-puts "Updated original research page with links to filtered pages"
+# Create a 404.html in the tags directory to catch invalid tag URLs
+catchall_path = File.join(filtered_dir, "404.html")
+File.write(catchall_path, catchall_html)
+puts "Created catch-all page for invalid tag URLs at #{catchall_path}"
 
-puts "Successfully generated all filtered research pages!"
+puts "Successfully enhanced SEO with redirect pages for tag filters!"
