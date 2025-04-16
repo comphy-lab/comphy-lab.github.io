@@ -83,6 +83,7 @@ puts "Updated research page with SEO metadata"
 all_tags.each do |tag|
   # Create file-safe slug for the static file path
   file_slug = tag.downcase.gsub(/\s+/, '-')
+  hyphenated_tag = tag.gsub(/\s+/, '-')
   # Use the original tag for the URL parameter (URL-encoded)
   url_param = CGI.escape(tag)
   
@@ -108,10 +109,23 @@ all_tags.each do |tag|
   </html>
   HTML
   
-  # Write the redirect page
+  # Generate lowercase version (canonical)
   output_path = File.join(filtered_dir, "#{file_slug}.html")
   File.write(output_path, redirect_html)
   puts "Created SEO-friendly redirect page for tag '#{tag}' at #{output_path}"
+  
+  # Generate capitalized versions
+  [
+    tag.capitalize.gsub(/\s+/, '-'), # First letter capitalized: "Bubbles"
+    hyphenated_tag, # Original case with hyphens: "Soft-matter-singularities"
+    tag.split.map(&:capitalize).join('-') # Title case: "Soft-Matter-Singularities"
+  ].uniq.each do |variant|
+    next if variant.downcase == file_slug # Skip if it's the same as the canonical lowercase version
+    
+    variant_path = File.join(filtered_dir, "#{variant}.html")
+    File.write(variant_path, redirect_html)
+    puts "Created capitalized variant redirect for tag '#{tag}' at #{variant_path}"
+  end
 end
 
 # Create a tag index page
@@ -142,5 +156,35 @@ HTML
 index_path = File.join(filtered_dir, 'index.html')
 File.write(index_path, index_html)
 puts "Created tags index page at #{index_path}"
+
+# Create a 404 catch-all page for tag directory
+catchall_html = <<~HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research Tags - CoMPhy Lab</title>
+  <meta name="description" content="Browse research publications by topic from the CoMPhy Lab.">
+  <link rel="canonical" href="https://comphy-lab.org/research/">
+  <meta http-equiv="refresh" content="0;url=/research/">
+  <script>
+    window.location.href = "/research/";
+  </script>
+</head>
+<body>
+  <p>Tag not found. Redirecting to <a href="/research/">research page</a>...</p>
+  <p>Available tags:</p>
+  <ul>
+    #{all_tags.map { |tag| "<li><a href=\"/research/?tag=#{CGI.escape(tag)}\">#{tag}</a></li>" }.join("\n    ")}
+  </ul>
+</body>
+</html>
+HTML
+
+# Create a 404.html in the tags directory to catch invalid tag URLs
+catchall_path = File.join(filtered_dir, "404.html")
+File.write(catchall_path, catchall_html)
+puts "Created catch-all page for invalid tag URLs at #{catchall_path}"
 
 puts "Successfully enhanced SEO with redirect pages for tag filters!"
