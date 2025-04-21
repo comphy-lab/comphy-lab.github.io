@@ -1,0 +1,45 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+## Introduction
+
+These guidelines establish fundamental coding standards that apply across all file types in the project, ensuring consistency and maintainability.
+
+## Guidelines
+
+### Indentation and Formatting
+- Use 2-space indentation consistently across all files
+- Maintain consistent spacing around operators and blocks
+- Follow language-specific formatting conventions
+
+### Code Organization
+- Follow DRY (Don't Repeat Yourself) principles
+- Reuse components, variables, and styles where possible
+- Keep related code grouped together logically
+
+### Documentation
+- Add comments for complex logic
+- Write self-documenting code where possible
+- Use clear, descriptive names for variables, functions, and components
+
+## Examples
+
+```javascript
+// Good - Self-documenting code with clear naming
+const calculateTotalPrice = (basePrice, taxRate) => {
+  return basePrice * (1 + taxRate);
+};
+
+// Bad - Unclear naming and unnecessary comments
+const calc = (p, t) => {
+  // multiply price by tax
+  return p * (1 + t);
+};
+```
+
+## Common Pitfalls
+- Inconsistent indentation across different file types
+- Code duplication instead of component reuse
+- Over-commenting obvious code while under-documenting complex logic 
