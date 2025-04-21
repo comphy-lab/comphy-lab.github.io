@@ -1,0 +1,29 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+## Introduction
+
+These guidelines ensure consistent project organization and documentation maintenance across the CoMPhy Lab website codebase.
+
+## Guidelines
+
+### Repository Structure
+- The README.md file at repository root serves as the primary documentation
+- Templates are located in `_layouts/*.html`
+- Each template has a corresponding CSS file:
+  - `default.html` → `assets/css/styles.css`
+  - `research.html` → `assets/css/research.css`
+  - `team.html` → `assets/css/team.css`
+  - All templates use `search.css` and `styles.css`
+
+### Documentation Maintenance
+- Keep README.md up-to-date with any structural changes
+- Document any new files or directories added to the project
+- Manual control over Jekyll server deployment is preferred
+
+## Common Pitfalls
+- Forgetting to update README.md after structural changes
+- Inconsistent template-to-CSS file mapping
+- Running Jekyll server automatically instead of manual control 

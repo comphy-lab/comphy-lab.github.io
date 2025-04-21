@@ -195,11 +195,25 @@
   display: inline-block;
   padding: 0.5rem 1.2rem;
   background-color: #68246D;
-  color: #fff;
+  color: #fff !important;
   text-decoration: none;
   border-radius: 4px;
   font-weight: 500;
   transition: background-color 0.3s ease;
+}
+.course-card__link:link,
+.course-card__link:visited,
+.course-card__link:hover,
+.course-card__link:active {
+  color: #fff !important;
+  text-decoration: none;
+}
+[data-theme="dark"] .course-card__link,
+[data-theme="dark"] .course-card__link:link,
+[data-theme="dark"] .course-card__link:visited,
+[data-theme="dark"] .course-card__link:hover,
+[data-theme="dark"] .course-card__link:active {
+  color: #fff !important;
 }
 
 .course-card__link:hover {
