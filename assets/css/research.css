@@ -1,28 +1,28 @@
 /* Dark theme variables for research page */
 :root {
-  --research-bg-color: #ffffff;
-  --research-text-color: #333333;
-  --research-heading-color: #1a1a1a;
-  --research-subheading-color: #0085ff;
-  --research-border-color: #eaeaea;
-  --research-section-bg: linear-gradient(to right, #f8f9fa, transparent);
-  --research-paper-bg: #ffffff;
-  --research-paper-highlight: rgba(0, 133, 255, 0.05);
-  --research-paper-highlight-border: rgba(0, 133, 255, 0.2);
-  --research-shadow: rgba(0, 0, 0, 0.08);
+  --research-bg-color: var(--color-background);
+  --research-text-color: var(--color-text);
+  --research-heading-color: var(--color-primary);
+  --research-subheading-color: var(--color-blue-bright);
+  --research-border-color: var(--color-gray-light);
+  --research-section-bg: linear-gradient(to right, var(--color-gray-light), transparent);
+  --research-paper-bg: var(--color-white);
+  --research-paper-highlight: var(--color-blue-bright-alpha-05);
+  --research-paper-highlight-border: var(--color-blue-bright-alpha-20);
+  --research-shadow: var(--color-black-alpha-08);
 }
 
 [data-theme="dark"] {
-  --research-bg-color: #1E1E25;
-  --research-text-color: #ffffff;
-  --research-heading-color: #ffffff;
-  --research-subheading-color: #7fb5ff;
-  --research-border-color: #444455;
-  --research-section-bg: linear-gradient(to right, #272736, #1E1E25);
-  --research-paper-bg: #272736;
-  --research-paper-highlight: rgba(40, 120, 255, 0.15);
-  --research-paper-highlight-border: rgba(70, 140, 255, 0.4);
-  --research-shadow: rgba(0, 0, 0, 0.3);
+  --research-bg-color: var(--color-background);
+  --research-text-color: var(--color-text);
+  --research-heading-color: var(--color-primary);
+  --research-subheading-color: var(--color-blue-bright);
+  --research-border-color: var(--color-gray-xdark);
+  --research-section-bg: linear-gradient(to right, var(--color-gray-xdark), var(--color-gray-xxxdark));
+  --research-paper-bg: var(--color-gray-xdark);
+  --research-paper-highlight: var(--color-blue-bright-alpha-10);
+  --research-paper-highlight-border: var(--color-blue-bright-alpha-30);
+  --research-shadow: var(--color-black-alpha-30);
 }
 
 /* Research page styles with dark mode support */
@@ -38,19 +38,20 @@
 .research-content strong,
 .research-content b {
   font-weight: 700;
+  color: inherit; /* Ensures strong/b stays the same as parent */
   transition: none;
 }
 
 /* Dark mode color changes only */
 [data-theme="dark"] .research-content strong,
 [data-theme="dark"] .research-content b {
-  color: #ffffff;
+  color: inherit; /* Same for dark mode */
   text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
 }
 
 /* Add more solid background in dark mode - color only */
 [data-theme="dark"] .s-research {
-  background-color: #1E1E25;
+  background-color: var(--research-bg-color);
   box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.3);
 }
 
@@ -67,9 +68,9 @@
 
 /* Dark mode color changes only */
 [data-theme="dark"] .research-content blockquote {
-  background-color: #272736;
-  border-left-color: #4d8dff;
-  color: #ffffff;
+  background-color: var(--research-paper-bg);
+  border-left-color: var(--research-subheading-color);
+  color: var(--research-text-color);
 }
 
 /* List item styling consistent across themes */
@@ -89,7 +90,7 @@
 [data-theme="dark"] .research-content ul,
 [data-theme="dark"] .research-content ol,
 [data-theme="dark"] .research-content li {
-  color: #ffffff;
+  color: var(--research-text-color);
 }
 
 @media screen and (max-width: 800px) {
@@ -120,8 +121,8 @@
 }
 
 [data-theme="dark"] .research-content {
-  background-color: #272736;
-  border-color: rgba(80, 80, 120, 0.2);
+  background-color: var(--research-paper-bg);
+  border-color: var(--research-border-color);
 }
 
 @media screen and (max-width: 600px) {
@@ -136,7 +137,7 @@
   color: var(--research-heading-color);
   margin-bottom: 2rem;
   text-align: center;
-  background: linear-gradient(45deg, #0085ff, var(--research-heading-color));
+  background: linear-gradient(45deg, var(--research-subheading-color), var(--research-heading-color));
   -webkit-background-clip: text;
   background-clip: text; /* Standard property for compatibility */
   -webkit-text-fill-color: transparent;
@@ -181,7 +182,7 @@
 }
 
 .research-content h3:hover {
-  border-left-color: #0056b3;
+  border-left-color: var(--color-primary);
 }
 
 @media screen and (max-width: 600px) {
@@ -208,15 +209,15 @@
 }
 
 .paper-container:hover {
-  background-color: rgba(0, 133, 255, 0.02);
-  border-color: rgba(0, 133, 255, 0.1);
+  background-color: var(--research-paper-highlight);
+  border-color: var(--research-paper-highlight-border);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 [data-theme="dark"] .paper-container:hover {
-  background-color: rgba(70, 140, 255, 0.1);
-  border-color: rgba(70, 140, 255, 0.2);
+  background-color: var(--research-paper-highlight);
+  border-color: var(--research-paper-highlight-border);
   /* keep transform and box-shadow the same to avoid layout shifts */
 }
 
@@ -270,10 +271,10 @@
   overflow: hidden;
   margin: 1rem auto 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px var(--research-shadow);
   max-width: 600px;
-  background: #f8f9fa;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: var(--color-gray-xdark);
+  border: 1px solid var(--research-border-color);
 }
 
 .video-container iframe {
@@ -290,19 +291,19 @@
 /* Highlight boxes */
 .research-content h4 {
   font-size: 1.25rem;
-  color: #0085ff;
+  color: var(--research-subheading-color);
   margin: 1rem 0 0.5rem;
   padding-left: 1rem;
 }
 
 .research-content h4 + p {
-  background-color: #f8f9fa;
-  border-left: 4px solid #0085ff;
+  background-color: var(--color-gray-light);
+  border-left: 4px solid var(--research-subheading-color);
   padding: 1rem;
   margin: 0.5rem 0 1.5rem;
   border-radius: 0 8px 8px 0;
   font-size: 0.95rem;
-  color: #666;
+  color: var(--color-gray-medium);
 }
 
 /* Images */
@@ -312,25 +313,25 @@
   border-radius: 8px;
   margin: 1.5rem auto;
   display: block;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px var(--research-shadow);
 }
 
 /* Links */
 .research-content a {
-  color: #0085ff;
+  color: var(--research-subheading-color);
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
 .research-content a:hover {
-  color: #0056b3;
+  color: var(--color-primary);
   text-decoration: underline;
 }
 
 /* Paper status */
 .paper-status {
   font-style: italic;
-  color: #666;
+  color: var(--color-gray-medium);
   margin: 0.5rem 0;
   padding-left: 1rem;
   font-size: 0.95rem;
@@ -388,7 +389,7 @@
 .research-content p {
   font-size: 1.05rem;
   line-height: 1.6;
-  color: #333;
+  color: var(--research-text-color);
   margin-bottom: 1rem;
 }
 
@@ -447,7 +448,7 @@
   padding: 0.75rem;
   opacity: 0;
   transition: opacity 0.2s ease;
-  color: #666;
+  color: var(--color-gray-medium);
 }
 
 .paper-title-container:hover .copy-button {
@@ -455,7 +456,7 @@
 }
 
 .copy-button:hover {
-  color: #0085ff;
+  color: var(--research-subheading-color);
 }
 
 .copy-button i {
@@ -492,7 +493,7 @@
 }
 
 .toc-nav {
-  background: rgba(255, 255, 255, 0.5);
+  background: var(--color-white-alpha-50);
   backdrop-filter: blur(8px);
   padding: 1.5rem;
   border-radius: 10px;
@@ -502,7 +503,7 @@
 
 /* Dark theme styles for the table of contents */
 [data-theme="dark"] .toc-nav {
-  background: #1E1E25;
+  background: var(--research-bg-color);
   backdrop-filter: none;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(76, 110, 245, 0.2);
@@ -513,12 +514,12 @@
   color: #2b2b2b;
   margin-bottom: 1rem;
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid rgba(76, 110, 245, 0.2);
+  border-bottom: 2px solid var(--color-blue-bright-alpha-20);
 }
 
 [data-theme="dark"] .toc-nav h3 {
-  color: #ffffff;
-  border-bottom: 2px solid rgba(127, 181, 255, 0.3);
+  color: var(--research-text-color);
+  border-bottom: 2px solid var(--color-blue-bright-alpha-30);
 }
 
 .toc-list {
@@ -532,7 +533,7 @@
 }
 
 .toc-list a {
-  color: #666;
+  color: var(--color-gray-medium);
   text-decoration: none;
   font-size: 1.4rem;
   transition: all 0.3s ease;
@@ -543,32 +544,32 @@
 }
 
 [data-theme="dark"] .toc-list a {
-  color: #ffffff;
+  color: var(--research-text-color);
 }
 
 .toc-list a:hover {
-  color: #4c6ef5;
-  background: rgba(76, 110, 245, 0.05);
-  border-left-color: #4c6ef5;
+  color: var(--color-blue-bright);
+  background: var(--color-blue-bright-alpha-05);
+  border-left-color: var(--color-blue-bright);
 }
 
 [data-theme="dark"] .toc-list a:hover {
-  color: #7fb5ff;
-  background: rgba(127, 181, 255, 0.15);
-  border-left-color: #7fb5ff;
+  color: var(--color-blue-bright);
+  background: var(--color-blue-bright-alpha-15);
+  border-left-color: var(--color-blue-bright);
 }
 
 .toc-list a.active {
-  color: #4c6ef5;
-  background: rgba(76, 110, 245, 0.1);
-  border-left-color: #4c6ef5;
+  color: var(--color-blue-bright);
+  background: var(--color-blue-bright-alpha-10);
+  border-left-color: var(--color-blue-bright);
   font-weight: 500;
 }
 
 [data-theme="dark"] .toc-list a.active {
-  color: #7fb5ff;
-  background: rgba(127, 181, 255, 0.2);
-  border-left-color: #7fb5ff;
+  color: var(--color-blue-bright);
+  background: var(--color-blue-bright-alpha-20);
+  border-left-color: var(--color-blue-bright);
 }
 
 /* Custom scrollbar for the TOC */
@@ -619,11 +620,11 @@
 
 /* Style each tag separately */
 .research-content tags span {
-  background: rgba(147, 51, 234, 0.15);
-  color: #9333ea;
+  background: var(--color-primary-alpha-15);
+  color: var(--color-primary);
   padding: 0.4rem 1rem;
   border-radius: 20px;
-  border: 1px solid rgba(147, 51, 234, 0.2);
+  border: 1px solid var(--color-primary-alpha-20);
   transition: all 0.3s ease;
   display: inline-block;
   transform: scale(1);
@@ -632,91 +633,87 @@
 }
 
 [data-theme="dark"] .research-content tags span {
-  background: rgba(120, 170, 255, 0.2);
-  color: #78AAFF;
-  border: 1px solid rgba(120, 170, 255, 0.3);
+  background: var(--color-blue-bright-alpha-20);
+  color: var(--research-text-color);
+  border: 1px solid var(--color-blue-bright-alpha-30);
 }
 
 /* Fix for top filter tags in dark theme */
 [data-theme="dark"] tags span, 
 [data-theme="dark"] tags a.tag-link {
-  background: rgba(40, 44, 52, 0.8) !important;
-  color: #ffffff !important;
-  border: 1px solid rgba(111, 161, 255, 0.4) !important;
+  background: var(--color-blue-bright-alpha-20);
+  color: var(--research-text-color);
+  border: 1px solid var(--color-blue-bright-alpha-40);
 }
 
 [data-theme="dark"] tags span:hover, 
 [data-theme="dark"] tags a.tag-link:hover {
-  background: rgba(76, 110, 245, 0.5) !important;
-  border-color: rgba(111, 161, 255, 0.6) !important;
+  background: var(--color-blue-bright-alpha-20);
+  border-color: var(--color-blue-bright-alpha-40);
 }
 
 /* Fix for active tags in dark theme */
 [data-theme="dark"] tags span.active, 
 [data-theme="dark"] tags a.tag-link.active {
-  background: rgba(76, 110, 245, 0.8) !important;
-  color: #ffffff !important;
-  border-color: rgba(111, 161, 255, 0.8) !important;
+  background: var(--color-blue-bright-alpha-80);
+  color: var(--research-text-color);
+  border-color: var(--color-blue-bright-alpha-40);
   transform: scale(1.1);
-  box-shadow: 0 2px 5px rgba(111, 161, 255, 0.5) !important;
+  box-shadow: 0 2px 5px var(--color-blue-bright-alpha-40);
 }
 
-/* First tag - brightest background */
 .research-content tags span:nth-of-type(1) {
-  background: rgba(147, 51, 234, 0.15);
+  background: var(--color-primary-alpha-15);
 }
 
 [data-theme="dark"] .research-content tags span:nth-of-type(1) {
-  background: rgba(120, 170, 255, 0.25);
+  background: var(--color-blue-bright-alpha-20);
 }
 
-/* Second tag - slightly lighter background */
 .research-content tags span:nth-of-type(2) {
-  background: rgba(147, 51, 234, 0.1);
+  background: var(--color-primary-alpha-10);
 }
 
 [data-theme="dark"] .research-content tags span:nth-of-type(2) {
-  background: rgba(120, 170, 255, 0.2);
+  background: var(--color-blue-bright-alpha-15);
 }
 
-/* Third tag - even lighter background */
 .research-content tags span:nth-of-type(3) {
-  background: rgba(147, 51, 234, 0.07);
+  background: var(--color-primary-alpha-5);
 }
 
 [data-theme="dark"] .research-content tags span:nth-of-type(3) {
-  background: rgba(120, 170, 255, 0.15);
+  background: var(--color-blue-bright-alpha-10);
 }
 
-/* Fourth and subsequent tags - lightest background */
 .research-content tags span:nth-of-type(n+4) {
-  background: rgba(147, 51, 234, 0.04);
+  background: var(--color-primary-alpha-5);
 }
 
 [data-theme="dark"] .research-content tags span:nth-of-type(n+4) {
-  background: rgba(120, 170, 255, 0.1);
+  background: var(--color-blue-bright-alpha-10);
 }
 
 .research-content tags span:hover {
   transform: scale(1.1);
-  box-shadow: 0 2px 5px rgba(147, 51, 234, 0.1);
+  box-shadow: 0 2px 5px var(--color-primary-alpha-10);
 }
 
 [data-theme="dark"] .research-content tags span:hover {
   box-shadow: 0 2px 5px rgba(120, 170, 255, 0.3);
-  background: rgba(120, 170, 255, 0.3);
+  background: var(--color-blue-bright-alpha-30);
 }
 
 .research-content tags span.active {
   background: #9333ea;
-  color: white;
+  color: var(--color-white);
   transform: scale(1.1);
   box-shadow: 0 2px 5px rgba(147, 51, 234, 0.2);
 }
 
 [data-theme="dark"] .research-content tags span.active {
   background: #4d8dff;
-  color: white;
+  color: var(--color-white);
   box-shadow: 0 2px 6px rgba(77, 141, 255, 0.4);
 }
 
@@ -742,9 +739,9 @@ html {
 
 /* Highlight the target container when navigated to via anchor */
 .paper-container:target {
-    background-color: rgba(0, 133, 255, 0.05);
-    border-color: rgba(0, 133, 255, 0.2);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    background-color: var(--research-paper-highlight);
+    border-color: var(--research-paper-highlight-border);
+    box-shadow: 0 4px 12px var(--research-shadow);
 }
 
 /* Critical CSS for fastest paint */
@@ -804,29 +801,29 @@ tags span, tags a.tag-link {
   color: #333333;
 }
 [data-theme="dark"] tags span, [data-theme="dark"] tags a.tag-link {
-  background-color: #2a2a30;
-  color: #ffffff;
-  border: 1px solid rgba(111, 161, 255, 0.3);
+  background-color: var(--color-bg-color);
+  color: var(--research-text-color);
+  border: 1px solid var(--color-blue-bright-alpha-30);
 }
 tags span:hover, tags a.tag-link:hover {
-  background-color: #e0e0e0;
+  background-color: var(--color-gray-light);
 }
 [data-theme="dark"] tags span:hover, [data-theme="dark"] tags a.tag-link:hover {
-  background-color: #3a3a40;
+  background-color: var(--color-bg-color); 
 }
 tags span.active, tags a.tag-link.active {
-  background-color: #007bff;
-  color: white;
+  background-color: var(--color-blue-bright);
+  color: var(--color-white);
 }
 [data-theme="dark"] tags span.active, [data-theme="dark"] tags a.tag-link.active {
-  background-color: #4d8dff;
-  color: white;
+  background-color: var(--color-blue-bright);
+  color: var(--color-white);
 }
 /* Style for filter notification */
 .filter-note {
   margin: 1rem 0;
   padding: 0.5rem 1rem;
-  background-color: rgba(0,123,255,0.1);
+  background-color: var(--color-blue-bright-alpha-10);
   border-radius: 4px;
 }
 .filter-note a {
