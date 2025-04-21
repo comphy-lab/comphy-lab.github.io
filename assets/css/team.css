@@ -132,6 +132,10 @@
   color: var(--color-text-dark);
 }
 
+[data-theme="dark"] .s-map {
+  background-color: #121212;
+}
+
 .s-map .row {
   max-width: 1200px;
   margin: 0 auto;
