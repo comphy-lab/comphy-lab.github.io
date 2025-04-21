@@ -22,12 +22,12 @@ These guidelines establish consistent CSS coding practices, ensuring maintainabl
 ### Responsive Design
 - Use mobile-first approach for media queries
 - Implement breakpoints at:
-  - 1700px (large desktop)
-  - 1300px (desktop)
-  - 900px (tablet landscape)
-  - 768px (tablet portrait)
   - 500px (mobile)
-
+  - 768px (tablet portrait)
+  - 900px (tablet landscape)
+  - 1300px (desktop)
+  - 1700px (large desktop)
+  
 ### Units and Measurements
 - Use `rem` units for font sizes and spacing
 - Use relative units for flexible layouts
