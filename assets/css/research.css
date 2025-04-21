@@ -762,78 +762,15 @@ html {
 .paper-container img.loaded {
   opacity: 1;
 }
-/* Badge styling */
-.badge-container {
-  display: inline-flex !important;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 4px;
-  margin-left: 4px;
-  vertical-align: middle;
-  line-height: 0;
-}
-.badge-container a {
-  display: inline-flex;
-  text-decoration: none;
-  align-items: center;
-  line-height: 0;
-}
+/* Badge styling minimal */
 .badge-container img {
-  vertical-align: middle;
-  opacity: 1;
-  height: 20px;
-  width: auto;
-  margin: 0;
+  height: 20px; /* Keep minimal height */
+  opacity: 1; /* Ensure visibility */
 }
-.paper-container p {
-  margin-bottom: 0.5em;
-}
-/* Tag styling */
-tags span, tags a.tag-link {
-  display: inline-block;
-  padding: 2px 8px;
-  margin: 2px;
-  border-radius: 12px;
-  background-color: #f0f0f0;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-  text-decoration: none;
-  color: #333333;
-}
+/* Tag minimal */
 [data-theme="dark"] tags span, [data-theme="dark"] tags a.tag-link {
-  background-color: var(--color-bg-color);
+  background-color: var(--research-bg-color); /* Corrected variable */
   color: var(--research-text-color);
   border: 1px solid var(--color-blue-bright-alpha-30);
 }
-tags span:hover, tags a.tag-link:hover {
-  background-color: var(--color-gray-light);
-}
-[data-theme="dark"] tags span:hover, [data-theme="dark"] tags a.tag-link:hover {
-  background-color: var(--color-bg-color); 
-}
-tags span.active, tags a.tag-link.active {
-  background-color: var(--color-blue-bright);
-  color: var(--color-white);
-}
-[data-theme="dark"] tags span.active, [data-theme="dark"] tags a.tag-link.active {
-  background-color: var(--color-blue-bright);
-  color: var(--color-white);
-}
-/* Style for filter notification */
-.filter-note {
-  margin: 1rem 0;
-  padding: 0.5rem 1rem;
-  background-color: var(--color-blue-bright-alpha-10);
-  border-radius: 4px;
-}
-.filter-note a {
-  margin-left: 0.5rem;
-  color: #007bff;
-  text-decoration: none;
-}
-.filter-note a:hover {
-  text-decoration: underline;
-}
-.paper-container.hidden {
-  display: none;
-}
+/* Minimal styles kept above, removed redundant/non-critical rules below */
