@@ -6,102 +6,6 @@
   <meta name="base-url" content="{{ site.baseurl }}">
   <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
 
-  <!-- Critical CSS for fastest paint -->
-  <style>
-    .s-header {
-      visibility: visible;
-    }
-    .research-content h1, .research-content h2 {
-      visibility: visible;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    }
-    .toc-nav {
-      visibility: visible;
-    }
-    .paper-container img {
-      opacity: 0;
-      transition: opacity 0.2s ease-out;
-    }
-    .paper-container img.loaded {
-      opacity: 1;
-    }
-    /* Badge styling */
-    .badge-container {
-      display: inline-flex !important;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 4px;
-      margin-left: 4px;
-      vertical-align: middle;
-      line-height: 0;
-    }
-    .badge-container a {
-      display: inline-flex;
-      text-decoration: none;
-      align-items: center;
-      line-height: 0;
-    }
-    .badge-container img {
-      vertical-align: middle;
-      opacity: 1;
-      height: 20px;
-      width: auto;
-      margin: 0;
-    }
-    .paper-container p {
-      margin-bottom: 0.5em;
-    }
-    /* Tag styling */
-    tags span, tags a.tag-link {
-      display: inline-block;
-      padding: 2px 8px;
-      margin: 2px;
-      border-radius: 12px;
-      background-color: #f0f0f0;
-      cursor: pointer;
-      transition: background-color 0.2s ease;
-      text-decoration: none;
-      color: #333333;
-    }
-    [data-theme="dark"] tags span, [data-theme="dark"] tags a.tag-link {
-      background-color: #2a2a30;
-      color: #ffffff;
-      border: 1px solid rgba(111, 161, 255, 0.3);
-    }
-    tags span:hover, tags a.tag-link:hover {
-      background-color: #e0e0e0;
-    }
-    [data-theme="dark"] tags span:hover, [data-theme="dark"] tags a.tag-link:hover {
-      background-color: #3a3a40;
-    }
-    tags span.active, tags a.tag-link.active {
-      background-color: #007bff;
-      color: white;
-    }
-    [data-theme="dark"] tags span.active, [data-theme="dark"] tags a.tag-link.active {
-      background-color: #4d8dff;
-      color: white;
-    }
-    /* Style for filter notification */
-    .filter-note {
-      margin: 1rem 0;
-      padding: 0.5rem 1rem;
-      background-color: rgba(0,123,255,0.1);
-      border-radius: 4px;
-    }
-    .filter-note a {
-      margin-left: 0.5rem;
-      color: #007bff;
-      text-decoration: none;
-    }
-    .filter-note a:hover {
-      text-decoration: underline;
-    }
-    .paper-container.hidden {
-      display: none;
-    }
-  </style>
-
   <!-- Preload critical resources -->
   <link rel="preload" href="/assets/css/styles.css" as="style">
   <link rel="preload" href="/assets/js/main.js" as="script">
@@ -143,8 +47,8 @@
   <!-- Site styles -->
   <link rel="stylesheet" href="/assets/css/vendor.css" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="/assets/css/styles.css">
-  <link rel="stylesheet" href="/assets/css/research.css">
-  <link rel="stylesheet" href="/assets/css/command-palette.css">
+  <link rel="stylesheet" href="/assets/css/research.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/assets/css/command-palette.css" media="print" onload="this.media='all'">
   
   <!-- Structured Data for Research -->
   <script type="application/ld+json">
@@ -323,16 +227,16 @@
     <footer class="site-footer">
       <div class="footer-left">
         <a href="http://basilisk.fr/sandbox/vatsal/" target="_blank">
-          <img src="/assets/logos/logoBasilisk_TransparentBackground.png" alt="Basilisk C" class="footer-logo">
+          <img src="/assets/logos/logoBasilisk_TransparentBackground.png" alt="Basilisk C" class="footer-logo" loading="lazy">
         </a>
         <a href="https://pof.tnw.utwente.nl/" target="_blank">
-          <img src="/assets/logos/LogoPof_transparent_white.png" alt="Physics of Fluids" class="footer-logo pof-logo">
+          <img src="/assets/logos/LogoPof_transparent_white.png" alt="Physics of Fluids" class="footer-logo pof-logo" loading="lazy">
         </a>
         <a href="https://www.utwente.nl/" target="_blank">
-          <img src="/assets/logos/UT_Logo_2400_Sta_White_EN.png" alt="University of Twente" class="footer-logo">
+          <img src="/assets/logos/UT_Logo_2400_Sta_White_EN.png" alt="University of Twente" class="footer-logo" loading="lazy">
         </a>
         <a href="https://www.vatsalsanjay.com/" target="_blank">
-          <img src="/assets/logos/Logo_Vatsal_v3_OutLine.png" alt="Vatsal Sanjay" class="footer-logo">
+          <img src="/assets/logos/Logo_Vatsal_v3_OutLine.png" alt="Vatsal Sanjay" class="footer-logo" loading="lazy">
         </a>
       </div>
       <div class="footer-center">
