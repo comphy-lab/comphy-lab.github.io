@@ -3,12 +3,6 @@ description: creating new Cursor Project Rules (.mdc files)
 globs: 
 alwaysApply: false
 ---
----
-title: Meta-Rule for Crafting Cursor Project Rules
-description: Comprehensive guide for creating effective Cursor Project Rules (.mdc files), adaptable to various projects including Basilisk.
-glob: "**/*.mdc"
----
-
 ## Purpose
 
 This meta-rule provides structured guidance for generating `.mdc` files that define Cursor Project Rules. It aims to ensure consistency, clarity, and adaptability across diverse codebases, with particular attention to projects utilizing CFD frameworks.
