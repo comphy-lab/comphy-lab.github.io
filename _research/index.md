@@ -58,7 +58,7 @@ title: Research
 
 <h3 id="15">[15] <strong>Sanjay, V.</strong>, & Lohse, D. Unifying theory of scaling in drop impact: Forces & maximum spreading diameter. Phys. Rev. Lett., 134, 104003 (2025).</h3>
 
-<tags><span>Drops</span><span>Dissipative anomaly</span><span>Superamphiphobic-surfaces</span><span>Impact forces</span><span>Featured</span></tags>
+<tags><span>Drops</span><span>Dissipative anomaly</span><span>Superamphiphobic-surfaces</span><span>Impact forces</span></tags>
 
 [![PRL](https://img.shields.io/static/v1.svg?style=flat-square&label=PRL&message=OA&color=orange)](https://doi.org/10.1103/PhysRevLett.134.104003)
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2408.12714&color=green)](https://arxiv.org/abs/2408.12714)
@@ -124,7 +124,7 @@ title: Research
 
 <h3 id="11">[11] <strong>Sanjay, V.</strong>, Chantelot, P., & Lohse, D. When does an impacting drop stop bouncing? J. Fluid Mech., 958, A26 (2023).</h3>
 
-<tags><span>Drops</span><span>Bouncing</span><span>Dissipative anomaly</span></tags>
+<tags><span>Drops</span><span>Bouncing</span><span>Dissipative anomaly</span><span>Featured</span></tags>
 
 [![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=OA&color=orange)](https://doi.org/10.1017/jfm.2023.55)
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
