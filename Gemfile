@@ -7,4 +7,4 @@ gem "webrick", "~> 1.8"
 gem "jekyll-sitemap"
 gem "jekyll-include-cache"
 gem "jekyll-seo-tag"
-gem "nokogiri", "~> 1.18.4" # For HTML parsing in search database generation
+gem "nokogiri", "~> 1.18.8" # For HTML parsing in search database generation
