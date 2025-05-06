@@ -24,6 +24,9 @@ collections:
   teaching:
     output: true
     permalink: /:collection/:name
+  history:
+    output: true
+    permalink: /:collection/:name
 
 # Exclude from processing
 exclude:

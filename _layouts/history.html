@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  {% include theme-init.html %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="base-url" content="{{ site.baseurl }}">
+  <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+
+  <!-- Critical CSS for fastest paint -->
+  <style>
+    .s-header {
+      visibility: visible;
+    }
+    .teaching-content h1, .teaching-content h2 {
+      visibility: visible;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+  </style>
+
+  <!-- Preload critical resources -->
+  <link rel="preload" href="/assets/css/styles.css" as="style">
+  <link rel="preload" href="/assets/js/main.js" as="script">
+  <link rel="preload" href="/assets/css/fontello/css/fontello.css" as="style">
+  <link rel="preload" href="/assets/css/academicons-1.7.0/css/academicons.min.css" as="style">
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-title" content="CoMPhy Lab">
+  <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Courses and educational resources offered by the Computational Multiphase Physics Laboratory">
+  <meta name="author" content="CoMPhy Lab">
+  <meta name="robots" content="index, follow">
+  <meta name="keywords" content="computational physics courses, physics education, multiphase physics training, scientific courses">
+
+  <!-- Font dependencies with font-display: swap -->
+  <style>
+    @font-face {
+      font-display: swap;
+      font-family: 'System Font';
+      src: local('system-ui');
+    }
+  </style>
+  <link rel="stylesheet" href="/assets/css/fontello/css/fontello.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/assets/css/academicons-1.7.0/css/academicons.min.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="/assets/css/fontello/css/fontello.css">
+    <link rel="stylesheet" href="/assets/css/academicons-1.7.0/css/academicons.min.css">
+  </noscript>
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/assets/css/vendor.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/teaching.css">
+  <link rel="stylesheet" href="/assets/css/command-palette.css" media="print" onload="this.media='all'">
+  
+  <!-- Structured Data for Teaching -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Computational Multiphase Physics Courses",
+    "description": "Educational resources and courses related to computational multiphase physics.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Computational Multiphase Physics Laboratory",
+      "sameAs": "{{ site.url }}"
+    },
+    "url": "{{ site.url }}/teaching"
+  }
+  </script>
+
+  <!-- JavaScript dependencies -->
+  <script defer src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+  <script defer src="/assets/js/main.js"></script>
+  <script defer src="/assets/js/platform-utils.js"></script>
+  <script defer src="/assets/js/command-data.js"></script>
+
+  <!-- Theme toggle functionality -->
+  <script>
+    document.documentElement.classList.remove('no-js');
+    document.documentElement.classList.add('js');
+    
+    // Theme toggle functionality
+    (function() {
+      // Check for saved theme preference or use OS preference
+      const getThemePreference = () => {
+        // Check if user has already selected a theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+          return savedTheme;
+        }
+        // If not, check OS preference
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      };
+      
+      // Set theme on document
+      const setTheme = (theme) => {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+      };
+      
+      // Apply theme when page loads
+      document.addEventListener('DOMContentLoaded', () => {
+        setTheme(getThemePreference());
+        
+        // Add click event listener to theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        if (themeToggle) {
+          themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            setTheme(newTheme);
+          });
+        }
+      });
+    })();
+  </script>
+
+  <!-- Command palette (implementation in assets/js/command-palette.js) -->
+  <script defer src="/assets/js/command-palette.js"></script>
+
+  <script>
+    // Check if we're on localhost
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+      // Load Font Awesome stylesheets with improved error handling and version extraction
+      function loadStylesheet(href) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = href;
+        link.crossOrigin = 'anonymous';
+        link.onerror = () => console.error(`Failed to load stylesheet: ${href}`);
+        document.head.appendChild(link);
+        return link;
+      }
+
+      const FA_VERSION = '6.7.2';  // Extract version to a constant for easier updates
+      
+      loadStylesheet(`https://use.fontawesome.com/releases/v${FA_VERSION}/css/solid.css`);
+      loadStylesheet(`https://use.fontawesome.com/releases/v${FA_VERSION}/css/brands.css`);
+      loadStylesheet(`https://use.fontawesome.com/releases/v${FA_VERSION}/css/fontawesome.css`);
+    } else {
+      // Use Kit for production with defer
+      var script = document.createElement('script');
+      script.src = 'https://kit.fontawesome.com/b1cfd9ca75.js';
+      script.crossOrigin = 'anonymous';
+      script.defer = true;
+      document.head.appendChild(script);
+    }
+  </script>
+</head>
+<body id="top">
+
+  <div id="preloader">
+    <div id="loader"></div>
+  </div>
+
+  <!-- Command Palette Button Handler -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Platform detection is now handled by platform-utils.js
+      // Update the displayed shortcut text is now handled by platform-utils.js
+    });
+  </script>
+
+  <div id="page" class="s-pagewrap">
+    <header class="s-header">
+      <div class="s-header__logo">
+        <a class="logo" href="/">
+          <img src="/assets/logos/CoMPhy-Lab-no-name.png" alt="CoMPhy Lab">
+        </a>
+      </div>
+      <a class="s-header__menu-toggle" href="#0">
+        <span class="s-header__menu-text">Menu</span>
+        <span class="s-header__menu-icon"></span>
+      </a>
+      <nav class="s-header__nav">
+        <a href="#0" class="s-header__nav-close-btn"><span>Close</span></a>
+        <ul class="s-header__nav-list">
+          <li style="background: none;">
+            <div class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme">
+              <svg class="theme-toggle-icon moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </svg>
+              <svg class="theme-toggle-icon sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+            </div>
+          </li>
+          <li style="background: none;"><a href="https://scholar.google.com/citations?user=tHb_qZoAAAAJ&hl=en" style="background: none; padding: 0;"><i class="ai ai-google-scholar" style="font-size: 1.75em;"></i></a></li>
+          <li style="background: none;"><a href="https://github.com/comphy-lab" style="background: none; padding: 0;"><i class="fa-brands fa-github" style="font-size: 1.75em"></i></a></li>
+          <li><a href="/#about" class="smoothscroll">About</a></li>
+          <li><a href="/team/">Team</a></li>
+          <li><a href="/research">Research</a></li>
+          <li><a href="/teaching">Teaching</a></li>
+          <li><a href="/join">Join Us</a></li>
+          <li><a href="https://blogs.comphy-lab.org/">Blog</a></li>
+          <li style="background: none;"><a href="https://bsky.app/profile/comphy-lab.org" style="background: none; padding: 0;"><i class="fa-brands fa-bluesky" style="font-size: 1.75em; color: #0085ff;"></i></a></li>
+          <!-- Command Palette Button (Styled like search) -->
+          <li class="command-palette-button">
+            <div class="command-wrapper">
+              <button class="command-k-style-btn" id="command-palette-btn" aria-label="Open command palette">
+                <span class="default-theme-text">ctrl K</span>
+                <span class="mac-theme-text">⌘ K</span>
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+              </button>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Teaching Section -->
+    <section class="s-teaching">
+      <div class="row">
+        <div class="teaching-content markdown-content">
+          {% capture lazy_img %}<img loading="lazy" decoding="async" onload="this.classList.add('loaded')"{% endcapture %}
+          {% assign content_with_lazy = content | replace: '<img', lazy_img %}
+          {% capture lazy_iframe %}<div class="video-container"><iframe loading="lazy"{% endcapture %}
+          {% assign content_with_video = content_with_lazy | replace: '<iframe', lazy_iframe | replace: '</iframe>', '</iframe></div>' %}
+          {{ content_with_video }}
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-left">
+        <a href="http://basilisk.fr/sandbox/vatsal/" target="_blank">
+          <img src="/assets/logos/logoBasilisk_TransparentBackground.png" alt="Basilisk C" class="footer-logo">
+        </a>
+        <a href="https://pof.tnw.utwente.nl/" target="_blank">
+          <img src="/assets/logos/LogoPof_transparent_white.png" alt="Physics of Fluids" class="footer-logo pof-logo">
+        </a>
+        <a href="https://www.utwente.nl/" target="_blank">
+          <img src="/assets/logos/UT_Logo_2400_Sta_White_EN.png" alt="University of Twente" class="footer-logo">
+        </a>
+        <a href="https://www.vatsalsanjay.com/" target="_blank">
+          <img src="/assets/logos/Logo_Vatsal_v3_OutLine.png" alt="Vatsal Sanjay" class="footer-logo">
+        </a>
+      </div>
+      <div class="footer-center">
+        <p class="copyright-text">
+          &copy; Copyright<br>
+          CoMPhy Lab 2025
+        </p>
+      </div>
+      <div class="footer-right">
+        <a href="https://scholar.google.com/citations?user=tHb_qZoAAAAJ&hl=en" target="_blank" aria-label="Google Scholar Profile">
+          <i class="ai ai-google-scholar" style="font-size: 2.5em; color: white;"></i>
+        </a>
+        <a href="https://github.com/comphy-lab" target="_blank" aria-label="GitHub Organization">
+          <i class="fa-brands fa-github" style="font-size: 2.5em; color: white;"></i>
+        </a>
+        <a href="https://www.youtube.com/@CoMPhyLab" target="_blank" aria-label="YouTube Channel">
+          <i class="fa-brands fa-youtube" style="font-size: 2.5em; color: white;"></i>
+        </a>
+        <a href="https://x.com/VatsalSanjay" target="_blank" aria-label="X (Twitter) Profile">
+          <i class="fa-brands fa-x-twitter" style="font-size: 2.5em; color: white;"></i>
+        </a>
+        <a href="https://bsky.app/profile/comphy-lab.org" target="_blank" aria-label="Bluesky Profile">
+          <i class="fa-brands fa-bluesky" style="font-size: 2.5em; color: white;"></i>
+        </a>
+        <a href="https://github.com/comphy-lab/comphy-lab.github.io" class="edit-link" aria-label="Edit this page on GitHub">
+          <i class="fa-brands fa-github"></i> Edit this page
+        </a>
+      </div>
+      <div class="ss-go-top">
+        <a class="smoothscroll" title="Back to Top" href="#top">
+            <i class="fa-solid fa-arrow-up"></i>
+         </a>
+      </div> <!-- end ss-go-top -->
+    </footer>
+  </div> <!-- end s-pagewrap -->
+
+  <!-- Simple Command Palette -->
+  <div id="simple-command-palette" class="simple-command-palette" style="display: none;">
+    <div class="simple-command-palette-backdrop"></div>
+    <div class="simple-command-palette-modal">
+      <input type="text" id="command-palette-input" placeholder="Type a command..." autocomplete="off">
+      <div id="command-palette-results" class="command-palette-results"></div>
+      <div class="command-palette-footer">
+        <span class="command-palette-footer-item"><kbd>↑</kbd> <kbd>↓</kbd> to navigate</span>
+        <span class="command-palette-footer-item"><kbd>enter</kbd> to select</span>
+        <span class="command-palette-footer-item"><kbd>esc</kbd> to close</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Register command palette keyboard shortcut -->
+  <script>
+    document.addEventListener('keydown', function(e) {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        window.openCommandPalette();
+      }
+    });
+
+    // Add the sortCoursesByDate function for the teaching page
+    window.sortCoursesByDate = function() {
+      // Close the command palette first
+      const palette = document.getElementById('simple-command-palette');
+      if (palette) {
+        palette.style.display = 'none';
+      }
+      
+      // Target various potential course container structures, including the current structure
+      const courseContainers = document.querySelectorAll(
+        '.s-teaching .course-item, .teaching-content .course-item, .course, .course-container, article.course, .teaching-course, .teaching-content > div[class*="course"], .teaching-content > div > a[href*="Course"], .teaching-content a[href*="Course"]'
+      );
+      
+      // If no direct matches found, try to find the specific course structure on the page
+      let coursesArray = [];
+      if (courseContainers.length === 0) {
+        console.log('No direct course elements found, trying to locate specific course structure');
+        
+        // Look for the course card structure on the teaching page
+        const possibleCourses = document.querySelectorAll('.teaching-content > div > a');
+        if (possibleCourses.length > 0) {
+          console.log('Found possible course links:', possibleCourses.length);
+          coursesArray = Array.from(possibleCourses);
+        } else {
+          // Try the specific course element visible in the screenshot (with "High-Fidelity Simulations")
+          const specificCourseElement = document.querySelector('.teaching-content > p + div');
+          if (specificCourseElement) {
+            console.log('Found specific course element');
+            coursesArray = [specificCourseElement];
+          }
+        }
+      } else {
+        coursesArray = Array.from(courseContainers);
+      }
+      
+      if (coursesArray.length === 0) {
+        console.log('No course items found to sort');
+        
+        // Show feedback even when no sortable items are found
+        const contentContainer = document.querySelector('.teaching-content');
+        if (contentContainer) {
+          const feedbackMsg = document.createElement('div');
+          feedbackMsg.className = 'sort-indicator';
+          feedbackMsg.textContent = 'No courses found to sort. Add course items with class "course-item" or "course" for automatic sorting.';
+          feedbackMsg.style.padding = '10px';
+          feedbackMsg.style.margin = '10px 0';
+          feedbackMsg.style.backgroundColor = '#F0E6F5'; // Lighter purple to match site theme
+          feedbackMsg.style.color = '#68236D'; // Brand purple color
+          feedbackMsg.style.borderRadius = '4px';
+          feedbackMsg.style.textAlign = 'center';
+          feedbackMsg.style.border = '1px solid #E6D0F0';
+          
+          // Remove any existing messages
+          const existingMsg = contentContainer.querySelector('.sort-indicator');
+          if (existingMsg) {
+            existingMsg.remove();
+          }
+          
+          // Insert at the beginning
+          if (contentContainer.firstChild) {
+            contentContainer.insertBefore(feedbackMsg, contentContainer.firstChild);
+          } else {
+            contentContainer.appendChild(feedbackMsg);
+          }
+          
+          // Auto-remove after 5 seconds
+          setTimeout(() => {
+            if (feedbackMsg.parentNode) {
+              feedbackMsg.remove();
+            }
+          }, 5000);
+        }
+        
+        return;
+      }
+      
+      // If only one course, show a message but don't do sorting
+      if (coursesArray.length === 1) {
+        const courseContainer = coursesArray[0];
+        const parentContainer = courseContainer.parentNode;
+        
+        // Create a message
+        const singleCourseIndicator = document.createElement('div');
+        singleCourseIndicator.className = 'sort-indicator';
+        singleCourseIndicator.textContent = 'Only one course available - no sorting needed';
+        singleCourseIndicator.style.padding = '10px';
+        singleCourseIndicator.style.margin = '10px 0';
+        singleCourseIndicator.style.backgroundColor = '#F0E6F5'; // Lighter purple to match site theme
+        singleCourseIndicator.style.color = '#68236D'; // Brand purple color
+        singleCourseIndicator.style.borderRadius = '4px';
+        singleCourseIndicator.style.textAlign = 'center';
+        singleCourseIndicator.style.border = '1px solid #E6D0F0';
+        
+        // Remove any existing indicators
+        const existingIndicator = document.querySelector('.sort-indicator');
+        if (existingIndicator) {
+          existingIndicator.remove();
+        }
+        
+        // Find the container where we should insert the message (teaching content or parent of course)
+        const messageContainer = document.querySelector('.teaching-content') || parentContainer;
+        
+        // Add indicator at the beginning of teaching content
+        if (messageContainer) {
+          if (messageContainer.firstChild) {
+            messageContainer.insertBefore(singleCourseIndicator, messageContainer.firstChild);
+          } else {
+            messageContainer.appendChild(singleCourseIndicator);
+          }
+          
+          // Auto-remove after 5 seconds
+          setTimeout(() => {
+            if (singleCourseIndicator.parentNode) {
+              singleCourseIndicator.remove();
+            }
+          }, 5000);
+        }
+        
+        return;
+      }
+      
+      // For multiple courses, proceed with sorting
+      // Get parent container
+      const parentContainer = coursesArray[0].parentNode;
+      
+      // Sort courses by date attribute or content
+      coursesArray.sort((a, b) => {
+        // Look for dates in multiple locations with fallbacks
+        const dateA = a.getAttribute('data-date') || 
+                      a.getAttribute('date') || 
+                      a.querySelector('.course-date, .date, time, [class*="date"]')?.textContent || 
+                      a.querySelector('[datetime]')?.getAttribute('datetime') || 
+                      a.textContent.match(/\d{4}[-/.]\d{1,2}[-/.]\d{1,2}|\d{1,2}[-/.]\d{1,2}[-/.]\d{4}|(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]* \d{1,2},? \d{4}/i)?.[0] || 
+                      '';
+        
+        const dateB = b.getAttribute('data-date') || 
+                      b.getAttribute('date') || 
+                      b.querySelector('.course-date, .date, time, [class*="date"]')?.textContent || 
+                      b.querySelector('[datetime]')?.getAttribute('datetime') || 
+                      b.textContent.match(/\d{4}[-/.]\d{1,2}[-/.]\d{1,2}|\d{1,2}[-/.]\d{1,2}[-/.]\d{4}|(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]* \d{1,2},? \d{4}/i)?.[0] || 
+                      '';
+        
+        console.log(`Date found for course A: ${dateA}`);
+        console.log(`Date found for course B: ${dateB}`);
+        
+        // Try to convert to Date objects if possible
+        const timeA = new Date(dateA).getTime();
+        const timeB = new Date(dateB).getTime();
+        
+        // If both are valid dates, compare them
+        if (!isNaN(timeA) && !isNaN(timeB)) {
+          return timeB - timeA; // Most recent first
+        }
+        
+        // If dates are invalid, try to get titles for alphabetical sorting
+        const titleA = a.querySelector('h2, h3, h4, .title')?.textContent || a.textContent;
+        const titleB = b.querySelector('h2, h3, h4, .title')?.textContent || b.textContent;
+        
+        // Fall back to alphabetical sorting by title
+        return titleA.localeCompare(titleB);
+      });
+      
+      // Re-append in the new order
+      coursesArray.forEach(course => {
+        parentContainer.appendChild(course);
+      });
+      
+      // Add a visual indicator that sorting has occurred
+      const sortIndicator = document.createElement('div');
+      sortIndicator.className = 'sort-indicator';
+      sortIndicator.textContent = `${coursesArray.length} courses sorted by date (most recent first)`;
+      sortIndicator.style.padding = '10px';
+      sortIndicator.style.margin = '10px 0';
+      sortIndicator.style.backgroundColor = '#F0E6F5'; // Lighter purple to match site theme
+      sortIndicator.style.color = '#68236D'; // Brand purple color
+      sortIndicator.style.borderRadius = '4px';
+      sortIndicator.style.textAlign = 'center';
+      sortIndicator.style.border = '1px solid #E6D0F0';
+      
+      // Remove any existing sort indicators
+      const existingIndicator = document.querySelector('.sort-indicator');
+      if (existingIndicator) {
+        existingIndicator.remove();
+      }
+      
+      // Find the container where we should insert the message
+      const messageContainer = document.querySelector('.teaching-content');
+      
+      // Add indicator at the beginning of teaching content
+      if (messageContainer && messageContainer.firstChild) {
+        messageContainer.insertBefore(sortIndicator, messageContainer.firstChild);
+      } else if (parentContainer && parentContainer.firstChild) {
+        parentContainer.insertBefore(sortIndicator, parentContainer.firstChild);
+      }
+      
+      // Auto-remove after 8 seconds
+      setTimeout(() => {
+        if (sortIndicator.parentNode) {
+          sortIndicator.remove();
+        }
+      }, 8000);
+      
+      console.log(`${coursesArray.length} courses sorted by date`);
+    };
+  </script>
+
+</body>
+</html>

@@ -1,3 +1,9 @@
+---
+layout: history
+title: History
+permalink: /history/
+---
+
 ## 2025
 
 ### May
@@ -79,3 +85,31 @@
   <a href="https://tinyurl.com/2ycunjcr" style="display: inline-flex; align-items: center; text-decoration: none; color: #0056b3; font-weight: 500;">
   <i class="fa-solid fa-file-pdf" style="margin-right: 8px; font-size: 1.2em; color: #e63946;"></i>Spinning Pizza
   </a>
+
+
+
+## 2024
+
+### December
+
+- [Balasubramanian, A. G., <strong>Sanjay, V.</strong>, Jalaal, M., Vinuesa, R., & Tammisola, O. J. Fluid Mech., 1001, A9 (2024). selected as the cover article.](/research#12)
+
+<div class="news-flex-row">
+  <div>
+    <a href="/research#12">
+      <img src="/assets/images/covers/2024-12-JFM_Vol1001.jpeg" alt="JFM cover" class="news-image">
+    </a>
+  </div>
+  <div style="display: flex; flex-direction: column; gap: 10px;">
+    <a href="/assets/images/covers/2024-12-JFM_Vol1001.pdf" style="display: flex; align-items: center; text-decoration: none; color: #0056b3; font-size: 1em; font-weight: 500;"><i class="fa-solid fa-download" style="margin-right: 8px; font-size: 1.2em;"></i>Download Cover</a>
+    <a href="https://doi.org/10.1017/jfm.2024.1073" style="display: flex; align-items: center; text-decoration: none; color: #cf4900; font-size: 1em; font-weight: 500;"><i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 8px; font-size: 1.2em;"></i>View Paper</a>
+  </div>
+</div>
+
+### November
+
+- <strong>Vatsal Sanjay</strong> recognized as an <a href="https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/announcements/prizes-and-awards/outstanding-reviewers-2023" style="text-decoration: none; color: #0056b3; font-weight: 500;">Outstanding Reviewer 2023</a> by the Journal of Fluid Mechanics for his contributions to the peer review process.
+
+### May
+
+- <strong>Vatsal Sanjay</strong> awarded the <a href="https://www.tudelft.nl/2024/jm-burgerscentrum/kivi-hoogendoorn-fluid-mechanics-award-2023" style="text-decoration: none; color: #0056b3; font-weight: 500;">KIVI Hoogendoorn Fluid Mechanics Award 2023</a> for his PhD thesis "Viscous Free-Surface Flows". The award ceremony took place at the Burgers Symposium on 29–30 May 2024 in Lunteren.
