@@ -55,6 +55,14 @@
                         paragraph.style.margin = '0';
                     });
                 }
+                // Add History button after all news items
+                const historyBtn = document.createElement('a');
+                historyBtn.href = '/history';
+                historyBtn.className = 's-news__history-btn';
+                historyBtn.innerHTML = '<i class="fa-solid fa-arrow-right" style="margin-right: 8px; font-size: 1.2em;"></i>History Archive';
+                historyBtn.setAttribute('role', 'button');
+                historyBtn.setAttribute('tabindex', '0');
+                newsContent.appendChild(historyBtn);
             } catch (error) {
                 console.error('Error loading news content:', error);
             }
