@@ -75,4 +75,84 @@
 
 [data-theme="dark"] .news-image {
   box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+}
+
+.history-news-box {
+  background: var(--about-grid-bg, #f7f7f9);
+  border: 1px solid var(--about-grid-border, #e0e0e0);
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  padding: 2.5rem 2.5rem 2rem 2.5rem;
+  margin: 2.5rem auto 3.5rem auto;
+  max-width: 900px;
+  transition: background 0.2s, border 0.2s;
+}
+
+[data-theme="dark"] .history-news-box {
+  background: linear-gradient(145deg, var(--about-grid-bg-start, #23242a), var(--about-grid-bg-end, #181920));
+  border: 1px solid var(--about-grid-border, #23242a);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+}
+
+/* Headings in history news box */
+.history-news-box h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin: 2.5rem 0 1.5rem 0;
+  color: #6fa1ff;
+  text-align: left;
+  letter-spacing: 0.01em;
+}
+
+.history-news-box h2 {
+  font-size: 2.1rem;
+  font-weight: 600;
+  margin: 2.2rem 0 1.2rem 0;
+  color: #b3cfff;
+  border-bottom: 2px solid #6fa1ff;
+  padding-bottom: 0.3rem;
+  background: none;
+  text-align: left;
+}
+
+.history-news-box h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin: 1.8rem 0 1rem 0;
+  color: #ff8989;
+  border-bottom: 1.5px solid #ff8989;
+  padding-bottom: 0.2rem;
+  display: inline-block;
+  background: none;
+}
+
+.history-news-box h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 1.2rem 0 0.7rem 0;
+  color: #b3cfff;
+}
+
+.history-news-box h5, .history-news-box h6 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 1rem 0 0.5rem 0;
+  color: #b3cfff;
+}
+
+[data-theme="dark"] .history-news-box h1 {
+  color: #6fa1ff;
+}
+[data-theme="dark"] .history-news-box h2 {
+  color: #b3cfff;
+  border-bottom: 2px solid #6fa1ff;
+}
+[data-theme="dark"] .history-news-box h3 {
+  color: #ff8989;
+  border-bottom: 1.5px solid #ff8989;
+}
+[data-theme="dark"] .history-news-box h4,
+[data-theme="dark"] .history-news-box h5,
+[data-theme="dark"] .history-news-box h6 {
+  color: #b3cfff;
 } 

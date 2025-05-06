@@ -1,8 +1,9 @@
 ---
 layout: history
 title: History
-permalink: /history/
 ---
+
+# History
 
 ## 2025
 
