@@ -1,0 +1,78 @@
+/**
+ * History Page Styles
+ * This file contains styles specific to the history page
+ * which fix issues with Markdown parsing inside HTML elements
+ */
+
+/* Fix for links and buttons getting italicized in history page */
+.teaching-content a,
+.markdown-content a,
+.news-flex-row a {
+  font-style: normal !important;
+  text-decoration: none;
+}
+
+/* Ensure icons never get italicized */
+.teaching-content a i,
+.markdown-content a i,
+.news-flex-row a i,
+.fa-solid, 
+.fa-brands, 
+.ai {
+  font-style: normal !important;
+}
+
+/* Fix for icon alignment */
+.fa-solid, 
+.fa-brands, 
+.ai {
+  vertical-align: middle;
+}
+
+/* Paper links and buttons styling */
+.news-flex-row {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+  gap: 15px;
+}
+
+.news-flex-row > div:first-child {
+  flex: 1;
+}
+
+.news-flex-row a[href*="doi.org"] {
+  color: #cf4900;
+  font-weight: 500;
+}
+
+.news-flex-row a[href$=".pdf"] {
+  color: #0056b3;
+  font-weight: 500;
+}
+
+/* Images in news items */
+.news-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.news-image:hover {
+  transform: scale(1.02);
+}
+
+/* Dark theme adjustments */
+[data-theme="dark"] .news-flex-row a[href*="doi.org"] {
+  color: #ff8650;
+}
+
+[data-theme="dark"] .news-flex-row a[href$=".pdf"] {
+  color: #6fa1ff;
+}
+
+[data-theme="dark"] .news-image {
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+} 
