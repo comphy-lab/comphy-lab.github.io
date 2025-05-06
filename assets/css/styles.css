@@ -571,6 +571,59 @@ body {
   box-shadow: 0 4px 8px var(--news-img-shadow) !important;
 }
 
+/* History Button Styles */
+.s-news__history-btn {
+  margin: 2rem auto 1rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-size: 1.5rem;
+  font-family: var(--font-primary);
+  font-weight: 500;
+  color: #cf4900;
+  background: none;
+  border: none;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+  text-decoration: none;
+  position: relative;
+}
+.s-news__history-btn:hover,
+.s-news__history-btn:focus {
+  color: #e26b33;
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+.s-news__history-btn:active {
+  color: #cc3c00;
+  transform: translateY(1px);
+}
+@media (max-width: 600px) {
+  .s-news__history-btn {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.75em 1.2em;
+  }
+}
+[data-theme="dark"] .s-news__history-btn {
+  color: var(--link-doi-color);
+  background: none;
+  border: none;
+}
+[data-theme="dark"] .s-news__history-btn:hover,
+[data-theme="dark"] .s-news__history-btn:focus {
+  color: #ff9e73;
+  transform: translateY(-1px);
+}
+[data-theme="dark"] .s-news__history-btn:active {
+  color: #ff7d42;
+  transform: translateY(1px);
+}
+
+/* End History Button Styles */
+
 /* Fix section backgrounds in dark mode */
 [data-theme="dark"] .s-about,
 [data-theme="dark"] .s-featured,
