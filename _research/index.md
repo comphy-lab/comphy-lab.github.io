@@ -34,15 +34,6 @@ title: Research
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/49KoJwXiDl4?si=uxdpYyKFFd8E6jvN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-### <strong>Dixit, A. K.</strong>, Oratis, A., Zinelis, K., Lohse, D., & <strong>Sanjay, V.</strong> Viscoelastic Worthington jets & droplets produced by bursting bubbles. Received positive reviews in J. Fluid Mech. (2025).
-
-<tags><span>Bubbles</span><span>Non-Newtonian</span><span>Jets</span><span>Soft-matter-singularities</span><span>Drops</span><span>Featured</span></tags>
-
-[![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2408.05089&color=green)](https://arxiv.org/abs/2408.05089)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/Viscoelastic-Worthington-jets-and-droplets-produced-by-bursting-bubbles)
-[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
-
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=SEePOSC_hY5SLxac&amp;list=PLiHEqeURsoWqT3CaVfp0Z2MswHfc7MQxE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Bashkatov, A., Bürkle, F., Demirkır, Ç., Ding, W., <strong>Sanjay, V.</strong>, Babich, A., Yang, X., Mutschke, G., Czarske, J., Lohse, D., et al. Electrolyte spraying within H₂ bubbles during water electrolysis. Received positive reviews in Nat. Commun. (2025).
 
@@ -55,6 +46,17 @@ title: Research
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/QbQ4wrTjTks?si=SZsmKgXX28Fxcgru" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## 2025
+
+<h3 id="16">[16] <strong>Dixit, A.</strong>, Oratis, A., Zinelis, K., Lohse, D., & <strong>Sanjay, V.</strong> Viscoelastic Worthington Jets and Droplets Produced by Bursting Bubbles. J. Fluid Mech., 1010, A2 (2025).</h3>
+
+<tags><span>Bubbles</span><span>Non-Newtonian</span><span>Jets</span><span>Soft-matter-singularities</span><span>Drops</span><span>Featured</span></tags>
+
+[![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=OA&color=orange)](https://doi.org/10.1017/jfm.2025.237)
+[![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2408.05089&color=green)](https://arxiv.org/abs/2408.05089)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/Viscoelastic-Worthington-jets-and-droplets-produced-by-bursting-bubbles)
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=SEePOSC_hY5SLxac&amp;list=PLiHEqeURsoWqT3CaVfp0Z2MswHfc7MQxE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <h3 id="15">[15] <strong>Sanjay, V.</strong>, & Lohse, D. Unifying theory of scaling in drop impact: Forces & maximum spreading diameter. Phys. Rev. Lett., 134, 104003 (2025).</h3>
 
