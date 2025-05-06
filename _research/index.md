@@ -155,7 +155,7 @@ title: Research
 [![Defense](https://img.shields.io/static/v1.svg?style=flat-square&logo=vimeo&label=Defense&message=Watch%20online&color=green)](https://vimeo.com/730545548)
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
 
-<h3 id="9">[9] <strong>Sanjay, V.</strong> Taylor--Culick retractions and the influence of the surroundings. J. Fluid Mech., 948, A14 (2022).</h3>
+<h3 id="9">[9] <strong>Sanjay, V.</strong>, Sen, U., Kant, P., and Lohse, D. Taylor–Culick retractions and the influence of the surroundings. J. Fluid Mech., 948, A14 (2022).</h3>
 
 <tags><span>Sheets</span><span>Dissipative anomaly</span><span>Retraction</span></tags>
 
