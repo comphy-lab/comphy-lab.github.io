@@ -7,18 +7,18 @@
 /* News and History shared variables */
 :root {
     /* Link Colors */
-    --shared-doi-link-color: #cf4900;
-    --shared-pdf-link-color: #0056b3;
-    --shared-doi-link-color-dark: #ff8650;
-    --shared-pdf-link-color-dark: #6fa1ff;
+    --shared-doi-link-color: var(--color-link-doi, #cf4900);
+    --shared-pdf-link-color: var(--color-link-pdf, #0056b3);
+    --shared-doi-link-color-dark: var(--color-link-doi, #ff8650);
+    --shared-pdf-link-color-dark: var(--color-link-pdf, #6fa1ff);
 
     /* Heading Colors */
-    --shared-h3-color: var(--color-primary);
-    --shared-h3-border-color: var(--color-primary);
+    --shared-h3-color: var(--color-heading-h3);
+    --shared-h3-border-color: var(--color-heading-h3);
 
     /* Strong Tag Colors */
-    --shared-strong-color: #cf4900;
-    --shared-strong-color-dark: #ff8650;
+    --shared-strong-color: var(--color-strong, #cf4900);
+    --shared-strong-color-dark: var(--color-strong, #ff8650);
 
     /* Box Styles */
     --news-history-box-bg: var(--about-grid-bg, #f7f7f9);
@@ -362,7 +362,7 @@ div a.pdf-link,
     font-weight: 600;
     padding-bottom: 0.5rem;
     margin: 1.5rem 0 1rem;
-    color: var(--color-text);
+    color: var(--color-heading-h2);
     border-bottom: 2px solid var(--h2-border-color, #eaeaea);
     letter-spacing: 0.01em;
 }
@@ -411,7 +411,7 @@ section h3 {
 [data-theme="dark"] .history-news-box h2,
 [data-theme="dark"] #news-content h2,
 [data-theme="dark"] .s-about__desc h2 {
-    color: var(--color-text);
+    color: var(--color-heading-h2);
     border-bottom: 2px solid var(--h2-border-color-dark, #444444);
 }
 
