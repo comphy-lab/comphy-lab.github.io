@@ -40,9 +40,7 @@
 .s-teaching__desc h1 {
   font-size: 3.6rem;
   margin-bottom: 1.2rem;
-  background: linear-gradient(to right, #e63946, #4169e1);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--color-heading-h1);
   display: inline-block;
 }
 
@@ -53,9 +51,9 @@
 }
 
 .teaching-content h1 {
-  font-size: 3rem;
+  font-size: 3.6rem;
   margin-bottom: 1.5rem;
-  color: #68236D;
+  color: var(--color-heading-h1);
 }
 
 .teaching-content h2 {
