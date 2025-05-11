@@ -1,3 +1,10 @@
+---
+layout: history
+title: History
+---
+
+# History
+
 ## 2025
 
 ### May
@@ -32,7 +39,7 @@
   Image credit: J. Heitman, B. J. Howlett, P. W. Crous, E. H. Stukenbrock, T. Y. James & N. A. R. Gow, The fungal kingdom, John Wiley & Sons (2020)
 </div>
 
-### March
+### March 
 
 - <a href="https://en.wikipedia.org/wiki/Detlef_Lohse"><strong>Prof. Detlef Lohse</strong></a> shares his scientific journey in <a href="https://www.youtube.com/@TheLivingHistoriesSeries" class="blue-link">The Living Histories Series</a>. His inspiring discussion on curiosity, mentorship, and the "puzzle solving" joy of science offers valuable insights for researchers at all career stages.
 
@@ -74,8 +81,36 @@
 </div>
 
 - <strong>Milan Sent</strong> <a href="https://github.com/mdjsent">
-  <i class="fa-brands fa-github" style="font-size: 1.5em; color: #8a2be2;"></i>
-  </a> graduated with a bachelor's degree from University of Twente. <strong>Thesis:</strong>
-  <a href="https://tinyurl.com/2ycunjcr" class="pdf-link" style="display: inline-flex; align-items: center;">
-  <i class="fa-solid fa-file-pdf" style="margin-right: 8px; font-size: 1.2em; color: #e63946;"></i>Spinning Pizza
-  </a>
+<i class="fa-brands fa-github" style="font-size: 1.5em; color: #8a2be2;"></i>
+</a> graduated with a bachelor's degree from University of Twente. <strong>Thesis:</strong>
+<a href="https://tinyurl.com/2ycunjcr" class="pdf-link" style="display: inline-flex; align-items: center;">
+<i class="fa-solid fa-file-pdf" style="margin-right: 8px; font-size: 1.2em; color: #e63946;"></i>Spinning Pizza
+</a>
+
+
+
+## 2024
+
+### December
+
+- [Balasubramanian, A. G., <strong>Sanjay, V.</strong>, Jalaal, M., Vinuesa, R., & Tammisola, O. J. Fluid Mech., 1001, A9 (2024). selected as the cover article.](/research#12)
+
+<div class="news-flex-row">
+  <div class="news-flex-row__image-container">
+    <a href="/research#12">
+      <img src="/assets/images/covers/2024-12-JFM_Vol1001.jpeg" alt="JFM cover" class="news-image">
+    </a>
+  </div>
+  <div class="news-flex-row__links-container">
+    <a href="/assets/images/covers/2024-12-JFM_Vol1001.pdf" class="pdf-link"><i class="fa-solid fa-download" style="margin-right: 8px; font-size: 1.2em;"></i>Download Cover</a>
+    <a href="https://doi.org/10.1017/jfm.2024.1073" class="doi-link"><i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 8px; font-size: 1.2em;"></i>View Paper</a>
+  </div>
+</div>
+
+### November
+
+- <strong>Vatsal Sanjay</strong> recognized as an <a href="https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/announcements/prizes-and-awards/outstanding-reviewers-2023" class="blue-link">Outstanding Reviewer 2023</a> by the Journal of Fluid Mechanics for his contributions to the peer review process.
+
+### May
+
+- <strong>Vatsal Sanjay</strong> awarded the <a href="https://www.tudelft.nl/2024/jm-burgerscentrum/kivi-hoogendoorn-fluid-mechanics-award-2023" class="blue-link">KIVI Hoogendoorn Fluid Mechanics Award 2023</a> for his PhD thesis "Viscous Free-Surface Flows". The award ceremony took place at the Burgers Symposium on 29–30 May 2024 in Lunteren.

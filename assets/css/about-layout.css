@@ -1,0 +1,55 @@
+/**
+ * About Section Responsive Layout Styles
+ * This file handles the specific layout requirements for the about section
+ * to ensure it displays properly on all screen sizes
+ */
+
+/* Base layout for about grid */
+.s-about__grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 4rem;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Left column - About content */
+.s-about__left {
+  flex: 3;
+  min-width: 0; /* Allows the flex item to shrink below content size */
+  width: 60%;
+}
+
+/* Right column - News content */
+.s-about__right {
+  flex: 2;
+  min-width: 0; /* Allows the flex item to shrink below content size */
+  width: 35%;
+}
+
+/* Make sure inner content doesn't overflow */
+.s-about__desc {
+  width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* Tablet breakpoint */
+@media screen and (max-width: 1300px) {
+  .s-about__grid {
+    flex-direction: column;
+  }
+  
+  .s-about__left,
+  .s-about__right {
+    width: 100%;
+  }
+}
+
+/* Mobile breakpoint */
+@media screen and (max-width: 768px) {
+  .s-about__grid {
+    padding: 2rem;
+  }
+}

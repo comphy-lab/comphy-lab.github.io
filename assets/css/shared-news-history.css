@@ -1,0 +1,463 @@
+/**
+ * Shared News and History Styles
+ * This file contains unified styles for both news and history sections
+ * to maintain consistent styling across the site
+ */
+
+/* News and History shared variables */
+:root {
+    /* Link Colors */
+    --shared-doi-link-color: var(--color-link-doi, #cf4900);
+    --shared-pdf-link-color: var(--color-link-pdf, #0056b3);
+    --shared-doi-link-color-dark: var(--color-link-doi, #ff8650);
+    --shared-pdf-link-color-dark: var(--color-link-pdf, #6fa1ff);
+
+    /* Heading Colors */
+    --shared-h3-color: var(--color-heading-h3);
+    --shared-h3-border-color: var(--color-heading-h3);
+
+    /* Strong Tag Colors */
+    --shared-strong-color: var(--color-strong, #cf4900);
+    --shared-strong-color-dark: var(--color-strong, #ff8650);
+
+    /* Box Styles */
+    --news-history-box-bg: var(--about-grid-bg, #f7f7f9);
+    --news-history-box-border: var(--about-grid-border, #e0e0e0);
+    --news-history-box-radius: 14px;
+    --news-history-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    --news-history-box-padding: 2.5rem 2.5rem 2rem 2.5rem;
+    --news-history-box-margin: 2.5rem auto 3.5rem auto;
+    --news-history-box-width: 900px;
+
+    /* Dark Theme Box */
+    --news-history-box-bg-start-dark: var(--about-grid-bg-start, #2a2a2a);
+    --news-history-box-bg-end-dark: var(--about-grid-bg-end, #2a2a2a);
+    --news-history-box-border-dark: var(--about-grid-border, #2a2a2a);
+    --news-history-box-shadow-dark: 0 4px 24px rgba(0, 0, 0, 0.18);
+}
+
+/* Strong tag styling - unified for both sections */
+.history-news-box strong,
+.teaching-content strong,
+.markdown-content strong,
+#news-content strong,
+.s-about__desc strong,
+body strong,
+li strong,
+ul strong,
+p strong,
+div strong,
+section strong {
+    font-weight: 700;
+    color: var(--shared-strong-color, #cf4900) !important;
+}
+
+/* Dark mode strong tag styling */
+[data-theme="dark"] .history-news-box strong,
+[data-theme="dark"] .teaching-content strong,
+[data-theme="dark"] .markdown-content strong,
+[data-theme="dark"] #news-content strong,
+[data-theme="dark"] .s-about__desc strong,
+[data-theme="dark"] body strong,
+[data-theme="dark"] li strong,
+[data-theme="dark"] ul strong,
+[data-theme="dark"] p strong,
+[data-theme="dark"] div strong,
+[data-theme="dark"] section strong {
+    color: var(--shared-strong-color-dark, #ff8650) !important;
+}
+
+/* Fix for links and buttons getting italicized */
+.teaching-content a,
+.markdown-content a,
+.news-flex-row a,
+#news-content a,
+.history-news-box a {
+    font-style: normal !important;
+    text-decoration: none;
+}
+
+/* Ensure icons never get italicized */
+.teaching-content a i,
+.markdown-content a i,
+.news-flex-row a i,
+#news-content a i,
+.history-news-box a i,
+.fa-solid,
+.fa-brands,
+.ai {
+    font-style: normal !important;
+}
+
+/* Fix for icon alignment */
+.fa-solid,
+.fa-brands,
+.ai {
+    vertical-align: middle;
+}
+
+/* Paper links and buttons styling */
+.news-flex-row {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    gap: 15px;
+    flex-wrap: nowrap;
+}
+
+.news-flex-row__image-container {
+    flex: 0 0 auto;
+    max-width: 50%;
+}
+
+.news-flex-row__links-container {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+/* Unified link styles for DOI, PDF, and other links across both sections */
+.news-flex-row a.doi-link,
+a.doi-link,
+div a.doi-link,
+#news-content a.doi-link,
+.history-news-box a.doi-link,
+#news-content a[href^="https://doi.org"],
+.history-news-box a[href^="https://doi.org"]
+{
+    color: var(--shared-doi-link-color);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.news-flex-row a.pdf-link,
+a.pdf-link,
+div a.pdf-link,
+#news-content a.pdf-link,
+.history-news-box a.pdf-link,
+#news-content a[href$=".pdf"],
+.history-news-box a[href$=".pdf"] {
+    color: var(--shared-pdf-link-color);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+/* Blue links for external references */
+.blue-link,
+#news-content .blue-link,
+.history-news-box .blue-link {
+    color: var(--shared-pdf-link-color);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+/* YouTube links */
+.youtube-link,
+#news-content .youtube-link,
+.history-news-box .youtube-link,
+#news-content a[href*="youtube"],
+#news-content a[href*="youtu.be"],
+.history-news-box a[href*="youtube"],
+.history-news-box a[href*="youtu.be"] {
+    color: var(--shared-doi-link-color);
+    font-weight: 500;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+}
+
+/* Images in news items */
+.history-news-box .news-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-medium);
+}
+
+/* Specific styling for news images in the landing page */
+#news-content .news-image {
+    max-width: 175px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-medium);
+}
+
+.history-news-box .news-image:hover,
+#news-content .news-image:hover {
+    transform: scale(1.02);
+}
+
+/* Image credit styling */
+.news-credit,
+.history-news-box .news-credit,
+.teaching-content .news-credit,
+.markdown-content .news-credit,
+#news-content .news-credit {
+    font-size: 0.75em;
+    color: var(--color-text);
+    opacity: 0.7;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+/* Dark theme adjustments for links */
+[data-theme="dark"] .news-flex-row a.doi-link,
+[data-theme="dark"] a.doi-link,
+[data-theme="dark"] div a.doi-link,
+[data-theme="dark"] #news-content a.doi-link,
+[data-theme="dark"] .history-news-box a.doi-link,
+[data-theme="dark"] #news-content a[href^="https://doi.org"],
+[data-theme="dark"] .history-news-box a[href^="https://doi.org"]
+{
+    color: var(--shared-doi-link-color-dark);
+}
+
+[data-theme="dark"] .news-flex-row a.pdf-link,
+[data-theme="dark"] a.pdf-link,
+[data-theme="dark"] div a.pdf-link,
+[data-theme="dark"] #news-content a.pdf-link,
+[data-theme="dark"] .history-news-box a.pdf-link,
+[data-theme="dark"] #news-content a[href$=".pdf"],
+[data-theme="dark"] .history-news-box a[href$=".pdf"] {
+    color: var(--shared-pdf-link-color-dark);
+}
+
+[data-theme="dark"] .blue-link,
+[data-theme="dark"] #news-content .blue-link,
+[data-theme="dark"] .history-news-box .blue-link {
+    color: var(--shared-pdf-link-color-dark);
+}
+
+[data-theme="dark"] .youtube-link,
+[data-theme="dark"] #news-content .youtube-link,
+[data-theme="dark"] .history-news-box .youtube-link,
+[data-theme="dark"] #news-content a[href*="youtube"],
+[data-theme="dark"] #news-content a[href*="youtu.be"],
+[data-theme="dark"] .history-news-box a[href*="youtube"],
+[data-theme="dark"] .history-news-box a[href*="youtu.be"] {
+    color: var(--shared-doi-link-color-dark);
+}
+
+[data-theme="dark"] .history-news-box .news-image,
+[data-theme="dark"] #news-content .news-image {
+    box-shadow: var(--shadow-lg);
+}
+
+/* Responsive adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+    .news-flex-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .news-flex-row__image-container {
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .news-flex-row__links-container {
+        width: 100%;
+    }
+
+    .history-news-box .news-image {
+        max-width: 100%;
+    }
+
+    /* Maintain consistent sizing for news images even on mobile */
+    #news-content .news-image {
+        max-width: 175px;
+    }
+}
+
+/* Ensure about and news sections display side by side on wider screens */
+@media screen and (min-width: 1301px) {
+    .s-about__grid {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .s-about__left {
+        width: 58%;
+    }
+
+    .s-about__right {
+        width: 38%;
+    }
+}
+
+/* Standardized history and news box styles */
+.history-news-box {
+    background: var(--news-history-box-bg);
+    border: 1px solid var(--news-history-box-border);
+    border-radius: var(--news-history-box-radius);
+    box-shadow: var(--news-history-box-shadow);
+    padding: var(--news-history-box-padding);
+    margin: var(--news-history-box-margin);
+    max-width: var(--news-history-box-width);
+    transition:
+        background 0.2s,
+        border 0.2s;
+}
+
+[data-theme="dark"] .history-news-box {
+    background: linear-gradient(
+        145deg,
+        var(--news-history-box-bg-start-dark),
+        var(--news-history-box-bg-end-dark)
+    );
+    border: 1px solid var(--news-history-box-border-dark);
+    box-shadow: var(--news-history-box-shadow-dark);
+}
+
+/* Common heading styles */
+.history-news-box h3,
+.history-news-box h4,
+.history-news-box h5,
+.history-news-box h6,
+#news-content h3,
+#news-content h4,
+#news-content h5,
+#news-content h6,
+.s-about__desc h3,
+.s-about__desc h4,
+.s-about__desc h5,
+.s-about__desc h6 {
+    font-weight: 600;
+    text-align: left;
+    letter-spacing: 0.01em;
+    background: none;
+}
+
+/* Individual heading size/margin/color adjustments */
+.history-news-box h1,
+#news-content h1,
+.s-about__desc h1 {
+    font-size: 3.6rem;
+    font-weight: 700;
+    margin: 2.5rem 0 2rem 0;
+    color: var(--color-heading-h1, #68236d);
+    position: relative;
+    text-align: center;
+}
+
+/* h2 styling - taking the News styling as standard */
+.history-news-box h2,
+#news-content h2,
+.s-about__desc h2 {
+    position: relative;
+    font-size: 2.4rem;
+    font-weight: 600;
+    padding-bottom: 0.5rem;
+    margin: 1.5rem 0 1rem;
+    color: var(--color-heading-h2);
+    border-bottom: 2px solid var(--h2-border-color, #eaeaea);
+    letter-spacing: 0.01em;
+}
+
+/* Unified h3 styling for both news and history sections - using !important to override any other styles */
+.history-news-box h3,
+#news-content h3,
+.s-about__desc h3,
+.markdown-content h3,
+.teaching-content h3,
+section h3 {
+    font-size: 2rem !important;
+    margin: 1.8rem 0 1rem 0 !important;
+    color: var(--shared-h3-color, #ff8989) !important;
+    font-weight: 600 !important;
+    padding-bottom: 0.2rem !important;
+    display: inline-block !important;
+    border-bottom: 1.5px solid var(--shared-h3-border-color, #ff8989) !important;
+    text-shadow: none !important;
+    background: none !important;
+}
+
+.history-news-box h4,
+#news-content h4 {
+    font-size: 1.3rem;
+    margin: 1.2rem 0 0.7rem 0;
+    color: var(--history-h4-h6-color);
+}
+
+.history-news-box h5,
+.history-news-box h6,
+#news-content h5,
+#news-content h6 {
+    font-size: 1.1rem;
+    margin: 1rem 0 0.5rem 0;
+    color: var(--history-h4-h6-color);
+}
+
+/* Dark theme headings styling */
+[data-theme="dark"] .history-news-box h1,
+[data-theme="dark"] #news-content h1,
+[data-theme="dark"] .s-about__desc h1 {
+    color: var(--color-heading-h1, #9a349f);
+}
+
+[data-theme="dark"] .history-news-box h2,
+[data-theme="dark"] #news-content h2,
+[data-theme="dark"] .s-about__desc h2 {
+    color: var(--color-heading-h2);
+    border-bottom: 2px solid var(--h2-border-color-dark, #444444);
+}
+
+/* Dark theme h3 styling - keep the same colors for consistency */
+[data-theme="dark"] .history-news-box h3,
+[data-theme="dark"] #news-content h3,
+[data-theme="dark"] .s-about__desc h3,
+[data-theme="dark"] .markdown-content h3,
+[data-theme="dark"] .teaching-content h3,
+[data-theme="dark"] section h3 {
+    color: var(--shared-h3-color) !important;
+    border-bottom: 1.5px solid var(--shared-h3-border-color) !important;
+    text-shadow: none !important;
+}
+
+/**
+ * History Page Specific Styles
+ * This file contains styles specific to the history page only
+ * Shared styles have been moved to shared-news-history.css
+ */
+
+/* History-specific variables */
+:root {
+    /* Any history-specific variables can be defined here */
+    --history-h4-h6-color: #444444;
+}
+
+[data-theme="dark"] {
+    --history-h4-h6-color: #cccccc;
+}
+
+/* Year and month headings style */
+.history-news-box h2 {
+    color: var(--color-heading-h2) !important;
+}
+
+.history-news-box h3 {
+    color: var(--shared-h3-color) !important;
+}
+
+/* Dark theme overrides */
+[data-theme="dark"] .history-news-box h2 {
+    color: var(--color-heading-h2) !important;
+    border-bottom: 2px solid var(--h2-border-color-dark, #444444);
+}
+
+[data-theme="dark"] .history-news-box h3 {
+    color: var(--shared-h3-color) !important;
+}
