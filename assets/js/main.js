@@ -60,7 +60,7 @@
             paragraph.style.margin = "0";
           });
         }
-        // Add History button after all news items
+        // Add History button after all news items if newsContent exists
         const historyBtn = document.createElement("a");
         historyBtn.href = "/history";
         historyBtn.className = "s-news__history-btn";
@@ -68,7 +68,9 @@
           '<i class="fa-solid fa-arrow-right" style="margin-right: 8px; font-size: 1.2em;"></i>Archive';
         historyBtn.setAttribute("role", "button");
         historyBtn.setAttribute("tabindex", "0");
-        newsContent.appendChild(historyBtn);
+        if (newsContent) {
+          newsContent.appendChild(historyBtn);
+        }
       } catch (error) {
         console.error("Error loading news content:", error);
       }
