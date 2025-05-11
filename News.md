@@ -11,7 +11,7 @@
   </a>
 </div>
 <div>
-  <a href="https://doi.org/10.1017/jfm.2025.237" style="display: flex; align-items: center; text-decoration: none; color: #cf4900; font-size: 1em; font-weight: 500;"><i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 8px; font-size: 1.2em;"></i>View Paper</a>
+  <a href="https://doi.org/10.1017/jfm.2025.237" class="doi-link" style="display: flex; align-items: center; text-decoration: none; font-size: 1em;"><i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 8px; font-size: 1.2em;"></i>View Paper</a>
 </div>
 </div>
 
@@ -51,7 +51,7 @@
     </a>
   </div>
   <div>
-    <a href="https://doi.org/10.1103/PhysRevLett.134.104003" style="display: flex; align-items: center; text-decoration: none; color: #cf4900; font-size: 1em; font-weight: 500;"><i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 8px; font-size: 1.2em;"></i>View Paper</a>
+    <a href="https://doi.org/10.1103/PhysRevLett.134.104003" class="doi-link" style="display: flex; align-items: center; text-decoration: none; font-size: 1em;"><i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 8px; font-size: 1.2em;"></i>View Paper</a>
   </div>
 </div>
 
@@ -68,14 +68,14 @@
     </a>
   </div>
   <div style="display: flex; flex-direction: column; gap: 10px;">
-    <a href="/assets/images/covers/2025-02-JFM_Vol1004.pdf" style="display: flex; align-items: center; text-decoration: none; color: #0056b3; font-size: 1em; font-weight: 500;"><i class="fa-solid fa-download" style="margin-right: 8px; font-size: 1.2em;"></i>Download Cover</a>
-    <a href="https://doi.org/10.1017/jfm.2024.982" style="display: flex; align-items: center; text-decoration: none; color: #cf4900; font-size: 1em; font-weight: 500;"><i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 8px; font-size: 1.2em;"></i>View Paper</a>
+    <a href="/assets/images/covers/2025-02-JFM_Vol1004.pdf" class="pdf-link" style="display: flex; align-items: center; text-decoration: none; font-size: 1em;"><i class="fa-solid fa-download" style="margin-right: 8px; font-size: 1.2em;"></i>Download Cover</a>
+    <a href="https://doi.org/10.1017/jfm.2024.982" class="doi-link" style="display: flex; align-items: center; text-decoration: none; font-size: 1em;"><i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 8px; font-size: 1.2em;"></i>View Paper</a>
   </div>
 </div>
 
 - <strong>Milan Sent</strong> <a href="https://github.com/mdjsent" style="text-decoration: none;">
   <i class="fa-brands fa-github" style="font-size: 1.5em; color: #8a2be2;"></i>
   </a> graduated with a bachelor's degree from University of Twente. <strong>Thesis:</strong> 
-  <a href="https://tinyurl.com/2ycunjcr" style="display: inline-flex; align-items: center; text-decoration: none; color: #0056b3; font-weight: 500;">
+  <a href="https://tinyurl.com/2ycunjcr" class="pdf-link" style="display: inline-flex; align-items: center; text-decoration: none;">
   <i class="fa-solid fa-file-pdf" style="margin-right: 8px; font-size: 1.2em; color: #e63946;"></i>Spinning Pizza
   </a>
