@@ -456,23 +456,60 @@
 .s-map h1,
 .s-map h2 {
     text-align: center;
-    margin-bottom: 1.5rem;
-    color: var(--team-heading-color);
-    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
+    color: var(--color-purple-light);
+    font-size: 2.5rem;
     width: 100%;
     max-width: 1200px;
     position: relative;
 }
 
+[data-theme="light"] .s-map h1,
+[data-theme="light"] .s-map h2 {
+    color: var(--color-purple-dark);
+}
+
+/* Override and remove any automatic after elements on map headings */
 .s-map h1:after,
-.s-map h2:after {
-    content: "";
-    position: absolute;
-    bottom: -15px;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background-color: var(--team-heading-color);
+.s-map h2:after,
+.s-map h2::after,
+.s-map h1::after,
+section.s-map h2:after,
+section.s-map h2::after,
+.s-map .column h2:after,
+.s-map .column h2::after {
+    content: none !important;
+    display: none !important;
+    background: none !important;
+    height: 0 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+/* Create our own custom border that we fully control */
+.s-map h1,
+.s-map h2 {
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+.map-heading {
+    border-bottom: 1px solid var(--color-purple-dark) !important;
+    position: relative;
+    box-shadow: none !important;
+}
+
+[data-theme="dark"] .map-heading {
+    border-bottom: 1px solid var(--color-purple-light) !important;
+}
+
+/* Extra specificity to override any other styles */
+.s-map .map-heading::before,
+.s-map .map-heading::after,
+.s-map .map-heading:before,
+.s-map .map-heading:after {
+    display: none !important;
+    content: none !important;
 }
 
 .s-map .map-description {
