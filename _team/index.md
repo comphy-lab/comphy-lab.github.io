@@ -13,8 +13,8 @@ title: Our Team & Collaborators
 <img src="/assets/images/team/0.jpg" alt="Vatsal Sanjay" loading="lazy" width="200" height="200">
 
 - [Postdoc, Phys. Fluids - Univ. Twente / 2022-25](https://pof.tnw.utwente.nl/people/profile/1330)
-- Ph.D., Phys. Fluids - Univ. Twente / 2018-22, **Thesis:** <a href="https://doi.org/10.3990/1.9789036554077" class="pdf-link" style="display: inline-flex; align-items: center; margin-left: 5px;"><i class="fa-solid fa-file-pdf" style="margin-right: 8px; font-size: 1.2em; color: #e63946;"></i></a>
-- B.Tech + M.Tech, Two-Phase Flow & Instability Lab, IIT-Roorkee / 2013-18, **Thesis:** <a href="http://dx.doi.org/10.13140/RG.2.2.22294.04166" class="pdf-link" style="display: inline-flex; align-items: center; margin-left: 5px;"><i class="fa-solid fa-file-pdf" style="margin-right: 8px; font-size: 1.2em; color: #e63946;"></i></a>
+- Ph.D., Phys. Fluids - Univ. Twente / 2018-22, **Thesis:** <a href="https://doi.org/10.3990/1.9789036554077" class="pdf-link" style="display: inline-flex; align-items: center; margin-left: 5px;"><i class="fa-solid fa-file-pdf" style="margin-right: 8px; font-size: 1.2em; color: #e63946;"></i>Viscous Free-Surface Flows</a>
+- B.Tech + M.Tech, Two-Phase Flow & Instability Lab, IIT-Roorkee / 2013-18, **Thesis:** <a href="http://dx.doi.org/10.13140/RG.2.2.22294.04166" class="pdf-link" style="display: inline-flex; align-items: center; margin-left: 5px;"><i class="fa-solid fa-file-pdf" style="margin-right: 8px; font-size: 1.2em; color: #e63946;"></i>Understanding of mutual interactions between liquid jets: Entrainment and sheet formation</a>
 - [Personal Website](https://vatsalsanjay.com)
 
 **Research Interest:** See [here](https://comphy-lab.org/research)
@@ -30,7 +30,7 @@ title: Our Team & Collaborators
 Joint with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 
 - [Ph.D. Student, Phys. Fluids - Univ. Twente / 2023-now](https://pof.tnw.utwente.nl/people/profile/2068)
-- B.Tech + M.Tech, Two-Phase Flow & Instability Lab, IIT-Roorkee / 2018-23,**Thesis:**<a href="http://dx.doi.org/10.13140/RG.2.2.23218.79040" class="pdf-link" style="display: inline-flex; align-items: center; margin-left: 5px;"><i class="fa-solid fa-file-pdf" style="margin-right: 8px; font-size: 1.2em; color: #e63946;"></i></a>
+- B.Tech + M.Tech, Two-Phase Flow & Instability Lab, IIT-Roorkee / 2018-23,**Thesis:**<a href="http://dx.doi.org/10.13140/RG.2.2.23218.79040" class="pdf-link" style="display: inline-flex; align-items: center; margin-left: 5px;"><i class="fa-solid fa-file-pdf" style="margin-right: 8px; font-size: 1.2em; color: #e63946;"></i>Understanding interfacial interaction in macro and nano scales</a>
 
 **Research Interest:** Viscoelastic Flows, Bursting Bubbles, Respiratory Drops.
 
