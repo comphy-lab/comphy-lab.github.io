@@ -70,9 +70,9 @@
     --history-box-width: 900px;
 
     /* Dark Theme Box */
-    --history-box-bg-start-dark: var(--about-grid-bg-start, #23242a);
-    --history-box-bg-end-dark: var(--about-grid-bg-end, #181920);
-    --history-box-border-dark: var(--about-grid-border, #23242a);
+    --history-box-bg-start-dark: var(--about-grid-bg-start, #2A2A2A);
+    --history-box-bg-end-dark: var(--about-grid-bg-end, #2A2A2A);
+    --history-box-border-dark: var(--about-grid-border, #2A2A2A);
     --history-box-shadow-dark: 0 4px 24px rgba(0, 0, 0, 0.18);
 
     /* Heading Colors */
@@ -87,11 +87,36 @@
 .news-flex-row a.doi-link {
     color: var(--history-doi-link-color);
     font-weight: 500;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1em;
 }
 
 .news-flex-row a.pdf-link {
     color: var(--history-pdf-link-color);
     font-weight: 500;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+/* Blue links for external references */
+.blue-link {
+    color: var(--history-pdf-link-color);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+/* YouTube links */
+.youtube-link {
+    color: var(--history-doi-link-color);
+    font-weight: 500;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 1em;
 }
 
 /* Images in history news items */
@@ -107,6 +132,18 @@
     transform: scale(1.02);
 }
 
+/* Image credit styling */
+.news-credit,
+.history-news-box .news-credit,
+.teaching-content .news-credit,
+.markdown-content .news-credit {
+    font-size: 0.75em;
+    color: var(--color-text);
+    opacity: 0.7;
+    margin-top: 5px;
+    font-style: italic;
+}
+
 /* Dark theme adjustments */
 [data-theme="dark"] .news-flex-row a.doi-link {
     color: var(--history-doi-link-color-dark);
@@ -114,6 +151,14 @@
 
 [data-theme="dark"] .news-flex-row a.pdf-link {
     color: var(--history-pdf-link-color-dark);
+}
+
+[data-theme="dark"] .blue-link {
+    color: var(--history-pdf-link-color-dark);
+}
+
+[data-theme="dark"] .youtube-link {
+    color: var(--history-doi-link-color-dark);
 }
 
 [data-theme="dark"] .history-news-box .news-image {
