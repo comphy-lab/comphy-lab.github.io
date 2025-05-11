@@ -5,7 +5,7 @@ title: Our Team & Collaborators
 
 # Present Team
 
-## Vatsal Sanjay (PI) 
+## Vatsal Sanjay (PI)
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/VatsalSy)
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?user=tHb_qZoAAAAJ&hl=en)
 [<i class="fa-brands fa-bluesky" style="font-size: 2em; color: #0085ff;"></i>](https://bsky.app/profile/comphy-lab.org)
@@ -21,7 +21,7 @@ title: Our Team & Collaborators
 
 [Download CV](https://raw.githubusercontent.com/VatsalSy/Vatsal_CV/master/Vatsal_CV.pdf){: .cv-button}
 
-## Ayush Dixit (Ph.D) 
+## Ayush Dixit (Ph.D)
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/ayushkumardixit)
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?hl=en&user=ws43SmkAAAAJ)
 
@@ -34,7 +34,7 @@ Joint with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 
 **Research Interest:** Viscoelastic Flows, Bursting Bubbles, Respiratory Drops.
 
-## Aman Bhargava (Ph.D) 
+## Aman Bhargava (Ph.D)
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/amanb1901)
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?hl=en&user=AmGOP8gAAAAJ)
 
@@ -48,7 +48,7 @@ Joint with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 
 **Research Interest:** Inertial Contact Line, Drop Retraction.
 
-## Jnandeep Talukdar (M.Sc.) 
+## Jnandeep Talukdar (M.Sc.)
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/spilltheT)
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?hl=en&user=Coxj4VQAAAAJ)
 [<i class="fa-brands fa-bluesky" style="font-size: 2em; color: #0085ff;"></i>](https://bsky.app/profile/jnandeep.bsky.social)
@@ -57,26 +57,26 @@ Joint with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 
 Joint with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 
-- Ph.D. Student, Phys. Fluids - Univ. Twente / **starting** May 2025
+- Ph.D. Student, Phys. Fluids - Univ. Twente / **starting** Jun 2025
 - [M.Sc. Student, Phys. Fluids - Univ. Twente / 2023-25](https://pof.tnw.utwente.nl/people/profile/1938)
 - B.Tech. Mechanical Engineering, IIT-Patna / 2019-23
 
 **Research Interest:** Surfactant Dynamics, Dissipative Anomaly, Soft Wetting.
 
-## Saumili Jana (M.Sc.) 
+## Saumili Jana (M.Sc.)
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/SaumiliJana)
 
 <img src="/assets/images/team/4.jpg" alt="Saumili Jana" loading="lazy" width="200" height="200">
 
 Joint with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 
-- Ph.D. Student, Phys. Fluids - Univ. Twente / **starting** Jul 2025
+- Ph.D. Student, Phys. Fluids - Univ. Twente / **starting** Jun 2025
 - B.Tech.+M.Tech. Student, IIT-Kharagpur / 2020-25
 - [Research Intern, Phys. Fluids - Univ. Twente / 2024](https://pof.tnw.utwente.nl/people/profile/2152)
 
 **Research Interest:** Soft Impact.
 
-## Floris Hoek (M.Sc.) 
+## Floris Hoek (M.Sc.)
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/Floris-Hoek)
 
 <img src="/assets/images/team/6.jpg" alt="Floris Hoek" loading="lazy" width="200" height="200">
@@ -181,7 +181,7 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 
 **Collaboration on:** Non-Newtonian Flows, Bubble Bursting, Herschel--Bulkley Fluids, Elastic Coating.
 
-## Radu Cimpeanu 
+## Radu Cimpeanu
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?user=6grZnhQAAAAJ&hl=en&inst=5726176096060060532&oi=ao)
 [<i class="fa-brands fa-x-twitter" style="font-size: 2em; color: #000000;"></i>](https://x.com/rcimpeanu)
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: #000000;"></i>](https://github.com/RaduCimpeanu)
@@ -236,7 +236,7 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 
 **Collaboration on:** Contact Line, Drop Impact, Superhydrophobic Surfaces.
 
-## Stéphane Zaleski 
+## Stéphane Zaleski
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?hl=en&user=no1GX_QAAAAJ)
 [<i class="fa-brands fa-x-twitter" style="font-size: 2em; color: #000000;"></i>](https://x.com/zaleski)
 
