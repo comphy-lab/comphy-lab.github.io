@@ -1,9 +1,9 @@
-/* 
+/*
  * Main Stylesheet for CoMPhy Lab Website
  * ======================================
  * Author: Refactored by Claude
  * Description: Comprehensive stylesheet for the Computational Multiphase Physics Lab website
- * 
+ *
  * This stylesheet uses CSS variables for consistent theming and follows DRY principles
  * to minimize code redundancy. It's organized into logical sections for easier maintenance.
  */
@@ -43,7 +43,7 @@
     --color-background: #ffffff;
     --color-link: #0056b3;
     --color-link-hover: #004494;
-    
+
     /* Color System - Neutrals */
     --color-white: #ffffff;
     --color-black: #000000;
@@ -53,7 +53,7 @@
     --color-gray-dark: #333333;
     --color-gray-xdark: #1e1e1e;
     --color-gray-xxxdark: #121212;
-    
+
     /* Color System - Accents */
     --color-strong: #cf4900;
     --color-blue-bright: #4c6ef5;
@@ -62,18 +62,18 @@
     --color-orange-bright: #e76b39;
     --color-bluesky: #0085ff;
     --color-linkedin: #0077b5;
-    
+
     /* Color System - Status */
     --color-success: #28a745;
     --color-info: #17a2b8;
     --color-warning: #ffc107;
     --color-danger: #dc3545;
-    
+
     /* Color System - Links */
     --color-link-doi: var(--color-strong);
     --color-link-pdf: var(--color-primary);
     --color-link-youtube: var(--color-strong);
-    
+
     /* Color System - Transparent Colors */
     --color-black-alpha-05: rgba(0, 0, 0, 0.05);
     --color-black-alpha-10: rgba(0, 0, 0, 0.1);
@@ -83,7 +83,7 @@
     --color-black-alpha-30: rgba(0, 0, 0, 0.3);
     --color-black-alpha-40: rgba(0, 0, 0, 0.4);
     --color-black-alpha-80: rgba(0, 0, 0, 0.8);
-    
+
     --color-white-alpha-10: rgba(255, 255, 255, 0.1);
     --color-white-alpha-20: rgba(255, 255, 255, 0.2);
     --color-white-alpha-25: rgba(255, 255, 255, 0.25);
@@ -93,14 +93,14 @@
     --color-white-alpha-70: rgba(255, 255, 255, 0.7);
     --color-white-alpha-85: rgba(255, 255, 255, 0.85);
     --color-white-alpha-95: rgba(255, 255, 255, 0.95);
-    
+
     --color-primary-alpha-05: rgba(0, 86, 179, 0.05);
     --color-primary-alpha-10: rgba(0, 86, 179, 0.1);
     --color-primary-alpha-15: rgba(0, 86, 179, 0.15);
     --color-primary-alpha-20: rgba(0, 86, 179, 0.2);
     --color-primary-alpha-25: rgba(0, 86, 179, 0.25);
     --color-primary-alpha-30: rgba(0, 86, 179, 0.3);
-    
+
     --color-blue-bright-alpha-05: rgba(76, 110, 245, 0.05);
     --color-blue-bright-alpha-08: rgba(76, 110, 245, 0.08);
     --color-blue-bright-alpha-10: rgba(76, 110, 245, 0.1);
@@ -109,37 +109,39 @@
     --color-blue-bright-alpha-25: rgba(76, 110, 245, 0.25);
     --color-blue-bright-alpha-30: rgba(76, 110, 245, 0.3);
     --color-blue-bright-alpha-50: rgba(76, 110, 245, 0.5);
-    
+
     --color-red-darker-alpha-20: rgba(250, 82, 82, 0.2);
     --color-header-base-alpha-15: rgba(104, 35, 109, 0.15);
     --color-header-base-alpha-20: rgba(104, 35, 109, 0.2);
     --color-peru-alpha-35: rgba(205, 133, 63, 0.35);
-    
+
     /* Typography */
-    --font-primary: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Arial", sans-serif;
-    
+    --font-primary:
+        system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Arial",
+        sans-serif;
+
     /* Heading Styling */
     --h2-gradient-start: #2b65c6;
     --h2-gradient-end: #0e4594;
     --h2-border-color: #2278d4;
     --h2-shadow-color: rgba(14, 69, 148, 0.2);
-    
+
     /* Box Shadows */
     --shadow-sm: 0 2px 10px var(--color-black-alpha-10);
     --shadow-md: 0 4px 15px var(--color-black-alpha-15);
     --shadow-lg: 0 4px 30px var(--color-black-alpha-20);
-    
+
     /* Transitions */
     --transition-fast: all 0.2s ease;
     --transition-medium: all 0.3s ease;
-    
+
     /* Spacing System */
     --space-xs: 0.5rem;
     --space-sm: 1rem;
     --space-md: 2rem;
     --space-lg: 4rem;
     --space-xl: 8rem;
-    
+
     /* Component Specific - Header */
     --header-bg: var(--color-header-base-alpha-15);
     --header-shadow: var(--color-header-base-alpha-20);
@@ -151,7 +153,7 @@
     --mobile-nav-bg: var(--color-white-alpha-95);
     --mobile-nav-shadow: var(--color-black-alpha-10);
     --mobile-nav-item-hover-bg: var(--color-white-alpha-35);
-    
+
     /* Component Specific - Icon Colors */
     --icon-color: var(--color-text);
     --icon-color-inherited: inherit;
@@ -161,9 +163,9 @@
     --icon-color-wikipedia: var(--color-black);
     --icon-color-github: var(--icon-color-inherited);
     --icon-color-google-scholar: var(--color-orange-bright);
-    --icon-color-newspaper: #68236D;
+    --icon-color-newspaper: #68236d;
     --icon-color-footer-social: var(--color-white);
-    
+
     /* Component Specific - Intro Section */
     --intro-content-bg: var(--color-white-alpha-85);
     --intro-pretitle-text: var(--color-near-black);
@@ -186,13 +188,13 @@
     --intro-more-btn-bg-hover: var(--color-white-alpha-40);
     --intro-more-btn-text: var(--color-near-black);
     --intro-more-btn-border: var(--color-white-alpha-40);
-    
+
     /* Component Specific - About Section */
     --about-grid-bg: var(--color-white-alpha-70);
     --about-grid-border: var(--color-black-alpha-10);
     --about-social-bg: var(--color-white);
     --about-social-border: var(--color-black-alpha-10);
-    --about-social-header-text: #68236D;
+    --about-social-header-text: #68236d;
     --about-social-header-border: var(--color-black-alpha-10);
     --about-scrollbar-thumb: var(--color-black-alpha-20);
     --about-scrollbar-track: transparent;
@@ -201,7 +203,7 @@
     --about-desc-h3-text: var(--color-heading-h3);
     --about-desc-h3-border: var(--color-red-darker-alpha-20);
     --about-desc-pre-bg: var(--color-black-alpha-05);
-    
+
     /* Component Specific - Strong Text */
     --strong-text-color: var(--color-strong, #cf4900);
     --strong-highlight-color: var(--color-peru-alpha-35);
@@ -209,7 +211,7 @@
     --strong-badge-bg-end: var(--color-blue-bright-alpha-05);
     --strong-badge-bg-hover-start: var(--color-blue-bright-alpha-15);
     --strong-badge-bg-hover-end: var(--color-blue-bright-alpha-08);
-    
+
     /* Component Specific - Footer */
     --footer-bg: var(--color-secondary);
     --footer-text: var(--color-white);
@@ -218,7 +220,7 @@
     --edit-link-border: var(--color-white-alpha-20);
     --edit-link-bg-hover: var(--color-white-alpha-10);
     --edit-link-border-hover: var(--color-white-alpha-40);
-    
+
     /* Component Specific - Go Top Button */
     --go-top-bg: var(--color-white-alpha-20);
     --go-top-bg-hover: var(--color-white-alpha-30);
@@ -226,9 +228,9 @@
     --go-top-shadow: var(--color-black-alpha-10);
     --go-top-shadow-hover: var(--color-black-alpha-15);
     --go-top-border: var(--color-white-alpha-30);
-    
+
     /* Team Member variables are now defined in team.css */
-    
+
     /* Component Specific - Featured Paper */
     --featured-paper-bg: var(--color-white-alpha-10);
     --tag-bg: var(--color-blue-bright-alpha-15);
@@ -236,24 +238,24 @@
     --tag-border: var(--color-blue-bright-alpha-20);
     --tag-bg-hover: var(--color-blue-bright-alpha-25);
     --tag-border-hover: var(--color-blue-bright-alpha-30);
-    
+
     /* Component Specific - Research */
     --research-content-bg: var(--color-white-alpha-25);
     --research-h2-border: var(--color-blue-bright-alpha-20);
     --research-list-border: var(--color-blue-bright-alpha-20);
     --research-list-text: var(--color-gray-medium);
-    
+
     /* Component Specific - Join Us */
     --join-content-bg: var(--color-white-alpha-25);
     --position-h2-border: var(--color-blue-bright-alpha-20);
     --application-info-bg: var(--color-blue-bright-alpha-05);
     --funding-info-bg: var(--color-blue-bright-alpha-05);
-    
+
     /* Component Specific - Markdown */
     --markdown-code-bg: var(--color-black-alpha-05);
     --markdown-blockquote-text: var(--color-gray-medium);
     --markdown-hr-color: var(--color-black-alpha-10);
-    
+
     /* Component Specific - Copyable */
     --copyable-bg: var(--color-blue-bright-alpha-05);
     --copyable-border: var(--color-blue-bright-alpha-10);
@@ -285,13 +287,13 @@
     --color-gray-xdark: #2a2a2a;
     --color-gray-footer-bg: #333333;
     --color-strong: #ff8650;
-    
+
     /* Status Colors */
     --color-success: #5cb85c;
     --color-info: #5bc0de;
     --color-warning: #f0ad4e;
     --color-danger: #d9534f;
-    
+
     /* Transparent Colors */
     --color-black-alpha-20: rgba(0, 0, 0, 0.2);
     --color-black-alpha-25: rgba(0, 0, 0, 0.25);
@@ -301,7 +303,7 @@
     --color-white-alpha-15: rgba(255, 255, 255, 0.15);
     --color-white-alpha-20: rgba(255, 255, 255, 0.2);
     --color-white-alpha-40: rgba(255, 255, 255, 0.4);
-    
+
     /* Dark Theme Specific Alpha Colors */
     --color-header-base-alpha-75: rgba(40, 15, 45, 0.75);
     --color-header-base-alpha-40: rgba(0, 0, 0, 0.4);
@@ -321,13 +323,13 @@
     --color-red-light-alpha-30: rgba(255, 137, 137, 0.3);
     --color-red-light-alpha-20: rgba(255, 137, 137, 0.2);
     --color-tag-dark-bg: rgba(40, 44, 52, 0.8);
-    
+
     /* Heading Styling */
     --h2-gradient-start: #78aaff;
     --h2-gradient-end: #4a7dff;
     --h2-border-color: #589fff;
     --h2-shadow-color: rgba(74, 125, 255, 0.4);
-    
+
     /* Header Elements */
     --header-bg: var(--color-header-base-alpha-75);
     --header-shadow: var(--color-header-base-alpha-40);
@@ -339,20 +341,20 @@
     --mobile-nav-bg: var(--color-dark-gray-alpha-95);
     --mobile-nav-shadow: var(--color-black-alpha-30);
     --mobile-nav-item-hover-bg: var(--color-darkest-gray-alpha-50);
-    
+
     /* Icon Colors */
     --icon-color: var(--color-white);
     --icon-color-x-twitter: var(--color-white);
     --icon-color-wikipedia: var(--color-white);
     --icon-color-github: var(--color-white);
     --icon-color-google-scholar: var(--color-white);
-    --icon-color-newspaper: #9A349F;
-    
+    --icon-color-newspaper: #9a349f;
+
     /* Box Shadows */
     --shadow-sm: 0 2px 10px var(--color-black-alpha-20);
     --shadow-md: 0 4px 15px var(--color-black-alpha-30);
     --shadow-lg: 0 4px 30px var(--color-black-alpha-40);
-    
+
     /* Intro Section */
     --intro-content-bg-start: var(--color-darker-gray-alpha-75);
     --intro-content-bg-end: var(--color-darker-gray-alpha-85);
@@ -375,7 +377,7 @@
     --intro-caption-text: var(--color-text);
     --intro-caption-link: #6fa1ff;
     --intro-caption-link-hover: #8bb5ff;
-    
+
     /* About Section */
     --about-grid-bg: #1a1a1a;
     --about-grid-bg-start: #1a1a1a;
@@ -383,7 +385,7 @@
     --about-grid-border: var(--color-white-alpha-10);
     --about-social-bg: var(--color-gray-xdark);
     --about-social-border: var(--color-white-alpha-10);
-    --about-social-header-text: #9A349F;
+    --about-social-header-text: #9a349f;
     --about-social-header-border: var(--color-white-alpha-10);
     --about-scrollbar-thumb: var(--color-white-alpha-20);
     --about-desc-text: #e6e6e6; /* Brighter text color for better readability */
@@ -394,21 +396,21 @@
     --about-desc-h3-shadow: var(--color-red-light-alpha-20);
     --strong-text-color: #e5c070;
     --strong-text-color-dark: #e5c070;
-    
+
     /* Link Colors */
     --link-pdf-color: #6fa1ff;
     --link-doi-color: #ff8650;
-    
+
     /* News Section */
     --news-img-shadow: var(--color-black-alpha-40);
-    
+
     /* Footer */
     --footer-bg: var(--color-gray-footer-bg);
     --footer-text: var(--color-white);
     --footer-link: var(--color-white);
-    
+
     /* Team Member variables are now defined in team.css */
-    
+
     /* Featured Paper */
     --featured-paper-bg: var(--color-dark-gray-alpha-70);
     --featured-paper-border: var(--color-white-alpha-10);
@@ -417,13 +419,13 @@
     --tag-border: var(--color-blue-light-alpha-40);
     --tag-bg-hover: var(--color-blue-bright-alpha-50);
     --tag-border-hover: var(--color-blue-light-alpha-60);
-    
+
     /* Research Section */
     --research-content-bg: var(--color-darkest-gray-alpha-40);
     --research-h2-border: var(--color-blue-bright-alpha-30);
     --research-list-border: var(--color-blue-bright-alpha-30);
     --research-list-text: var(--color-secondary);
-    
+
     /* Join Us Section */
     --join-content-bg: var(--color-darkest-gray-alpha-40);
     --position-h2-text: #6fa1ff;
@@ -432,11 +434,11 @@
     --funding-info-bg: var(--color-blue-bright-alpha-15);
     --external-link: #6fa1ff;
     --external-link-hover: #9cbeff;
-    
+
     /* Markdown */
     --markdown-blockquote-text: var(--color-secondary);
     --markdown-hr-color: var(--color-white-alpha-10);
-    
+
     /* Copyable */
     --copyable-bg: var(--color-blue-bright-alpha-10);
     --copyable-border: var(--color-blue-bright-alpha-20);
@@ -459,7 +461,9 @@ html {
     box-sizing: border-box;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: inherit;
 }
 
@@ -476,12 +480,25 @@ body {
 }
 
 /* Ensure content is contained within viewport on all screens */
-.s-about, .s-about__grid, .s-about__left, .s-about__desc,
-.s-about__right, .s-about__desc p, .s-about__desc li,
-.s-about__desc a, .s-about__desc h1, .s-about__desc h2,
-.s-about__desc h3, .s-about__desc strong, .s-about__desc ul,
-.s-research, .s-research p, .s-featured, .s-featured p,
-.s-teaching, .s-teaching p {
+.s-about,
+.s-about__grid,
+.s-about__left,
+.s-about__desc,
+.s-about__right,
+.s-about__desc p,
+.s-about__desc li,
+.s-about__desc a,
+.s-about__desc h1,
+.s-about__desc h2,
+.s-about__desc h3,
+.s-about__desc strong,
+.s-about__desc ul,
+.s-research,
+.s-research p,
+.s-featured,
+.s-featured p,
+.s-teaching,
+.s-teaching p {
     max-width: 100%;
     box-sizing: border-box;
     overflow-wrap: break-word;
@@ -515,12 +532,17 @@ h2::after {
 }
 
 /* Strong Element Styling - Applied globally with specific exceptions */
-strong:not(a strong):not(h1 strong):not(h2 strong):not(h3 strong):not(h4 strong):not(h5 strong):not(h6 strong),
+strong:not(a strong):not(h1 strong):not(h2 strong):not(h3 strong):not(
+        h4 strong
+    ):not(h5 strong):not(h6 strong),
 #news-content strong:not(a strong):not(a *),
 .s-about__desc strong:not(a strong):not(a *) {
     font-weight: 600;
     color: var(--strong-text-color);
-    background: linear-gradient(transparent 80%, var(--strong-highlight-color) 100%);
+    background: linear-gradient(
+        transparent 80%,
+        var(--strong-highlight-color) 100%
+    );
     padding: 0 2px;
     border-radius: 2px;
 }
@@ -591,18 +613,24 @@ a:hover {
 .fa-solid:not(.s-header__nav-list .fa-solid),
 .fa-brands:not(.s-header__nav-list .fa-brands),
 .ai:not(.s-header__nav-list .ai):not(.team-member .ai),
-.s-footer i, .site-footer i,
-.footer-left i, .footer-right i {
+.s-footer i,
+.site-footer i,
+.footer-left i,
+.footer-right i {
     color: var(--icon-color-inherited);
     font-size: 1.5em;
-    transition: transform 0.3s ease, color 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
 }
 
 /* Header icons in command palette */
 .s-header__nav i,
 .s-header__nav-list i {
     font-size: 1.5em;
-    transition: transform 0.3s ease, color 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
 }
 
 /* Dark theme icon color overrides */
@@ -720,8 +748,12 @@ a:hover {
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* FadeIn Animation */
@@ -902,7 +934,9 @@ a:hover {
 .theme-toggle-icon {
     width: 24px;
     height: 24px;
-    transition: opacity 0.3s ease, transform 0.5s ease;
+    transition:
+        opacity 0.3s ease,
+        transform 0.5s ease;
 }
 
 .theme-toggle-icon.moon {
@@ -975,7 +1009,11 @@ a:hover {
 }
 
 [data-theme="dark"] .s-intro__content {
-    background: linear-gradient(145deg, var(--intro-content-bg-start), var(--intro-content-bg-end));
+    background: linear-gradient(
+        145deg,
+        var(--intro-content-bg-start),
+        var(--intro-content-bg-end)
+    );
     box-shadow: var(--intro-content-shadow);
     border: 1px solid var(--intro-content-border);
 }
@@ -1189,8 +1227,12 @@ a:hover {
     align-items: center;
     gap: 1rem;
     padding: 1.2rem 2rem;
-    border-bottom: 1px solid var(--about-social-header-border);
+    border-bottom: 1px solid #68236d;
     margin-bottom: 0.5rem;
+}
+
+[data-theme="dark"] .s-about__social-header {
+    border-bottom: 1px solid #9a349f;
 }
 
 .s-about__social-header img {
@@ -1211,20 +1253,24 @@ a:hover {
 
 /* More specific selector for News heading with newspaper icon */
 .s-about__social-header:has(.fa-newspaper) h3 {
-    color: #68236D !important;
+    color: #68236d !important;
 }
 
 [data-theme="dark"] .s-about__social-header:has(.fa-newspaper) h3 {
-    color: #9A349F !important;
+    color: #9a349f !important;
 }
 
-/* Direct style for News header - apply inline */
 h3.news-header {
-    color: #68236D !important;
+    font-size: 1.75em !important;
+    color: #68236d !important;
+    border-bottom: 2px solid #68236d !important;
+    padding-bottom: 2px !important;
 }
-
 [data-theme="dark"] h3.news-header {
-    color: #9A349F !important;
+    font-size: 1.75em !important;
+    color: #9a349f !important;
+    border-bottom: 2px solid #9a349f !important;
+    padding-bottom: 2px !important;
 }
 
 /* News content */
@@ -1328,7 +1374,9 @@ h3.news-header {
     border: none;
     letter-spacing: 0.01em;
     cursor: pointer;
-    transition: color 0.2s ease, transform 0.2s ease;
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
     text-decoration: none;
     position: relative;
 }
@@ -1621,7 +1669,7 @@ section#featured::after,
 }
 
 .s-featured__header .text-pretitle::after {
-    content: '';
+    content: "";
     display: block;
     height: 2px;
     width: 100%;
@@ -2013,7 +2061,9 @@ section#featured::after,
 
 .footer-left a,
 .footer-right a {
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
     color: var(--footer-link);
 }
 
@@ -2433,7 +2483,7 @@ img.youtube-stats-dark {
     .position-section h3 {
         font-size: 1.6rem;
     }
-    
+
     /* Mobile image adaptations for YouTube stats */
     img.youtube-stats-light,
     img.youtube-stats-dark {
@@ -2475,7 +2525,7 @@ img.youtube-stats-dark {
         gap: 1.5rem;
         padding: 1rem;
     }
-    
+
     .s-news__history-btn {
         width: 100%;
         font-size: 1rem;
