@@ -327,7 +327,8 @@
   --about-desc-h3-text: #ff8989;
   --about-desc-h3-border: var(--color-red-light-alpha-30);
   --about-desc-h3-shadow: var(--color-red-light-alpha-20);
-  --strong-text-color: var(--color-saddle-brown); /* Uses dark var value */
+  --strong-text-color: #e5c070; /* Set explicit color for strong tags in dark mode */
+  --strong-text-color-dark: #e5c070; /* Specific dark mode strong tag color */
 
   --link-pdf-color: #6fa1ff;
   --link-doi-color: #ff8650;

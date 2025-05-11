@@ -4,6 +4,14 @@
  * which fix issues with Markdown parsing inside HTML elements
  */
 
+/* Add proper styling for strong tags in history page */
+.history-news-box strong,
+.teaching-content strong,
+.markdown-content strong {
+    font-weight: 700;
+    color: var(--strong-text-color, #cf4900);
+}
+
 /* Fix for links and buttons getting italicized in history page */
 .teaching-content a,
 .markdown-content a,
@@ -159,6 +167,13 @@
 
 [data-theme="dark"] .youtube-link {
     color: var(--history-doi-link-color-dark);
+}
+
+/* Dark mode strong tag styling */
+[data-theme="dark"] .history-news-box strong,
+[data-theme="dark"] .teaching-content strong,
+[data-theme="dark"] .markdown-content strong {
+    color: var(--strong-text-color-dark, #ff8650);
 }
 
 [data-theme="dark"] .history-news-box .news-image {
