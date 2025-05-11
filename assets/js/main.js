@@ -68,6 +68,17 @@
           '<i class="fa-solid fa-arrow-right" style="margin-right: 8px; font-size: 1.2em;"></i>Archive';
         historyBtn.setAttribute("role", "button");
         historyBtn.setAttribute("tabindex", "0");
+        historyBtn.setAttribute("aria-label", "View archive of all news items");
+
+        // Add keyboard event handler for accessibility
+        historyBtn.addEventListener("keydown", function(event) {
+          // Check for Enter (13) or Space (32) key
+          if (event.key === "Enter" || event.key === " " || event.keyCode === 13 || event.keyCode === 32) {
+            event.preventDefault();
+            window.location.href = this.href;
+          }
+        });
+
         if (newsContent) {
           newsContent.appendChild(historyBtn);
         }
