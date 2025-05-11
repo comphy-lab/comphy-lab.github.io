@@ -84,12 +84,12 @@
     --history-h4-h6-color: #b3cfff;
 }
 
-.news-flex-row a[href*="doi.org"] {
+.news-flex-row a.doi-link {
     color: var(--history-doi-link-color);
     font-weight: 500;
 }
 
-.news-flex-row a[href$=".pdf"] {
+.news-flex-row a.pdf-link {
     color: var(--history-pdf-link-color);
     font-weight: 500;
 }
@@ -108,11 +108,11 @@
 }
 
 /* Dark theme adjustments */
-[data-theme="dark"] .news-flex-row a[href*="doi.org"] {
+[data-theme="dark"] .news-flex-row a.doi-link {
     color: var(--history-doi-link-color-dark);
 }
 
-[data-theme="dark"] .news-flex-row a[href$=".pdf"] {
+[data-theme="dark"] .news-flex-row a.pdf-link {
     color: var(--history-pdf-link-color-dark);
 }
 
