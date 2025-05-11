@@ -8,151 +8,190 @@
 .teaching-content a,
 .markdown-content a,
 .news-flex-row a {
-  font-style: normal !important;
-  text-decoration: none;
+    font-style: normal !important;
+    text-decoration: none;
 }
 
 /* Ensure icons never get italicized */
 .teaching-content a i,
 .markdown-content a i,
 .news-flex-row a i,
-.fa-solid, 
-.fa-brands, 
+.fa-solid,
+.fa-brands,
 .ai {
-  font-style: normal !important;
+    font-style: normal !important;
 }
 
 /* Fix for icon alignment */
-.fa-solid, 
-.fa-brands, 
+.fa-solid,
+.fa-brands,
 .ai {
-  vertical-align: middle;
+    vertical-align: middle;
 }
 
 /* Paper links and buttons styling */
 .news-flex-row {
-  display: flex;
-  align-items: center;
-  margin: 15px 0;
-  gap: 15px;
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    gap: 15px;
+    flex-wrap: nowrap;
 }
 
 .news-flex-row > div:first-child {
-  flex: 1;
+    flex: 0 0 auto;
+    max-width: 50%;
+}
+
+.news-flex-row > div:last-child {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
 }
 
 .news-flex-row a[href*="doi.org"] {
-  color: #cf4900;
-  font-weight: 500;
+    color: #cf4900;
+    font-weight: 500;
 }
 
 .news-flex-row a[href$=".pdf"] {
-  color: #0056b3;
-  font-weight: 500;
+    color: #0056b3;
+    font-weight: 500;
 }
 
 /* Images in history news items */
 .history-news-box .news-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 5px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px; /* Keeping 5px as there's no border-radius variable */
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-medium);
 }
 
 .history-news-box .news-image:hover {
-  transform: scale(1.02);
+    transform: scale(1.02);
 }
 
 /* Dark theme adjustments */
 [data-theme="dark"] .news-flex-row a[href*="doi.org"] {
-  color: #ff8650;
+    color: #ff8650;
 }
 
 [data-theme="dark"] .news-flex-row a[href$=".pdf"] {
-  color: #6fa1ff;
+    color: #6fa1ff;
 }
 
 [data-theme="dark"] .history-news-box .news-image {
-  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Responsive adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+    .news-flex-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .news-flex-row > div:first-child {
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .news-flex-row > div:last-child {
+        width: 100%;
+    }
+
+    .history-news-box .news-image {
+        max-width: 100%;
+    }
 }
 
 .history-news-box {
-  background: var(--about-grid-bg, #f7f7f9);
-  border: 1px solid var(--about-grid-border, #e0e0e0);
-  border-radius: 14px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-  padding: 2.5rem 2.5rem 2rem 2.5rem;
-  margin: 2.5rem auto 3.5rem auto;
-  max-width: 900px;
-  transition: background 0.2s, border 0.2s;
+    background: var(--about-grid-bg, #f7f7f9);
+    border: 1px solid var(--about-grid-border, #e0e0e0);
+    border-radius: 14px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    padding: 2.5rem 2.5rem 2rem 2.5rem;
+    margin: 2.5rem auto 3.5rem auto;
+    max-width: 900px;
+    transition:
+        background 0.2s,
+        border 0.2s;
 }
 
 [data-theme="dark"] .history-news-box {
-  background: linear-gradient(145deg, var(--about-grid-bg-start, #23242a), var(--about-grid-bg-end, #181920));
-  border: 1px solid var(--about-grid-border, #23242a);
-  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    background: linear-gradient(
+        145deg,
+        var(--about-grid-bg-start, #23242a),
+        var(--about-grid-bg-end, #181920)
+    );
+    border: 1px solid var(--about-grid-border, #23242a);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
 }
 
 /* Headings in history news box */
 .history-news-box h1 {
-  font-size: 2.6rem;
-  font-weight: 700;
-  margin: 2.5rem 0 1.5rem 0;
-  color: #6fa1ff;
-  text-align: left;
-  letter-spacing: 0.01em;
+    font-size: 2.6rem;
+    font-weight: 700;
+    margin: 2.5rem 0 1.5rem 0;
+    color: #6fa1ff;
+    text-align: left;
+    letter-spacing: 0.01em;
 }
 
 .history-news-box h2 {
-  font-size: 2.1rem;
-  font-weight: 600;
-  margin: 2.2rem 0 1.2rem 0;
-  color: #b3cfff;
-  border-bottom: 2px solid #6fa1ff;
-  padding-bottom: 0.3rem;
-  background: none;
-  text-align: left;
+    font-size: 2.1rem;
+    font-weight: 600;
+    margin: 2.2rem 0 1.2rem 0;
+    color: #b3cfff;
+    border-bottom: 2px solid #6fa1ff;
+    padding-bottom: 0.3rem;
+    background: none;
+    text-align: left;
 }
 
 .history-news-box h3 {
-  font-size: 1.6rem;
-  font-weight: 600;
-  margin: 1.8rem 0 1rem 0;
-  color: #ff8989;
-  border-bottom: 1.5px solid #ff8989;
-  padding-bottom: 0.2rem;
-  display: inline-block;
-  background: none;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 1.8rem 0 1rem 0;
+    color: #ff8989;
+    border-bottom: 1.5px solid #ff8989;
+    padding-bottom: 0.2rem;
+    display: inline-block;
+    background: none;
 }
 
 .history-news-box h4 {
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin: 1.2rem 0 0.7rem 0;
-  color: #b3cfff;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 1.2rem 0 0.7rem 0;
+    color: #b3cfff;
 }
 
-.history-news-box h5, .history-news-box h6 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin: 1rem 0 0.5rem 0;
-  color: #b3cfff;
+.history-news-box h5,
+.history-news-box h6 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 1rem 0 0.5rem 0;
+    color: #b3cfff;
 }
 
 [data-theme="dark"] .history-news-box h1 {
-  color: #6fa1ff;
+    color: #6fa1ff;
 }
 [data-theme="dark"] .history-news-box h2 {
-  color: #b3cfff;
-  border-bottom: 2px solid #6fa1ff;
+    color: #b3cfff;
+    border-bottom: 2px solid #6fa1ff;
 }
 [data-theme="dark"] .history-news-box h3 {
-  color: #ff8989;
-  border-bottom: 1.5px solid #ff8989;
+    color: #ff8989;
+    border-bottom: 1.5px solid #ff8989;
 }
 [data-theme="dark"] .history-news-box h4,
 [data-theme="dark"] .history-news-box h5,
 [data-theme="dark"] .history-news-box h6 {
-  color: #b3cfff;
-} 
+    color: #b3cfff;
+}
