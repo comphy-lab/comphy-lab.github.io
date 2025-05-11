@@ -161,7 +161,7 @@
     --icon-color-wikipedia: var(--color-black);
     --icon-color-github: var(--icon-color-inherited);
     --icon-color-google-scholar: var(--color-orange-bright);
-    --icon-color-newspaper: var(--color-black);
+    --icon-color-newspaper: #68236D;
     --icon-color-footer-social: var(--color-white);
     
     /* Component Specific - Intro Section */
@@ -192,7 +192,7 @@
     --about-grid-border: var(--color-black-alpha-10);
     --about-social-bg: var(--color-white);
     --about-social-border: var(--color-black-alpha-10);
-    --about-social-header-text: var(--color-text);
+    --about-social-header-text: #68236D;
     --about-social-header-border: var(--color-black-alpha-10);
     --about-scrollbar-thumb: var(--color-black-alpha-20);
     --about-scrollbar-track: transparent;
@@ -346,7 +346,7 @@
     --icon-color-wikipedia: var(--color-white);
     --icon-color-github: var(--color-white);
     --icon-color-google-scholar: var(--color-white);
-    --icon-color-newspaper: var(--color-white);
+    --icon-color-newspaper: #9A349F;
     
     /* Box Shadows */
     --shadow-sm: 0 2px 10px var(--color-black-alpha-20);
@@ -383,6 +383,7 @@
     --about-grid-border: var(--color-white-alpha-10);
     --about-social-bg: var(--color-gray-xdark);
     --about-social-border: var(--color-white-alpha-10);
+    --about-social-header-text: #9A349F;
     --about-social-header-border: var(--color-white-alpha-10);
     --about-scrollbar-thumb: var(--color-white-alpha-20);
     --about-desc-text: #e6e6e6; /* Brighter text color for better readability */
@@ -1200,8 +1201,30 @@ a:hover {
 .s-about__social-header h3 {
     margin: 0;
     font-size: 1.8rem;
-    color: var(--about-social-header-text);
     font-weight: 600;
+}
+
+/* Specific class for the News heading */
+.s-about__social-header h3 {
+    color: var(--color-text);
+}
+
+/* More specific selector for News heading with newspaper icon */
+.s-about__social-header:has(.fa-newspaper) h3 {
+    color: #68236D !important;
+}
+
+[data-theme="dark"] .s-about__social-header:has(.fa-newspaper) h3 {
+    color: #9A349F !important;
+}
+
+/* Direct style for News header - apply inline */
+h3.news-header {
+    color: #68236D !important;
+}
+
+[data-theme="dark"] h3.news-header {
+    color: #9A349F !important;
 }
 
 /* News content */
