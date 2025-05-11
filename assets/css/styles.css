@@ -232,7 +232,9 @@
     /* Team Member variables are now defined in team.css */
 
     /* Component Specific - Featured Paper */
-    --featured-paper-bg: var(--color-white-alpha-10);
+    --featured-paper-bg: #F5F5F7;
+    --featured-paper-border: var(--color-black-alpha-10);
+    --featured-paper-shadow: var(--shadow-md);
     --tag-bg: var(--color-blue-bright-alpha-15);
     --tag-text: var(--color-blue-bright);
     --tag-border: var(--color-blue-bright-alpha-20);
@@ -414,6 +416,7 @@
     /* Featured Paper */
     --featured-paper-bg: var(--color-dark-gray-alpha-70);
     --featured-paper-border: var(--color-white-alpha-10);
+    --featured-paper-shadow: var(--shadow-lg);
     --tag-bg: var(--color-tag-dark-bg);
     --tag-text: var(--color-white);
     --tag-border: var(--color-blue-light-alpha-40);
@@ -1708,14 +1711,15 @@ section#featured::after,
     backdrop-filter: blur(10px);
     border-radius: 10px;
     padding: 2rem;
-    transition: transform 0.3s ease;
-    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+    box-shadow: var(--featured-paper-shadow);
     scroll-snap-align: start;
-    border: 1px solid var(--featured-paper-border, transparent);
+    border: 1px solid var(--featured-paper-border);
 }
 
 .featured-paper:hover {
     transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
 }
 
 .featured-paper h3 {
