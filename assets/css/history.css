@@ -52,13 +52,45 @@
     gap: 10px;
 }
 
+/* History CSS Variables */
+:root {
+    /* Link Colors */
+    --history-doi-link-color: #cf4900;
+    --history-pdf-link-color: #0056b3;
+    --history-doi-link-color-dark: #ff8650;
+    --history-pdf-link-color-dark: #6fa1ff;
+
+    /* Box Styles */
+    --history-box-bg: var(--about-grid-bg, #f7f7f9);
+    --history-box-border: var(--about-grid-border, #e0e0e0);
+    --history-box-radius: 14px;
+    --history-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    --history-box-padding: 2.5rem 2.5rem 2rem 2.5rem;
+    --history-box-margin: 2.5rem auto 3.5rem auto;
+    --history-box-width: 900px;
+
+    /* Dark Theme Box */
+    --history-box-bg-start-dark: var(--about-grid-bg-start, #23242a);
+    --history-box-bg-end-dark: var(--about-grid-bg-end, #181920);
+    --history-box-border-dark: var(--about-grid-border, #23242a);
+    --history-box-shadow-dark: 0 4px 24px rgba(0, 0, 0, 0.18);
+
+    /* Heading Colors */
+    --history-h1-color: #6fa1ff;
+    --history-h2-color: #b3cfff;
+    --history-h2-border-color: #6fa1ff;
+    --history-h3-color: #ff8989;
+    --history-h3-border-color: #ff8989;
+    --history-h4-h6-color: #b3cfff;
+}
+
 .news-flex-row a[href*="doi.org"] {
-    color: #cf4900;
+    color: var(--history-doi-link-color);
     font-weight: 500;
 }
 
 .news-flex-row a[href$=".pdf"] {
-    color: #0056b3;
+    color: var(--history-pdf-link-color);
     font-weight: 500;
 }
 
@@ -77,11 +109,11 @@
 
 /* Dark theme adjustments */
 [data-theme="dark"] .news-flex-row a[href*="doi.org"] {
-    color: #ff8650;
+    color: var(--history-doi-link-color-dark);
 }
 
 [data-theme="dark"] .news-flex-row a[href$=".pdf"] {
-    color: #6fa1ff;
+    color: var(--history-pdf-link-color-dark);
 }
 
 [data-theme="dark"] .history-news-box .news-image {
@@ -109,14 +141,16 @@
     }
 }
 
+/* History news box styles */
+
 .history-news-box {
-    background: var(--about-grid-bg, #f7f7f9);
-    border: 1px solid var(--about-grid-border, #e0e0e0);
-    border-radius: 14px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-    padding: 2.5rem 2.5rem 2rem 2.5rem;
-    margin: 2.5rem auto 3.5rem auto;
-    max-width: 900px;
+    background: var(--history-box-bg);
+    border: 1px solid var(--history-box-border);
+    border-radius: var(--history-box-radius);
+    box-shadow: var(--history-box-shadow);
+    padding: var(--history-box-padding);
+    margin: var(--history-box-margin);
+    max-width: var(--history-box-width);
     transition:
         background 0.2s,
         border 0.2s;
@@ -125,73 +159,64 @@
 [data-theme="dark"] .history-news-box {
     background: linear-gradient(
         145deg,
-        var(--about-grid-bg-start, #23242a),
-        var(--about-grid-bg-end, #181920)
+        var(--history-box-bg-start-dark),
+        var(--history-box-bg-end-dark)
     );
-    border: 1px solid var(--about-grid-border, #23242a);
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+    border: 1px solid var(--history-box-border-dark);
+    box-shadow: var(--history-box-shadow-dark);
 }
 
-/* Headings in history news box */
-.history-news-box h1 {
-    font-size: 2.6rem;
-    font-weight: 700;
-    margin: 2.5rem 0 1.5rem 0;
-    color: #6fa1ff;
+/* Heading styles */
+
+/* Common heading styles */
+.history-news-box h1,
+.history-news-box h2,
+.history-news-box h3,
+.history-news-box h4,
+.history-news-box h5,
+.history-news-box h6 {
+    font-weight: 600;
     text-align: left;
     letter-spacing: 0.01em;
+    background: none;
+}
+
+/* Individual heading size/margin/color adjustments */
+.history-news-box h1 {
+    font-size: 2.6rem;
+    font-weight: 700; /* Slightly heavier than others */
+    margin: 2.5rem 0 1.5rem 0;
+    color: var(--history-h1-color);
 }
 
 .history-news-box h2 {
     font-size: 2.1rem;
-    font-weight: 600;
     margin: 2.2rem 0 1.2rem 0;
-    color: #b3cfff;
-    border-bottom: 2px solid #6fa1ff;
+    color: var(--history-h2-color);
+    border-bottom: 2px solid var(--history-h2-border-color);
     padding-bottom: 0.3rem;
-    background: none;
-    text-align: left;
 }
 
 .history-news-box h3 {
     font-size: 1.6rem;
-    font-weight: 600;
     margin: 1.8rem 0 1rem 0;
-    color: #ff8989;
-    border-bottom: 1.5px solid #ff8989;
+    color: var(--history-h3-color);
+    border-bottom: 1.5px solid var(--history-h3-border-color);
     padding-bottom: 0.2rem;
     display: inline-block;
-    background: none;
 }
 
 .history-news-box h4 {
     font-size: 1.3rem;
-    font-weight: 600;
     margin: 1.2rem 0 0.7rem 0;
-    color: #b3cfff;
+    color: var(--history-h4-h6-color);
 }
 
 .history-news-box h5,
 .history-news-box h6 {
     font-size: 1.1rem;
-    font-weight: 600;
     margin: 1rem 0 0.5rem 0;
-    color: #b3cfff;
+    color: var(--history-h4-h6-color);
 }
 
-[data-theme="dark"] .history-news-box h1 {
-    color: #6fa1ff;
-}
-[data-theme="dark"] .history-news-box h2 {
-    color: #b3cfff;
-    border-bottom: 2px solid #6fa1ff;
-}
-[data-theme="dark"] .history-news-box h3 {
-    color: #ff8989;
-    border-bottom: 1.5px solid #ff8989;
-}
-[data-theme="dark"] .history-news-box h4,
-[data-theme="dark"] .history-news-box h5,
-[data-theme="dark"] .history-news-box h6 {
-    color: #b3cfff;
-}
+/* Dark theme colors remain the same as light theme for these headings */
