@@ -1172,7 +1172,7 @@ a:hover {
  *--------------------------------------------------------------*/
 
 .s-about {
-    padding: 10rem 2rem;
+    padding: 10rem 2rem 4rem 2rem;
     background: var(--color-background);
     min-height: 100vh;
     display: flex;
@@ -1587,6 +1587,7 @@ h3.news-header {
     display: flex;
     align-items: flex-start;
     border-top: none;
+    margin-top: 0;
 }
 
 /* Remove blue horizontal lines */
