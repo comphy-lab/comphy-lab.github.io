@@ -184,7 +184,7 @@ function copyEmail(button) {
 </script>
 
 <div style="margin-top: 2rem; text-align: center;">
-  <a href="https://github.com/comphy-lab/Basilisk-101" class="course-card__link" target="_blank" aria-label="Course GitHub Repository">
+  <a href="https://github.com/comphy-lab/Basilisk-101" class="course-card__link" target="_blank" rel="noopener noreferrer" aria-label="Course GitHub Repository">
     <i class="fa-brands fa-github" style="margin-right: 0.5rem; font-style: normal;"></i>Course GitHub Repository
   </a>
 </div> 
