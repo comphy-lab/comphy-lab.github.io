@@ -315,8 +315,8 @@
   --intro-caption-link: #6fa1ff;
   --intro-caption-link-hover: #8bb5ff;
 
-  --about-grid-bg-start: var(--color-darker-gray-alpha-75); /* Was intro-content-bg-start */
-  --about-grid-bg-end: var(--color-darker-gray-alpha-85); /* Was intro-content-bg-end */
+  --about-grid-bg-start: #2A2A2A; /* Changed from darker-gray-alpha-75 */
+  --about-grid-bg-end: #2A2A2A; /* Changed from darker-gray-alpha-85 */
   --about-grid-border: var(--color-white-alpha-10);
   --about-social-bg: var(--color-gray-xdark);
   --about-social-border: var(--color-white-alpha-10);

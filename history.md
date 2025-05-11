@@ -18,34 +18,34 @@ title: History
     </a>
   </div>
   <div class="news-flex-row__links-container">
-    <a href="https://doi.org/10.1017/jfm.2025.237" class="doi-link" style="display: flex; align-items: center; text-decoration: none; font-size: 1em;"><i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 8px; font-size: 1.2em;"></i>View Paper</a>
+    <a href="https://doi.org/10.1017/jfm.2025.237" class="doi-link"><i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 8px; font-size: 1.2em;"></i>View Paper</a>
   </div>
 </div>
 
 ### April
 
-- <strong>Vatsal Sanjay</strong> awarded the <a href="https://www.ammodo.org/story/ammodo-science-fellowship-2024" style="text-decoration: none; color: #0056b3; font-weight: 500;">Ammodo Science Fellowship</a>. His research will focus on understanding fluid dynamics in fungal networks—investigating how these vast underground systems transport water, nutrients, and genetic information across ecosystems.
+- <strong>Vatsal Sanjay</strong> awarded the <a href="https://www.ammodo.org/story/ammodo-science-fellowship-2024" class="blue-link">Ammodo Science Fellowship</a>. His research will focus on understanding fluid dynamics in fungal networks—investigating how these vast underground systems transport water, nutrients, and genetic information across ecosystems.
 
 <div class="news-flex-row">
   <div class="news-flex-row__image-container">
     <img src="/assets/images/news/vatsal-ammodo-2025.jpg" alt="Vatsal Sanjay - Ammodo Science Fellowship" class="news-image">
   </div>
   <div class="news-flex-row__links-container">
-    <a href="https://ammodo-science.webflow.io/researches/vatsal-sanjay" style="display: flex; align-items: center; text-decoration: none; color: #cf4900; font-size: 1em; font-weight: 500;"><i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 8px; font-size: 1.2em;"></i>Read More</a>
+    <a href="https://ammodo-science.webflow.io/researches/vatsal-sanjay" class="doi-link"><i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 8px; font-size: 1.2em;"></i>Read More</a>
   </div>
 </div>
 
-<div style="font-size: 0.75em; color: var(--color-text); opacity: 0.7; margin-top: 5px; font-style: italic;">
+<div class="news-credit">
   Image credit: J. Heitman, B. J. Howlett, P. W. Crous, E. H. Stukenbrock, T. Y. James & N. A. R. Gow, The fungal kingdom, John Wiley & Sons (2020)
 </div>
 
 ### March 
 
-- <a href="https://en.wikipedia.org/wiki/Detlef_Lohse" style="text-decoration: none;"><strong>Prof. Detlef Lohse</strong></a> shares his scientific journey in <a href="https://www.youtube.com/@TheLivingHistoriesSeries" style="text-decoration: none; color: #0056b3; font-weight: 500;">The Living Histories Series</a>. His inspiring discussion on curiosity, mentorship, and the "puzzle solving" joy of science offers valuable insights for researchers at all career stages.
+- <a href="https://en.wikipedia.org/wiki/Detlef_Lohse"><strong>Prof. Detlef Lohse</strong></a> shares his scientific journey in <a href="https://www.youtube.com/@TheLivingHistoriesSeries" class="blue-link">The Living Histories Series</a>. His inspiring discussion on curiosity, mentorship, and the "puzzle solving" joy of science offers valuable insights for researchers at all career stages.
 
 <div class="news-flex-row">
   <div class="news-flex-row__links-container">
-    <a href="https://bit.ly/3DXBixh" style="display: flex; align-items: center; text-decoration: none; color: #cf4900; font-size: 1em; font-weight: 500;"><i class="fa-brands fa-youtube" style="margin-right: 8px; font-size: 1.2em;"></i>Watch on YouTube</a>
+    <a href="https://bit.ly/3DXBixh" class="youtube-link"><i class="fa-brands fa-youtube" style="margin-right: 8px; font-size: 1.2em;"></i>Watch on YouTube</a>
   </div>
 </div>
 
@@ -58,7 +58,7 @@ title: History
     </a>
   </div>
   <div class="news-flex-row__links-container">
-    <a href="https://doi.org/10.1103/PhysRevLett.134.104003" class="doi-link" style="display: flex; align-items: center; text-decoration: none; font-size: 1em;"><i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 8px; font-size: 1.2em;"></i>View Paper</a>
+    <a href="https://doi.org/10.1103/PhysRevLett.134.104003" class="doi-link"><i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 8px; font-size: 1.2em;"></i>View Paper</a>
   </div>
 </div>
 
@@ -75,15 +75,15 @@ title: History
     </a>
   </div>
   <div class="news-flex-row__links-container">
-    <a href="/assets/images/covers/2025-02-JFM_Vol1004.pdf" class="pdf-link" style="display: flex; align-items: center; text-decoration: none; font-size: 1em;"><i class="fa-solid fa-download" style="margin-right: 8px; font-size: 1.2em;"></i>Download Cover</a>
-    <a href="https://doi.org/10.1017/jfm.2024.982" class="doi-link" style="display: flex; align-items: center; text-decoration: none; font-size: 1em;"><i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 8px; font-size: 1.2em;"></i>View Paper</a>
+    <a href="/assets/images/covers/2025-02-JFM_Vol1004.pdf" class="pdf-link"><i class="fa-solid fa-download" style="margin-right: 8px; font-size: 1.2em;"></i>Download Cover</a>
+    <a href="https://doi.org/10.1017/jfm.2024.982" class="doi-link"><i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 8px; font-size: 1.2em;"></i>View Paper</a>
   </div>
 </div>
 
-- <strong>Milan Sent</strong> <a href="https://github.com/mdjsent" style="text-decoration: none;">
+- <strong>Milan Sent</strong> <a href="https://github.com/mdjsent">
 <i class="fa-brands fa-github" style="font-size: 1.5em; color: #8a2be2;"></i>
-</a> graduated with a bachelor's degree from University of Twente. <strong>Thesis:</strong> 
-<a href="https://tinyurl.com/2ycunjcr" class="pdf-link" style="display: inline-flex; align-items: center; text-decoration: none;">
+</a> graduated with a bachelor's degree from University of Twente. <strong>Thesis:</strong>
+<a href="https://tinyurl.com/2ycunjcr" class="pdf-link" style="display: inline-flex; align-items: center;">
 <i class="fa-solid fa-file-pdf" style="margin-right: 8px; font-size: 1.2em; color: #e63946;"></i>Spinning Pizza
 </a>
 
@@ -102,15 +102,15 @@ title: History
     </a>
   </div>
   <div class="news-flex-row__links-container">
-    <a href="/assets/images/covers/2024-12-JFM_Vol1001.pdf" class="pdf-link" style="display: flex; align-items: center; text-decoration: none; font-size: 1em;"><i class="fa-solid fa-download" style="margin-right: 8px; font-size: 1.2em;"></i>Download Cover</a>
-    <a href="https://doi.org/10.1017/jfm.2024.1073" class="doi-link" style="display: flex; align-items: center; text-decoration: none; font-size: 1em;"><i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 8px; font-size: 1.2em;"></i>View Paper</a>
+    <a href="/assets/images/covers/2024-12-JFM_Vol1001.pdf" class="pdf-link"><i class="fa-solid fa-download" style="margin-right: 8px; font-size: 1.2em;"></i>Download Cover</a>
+    <a href="https://doi.org/10.1017/jfm.2024.1073" class="doi-link"><i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 8px; font-size: 1.2em;"></i>View Paper</a>
   </div>
 </div>
 
 ### November
 
-- <strong>Vatsal Sanjay</strong> recognized as an <a href="https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/announcements/prizes-and-awards/outstanding-reviewers-2023" style="text-decoration: none; color: #0056b3; font-weight: 500;">Outstanding Reviewer 2023</a> by the Journal of Fluid Mechanics for his contributions to the peer review process.
+- <strong>Vatsal Sanjay</strong> recognized as an <a href="https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/announcements/prizes-and-awards/outstanding-reviewers-2023" class="blue-link">Outstanding Reviewer 2023</a> by the Journal of Fluid Mechanics for his contributions to the peer review process.
 
 ### May
 
-- <strong>Vatsal Sanjay</strong> awarded the <a href="https://www.tudelft.nl/2024/jm-burgerscentrum/kivi-hoogendoorn-fluid-mechanics-award-2023" style="text-decoration: none; color: #0056b3; font-weight: 500;">KIVI Hoogendoorn Fluid Mechanics Award 2023</a> for his PhD thesis "Viscous Free-Surface Flows". The award ceremony took place at the Burgers Symposium on 29–30 May 2024 in Lunteren.
+- <strong>Vatsal Sanjay</strong> awarded the <a href="https://www.tudelft.nl/2024/jm-burgerscentrum/kivi-hoogendoorn-fluid-mechanics-award-2023" class="blue-link">KIVI Hoogendoorn Fluid Mechanics Award 2023</a> for his PhD thesis "Viscous Free-Surface Flows". The award ceremony took place at the Burgers Symposium on 29–30 May 2024 in Lunteren.
