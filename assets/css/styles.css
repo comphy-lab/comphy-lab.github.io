@@ -2852,9 +2852,22 @@ img.youtube-stats-dark {
 }
 
 .news-image {
-  max-width: 175px;
+  /* Base styles for all news images across the site */
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   cursor: pointer;
   display: block;
+  height: auto;
+  transition: transform 0.3s ease;
+  max-width: 175px; /* Default size for all news images */
+}
+
+/* Specific max-width for news page listings */
+.news-container .news-image {
+  max-width: 175px;
+}
+
+/* Specific styling for news images in the landing page */
+#news-content .news-image {
+  max-width: 175px;
 }

@@ -51,8 +51,8 @@
   font-weight: 500;
 }
 
-/* Images in news items */
-.news-image {
+/* Images in history news items */
+.history-news-box .news-image {
   max-width: 100%;
   height: auto;
   border-radius: 5px;
@@ -60,7 +60,7 @@
   transition: transform 0.3s ease;
 }
 
-.news-image:hover {
+.history-news-box .news-image:hover {
   transform: scale(1.02);
 }
 
@@ -73,7 +73,7 @@
   color: #6fa1ff;
 }
 
-[data-theme="dark"] .news-image {
+[data-theme="dark"] .history-news-box .news-image {
   box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
 }
 
