@@ -29,7 +29,10 @@
         const text = await response.text();
         const aboutContent = document.getElementById("about-content");
         if (aboutContent) {
-          aboutContent.innerHTML = marked.parse(text);
+          // Sanitize HTML output from marked.parse() with DOMPurify before inserting into DOM
+          const parsedHtml = marked.parse(text);
+          const sanitizedHtml = DOMPurify.sanitize(parsedHtml);
+          aboutContent.innerHTML = sanitizedHtml;
         }
       } catch (error) {
         console.error("Error loading about content:", error);
@@ -50,8 +53,10 @@
         const text = await response.text();
         const newsContent = document.getElementById("news-content");
         if (newsContent) {
-          // Parse the markdown content
-          newsContent.innerHTML = marked.parse(text);
+          // Parse the markdown content and sanitize before inserting into DOM
+          const parsedHtml = marked.parse(text);
+          const sanitizedHtml = DOMPurify.sanitize(parsedHtml);
+          newsContent.innerHTML = sanitizedHtml;
 
           // Fix line breaks in list items after parsing
           const listItemParagraphs = newsContent.querySelectorAll("li p");
