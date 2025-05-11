@@ -2854,11 +2854,11 @@ img.youtube-stats-dark {
 .news-image {
   /* Base styles for all news images across the site */
   border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: var(--shadow-sm);
   cursor: pointer;
   display: block;
   height: auto;
-  transition: transform 0.3s ease;
+  transition: var(--transition-medium);
   max-width: 175px; /* Default size for all news images */
 }
 
