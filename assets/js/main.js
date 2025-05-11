@@ -228,9 +228,7 @@
         if (featuredContainer) {
           featuredContainer.innerHTML = `
                         <div class="featured-error">
-                            <p>Error loading featured papers. Make sure Jekyll is running:</p>
-                            <code>bundle exec jekyll serve</code>
-                            <p style="margin-top: 1rem; font-size: 1.4rem; color: #666;">Error: ${error.message}</p>
+                            <p>We're having trouble loading the featured papers. Please try refreshing the page or check back later.</p>
                         </div>
                     `;
         }
