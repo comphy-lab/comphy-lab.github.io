@@ -84,10 +84,28 @@
 }
 
 .s-team__desc h1 {
-    font-size: 3rem;
-    margin-bottom: 2rem;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
     color: var(--team-heading-color);
-    margin-top: 0;
+    margin-top: 1em;
+    position: relative;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+}
+
+.s-team__desc h1:after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 4px;
+    background: var(--color-purple-dark);
+}
+
+[data-theme="dark"] .s-team__desc h1:after {
+    background: var(--color-purple-light);
 }
 
 /* Team Grid Layout */
@@ -140,7 +158,8 @@
     margin-bottom: 2rem;
     color: var(--team-heading-color);
     position: relative;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    font-weight: 600;
 }
 
 .team-section h1:after {
@@ -149,9 +168,13 @@
     bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
-    background: var(--team-subheading-color);
+    width: 60px;
+    height: 2px;
+    background: var(--color-purple-dark);
+}
+
+[data-theme="dark"] .team-section h1:after {
+    background: var(--color-purple-light);
 }
 
 /* Team page general styles with dark mode support */
@@ -497,6 +520,8 @@ section.s-map h2::after,
     border-bottom: 1px solid var(--color-purple-dark) !important;
     position: relative;
     box-shadow: none !important;
+    font-size: 2.2rem !important;
+    font-weight: 600 !important;
 }
 
 [data-theme="dark"] .map-heading {
