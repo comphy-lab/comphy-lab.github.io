@@ -7,6 +7,17 @@
   <meta name="base-url" content="{{ site.baseurl }}">
   <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
 
+  <!-- Critical CSS for fastest paint -->
+  <style>
+    .s-header {
+      visibility: visible;
+    }
+    .teaching-content h1, .teaching-content h2 {
+      visibility: visible;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+  </style>
+
   <!-- Preload critical resources -->
   <link rel="preload" href="/assets/css/styles.css" as="style">
   <link rel="preload" href="/assets/js/main.js" as="script">
@@ -25,10 +36,10 @@
   <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
   
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Research projects and publications from the Computational Multiphase Physics Laboratory">
+  <meta name="description" content="Courses and educational resources offered by the Computational Multiphase Physics Laboratory">
   <meta name="author" content="CoMPhy Lab">
   <meta name="robots" content="index, follow">
-  <meta name="keywords" content="computational physics, multiphase physics, fluid dynamics, research papers, scientific publications">
+  <meta name="keywords" content="computational physics courses, physics education, multiphase physics training, scientific courses">
 
   <!-- Font dependencies with font-display: swap -->
   <style>
@@ -48,29 +59,35 @@
   <!-- Site styles -->
   <link rel="stylesheet" href="/assets/css/vendor.css" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="/assets/css/styles.css">
-  <link rel="stylesheet" href="/assets/css/research.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/assets/css/shared-news-history.css">
+  <link rel="stylesheet" href="/assets/css/teaching.css">
+  <link rel="stylesheet" href="/assets/css/history.css">
   <link rel="stylesheet" href="/assets/css/command-palette.css" media="print" onload="this.media='all'">
   
-  <!-- Structured Data for Research -->
+  <!-- Structured Data for Teaching -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ResearchProject",
-    "name": "Computational Multiphase Physics Research",
-    "description": "Research in computational multiphase physics applications and methods.",
-    "url": "{{ site.url }}/research"
+    "@type": "Course",
+    "name": "Computational Multiphase Physics Courses",
+    "description": "Educational resources and courses related to computational multiphase physics.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Computational Multiphase Physics Laboratory",
+      "sameAs": "{{ site.url }}"
+    },
+    "url": "{{ site.url }}/teaching"
   }
   </script>
-
-  <!-- Command palette (implementation in assets/js/command-palette.js) -->
-  <script defer src="/assets/js/command-palette.js"></script>
 
   <!-- JavaScript dependencies -->
   <script defer src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
   <script defer src="/assets/js/main.js"></script>
   <script defer src="/assets/js/platform-utils.js"></script>
-  <script defer src="/assets/js/command-data.js"></script>  
+  <script defer src="/assets/js/command-data.js"></script>
+
+  <!-- Theme toggle functionality -->
   <script>
     document.documentElement.classList.remove('no-js');
     document.documentElement.classList.add('js');
@@ -110,6 +127,10 @@
       });
     })();
   </script>
+
+  <!-- Command palette (implementation in assets/js/command-palette.js) -->
+  <script defer src="/assets/js/command-palette.js"></script>
+
   <script>
     // Check if we're on localhost
     if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
@@ -145,7 +166,13 @@
     <div id="loader"></div>
   </div>
 
-  <!-- Command palette button and keyboard shortcuts are now handled in command-palette.js -->
+  <!-- Command Palette Button Handler -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Platform detection is now handled by platform-utils.js
+      // Update the displayed shortcut text is now handled by platform-utils.js
+    });
+  </script>
 
   <div id="page" class="s-pagewrap">
     <header class="s-header">
@@ -202,25 +229,15 @@
       </nav>
     </header>
 
-    <!-- Research Section -->
-    <section class="s-research">
+    <!-- Teaching Section -->
+    <section class="s-teaching">
       <div class="row">
-        <div class="research-layout">
-          <div class="toc-sidebar">
-            <nav class="toc-nav">
-              <h3>Contents</h3>
-              <ul class="toc-list">
-                <!-- Will be populated by JavaScript -->
-              </ul>
-            </nav>
-          </div>
-          <div class="research-content markdown-content">
-            {% capture lazy_img %}<img loading="lazy" decoding="async" onload="this.classList.add('loaded')"{% endcapture %}
-            {% assign content_with_lazy = content | replace: '<img', lazy_img %}
-            {% capture lazy_iframe %}<div class="video-container"><iframe loading="lazy"{% endcapture %}
-            {% assign content_with_video = content_with_lazy | replace: '<iframe', lazy_iframe | replace: '</iframe>', '</iframe></div>' %}
-            {{ content_with_video }}
-          </div>
+        <div class="history-news-box teaching-content markdown-content">
+          {% capture lazy_img %}<img loading="lazy" decoding="async" onload="this.classList.add('loaded')"{% endcapture %}
+          {% assign content_with_lazy = content | replace: '<img', lazy_img %}
+          {% capture lazy_iframe %}<div class="video-container"><iframe loading="lazy"{% endcapture %}
+          {% assign content_with_video = content_with_lazy | replace: '<iframe', lazy_iframe | replace: '</iframe>', '</iframe></div>' %}
+          {{ content_with_video }}
         </div>
       </div>
     </section>
@@ -228,16 +245,16 @@
     <footer class="site-footer">
       <div class="footer-left">
         <a href="http://basilisk.fr/sandbox/vatsal/" target="_blank" rel="noopener noreferrer">
-          <img src="/assets/logos/logoBasilisk_TransparentBackground.png" alt="Basilisk C" class="footer-logo" loading="lazy">
+          <img src="/assets/logos/logoBasilisk_TransparentBackground.png" alt="Basilisk C" class="footer-logo">
         </a>
         <a href="https://pof.tnw.utwente.nl/" target="_blank" rel="noopener noreferrer">
-          <img src="/assets/logos/LogoPof_transparent_white.png" alt="Physics of Fluids" class="footer-logo pof-logo" loading="lazy">
+          <img src="/assets/logos/LogoPof_transparent_white.png" alt="Physics of Fluids" class="footer-logo pof-logo">
         </a>
         <a href="https://www.utwente.nl/" target="_blank" rel="noopener noreferrer">
-          <img src="/assets/logos/UT_Logo_2400_Sta_White_EN.png" alt="University of Twente" class="footer-logo" loading="lazy">
+          <img src="/assets/logos/UT_Logo_2400_Sta_White_EN.png" alt="University of Twente" class="footer-logo">
         </a>
         <a href="https://www.vatsalsanjay.com/" target="_blank" rel="noopener noreferrer">
-          <img src="/assets/logos/Logo_Vatsal_v3_OutLine.png" alt="Vatsal Sanjay" class="footer-logo" loading="lazy">
+          <img src="/assets/logos/Logo_Vatsal_v3_OutLine.png" alt="Vatsal Sanjay" class="footer-logo">
         </a>
       </div>
       <div class="footer-center">
@@ -272,238 +289,9 @@
          </a>
       </div> <!-- end ss-go-top -->
     </footer>
-  </div>
+  </div> <!-- end s-pagewrap -->
 
-  <!-- Core scripts -->
-  <script defer src="/assets/js/main.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <!-- Search dependencies -->
-  <script defer src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Generate table of contents
-      const tocList = document.querySelector('.toc-list');
-      const headings = document.querySelectorAll('.research-content h2');
-      const tocEntries = [];
-
-      // Create TOC entries
-      headings.forEach((heading, index) => {
-        if (!heading.id) {
-          heading.id = `section-${index}`;
-        }
-
-        const li = document.createElement('li');
-        const a = document.createElement('a');
-        a.href = `#${heading.id}`;
-        a.textContent = heading.textContent;
-        li.appendChild(a);
-        tocList.appendChild(li);
-        tocEntries.push({ element: heading, link: a });
-      });
-
-      // Optimize intersection observer for headings
-      const observerCallback = (entries) => {
-        entries.forEach(entry => {
-          const index = Array.from(headings).indexOf(entry.target);
-          if (index >= 0 && tocEntries[index]) {
-            const link = tocEntries[index].link;
-            if (entry.isIntersecting) {
-              tocEntries.forEach(item => item.link.classList.remove('active'));
-              link.classList.add('active');
-            }
-          }
-        });
-      };
-
-      const observerOptions = {
-        root: null,
-        rootMargin: '-100px 0px -66%',
-        threshold: [0, 0.25, 0.5, 0.75, 1]
-      };
-
-      const headingObserver = new IntersectionObserver(observerCallback, observerOptions);
-      headings.forEach(heading => headingObserver.observe(heading));
-
-      // Optimize smooth scroll behavior
-      tocList.addEventListener('click', (e) => {
-        if (e.target.tagName === 'A') {
-          e.preventDefault();
-          const targetId = e.target.getAttribute('href').slice(1);
-          const targetElement = document.getElementById(targetId);
-          
-          if (targetElement) {
-            const header = document.querySelector('.s-header');
-            const headerHeight = header ? header.offsetHeight : 0;
-            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
-            
-            window.scrollTo({
-              top: targetPosition,
-              behavior: 'smooth'
-            });
-          }
-        }
-      });
-
-      // Optimize paper containers
-      const researchContent = document.querySelector('.research-content');
-      if (researchContent) {
-        const h3Elements = researchContent.querySelectorAll('h3');
-        
-        h3Elements.forEach((h3) => {
-          const container = document.createElement('div');
-          container.className = 'paper-container';
-          
-          if (h3.id) {
-            container.id = h3.id;
-            h3.removeAttribute('id');
-          }
-          
-          h3.parentNode.insertBefore(container, h3);
-          container.appendChild(h3);
-          
-          let currentElement = container.nextSibling;
-          while (currentElement && 
-                 !(currentElement.tagName === 'H3' || currentElement.tagName === 'H2')) {
-            const nextElement = currentElement.nextSibling;
-            container.appendChild(currentElement);
-            currentElement = nextElement;
-          }
-        });
-
-        // Handle inline badges
-        const paragraphs = researchContent.getElementsByTagName('p');
-        for (let p of paragraphs) {
-          const badges = p.querySelectorAll('a[href*="arxiv.org"], a[href*="github.com"], a[href*="blogs.comphy-lab.org"]');
-          if (badges.length > 0) {
-            const badgeContainer = document.createElement('span');
-            badgeContainer.className = 'badge-container';
-            
-            // Get the text content before any badges
-            let textContent = '';
-            let hasNonBadgeContent = false;
-            
-            // First pass: collect all non-badge content
-            for (let node of p.childNodes) {
-              if (node.nodeType === 3) { // Text node
-                if (node.textContent.trim()) {
-                  textContent += node.textContent;
-                  hasNonBadgeContent = true;
-                }
-              } else if (node.nodeType === 1) { // Element node
-                const href = node.getAttribute('href');
-                if (!href || (!href.includes('arxiv.org') && !href.includes('github.com') && !href.includes('blogs.comphy-lab.org'))) {
-                  textContent += node.outerHTML;
-                  hasNonBadgeContent = true;
-                }
-              }
-            }
-            
-            // Clear the paragraph
-            p.innerHTML = '';
-            
-            // Add back the text content if it exists
-            if (hasNonBadgeContent) {
-              const textSpan = document.createElement('span');
-              textSpan.innerHTML = textContent.trim();
-              p.appendChild(textSpan);
-            }
-            
-            // Add the badges
-            badges.forEach(badge => {
-              badgeContainer.appendChild(badge.cloneNode(true));
-            });
-            
-            p.appendChild(badgeContainer);
-          }
-        }
-
-        // Handle tag filtering
-        const allTags = document.querySelectorAll('tags span');
-        const paperContainers = document.querySelectorAll('.paper-container');
-        let activeTag = null;
-
-        // Check URL for tag parameter
-        const urlParams = new URLSearchParams(window.location.search);
-        const tagFromUrl = urlParams.get('tag');
-
-        // Function to highlight matching tags
-        const updateMatchingTags = (tagText, shouldHighlight) => {
-          document.querySelectorAll('tags span').forEach(tag => {
-            if (tag.textContent === tagText) {
-              // First remove any active class
-              tag.classList.remove('active');
-              // Then add it back if needed
-              if (shouldHighlight) {
-                tag.classList.add('active');
-              }
-            }
-          });
-        };
-
-        // Restore click handlers for client-side filtering
-        allTags.forEach(tag => {
-          tag.addEventListener('click', () => {
-            const tagText = tag.textContent;
-            
-            // If clicking the active tag, deactivate it
-            if (activeTag === tagText) {
-              activeTag = null;
-              // Remove active class from all tags
-              allTags.forEach(t => t.classList.remove('active'));
-              paperContainers.forEach(container => {
-                container.classList.remove('hidden');
-              });
-              history.pushState({}, '', window.location.pathname);
-              return;
-            }
-
-            // Update active tag
-            activeTag = tagText;
-            // Remove active class from all tags
-            allTags.forEach(t => t.classList.remove('active'));
-            // Add active class to matching tags
-            updateMatchingTags(tagText, true);
-
-            // Update URL
-            history.pushState({}, '', `?tag=${encodeURIComponent(tagText)}`);
-
-            // Filter papers
-            paperContainers.forEach(container => {
-              const containerTags = container.querySelector('tags');
-              if (containerTags && containerTags.textContent.includes(tagText)) {
-                container.classList.remove('hidden');
-              } else {
-                container.classList.add('hidden');
-              }
-            });
-          });
-        });
-
-        // Handle filter note if present (for pre-built pages)
-        const filterNote = document.querySelector('.filter-note');
-        if (filterNote) {
-          const clearFilterLink = filterNote.querySelector('a');
-          if (clearFilterLink) {
-            clearFilterLink.addEventListener('click', (e) => {
-              e.preventDefault();
-              window.location.href = '/research/';
-            });
-          }
-        }
-        
-        // Apply filter from URL if present
-        if (tagFromUrl) {
-          const matchingTag = Array.from(allTags).find(tag => tag.textContent === tagFromUrl);
-          if (matchingTag) {
-            matchingTag.click();
-          }
-        }
-      }
-    });
-  </script>
-  
-  <!-- Command Palette -->
+  <!-- Simple Command Palette -->
   <div id="simple-command-palette" class="simple-command-palette" style="display: none;">
     <div class="simple-command-palette-backdrop"></div>
     <div class="simple-command-palette-modal">
@@ -517,6 +305,15 @@
     </div>
   </div>
 
-  <!-- Command palette functionality is now implemented in command-palette.js -->
+  <!-- Register command palette keyboard shortcut -->
+  <script>
+    document.addEventListener('keydown', function(e) {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        window.openCommandPalette();
+      }
+    });
+  </script>
+
 </body>
 </html>

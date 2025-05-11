@@ -1,231 +1,438 @@
-/* Dark theme variables for team page */
+/* Base theme variables */
 :root {
-  --team-bg-color: #ffffff;
-  --team-text-color: #333333;
-  --team-heading-color: #1a1a1a;
-  --team-subheading-color: #4c6ef5;
-  --team-image-bg: #f5f5f5;
-  --team-member-bg: rgba(255, 255, 255, 0.7);
-  --team-shadow: rgba(0, 0, 0, 0.1);
-  --team-icon-color: #333333;
+    /* Color palette */
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-gray-light: #f5f5f5;
+    --color-gray-medium: #666666;
+    --color-gray-dark: #333333;
+    --color-gray-xdark: #2a2a2a;
+    --color-gray-xxxdark: #121212;
+    --color-purple-light: #9a349f;
+    --color-purple-dark: #68236d;
+    --color-blue-bright: #4c6ef5;
+    --color-blue-darker: #364fc7;
+    --color-blue-light: #6fa1ff;
+    --color-blue-medium: #4c8dff;
+
+    /* Alpha colors */
+    --color-white-alpha-70: rgba(255, 255, 255, 0.7);
+    --color-dark-gray-alpha-70: rgba(40, 40, 40, 0.7);
+    --color-black-alpha-10: rgba(0, 0, 0, 0.1);
+    --color-black-alpha-30: rgba(0, 0, 0, 0.3);
+    --color-blue-bright-alpha-15: rgba(76, 110, 245, 0.15);
+
+    /* Spacing */
+    --space-md: 2rem;
+    --space-xl: 8rem;
+
+    /* Light theme defaults */
+    --team-bg-color: var(--color-white);
+    --team-text-color: var(--color-gray-dark);
+    --team-heading-color: var(--color-purple-dark);
+    --team-subheading-color: var(--color-blue-bright);
+    --team-image-bg: var(--color-gray-light);
+    --team-member-bg: var(--color-white-alpha-70);
+    --team-shadow: var(--color-black-alpha-10);
+    --team-icon-color: var(--color-gray-dark);
+    --member-content-text: var(--color-gray-medium);
+    --member-content-strong-text: #2b2b2b;
+    --member-content-h2-text: var(--color-blue-bright);
+    --cv-button-bg: var(--color-blue-bright);
+    --cv-button-bg-hover: var(--color-blue-darker);
+    --cv-button-text: var(--color-white);
+    --cv-button-shadow-hover: var(--color-blue-bright-alpha-15);
+    --divider-color: #e1e1e1;
 }
 
+/* Dark theme overrides */
 [data-theme="dark"] {
-  --team-bg-color: #121212;
-  --team-text-color: #e0e0e0;
-  --team-heading-color: #ffffff;
-  --team-subheading-color: #6fa1ff;
-  --team-image-bg: #2a2a2a;
-  --team-member-bg: rgba(40, 40, 40, 0.7);
-  --team-shadow: rgba(0, 0, 0, 0.3);
-  --team-icon-color: #ffffff;
+    --team-bg-color: var(--color-gray-xxxdark);
+    --team-text-color: #e0e0e0;
+    --team-heading-color: var(--color-purple-light);
+    --team-subheading-color: var(--color-blue-light);
+    --team-image-bg: var(--color-gray-xdark);
+    --team-member-bg: var(--color-dark-gray-alpha-70);
+    --team-shadow: var(--color-black-alpha-30);
+    --team-icon-color: var(--color-white);
+    --member-content-text: var(--color-white);
+    --member-content-strong-text: #e0e0e0;
+    --member-content-h2-text: var(--color-blue-medium);
+    --divider-color: #444;
+}
+
+/* Team page layout with explicit accounting for fixed header */
+.s-team {
+    width: 100%;
+    max-width: 100%; /* Full width container */
+    margin: 0 auto;
+    padding: var(--space-xl) var(--space-md) 1rem;
+    position: relative;
+    background: var(--team-bg-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.s-team__desc {
+    text-align: center;
+    width: 100%;
+    max-width: 100%; /* Full width container */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5rem;
+    padding: 0 2rem; /* Add padding to match grid */
+}
+
+.s-team__desc h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: var(--team-heading-color);
+    margin-top: 1em;
+    position: relative;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+}
+
+.s-team__desc h1:after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 4px;
+    background: var(--color-purple-dark);
+}
+
+[data-theme="dark"] .s-team__desc h1:after {
+    background: var(--color-purple-light);
+}
+
+/* Team Grid Layout */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem 2rem; /* Reduced gap to fit more content in grid */
+    margin: 2rem 0; /* Reduced margin */
+    width: 100%;
+    max-width: 100%; /* Full width container */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 2rem; /* Slightly reduced padding */
+}
+
+.team-member {
+    background-color: var(--team-member-bg);
+    box-shadow: 0 4px 12px var(--team-shadow);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 1.2rem 1rem; /* Reduced padding to fit more content */
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 100%;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    width: calc(100% - 5px); /* Slightly wider cards */
+    margin: 0 auto; /* Center the cards */
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px var(--team-shadow);
+}
+
+/* Team section layout */
+.team-section {
+    margin: 2rem 0;
+    padding: 0 2rem;
+    width: 100%;
+    max-width: 85%; /* Full width container */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.team-section h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--team-heading-color);
+    position: relative;
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+
+.team-section h1:after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: var(--color-purple-dark);
+}
+
+[data-theme="dark"] .team-section h1:after {
+    background: var(--color-purple-light);
 }
 
 /* Team page general styles with dark mode support */
 .member-image {
-  position: relative;
-  overflow: hidden;
-  width: 200px;
-  height: 200px;
-  margin: 0 auto;
-  display: block;
-  border-radius: 4px;
-  background-color: var(--team-image-bg);
-  contain: layout style paint;
-  content-visibility: auto;
-  contain-intrinsic-size: 200px;
+    position: relative;
+    overflow: hidden;
+    width: 200px; /* Increased back to original size */
+    height: 200px; /* Increased back to original size */
+    margin: 0 auto;
+    display: block;
+    border-radius: 8px;
+    background-color: var(--team-image-bg);
+    contain: layout style paint;
+    content-visibility: auto;
+    contain-intrinsic-size: 200px; /* Updated to match new size */
 }
 
 .member-image img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 0.2s ease-out;
-  will-change: opacity;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.2s ease-out;
+    will-change: opacity;
+    margin: 0 auto;
 }
 
 .member-image img.loaded {
-  opacity: 1;
+    opacity: 1;
 }
 
 .member-image.error::after {
-  content: 'Image loading failed. Please refresh.';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 12px;
-  color: var(--team-text-color);
-  text-align: center;
-  width: 90%;
+    content: "Image loading failed. Please refresh.";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    color: var(--team-text-color);
+    text-align: center;
+    width: 90%;
 }
 
 .member-image::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.3),
-    transparent
-  );
-  -webkit-animation: loading-wave 1.5s infinite;
-  animation: loading-wave 1.5s infinite;
-  will-change: transform;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    -webkit-animation: loading-wave 1.5s infinite;
+    animation: loading-wave 1.5s infinite;
+    will-change: transform;
 }
 
 .member-image.loaded::after {
-  display: none;
+    display: none;
 }
 
 @-webkit-keyframes loading-wave {
-  0% {
-    left: -100%;
-  }
-  100% {
-    left: 200%;
-  }
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 200%;
+    }
 }
 
 @keyframes loading-wave {
-  0% {
-    left: -100%;
-  }
-  100% {
-    left: 200%;
-  }
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 200%;
+    }
 }
 
-/* Mobile Optimizations */
-@media screen and (max-width: 768px) {
-  .member-image {
-    width: 150px;
-    height: 150px;
-    margin: 0 auto;
-  }
-  
-  .team-container {
-    padding: 1rem;
+/* Team member content styling */
+.member-content {
+    width: 100%;
+    margin-top: 0.8rem; /* Reduced spacing */
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    padding: 0 0.5rem; /* Reduced horizontal padding */
+}
+
+.member-content h2 {
+    font-size: 1.6rem; /* Slightly reduced font size */
+    margin: 0.4rem 0 0.5rem; /* Reduced margins */
+    color: var(--member-content-h2-text);
+    line-height: 1.2; /* Reduced line height */
     text-align: center;
-  }
-  
-  .team-member {
-    margin-bottom: 3rem;
+    border-bottom: none;
+    background: none;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    text-shadow: none;
+    transition: none;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    padding-bottom: 0;
+}
+
+/* Thesis link styling for team pages */
+.team-member a[href$=".pdf"],
+.team-member a.pdf-link {
+    color: var(--shared-pdf-link-color, #0056b3);
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+[data-theme="dark"] .team-member a[href$=".pdf"],
+[data-theme="dark"] .team-member a.pdf-link {
+    color: var(--shared-pdf-link-color-dark, #6fa1ff);
+}
+
+/* PDF link icon styling */
+.pdf-link-icon {
+    margin-right: 8px;
+    font-size: 1.2em;
+    color: #e63946;
+}
+
+.member-content h2::after {
+    display: none;
+}
+
+/* Center social links */
+.team-member h2 + p {
+    text-align: center !important;
+    margin: 0.8rem 0; /* Increased margin */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Increased gap */
+}
+
+/* Center "Joint with" text */
+.team-member p:has(a[href*="Detlef"]),
+.team-member p:has(a[href*="Martin"]),
+.team-member p:has(a[href*="Jacco"]),
+.team-member p:has(a[href*="Alvaro"]) {
+    text-align: center !important;
+    margin: 0.8rem 0; /* Increased margin */
+    font-size: 1.5rem; /* Increased font size */
+}
+
+/* Prevent long text from overflowing */
+.member-content p {
+    max-width: 100%;
+    word-break: break-word;
+    hyphens: auto;
+    line-height: 1.3; /* Reduced line height */
+    margin: 0.3rem 0; /* Reduced margin */
+    font-size: 1.4rem; /* Slightly reduced font size */
+    color: var(--member-content-text);
+}
+
+.member-content ul,
+.member-content ol {
+    text-align: left;
+    padding-left: 1.2rem; /* Reduced padding */
+    margin: 0.4rem 0; /* Reduced margin */
+    max-width: 100%;
+    list-style: none;
+}
+
+.member-content li {
+    margin-bottom: 0.3rem; /* Reduced spacing */
+    line-height: 1.3; /* Reduced line height */
+    max-width: 100%;
+    word-break: break-word;
+    font-size: 1.4rem; /* Slightly reduced font size */
+    color: var(--member-content-text);
+}
+
+/* Special styling for collaboration sections */
+.member-content p strong,
+.team-member strong,
+.member-content b {
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 0.5rem; /* Increased margin */
+    color: var(--member-content-strong-text);
+    font-size: 1.5rem; /* Same size as regular text */
+}
+
+/* Style for collaboration sections */
+.team-member p strong:first-child {
+    display: block;
+    margin-bottom: 0.4rem; /* Increased margin */
+    margin-top: 0.8rem; /* Increased margin */
+}
+
+/* Create extra spacing when needed */
+.team-member p + p {
+    margin-top: 0.8rem; /* Increased margin */
+}
+
+.member-content a {
+    color: var(--team-subheading-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.member-content a:hover {
+    text-decoration: underline;
+}
+
+/* Center the CV button */
+.cv-button {
+    display: block;
+    padding: 0.6rem 1.2rem;
+    background-color: var(--cv-button-bg);
+    color: var(--cv-button-text) !important;
+    border-radius: 6px;
+    text-decoration: none !important;
+    font-weight: 500;
+    font-size: 1.4rem; /* Increased font size */
+    transition: all 0.3s ease;
     text-align: center;
-  }
-  
-  .team-member h2 {
-    text-align: center;
-  }
+    margin: 1rem auto 1rem; /* Consolidated margin with top, right/left, bottom */
+    width: fit-content;
 }
 
-/* Map Section Styles */
-.s-map {
-  padding: 4rem 0;
-  background-color: var(--color-white);
-  color: var(--color-text-dark);
-}
-
-[data-theme="dark"] .s-map {
-  background-color: #121212;
-}
-
-.s-map .row {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.s-map h2 {
-  font-size: 2.4rem;
-  margin-bottom: 1.2rem;
-  text-align: center;
-}
-
-.s-map .map-description {
-  text-align: left;
-  margin-bottom: 2rem;
-  font-size: 1.4rem;
-  color: var(--color-text-dark);
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.8;
-}
-
-.s-map .map-description .orange {
-  color: #ff7f00;
-  font-size: 1.5rem;
-}
-
-.s-map .map-description .purple {
-  color: #800080;
-  font-size: 1.5rem;
-}
-
-.s-map .map-description .green {
-  color: #008000;
-  font-size: 1.5rem;
-}
-
-.s-map .map-description .gray {
-  color: #808080;
-  font-size: 1.5rem;
-}
-
-.s-map .map-description .bold {
-  font-weight: 700;
-}
-
-.s-map .map-container {
-  position: relative;
-  width: 100%;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.s-map iframe {
-  display: block;
-  border-radius: 8px;
-}
-
-@media screen and (max-width: 800px) {
-  .s-map {
-    padding: 3rem 0;
-  }
-  
-  .s-map h2 {
-    font-size: 2rem;
-  }
-  
-  .s-map .map-description {
-    font-size: 1.2rem;
-    line-height: 1.6;
-  }
-
-  .s-map .map-description .orange,
-  .s-map .map-description .purple,
-  .s-map .map-description .green,
-  .s-map .map-description .gray {
-    font-size: 1.3rem;
-  }
+.cv-button:hover {
+    background-color: var(--cv-button-bg-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 6px var(--cv-button-shadow-hover);
+    text-decoration: none !important;
 }
 
 /* Style for social icons */
 .team-member .fa,
 .team-member .ai {
-  display: inline-block;
-  margin: 0 5px;
-  color: var(--team-icon-color);
-  transition: color 0.3s ease, transform 0.3s ease;
-  font-size: 1.5em;
+    display: inline-block;
+    margin: 0 6px;
+    color: var(--team-icon-color);
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+    font-size: 2.2em; /* Increased to original larger size */
 }
 
 /* Specific styling for social media icons */
@@ -234,26 +441,26 @@
 .team-member .fa-x-twitter,
 .team-member .fa-bluesky,
 .team-member .fa-wikipedia-w {
-  color: var(--team-icon-color) !important;
+    color: var(--team-icon-color) !important;
 }
 
 /* Colored icons */
 .team-member .fa-bluesky {
-  color: #0085ff !important;
+    color: #0085ff !important;
 }
 
 .team-member .fa-linkedin {
-  color: #0077b5 !important;
-  font-size: 1.7em;
+    color: #0077b5 !important;
+    font-size: 1.7em;
 }
 
 .team-member .fa-x-twitter {
-  color: #000000 !important;
+    color: #000000 !important;
 }
 
 .team-member .fa-wikipedia-w {
-  color: #000000 !important;
-  font-size: 1.4em;
+    color: #000000 !important;
+    font-size: 1.4em;
 }
 
 /* Dark theme overrides */
@@ -262,29 +469,326 @@
 [data-theme="dark"] .team-member .fa-x-twitter,
 [data-theme="dark"] .team-member .fa-bluesky,
 [data-theme="dark"] .team-member .fa-wikipedia-w {
-  color: #ffffff !important;
-}
-
-
-
-[data-theme="dark"] .team-member .fa-x-twitter,
-[data-theme="dark"] .team-member .fa-wikipedia-w {
-  color: #ffffff !important;
+    color: #ffffff !important;
 }
 
 /* Hover effects */
 .team-member .fa:hover,
 .team-member .ai:hover {
-  transform: translateY(-2px);
-  opacity: 0.9;
+    transform: translateY(-2px);
+    opacity: 0.9;
 }
 
-/* Center social links */
-.team-member h2 + p {
-  text-align: center !important;
-  margin: 1rem 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
+/* Map Section Styles */
+.s-map {
+    width: 100%;
+    max-width: 100%; /* Full width container */
+    margin: 3rem auto;
+    padding: 2rem 2rem 4rem;
+    background: var(--team-bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.s-map .row {
+    width: 100%;
+    max-width: 1200px; /* Match other elements */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 2rem; /* Add padding */
+    margin: 0 auto; /* Center the row */
+}
+
+.s-map .column {
+    width: 100%;
+    max-width: 1200px; /* Match other elements */
+    margin: 0 auto; /* Center the column */
+}
+
+.s-map h1,
+.s-map h2 {
+    text-align: center !important;
+    margin-bottom: 2.5rem;
+    color: var(--color-purple-light);
+    font-size: 2.2rem;
+    width: 100%;
+    max-width: 1200px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+[data-theme="light"] .s-map h1,
+[data-theme="light"] .s-map h2 {
+    color: var(--color-purple-dark);
+}
+
+/* Override and remove any automatic after elements on map headings */
+.s-map h1:after,
+.s-map h2:after,
+.s-map h2::after,
+.s-map h1::after,
+section.s-map h2:after,
+section.s-map h2::after,
+.s-map .column h2:after,
+.s-map .column h2::after {
+    content: none !important;
+    display: none !important;
+    background: none !important;
+    height: 0 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+/* Create our own custom border that we fully control */
+.s-map h1,
+.s-map h2 {
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+.map-heading {
+    position: relative;
+    box-shadow: none !important;
+    font-size: 2.2rem !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+    display: block;
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom-style: solid !important;
+    border-bottom-width: 1px !important;
+    border-bottom-color: var(--color-purple-dark) !important;
+    padding-bottom: 10px;
+}
+
+[data-theme="dark"] .map-heading {
+    border-bottom-color: var(--color-purple-light) !important;
+}
+
+/* Extra specificity to override any other styles */
+.s-map .map-heading::before,
+.s-map .map-heading::after,
+.s-map .map-heading:before,
+.s-map .map-heading:after {
+    display: none !important;
+    content: none !important;
+}
+
+.s-map .map-description {
+    text-align: center; /* Changed from left to center */
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
+    color: var(--team-text-color);
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+    box-sizing: border-box;
+    padding: 0 2rem; /* Added padding for consistency */
+}
+
+.s-map .map-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px; /* Added max-width */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 auto; /* Center the container */
+}
+
+/* Map description color styling */
+.s-map .map-description .orange {
+    color: #ff7f50;
+    font-weight: bold;
+}
+
+.s-map .map-description .green {
+    color: #4caf50;
+    font-weight: bold;
+}
+
+.s-map .map-description .purple {
+    color: #9c27b0;
+    font-weight: bold;
+}
+
+.s-map .map-description .gray {
+    color: #757575;
+    font-weight: bold;
+}
+
+.s-map .map-description .bold {
+    font-weight: bold;
+}
+
+/* Mobile and Responsive Optimizations */
+@media screen and (max-width: 1700px) {
+    .team-grid {
+        grid-template-columns: repeat(4, 1fr);
+        padding: 0 2.5rem;
+        gap: 3rem 2.5rem;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .team-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem 2.5rem;
+        padding: 0 2rem;
+    }
+
+    .team-section {
+        padding: 0 2rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem 1.5rem; /* Reduced spacing */
+        padding: 0 1.5rem;
+    }
+
+    .team-member {
+        padding: 1.2rem 1rem; /* Keep consistent with desktop */
+        width: calc(100% - 0px); /* Full width on smaller screens */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .s-team {
+        padding: 1rem 0.5rem;
+        padding-top: var(--space-xl, 8rem);
+    }
+
+    .s-team__desc h1 {
+        font-size: 2.5rem;
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem 2rem;
+        max-width: 700px;
+    }
+
+    .member-image {
+        width: 180px; /* Increased for better visibility on mobile */
+        height: 180px;
+        margin: 0 auto;
+    }
+
+    .team-section {
+        padding: 0 1rem;
+        margin: 2.5rem 0; /* Increased margin */
+    }
+
+    .team-member {
+        padding: 1.5rem; /* Increased padding */
+        margin-bottom: 1rem; /* Increased margin */
+    }
+
+    .member-content h2 {
+        font-size: 1.7rem; /* Increased font size */
+        margin: 0.6rem 0 0.7rem; /* Increased margins */
+    }
+
+    .team-section h1 {
+        font-size: 2.2rem;
+    }
+
+    .member-content ul,
+    .member-content ol {
+        padding-left: 1.2rem;
+        margin: 0.7rem 0; /* Increased margins */
+    }
+
+    .member-content p,
+    .member-content li {
+        font-size: 1.4rem; /* Increased font size */
+        line-height: 1.4; /* Increased line height */
+        margin: 0.6rem 0; /* Increased margins */
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .s-team {
+        padding: 1rem 0.5rem;
+        padding-top: var(--space-xl, 8rem);
+    }
+
+    .s-team__desc h1 {
+        font-size: 2.2rem;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem; /* Increased gap for better spacing */
+    }
+
+    .map-container {
+        width: 100% !important;
+    }
+
+    .s-map h2 {
+        font-size: 1.8rem;
+    }
+
+    .s-map .map-description {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+
+    .member-image {
+        width: 180px; /* Increased for better visibility */
+        height: 180px;
+    }
+
+    .team-member {
+        max-width: 400px; /* Wider for more content */
+        margin-left: auto;
+        margin-right: auto;
+        padding: 1.2rem 1rem; /* Keep consistent with desktop */
+        width: 100%; /* Full width on mobile */
+    }
+
+    .team-section {
+        margin: 2rem 0; /* Increased margin */
+    }
+
+    .team-section h1 {
+        font-size: 2rem; /* Increased font size */
+    }
+
+    .member-content h2 {
+        font-size: 1.7rem; /* Increased font size */
+        margin: 0.5rem 0 0.6rem; /* Increased margins */
+    }
+
+    .member-content p,
+    .member-content li {
+        font-size: 1.4rem; /* Increased font size */
+        line-height: 1.4; /* Increased line height */
+        margin: 0.5rem 0; /* Increased margins */
+    }
+
+    /* Adjust social icons for smaller screens */
+    .team-member .fa,
+    .team-member .ai {
+        font-size: 2em; /* Increased size */
+        margin: 0 5px;
+    }
+
+    /* Adjust CV button for smaller screens */
+    .cv-button {
+        font-size: 1.4rem; /* Increased font size */
+        padding: 0.6rem 1.2rem; /* Increased padding */
+        margin: 0.8rem auto; /* Increased margin */
+    }
 }

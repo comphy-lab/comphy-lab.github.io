@@ -23,7 +23,7 @@
   <link rel="preload" href="/assets/js/main.js" as="script">
   <link rel="preload" href="/assets/css/fontello/css/fontello.css" as="style">
   <link rel="preload" href="/assets/css/academicons-1.7.0/css/academicons.min.css" as="style">
-  
+
   <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
@@ -34,7 +34,7 @@
   <meta name="theme-color" content="#ffffff">
   <meta name="apple-mobile-web-app-title" content="CoMPhy Lab">
   <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
-  
+
   <!-- SEO Meta Tags -->
   <meta name="description" content="Meet the team of researchers and scientists at the Computational Multiphase Physics Laboratory">
   <meta name="author" content="CoMPhy Lab">
@@ -61,7 +61,7 @@
   <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="stylesheet" href="/assets/css/team.css">
   <link rel="stylesheet" href="/assets/css/command-palette.css" media="print" onload="this.media='all'">
-  
+
   <!-- Structured Data for Team -->
   <script type="application/ld+json">
   {
@@ -90,7 +90,7 @@
         }
       }
     };
-    
+
     // Ensure search database is preloaded for command palette search functionality
     window.addEventListener('DOMContentLoaded', function() {
       // Try to prefetch the search database if it exists
@@ -118,7 +118,7 @@
   <script>
     document.documentElement.classList.remove('no-js');
     document.documentElement.classList.add('js');
-    
+
     // Theme toggle functionality
     (function() {
       // Check for saved theme preference or use OS preference
@@ -131,17 +131,17 @@
         // If not, check OS preference
         return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
       };
-      
+
       // Set theme on document
       const setTheme = (theme) => {
         document.documentElement.setAttribute('data-theme', theme);
         localStorage.setItem('theme', theme);
       };
-      
+
       // Apply theme when page loads
       document.addEventListener('DOMContentLoaded', () => {
         setTheme(getThemePreference());
-        
+
         // Add click event listener to theme toggle
         const themeToggle = document.getElementById('theme-toggle');
         if (themeToggle) {
@@ -169,7 +169,7 @@
       }
 
       const FA_VERSION = '6.7.2';  // Extract version to a constant for easier updates
-      
+
       loadStylesheet(`https://use.fontawesome.com/releases/v${FA_VERSION}/css/solid.css`);
       loadStylesheet(`https://use.fontawesome.com/releases/v${FA_VERSION}/css/brands.css`);
       loadStylesheet(`https://use.fontawesome.com/releases/v${FA_VERSION}/css/fontawesome.css`);
@@ -183,7 +183,7 @@
     }
   </script>
 </head>
-<body id="top">
+<body id="top" class="team-page-body">
 
   <div id="preloader">
     <div id="loader"></div>
@@ -257,18 +257,18 @@
 
     <!-- Team Section -->
     <section class="s-team">
-      <div class="s-team__desc">
-        <h1>{{ page.title }}</h1>
+      <div class="s-team__desc main-title">
+        <h1 id="team-main-title" class="main-heading">{{ page.title }}</h1>
       </div>
-      
+
       {% assign content_html = content | markdownify %}
       {% assign sections = content_html | split: '<h1' %}
-      
+
       {% for section in sections offset:1 %}
         {% assign section_content = section | split: '</h1>' %}
         {% assign section_title = section_content[0] | split: '>' | last %}
         {% assign section_members = section_content[1] | split: '<h2' %}
-        
+
         <div class="team-section">
           <h1>{{ section_title }}</h1>
           <div class="team-grid">
@@ -277,7 +277,7 @@
                 {% assign member_content = member | split: '</h2>' %}
                 {% assign member_name = member_content[0] | split: '>' | last %}
                 {% assign member_details = member_content[1] %}
-                
+
                 {% if member_details contains '<img' %}
                   {% assign image_parts = member_details | split: '<img' %}
                   {% assign image_tag = image_parts[1] | split: '>' | first %}
@@ -298,7 +298,7 @@
                   </div>
                   {% assign member_details = member_details | replace_first: image_tag, '' | replace: '<img>', '' | replace: '<img', '' %}
                 {% endif %}
-                
+
                 <div class="member-content">
                   <h2>{{ member_name }}</h2>
                   {{ member_details }}
@@ -314,15 +314,15 @@
     <section class="s-map">
       <div class="row">
         <div class="column">
-          <h2>Team, collaborators, and Conference visits</h2>
+          <h2 class="map-heading">Team, collaborators, and Conference visits</h2>
           <p class="map-description">
-            The locations marked on this map meet one of three criteria (in the order of preference): 
-            <span class="orange">1. <span class="bold">Hometown</span> of our team members (including alumni) in orange</span>, 
+            The locations marked on this map meet one of three criteria (in the order of preference):
+            <span class="orange">1. <span class="bold">Hometown</span> of our team members (including alumni) in orange</span>,
             <span class="green">2. <span class="bold">Base location</span> of our collaborators in green</span>,
             <span class="purple">3. <span class="bold">Places</span> where we have presented talks in purple</span>, or
             <span class="gray">4. <span class="bold">Places</span> where we have visited for conferences (no talks) in gray</span>.
           </p>
-          <div class="map-container">
+          <div class="map-container" style="width:100%; max-width:1200px; margin:0 auto;">
             <div id="team-map" style="width:100%; height:480px; border:0;">
               <!-- Map will be loaded here -->
               <div style="display:flex; align-items:center; justify-content:center; height:100%; background-color:#f5f5f5;">
@@ -330,32 +330,33 @@
               </div>
             </div>
           </div>
-          
+
           <!-- Google Maps async loading script -->
           <script>
             // Create a more reliable approach to load the map
             document.addEventListener('DOMContentLoaded', function() {
               const mapContainer = document.querySelector('.map-container');
               const teamMap = document.getElementById('team-map');
-              
+
               if (!mapContainer || !teamMap) return;
-              
+
               // Function to load the map iframe directly
               function loadMapIframe() {
                 teamMap.innerHTML = `
-                  <iframe 
-                    src="https://www.google.nl/maps/d/u/0/embed?mid=1Q3oMIgCTo6VpokHytehTMhj4UVKF5Bc&ehbc=2E312F&noprof=1&z=3&ll=42,-10" 
-                    width="100%" 
-                    height="100%" 
-                    style="border:0;" 
-                    allowfullscreen="" 
+                  <iframe
+                    src="https://www.google.nl/maps/d/u/0/embed?mid=1Q3oMIgCTo6VpokHytehTMhj4UVKF5Bc&ehbc=2E312F&noprof=1&z=3&ll=42,-10"
+                    width="100%"
+                    height="100%"
+                    style="border:0;"
+                    allowfullscreen=""
                     loading="lazy"
                     title="CoMPhy Lab - Team, Collaborators and Conference Visits"
-                    referrerpolicy="no-referrer-when-downgrade">
+                    referrerpolicy="no-referrer-when-downgrade"
+                    sandbox="allow-scripts allow-same-origin allow-popups">
                   </iframe>
                 `;
               }
-              
+
               // Only load the map when it's about to come into view
               if ('IntersectionObserver' in window) {
                 const observer = new IntersectionObserver((entries) => {
@@ -367,7 +368,7 @@
                     }
                   });
                 }, { rootMargin: '200px' });
-                
+
                 observer.observe(mapContainer);
               } else {
                 // Fallback for browsers without IntersectionObserver
@@ -382,16 +383,16 @@
 
     <footer class="site-footer">
       <div class="footer-left">
-        <a href="http://basilisk.fr/sandbox/vatsal/" target="_blank">
+        <a href="http://basilisk.fr/sandbox/vatsal/" target="_blank" rel="noopener noreferrer">
           <img src="/assets/logos/logoBasilisk_TransparentBackground.png" alt="Basilisk C" class="footer-logo">
         </a>
-        <a href="https://pof.tnw.utwente.nl/" target="_blank">
+        <a href="https://pof.tnw.utwente.nl/" target="_blank" rel="noopener noreferrer">
           <img src="/assets/logos/LogoPof_transparent_white.png" alt="Physics of Fluids" class="footer-logo pof-logo">
         </a>
-        <a href="https://www.utwente.nl/" target="_blank">
+        <a href="https://www.utwente.nl/" target="_blank" rel="noopener noreferrer">
           <img src="/assets/logos/UT_Logo_2400_Sta_White_EN.png" alt="University of Twente" class="footer-logo">
         </a>
-        <a href="https://www.vatsalsanjay.com/" target="_blank">
+        <a href="https://www.vatsalsanjay.com/" target="_blank" rel="noopener noreferrer">
           <img src="/assets/logos/Logo_Vatsal_v3_OutLine.png" alt="Vatsal Sanjay" class="footer-logo">
         </a>
       </div>
@@ -402,19 +403,19 @@
         </p>
       </div>
       <div class="footer-right">
-        <a href="https://scholar.google.com/citations?user=tHb_qZoAAAAJ&hl=en" target="_blank" aria-label="Google Scholar Profile">
+        <a href="https://scholar.google.com/citations?user=tHb_qZoAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar Profile">
           <i class="ai ai-google-scholar" style="font-size: 2.5em; color: white;"></i>
         </a>
-        <a href="https://github.com/comphy-lab" target="_blank" aria-label="GitHub Organization">
+        <a href="https://github.com/comphy-lab" target="_blank" rel="noopener noreferrer" aria-label="GitHub Organization">
           <i class="fa-brands fa-github" style="font-size: 2.5em; color: white;"></i>
         </a>
-        <a href="https://www.youtube.com/@CoMPhyLab" target="_blank" aria-label="YouTube Channel">
+        <a href="https://www.youtube.com/@CoMPhyLab" target="_blank" rel="noopener noreferrer" aria-label="YouTube Channel">
           <i class="fa-brands fa-youtube" style="font-size: 2.5em; color: white;"></i>
         </a>
-        <a href="https://x.com/VatsalSanjay" target="_blank" aria-label="X (Twitter) Profile">
+        <a href="https://x.com/VatsalSanjay" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter) Profile">
           <i class="fa-brands fa-x-twitter" style="font-size: 2.5em; color: white;"></i>
         </a>
-        <a href="https://bsky.app/profile/comphy-lab.org" target="_blank" aria-label="Bluesky Profile">
+        <a href="https://bsky.app/profile/comphy-lab.org" target="_blank" rel="noopener noreferrer" aria-label="Bluesky Profile">
           <i class="fa-brands fa-bluesky" style="font-size: 2.5em; color: white;"></i>
         </a>
         <a href="https://github.com/comphy-lab/comphy-lab.github.io" class="edit-link" aria-label="Edit this page on GitHub">
@@ -456,10 +457,10 @@
             // Get the header height
             const header = document.querySelector('.s-header');
             const headerHeight = header ? header.offsetHeight : 0;
-            
+
             // Get the element's position
             const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-            
+
             // Scroll to element with offset for header
             window.scrollTo({
               top: elementPosition - headerHeight - 20, // 20px extra padding
@@ -475,22 +476,22 @@
       // Handle image loading
       const images = document.querySelectorAll('.team-photo');
       const maxRetries = 3;
-      
+
       images.forEach(img => {
         let retries = 0;
-        
+
         function tryLoadImage() {
           if (retries < maxRetries && !img.classList.contains('loaded')) {
             retries++;
             img.src = img.src + '?' + new Date().getTime(); // Cache bust
           }
         }
-        
+
         // Retry on error
         img.addEventListener('error', () => {
           setTimeout(tryLoadImage, 1000 * retries); // Exponential backoff
         });
-        
+
         // Force load if image is in viewport
         if ('IntersectionObserver' in window) {
           const observer = new IntersectionObserver((entries) => {
@@ -503,33 +504,33 @@
           observer.observe(img);
         }
       });
-      
+
       // Rest of your existing DOMContentLoaded code...
     });
   </script>
-  
+
   <!-- Schedule Container Script -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       // Handle image loading
       const images = document.querySelectorAll('.team-photo');
       const maxRetries = 3;
-      
+
       images.forEach(img => {
         let retries = 0;
-        
+
         function tryLoadImage() {
           if (retries < maxRetries && !img.classList.contains('loaded')) {
             retries++;
             img.src = img.src + '?' + new Date().getTime(); // Cache bust
           }
         }
-        
+
         // Retry on error
         img.addEventListener('error', () => {
           setTimeout(tryLoadImage, 1000 * retries); // Exponential backoff
         });
-        
+
         // Force load if image is in viewport
         if ('IntersectionObserver' in window) {
           const observer = new IntersectionObserver((entries) => {
@@ -542,11 +543,11 @@
           observer.observe(img);
         }
       });
-      
+
       // Rest of your existing DOMContentLoaded code...
     });
   </script>
-  
+
   <!-- Command palette (implementation in assets/js/command-palette.js) -->
   <script defer src="/assets/js/command-palette.js"></script>
 
