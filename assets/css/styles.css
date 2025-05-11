@@ -151,7 +151,7 @@
   --about-desc-h3-text: var(--color-red-darker);
   --about-desc-h3-border: var(--color-red-darker-alpha-20);
   --about-desc-pre-bg: var(--color-black-alpha-05);
-  --strong-text-color: var(--color-saddle-brown);
+  --strong-text-color: var(--shared-strong-color, #cf4900);
   --strong-highlight-color: var(--color-peru-alpha-35);
   --strong-badge-bg-start: var(--color-blue-bright-alpha-10);
   --strong-badge-bg-end: var(--color-blue-bright-alpha-05);
@@ -539,7 +539,6 @@ body {
 
 /* Theme-aware content styling */
 #about-content a,
-#news-content a,
 .teaching-content a,
 .s-teaching a {
   color: var(--color-link);
@@ -547,30 +546,11 @@ body {
 }
 
 #about-content h1,
-#about-content h3,
-#news-content h1,
-#news-content h3 {
+#about-content h3 {
   color: var(--color-text);
 }
 
-/* Handle specific link and icon coloring in news */
-[data-theme="dark"] #news-content a[href$=".pdf"] {
-  color: var(--link-pdf-color) !important;
-}
-
-[data-theme="dark"] #news-content a[href^="https://doi.org"] {
-  color: var(--link-doi-color) !important;
-}
-
-[data-theme="dark"] #news-content a[href$=".pdf"] i,
-[data-theme="dark"] #news-content a[href^="https://doi.org"] i {
-  color: var(--icon-color-inherited) !important;
-}
-
-/* Fix image shadows in dark mode */
-[data-theme="dark"] #news-content img {
-  box-shadow: 0 4px 8px var(--news-img-shadow) !important;
-}
+/* News styles moved to history.css for unified styling */
 
 /* History Button Styles */
 .s-news__history-btn {
@@ -2844,31 +2824,4 @@ img.youtube-stats-dark {
   color: var(--icon-color-newspaper) !important; /* Uses dark theme var */
 }
 
-.news-flex-row {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 20px;
-  margin: 15px 0;
-}
-
-.news-image {
-  /* Base styles for all news images across the site */
-  border-radius: 5px;
-  box-shadow: var(--shadow-sm);
-  cursor: pointer;
-  display: block;
-  height: auto;
-  transition: var(--transition-medium);
-  max-width: 175px; /* Default size for all news images */
-}
-
-/* Specific max-width for news page listings */
-.news-container .news-image {
-  max-width: 175px;
-}
-
-/* Specific styling for news images in the landing page */
-#news-content .news-image {
-  max-width: 175px;
-}
+/* News styling moved to history.css for unified styling between sections */
