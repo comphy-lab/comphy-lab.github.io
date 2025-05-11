@@ -5,7 +5,7 @@
 :root {
   --teaching-bg-color: #ffffff;
   --teaching-text-color: #333333;
-  --teaching-heading-color: #333333;
+  --teaching-heading-color: #68236D;
   --teaching-subheading-color: #4169e1;
   --teaching-card-bg: #ffffff;
   --teaching-border-color: #eaeaea;
@@ -16,7 +16,7 @@
 [data-theme="dark"] {
   --teaching-bg-color: #121212;
   --teaching-text-color: #e0e0e0;
-  --teaching-heading-color: #ffffff;
+  --teaching-heading-color: #9A349F;
   --teaching-subheading-color: #6fa1ff;
   --teaching-card-bg: #1e1e1e;
   --teaching-border-color: #333333;
@@ -55,13 +55,13 @@
 .teaching-content h1 {
   font-size: 3rem;
   margin-bottom: 1.5rem;
-  color: var(--teaching-heading-color);
+  color: #68236D;
 }
 
 .teaching-content h2 {
   font-size: 2.2rem;
   margin: 2rem 0 1rem;
-  color: var(--teaching-heading-color);
+  color: var(--color-heading-h2, #ff6b6b);
   border-bottom: 1px solid var(--teaching-border-color);
   padding-bottom: 0.5rem;
 }
@@ -83,7 +83,7 @@
 .teaching-content h3 {
   font-size: 1.8rem;
   margin: 1.5rem 0 1rem;
-  color: var(--teaching-subheading-color);
+  color: var(--color-heading-h3, #000000);
 }
 
 .teaching-content h4 {

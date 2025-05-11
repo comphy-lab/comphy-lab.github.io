@@ -2,7 +2,7 @@
 :root {
   --research-bg-color: var(--color-background);
   --research-text-color: var(--color-text);
-  --research-heading-color: var(--color-primary);
+  --research-heading-color: var(--color-heading-h1, #68236D);
   --research-subheading-color: var(--color-blue-bright);
   --research-border-color: var(--color-gray-light);
   --research-section-bg: linear-gradient(to right, var(--color-gray-light), transparent);
@@ -15,7 +15,7 @@
 [data-theme="dark"] {
   --research-bg-color: var(--color-background);
   --research-text-color: var(--color-text);
-  --research-heading-color: var(--color-primary);
+  --research-heading-color: var(--color-heading-h1, #9A349F);
   --research-subheading-color: var(--color-blue-bright);
   --research-border-color: var(--color-gray-xdark);
   --research-section-bg: linear-gradient(to right, var(--color-gray-xdark), var(--color-gray-xxxdark));
@@ -154,7 +154,7 @@
 /* Year sections */
 .research-content h2 {
   font-size: 2.25rem;
-  color: var(--research-heading-color);
+  color: var(--color-heading-h2, #ff6b6b);
   margin: 3rem 0 1.5rem;
   padding: 0.5rem 1rem;
   border-radius: 8px;
@@ -174,7 +174,7 @@
   font-size: 1.75rem;
   line-height: 1.5;
   margin: 2rem 0 0.75rem;
-  color: var(--research-heading-color);
+  color: var(--color-heading-h3, #000000);
   padding-left: 1rem;
   border-left: 3px solid var(--research-subheading-color);
   transition: border-left-color 0.3s ease;
