@@ -288,6 +288,22 @@
     padding-bottom: 0;
 }
 
+/* Thesis link styling for team pages */
+.team-member a[href$=".pdf"],
+.team-member a.pdf-link {
+    color: var(--shared-pdf-link-color, #0056b3);
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+[data-theme="dark"] .team-member a[href$=".pdf"],
+[data-theme="dark"] .team-member a.pdf-link {
+    color: var(--shared-pdf-link-color-dark, #6fa1ff);
+}
+
 .member-content h2::after {
     display: none;
 }
@@ -376,8 +392,7 @@
 
 /* Center the CV button */
 .cv-button {
-    display: inline-block;
-    margin-top: 0.8rem;
+    display: block;
     padding: 0.6rem 1.2rem;
     background-color: var(--cv-button-bg);
     color: var(--cv-button-text) !important;
@@ -387,9 +402,8 @@
     font-size: 1.4rem; /* Increased font size */
     transition: all 0.3s ease;
     text-align: center;
-    margin: 1rem auto; /* Increased margin */
+    margin: 1rem auto 1rem; /* Consolidated margin with top, right/left, bottom */
     width: fit-content;
-    display: block;
 }
 
 .cv-button:hover {
