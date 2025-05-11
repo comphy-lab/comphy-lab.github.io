@@ -13,8 +13,8 @@ title: Our Team & Collaborators
 <img src="/assets/images/team/0.jpg" alt="Vatsal Sanjay" loading="lazy" width="200" height="200">
 
 - [Postdoc, Phys. Fluids - Univ. Twente / 2022-25](https://pof.tnw.utwente.nl/people/profile/1330)
-- Ph.D., Phys. Fluids - Univ. Twente / 2018-22, **Thesis:** <a href="https://doi.org/10.3990/1.9789036554077" class="pdf-link" style="display: inline-flex; align-items: center; margin-left: 5px;"><i class="fa-solid fa-file-pdf" style="margin-right: 8px; font-size: 1.2em; color: #e63946;"></i>Viscous Free-Surface Flows</a>
-- B.Tech + M.Tech, Two-Phase Flow & Instability Lab, IIT-Roorkee / 2013-18, **Thesis:** <a href="http://dx.doi.org/10.13140/RG.2.2.22294.04166" class="pdf-link" style="display: inline-flex; align-items: center; margin-left: 5px;"><i class="fa-solid fa-file-pdf" style="margin-right: 8px; font-size: 1.2em; color: #e63946;"></i>Understanding of mutual interactions between liquid jets: Entrainment and sheet formation</a>
+- Ph.D., Phys. Fluids - Univ. Twente / 2018-22, **Thesis:** <a href="https://doi.org/10.3990/1.9789036554077" class="pdf-link" style="display: inline-flex; align-items: center; margin-left: 5px;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Viscous Free-Surface Flows</a>
+- B.Tech + M.Tech, Two-Phase Flow & Instability Lab, IIT-Roorkee / 2013-18, **Thesis:** <a href="http://dx.doi.org/10.13140/RG.2.2.22294.04166" class="pdf-link" style="display: inline-flex; align-items: center; margin-left: 5px;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Understanding of mutual interactions between liquid jets: Entrainment and sheet formation</a>
 - [Personal Website](https://vatsalsanjay.com)
 
 **Research Interest:** See [here](https://comphy-lab.org/research)
@@ -30,7 +30,7 @@ title: Our Team & Collaborators
 Joint with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 
 - [Ph.D. Student, Phys. Fluids - Univ. Twente / 2023-now](https://pof.tnw.utwente.nl/people/profile/2068)
-- B.Tech + M.Tech, Two-Phase Flow & Instability Lab, IIT-Roorkee / 2018-23,**Thesis:**<a href="http://dx.doi.org/10.13140/RG.2.2.23218.79040" class="pdf-link" style="display: inline-flex; align-items: center; margin-left: 5px;"><i class="fa-solid fa-file-pdf" style="margin-right: 8px; font-size: 1.2em; color: #e63946;"></i>Understanding interfacial interaction in macro and nano scales</a>
+- B.Tech + M.Tech, Two-Phase Flow & Instability Lab, IIT-Roorkee / 2018-23,**Thesis:**<a href="http://dx.doi.org/10.13140/RG.2.2.23218.79040" class="pdf-link" style="display: inline-flex; align-items: center; margin-left: 5px;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Understanding interfacial interaction in macro and nano scales</a>
 
 **Research Interest:** Viscoelastic Flows, Bursting Bubbles, Respiratory Drops.
 
@@ -296,73 +296,73 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/mdjsent)
 
 - **2025:** Graduated with B.Sc., Univ. Twente
-- **Thesis:** <a href="https://tinyurl.com/2ycunjcr" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf" style="margin-right: 8px; font-size: 1.2em; color: #e63946;"></i>Spinning Pizza</a>
+- **Thesis:** <a href="https://tinyurl.com/2ycunjcr" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Spinning Pizza</a>
 
 ## Valentin Rosario
 [<i class="fa-brands fa-linkedin" style="font-size: 1.5em; color: black;"></i>](https://www.linkedin.com/in/valentin-rosario-6377602b2/?originalSubdomain=nl)
 [<i class="fa-brands fa-github" style="font-size: 2em; color: black;"></i>](https://github.com/ValeRos9)
 
 - **2024:** Graduated with M.Sc., Univ. Amsterdam
-- **Thesis:** <a href="https://tinyurl.com/2cjsjvr4" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf" style="margin-right: 8px; font-size: 1.2em; color: #e63946;"></i>Modelling the Ward--Hunt ice-shelf as viscoelastic solid</a>
+- **Thesis:** <a href="https://tinyurl.com/2cjsjvr4" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Modelling the Ward--Hunt ice-shelf as viscoelastic solid</a>
 
 ## Swen van den Heuvel
 [<i class="fa-brands fa-linkedin" style="font-size: 1.5em; color: black;"></i>](https://www.linkedin.com/in/swen-van-den-heuvel-33a1901aa/)
 
 - **Now:** [Ph.D. Student, Phys. Fluids - Univ. Twente](https://pof.tnw.utwente.nl/people/profile/2119)
 - **2023:** [Graduated with M.Sc., Univ. Twente](https://pof.tnw.utwente.nl/people/profile/2119)
-- **Thesis:** <a href="https://bit.ly/4er5VaH" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf" style="margin-right: 8px; font-size: 1.2em; color: #e63946;"></i>Hydrodynamic forces acting on vertically rising bubbles</a>
+- **Thesis:** <a href="https://bit.ly/4er5VaH" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Hydrodynamic forces acting on vertically rising bubbles</a>
 
 ## Niels Kuipers
 [<i class="fa-brands fa-linkedin" style="font-size: 1.5em; color: black;"></i>](https://www.linkedin.com/in/nielskuipers1/)
 
 - **Now:** M.Sc. Student, Adv. Technology - Univ. Twente
 - **2023:** [Graduated with B.Sc., Univ. Twente](https://pof.tnw.utwente.nl/people/profile/2064)
-- **Thesis:** <a href="https://tinyurl.com/258jvdyv" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf" style="margin-right: 8px; font-size: 1.2em; color: #e63946;"></i>Partial coalescence of drops on viscous films</a>
+- **Thesis:** <a href="https://tinyurl.com/258jvdyv" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Partial coalescence of drops on viscous films</a>
 
 ## C. H. (Luuk) Maurits
 
 - **2023:** [Graduated with M.Sc., Univ. Twente](https://pof.tnw.utwente.nl/people/profile/1741)
-- **Thesis:** <a href="https://bit.ly/ThesisLuuk" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf" style="margin-right: 8px; font-size: 1.2em; color: #e63946;"></i>When Laplace meets Marangoni</a>
+- **Thesis:** <a href="https://bit.ly/ThesisLuuk" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>When Laplace meets Marangoni</a>
 
 ## Tom Appleford
 
 - **Now:** [Ph.D. Student, Fluid Lab - Univ. Amsterdam](https://www.fluidlab.nl/team)
 - **2022:** [Graduated with M.Sc., Univ. Amsterdam](https://pof.tnw.utwente.nl/people/profile/1741)
-- **Thesis:** <a href="https://bit.ly/ThesisTom" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf" style="margin-right: 8px; font-size: 1.2em; color: #e63946;"></i>The deformation of a droplet in a viscoplastic simple shear flow</a>
+- **Thesis:** <a href="https://bit.ly/ThesisTom" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>The deformation of a droplet in a viscoplastic simple shear flow</a>
 
 ## Twan Heijink
 [<i class="fa-brands fa-linkedin" style="font-size: 1.5em; color: black;"></i>](https://www.linkedin.com/in/twanheijink/)
 
 - **Now:** Software IVQA Engineer at Thales
 - **2021:** [Graduated with B.Sc., Saxion Univ.](https://pof.tnw.utwente.nl/people/profile/1822)
-- **Thesis:** <a href="https://bit.ly/ThesisTwanHeijink" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf" style="margin-right: 8px; font-size: 1.2em; color: #e63946;"></i>Standing waves at a fluid-fluid interface with plastocapillarity</a>
+- **Thesis:** <a href="https://bit.ly/ThesisTwanHeijink" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Standing waves at a fluid-fluid interface with plastocapillarity</a>
 
 ## Steven Meuleman
 [<i class="fa-brands fa-linkedin" style="font-size: 1.5em; color: black;"></i>](https://www.linkedin.com/in/steven-meuleman/)
 
 - **Now:** Mechanical Engineer at VIRO
 - **2020:** Graduated with B.Sc., Univ. Twente
-- **Thesis:** <a href="https://bit.ly/ThesisStevenM" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf" style="margin-right: 8px; font-size: 1.2em; color: #e63946;"></i>Simulations of foam generation for a custom axisymmetric core-shell nozzle</a>
+- **Thesis:** <a href="https://bit.ly/ThesisStevenM" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Simulations of foam generation for a custom axisymmetric core-shell nozzle</a>
 
 ## Thijmen Kroeze
 [<i class="fa-brands fa-linkedin" style="font-size: 1.5em; color: black;"></i>](https://www.linkedin.com/in/thijmen-kroeze-535aa3207/)
 
 - **Now:** CFD Engineer, Brink Climate Systems
 - **2020:** [Graduated with B.Sc., Univ. Twente](https://pof.tnw.utwente.nl/people/profile/1630)
-- **Thesis:** <a href="https://bit.ly/ThesisThijmenKroeze" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf" style="margin-right: 8px; font-size: 1.2em; color: #e63946;"></i>Singular jet dynamics of drop impacts at high Bond numbers</a>
+- **Thesis:** <a href="https://bit.ly/ThesisThijmenKroeze" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Singular jet dynamics of drop impacts at high Bond numbers</a>
 
 ## Coen Verschuur
 
 - **Now:** [Ph.D. Student, Phys. Fluids - Univ. Twente](https://pof.tnw.utwente.nl/people/profile/1709)
 - **2020:** [Graduated with B.Sc., Univ. Twente](https://pof.tnw.utwente.nl/people/profile/1709)
-- **Thesis:** <a href="https://bit.ly/ThesisCoenVerschuur" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf" style="margin-right: 8px; font-size: 1.2em; color: #e63946;"></i>Early time dynamics in immiscible drop impacts</a>
+- **Thesis:** <a href="https://bit.ly/ThesisCoenVerschuur" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Early time dynamics in immiscible drop impacts</a>
 
 ## Pim J. Dekker
 [<i class="fa-brands fa-linkedin" style="font-size: 1.5em; color: black;"></i>](https://www.linkedin.com/in/pim-dekker/)
 
 - **Now:** [Ph.D. Student, Phys. Fluids - Univ. Twente](https://pof.tnw.utwente.nl/people/profile/1431)
 - **2019:** [Graduated with B.Sc., Univ. Twente](https://pof.tnw.utwente.nl/people/profile/1431)
-- **Thesis:** <a href="https://bit.ly/ThesisPimDekker" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf" style="margin-right: 8px; font-size: 1.2em; color: #e63946;"></i>Spreading of a drop on a water-air interface</a>
+- **Thesis:** <a href="https://bit.ly/ThesisPimDekker" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Spreading of a drop on a water-air interface</a>
 
 <!-- ## Xiangyu Zhang
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/zhangxyPHD)
@@ -377,4 +377,4 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 
 - **Now:** Research Engineer at Alfen
 - **2019:** [Graduated with B.Sc., Univ. Twente](https://pof.tnw.utwente.nl/people/profile/1518)
-- **Thesis:** <a href="https://bit.ly/ThesisLaurenceBruggink" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf" style="margin-right: 8px; font-size: 1.2em; color: #e63946;"></i>Bursting bubble in a Herschel--Bulkley fluid</a>
+- **Thesis:** <a href="https://bit.ly/ThesisLaurenceBruggink" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Bursting bubble in a Herschel--Bulkley fluid</a>

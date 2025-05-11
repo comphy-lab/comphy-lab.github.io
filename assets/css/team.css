@@ -307,6 +307,13 @@
     color: var(--shared-pdf-link-color-dark, #6fa1ff);
 }
 
+/* PDF link icon styling */
+.pdf-link-icon {
+    margin-right: 8px;
+    font-size: 1.2em;
+    color: #e63946;
+}
+
 .member-content h2::after {
     display: none;
 }
