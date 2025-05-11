@@ -30,7 +30,7 @@ title: Our Team & Collaborators
 Joint with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 
 - [Ph.D. Student, Phys. Fluids - Univ. Twente / 2023-now](https://pof.tnw.utwente.nl/people/profile/2068)
-- [B.Tech + M.Tech, Two-Phase Flow & Instability Lab, IIT-Roorkee / 2018-23]<a href="http://dx.doi.org/10.13140/RG.2.2.23218.79040" class="pdf-link" style="display: inline-flex; align-items: center; margin-left: 5px;"><i class="fa-solid fa-file-pdf" style="margin-right: 8px; font-size: 1.2em; color: #e63946;"></i></a>
+- B.Tech + M.Tech, Two-Phase Flow & Instability Lab, IIT-Roorkee / 2018-23,**Thesis:**<a href="http://dx.doi.org/10.13140/RG.2.2.23218.79040" class="pdf-link" style="display: inline-flex; align-items: center; margin-left: 5px;"><i class="fa-solid fa-file-pdf" style="margin-right: 8px; font-size: 1.2em; color: #e63946;"></i></a>
 
 **Research Interest:** Viscoelastic Flows, Bursting Bubbles, Respiratory Drops.
 
