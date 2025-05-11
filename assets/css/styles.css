@@ -4,9 +4,9 @@
     --color-primary: #0056b3;
     --color-secondary: #2b2b2b; /* Used for dark backgrounds/elements in light theme */
     --color-text: #333333;
-    --color-heading-h1: #68236D; /* Purple for h1 headings */
-    --color-heading-h2: var(--about-desc-h3-text, #ff6b6b); /* Using h3 color for h2 */
-    --color-heading-h3: var(--color-black, #000000); /* Black for h3 */
+    --color-heading-h1: #68236d; /* Purple for h1 headings */
+    --color-heading-h2: #0156b3; /* Blue for h2 */
+    --color-heading-h3: #333333; /* Dark gray for h3 */
     --color-background: #ffffff;
     --color-link: #0056b3;
     --color-link-hover: #004494;
@@ -26,6 +26,18 @@
     --color-orange-bright: #e76b39; /* Google Scholar */
     --color-bluesky: #0085ff;
     --color-linkedin: #0077b5;
+
+    /* Common UI Colors */
+    --color-success: #28a745;
+    --color-info: #17a2b8;
+    --color-warning: #ffc107;
+    --color-danger: #dc3545;
+
+    /* Shared Colors */
+    --color-strong: #cf4900; /* Strong text - shared across components */
+    --color-link-doi: var(--color-strong); /* DOI links */
+    --color-link-pdf: var(--color-primary); /* PDF links */
+    --color-link-youtube: var(--color-strong); /* YouTube links */
 
     /* Alpha Colors */
     --color-black-alpha-05: rgba(0, 0, 0, 0.05);
@@ -60,7 +72,12 @@
     --color-blue-bright-alpha-30: rgba(76, 110, 245, 0.3);
     --color-blue-bright-alpha-50: rgba(76, 110, 245, 0.5);
     --color-red-darker-alpha-20: rgba(250, 82, 82, 0.2);
-    --color-header-base-alpha-15: rgba(104, 35, 109, 0.15); /* this is #68236D */
+    --color-header-base-alpha-15: rgba(
+        104,
+        35,
+        109,
+        0.15
+    ); /* this is #68236D */
     --color-header-base-alpha-20: rgba(104, 35, 109, 0.2); /* this is #68236D */
     --color-intro-button-base-alpha-90: rgba(3, 102, 214, 0.9);
     --color-intro-button-base: rgb(3, 102, 214);
@@ -146,13 +163,13 @@
     --about-grid-border: var(--color-black-alpha-10);
     --about-social-bg: var(--color-white);
     --about-social-border: var(--color-black-alpha-10);
-    --about-social-header-text: var(--color-near-black);
+    --about-social-header-text: var(--color-text);
     --about-social-header-border: var(--color-black-alpha-10);
     --about-scrollbar-thumb: var(--color-black-alpha-20);
     --about-scrollbar-track: transparent;
     --about-desc-h1-text: var(--color-heading-h1);
-    --about-desc-h2-text: var(--color-blue-bright);
-    --about-desc-h3-text: var(--color-red-darker);
+    --about-desc-h2-text: var(--color-heading-h2);
+    --about-desc-h3-text: var(--color-heading-h3);
     --about-desc-h3-border: var(--color-red-darker-alpha-20);
     --about-desc-pre-bg: var(--color-black-alpha-05);
     --strong-text-color: var(--shared-strong-color, #cf4900);
@@ -228,9 +245,9 @@
     --color-primary: #4c8dff; /* Lighter blue */
     --color-secondary: #a0a0a0; /* Lighter gray */
     --color-text: #e0e0e0;
-    --color-heading-h1: #9A349F; /* Lighter purple for h1 headings in dark mode */
-    --color-heading-h2: var(--about-desc-h3-text, #ff8989); /* Using h3 color for h2 in dark mode */
-    --color-heading-h3: var(--color-white, #ffffff); /* White for h3 in dark mode */
+    --color-heading-h1: #9a349f; /* Lighter purple for h1 headings in dark mode */
+    --color-heading-h2: #4c8dff; /* Blue for h2 in dark mode */
+    --color-heading-h3: #e0e0e0; /* Light gray for h3 in dark mode */
     --color-background: var(--color-gray-xxxdark);
     --color-link: #4c8dff;
     --color-link-hover: #6fa1ff;
@@ -238,6 +255,18 @@
     --color-gray-xdark: #2a2a2a; /* Darker social bg */
     --color-gray-footer-bg: #333333; /* Specific footer background */
     --color-saddle-brown: #e5c070; /* Strong text - yellow */
+
+    /* Common UI Colors - Dark Mode */
+    --color-success: #5cb85c;
+    --color-info: #5bc0de;
+    --color-warning: #f0ad4e;
+    --color-danger: #d9534f;
+
+    /* Shared Colors - Dark Mode */
+    --color-strong: #ff8650; /* Strong text for dark mode */
+    --color-link-doi: var(--color-strong); /* DOI links */
+    --color-link-pdf: var(--color-primary); /* PDF links */
+    --color-link-youtube: var(--color-strong); /* YouTube links */
 
     /* Alpha Colors */
     --color-black-alpha-20: rgba(0, 0, 0, 0.2);
@@ -248,7 +277,12 @@
     --color-white-alpha-15: rgba(255, 255, 255, 0.15);
     --color-white-alpha-20: rgba(255, 255, 255, 0.2);
     --color-white-alpha-40: rgba(255, 255, 255, 0.4);
-    --color-header-base-alpha-75: rgba(40, 15, 45, 0.75); /* in hex, this is dark magenta #280F2DBF*/
+    --color-header-base-alpha-75: rgba(
+        40,
+        15,
+        45,
+        0.75
+    ); /* in hex, this is dark magenta #280F2DBF*/
     --color-header-base-alpha-40: rgba(0, 0, 0, 0.4); /* Header shadow */
     --color-dark-gray-alpha-60: rgba(30, 30, 30, 0.6);
     --color-dark-gray-alpha-70: rgba(30, 30, 38, 0.7);
@@ -260,7 +294,12 @@
     --color-darkest-gray-alpha-50: rgba(60, 60, 70, 0.5); /* Mobile nav hover */
     --color-blue-light-alpha-30: rgba(59, 130, 255, 0.3); /* Button shadow */
     --color-blue-light-alpha-40: rgba(111, 161, 255, 0.4); /* Tag border */
-    --color-blue-light-alpha-60: rgba(111, 161, 255, 0.6); /* Tag border hover */
+    --color-blue-light-alpha-60: rgba(
+        111,
+        161,
+        255,
+        0.6
+    ); /* Tag border hover */
     --color-blue-lighter-alpha-80: rgba(33, 107, 255, 0.8);
     --color-blue-lighter-alpha-90: rgba(59, 130, 255, 0.9);
     --color-red-light-alpha-30: rgba(255, 137, 137, 0.3);
@@ -330,7 +369,7 @@
     --about-scrollbar-thumb: var(--color-white-alpha-20);
     --about-desc-h1-text: var(--color-heading-h1);
     --about-desc-h2-text: #6e8aff;
-    --about-desc-h3-text: #ff8989;
+    --about-desc-h3-text: var(--color-heading-h3);
     --about-desc-h3-border: var(--color-red-light-alpha-30);
     --about-desc-h3-shadow: var(--color-red-light-alpha-20);
     --strong-text-color: #e5c070; /* Set explicit color for strong tags in dark mode */
@@ -1318,6 +1357,10 @@ img.youtube-stats-dark {
     font-weight: 600;
 }
 
+[data-theme="dark"] .s-about__social-header h3 {
+    color: var(--color-heading-h3);
+}
+
 .s-about__social-header a {
     color: var(--color-link);
     text-decoration: none;
@@ -1377,7 +1420,7 @@ img.youtube-stats-dark {
 .s-about__desc h2 {
     font-size: 2.4rem;
     margin: 1rem 0 0.5rem;
-    color: var(--about-desc-h2-text);
+    color: var(--color-heading-h2);
 }
 
 /* Dark theme override handled via variable system */
@@ -2135,11 +2178,85 @@ img.youtube-stats-dark {
 }
 
 /* Featured Section */
+.s-featured__header h2 {
+  color: var(--color-heading-h1);
+  text-align: center;
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+}
+
+[data-theme="dark"] .s-featured__header h2 {
+  color: var(--color-heading-h1);
+}
+
+[data-theme="dark"] .s-featured__header hr {
+  background-color: var(--color-heading-h1);
+}
 .s-featured {
     padding: 0 var(--space-md);
     background: var(--color-background);
     display: flex;
     align-items: flex-start;
+    border-top: none;
+}
+
+/* Remove blue horizontal line and ensure only our custom purple line shows */
+.s-featured:before,
+.s-featured:after,
+.s-featured__content:before,
+.s-featured__content:after,
+.s-featured__grid:before,
+.s-featured__grid:after,
+.s-featured > hr,
+.s-featured__content > hr:not(.custom-hr),
+.s-featured__grid > hr:not(.custom-hr),
+.s-featured__left > hr:not(.custom-hr) {
+    display: none !important;
+}
+
+/* Target any default line applied to headings */
+.target-section:after,
+[id]:after,
+section:after,
+.row:after {
+    background-color: transparent !important;
+    border-color: transparent !important;
+    border: none !important;
+    height: 0 !important;
+}
+
+/* Override the blue lines across the entire site */
+#featured:after,
+#featured::after,
+section#featured:after,
+section#featured::after,
+.target-section#featured:after,
+.target-section#featured::after,
+[id="featured"]:after,
+[id="featured"]::after {
+    display: none !important;
+    content: none !important;
+    background-color: transparent !important;
+    border: none !important;
+    height: 0 !important;
+}
+
+/* Target any inline styles that might be used for the blue line */
+.s-featured *[style*="border"],
+.s-featured *[style*="background"] {
+    border-color: transparent !important;
+    border-top-color: transparent !important;
+    border-bottom-color: transparent !important;
+}
+
+/* Ensure our custom hr is visible and purple */
+.s-featured__header hr.custom-hr {
+    display: block !important;
+    border: none !important;
+    height: 2px !important;
+    background-color: var(--color-heading-h1) !important;
+    width: 100% !important;
+    margin: 0.5rem auto !important;
 }
 
 .s-featured__content {
@@ -2167,16 +2284,52 @@ img.youtube-stats-dark {
 
 .s-featured__header .text-pretitle {
     font-size: 3.6rem;
-    color: var(--color-primary);
+    color: var(--color-heading-h1);
     margin-bottom: 1.5rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-weight: 500;
+    position: relative;
+}
+
+.s-featured__header .text-pretitle::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: var(--color-heading-h1);
+    margin-top: 0.5rem;
+}
+
+/* Override any other CSS that might be adding a blue line */
+.s-featured__content {
+    border-bottom: none;
+}
+
+.s-featured__content:after {
+    display: none;
+}
+
+.s-featured__grid {
+    border-bottom: none;
+}
+
+.s-featured__grid:after {
+    display: none;
+}
+
+/* Add explicit horizontal rule styling if needed */
+.s-featured hr,
+.s-featured__content hr,
+.s-featured__grid hr {
+    border-color: var(--color-heading-h1);
+    background-color: var(--color-heading-h1);
+    height: 2px;
 }
 
 .s-featured__header .text-display-title {
     font-size: 3.6rem;
-    color: var(--color-text);
+    color: var(--color-heading-h2);
     margin: 0;
     font-weight: 700;
 }

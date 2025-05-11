@@ -14,5 +14,21 @@
   --history-h4-h6-color: #cccccc;
 }
 
-/* Any history-specific styling that is not shared with News can be placed here */
-/* This file is intentionally minimal now that shared styles have been moved */
+/* Year and month headings style */
+.history-news-box h2 {
+  color: var(--color-heading-h2) !important;
+}
+
+.history-news-box h3 {
+  color: var(--shared-h3-color) !important;
+}
+
+/* Dark theme overrides */
+[data-theme="dark"] .history-news-box h2 {
+  color: var(--color-heading-h2) !important;
+  border-bottom: 2px solid var(--h2-border-color-dark, #444444);
+}
+
+[data-theme="dark"] .history-news-box h3 {
+  color: var(--shared-h3-color) !important;
+}

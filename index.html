@@ -29,7 +29,7 @@ permalink: /
         </div>
         <div class="s-intro__subtitle">
           <p style="margin-top: 30px;">
-            <a href="#featured" class="smoothscroll" style="display: inline-block; padding: 8px 16px; background-color: rgba(3, 102, 214, 0.9); color: white; text-decoration: none; border-radius: 25px; font-size: 0.9em; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.1); backdrop-filter: blur(5px);">
+            <a href="#featured-wrapper" class="smoothscroll" style="display: inline-block; padding: 8px 16px; background-color: rgba(3, 102, 214, 0.9); color: white; text-decoration: none; border-radius: 25px; font-size: 0.9em; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.1); backdrop-filter: blur(5px);">
                 Featured Research
             </a>
         </div>
@@ -62,23 +62,60 @@ permalink: /
     </div>
   </section>
 
-  <section id="featured" class="s-featured target-section">
-    <div class="row s-featured__content" data-animate-block>
-      <div class="s-featured__grid">
-        <div class="s-featured__left">
-          <div class="s-featured__header">
-            <h2 class="text-pretitle" data-animate-el>
-              Featured Research
-            </h2>
-          </div>
-          <div class="featured-item" data-animate-el>
-            <div class="featured-item__image">
-              <!-- Featured papers will be loaded here by JavaScript -->
-            </div>
-          </div>
+  <!-- Adding a style block with !important rules to override any section styling -->
+  <style>
+    /* Global override to remove ANY lines and borders from featured wrapper and children */
+    #featured-wrapper,
+    #featured-wrapper *,
+    #featured-wrapper::before,
+    #featured-wrapper::after,
+    #featured-wrapper *::before,
+    #featured-wrapper *::after {
+      border: none !important;
+      border-top: none !important;
+      border-bottom: none !important;
+      box-shadow: none !important;
+    }
+
+    /* Completely hide any ::after pseudo-elements that might be adding lines */
+    #featured-wrapper::after,
+    #featured-wrapper *::after {
+      display: none !important;
+      content: none !important;
+      height: 0 !important;
+      background: transparent !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      border: none !important;
+    }
+
+    /* Extra strong reset for the wrapper */
+    #featured-wrapper {
+      position: relative !important;
+      z-index: 1 !important;
+      overflow: visible !important;
+    }
+  </style>
+
+  <!-- Reworked featured section with more aggressive style isolation -->
+  <div id="featured-wrapper" style="padding: 8rem 2rem; background: var(--color-background); display: flex; align-items: flex-start; position: relative; min-height: 50vh; z-index: 1; border: none !important; overflow: visible;">
+    <div style="width: 100%; max-width: 1400px; margin: 0 auto; border: none !important; position: relative; z-index: 2;">
+      <div style="text-align: center; margin-bottom: 4rem; border: none !important;">
+        <h2 style="font-size: 3.6rem; color: var(--color-heading-h1); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 500; border: none !important;">
+          Featured Research
+        </h2>
+
+        <!-- Only purple line - with z-index to make sure it's above any other lines -->
+        <div style="height: 2px; background-color: var(--color-heading-h1); border: none !important; width: 100%; max-width: 100%; margin: 1rem auto 2rem; display: block; position: relative; z-index: 10;"></div>
+      </div>
+
+      <!-- Adding a large bottom margin to push any possible blue line out of view -->
+      <div class="featured-item" data-animate-el style="border: none !important; margin-bottom: 5rem;">
+        <div class="featured-item__image" style="border: none !important;">
+          <!-- Featured papers will be loaded here by JavaScript -->
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
 

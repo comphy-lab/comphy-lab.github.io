@@ -46,13 +46,13 @@
 [data-theme="dark"] .research-content strong,
 [data-theme="dark"] .research-content b {
   color: inherit; /* Same for dark mode */
-  text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
+  text-shadow: 0 0 1px var(--color-white-alpha-30, rgba(255, 255, 255, 0.3));
 }
 
 /* Add more solid background in dark mode - color only */
 [data-theme="dark"] .s-research {
   background-color: var(--research-bg-color);
-  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 100px var(--color-black-alpha-30, rgba(0, 0, 0, 0.3));
 }
 
 /* Blockquote styling consistent across themes */
@@ -154,7 +154,7 @@
 /* Year sections */
 .research-content h2 {
   font-size: 2.25rem;
-  color: var(--color-heading-h2, #ff6b6b);
+  color: var(--color-heading-h2);
   margin: 3rem 0 1.5rem;
   padding: 0.5rem 1rem;
   border-radius: 8px;
@@ -174,7 +174,7 @@
   font-size: 1.75rem;
   line-height: 1.5;
   margin: 2rem 0 0.75rem;
-  color: var(--color-heading-h3, #000000);
+  color: var(--color-heading-h3);
   padding-left: 1rem;
   border-left: 3px solid var(--research-subheading-color);
   transition: border-left-color 0.3s ease;
@@ -371,12 +371,12 @@
   .research-content h1 {
     -webkit-text-fill-color: initial;
     background: none;
-    color: #1a1a1a;
+    color: var(--color-near-black);
   }
-  
+
   .research-content h2 {
     background: none;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--color-gray-light);
     border-left: none;
   }
   
@@ -511,7 +511,7 @@
 
 .toc-nav h3 {
   font-size: 1.8rem;
-  color: #2b2b2b;
+  color: var(--color-secondary);
   margin-bottom: 1rem;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--color-blue-bright-alpha-20);
