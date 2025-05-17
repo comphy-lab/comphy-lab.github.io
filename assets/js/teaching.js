@@ -1,4 +1,9 @@
-// Sort courses by date
+/**
+ * Placeholder for sorting course elements by date within the courses container.
+ *
+ * @remark
+ * Currently, this function does not implement any sorting logic and returns immediately if the courses container is not found.
+ */
 function sortCoursesByDate() {
   // Implementation would go here
   // This is a placeholder function to resolve the linting error

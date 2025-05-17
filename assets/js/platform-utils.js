@@ -1,21 +1,18 @@
 "use strict";
 
 /**
- * Check if the user is on a Mac platform
- * @returns {boolean} True if user is on Mac, false otherwise
+ * Determines whether the user's platform is macOS.
+ *
+ * @returns {boolean} `true` if the platform is macOS; otherwise, `false`.
  */
 function isMacPlatform() {
   return navigator.platform.toUpperCase().indexOf("MAC") >= 0;
 }
 
 /**
- * Updates UI elements to reflect the user's platform.
+ * Adjusts the visibility of UI elements based on whether the user is on a Mac platform.
  *
- * This function determines whether the current platform is a Mac by calling `isMacPlatform()`
- * and adjusts the visibility of UI elements accordingly:
- * - Elements with the class `.default-theme-text` are hidden on Mac platforms.
- * - Elements with the class `.mac-theme-text` are shown on Mac platforms.
- * On non-Mac platforms, the visibility settings are reversed.
+ * Elements with the class `.mac-theme-text` are shown only on Mac platforms, while elements with the class `.default-theme-text` are hidden. On non-Mac platforms, this behavior is reversed.
  */
 function updatePlatformSpecificElements() {
   const isMac = isMacPlatform();

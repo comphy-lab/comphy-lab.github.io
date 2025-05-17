@@ -10,12 +10,24 @@ const path = require('path');
 const jsDir = path.join(__dirname, '../assets/js');
 const maxLength = 80;
 
-// Helper function to read file
+/**
+ * Reads and returns the contents of a file as a UTF-8 string.
+ *
+ * @param {string} filePath - Path to the file to read.
+ * @returns {string} The file contents as a string.
+ */
 function readFile(filePath) {
   return fs.readFileSync(filePath, 'utf8');
 }
 
-// Helper function to fix long lines
+/**
+ * Processes JavaScript file content to split lines exceeding the maximum allowed length.
+ *
+ * Applies specialized breaking strategies for object definitions, URL assignments, style definitions, and string concatenations, while skipping comment lines. Lines not matching these cases are left unchanged.
+ *
+ * @param {string} content - The content of a JavaScript file.
+ * @returns {string} The content with long lines split according to formatting rules.
+ */
 function fixLongLines(content) {
   const lines = content.split('\n');
   const fixedLines = [];
@@ -60,7 +72,14 @@ function fixLongLines(content) {
   return fixedLines.join('\n');
 }
 
-// Function to break object definition lines
+/**
+ * Splits a single-line JavaScript object definition into multiple lines at commas, preserving indentation.
+ *
+ * Returns an array of lines with each property on its own line and increased indentation for readability.
+ *
+ * @param {string} line - The object definition line to split.
+ * @returns {string[]} An array of lines representing the broken-up object definition.
+ */
 function breakObjectDefinition(line) {
   // This is simplified - a real implementation would be more robust
   const indentation = line.match(/^\s*/)[0];
@@ -87,7 +106,14 @@ function breakObjectDefinition(line) {
   return result;
 }
 
-// Function to break URL lines
+/**
+ * Splits a line assigning a URL to `window.location.href` or calling `window.open` into assignment and URL parts.
+ *
+ * Preserves original indentation and adds extra indentation to the URL portion for readability.
+ *
+ * @param {string} line - The line containing a URL assignment or window open call.
+ * @returns {string[]} An array with the assignment part and the indented URL part, or the original line if no match is found.
+ */
 function breakUrlLine(line) {
   const indentation = line.match(/^\s*/)[0];
   const extraIndent = indentation + '  ';
@@ -102,7 +128,12 @@ function breakUrlLine(line) {
   ];
 }
 
-// Function to break style lines
+/**
+ * Splits a style definition line into multiple lines at semicolons, preserving and increasing indentation for each property.
+ *
+ * @param {string} line - The style definition line to split.
+ * @returns {string[]} An array of lines, each containing a single style property with proper indentation.
+ */
 function breakStyleLine(line) {
   const indentation = line.match(/^\s*/)[0];
   const extraIndent = indentation + '  ';
@@ -127,7 +158,14 @@ function breakStyleLine(line) {
   return result;
 }
 
-// Function to break string concatenation
+/**
+ * Splits a line containing string concatenation with `+=` into two lines for improved readability.
+ *
+ * Preserves the original indentation and adds extra indentation to the concatenated part.
+ *
+ * @param {string} line - The line to split.
+ * @returns {string[]} An array with the left-hand side and the concatenated value on separate lines.
+ */
 function breakStringConcatenation(line) {
   const indentation = line.match(/^\s*/)[0];
   const extraIndent = indentation + '  ';
@@ -142,7 +180,11 @@ function breakStringConcatenation(line) {
   ];
 }
 
-// Process all JavaScript files
+/**
+ * Processes all JavaScript files in the target directory, fixing lines that exceed the maximum allowed length.
+ *
+ * Scans each `.js` file, counts lines longer than the configured maximum, applies line-breaking strategies to fix them, and overwrites files if changes are made. Logs statistics on long lines and modified files.
+ */
 function processJsFiles() {
   const jsFiles = fs.readdirSync(jsDir)
     .filter(file => file.endsWith('.js'))

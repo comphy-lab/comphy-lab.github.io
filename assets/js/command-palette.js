@@ -20,7 +20,13 @@ window.openCommandPalette = function() {
   }
 };
 
-// Function to render command results based on search
+/**
+ * Renders command palette results filtered by the provided search query.
+ *
+ * If the query is at least 3 characters and a database search function is available, also performs an asynchronous search and displays those results under a "Search Results" section.
+ *
+ * @param {string} query - The search string to filter commands.
+ */
 function renderCommandResults(query) {
   const resultsContainer = document.getElementById("command-palette-results");
   if (!resultsContainer) return;
@@ -76,7 +82,14 @@ function renderCommandResults(query) {
   }
 }
 
-// Helper function to render sections
+/**
+ * Renders grouped command sections into a container element for the command palette UI.
+ *
+ * Each section is displayed with its title and a list of commands, showing icons, titles, and optional excerpts. Clicking a command hides the palette and invokes its handler if defined.
+ *
+ * @param {Object} sections - An object mapping section names to arrays of command objects.
+ * @param {HTMLElement} container - The DOM element where the sections will be rendered.
+ */
 function renderSections(sections, container) {
   // Clear container first
   container.innerHTML = "";
@@ -126,7 +139,11 @@ function renderSections(sections, container) {
   });
 }
 
-// Initialization function to set up command palette when DOM is loaded
+/**
+ * Initializes the command palette UI, search integration, and keyboard shortcuts on DOM load.
+ *
+ * Prefetches the search database and sets up Fuse.js for content search. Configures event listeners for palette input, keyboard navigation, backdrop click to close, and global shortcuts. Enables command selection via keyboard and mouse, and ensures the command palette button opens the palette.
+ */
 function initCommandPalette() {
   // Ensure search database is preloaded for command palette search functionality
   // Try to prefetch the search database if it exists
