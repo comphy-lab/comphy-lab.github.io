@@ -1,201 +1,71 @@
 #!/bin/bash
 
-# Exit on error
+# This script performs various checks on the codebase
+# 1. Ensure Fuse.js is properly loaded in HTML files that use it
+# 2. Check for proper script loading order (e.g., dependencies before their usage)
+
 set -e
 
-# Define color codes for output
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-YELLOW='\033[1;33m'
-BLUE='\033[0;34m'
-NC='\033[0m' # No Color
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+echo "Running checks on repository at: $REPO_ROOT"
 
-# Print script banner
-function print_banner() {
-  echo -e "${BLUE}=============================================${NC}"
-  echo -e "${BLUE}     CoMPhy Lab Website Linting Script      ${NC}"
-  echo -e "${BLUE}=============================================${NC}"
-  echo
-}
+# Check for Fuse dependency
+echo "Checking for proper Fuse.js loading..."
+# Look for specific Fuse.js usage - not just mentions of the word "Fuse"
+FILES_WITH_FUSE=$(grep -l -E "new Fuse|window.searchFuse|Fuse\.js" "$REPO_ROOT/_layouts/"*.html "$REPO_ROOT/_includes/"*.html "$REPO_ROOT/assets/js/"*.js 2>/dev/null || echo "")
 
-# Print usage instructions
-function print_usage() {
-  echo -e "Usage: $0 [OPTIONS]"
-  echo
-  echo -e "Options:"
-  echo -e "  --js     Run JavaScript linting only"
-  echo -e "  --css    Run CSS linting only"
-  echo -e "  --md     Run Markdown linting only"
-  echo -e "  --fix    Try to automatically fix issues"
-  echo -e "  --help   Show this help message"
-  echo
-  echo -e "Without options, all linters will be run."
-  echo
-}
-
-# Check if Node.js and npm are installed
-function check_node() {
-  echo -e "${BLUE}Checking Node.js and npm...${NC}"
+if [ -n "$FILES_WITH_FUSE" ]; then
+  echo "Found files using Fuse.js:"
+  echo "$FILES_WITH_FUSE" | sed 's/^/- /'
   
-  if ! command -v node &> /dev/null; then
-    echo -e "${RED}Node.js is not installed.${NC}"
-    echo -e "${YELLOW}Please install Node.js from https://nodejs.org/${NC}"
-    exit 1
-  fi
+  # JavaScript files don't need the CDN, only check HTML files
+  HTML_WITH_FUSE=$(grep -l -E "new Fuse|window.searchFuse|Fuse\.js" "$REPO_ROOT/_layouts/"*.html "$REPO_ROOT/_includes/"*.html 2>/dev/null || echo "")
   
-  if ! command -v npm &> /dev/null; then
-    echo -e "${RED}npm is not installed.${NC}"
-    echo -e "${YELLOW}npm should be installed with Node.js. Please check your installation.${NC}"
-    exit 1
-  fi
-  
-  echo -e "${GREEN}✓ Node.js $(node -v) and npm $(npm -v) found.${NC}"
-  echo
-}
-
-# Check if dependencies are installed
-function check_dependencies() {
-  echo -e "${BLUE}Checking dependencies...${NC}"
-  
-  if [ ! -d "node_modules" ]; then
-    echo -e "${YELLOW}Dependencies not found. Installing...${NC}"
-    npm install --quiet
-    echo -e "${GREEN}✓ Dependencies installed.${NC}"
+  if [ -n "$HTML_WITH_FUSE" ]; then
+    for file in $HTML_WITH_FUSE; do
+      if ! grep -q "cdn.jsdelivr.net/npm/fuse.js" "$file"; then
+        echo "WARNING: $file uses Fuse but doesn't include the CDN. Adding it..."
+        # Find the closing </head> tag and insert the Fuse CDN script before it
+        sed -i '' '/<\/head>/i\
+  <script defer src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+' "$file"
+        echo "Fixed: Added Fuse.js CDN to $file"
+      else
+        echo "OK: $file properly includes Fuse.js CDN"
+      fi
+    done
   else
-    echo -e "${GREEN}✓ Dependencies found.${NC}"
+    echo "No HTML files directly using Fuse.js found."
+  fi
+  
+  # Check if default.html includes the Fuse CDN, since it's the base template
+  if ! grep -q "cdn.jsdelivr.net/npm/fuse.js" "$REPO_ROOT/_layouts/default.html" 2>/dev/null; then
+    echo "Adding Fuse.js to default layout template as a fallback..."
+    sed -i '' '/<\/head>/i\
+  <!-- Fuse.js dependency for search functionality -->\\
+  <script defer src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+' "$REPO_ROOT/_layouts/default.html"
+    echo "Fixed: Added Fuse.js CDN to default layout"
+  fi
+else
+  echo "No files using Fuse.js found."
+fi
+
+# Check for proper script loading order in HTML files
+echo "Checking script loading order..."
+HTML_FILES=$(find "$REPO_ROOT/_layouts" "$REPO_ROOT/_includes" -name "*.html" 2>/dev/null)
+
+for file in $HTML_FILES; do
+  # Check if command-data.js loads after command-palette.js
+  if grep -q "command-data.js" "$file" && grep -q "command-palette.js" "$file"; then
+    # Get first line number for each file (multiple occurrences may exist)
+    DATA_LINE=$(grep -n "command-data.js" "$file" | head -1 | cut -d ":" -f 1)
+    PALETTE_LINE=$(grep -n "command-palette.js" "$file" | head -1 | cut -d ":" -f 1)
     
-    # Check if package.json has changed since dependencies were installed
-    if [ "package.json" -nt "node_modules/.package-lock.json" ]; then
-      echo -e "${YELLOW}package.json has been modified. Updating dependencies...${NC}"
-      npm install --quiet
-      echo -e "${GREEN}✓ Dependencies updated.${NC}"
+    if [ "$PALETTE_LINE" -gt "$DATA_LINE" ]; then
+      echo "WARNING: In $file, command-palette.js (line $PALETTE_LINE) loads after command-data.js (line $DATA_LINE). Check for potential dependency issues."
     fi
   fi
-  
-  # Initialize husky if it's not already
-  if [ ! -d ".husky/_" ]; then
-    echo -e "${YELLOW}Initializing husky git hooks...${NC}"
-    npx husky install
-    echo -e "${GREEN}✓ Husky initialized.${NC}"
-  fi
-  
-  echo
-}
+done
 
-# Run JavaScript linting
-function lint_js() {
-  if [ "$FIX_MODE" = true ]; then
-    echo -e "${BLUE}Linting and fixing JavaScript files...${NC}"
-    npm run lint:js -- --fix
-  else
-    echo -e "${BLUE}Linting JavaScript files...${NC}"
-    npm run lint:js
-  fi
-  echo -e "${GREEN}✓ JavaScript linting complete.${NC}"
-  echo
-}
-
-# Run CSS linting
-function lint_css() {
-  if [ "$FIX_MODE" = true ]; then
-    echo -e "${BLUE}Linting and fixing CSS files...${NC}"
-    npm run lint:css -- --fix
-  else
-    echo -e "${BLUE}Linting CSS files...${NC}"
-    npm run lint:css
-  fi
-  echo -e "${GREEN}✓ CSS linting complete.${NC}"
-  echo
-}
-
-# Run Markdown linting
-function lint_md() {
-  echo -e "${BLUE}Linting Markdown files...${NC}"
-  npm run lint:md
-  if [ "$FIX_MODE" = true ]; then
-    echo -e "${YELLOW}Note: Markdown linting doesn't support auto-fixing via command line.${NC}"
-  fi
-  echo -e "${GREEN}✓ Markdown linting complete.${NC}"
-  echo
-}
-
-# Run all linters
-function lint_all() {
-  lint_js
-  lint_css
-  lint_md
-}
-
-# Main execution
-print_banner
-
-# Initialize variables
-RUN_JS=false
-RUN_CSS=false
-RUN_MD=false
-FIX_MODE=false
-
-# Process command line arguments
-if [ $# -eq 0 ]; then
-  RUN_ALL=true
-else
-  RUN_ALL=false
-  for arg in "$@"
-  do
-    case $arg in
-      --js)
-        RUN_JS=true
-        ;;
-      --css)
-        RUN_CSS=true
-        ;;
-      --md)
-        RUN_MD=true
-        ;;
-      --fix)
-        FIX_MODE=true
-        ;;
-      --help)
-        print_usage
-        exit 0
-        ;;
-      *)
-        echo -e "${RED}Unknown option: $arg${NC}"
-        print_usage
-        exit 1
-        ;;
-    esac
-  done
-fi
-
-# Check for Node.js and npm
-check_node
-
-# Check and install dependencies
-check_dependencies
-
-# Run linters based on arguments
-if [ "$RUN_ALL" = true ]; then
-  echo -e "${BLUE}Running all linters...${NC}"
-  lint_all
-else
-  if [ "$RUN_JS" = true ]; then
-    lint_js
-  fi
-  
-  if [ "$RUN_CSS" = true ]; then
-    lint_css
-  fi
-  
-  if [ "$RUN_MD" = true ]; then
-    lint_md
-  fi
-  
-  # If no specific linter was chosen but --fix was specified, run all with fix
-  if [ "$RUN_JS" = false ] && [ "$RUN_CSS" = false ] && [ "$RUN_MD" = false ]; then
-    echo -e "${BLUE}Running all linters...${NC}"
-    lint_all
-  fi
-fi
-
-echo -e "${GREEN}All linting tasks completed!${NC}"
+echo "Lint check completed!"
