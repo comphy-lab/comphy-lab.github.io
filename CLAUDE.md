@@ -35,6 +35,11 @@ This repository contains the CoMPhy Lab website, a static site built with Jekyll
   ```bash
   bundle exec ruby scripts/generate_filtered_research.rb
   ```
+  
+- **Run code checks and auto-fixes:**
+  ```bash
+  ./scripts/lint-check.sh
+  ```
 
 ## Code Organization
 
@@ -85,6 +90,10 @@ This repository contains the CoMPhy Lab website, a static site built with Jekyll
 - Use async/await for asynchronous operations
 - Implement error handling with try/catch blocks
 - Use camelCase for variable and function names
+- Follow proper dependency order in script loading:
+  - Load command-palette.js before command-data.js
+  - Load Fuse.js before any code that uses it
+  - Run lint-check.sh to automatically fix order issues
 
 ## Deployment Process
 

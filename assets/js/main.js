@@ -2,7 +2,7 @@
  * Main JS
  * ------------------------------------------------------------------- */
 
-(function (html) {
+(function () {
   "use strict";
 
   /* Preloader
@@ -70,7 +70,7 @@
         historyBtn.href = "/history";
         historyBtn.className = "s-news__history-btn";
         historyBtn.innerHTML =
-          '<i class="fa-solid fa-arrow-right" style="margin-right: 8px; font-size: 1.2em;"></i>Archive';
+          "<i class=\"fa-solid fa-arrow-right\" style=\"margin-right: 8px; font-size: 1.2em;\"></i>Archive";
         historyBtn.setAttribute("role", "button");
         historyBtn.setAttribute("tabindex", "0");
         historyBtn.setAttribute("aria-label", "View archive of all news items");
@@ -298,7 +298,7 @@
 
   /* Smooth Scrolling
    * -------------------------------------------------- */
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  document.querySelectorAll("a[href^=\"#\"]").forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
       const target = document.querySelector(this.getAttribute("href"));
@@ -326,7 +326,7 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     const images = document.querySelectorAll(
-      '.member-image img[loading="lazy"]',
+      ".member-image img[loading=\"lazy\"]",
     );
 
     images.forEach((img) => {
