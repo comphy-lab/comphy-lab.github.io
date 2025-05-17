@@ -1,4 +1,5 @@
 // Command data for website command palette
+/* global Fuse, sortCoursesByDate */
 (function() {
   // Initialize command data
   
@@ -44,6 +45,7 @@
       id: "blog",
       title: "Go to Blog",
       handler: () => { window.location.href = "https://blogs.comphy-lab.org/"; },
+        
       section: "Navigation",
       icon: "<i class=\"fa-solid fa-rss\"></i>"
     },
@@ -66,28 +68,36 @@
     {
       id: "github",
       title: "Visit GitHub",
-      handler: () => { window.open("https://github.com/comphy-lab", "_blank"); },
+      handler: () => { window.open("https://github.com/comphy-lab",
+        "_blank"); },
+        
       section: "External Links",
       icon: "<i class=\"fa-brands fa-github\"></i>"
     },
     {
       id: "scholar",
       title: "Visit Google Scholar",
-      handler: () => { window.open("https://scholar.google.com/citations?user=tHb_qZoAAAAJ&hl=en", "_blank"); },
+      handler: () => { window.open("https://scholar.google.com/citations?user=tHb_qZoAAAAJ&hl=en",
+        "_blank"); },
+        
       section: "External Links",
       icon: "<i class=\"ai ai-google-scholar\"></i>"
     },
     {
       id: "youtube",
       title: "Visit YouTube Channel",
-      handler: () => { window.open("https://www.youtube.com/@CoMPhyLab", "_blank"); },
+      handler: () => { window.open("https://www.youtube.com/@CoMPhyLab",
+        "_blank"); },
+        
       section: "External Links",
       icon: "<i class=\"fa-brands fa-youtube\"></i>"
     },
     {
       id: "bluesky",
       title: "Visit Bluesky",
-      handler: () => { window.open("https://bsky.app/profile/comphy-lab.org", "_blank"); },
+      handler: () => { window.open("https://bsky.app/profile/comphy-lab.org",
+        "_blank"); },
+        
       section: "External Links",
       icon: "<i class=\"fa-brands fa-bluesky\"></i>"
     },
@@ -103,7 +113,9 @@
     {
       id: "bottom",
       title: "Scroll to Bottom",
-      handler: () => { window.scrollTo({top: document.body.scrollHeight, behavior: "smooth"}); },
+      handler: () => { window.scrollTo({top: document.body.scrollHeight,
+        behavior: "smooth"}); },
+        
       section: "Tools",
       icon: "<i class=\"fa-solid fa-arrow-down\"></i>"
     },
@@ -112,7 +124,9 @@
     {
       id: "repository",
       title: "View Website Repository",
-      handler: () => { window.open("https://github.com/comphy-lab/comphy-lab.github.io", "_blank"); },
+      handler: () => { window.open("https://github.com/comphy-lab/comphy-lab.github.io",
+        "_blank"); },
+        
       section: "Help",
       icon: "<i class=\"fa-brands fa-github\"></i>"
     }
@@ -167,7 +181,8 @@
     Object.keys(sections).forEach(section => {
       html += `<h3>${section}</h3>`;
       html += "<table style=\"width: 100%; border-collapse: collapse;\">";
-      html += "<tr><th style=\"text-align: left; padding: 8px; border-bottom: 1px solid #ddd;\">Command</th></tr>";
+      html  +=
+        "<tr><th style=\"text-align: left; padding: 8px; border-bottom: 1px solid #ddd;\">Command</th></tr>";
       
       sections[section].forEach(command => {
         html += `<tr>
@@ -179,7 +194,8 @@
     });
     
     // Add close button
-    html += "<div style=\"text-align: center; margin-top: 20px;\"><button id=\"close-shortcuts-help\" style=\"padding: 8px 16px; background-color: #5b79a8; color: white; border: none; border-radius: 4px; cursor: pointer;\">Close</button></div>";
+    html  +=
+      "<div style=\"text-align: center; margin-top: 20px;\"><button id=\"close-shortcuts-help\" style=\"padding: 8px 16px; background-color: #5b79a8; color: white; border: none; border-radius: 4px; cursor: pointer;\">Close</button></div>";
     
     content.innerHTML = html;
     modal.appendChild(content);
@@ -357,7 +373,8 @@
             });
             
             let html = "<h2 style=\"margin-top: 0;\">Filter Research by Tag</h2>";
-            html += "<div class=\"tag-filter-container\" style=\"display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0;\">";
+            html  +=
+              "<div class=\"tag-filter-container\" style=\"display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0;\">";
             
             // Add clickable tag buttons
             tags.forEach(tag => {
@@ -367,14 +384,16 @@
             html += "</div>";
             
             // Add keyboard navigation info
-            html += `<div style="margin-top: 15px; font-size: 0.9em; text-align: center; color: #888;">
+            html  +=
+              `<div style="margin-top: 15px; font-size: 0.9em; text-align: center; color: #888;">
               <span style="margin-right: 15px;"><kbd>←</kbd> <kbd>→</kbd> <kbd>↑</kbd> <kbd>↓</kbd> to navigate</span>
               <span style="margin-right: 15px;"><kbd>enter</kbd> to select</span>
               <span><kbd>esc</kbd> to close</span>
             </div>`;
             
             // Add close button
-            html += "<div style=\"text-align: center; margin-top: 20px;\"><button id=\"close-tag-filter\" style=\"padding: 8px 16px; background-color: #333; color: white; border: none; border-radius: 4px; cursor: pointer;\">Close</button></div>";
+            html  +=
+              "<div style=\"text-align: center; margin-top: 20px;\"><button id=\"close-tag-filter\" style=\"padding: 8px 16px; background-color: #333; color: white; border: none; border-radius: 4px; cursor: pointer;\">Close</button></div>";
             
             content.innerHTML = html;
             modal.appendChild(content);

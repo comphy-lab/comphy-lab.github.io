@@ -113,6 +113,7 @@
         if (!response.ok) {
           throw new Error(
             `Failed to fetch research content: ${response.status} ${response.statusText}`,
+              
           );
         }
 

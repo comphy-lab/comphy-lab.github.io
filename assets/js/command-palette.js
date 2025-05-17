@@ -2,6 +2,7 @@
  * Command Palette functionality for CoMPhy Lab website
  * This file contains all the functionality for the command palette
  */
+/* global Fuse */
 
 // Make the command palette opening function globally available
 window.openCommandPalette = function() {
@@ -104,12 +105,13 @@ function renderSections(sections, container) {
       
       // Add excerpt for search results if available
       if (cmd.excerpt) {
-        cmdContent += `<div class="command-palette-excerpt">${cmd.excerpt.substring(0, 120)}${cmd.excerpt.length > 120 ? "..." : ""}</div>`;
+        cmdContent += `<div class="command-palette-excerpt">${cmd.excerpt.substring(0,
+          120)}${cmd.excerpt.length > 120 ? "..." : ""}</div>`;
       }
       
       cmdEl.innerHTML = cmdContent;
       
-      cmdEl.addEventListener("click", function(e) {
+      cmdEl.addEventListener("click", function() {
         if (typeof cmd.handler === "function") {
           document.getElementById("simple-command-palette").style.display = "none";
           cmd.handler();
