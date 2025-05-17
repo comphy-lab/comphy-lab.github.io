@@ -170,7 +170,7 @@ A static website for the Computational Multiphase Physics Laboratory, built with
    - Coalescence
    - Superamphiphobic-surfaces
    - Impact forces
-   - Dissipative anamoly
+   - Dissipative anomaly
    - Soft-matter-singularities
    - Featured
    - (Add new tags as needed)
