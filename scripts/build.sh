@@ -12,7 +12,34 @@ if [ -n "$GITHUB_ACTIONS" ]; then
 else
     # Try to detect the environment for local builds
     if [[ "$OSTYPE" == "darwin"* ]]; then
-        echo "macOS detected, proceeding with standard Ruby setup"
+        echo "macOS detected"
+        
+        # Check if Ruby is installed
+        if ! command -v ruby &> /dev/null; then
+            echo "Ruby is not installed. Attempting to install Ruby using Homebrew..."
+            
+            # Check if Homebrew is installed
+            if ! command -v brew &> /dev/null; then
+                echo "Homebrew not found. Please install Homebrew first by running:"
+                echo '/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"'
+                exit 1
+            fi
+            
+            # Install Ruby using Homebrew
+            brew install ruby
+            
+            # Add Ruby to PATH (this will only affect the current session)
+            export PATH="$(brew --prefix)/opt/ruby/bin:$PATH"
+            export PATH="$(gem env gemdir)/bin:$PATH"
+            
+            echo "Ruby has been installed. You may need to add the following to your shell profile:"
+            echo 'export PATH="$(brew --prefix)/opt/ruby/bin:$PATH"'
+            echo 'export PATH="$(gem env gemdir)/bin:$PATH"'
+        else
+            # Check Ruby version
+            RUBY_VERSION=$(ruby -v | cut -d ' ' -f 2 | cut -d 'p' -f 1)
+            echo "Found Ruby version $RUBY_VERSION"
+        fi
     elif [ -f /etc/os-release ]; then
         . /etc/os-release
         OS_NAME=$NAME
@@ -25,8 +52,9 @@ else
             # Check if Ruby is installed
             if ! command -v ruby &> /dev/null; then
                 echo "Ruby is not installed. Attempting to install Ruby..."
-                sudo apt-get update -y
-                sudo apt-get install -y ruby-full build-essential zlib1g-dev
+                DEBIAN_FRONTEND=noninteractive sudo apt-get update -y
+                DEBIAN_FRONTEND=noninteractive sudo apt-get install -y --no-install-recommends \
+                  ruby-full build-essential zlib1g-dev
             fi
             
             # Set GEM environment variables
@@ -46,11 +74,11 @@ else
     fi
 
     echo "Ruby version: $(ruby -v)"
-
-    # Check if Bundler is installed, install if needed
     if ! command -v bundle &> /dev/null; then
         echo "Bundler not found. Installing Bundler..."
-        gem install bundler
+        gem install bundler --user-install --no-document
+        # Ensure the user‐install bin directory is in PATH
+        export PATH="$(ruby -e 'puts Gem.user_dir')/bin:$PATH"
     fi
 
     echo "Bundler version: $(bundle -v)"
@@ -76,8 +104,6 @@ if [ -f "assets/js/search_db.json" ]; then
     bundle exec ruby scripts/generate_seo_tags.rb
 else
     echo "Warning: search_db.json not found - skipping SEO metadata generation"
-    # Create a placeholder if SEO metadata is critical
-    # echo "{}" > assets/js/search_db.json
 fi
 
 echo "Build completed successfully!"
