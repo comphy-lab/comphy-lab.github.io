@@ -124,7 +124,7 @@
 
         // Find all paper sections
         const paperSections = tempDiv.querySelectorAll("h3");
-        const featuredSections = Array.from(paperSections).filter((section) => {
+        let featuredSections = Array.from(paperSections).filter((section) => {
           // Find the next tags element
           let nextEl = section.nextElementSibling;
           while (nextEl && !nextEl.matches("tags")) {
@@ -132,6 +132,9 @@
           }
           return nextEl && nextEl.textContent.includes("Featured");
         });
+
+        /** Only show up to two featured papers */
+        featuredSections = featuredSections.slice(0, 2);
 
         // Get the featured container
         const featuredContainer = document.querySelector(

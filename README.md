@@ -306,7 +306,7 @@ Files:
 - `/assets/css/command-palette.css`: Styling for the command palette
 
 Search behavior and features:
-- Minimum query length: 2 characters
+- Minimum query length: 3 characters
 - Keyboard shortcut (⌘K / ctrl+K) opens a command palette style search interface on all pages
 - Magnifying glass icon in navigation opens the search interface when clicked
 - Search input in navigation shows the full "⌘K (search)" text by default
