@@ -504,6 +504,39 @@ To submit a PR:
 - Follow naming convention: `[name]-[descriptor].[extension]`
 - Include alt text for all images
 
+### Linting and Code Formatting
+
+The repository uses automated tools to ensure code quality and consistency:
+
+#### Setup
+1. Install Node.js dependencies:
+   ```bash
+   npm install
+   ```
+2. Git hooks will be automatically set up via Husky
+
+#### Linters
+- **JavaScript**: ESLint with recommended rules
+  - Run manually: `npm run lint:js`
+- **CSS**: Stylelint with standard configuration
+  - Run manually: `npm run lint:css`
+- **Markdown**: markdownlint-cli2 for consistent documentation
+  - Run manually: `npm run lint:md`
+- **Code Formatting**: Prettier
+  - Run manually: `npm run format`
+
+#### Git Hooks
+- **Pre-commit**: Automatically runs linters on staged files
+  - Only lints files that are staged for commit
+  - Prevents committing code with linting errors
+  - Automatically formats code when possible
+
+#### Skip Hooks
+If needed, hooks can be bypassed with:
+```bash
+git commit --no-verify
+```
+
 ### CSS Architecture
 
 The website's CSS has been optimized for better performance and maintainability:
