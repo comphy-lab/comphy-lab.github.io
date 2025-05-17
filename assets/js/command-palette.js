@@ -20,7 +20,13 @@ window.openCommandPalette = function() {
   }
 };
 
-// Function to render command results based on search
+/**
+ * Renders command palette results filtered by the provided query.
+ *
+ * Filters available commands by title or section, groups them by section, and displays them in the results container. If the query is at least 3 characters and a database search function is available, performs an asynchronous search and adds those results under a "Search Results" section. Displays a message if no commands are found.
+ *
+ * @param {string} query - The search string to filter commands.
+ */
 function renderCommandResults(query) {
   const resultsContainer = document.getElementById("command-palette-results");
   if (!resultsContainer) return;
@@ -76,7 +82,14 @@ function renderCommandResults(query) {
   }
 }
 
-// Helper function to render sections
+/**
+ * Renders grouped command sections into a container element for the command palette UI.
+ *
+ * For each section, creates a titled section element and populates it with command entries, including icons, titles, and optional excerpts. Clicking a command hides the palette and invokes its handler if defined.
+ *
+ * @param {Object} sections - An object mapping section names to arrays of command objects.
+ * @param {HTMLElement} container - The DOM element where the sections will be rendered.
+ */
 function renderSections(sections, container) {
   // Clear container first
   container.innerHTML = "";
@@ -126,7 +139,11 @@ function renderSections(sections, container) {
   });
 }
 
-// Initialization function to set up command palette when DOM is loaded
+/**
+ * Initializes the command palette UI, search integration, and keyboard shortcuts on DOM load.
+ *
+ * Prefetches the search database and sets up Fuse.js for fuzzy searching. Configures event listeners for palette input handling, keyboard navigation, backdrop clicks, and global shortcuts. Enables the command palette button to open the palette.
+ */
 function initCommandPalette() {
   // Ensure search database is preloaded for command palette search functionality
   // Try to prefetch the search database if it exists

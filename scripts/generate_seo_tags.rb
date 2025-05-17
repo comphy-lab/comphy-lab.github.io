@@ -49,7 +49,18 @@ normalized_urls = {}
 # @example
 #   normalize_url("about")         #=> "about/index.html"
 #   normalize_url("/contact#team")   #=> "contact/index.html"
-#   normalize_url("/index.html")     #=> "index.html"
+##
+# Normalizes a URL for consistent file path usage within the site.
+#
+# Removes fragments, ensures a leading slash, appends 'index.html' for directory or extensionless URLs, and strips the leading slash for file operations.
+#
+# @param url [String] The URL to normalize.
+# @return [String] The normalized URL suitable for file path operations.
+#
+# @example
+#   normalize_url("/index.html") #=> "index.html"
+#   normalize_url("about")       #=> "about/index.html"
+#   normalize_url("/docs/#top")  #=> "docs/index.html"
 def normalize_url(url)
   # Add debugging
   original_url = url.dup
