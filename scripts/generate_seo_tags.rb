@@ -49,7 +49,7 @@ normalized_urls = {}
 # @example
 #   normalize_url("about")         #=> "about/index.html"
 #   normalize_url("/contact#team")   #=> "contact/index.html"
-#   normalize_url("/index.html")     #=> "index.html"
+#   normalize_url("/index.html")   #=> "index.html"
 def normalize_url(url)
   # Add debugging
   original_url = url.dup
