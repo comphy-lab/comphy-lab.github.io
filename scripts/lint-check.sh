@@ -3,6 +3,7 @@
 # This script performs various checks on the codebase
 # 1. Ensure Fuse.js is properly loaded in HTML files that use it
 # 2. Check for proper script loading order (e.g., dependencies before their usage)
+# 3. Fix quote style issues in JavaScript files (single quotes to double quotes)
 
 set -e
 
@@ -67,5 +68,46 @@ for file in $HTML_FILES; do
     fi
   fi
 done
+
+# Fix quote style in JavaScript files (single quotes to double quotes)
+echo "Checking and fixing quote style in JavaScript files..."
+
+# Detect the platform to use appropriate sed command
+if [[ "$(uname)" == "Darwin" ]]; then
+  # macOS (BSD sed)
+  sed_cmd="sed -i ''"
+else
+  # Linux/Unix (GNU sed)
+  sed_cmd="sed -i"
+fi
+
+# Find all JavaScript files
+JS_FILES=$(find "$REPO_ROOT/assets/js" -name "*.js" -type f)
+FIXED_COUNT=0
+
+for file in $JS_FILES; do
+  # Create a temp file for the transformation
+  tmp_file=$(mktemp)
+  
+  # Process the file
+  cat "$file" | sed "s/'[^']*'/\$(echo & | sed 's/'/\"/g')/g" > "$tmp_file"
+  
+  # Check if the file was modified
+  if ! cmp -s "$file" "$tmp_file"; then
+    # Move the temp file to the original
+    mv "$tmp_file" "$file"
+    FIXED_COUNT=$((FIXED_COUNT + 1))
+    echo "Fixed quote style in: $(basename "$file")"
+  else
+    # No changes needed, remove the temp file
+    rm "$tmp_file"
+  fi
+done
+
+if [ $FIXED_COUNT -eq 0 ]; then
+  echo "No quote style issues found in JavaScript files."
+else
+  echo "Fixed quote style in $FIXED_COUNT JavaScript files."
+fi
 
 echo "Lint check completed!"
