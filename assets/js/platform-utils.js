@@ -9,7 +9,7 @@ function isMacPlatform() {
 }
 
 /**
- * Updates UI elements to reflect the user's platform.
+ * Updates UI elements to reflect the user"s platform.
  *
  * This function determines whether the current platform is a Mac by calling `isMacPlatform()`
  * and adjusts the visibility of UI elements accordingly:

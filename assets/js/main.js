@@ -19,7 +19,7 @@
   /* Load About Content - Only on main page
    * -------------------------------------------------- */
   const loadAboutContent = async () => {
-    // Only load aboutCoMPhy.md if we're on the main page
+    // Only load aboutCoMPhy.md if we"re on the main page
     if (
       window.location.pathname === "/" ||
       window.location.pathname === "/index.html"
@@ -43,7 +43,7 @@
   /* Load News Content - Only on main page
    * -------------------------------------------------- */
   const loadNewsContent = async () => {
-    // Only load News.md if we're on the main page
+    // Only load News.md if we"re on the main page
     if (
       window.location.pathname === "/" ||
       window.location.pathname === "/index.html"
@@ -103,7 +103,7 @@
   /* Load Featured Papers - Only on main page
    * -------------------------------------------------- */
   const loadFeaturedPapers = async () => {
-    // Only load featured papers if we're on the main page
+    // Only load featured papers if we"re on the main page
     if (
       window.location.pathname === "/" ||
       window.location.pathname === "/index.html"
@@ -175,7 +175,7 @@
               // Include everything else (tags, images, iframes)
               const clone = nextEl.cloneNode(true);
 
-              // If it's a tags element, make spans clickable
+              // If it"s a tags element, make spans clickable
               if (clone.matches("tags")) {
                 Array.from(clone.children).forEach((span) => {
                   span.style.cursor = "pointer";
@@ -199,7 +199,7 @@
 
             // Make the entire container clickable
             paperDiv.addEventListener("click", (e) => {
-              // Don't navigate if clicking on a link, tag, or iframe
+              // Don"t navigate if clicking on a link, tag, or iframe
               if (
                 e.target.closest("a") ||
                 e.target.closest("tags") ||
@@ -248,7 +248,7 @@
         if (featuredContainer) {
           featuredContainer.innerHTML = `
                         <div class="featured-error">
-                            <p>We're having trouble loading the featured papers. Please try refreshing the page or check back later.</p>
+                            <p>We"re having trouble loading the featured papers. Please try refreshing the page or check back later.</p>
                         </div>
                     `;
         }
@@ -378,7 +378,7 @@
       const emailText =
         button.getAttribute("data-text") ||
         button.getAttribute("data-clipboard-text");
-      // Add aria-label if it doesn't exist
+      // Add aria-label if it doesn"t exist
       if (!button.hasAttribute("aria-label") && emailText) {
         button.setAttribute("aria-label", `Copy email address ${emailText}`);
       }
