@@ -243,7 +243,7 @@
           return [];
         }
       } else if (!window.searchFuse) {
-        // Try to fetch search database if it doesn't exist yet
+        // Try to fetch search database if it doesn"t exist yet
         try {
           const response = await fetch("/assets/js/search_db.json");
           if (response.ok) {
