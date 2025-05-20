@@ -12,7 +12,12 @@ const maxLength = 80;
 
 // Helper function to read file
 function readFile(filePath) {
-  return fs.readFileSync(filePath, 'utf8');
+  try {
+    return fs.readFileSync(filePath, 'utf8');
+  } catch (error) {
+    console.error(`Error reading file ${filePath}:`, error.message);
+    return ''; // Return empty string as fallback
+  }
 }
 
 // Helper function to fix long lines
