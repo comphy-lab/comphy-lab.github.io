@@ -72,13 +72,13 @@ done
 # Fix quote style in JavaScript files (single quotes to double quotes)
 echo "Checking and fixing quote style in JavaScript files..."
 
-# Detect the platform to use appropriate sed command
-if [[ "$(uname)" == "Darwin" ]]; then
-  # macOS (BSD sed)
-  sed_cmd="sed -i ''"
+# Parse arguments
+FIX_MODE=false
+if [[ "$1" == "--fix" ]]; then
+  FIX_MODE=true
+  echo "Running in fix mode - will modify files"
 else
-  # Linux/Unix (GNU sed)
-  sed_cmd="sed -i"
+  echo "Running in check-only mode (use --fix to modify files)"
 fi
 
 # Find all JavaScript files
@@ -89,15 +89,27 @@ for file in $JS_FILES; do
   # Create a temp file for the transformation
   tmp_file=$(mktemp)
   
-  # Process the file
-  cat "$file" | sed "s/'[^']*'/\$(echo & | sed 's/'/\"/g')/g" > "$tmp_file"
+  # Process the file using a simpler, more portable approach
+  if [[ "$(uname)" == "Darwin" ]]; then
+    # macOS (BSD sed)
+    sed "s/'/\"/g" "$file" > "$tmp_file"
+  else
+    # Linux/GNU sed
+    sed 's/'"'"'/"/g' "$file" > "$tmp_file"
+  fi
   
   # Check if the file was modified
   if ! cmp -s "$file" "$tmp_file"; then
-    # Move the temp file to the original
-    mv "$tmp_file" "$file"
-    FIXED_COUNT=$((FIXED_COUNT + 1))
-    echo "Fixed quote style in: $(basename "$file")"
+    if [[ "$FIX_MODE" == "true" ]]; then
+      # Move the temp file to the original
+      mv "$tmp_file" "$file"
+      FIXED_COUNT=$((FIXED_COUNT + 1))
+      echo "Fixed quote style in: $(basename "$file")"
+    else
+      echo "Would fix quote style in: $(basename "$file")"
+      FIXED_COUNT=$((FIXED_COUNT + 1))
+      rm "$tmp_file"
+    fi
   else
     # No changes needed, remove the temp file
     rm "$tmp_file"
@@ -107,7 +119,11 @@ done
 if [ $FIXED_COUNT -eq 0 ]; then
   echo "No quote style issues found in JavaScript files."
 else
-  echo "Fixed quote style in $FIXED_COUNT JavaScript files."
+  if [[ "$FIX_MODE" == "true" ]]; then
+    echo "Fixed quote style in $FIXED_COUNT JavaScript files."
+  else
+    echo "Found $FIXED_COUNT JavaScript files with quote style issues (run with --fix to update)."
+  fi
 fi
 
 echo "Lint check completed!"
