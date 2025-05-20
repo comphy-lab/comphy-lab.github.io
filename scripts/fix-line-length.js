@@ -165,8 +165,12 @@ function processJsFiles() {
       const fixedContent = fixLongLines(content);
       
       if (fixedContent !== content) {
-        fs.writeFileSync(file, fixedContent);
-        fixedFiles++;
+        try {
+          fs.writeFileSync(file, fixedContent);
+          fixedFiles++;
+        } catch (error) {
+          console.error(`Error writing to file ${file}:`, error.message);
+        }
       }
     }
   });
