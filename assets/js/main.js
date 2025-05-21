@@ -70,15 +70,20 @@
         historyBtn.href = "/history";
         historyBtn.className = "s-news__history-btn";
         historyBtn.innerHTML =
-          "<i class=\"fa-solid fa-arrow-right\" style=\"margin-right: 8px; font-size: 1.2em;\"></i>Archive";
+          '<i class="fa-solid fa-arrow-right" style="margin-right: 8px; font-size: 1.2em;"></i>Archive';
         historyBtn.setAttribute("role", "button");
         historyBtn.setAttribute("tabindex", "0");
         historyBtn.setAttribute("aria-label", "View archive of all news items");
 
         // Add keyboard event handler for accessibility
-        historyBtn.addEventListener("keydown", function(event) {
+        historyBtn.addEventListener("keydown", function (event) {
           // Check for Enter (13) or Space (32) key
-          if (event.key === "Enter" || event.key === " " || event.keyCode === 13 || event.keyCode === 32) {
+          if (
+            event.key === "Enter" ||
+            event.key === " " ||
+            event.keyCode === 13 ||
+            event.keyCode === 32
+          ) {
             event.preventDefault();
             window.location.href = this.href;
           }
@@ -112,8 +117,7 @@
         const response = await fetch("/research/");
         if (!response.ok) {
           throw new Error(
-            `Failed to fetch research content: ${response.status} ${response.statusText}`,
-              
+            `Failed to fetch research content: ${response.status} ${response.statusText}`
           );
         }
 
@@ -139,7 +143,7 @@
 
         // Get the featured container
         const featuredContainer = document.querySelector(
-          ".featured-item__image",
+          ".featured-item__image"
         );
         if (featuredContainer) {
           // Clear existing content
@@ -243,7 +247,7 @@
         console.error("Error loading featured papers:", error);
         // Add visible error message in the featured section
         const featuredContainer = document.querySelector(
-          ".featured-item__image",
+          ".featured-item__image"
         );
         if (featuredContainer) {
           featuredContainer.innerHTML = `
@@ -299,7 +303,7 @@
 
   /* Smooth Scrolling
    * -------------------------------------------------- */
-  document.querySelectorAll("a[href^=\"#\"]").forEach((anchor) => {
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
       const target = document.querySelector(this.getAttribute("href"));
@@ -327,7 +331,7 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     const images = document.querySelectorAll(
-      ".member-image img[loading=\"lazy\"]",
+      '.member-image img[loading="lazy"]'
     );
 
     images.forEach((img) => {
