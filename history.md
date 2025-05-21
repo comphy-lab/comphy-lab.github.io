@@ -93,12 +93,7 @@ title: History
   </div>
 </div>
 
-- <strong>Milan Sent</strong> <a href="https://github.com/mdjsent">
-<i class="fa-brands fa-github" style="font-size: 1.5em; color: #8a2be2;"></i>
-</a> graduated with a bachelor's degree from University of Twente. <strong>Thesis:</strong>
-<a href="https://tinyurl.com/2ycunjcr" class="pdf-link" style="display: inline-flex; align-items: center;">
-<i class="fa-solid fa-file-pdf" style="margin-right: 8px; font-size: 1.2em; color: #e63946;"></i>Spinning Pizza
-</a>
+- <strong>Milan Sent</strong> <a href="https://github.com/mdjsent"><i class="fa-brands fa-github" style="font-size: 1.5em; color: #8a2be2;"></i></a> graduated with a bachelor's degree from University of Twente. <strong>Thesis:</strong> <a href="https://tinyurl.com/2ycunjcr" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf" style="margin-right: 8px; font-size: 1.2em; color: #e63946;"></i>Spinning Pizza</a>
 
 ## 2024
 
