@@ -10,7 +10,12 @@ const path = require('path');
 const jsDir = path.join(__dirname, '../assets/js');
 const maxLength = 80;
 
-// Helper function to read file
+/**
+ * Reads and returns the contents of a file as a UTF-8 string.
+ *
+ * @param {string} filePath - Path to the file to be read.
+ * @returns {string} The file contents as a string.
+ */
 function readFile(filePath) {
   try {
     return fs.readFileSync(filePath, 'utf8');
@@ -20,7 +25,14 @@ function readFile(filePath) {
   }
 }
 
-// Helper function to fix long lines
+/**
+ * Processes JavaScript file content to split lines exceeding the maximum allowed length.
+ *
+ * Analyzes each line and applies specialized breaking strategies for object definitions, URL assignments, style definitions, and string concatenations, while skipping comment lines. Returns the modified content with long lines split appropriately.
+ *
+ * @param {string} content - The content of a JavaScript file.
+ * @returns {string} The content with long lines split to comply with the maximum line length.
+ */
 function fixLongLines(content) {
   const lines = content.split('\n');
   const fixedLines = [];
@@ -65,7 +77,14 @@ function fixLongLines(content) {
   return fixedLines.join('\n');
 }
 
-// Function to break object definition lines
+/**
+ * Splits a single-line JavaScript object definition into multiple lines at commas, preserving indentation.
+ *
+ * If the line cannot be split (contains no commas), returns the original line in an array.
+ *
+ * @param {string} line - The object definition line to split.
+ * @returns {string[]} An array of lines representing the object definition split across multiple lines.
+ */
 function breakObjectDefinition(line) {
   // This is simplified - a real implementation would be more robust
   const indentation = line.match(/^\s*/)[0];
@@ -92,7 +111,14 @@ function breakObjectDefinition(line) {
   return result;
 }
 
-// Function to break URL lines
+/**
+ * Splits a line assigning a URL to `window.location.href` or calling `window.open` into separate lines for improved readability.
+ *
+ * If the line matches the pattern, returns an array with the assignment/call and the URL value on separate, properly indented lines. Otherwise, returns the original line in an array.
+ *
+ * @param {string} line - The line of code to process.
+ * @returns {string[]} An array of lines with the assignment and URL split, or the original line if no match is found.
+ */
 function breakUrlLine(line) {
   const indentation = line.match(/^\s*/)[0];
   const extraIndent = indentation + '  ';
@@ -107,7 +133,12 @@ function breakUrlLine(line) {
   ];
 }
 
-// Function to break style lines
+/**
+ * Splits a style assignment line into multiple lines at semicolons, adding extra indentation to each part.
+ *
+ * @param {string} line - The style assignment line to split.
+ * @returns {string[]} An array of lines with style properties separated and properly indented.
+ */
 function breakStyleLine(line) {
   const indentation = line.match(/^\s*/)[0];
   const extraIndent = indentation + '  ';
@@ -132,7 +163,14 @@ function breakStyleLine(line) {
   return result;
 }
 
-// Function to break string concatenation
+/**
+ * Splits a line containing string concatenation with `+=` into multiple lines for readability.
+ *
+ * If the line matches the pattern `variable += value`, it separates the assignment and the value onto separate lines, preserving and extending indentation. Returns the original line if no match is found.
+ *
+ * @param {string} line - The line to process.
+ * @returns {string[]} An array of lines with the assignment and concatenated value split.
+ */
 function breakStringConcatenation(line) {
   const indentation = line.match(/^\s*/)[0];
   const extraIndent = indentation + '  ';
@@ -147,7 +185,11 @@ function breakStringConcatenation(line) {
   ];
 }
 
-// Process all JavaScript files
+/**
+ * Processes all JavaScript files in the target directory, fixing lines that exceed the maximum allowed length.
+ *
+ * Scans each `.js` file, identifies lines longer than the configured maximum, applies line-breaking strategies to fix them, and overwrites files with the corrected content. Logs statistics on the number of long lines found and files modified.
+ */
 function processJsFiles() {
   const jsFiles = fs.readdirSync(jsDir)
     .filter(file => file.endsWith('.js'))
