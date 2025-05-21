@@ -12,7 +12,7 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 
 ## Directory Structure
 
-```
+```bash
 .
 ├── _config.yml                # Site-wide configuration
 ├── _includes                  # Reusable components
@@ -69,11 +69,13 @@ A static website for the Computational Multiphase Physics Laboratory, built with
    - Bundler (`gem install bundler`)
 
 2. **Install Dependencies**
+
    ```bash
    bundle install
    ```
 
 3. **Build and Run**
+
    ```bash
    # Build the site and search database
    ./scripts/build.sh
@@ -81,7 +83,8 @@ A static website for the Computational Multiphase Physics Laboratory, built with
    # Run local server
    bundle exec jekyll serve
    ```
-   - Visit http://localhost:4000 in the browser
+
+   - Visit <http://localhost:4000> in the browser
    - Changes require rebuilding with `./scripts/build.sh`
 
 4. **Deployment**
@@ -93,25 +96,30 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 ### Content Management
 
 #### About Page
+
 - `aboutCoMPhy.md`: Contains the About section in markdown
 - Standard markdown elements (headers, lists, links) are supported
 - Edits automatically appear once the site is rebuilt
 
 #### News Page
+
 - `News.md`: Contains the lab's news and announcements in markdown
 - News items are displayed on the homepage in the right sidebar
 - Format each news item with a date and brief description
 - The news content is loaded dynamically using JavaScript
 
 #### Contact Page Redirect
+
 - `contact.html`: Automatically redirects users to the Join Us page
 - Uses JavaScript's `window.location.replace()` for a seamless redirect
 - Includes fallback content in case JavaScript is disabled
 - URL structure: `/contact/` redirects to `/join`
 
 #### Adding or Editing Team Members
+
 1. Open the `_team/index.md` file
 2. Follow this basic format for each member:
+
    ```markdown
    ## Member Name
    ![Photo](/path/to/photo.jpg)
@@ -123,17 +131,20 @@ A static website for the Computational Multiphase Physics Laboratory, built with
    ```
 
 3. For social links:
+
    ```markdown
    [<i class="fab fa-github" style="font-size: 2.5em;"></i>](https://github.com/username)
    [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?user=USER_ID)
    ```
 
 4. Member Photo:
+
    ```html
    <img src="../assets/images/team/8.webp" alt="Member Name" width="250" height="250" class="member-image">
    ```
 
 #### Research Papers
+
 1. Each paper should be added to `_research/index.md` in the following format:
 
 ```markdown
@@ -147,7 +158,7 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 <iframe width="560" height="315" src="YOUTUBE_EMBED_URL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ```
 
-2. Important elements:
+1. Important elements:
    - `id="NUMBER"`: Unique ID for direct linking (e.g., `/research/#12`)
    - `[NUMBER]`: Paper number in square brackets
    - Author names: Use `<strong>` for lab members
@@ -156,12 +167,12 @@ A static website for the Computational Multiphase Physics Laboratory, built with
    - Badges: Use shields.io style badges for links
    - Videos: Use YouTube embed code with privacy-enhanced mode
 
-3. Featured Papers:
+2. Featured Papers:
    - Add `<span>Featured</span>` to the tags to display the paper on the main page
    - Maximum 2 papers can be featured at any time
    - Featured papers will automatically appear in the featured section of the homepage
 
-4. Available Tags:
+3. Available Tags:
    - Bubbles
    - Drops
    - Jets
@@ -175,7 +186,8 @@ A static website for the Computational Multiphase Physics Laboratory, built with
    - Featured
    - (Add new tags as needed)
 
-5. Common Badge Types:
+4. Common Badge Types:
+
    ```markdown
    [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=ID&color=green)](URL)
    [![DOI](https://img.shields.io/static/v1.svg?style=flat-square&label=DOI&message=NUMBER&color=orange)](URL)
@@ -185,6 +197,7 @@ A static website for the Computational Multiphase Physics Laboratory, built with
    ```
 
 #### Teaching Content
+
 1. **Main Teaching Page**
    - Located at `_teaching/index.md`
    - Lists all available courses
@@ -194,7 +207,7 @@ A static website for the Computational Multiphase Physics Laboratory, built with
    - Located in `_teaching/` directory (e.g., `_teaching/2025-Basilisk101-Madrid.md`)
    - Use the `teaching-course` layout (optimized for single course display without sorting functionality)
    - Follow this basic format:
-   
+
    ```markdown
    ---
    layout: teaching-course
@@ -229,7 +242,9 @@ A static website for the Computational Multiphase Physics Laboratory, built with
    - Follow naming convention: `[course-name]-[location].[extension]`
 
 ### Search Functionality
+
 The website includes a powerful search feature that allows users to:
+
 - Search through all content including titles, text, and tags
 - Get instant search results with highlighted matching text
 - See match percentage for each result
@@ -237,6 +252,7 @@ The website includes a powerful search feature that allows users to:
 - Access search via keyboard shortcut (⌘K on Mac, ctrl+K on Windows) or by clicking the magnifying glass icon in the navigation
 
 Search results are prioritized and filtered as follows:
+
 1. Team Members (highest priority)
    - Direct matches in names
    - Research interests and affiliations
@@ -256,13 +272,16 @@ Search results are prioritized and filtered as follows:
 5. Regular content (headings and paragraphs)
 
 The search database is maintained in a separate repository [comphy-lab/comphy-search](https://github.com/comphy-lab/comphy-search) and is automatically updated in this website via GitHub Actions. This approach:
+
 - Centralizes search database generation in a dedicated repository
 - Ensures consistent search functionality across the website
 - Automatically updates the search database daily or when content changes
 - Simplifies maintenance by separating search logic from the website code
 
 #### Search Result Prioritization
+
 Search results are prioritized using a two-step process:
+
 1. **Priority Field**: Each entry in the search database has a priority field (1-5, with 1 being highest priority)
    - Priority 1: Team members
    - Priority 2: Featured papers and teaching content
@@ -277,6 +296,7 @@ Search results are prioritized using a two-step process:
 This ensures that higher-priority content (like team members) always appears before lower-priority content, even if the lower-priority content has a better text match.
 
 ### Command Palette Functionality
+
 The website includes a command palette feature that provides quick access to actions and navigation through keyboard shortcuts:
 
 - **Keyboard Shortcut**: Access via ⌘K on Mac, ctrl+K on Windows, or by clicking the terminal icon in the navigation
@@ -288,6 +308,7 @@ The website includes a command palette feature that provides quick access to act
 - **Keyboard Navigation**: Use arrow keys to navigate through commands, Enter to select, and Esc to close
 
 Key features:
+
 - Custom implementation with vanilla JavaScript for better control and performance
 - Different visual styling from search to avoid confusion (indigo accent color vs blue for search)
 - Grouping of commands by section for easy discoverability
@@ -296,16 +317,19 @@ Key features:
 - Footer with keyboard shortcut hints for better usability
 
 The command palette is built with:
+
 - Custom vanilla JavaScript implementation
 - Responsive and accessible design
 - Integration with the site search database for content discovery
 - Complete keyboard navigation support
 
 Files:
+
 - `/assets/js/command-data.js`: Defines all available commands and search database integration
 - `/assets/css/command-palette.css`: Styling for the command palette
 
 Search behavior and features:
+
 - Minimum query length: 3 characters
 - Keyboard shortcut (⌘K / ctrl+K) opens a command palette style search interface on all pages
 - Magnifying glass icon in navigation opens the search interface when clicked
@@ -315,19 +339,24 @@ Search behavior and features:
 - Results are ranked by relevance and match percentage
 
 ### External Blog Integration
+
 The search functionality includes content from our external blog at blogs.comphy-lab.org:
+
 - Blog posts are fetched and indexed in the comphy-search repository
 - Each post's title and content are searchable
 - Results link directly to the blog post
 - Blog content is refreshed with each update to the search database
 
 ### Tags System
+
 Research papers can be tagged with multiple topics. Tags are defined in the markdown files using the following format:
+
 ```html
 <tags><span>Tag1</span><span>Tag2</span></tags>
 ```
 
 These tags are:
+
 - Displayed with each paper
 - Searchable through the search interface
 - Used for filtering papers by topic
@@ -336,6 +365,7 @@ These tags are:
 ## Part B: Back-End Documentation
 
 ### Configuration and Layouts
+
 - `_config.yml`: Site-wide settings, collections, build options
 - Layout Templates in `_layouts/`
 - Partial Includes in `_includes/`
@@ -361,6 +391,7 @@ The website supports both light and dark themes with an easy toggle switch in th
    - Theme is applied using the `data-theme` attribute on the HTML element
 
 ### Design Elements
+
 - **Color Scheme**
   - Gradient text (Red to Blue) for lab name
   - Warm orange tint + blur for header
@@ -381,6 +412,7 @@ The website supports both light and dark themes with an easy toggle switch in th
   - Generated from CoMPhy Lab logo
 
 ### Fonts and Icons Attribution
+
 - [Academicons 1.7.0 (SIL OFL 1.1, MIT)](https://jpswalsh.github.io/academicons/)
 - [Font Awesome](https://fontawesome.com/)
 - Fontello (Various licenses)
@@ -416,11 +448,12 @@ The website uses three GitHub Actions workflows for automation:
    - Commits changes back to repository
 
 These workflows work together to ensure:
+
 - Automated site builds and deployments
 - Up-to-date search functionality
 - Consistent deployment to GitHub Pages
 
-3. **Blog Content Indexing**
+1. **Blog Content Indexing**
    - Blog content from [blogs.comphy-lab.org](https://blogs.comphy-lab.org) is indexed in the [comphy-search](https://github.com/comphy-lab/comphy-search) repository
    - Source: [comphy-lab/CoMPhy-Lab-Blogs](https://github.com/comphy-lab/CoMPhy-Lab-Blogs)
    - Filtering criteria:
@@ -440,6 +473,7 @@ These workflows work together to ensure:
 ## Contributing
 
 ### Issue Templates
+
 The repository includes several issue templates to streamline the process of reporting problems or requesting changes:
 
 1. [🐛 Report a Bug](../../issues/new?template=bug_report.yml&labels=bug&title=%5BBug%5D%3A+): Use this template to report website issues or malfunctions
@@ -448,6 +482,7 @@ The repository includes several issue templates to streamline the process of rep
 4. [✨ Suggest Enhancement](../../issues/new?template=enhancement.yml&labels=enhancement&title=%5BEnhancement%5D%3A+): For suggesting improvements or new features
 
 To create a new issue:
+
 1. Click on one of the links above to use a template directly
 2. Or go to the Issues tab and click "New Issue"
 3. Choose the appropriate template
@@ -455,7 +490,9 @@ To create a new issue:
 5. Submit the issue
 
 ### Pull Request Template
+
 When submitting changes, use the provided PR template which includes:
+
 - Description of changes
 - Type of change (bug fix, feature, content update, etc.)
 - Testing checklist
@@ -463,6 +500,7 @@ When submitting changes, use the provided PR template which includes:
 - Screenshots (if applicable)
 
 To submit a PR:
+
 1. Fork the repository
 2. Make your changes in a new branch
 3. Test changes locally
@@ -473,16 +511,19 @@ To submit a PR:
 ### Code Style
 
 #### General
+
 - Use 2-space indentation across all files
 - Follow DRY principles: reuse components, variables, and styles
 - Add comments for complex logic, but keep code self-documenting
 
 #### HTML/Markdown
+
 - Use semantic HTML elements
 - Follow BEM naming convention for CSS classes (e.g., `s-header__nav-list`)
 - Keep content files in markdown format where possible
 
 #### CSS
+
 - Use CSS variables for colors and typography (defined in `:root`)
 - Use responsive breakpoints at 1700px, 1300px, 900px, 768px, 500px
 - Use `rem` units for font sizes and spacing
@@ -492,6 +533,7 @@ To submit a PR:
 - Use standardized variable naming for consistent styling
 
 #### JavaScript
+
 - Use ES6+ features (arrow functions, const/let, template literals)
 - Always include 'use strict' mode
 - Use async/await for asynchronous operations
@@ -500,6 +542,7 @@ To submit a PR:
 - Prefer event delegation for multiple similar elements
 
 #### Images
+
 - Optimize images for web (compress to reduce file size)
 - Follow naming convention: `[name]-[descriptor].[extension]`
 - Include alt text for all images
@@ -509,13 +552,17 @@ To submit a PR:
 The repository uses automated tools to ensure code quality and consistency:
 
 #### Setup
+
 1. Install Node.js dependencies:
+
    ```bash
    npm install
    ```
+
 2. Git hooks will be automatically set up via Husky
 
 #### Linters
+
 - **JavaScript**: ESLint with recommended rules
   - Run manually: `npm run lint:js`
 - **CSS**: Stylelint with standard configuration
@@ -526,13 +573,16 @@ The repository uses automated tools to ensure code quality and consistency:
   - Run manually: `npm run format`
 
 #### Git Hooks
+
 - **Pre-commit**: Automatically runs linters on staged files
   - Only lints files that are staged for commit
   - Prevents committing code with linting errors
   - Automatically formats code when possible
 
 #### Skip Hooks
+
 If needed, hooks can be bypassed with:
+
 ```bash
 git commit --no-verify
 ```
