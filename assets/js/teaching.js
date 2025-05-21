@@ -1,4 +1,34 @@
 /**
+ * Creates a styled feedback message element for course sorting UI
+ * @param {string} message - The text message to display
+ * @param {number} autoRemoveDelay - Time in milliseconds before auto-removal (default: 5000)
+ * @returns {HTMLDivElement} The styled feedback element
+ */
+function createFeedbackMessage(message, autoRemoveDelay = 5000) {
+  const feedbackElement = document.createElement("div");
+  feedbackElement.className = "sort-indicator";
+  feedbackElement.textContent = message;
+
+  // Apply consistent styling
+  feedbackElement.style.padding = "10px";
+  feedbackElement.style.margin = "10px 0";
+  feedbackElement.style.backgroundColor = "#F0E6F5";
+  feedbackElement.style.color = "#68236D"; // Brand purple color
+  feedbackElement.style.borderRadius = "4px";
+  feedbackElement.style.textAlign = "center";
+  feedbackElement.style.border = "1px solid #E6D0F0";
+
+  // Auto-remove after specified delay
+  setTimeout(() => {
+    if (feedbackElement.parentNode) {
+      feedbackElement.remove();
+    }
+  }, autoRemoveDelay);
+
+  return feedbackElement;
+}
+
+/**
  * Course sorting functionality for teaching pages
  * Sorts course elements by date (most recent first)
  */
@@ -48,18 +78,9 @@ function sortCoursesByDate() {
     // Show feedback even when no sortable items are found
     const contentContainer = document.querySelector(".teaching-content");
     if (contentContainer) {
-      const feedbackMsg = document.createElement("div");
-      feedbackMsg.className = "sort-indicator";
-      feedbackMsg.textContent =
-        'No courses found to sort. Add course items with class "course-item" or "course" for automatic sorting.';
-      feedbackMsg.style.padding = "10px";
-      feedbackMsg.style.margin = "10px 0";
-      feedbackMsg.style.backgroundColor = "#F0E6F5";
-      // Lighter purple to match site theme
-      feedbackMsg.style.color = "#68236D"; // Brand purple color
-      feedbackMsg.style.borderRadius = "4px";
-      feedbackMsg.style.textAlign = "center";
-      feedbackMsg.style.border = "1px solid #E6D0F0";
+      const feedbackMsg = createFeedbackMessage(
+        'No courses found to sort. Add course items with class "course-item" or "course" for automatic sorting.'
+      );
 
       // Remove any existing messages
       const existingMsg = contentContainer.querySelector(".sort-indicator");
@@ -73,13 +94,6 @@ function sortCoursesByDate() {
       } else {
         contentContainer.appendChild(feedbackMsg);
       }
-
-      // Auto-remove after 5 seconds
-      setTimeout(() => {
-        if (feedbackMsg.parentNode) {
-          feedbackMsg.remove();
-        }
-      }, 5000);
     }
 
     return;
@@ -90,19 +104,10 @@ function sortCoursesByDate() {
     const courseContainer = coursesArray[0];
     const parentContainer = courseContainer.parentNode;
 
-    // Create a message
-    const singleCourseIndicator = document.createElement("div");
-    singleCourseIndicator.className = "sort-indicator";
-    singleCourseIndicator.textContent =
-      "Only one course available - no sorting needed";
-    singleCourseIndicator.style.padding = "10px";
-    singleCourseIndicator.style.margin = "10px 0";
-    singleCourseIndicator.style.backgroundColor = "#F0E6F5";
-    // Lighter purple to match site theme
-    singleCourseIndicator.style.color = "#68236D"; // Brand purple color
-    singleCourseIndicator.style.borderRadius = "4px";
-    singleCourseIndicator.style.textAlign = "center";
-    singleCourseIndicator.style.border = "1px solid #E6D0F0";
+    // Create a message using helper function
+    const singleCourseIndicator = createFeedbackMessage(
+      "Only one course available - no sorting needed"
+    );
 
     // Remove any existing indicators
     const existingIndicator = document.querySelector(".sort-indicator");
@@ -124,17 +129,27 @@ function sortCoursesByDate() {
       } else {
         messageContainer.appendChild(singleCourseIndicator);
       }
-
-      // Auto-remove after 5 seconds
-      setTimeout(() => {
-        if (singleCourseIndicator.parentNode) {
-          singleCourseIndicator.remove();
-        }
-      }, 5000);
     }
 
     return;
   }
+
+  // Helper function to extract date from course element
+  const extractDateFromElement = (element) => {
+    return (
+      element.getAttribute("data-date") ||
+      element.getAttribute("date") ||
+      element.querySelector('.course-date, .date, time, [class*="date"]')
+        ?.textContent ||
+      element.querySelector("[datetime]")?.getAttribute("datetime") ||
+      // Regex matches: YYYY-MM-DD, MM-DD-YYYY, or "Month DD, YYYY" formats
+      // with flexible separators (-, /, .) and optional comma after day
+      element.textContent.match(
+        /\d{4}[-/.]\d{1,2}[-/.]\d{1,2}|\d{1,2}[-/.]\d{1,2}[-/.]\d{4}|(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]* \d{1,2},? \d{4}/i
+      )?.[0] ||
+      ""
+    );
+  };
 
   // For multiple courses, proceed with sorting
   // Get parent container
@@ -142,28 +157,9 @@ function sortCoursesByDate() {
 
   // Sort courses by date attribute or content
   coursesArray.sort((a, b) => {
-    // Look for dates in multiple locations with fallbacks
-    const dateA =
-      a.getAttribute("data-date") ||
-      a.getAttribute("date") ||
-      a.querySelector('.course-date, .date, time, [class*="date"]')
-        ?.textContent ||
-      a.querySelector("[datetime]")?.getAttribute("datetime") ||
-      a.textContent.match(
-        /\d{4}[-/.]\d{1,2}[-/.]\d{1,2}|\d{1,2}[-/.]\d{1,2}[-/.]\d{4}|(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]* \d{1,2},? \d{4}/i
-      )?.[0] ||
-      "";
-
-    const dateB =
-      b.getAttribute("data-date") ||
-      b.getAttribute("date") ||
-      b.querySelector('.course-date, .date, time, [class*="date"]')
-        ?.textContent ||
-      b.querySelector("[datetime]")?.getAttribute("datetime") ||
-      b.textContent.match(
-        /\d{4}[-/.]\d{1,2}[-/.]\d{1,2}|\d{1,2}[-/.]\d{1,2}[-/.]\d{4}|(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]* \d{1,2},? \d{4}/i
-      )?.[0] ||
-      "";
+    // Extract dates using helper function
+    const dateA = extractDateFromElement(a);
+    const dateB = extractDateFromElement(b);
 
     console.log(`Date found for course A: ${dateA}`);
     console.log(`Date found for course B: ${dateB}`);
@@ -193,17 +189,10 @@ function sortCoursesByDate() {
   });
 
   // Add a visual indicator that sorting has occurred
-  const sortIndicator = document.createElement("div");
-  sortIndicator.className = "sort-indicator";
-  sortIndicator.textContent = `${coursesArray.length} courses sorted by date (most recent first)`;
-  sortIndicator.style.padding = "10px";
-  sortIndicator.style.margin = "10px 0";
-  sortIndicator.style.backgroundColor = "#F0E6F5";
-  // Lighter purple to match site theme
-  sortIndicator.style.color = "#68236D"; // Brand purple color
-  sortIndicator.style.borderRadius = "4px";
-  sortIndicator.style.textAlign = "center";
-  sortIndicator.style.border = "1px solid #E6D0F0";
+  const sortIndicator = createFeedbackMessage(
+    `${coursesArray.length} courses sorted by date (most recent first)`,
+    8000 // Auto-remove after 8 seconds
+  );
 
   // Remove any existing sort indicators
   const existingIndicator = document.querySelector(".sort-indicator");
@@ -220,13 +209,6 @@ function sortCoursesByDate() {
   } else if (parentContainer && parentContainer.firstChild) {
     parentContainer.insertBefore(sortIndicator, parentContainer.firstChild);
   }
-
-  // Auto-remove after 8 seconds
-  setTimeout(() => {
-    if (sortIndicator.parentNode) {
-      sortIndicator.remove();
-    }
-  }, 8000);
 
   console.log(`${coursesArray.length} courses sorted by date`);
 }
