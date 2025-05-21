@@ -9,7 +9,8 @@
     "lint:md": "markdownlint-cli2 '**/*.md' --ignore node_modules",
     "lint": "npm run lint:js && npm run lint:css && npm run lint:md",
     "format": "prettier --write assets/js/**/*.js assets/css/**/*.css",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,8 @@
   "devDependencies": {
     "eslint": "^8.56.0",
     "husky": "^8.0.3",
+    "jest": "^29.6.1",
+    "jest-environment-jsdom": "^29.6.1",
     "lint-staged": "^15.2.0",
     "markdownlint-cli2": "^0.18.1",
     "prettier": "^3.1.1",
