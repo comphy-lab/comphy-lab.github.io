@@ -7,6 +7,21 @@ title: History
 
 ## 2025
 
+### <i class="fa-solid fa-graduation-cap gradcap-icon"></i> CoMPhy Lab is Moving to Durham University!
+
+<div class="news-flex-row">
+  <div class="news-flex-row__image-container">
+    <a href="https://www.durham.ac.uk">
+      <img src="/assets/logos/Durham-University_NoText.png" alt="Durham University" class="news-image" style="box-shadow: none;">
+    </a>
+  </div>
+  <div class="news-flex-row__links-container">
+    <a href="/join-us" class="doi-link"><i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 8px; font-size: 1.2em;"></i>Join Us</a>
+  </div>
+</div>
+
+Starting <strong>July 1st, 2025</strong>, the CoMPhy Lab will be relocating to Durham University, UK. We are excited to join the [Condensed Matter Physics section](https://www.durham.ac.uk/research/institutes-and-centres/condensed-matter-physics/) in the [Department of Physics](https://www.durham.ac.uk/departments/academic/physics/) and continue our research in computational physics and fluid dynamics in our new home.
+
 ### May
 
 - [Bashkatov, A., Bürkle, F., Demirkır, Ç., Ding, W., <strong>Sanjay, V.</strong>, Babich, A., Yang, X., Mutschke, G., Czarske, J., Lohse, D., et al. Electrolyte droplet spraying in H2 bubbles during water electrolysis under normal and microgravity conditions. Nat. Commun., 16, 4580 (2025).](/research#17)
