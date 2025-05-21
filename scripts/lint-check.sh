@@ -40,7 +40,9 @@ if [ -n "$FILES_WITH_FUSE" ]; then
   HTML_WITH_FUSE=$(grep -l -E "new Fuse|window.searchFuse|Fuse\.js" "$REPO_ROOT/_layouts/"*.html "$REPO_ROOT/_includes/"*.html 2>/dev/null || echo "")
   
   if [ -n "$HTML_WITH_FUSE" ]; then
-    for file in $HTML_WITH_FUSE; do
+    # Use while read loop to safely handle filenames with spaces
+    echo "$HTML_WITH_FUSE" | while IFS= read -r file; do
+      [ -z "$file" ] && continue  # Skip empty lines
       if ! grep -q "cdn.jsdelivr.net/npm/fuse.js" "$file"; then
         echo "WARNING: $file uses Fuse but doesn't include the CDN. Adding it..."
         # Find the closing </head> tag and insert the Fuse CDN script before it
@@ -52,9 +54,6 @@ if [ -n "$FILES_WITH_FUSE" ]; then
         echo "OK: $file properly includes Fuse.js CDN"
       fi
     done
-    # Clean up any .bak files on Linux
-    cleanup_bak_files "$REPO_ROOT/_layouts"
-    cleanup_bak_files "$REPO_ROOT/_includes"
   else
     echo "No HTML files directly using Fuse.js found."
   fi
@@ -67,8 +66,14 @@ if [ -n "$FILES_WITH_FUSE" ]; then
   <script defer src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
 ' "$REPO_ROOT/_layouts/default.html"
     echo "Fixed: Added Fuse.js CDN to default layout"
-    # Clean up any .bak files on Linux
-    cleanup_bak_files "$REPO_ROOT/_layouts"
+  fi
+  
+  # Optimized cleanup: Clean up .bak files from both directories in one operation
+  if [ "$OS" != "Darwin" ]; then
+    echo "Cleaning up backup files..."
+    for dir in "$REPO_ROOT/_layouts" "$REPO_ROOT/_includes"; do
+      cleanup_bak_files "$dir"
+    done
   fi
 else
   echo "No files using Fuse.js found."
@@ -76,9 +81,9 @@ fi
 
 # Check for proper script loading order in HTML files
 echo "Checking script loading order..."
-HTML_FILES=$(find "$REPO_ROOT/_layouts" "$REPO_ROOT/_includes" -name "*.html" 2>/dev/null)
 
-for file in $HTML_FILES; do
+# Use find with null delimiters and while read loop to safely handle filenames with spaces
+find "$REPO_ROOT/_layouts" "$REPO_ROOT/_includes" -name "*.html" -print0 2>/dev/null | while IFS= read -r -d '' file; do
   # Check if command-data.js loads after command-palette.js
   if grep -q "command-data.js" "$file" && grep -q "command-palette.js" "$file"; then
     # Get first line number for each file (multiple occurrences may exist)
