@@ -2,7 +2,7 @@
  * Main JS
  * ------------------------------------------------------------------- */
 
-(function (html) {
+(function () {
   "use strict";
 
   /* Preloader
@@ -19,7 +19,7 @@
   /* Load About Content - Only on main page
    * -------------------------------------------------- */
   const loadAboutContent = async () => {
-    // Only load aboutCoMPhy.md if we're on the main page
+    // Only load aboutCoMPhy.md if we"re on the main page
     if (
       window.location.pathname === "/" ||
       window.location.pathname === "/index.html"
@@ -43,7 +43,7 @@
   /* Load News Content - Only on main page
    * -------------------------------------------------- */
   const loadNewsContent = async () => {
-    // Only load News.md if we're on the main page
+    // Only load News.md if we"re on the main page
     if (
       window.location.pathname === "/" ||
       window.location.pathname === "/index.html"
@@ -76,9 +76,14 @@
         historyBtn.setAttribute("aria-label", "View archive of all news items");
 
         // Add keyboard event handler for accessibility
-        historyBtn.addEventListener("keydown", function(event) {
+        historyBtn.addEventListener("keydown", function (event) {
           // Check for Enter (13) or Space (32) key
-          if (event.key === "Enter" || event.key === " " || event.keyCode === 13 || event.keyCode === 32) {
+          if (
+            event.key === "Enter" ||
+            event.key === " " ||
+            event.keyCode === 13 ||
+            event.keyCode === 32
+          ) {
             event.preventDefault();
             window.location.href = this.href;
           }
@@ -103,7 +108,7 @@
   /* Load Featured Papers - Only on main page
    * -------------------------------------------------- */
   const loadFeaturedPapers = async () => {
-    // Only load featured papers if we're on the main page
+    // Only load featured papers if we"re on the main page
     if (
       window.location.pathname === "/" ||
       window.location.pathname === "/index.html"
@@ -112,7 +117,7 @@
         const response = await fetch("/research/");
         if (!response.ok) {
           throw new Error(
-            `Failed to fetch research content: ${response.status} ${response.statusText}`,
+            `Failed to fetch research content: ${response.status} ${response.statusText}`
           );
         }
 
@@ -124,7 +129,7 @@
 
         // Find all paper sections
         const paperSections = tempDiv.querySelectorAll("h3");
-        const featuredSections = Array.from(paperSections).filter((section) => {
+        let featuredSections = Array.from(paperSections).filter((section) => {
           // Find the next tags element
           let nextEl = section.nextElementSibling;
           while (nextEl && !nextEl.matches("tags")) {
@@ -133,9 +138,12 @@
           return nextEl && nextEl.textContent.includes("Featured");
         });
 
+        /** Only show up to two featured papers */
+        featuredSections = featuredSections.slice(0, 2);
+
         // Get the featured container
         const featuredContainer = document.querySelector(
-          ".featured-item__image",
+          ".featured-item__image"
         );
         if (featuredContainer) {
           // Clear existing content
@@ -171,7 +179,7 @@
               // Include everything else (tags, images, iframes)
               const clone = nextEl.cloneNode(true);
 
-              // If it's a tags element, make spans clickable
+              // If it"s a tags element, make spans clickable
               if (clone.matches("tags")) {
                 Array.from(clone.children).forEach((span) => {
                   span.style.cursor = "pointer";
@@ -195,7 +203,7 @@
 
             // Make the entire container clickable
             paperDiv.addEventListener("click", (e) => {
-              // Don't navigate if clicking on a link, tag, or iframe
+              // Don"t navigate if clicking on a link, tag, or iframe
               if (
                 e.target.closest("a") ||
                 e.target.closest("tags") ||
@@ -239,12 +247,12 @@
         console.error("Error loading featured papers:", error);
         // Add visible error message in the featured section
         const featuredContainer = document.querySelector(
-          ".featured-item__image",
+          ".featured-item__image"
         );
         if (featuredContainer) {
           featuredContainer.innerHTML = `
                         <div class="featured-error">
-                            <p>We're having trouble loading the featured papers. Please try refreshing the page or check back later.</p>
+                            <p>We"re having trouble loading the featured papers. Please try refreshing the page or check back later.</p>
                         </div>
                     `;
         }
@@ -323,7 +331,7 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     const images = document.querySelectorAll(
-      '.member-image img[loading="lazy"]',
+      '.member-image img[loading="lazy"]'
     );
 
     images.forEach((img) => {
@@ -374,7 +382,7 @@
       const emailText =
         button.getAttribute("data-text") ||
         button.getAttribute("data-clipboard-text");
-      // Add aria-label if it doesn't exist
+      // Add aria-label if it doesn"t exist
       if (!button.hasAttribute("aria-label") && emailText) {
         button.setAttribute("aria-label", `Copy email address ${emailText}`);
       }

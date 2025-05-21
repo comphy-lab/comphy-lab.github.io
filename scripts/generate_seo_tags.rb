@@ -49,8 +49,11 @@ normalized_urls = {}
 # @example
 #   normalize_url("about")         #=> "about/index.html"
 #   normalize_url("/contact#team")   #=> "contact/index.html"
-#   normalize_url("/index.html")     #=> "index.html"
+#   normalize_url("/index.html")   #=> "index.html"
 def normalize_url(url)
+  # Add debugging
+  original_url = url.dup
+  
   # Remove anchor
   url = url.split('#').first
 
@@ -66,19 +69,43 @@ def normalize_url(url)
   end
 
   # Remove leading slash for file operations
-  url.sub(/^\//, '')
+  result = url.sub(/^\//, '')
+  
+  # Debug output
+  puts "URL Normalization: #{original_url} -> #{result}" if ENV['DEBUG']
+  
+  result
 end
 
 # Process search database to generate metadata
 search_db.each do |entry|
   url = entry['url'].to_s
-
-  # Skip external URLs
-  next if url.start_with?('http')
   next if url.empty?
 
-  # Normalize URL for internal files
-  normalized_url = normalize_url(url)
+  # Convert URL with domain to relative URL
+  if url.start_with?('http')
+    # Skip truly external URLs (not on our domain)
+    site_domain_pattern = Regexp.new("https?://#{Regexp.escape(SITE_DOMAIN)}")
+    unless url.match?(site_domain_pattern)
+      puts "Skipping external URL: #{url}" if ENV['DEBUG']
+      next
+    end
+    
+    # Remove domain part for our own domain
+    url = url.sub(site_domain_pattern, '')
+    puts "Converted URL to relative: #{url}" if ENV['DEBUG']
+  end
+
+  # Special handling for research paper URLs with anchors
+  if url.include?('/research/#')
+    # For URLs like /research/#16, use the research index page
+    research_url = url.split('#').first
+    normalized_url = normalize_url(research_url)
+  else
+    # Normalize URL for internal files
+    normalized_url = normalize_url(url)
+  end
+  
   normalized_urls[url] = normalized_url
 
   # Initialize collections for this URL if not already present
@@ -221,6 +248,9 @@ end
 site_dir = File.join(ROOT_DIR, '_site')
 files_updated = 0
 
+# Track updated files
+updated_files = []
+
 # Process each URL
 keywords_by_url.each do |url, keywords|
   # Get description for this URL
@@ -232,11 +262,28 @@ keywords_by_url.each do |url, keywords|
   # Update HTML file if it exists
   if update_html_with_metadata(file_path, keywords, descriptions)
     files_updated += 1
-    puts "Updated metadata for #{url}"
+    updated_files << url
+    puts "Updated metadata for #{url}" if ENV['DEBUG']
   end
 end
 
-puts "Updated #{files_updated} HTML files with SEO metadata"
+# Print summary of files updated
+if files_updated > 0
+  puts "Updated #{files_updated} HTML files with SEO metadata"
+  # List up to 10 files that were updated, to give a sense of what was changed
+  if updated_files.length <= 10
+    updated_files.each do |file|
+      puts "  - #{file}"
+    end
+  else
+    updated_files.take(5).each do |file|
+      puts "  - #{file}"
+    end
+    puts "  - ... and #{updated_files.length - 5} more files"
+  end
+else
+  puts "No HTML files were updated with SEO metadata"
+end
 
 ##
 # Generates a sitemap index XML file from an existing sitemap.

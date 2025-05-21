@@ -1,6 +1,32 @@
-## 2025
+### <i class="fa-solid fa-graduation-cap gradcap-icon"></i> CoMPhy Lab is Moving to Durham University!
+
+<div class="news-flex-row">
+  <div class="news-flex-row__image-container">
+    <a href="https://www.durham.ac.uk">
+      <img src="/assets/logos/Durham-University_NoText.png" alt="Durham University" class="news-image" style="box-shadow: none;">
+    </a>
+  </div>
+  <div class="news-flex-row__links-container">
+    <a href="/join-us" class="doi-link"><i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 8px; font-size: 1.2em;"></i>Join Us</a>
+  </div>
+</div>
+
+Starting <strong>July 1st, 2025</strong>, the CoMPhy Lab will be relocating to Durham University, UK. We are excited to join the [Condensed Matter Physics section](https://www.durham.ac.uk/research/institutes-and-centres/condensed-matter-physics/) in the [Department of Physics](https://www.durham.ac.uk/departments/academic/physics/) and continue our research in computational physics and fluid dynamics in our new home.
 
 ### May
+
+- [Bashkatov, A., Bürkle, F., Demirkır, Ç., Ding, W., <strong>Sanjay, V.</strong>, Babich, A., Yang, X., Mutschke, G., Czarske, J., Lohse, D., et al. Electrolyte droplet spraying in H2 bubbles during water electrolysis under normal and microgravity conditions. Nat. Commun., 16, 4580 (2025).](/research#17)
+
+<div class="news-flex-row">
+  <div class="news-flex-row__image-container">
+    <a href="/research#17">
+      <img src="/assets/images/research/NatComm-jet-drop.png" alt="Drop injection" class="news-image">
+    </a>
+  </div>
+  <div class="news-flex-row__links-container">
+    <a href="https://doi.org/10.1038/s41467-025-59762-7" class="doi-link"><i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 8px; font-size: 1.2em;"></i>View Paper</a>
+  </div>
+</div>
 
 - [<strong>Dixit, A.</strong>, Oratis, A., Zinelis, K., Lohse, D., & <strong>Sanjay, V.</strong> Viscoelastic Worthington Jets and Droplets Produced by Bursting Bubbles. J. Fluid Mech., 1010, A2 (2025).](/research#16)
 
@@ -41,41 +67,3 @@
     <a href="https://bit.ly/3DXBixh" class="youtube-link"><i class="fa-brands fa-youtube" style="margin-right: 8px; font-size: 1.2em;"></i>Watch on YouTube</a>
   </div>
 </div>
-
-- [<strong>Sanjay, V.</strong>, & Lohse, D. Unifying theory of scaling in drop impact: Forces & maximum spreading diameter. Published in Physical Review Letters.](/research#15)
-
-<div class="news-flex-row">
-  <div class="news-flex-row__image-container">
-    <a href="/research#15">
-      <img src="/assets/images/research/drop-impact-prl.png" alt="Drop impact PRL paper" class="news-image">
-    </a>
-  </div>
-  <div class="news-flex-row__links-container">
-    <a href="https://doi.org/10.1103/PhysRevLett.134.104003" class="doi-link"><i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 8px; font-size: 1.2em;"></i>View Paper</a>
-  </div>
-</div>
-
-- Join us for a hybrid online+offline course: [High-Fidelity Simulations Using Basilisk C](/teaching/2025-Basilisk101-Madrid) in Madrid, Spain (March 10-13). Learn some computational (colorful) fluid dynamics with hands-on coding sessions.
-
-### February
-
-- [<strong>Sanjay, V.</strong>, Zhang, B., Lv, C., & Lohse, D. J. Fluid Mech., 1004, A6 (2025) selected as the cover article.](/research#14)
-
-<div class="news-flex-row">
-  <div class="news-flex-row__image-container">
-    <a href="/research#14">
-      <img src="/assets/images/covers/2025-02-JFM_Vol1004.jpeg" alt="JFM cover" class="news-image">
-    </a>
-  </div>
-  <div class="news-flex-row__links-container">
-    <a href="/assets/images/covers/2025-02-JFM_Vol1004.pdf" class="pdf-link"><i class="fa-solid fa-download" style="margin-right: 8px; font-size: 1.2em;"></i>Download Cover</a>
-    <a href="https://doi.org/10.1017/jfm.2024.982" class="doi-link"><i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 8px; font-size: 1.2em;"></i>View Paper</a>
-  </div>
-</div>
-
-- <strong>Milan Sent</strong> <a href="https://github.com/mdjsent">
-  <i class="fa-brands fa-github" style="font-size: 1.5em; color: #8a2be2;"></i>
-  </a> graduated with a bachelor's degree from University of Twente. <strong>Thesis:</strong>
-  <a href="https://tinyurl.com/2ycunjcr" class="pdf-link" style="display: inline-flex; align-items: center;">
-  <i class="fa-solid fa-file-pdf" style="margin-right: 8px; font-size: 1.2em; color: #e63946;"></i>Spinning Pizza
-  </a>

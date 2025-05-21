@@ -83,6 +83,8 @@
   <script defer src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
   <script defer src="/assets/js/main.js"></script>
   <script defer src="/assets/js/platform-utils.js"></script>
+  <!-- Command palette script before command data -->
+  <script defer src="/assets/js/command-palette.js"></script>
   <script defer src="/assets/js/command-data.js"></script>
 
   <!-- Theme toggle functionality -->
@@ -126,7 +128,6 @@
     })();
   </script>
   
-  <!-- Command palette (implementation in assets/js/command-palette.js) -->
   <script defer src="/assets/js/command-palette.js"></script>
 
 
@@ -249,11 +250,11 @@
         <a href="https://pof.tnw.utwente.nl/" target="_blank" rel="noopener noreferrer">
           <img src="/assets/logos/LogoPof_transparent_white.png" alt="Physics of Fluids" class="footer-logo pof-logo">
         </a>
-        <a href="https://www.utwente.nl/" target="_blank" rel="noopener noreferrer">
-          <img src="/assets/logos/UT_Logo_2400_Sta_White_EN.png" alt="University of Twente" class="footer-logo">
-        </a>
         <a href="https://www.vatsalsanjay.com/" target="_blank" rel="noopener noreferrer">
           <img src="/assets/logos/Logo_Vatsal_v3_OutLine.png" alt="Vatsal Sanjay" class="footer-logo">
+        </a>
+        <a href="https://www.durham.ac.uk/" target="_blank" rel="noopener noreferrer">
+          <img src="/assets/logos/Durham-University-white.png" alt="Durham University" class="footer-logo">
         </a>
       </div>
       <div class="footer-center">
@@ -283,7 +284,7 @@
         </a>
       </div>
       <div class="ss-go-top">
-        <a class="smoothscroll" title="Back to Top" href="#top">
+        <a class="smoothscroll" title="Back to Top" href="#top" aria-label="Back to top of page">
             <i class="fa-solid fa-arrow-up"></i>
          </a>
       </div> <!-- end ss-go-top -->
