@@ -507,7 +507,7 @@ npm install
 # Run all tests
 npm test
 
-# Run tests with coverage report
+# Run tests with code coverage
 npm test -- --coverage
 ```
 
