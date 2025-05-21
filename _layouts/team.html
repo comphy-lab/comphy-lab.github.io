@@ -264,19 +264,19 @@
       </div>
 
       {% assign content_html = content | markdownify %}
-      {% assign sections = content_html | split: '<h1' %}
+      {% assign sections = content_html | split: '<h2' %}
 
       {% for section in sections offset:1 %}
-        {% assign section_content = section | split: '</h1>' %}
+        {% assign section_content = section | split: '</h2>' %}
         {% assign section_title = section_content[0] | split: '>' | last %}
-        {% assign section_members = section_content[1] | split: '<h2' %}
+        {% assign section_members = section_content[1] | split: '<h3' %}
 
         <div class="team-section">
-          <h1>{{ section_title }}</h1>
+          <h2>{{ section_title }}</h2>
           <div class="team-grid">
             {% for member in section_members offset:1 %}
               <div class="team-member">
-                {% assign member_content = member | split: '</h2>' %}
+                {% assign member_content = member | split: '</h3>' %}
                 {% assign member_name = member_content[0] | split: '>' | last %}
                 {% assign member_details = member_content[1] %}
 
@@ -302,7 +302,7 @@
                 {% endif %}
 
                 <div class="member-content">
-                  <h2>{{ member_name }}</h2>
+                  <h3>{{ member_name }}</h3>
                   {{ member_details }}
                 </div>
               </div>
