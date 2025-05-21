@@ -461,3 +461,14 @@ section h3 {
 [data-theme="dark"] .history-news-box h3 {
     color: var(--shared-h3-color) !important;
 }
+
+.gradcap-icon {
+    color: #222;
+    margin-right: 0.05em;
+    vertical-align: middle;
+}
+@media (prefers-color-scheme: dark) {
+.gradcap-icon {
+    color: #fff;
+}
+}

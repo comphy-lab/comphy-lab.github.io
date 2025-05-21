@@ -33,3 +33,7 @@ exclude:
   - vendor
   - .sass-cache
   - .jekyll-cache
+  - coverage
+  - tests
+  - jest.config.js
+  - package*.json

@@ -113,6 +113,8 @@
   <script defer src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
   <script defer src="/assets/js/main.js"></script>
   <script defer src="/assets/js/platform-utils.js"></script>
+  <!-- Command palette script before command data -->
+  <script defer src="/assets/js/command-palette.js"></script>
   <script defer src="/assets/js/command-data.js"></script>
 
   <script>
@@ -262,19 +264,19 @@
       </div>
 
       {% assign content_html = content | markdownify %}
-      {% assign sections = content_html | split: '<h1' %}
+      {% assign sections = content_html | split: '<h2' %}
 
       {% for section in sections offset:1 %}
-        {% assign section_content = section | split: '</h1>' %}
+        {% assign section_content = section | split: '</h2>' %}
         {% assign section_title = section_content[0] | split: '>' | last %}
-        {% assign section_members = section_content[1] | split: '<h2' %}
+        {% assign section_members = section_content[1] | split: '<h3' %}
 
         <div class="team-section">
-          <h1>{{ section_title }}</h1>
+          <h2>{{ section_title }}</h2>
           <div class="team-grid">
             {% for member in section_members offset:1 %}
               <div class="team-member">
-                {% assign member_content = member | split: '</h2>' %}
+                {% assign member_content = member | split: '</h3>' %}
                 {% assign member_name = member_content[0] | split: '>' | last %}
                 {% assign member_details = member_content[1] %}
 
@@ -300,7 +302,7 @@
                 {% endif %}
 
                 <div class="member-content">
-                  <h2>{{ member_name }}</h2>
+                  <h3>{{ member_name }}</h3>
                   {{ member_details }}
                 </div>
               </div>
@@ -389,11 +391,11 @@
         <a href="https://pof.tnw.utwente.nl/" target="_blank" rel="noopener noreferrer">
           <img src="/assets/logos/LogoPof_transparent_white.png" alt="Physics of Fluids" class="footer-logo pof-logo">
         </a>
-        <a href="https://www.utwente.nl/" target="_blank" rel="noopener noreferrer">
-          <img src="/assets/logos/UT_Logo_2400_Sta_White_EN.png" alt="University of Twente" class="footer-logo">
-        </a>
         <a href="https://www.vatsalsanjay.com/" target="_blank" rel="noopener noreferrer">
           <img src="/assets/logos/Logo_Vatsal_v3_OutLine.png" alt="Vatsal Sanjay" class="footer-logo">
+        </a>
+        <a href="https://www.durham.ac.uk/" target="_blank" rel="noopener noreferrer">
+          <img src="/assets/logos/Durham-University-white.png" alt="Durham University" class="footer-logo">
         </a>
       </div>
       <div class="footer-center">
@@ -423,7 +425,7 @@
         </a>
       </div>
       <div class="ss-go-top">
-        <a class="smoothscroll" title="Back to Top" href="#top">
+        <a class="smoothscroll" title="Back to Top" href="#top" aria-label="Back to top of page">
             <i class="fa-solid fa-arrow-up"></i>
          </a>
       </div> <!-- end ss-go-top -->
@@ -547,9 +549,6 @@
       // Rest of your existing DOMContentLoaded code...
     });
   </script>
-
-  <!-- Command palette (implementation in assets/js/command-palette.js) -->
-  <script defer src="/assets/js/command-palette.js"></script>
 
   <!-- Simple Command Palette -->
   <div id="simple-command-palette" class="simple-command-palette" style="display: none;">
