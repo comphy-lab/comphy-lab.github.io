@@ -21,9 +21,6 @@ for file in $HTML_FILES; do
     if [ "$PALETTE_LINE" -gt "$DATA_LINE" ]; then
       echo "Fixing script order in $file..."
       
-      # Remove the command-palette.js script line
-      PALETTE_SCRIPT_LINE=$(grep -n "command-palette.js" "$file" | head -1 | cut -d ":" -f 2-)
-      
       # Use platform-independent sed command
       sed -i".bak" "${PALETTE_LINE}d" "$file"
       
