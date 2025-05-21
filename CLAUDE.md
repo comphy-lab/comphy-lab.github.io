@@ -9,34 +9,40 @@ This repository contains the CoMPhy Lab website, a static site built with Jekyll
 ## Build and Development Commands
 
 - **Install dependencies:**
+
   ```bash
   bundle install && cd scripts && npm install && cd ..
   ```
 
 - **Build site and generate search database:**
+
   ```bash
   ./scripts/build.sh
   ```
 
 - **Run local server:**
+
   ```bash
   bundle exec jekyll serve
   ```
 
 - **View website in browser:**
-  http://localhost:4000
+  <http://localhost:4000>
 
 - **Generate SEO tags:**
+
   ```bash
   bundle exec ruby scripts/generate_seo_tags.rb
   ```
 
 - **Generate filtered research pages:**
+
   ```bash
   bundle exec ruby scripts/generate_filtered_research.rb
   ```
   
 - **Run code checks and auto-fixes:**
+
   ```bash
   ./scripts/lint-check.sh
   ```
