@@ -118,14 +118,14 @@ JEKYLL_ENV=production bundle exec jekyll build
 echo "Generating pre-filtered research pages..."
 bundle exec ruby scripts/generate_filtered_research.rb
 
-# Generate search database
-echo "Generating search database..."
-chmod +x scripts/generate_search_db.rb
-bundle exec ruby scripts/generate_search_db.rb
-
-# Generate SEO metadata from search database
-echo "Generating SEO metadata from search database..."
-chmod +x scripts/generate_seo_tags.rb
-bundle exec ruby scripts/generate_seo_tags.rb
+# Check if search database exists
+if [ -f "assets/js/search_db.json" ]; then
+    # Generate SEO metadata from search database
+    echo "Generating SEO metadata from search database..."
+    chmod +x scripts/generate_seo_tags.rb
+    bundle exec ruby scripts/generate_seo_tags.rb
+else
+    echo "Warning: search_db.json not found - skipping SEO metadata generation"
+fi
 
 echo "Build completed successfully!"
