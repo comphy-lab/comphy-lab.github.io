@@ -9,6 +9,19 @@ title: History
 
 ### May
 
+- [Bashkatov, A., Bürkle, F., Demirkır, Ç., Ding, W., <strong>Sanjay, V.</strong>, Babich, A., Yang, X., Mutschke, G., Czarske, J., Lohse, D., et al. Electrolyte droplet spraying in H2 bubbles during water electrolysis under normal and microgravity conditions. Nat. Commun., 16, 4580 (2025).](/research#17)
+
+<div class="news-flex-row">
+  <div class="news-flex-row__image-container">
+    <a href="/research#17">
+      <img src="/assets/images/research/NatComm-jet-drop.png" alt="Drop injection" class="news-image">
+    </a>
+  </div>
+  <div class="news-flex-row__links-container">
+    <a href="https://doi.org/10.1038/s41467-025-59762-7" class="doi-link"><i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 8px; font-size: 1.2em;"></i>View Paper</a>
+  </div>
+</div>
+
 - [<strong>Dixit, A.</strong>, Oratis, A., Zinelis, K., Lohse, D., & <strong>Sanjay, V.</strong> Viscoelastic Worthington Jets and Droplets Produced by Bursting Bubbles. J. Fluid Mech., 1010, A2 (2025).](/research#16)
 
 <div class="news-flex-row">
@@ -39,7 +52,7 @@ title: History
   Image credit: J. Heitman, B. J. Howlett, P. W. Crous, E. H. Stukenbrock, T. Y. James & N. A. R. Gow, The fungal kingdom, John Wiley & Sons (2020)
 </div>
 
-### March 
+### March
 
 - <a href="https://en.wikipedia.org/wiki/Detlef_Lohse"><strong>Prof. Detlef Lohse</strong></a> shares his scientific journey in <a href="https://www.youtube.com/@TheLivingHistoriesSeries" class="blue-link">The Living Histories Series</a>. His inspiring discussion on curiosity, mentorship, and the "puzzle solving" joy of science offers valuable insights for researchers at all career stages.
 
@@ -86,8 +99,6 @@ title: History
 <a href="https://tinyurl.com/2ycunjcr" class="pdf-link" style="display: inline-flex; align-items: center;">
 <i class="fa-solid fa-file-pdf" style="margin-right: 8px; font-size: 1.2em; color: #e63946;"></i>Spinning Pizza
 </a>
-
-
 
 ## 2024
 
