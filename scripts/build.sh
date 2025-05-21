@@ -9,6 +9,16 @@ echo "Starting build process..."
 if [ -n "$GITHUB_ACTIONS" ]; then
     echo "Running in GitHub Actions environment"
     # GitHub Actions already has Ruby and Bundler set up via ruby/setup-ruby@v1
+    
+    # Install npm dependencies in GitHub Actions
+    echo "Installing npm dependencies in GitHub Actions environment..."
+    if [ -d "./scripts" ] && [ -f "./scripts/package.json" ]; then
+        (cd ./scripts && npm install)
+    fi
+    
+    if [ -f "./package.json" ]; then
+        npm install
+    fi
 else
     # Try to detect the environment for local builds
     if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -84,8 +94,20 @@ else
     echo "Bundler version: $(bundle -v)"
 
     # Install dependencies for local environment
-    echo "Installing dependencies..."
+    echo "Installing Ruby dependencies..."
     bundle install
+
+    # Install npm dependencies (for husky, lint-staged, etc.)
+    echo "Installing npm dependencies..."
+    if [ -d "./scripts" ] && [ -f "./scripts/package.json" ]; then
+        # Script directory has its own package.json
+        (cd ./scripts && npm install)
+    fi
+    
+    # Also install root npm dependencies if package.json exists
+    if [ -f "./package.json" ]; then
+        npm install
+    fi
 fi
 
 # Build the Jekyll site
