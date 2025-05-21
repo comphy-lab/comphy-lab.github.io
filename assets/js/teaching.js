@@ -11,7 +11,7 @@ function sortCoursesByDate() {
   
   // Target various potential course container structures, including the current structure
   const courseContainers = document.querySelectorAll(
-    ".s-teaching .course-item, .teaching-content .course-item, .course, .course-container, article.course, .teaching-course, .teaching-content > div[class*="course"], .teaching-content > div > a[href*="Course"], .teaching-content a[href*="Course"]"
+    ".s-teaching .course-item, .teaching-content .course-item, .course, .course-container, article.course, .teaching-course, .teaching-content > div[class*=\"course\"], .teaching-content > div > a[href*=\"Course\"], .teaching-content a[href*=\"Course\"]"
   );
   
   // If no direct matches found, try to find the specific course structure on the page
@@ -44,7 +44,7 @@ function sortCoursesByDate() {
     if (contentContainer) {
       const feedbackMsg = document.createElement("div");
       feedbackMsg.className = "sort-indicator";
-      feedbackMsg.textContent = "No courses found to sort. Add course items with class "course-item" or "course" for automatic sorting.";
+      feedbackMsg.textContent = "No courses found to sort. Add course items with class \"course-item\" or \"course\" for automatic sorting.";
       feedbackMsg.style.padding = "10px";
       feedbackMsg.style.margin = "10px 0";
       feedbackMsg.style.backgroundColor = "#F0E6F5"; // Lighter purple to match site theme
@@ -131,14 +131,14 @@ function sortCoursesByDate() {
     // Look for dates in multiple locations with fallbacks
     const dateA = a.getAttribute("data-date") || 
                   a.getAttribute("date") || 
-                  a.querySelector(".course-date, .date, time, [class*="date"]")?.textContent || 
+                  a.querySelector(".course-date, .date, time, [class*=\"date\"]")?.textContent || 
                   a.querySelector("[datetime]")?.getAttribute("datetime") || 
                   a.textContent.match(/\d{4}[-/.]\d{1,2}[-/.]\d{1,2}|\d{1,2}[-/.]\d{1,2}[-/.]\d{4}|(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]* \d{1,2},? \d{4}/i)?.[0] || 
                   "";
     
     const dateB = b.getAttribute("data-date") || 
                   b.getAttribute("date") || 
-                  b.querySelector(".course-date, .date, time, [class*="date"]")?.textContent || 
+                  b.querySelector(".course-date, .date, time, [class*=\"date\"]")?.textContent || 
                   b.querySelector("[datetime]")?.getAttribute("datetime") || 
                   b.textContent.match(/\d{4}[-/.]\d{1,2}[-/.]\d{1,2}|\d{1,2}[-/.]\d{1,2}[-/.]\d{4}|(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]* \d{1,2},? \d{4}/i)?.[0] || 
                   "";
