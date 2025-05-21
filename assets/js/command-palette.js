@@ -20,7 +20,13 @@ window.openCommandPalette = function() {
   }
 };
 
-// Function to render command results based on search
+/**
+ * Renders the command palette results based on the provided search query.
+ *
+ * Filters available commands by title or section, groups them by section, and displays them in the command palette UI. If the query is at least 3 characters and a search database is available, performs an asynchronous search to include additional results under a "Search Results" section. Displays a message if no commands are found.
+ *
+ * @param {string} query - The search string used to filter and search commands.
+ */
 function renderCommandResults(query) {
   const resultsContainer = document.getElementById("command-palette-results");
   if (!resultsContainer) return;
@@ -76,7 +82,14 @@ function renderCommandResults(query) {
   }
 }
 
-// Helper function to render sections
+/**
+ * Renders grouped command sections into a container element for the command palette UI.
+ *
+ * Each section is displayed with its title and a list of commands. Commands show their icon, title, and an optional excerpt. Clicking a command hides the palette and invokes its handler if defined.
+ *
+ * @param {Object} sections - An object mapping section names to arrays of command objects.
+ * @param {HTMLElement} container - The DOM element where sections will be rendered.
+ */
 function renderSections(sections, container) {
   // Clear container first
   container.innerHTML = "";
@@ -126,7 +139,13 @@ function renderSections(sections, container) {
   });
 }
 
-// Initialization function to set up command palette when DOM is loaded
+/**
+ * Initializes the command palette UI, search integration, and keyboard shortcuts on DOM load.
+ *
+ * Sets up event listeners for opening and closing the palette, handling user input, keyboard navigation, and command execution. Prefetches and configures the search database for fuzzy searching if available.
+ *
+ * @remark If the search database cannot be loaded, search functionality will be unavailable, but the command palette UI will still function.
+ */
 function initCommandPalette() {
   // Ensure search database is preloaded for command palette search functionality
   // Try to prefetch the search database if it exists

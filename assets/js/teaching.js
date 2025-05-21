@@ -1,4 +1,4 @@
-/**
+/** 
  * Course sorting functionality for teaching pages
  * Sorts course elements by date (most recent first)
  */
