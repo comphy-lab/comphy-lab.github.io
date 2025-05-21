@@ -10,6 +10,23 @@ set -e
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 echo "Running checks on repository at: $REPO_ROOT"
 
+# Detect OS for sed compatibility
+OS=$(uname)
+if [ "$OS" = "Darwin" ]; then
+  # macOS requires an extension argument (empty string is fine)
+  SED_INPLACE="sed -i ''"
+else
+  # Linux version (no extension needed, but will create .bak files)
+  SED_INPLACE="sed -i.bak"
+fi
+
+# Function to clean up backup files on Linux
+cleanup_bak_files() {
+  if [ "$OS" != "Darwin" ]; then
+    find "$1" -name "*.bak" -type f -delete
+  fi
+}
+
 # Check for Fuse dependency
 echo "Checking for proper Fuse.js loading..."
 # Look for specific Fuse.js usage - not just mentions of the word "Fuse"
@@ -27,7 +44,7 @@ if [ -n "$FILES_WITH_FUSE" ]; then
       if ! grep -q "cdn.jsdelivr.net/npm/fuse.js" "$file"; then
         echo "WARNING: $file uses Fuse but doesn't include the CDN. Adding it..."
         # Find the closing </head> tag and insert the Fuse CDN script before it
-        sed -i '' '/<\/head>/i\
+        $SED_INPLACE '/<\/head>/i\
   <script defer src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
 ' "$file"
         echo "Fixed: Added Fuse.js CDN to $file"
@@ -35,6 +52,9 @@ if [ -n "$FILES_WITH_FUSE" ]; then
         echo "OK: $file properly includes Fuse.js CDN"
       fi
     done
+    # Clean up any .bak files on Linux
+    cleanup_bak_files "$REPO_ROOT/_layouts"
+    cleanup_bak_files "$REPO_ROOT/_includes"
   else
     echo "No HTML files directly using Fuse.js found."
   fi
@@ -42,11 +62,13 @@ if [ -n "$FILES_WITH_FUSE" ]; then
   # Check if default.html includes the Fuse CDN, since it's the base template
   if ! grep -q "cdn.jsdelivr.net/npm/fuse.js" "$REPO_ROOT/_layouts/default.html" 2>/dev/null; then
     echo "Adding Fuse.js to default layout template as a fallback..."
-    sed -i '' '/<\/head>/i\
+    $SED_INPLACE '/<\/head>/i\
   <!-- Fuse.js dependency for search functionality -->\\
   <script defer src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
 ' "$REPO_ROOT/_layouts/default.html"
     echo "Fixed: Added Fuse.js CDN to default layout"
+    # Clean up any .bak files on Linux
+    cleanup_bak_files "$REPO_ROOT/_layouts"
   fi
 else
   echo "No files using Fuse.js found."
@@ -90,7 +112,7 @@ for file in $JS_FILES; do
   tmp_file=$(mktemp)
   
   # Process the file using a simpler, more portable approach
-  if [[ "$(uname)" == "Darwin" ]]; then
+  if [[ "$OS" == "Darwin" ]]; then
     # macOS (BSD sed)
     sed "s/'/\"/g" "$file" > "$tmp_file"
   else
