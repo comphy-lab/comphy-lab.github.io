@@ -29,14 +29,6 @@ jobs:
       - name: Run linting
         run: npm run lint
 
-      - name: Upload coverage reports
-        uses: codecov/codecov-action@v3
-        if: success()
-        with:
-          file: ./coverage/lcov.info
-          flags: unittests
-          name: weekly-test-coverage
-
       - name: Create test summary
         if: always()
         run: |
