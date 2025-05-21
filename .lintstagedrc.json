@@ -1,16 +1,6 @@
 {
-  "assets/js/**/*.js": [
-    "eslint --fix",
-    "prettier --write"
-  ],
-  "assets/css/**/*.css": [
-    "stylelint --fix",
-    "prettier --write"
-  ],
-  "*.md": [
-    "markdownlint-cli2"
-  ],
-  "*.{json,yml,yaml}": [
-    "prettier --write"
-  ]
+  "assets/js/**/*.js": ["eslint --fix", "prettier --write"],
+  "assets/css/**/*.css": ["prettier --write"],
+  "*.md": ["markdownlint-cli2"],
+  "*.{json,yml,yaml}": ["prettier --write"]
 }

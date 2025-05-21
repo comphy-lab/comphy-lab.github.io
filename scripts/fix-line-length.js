@@ -17,7 +17,12 @@ const maxLength = 80;
  * @returns {string} The file contents as a string.
  */
 function readFile(filePath) {
-  return fs.readFileSync(filePath, 'utf8');
+  try {
+    return fs.readFileSync(filePath, 'utf8');
+  } catch (error) {
+    console.error(`Error reading file ${filePath}:`, error.message);
+    return ''; // Return empty string as fallback
+  }
 }
 
 /**
@@ -207,8 +212,12 @@ function processJsFiles() {
       const fixedContent = fixLongLines(content);
       
       if (fixedContent !== content) {
-        fs.writeFileSync(file, fixedContent);
-        fixedFiles++;
+        try {
+          fs.writeFileSync(file, fixedContent);
+          fixedFiles++;
+        } catch (error) {
+          console.error(`Error writing to file ${file}:`, error.message);
+        }
       }
     }
   });

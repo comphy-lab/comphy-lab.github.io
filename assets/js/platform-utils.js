@@ -10,7 +10,7 @@ function isMacPlatform() {
 }
 
 /**
- * Adjusts the visibility of UI elements based on whether the user is on a Mac platform.
+ * Updates UI elements to reflect the user"s platform.
  *
  * Elements with the class `.mac-theme-text` are shown and `.default-theme-text` are hidden on Mac platforms; the reverse occurs on non-Mac platforms.
  */

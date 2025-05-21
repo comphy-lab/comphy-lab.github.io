@@ -34,6 +34,13 @@ title: Research
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/49KoJwXiDl4?si=uxdpYyKFFd8E6jvN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+### Mclauchlan, J., Walker, J. S., <strong>Sanjay, V.</strong>, Jalaal, M., Reid, J. P., Squires, A. M., & Souslov, A. Bouncing microdroplets on hydrophobic surfaces. arXiv preprint arXiv:2503.22527 (2025).
+
+<tags><span>Drops</span><span>Bouncing</span></tags>
+
+[![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2503.22527&color=green)](https://arxiv.org/abs/2503.22527)
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
+
 ## 2025
 
 <h3 id="17">[17] Bashkatov, A., Bürkle, F., Demirkır, Ç., Ding, W., <strong>Sanjay, V.</strong>, Babich, A., Yang, X., Mutschke, G., Czarske, J., Lohse, D., et al. Electrolyte droplet spraying in H2 bubbles during water electrolysis under normal and microgravity conditions. Nat. Commun., 16, 4580 (2025).</h3>
