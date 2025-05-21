@@ -9,7 +9,7 @@
     "lint:md": "markdownlint-cli2 '**/*.md' --ignore node_modules",
     "lint": "npm run lint:js && npm run lint:css && npm run lint:md",
     "format": "prettier --write assets/js/**/*.js assets/css/**/*.css",
-    "prepare": "husky install",
+    "prepare": "npx husky install",
     "test": "jest --coverage"
   },
   "repository": {
