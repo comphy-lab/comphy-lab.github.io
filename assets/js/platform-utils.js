@@ -1,7 +1,7 @@
 "use strict";
 
 /**
- * Determines whether the user's platform is macOS.
+ * Determines whether the user"s platform is macOS.
  *
  * @returns {boolean} True if the current platform is macOS; otherwise, false.
  */
@@ -16,13 +16,13 @@ function isMacPlatform() {
  */
 function updatePlatformSpecificElements() {
   const isMac = isMacPlatform();
-  
+
   // Update all platform-specific text elements
-  document.querySelectorAll(".default-theme-text").forEach(element => {
+  document.querySelectorAll(".default-theme-text").forEach((element) => {
     element.style.display = isMac ? "none" : "inline";
   });
-  
-  document.querySelectorAll(".mac-theme-text").forEach(element => {
+
+  document.querySelectorAll(".mac-theme-text").forEach((element) => {
     element.style.display = isMac ? "inline" : "none";
   });
 }
@@ -32,4 +32,4 @@ document.addEventListener("DOMContentLoaded", updatePlatformSpecificElements);
 
 // Export functions for use in other scripts
 window.isMacPlatform = isMacPlatform;
-window.updatePlatformSpecificElements = updatePlatformSpecificElements; 
+window.updatePlatformSpecificElements = updatePlatformSpecificElements;

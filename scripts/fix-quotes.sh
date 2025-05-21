@@ -18,7 +18,7 @@ find ./assets/js -name "*.js" -type f -print0 | while IFS= read -r -d '' file; d
     tmp_file=$(mktemp)
     
     # Process the file
-    cat "$file" | sed "s/'[^']*'/\$(echo & | sed 's/'/\"/g')/g" > "$tmp_file"
+    cat "$file" | $sed_cmd "s/'[^']*'/\$(echo & | sed 's/'/\"/g')/g" > "$tmp_file"
     
     # Move the temp file to the original
     mv "$tmp_file" "$file"
