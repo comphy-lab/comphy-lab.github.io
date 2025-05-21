@@ -7,6 +7,7 @@
 [![License](https://img.shields.io/github/license/comphy-lab/comphy-lab.github.io?style=flat-square)](LICENSE)
 [![Last Commit](https://img.shields.io/github/last-commit/comphy-lab/comphy-lab.github.io?style=flat-square&logo=github)](https://github.com/comphy-lab/comphy-lab.github.io/commits/main)
 [![Jekyll](https://img.shields.io/badge/Jekyll-4.3.2-%23CC0000?style=flat-square&logo=jekyll)](https://jekyllrb.com/)
+[![Tests](https://img.shields.io/badge/Tests-Jest-green?style=flat-square&logo=jest)](https://jestjs.io/)
 
 A static website for the Computational Multiphase Physics Laboratory, built with Jekyll and designed for hosting on GitHub Pages.
 
@@ -47,6 +48,10 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 ├── scripts                    # Build and utility scripts
 │   ├── build.sh              # Main build script
 │   └── generate_search_db.rb  # Search database generator
+├── tests                      # Unit tests
+│   ├── fix-line-length.test.js # Tests for fix-line-length.js
+│   ├── command-data.test.js   # Tests for command-data.js
+│   └── setup.js              # Test setup and mocks
 ├── .github                    # GitHub specific files
 │   ├── ISSUE_TEMPLATE        # Issue templates
 │   └── PULL_REQUEST_TEMPLATE # PR templates
@@ -67,11 +72,16 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 1. **Prerequisites**
    - Ruby (version 3.2.0 or higher)
    - Bundler (`gem install bundler`)
+   - Node.js and npm (for linting and testing)
 
 2. **Install Dependencies**
 
    ```bash
+   # Ruby dependencies
    bundle install
+   
+   # JavaScript dependencies
+   npm install
    ```
 
 3. **Build and Run**
@@ -87,7 +97,17 @@ A static website for the Computational Multiphase Physics Laboratory, built with
    - Visit <http://localhost:4000> in the browser
    - Changes require rebuilding with `./scripts/build.sh`
 
-4. **Deployment**
+4. **Testing**
+
+   ```bash
+   # Run all tests
+   npm test
+   
+   # Run tests with code coverage
+   npm test -- --coverage
+   ```
+
+5. **Deployment**
    - Typically managed via GitHub Pages when merged/pushed to the main branch
    - Local testing is recommended before committing changes
    - Cloudflare cache is automatically purged on deployment via GitHub Actions
@@ -470,6 +490,41 @@ These workflows work together to ensure:
      - Processing content in a more structured way
      - Avoiding web scraping issues or rate limits
 
+## Testing
+
+This project uses Jest for unit testing JavaScript functionality. The test suite covers:
+
+- Line breaking utilities in fix-line-length.js
+- Command palette functionality in command-data.js
+- Browser environment mocks in setup.js
+
+### Running Tests
+
+```bash
+# Install dependencies
+npm install
+
+# Run all tests
+npm test
+
+# Run tests with coverage report
+npm test -- --coverage
+```
+
+### Test Structure
+
+- Tests are located in the `/tests` directory
+- Each test file corresponds to a JavaScript module
+- Browser environment is mocked in `setup.js`
+- Tests focus on core functionality without side effects
+
+### Adding New Tests
+
+1. Create a new test file in the `/tests` directory
+2. Import the module or function you want to test
+3. Follow the existing patterns for test structure
+4. Run the tests to ensure they pass
+
 ## Contributing
 
 ### Issue Templates
@@ -571,6 +626,8 @@ The repository uses automated tools to ensure code quality and consistency:
   - Run manually: `npm run lint:md`
 - **Code Formatting**: Prettier
   - Run manually: `npm run format`
+- **Tests**: Jest
+  - Run manually: `npm test`
 
 #### Git Hooks
 
