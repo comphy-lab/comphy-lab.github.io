@@ -3,11 +3,29 @@
 # This script performs various checks on the codebase
 # 1. Ensure Fuse.js is properly loaded in HTML files that use it
 # 2. Check for proper script loading order (e.g., dependencies before their usage)
+# 3. Fix quote style issues in JavaScript files (single quotes to double quotes)
 
 set -e
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 echo "Running checks on repository at: $REPO_ROOT"
+
+# Detect OS for sed compatibility
+OS=$(uname)
+if [ "$OS" = "Darwin" ]; then
+  # macOS requires an extension argument (empty string is fine)
+  SED_INPLACE="sed -i ''"
+else
+  # Linux version (no extension needed, but will create .bak files)
+  SED_INPLACE="sed -i.bak"
+fi
+
+# Function to clean up backup files on Linux
+cleanup_bak_files() {
+  if [ "$OS" != "Darwin" ]; then
+    find "$1" -name "*.bak" -type f -delete
+  fi
+}
 
 # Check for Fuse dependency
 echo "Checking for proper Fuse.js loading..."
@@ -26,7 +44,7 @@ if [ -n "$FILES_WITH_FUSE" ]; then
       if ! grep -q "cdn.jsdelivr.net/npm/fuse.js" "$file"; then
         echo "WARNING: $file uses Fuse but doesn't include the CDN. Adding it..."
         # Find the closing </head> tag and insert the Fuse CDN script before it
-        sed -i '' '/<\/head>/i\
+        $SED_INPLACE '/<\/head>/i\
   <script defer src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
 ' "$file"
         echo "Fixed: Added Fuse.js CDN to $file"
@@ -34,6 +52,9 @@ if [ -n "$FILES_WITH_FUSE" ]; then
         echo "OK: $file properly includes Fuse.js CDN"
       fi
     done
+    # Clean up any .bak files on Linux
+    cleanup_bak_files "$REPO_ROOT/_layouts"
+    cleanup_bak_files "$REPO_ROOT/_includes"
   else
     echo "No HTML files directly using Fuse.js found."
   fi
@@ -41,11 +62,13 @@ if [ -n "$FILES_WITH_FUSE" ]; then
   # Check if default.html includes the Fuse CDN, since it's the base template
   if ! grep -q "cdn.jsdelivr.net/npm/fuse.js" "$REPO_ROOT/_layouts/default.html" 2>/dev/null; then
     echo "Adding Fuse.js to default layout template as a fallback..."
-    sed -i '' '/<\/head>/i\
+    $SED_INPLACE '/<\/head>/i\
   <!-- Fuse.js dependency for search functionality -->\\
   <script defer src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
 ' "$REPO_ROOT/_layouts/default.html"
     echo "Fixed: Added Fuse.js CDN to default layout"
+    # Clean up any .bak files on Linux
+    cleanup_bak_files "$REPO_ROOT/_layouts"
   fi
 else
   echo "No files using Fuse.js found."
@@ -67,5 +90,62 @@ for file in $HTML_FILES; do
     fi
   fi
 done
+
+# Fix quote style in JavaScript files (single quotes to double quotes)
+echo "Checking and fixing quote style in JavaScript files..."
+
+# Parse arguments
+FIX_MODE=false
+if [[ "$1" == "--fix" ]]; then
+  FIX_MODE=true
+  echo "Running in fix mode - will modify files"
+else
+  echo "Running in check-only mode (use --fix to modify files)"
+fi
+
+# Find all JavaScript files
+JS_FILES=$(find "$REPO_ROOT/assets/js" -name "*.js" -type f)
+FIXED_COUNT=0
+
+for file in $JS_FILES; do
+  # Create a temp file for the transformation
+  tmp_file=$(mktemp)
+  
+  # Process the file using a simpler, more portable approach
+  if [[ "$OS" == "Darwin" ]]; then
+    # macOS (BSD sed)
+    sed "s/'/\"/g" "$file" > "$tmp_file"
+  else
+    # Linux/GNU sed
+    sed 's/'"'"'/"/g' "$file" > "$tmp_file"
+  fi
+  
+  # Check if the file was modified
+  if ! cmp -s "$file" "$tmp_file"; then
+    if [[ "$FIX_MODE" == "true" ]]; then
+      # Move the temp file to the original
+      mv "$tmp_file" "$file"
+      FIXED_COUNT=$((FIXED_COUNT + 1))
+      echo "Fixed quote style in: $(basename "$file")"
+    else
+      echo "Would fix quote style in: $(basename "$file")"
+      FIXED_COUNT=$((FIXED_COUNT + 1))
+      rm "$tmp_file"
+    fi
+  else
+    # No changes needed, remove the temp file
+    rm "$tmp_file"
+  fi
+done
+
+if [ $FIXED_COUNT -eq 0 ]; then
+  echo "No quote style issues found in JavaScript files."
+else
+  if [[ "$FIX_MODE" == "true" ]]; then
+    echo "Fixed quote style in $FIXED_COUNT JavaScript files."
+  else
+    echo "Found $FIXED_COUNT JavaScript files with quote style issues (run with --fix to update)."
+  fi
+fi
 
 echo "Lint check completed!"

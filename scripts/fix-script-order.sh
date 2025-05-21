@@ -15,21 +15,27 @@ for file in $HTML_FILES; do
   # Check if command-data.js loads after command-palette.js
   if grep -q "command-data.js" "$file" && grep -q "command-palette.js" "$file"; then
     # Get line numbers
-    DATA_LINE=$(grep -n "command-data.js" "$file" | head -1 | cut -d ":" -f 1)
     PALETTE_LINE=$(grep -n "command-palette.js" "$file" | head -1 | cut -d ":" -f 1)
+    DATA_LINE=$(grep -n "command-data.js" "$file" | head -1 | cut -d ":" -f 1)
     
     if [ "$PALETTE_LINE" -gt "$DATA_LINE" ]; then
       echo "Fixing script order in $file..."
       
       # Remove the command-palette.js script line
       PALETTE_SCRIPT_LINE=$(grep -n "command-palette.js" "$file" | head -1 | cut -d ":" -f 2-)
-      sed -i '' "${PALETTE_LINE}d" "$file"
+      
+      # Use platform-independent sed command
+      sed -i".bak" "${PALETTE_LINE}d" "$file"
       
       # Add the command-palette.js script before command-data.js
-      sed -i '' "${DATA_LINE}i\\
+      # Use platform-independent sed approach
+      sed -i".bak" "${DATA_LINE}i\\
   <!-- Command palette script before command data -->\\
   <script defer src=\"/assets/js/command-palette.js\"></script>
 " "$file"
+      
+      # Remove backup files created by sed
+      rm -f "${file}.bak"
       
       echo "Fixed: Moved command-palette.js (from line $PALETTE_LINE) to before command-data.js (line $DATA_LINE) in $file"
     else

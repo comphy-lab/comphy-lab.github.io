@@ -56,7 +56,7 @@ function renderCommandResults(query) {
   
   // If query is at least 3 characters, search the database as well
   if (query && query.length >= 3 && typeof window.searchDatabaseForCommandPalette === "function") {
-    // We'll use a promise to handle the async search
+    // We"ll use a promise to handle the async search
     window.searchDatabaseForCommandPalette(query).then(searchResults => {
       if (searchResults && searchResults.length > 0) {
         // Add search results to sections
