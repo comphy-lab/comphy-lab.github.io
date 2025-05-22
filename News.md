@@ -7,7 +7,7 @@
     </a>
   </div>
   <div class="news-flex-row__links-container">
-    <a href="/join-us" class="doi-link"><i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 8px; font-size: 1.2em;"></i>Join Us</a>
+    <a href="/join" class="doi-link"><i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 8px; font-size: 1.2em;"></i>Join Us</a>
   </div>
 </div>
 
