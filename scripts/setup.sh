@@ -129,12 +129,6 @@ else
   exit 1
 fi
 
-# Restore .ruby-version if it was temporarily moved
-if [ -f ".ruby-version.bak" ]; then
-  echo "🔄 Restoring .ruby-version file..."
-  mv .ruby-version.bak .ruby-version
-fi
-
 # Build the site and generate search database
 echo ""
 echo "🔨 Building site and generating search database..."
@@ -144,6 +138,13 @@ echo "🔨 Building site and generating search database..."
 echo ""
 echo "🧪 Running validation tests..."
 node scripts/simple-test.js
+
+# Restore .ruby-version if it was temporarily moved
+if [ -f ".ruby-version.bak" ]; then
+  echo ""
+  echo "🔄 Restoring .ruby-version file..."
+  mv .ruby-version.bak .ruby-version
+fi
 
 echo ""
 echo "✨ Setup complete!"
