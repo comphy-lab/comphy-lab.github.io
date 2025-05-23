@@ -13,11 +13,11 @@ if [ -n "$GITHUB_ACTIONS" ]; then
     # Install npm dependencies in GitHub Actions
     echo "Installing npm dependencies in GitHub Actions environment..."
     if [ -d "./scripts" ] && [ -f "./scripts/package.json" ]; then
-        (cd ./scripts && npm install)
+        (cd ./scripts && npm install --no-fund --no-audit --ignore-scripts)
     fi
     
     if [ -f "./package.json" ]; then
-        npm install
+        npm install --no-fund --no-audit --ignore-scripts
     fi
 else
     # Try to detect the environment for local builds
@@ -101,12 +101,12 @@ else
     echo "Installing npm dependencies..."
     if [ -d "./scripts" ] && [ -f "./scripts/package.json" ]; then
         # Script directory has its own package.json
-        (cd ./scripts && npm install)
+        (cd ./scripts && npm install --no-fund --no-audit --ignore-scripts)
     fi
     
     # Also install root npm dependencies if package.json exists
     if [ -f "./package.json" ]; then
-        npm install
+        npm install --no-fund --no-audit --ignore-scripts
     fi
 fi
 

@@ -99,7 +99,8 @@ bundle install
 # Install Node.js dependencies
 echo ""
 echo "📦 Installing Node.js dependencies..."
-npm install
+# Skip prepare script (husky) during setup to avoid interactive prompts
+npm install --no-fund --no-audit --ignore-scripts
 
 # Check Jekyll installation
 echo ""
@@ -110,6 +111,12 @@ if bundle exec jekyll --version &> /dev/null; then
 else
   echo "❌ Jekyll installation failed"
   exit 1
+fi
+
+# Restore .ruby-version if it was temporarily moved
+if [ -f ".ruby-version.bak" ]; then
+  echo "🔄 Restoring .ruby-version file..."
+  mv .ruby-version.bak .ruby-version
 fi
 
 # Build the site and generate search database
