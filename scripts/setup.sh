@@ -102,6 +102,22 @@ echo "📦 Installing Node.js dependencies..."
 # Skip prepare script (husky) during setup to avoid interactive prompts
 npm install --no-fund --no-audit --ignore-scripts
 
+# Manually create binary links for executables since we skipped scripts
+echo "🔗 Setting up binary links..."
+if [ -d "node_modules" ]; then
+  mkdir -p node_modules/.bin
+  # Link Jest
+  if [ -f "node_modules/jest/bin/jest.js" ]; then
+    ln -sf ../jest/bin/jest.js node_modules/.bin/jest 2>/dev/null || true
+  fi
+  # Link other common binaries that might be needed
+  for bin in eslint prettier markdownlint stylelint; do
+    if [ -f "node_modules/$bin/bin/$bin.js" ]; then
+      ln -sf ../$bin/bin/$bin.js node_modules/.bin/$bin 2>/dev/null || true
+    fi
+  done
+fi
+
 # Check Jekyll installation
 echo ""
 echo "🏗️  Checking Jekyll..."
@@ -124,6 +140,11 @@ echo ""
 echo "🔨 Building site and generating search database..."
 ./scripts/build.sh
 
+# Run simple validation tests
+echo ""
+echo "🧪 Running validation tests..."
+node scripts/simple-test.js
+
 echo ""
 echo "✨ Setup complete!"
 echo ""
@@ -135,4 +156,5 @@ echo "📚 Useful commands:"
 echo "   - Build site: ./scripts/build.sh"
 echo "   - Check code: ./scripts/lint-check.sh"
 echo "   - Fix code issues: ./scripts/lint-check.sh --fix"
+echo "   - Run tests: npm test (requires full npm install)"
 echo ""
