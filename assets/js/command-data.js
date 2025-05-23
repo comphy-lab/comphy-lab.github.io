@@ -13,7 +13,7 @@
         window.location.href = "/";
       },
       section: "Navigation",
-      icon: '<i class="fa-solid fa-home"></i>',
+      icon: "<i class=\"fa-solid fa-home\"></i>",
     },
     {
       id: "team",
@@ -22,7 +22,7 @@
         window.location.href = "/team/";
       },
       section: "Navigation",
-      icon: '<i class="fa-solid fa-users"></i>',
+      icon: "<i class=\"fa-solid fa-users\"></i>",
     },
     {
       id: "research",
@@ -31,7 +31,7 @@
         window.location.href = "/research";
       },
       section: "Navigation",
-      icon: '<i class="fa-solid fa-flask"></i>',
+      icon: "<i class=\"fa-solid fa-flask\"></i>",
     },
     {
       id: "teaching",
@@ -40,7 +40,7 @@
         window.location.href = "/teaching";
       },
       section: "Navigation",
-      icon: '<i class="fa-solid fa-chalkboard-teacher"></i>',
+      icon: "<i class=\"fa-solid fa-chalkboard-teacher\"></i>",
     },
     {
       id: "join",
@@ -49,7 +49,7 @@
         window.location.href = "/join";
       },
       section: "Navigation",
-      icon: '<i class="fa-solid fa-handshake"></i>',
+      icon: "<i class=\"fa-solid fa-handshake\"></i>",
     },
     {
       id: "blog",
@@ -59,7 +59,7 @@
       },
 
       section: "Navigation",
-      icon: '<i class="fa-solid fa-rss"></i>',
+      icon: "<i class=\"fa-solid fa-rss\"></i>",
     },
     {
       id: "back",
@@ -68,7 +68,7 @@
         window.history.back();
       },
       section: "Navigation",
-      icon: '<i class="fa-solid fa-arrow-left"></i>',
+      icon: "<i class=\"fa-solid fa-arrow-left\"></i>",
     },
     {
       id: "forward",
@@ -77,7 +77,7 @@
         window.history.forward();
       },
       section: "Navigation",
-      icon: '<i class="fa-solid fa-arrow-right"></i>',
+      icon: "<i class=\"fa-solid fa-arrow-right\"></i>",
     },
 
     // External links
@@ -89,7 +89,7 @@
       },
 
       section: "External Links",
-      icon: '<i class="fa-brands fa-github"></i>',
+      icon: "<i class=\"fa-brands fa-github\"></i>",
     },
     {
       id: "scholar",
@@ -102,7 +102,7 @@
       },
 
       section: "External Links",
-      icon: '<i class="ai ai-google-scholar"></i>',
+      icon: "<i class=\"ai ai-google-scholar\"></i>",
     },
     {
       id: "youtube",
@@ -112,7 +112,7 @@
       },
 
       section: "External Links",
-      icon: '<i class="fa-brands fa-youtube"></i>',
+      icon: "<i class=\"fa-brands fa-youtube\"></i>",
     },
     {
       id: "bluesky",
@@ -122,7 +122,7 @@
       },
 
       section: "External Links",
-      icon: '<i class="fa-brands fa-bluesky"></i>',
+      icon: "<i class=\"fa-brands fa-bluesky\"></i>",
     },
 
     // Tools
@@ -133,7 +133,7 @@
         window.scrollTo({ top: 0, behavior: "smooth" });
       },
       section: "Tools",
-      icon: '<i class="fa-solid fa-arrow-up"></i>',
+      icon: "<i class=\"fa-solid fa-arrow-up\"></i>",
     },
     {
       id: "bottom",
@@ -146,7 +146,7 @@
       },
 
       section: "Tools",
-      icon: '<i class="fa-solid fa-arrow-down"></i>',
+      icon: "<i class=\"fa-solid fa-arrow-down\"></i>",
     },
 
     // Help commands
@@ -161,7 +161,7 @@
       },
 
       section: "Help",
-      icon: '<i class="fa-brands fa-github"></i>',
+      icon: "<i class=\"fa-brands fa-github\"></i>",
     },
   ];
 
@@ -210,15 +210,15 @@
       sections[command.section].push(command);
     });
 
-    let html = '<h2 style="margin-top: 0;">Commands</h2>';
+    let html = "<h2 style=\"margin-top: 0;\">Commands</h2>";
     html += "<p>Press Ctrl+K (⌘K on Mac) to open the command palette</p>";
 
     // Add each section and its commands
     Object.keys(sections).forEach((section) => {
       html += `<h3>${section}</h3>`;
-      html += '<table style="width: 100%; border-collapse: collapse;">';
+      html += "<table style=\"width: 100%; border-collapse: collapse;\">";
       html +=
-        '<tr><th style="text-align: left; padding: 8px; border-bottom: 1px solid #ddd;">Command</th></tr>';
+        "<tr><th style=\"text-align: left; padding: 8px; border-bottom: 1px solid #ddd;\">Command</th></tr>";
 
       sections[section].forEach((command) => {
         html += `<tr>
@@ -231,7 +231,7 @@
 
     // Add close button
     html +=
-      '<div style="text-align: center; margin-top: 20px;"><button id="close-shortcuts-help" style="padding: 8px 16px; background-color: #5b79a8; color: white; border: none; border-radius: 4px; cursor: pointer;">Close</button></div>';
+      "<div style=\"text-align: center; margin-top: 20px;\"><button id=\"close-shortcuts-help\" style=\"padding: 8px 16px; background-color: #5b79a8; color: white; border: none; border-radius: 4px; cursor: pointer;\">Close</button></div>";
 
     content.innerHTML = html;
     modal.appendChild(content);
@@ -346,7 +346,7 @@
               }
             },
             section: "Search Results",
-            icon: '<i class="fa-solid fa-file-lines"></i>',
+            icon: "<i class=\"fa-solid fa-file-lines\"></i>",
             excerpt:
               result.item.excerpt ||
               (result.item.content &&
@@ -417,9 +417,9 @@
               tags.add(tag.textContent);
             });
 
-            let html = '<h2 style="margin-top: 0;">Filter Research by Tag</h2>';
+            let html = "<h2 style=\"margin-top: 0;\">Filter Research by Tag</h2>";
             html +=
-              '<div class="tag-filter-container" style="display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0;">';
+              "<div class=\"tag-filter-container\" style=\"display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0;\">";
 
             // Add clickable tag buttons
             tags.forEach((tag) => {
@@ -437,7 +437,7 @@
 
             // Add close button
             html +=
-              '<div style="text-align: center; margin-top: 20px;"><button id="close-tag-filter" style="padding: 8px 16px; background-color: #333; color: white; border: none; border-radius: 4px; cursor: pointer;">Close</button></div>';
+              "<div style=\"text-align: center; margin-top: 20px;\"><button id=\"close-tag-filter\" style=\"padding: 8px 16px; background-color: #333; color: white; border: none; border-radius: 4px; cursor: pointer;\">Close</button></div>";
 
             content.innerHTML = html;
             modal.appendChild(content);
@@ -557,7 +557,7 @@
             content.focus();
           },
           section: "Page Actions",
-          icon: '<i class="fa-solid fa-filter"></i>',
+          icon: "<i class=\"fa-solid fa-filter\"></i>",
         },
       ];
     }
@@ -571,7 +571,7 @@
             window.location.href = "/join";
           },
           section: "Page Actions",
-          icon: '<i class="fa-solid fa-envelope"></i>',
+          icon: "<i class=\"fa-solid fa-envelope\"></i>",
         },
       ];
     }
@@ -588,7 +588,7 @@
             }
           },
           section: "Page Actions",
-          icon: '<i class="fa-solid fa-sort"></i>',
+          icon: "<i class=\"fa-solid fa-sort\"></i>",
         },
       ];
     }
