@@ -40,11 +40,11 @@ function renderCommandResults(query) {
   // Filter commands based on query
   const filteredCommands = query
     ? commands.filter(
-        (cmd) =>
-          cmd.title.toLowerCase().includes(query.toLowerCase()) ||
+      (cmd) =>
+        cmd.title.toLowerCase().includes(query.toLowerCase()) ||
           (cmd.section &&
             cmd.section.toLowerCase().includes(query.toLowerCase()))
-      )
+    )
     : commands;
 
   // Group by section
@@ -353,7 +353,7 @@ window.searchDatabaseForCommandPalette = async function (query) {
         }
       },
       section: "Search Results",
-      icon: '<i class="fa-solid fa-file-lines"></i>',
+      icon: "<i class=\"fa-solid fa-file-lines\"></i>",
       excerpt:
         result.item.excerpt ||
         (result.item.content &&
