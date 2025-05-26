@@ -67,6 +67,32 @@ This repository contains the CoMPhy Lab website, a static site built with Jekyll
   ./scripts/lint-check.sh
   ```
 
+- **Run tests:**
+
+  ```bash
+  # Jest tests with coverage
+  npm test -- --coverage
+  
+  # Simple validation tests
+  node scripts/simple-test.js
+  
+  # Test wrapper
+  ./scripts/runTests.sh
+  ```
+
+- **Fix JavaScript issues:**
+
+  ```bash
+  # Fix line length (80 chars max)
+  ./scripts/fix-js-line-length.sh
+  
+  # Convert single to double quotes
+  ./scripts/fix-quotes.sh
+  
+  # Fix script loading order
+  ./scripts/fix-script-order.sh
+  ```
+
 ## Code Organization
 
 - **Jekyll Collections:** `_team`, `_research`, `_teaching`
@@ -121,8 +147,76 @@ This repository contains the CoMPhy Lab website, a static site built with Jekyll
   - Load Fuse.js before any code that uses it
   - Run lint-check.sh to automatically fix order issues
 
+## Scripts Overview
+
+### Core Scripts
+
+- **setup.sh** - Complete environment setup (installs Ruby/Node.js if needed)
+- **build.sh** - Builds site, generates search database, SEO tags, and filtered pages
+- **lint-check.sh** - Runs all linters and auto-fixes issues
+
+### Utility Scripts
+
+- **fix-js-line-length.sh** - Ensures JS files stay within 80 character limit
+- **fix-quotes.sh** - Standardizes quotes in JavaScript files
+- **fix-script-order.sh** - Fixes script dependency loading order
+- **simple-test.js** - Lightweight test runner for basic validation
+- **runTests.sh** - Wrapper for running npm tests
+
+### Ruby Scripts
+
+- **generate_seo_tags.rb** - Creates SEO meta tags for all pages
+- **generate_filtered_research.rb** - Generates tag-based research filter pages
+
+## Testing
+
+### Running Tests
+
+- Use `npm test` for full Jest test suite
+- Use `npm test -- --coverage` for coverage report
+- Use `node scripts/simple-test.js` for quick validation
+- Tests are located in `/tests` directory
+
+### Test Files
+
+- **command-data.test.js** - Tests command palette functionality
+- **fix-line-length.test.js** - Tests line breaking utilities
+- **platform-utils.test.js** - Tests platform detection
+- **shortcut-key.test.js** - Tests keyboard shortcuts
+- **teaching.test.js** - Tests course sorting
+- **setup.js** - Browser environment mocks
+
+### Writing Tests
+
+- Follow existing patterns in test files
+- Mock browser APIs using setup.js
+- Aim for 80%+ code coverage
+- Test edge cases and error handling
+
 ## Deployment Process
 
 - Site is automatically deployed via GitHub Pages when changes are merged to main
 - GitHub Actions workflows trigger the build and deployment process
 - Cloudflare cache is purged automatically on deployment
+
+## Important Instructions
+
+### Setup Process
+
+- **Always use `./scripts/setup.sh` for environment setup** - This single script handles both fresh installations and existing environments
+- Do not create separate setup scripts - everything is consolidated in setup.sh
+- The script automatically installs Ruby/Node.js if not present
+
+### File Management
+
+- ALWAYS prefer editing existing files over creating new ones
+- NEVER proactively create documentation files unless explicitly requested
+- Do what has been asked; nothing more, nothing less
+
+### Development Workflow
+
+1. Run `./scripts/setup.sh` for initial setup
+2. Use `./scripts/build.sh` to build the site
+3. Run `bundle exec jekyll serve` for local development
+4. Use `./scripts/lint-check.sh` before committing
+5. Run tests with `npm test` to ensure quality

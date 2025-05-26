@@ -123,9 +123,31 @@ A static website for the Computational Multiphase Physics Laboratory, built with
    
    # Run tests with code coverage
    npm test -- --coverage
+   
+   # Run simple tests without Jest
+   node scripts/simple-test.js
+   
+   # Run tests via wrapper script
+   ./scripts/runTests.sh
    ```
 
-5. **Deployment**
+5. **Code Quality and Maintenance**
+
+   ```bash
+   # Run all linters and auto-fix issues
+   ./scripts/lint-check.sh
+   
+   # Fix JavaScript line length issues (80 chars max)
+   ./scripts/fix-js-line-length.sh
+   
+   # Convert single quotes to double quotes in JS files
+   ./scripts/fix-quotes.sh
+   
+   # Fix script loading order (command-palette.js before command-data.js)
+   ./scripts/fix-script-order.sh
+   ```
+
+6. **Deployment**
    - Typically managed via GitHub Pages when merged/pushed to the main branch
    - Local testing is recommended before committing changes
    - Cloudflare cache is automatically purged on deployment via GitHub Actions
@@ -508,13 +530,90 @@ These workflows work together to ensure:
      - Processing content in a more structured way
      - Avoiding web scraping issues or rate limits
 
+## Scripts Documentation
+
+The `scripts/` directory contains various utility scripts for development, testing, and maintenance:
+
+### Core Scripts
+
+- **`setup.sh`** - Complete environment setup for both fresh and existing installations
+  - Installs Ruby via rbenv and Node.js via nvm if not present
+  - Installs all dependencies (Ruby gems and npm packages)
+  - Builds the site and runs validation tests
+  - Handles version conflicts gracefully
+
+- **`build.sh`** - Main build script
+  - Builds the Jekyll site
+  - Generates the search database
+  - Updates SEO tags
+  - Creates filtered research pages by tags
+
+- **`lint-check.sh`** - Code quality and formatting
+  - Runs all linters (ESLint, Stylelint, markdownlint)
+  - Auto-fixes issues when possible
+  - Ensures code consistency across the project
+
+### Utility Scripts
+
+- **`fix-js-line-length.sh`** - JavaScript line length fixer
+  - Ensures JavaScript files don't exceed 80 characters per line
+  - Automatically wraps long lines while preserving functionality
+  - Uses the Node.js script `fix-line-length.js`
+
+- **`fix-quotes.sh`** - Quote standardization
+  - Converts single quotes to double quotes in JavaScript files
+  - Platform-aware (handles macOS/Linux sed differences)
+  - Processes all JS files in `assets/js/`
+
+- **`fix-script-order.sh`** - Script dependency ordering
+  - Ensures `command-palette.js` loads before `command-data.js`
+  - Scans HTML files in `_layouts/` and `_includes/`
+  - Automatically reorders script tags when needed
+
+### Ruby Scripts
+
+- **`generate_seo_tags.rb`** - SEO optimization
+  - Generates meta tags for better search engine visibility
+  - Creates Open Graph and Twitter Card metadata
+  - Processes all research papers and pages
+
+- **`generate_filtered_research.rb`** - Research filtering
+  - Creates tag-based filtered pages for research papers
+  - Generates individual pages for each research tag
+  - Updates navigation and search functionality
+
+### Test Scripts
+
+- **`simple-test.js`** - Lightweight test runner
+  - Runs basic tests without external dependencies
+  - Validates project structure and file existence
+  - Checks build outputs and syntax
+  - Provides colored terminal output
+
+- **`runTests.sh`** - Test wrapper
+  - Simple wrapper for `npm test`
+  - Returns appropriate exit codes for CI/CD
+  - Displays success/failure messages
+
+### Node.js Scripts
+
+- **`fix-line-length.js`** - Line breaking utility
+  - Core logic for breaking long JavaScript lines
+  - Handles strings, comments, and code intelligently
+  - Preserves code functionality while improving readability
+
 ## Testing
 
-This project uses Jest for unit testing JavaScript functionality. The test suite covers:
+This project uses Jest for unit testing JavaScript functionality with comprehensive coverage:
 
-- Line breaking utilities in fix-line-length.js
-- Command palette functionality in command-data.js
-- Browser environment mocks in setup.js
+### Test Coverage
+
+- **fix-line-length.js** - Line breaking utilities and string processing
+- **command-data.js** - Command palette functionality and search integration
+- **platform-utils.js** - Platform detection and UI utilities
+- **shortcut-key.js** - Keyboard shortcut handling
+- **teaching.js** - Teaching page course sorting and filtering
+- **setup.js** - Browser environment mocks and test setup
 
 ### Running Tests
 
@@ -527,21 +626,60 @@ npm test
 
 # Run tests with code coverage
 npm test -- --coverage
+
+# Run tests in watch mode (re-runs on file changes)
+npm test -- --watch
+
+# Run a specific test file
+npm test -- command-data.test.js
+
+# Run simple validation tests (no dependencies)
+node scripts/simple-test.js
 ```
 
 ### Test Structure
 
 - Tests are located in the `/tests` directory
-- Each test file corresponds to a JavaScript module
-- Browser environment is mocked in `setup.js`
-- Tests focus on core functionality without side effects
+- Test files follow the naming pattern: `[module-name].test.js`
+- Browser environment is mocked in `setup.js` for DOM-dependent code
+- Tests use Jest's built-in assertions and mocking capabilities
+- Coverage reports are generated in the `/coverage` directory
 
-### Adding New Tests
+### Test Categories
+
+1. **Unit Tests** - Test individual functions and modules
+2. **Integration Tests** - Test component interactions
+3. **Validation Tests** - Check file structure and build outputs
+4. **Mock Tests** - Verify browser API mocks work correctly
+
+### Writing Tests
 
 1. Create a new test file in the `/tests` directory
-2. Import the module or function you want to test
-3. Follow the existing patterns for test structure
-4. Run the tests to ensure they pass
+2. Import the module or function to test:
+
+   ```javascript
+   const { functionName } = require("../path/to/module");
+   ```
+
+3. Structure tests using `describe` and `it` blocks:
+
+   ```javascript
+   describe("Module Name", () => {
+     it("should do something specific", () => {
+       expect(functionName(input)).toBe(expectedOutput);
+     });
+   });
+   ```
+
+4. Run tests to ensure they pass
+5. Check coverage with `npm test -- --coverage`
+
+### Coverage Goals
+
+- Maintain at least 80% code coverage
+- Focus on critical path testing
+- Mock external dependencies appropriately
+- Test edge cases and error handling
 
 ## Contributing
 
