@@ -47,7 +47,8 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 │       └── teaching         # Teaching images
 ├── scripts                    # Build and utility scripts
 │   ├── build.sh              # Main build script
-│   └── generate_search_db.rb  # Search database generator
+│   ├── generate_search_db.rb  # Search database generator
+│   └── setup.sh              # Complete setup script for fresh and existing environments
 ├── tests                      # Unit tests
 │   ├── fix-line-length.test.js # Tests for fix-line-length.js
 │   ├── command-data.test.js   # Tests for command-data.js
@@ -69,12 +70,29 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 
 ### Local Development
 
-1. **Prerequisites**
+1. **Quick Setup (Recommended)**
+
+   For both fresh machines and existing development environments:
+
+   ```bash
+   ./scripts/setup.sh
+   ```
+
+   This script will:
+   - Check for Ruby/Node.js and install them if missing (via rbenv/nvm)
+   - Install Bundler if not present
+   - Install all Ruby gems and npm packages
+   - Build the site and generate search database
+   - Run validation tests
+
+2. **Manual Setup (Alternative)**
+
+   Prerequisites:
    - Ruby (version 3.2.0 or higher)
    - Bundler (`gem install bundler`)
    - Node.js and npm (for linting and testing)
 
-2. **Install Dependencies**
+   Install Dependencies:
 
    ```bash
    # Ruby dependencies
