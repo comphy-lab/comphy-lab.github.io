@@ -97,6 +97,11 @@ fi
 
 echo "=== Setup complete! ==="
 echo ""
+echo "Jekyll and other Ruby gems were installed via 'bundle install' from the Gemfile."
+echo ""
+echo "To run the website locally:"
+echo "  bundle exec jekyll serve"
+echo ""
 echo "To update dependencies in the future, run:"
 echo "  bundle update    # For Ruby gems"
 echo "  npm update       # For npm packages"
