@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # CoMPhy Lab Website Setup Script
-# For use with OpenAI Codex CLI
+# Complete setup for both clean machines and existing development environments
+# This script will install Ruby, Node.js, and all dependencies if not present
 # Usage: ./scripts/setup.sh
 
 set -e  # Exit on error
@@ -19,8 +20,37 @@ fi
 # Check Ruby installation
 echo "📦 Checking Ruby installation..."
 
+# First check if Ruby is installed at all
+if ! command -v ruby &> /dev/null; then
+  echo "❌ Ruby not found. Installing Ruby via rbenv..."
+  
+  # Install rbenv
+  if [ ! -d "$HOME/.rbenv" ]; then
+    git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+    echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+    echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+    
+    # Also add to ~/.bash_profile for macOS compatibility
+    echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
+    echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+    
+    # Install ruby-build plugin
+    git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+  fi
+  
+  # Set PATH for current session
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+  
+  # Install Ruby 3.2
+  echo "Installing Ruby 3.2.0..."
+  rbenv install 3.2.0
+  rbenv global 3.2.0
+  
+  echo "✅ Ruby installed successfully: $(ruby --version)"
+  
 # Check if rbenv is being used and handle version issues
-if command -v rbenv &> /dev/null && [ -f ".ruby-version" ]; then
+elif command -v rbenv &> /dev/null && [ -f ".ruby-version" ]; then
   REQUIRED_VERSION=$(cat .ruby-version)
   echo "📌 Project requires Ruby $REQUIRED_VERSION (via .ruby-version)"
   
@@ -76,9 +106,24 @@ if command -v node &> /dev/null; then
   NODE_VERSION=$(node --version)
   echo "✅ Node.js installed: $NODE_VERSION"
 else
-  echo "❌ Node.js is not installed. Please install Node.js first."
-  echo "   Visit: https://nodejs.org/"
-  exit 1
+  echo "❌ Node.js not found. Installing Node.js via nvm..."
+  
+  # Install nvm
+  if [ ! -d "$HOME/.nvm" ]; then
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+  fi
+  
+  # Source nvm for current session
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+  
+  # Install latest Node.js
+  echo "Installing latest Node.js..."
+  nvm install node
+  nvm use node
+  
+  echo "✅ Node.js installed successfully: $(node --version)"
 fi
 
 # Check npm installation
@@ -158,4 +203,5 @@ echo "   - Build site: ./scripts/build.sh"
 echo "   - Check code: ./scripts/lint-check.sh"
 echo "   - Fix code issues: ./scripts/lint-check.sh --fix"
 echo "   - Run tests: npm test (requires full npm install)"
+echo "   - Update dependencies: bundle update && npm update"
 echo ""

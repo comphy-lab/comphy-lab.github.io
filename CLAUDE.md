@@ -8,10 +8,30 @@ This repository contains the CoMPhy Lab website, a static site built with Jekyll
 
 ## Build and Development Commands
 
-- **Install dependencies:**
+- **Complete setup (for fresh or existing environments):**
 
   ```bash
-  bundle install && cd scripts && npm install && cd ..
+  ./scripts/setup.sh
+  ```
+  
+  This script will automatically:
+  - Install Ruby via rbenv if not present
+  - Install Node.js via nvm if not present
+  - Install Bundler if not present
+  - Install all Ruby gems and npm packages
+  - Build the site and generate search database
+  - Run validation tests
+
+- **Manual dependency installation (if setup.sh was already run):**
+
+  ```bash
+  bundle install && npm install
+  ```
+  
+- **Update dependencies:**
+
+  ```bash
+  bundle update && npm update
   ```
 
 - **Build site and generate search database:**
