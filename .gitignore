@@ -18,6 +18,11 @@ scripts/node_modules/
 scripts/package-lock.json
 scripts/blog_content.json
 
+# Test coverage and reports
+coverage/
+*.lcov
+.nyc_output/
+
 # IDE and editor files
 .idea/
 .vscode/
