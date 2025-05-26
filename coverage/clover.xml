@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1748182524963" clover="3.2.0">
-  <project timestamp="1748182524963" name="All files">
-    <metrics statements="10" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="0" elements="16" coveredelements="4" complexity="0" loc="10" ncloc="10" packages="1" files="1" classes="1"/>
+<coverage generated="1748236069608" clover="3.2.0">
+  <project timestamp="1748236069609" name="All files">
+    <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6" elements="16" coveredelements="16" complexity="0" loc="10" ncloc="10" packages="1" files="1" classes="1"/>
     <file name="setup.js" path="/Users/vatsal/Documents/Github-local/comphy-lab.github.io/tests/setup.js">
-      <metrics statements="10" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="0"/>
-      <line num="4" count="1" type="stmt"/>
-      <line num="17" count="0" type="stmt"/>
-      <line num="25" count="1" type="stmt"/>
-      <line num="31" count="0" type="stmt"/>
-      <line num="40" count="0" type="stmt"/>
-      <line num="41" count="0" type="stmt"/>
-      <line num="47" count="1" type="stmt"/>
-      <line num="55" count="1" type="stmt"/>
-      <line num="56" count="0" type="stmt"/>
-      <line num="58" count="0" type="stmt"/>
+      <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
+      <line num="4" count="2" type="stmt"/>
+      <line num="17" count="1" type="stmt"/>
+      <line num="25" count="2" type="stmt"/>
+      <line num="31" count="1" type="stmt"/>
+      <line num="40" count="1" type="stmt"/>
+      <line num="41" count="1" type="stmt"/>
+      <line num="47" count="2" type="stmt"/>
+      <line num="55" count="2" type="stmt"/>
+      <line num="56" count="1" type="stmt"/>
+      <line num="58" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>
