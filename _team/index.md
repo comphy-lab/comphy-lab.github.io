@@ -13,6 +13,7 @@ title: Our Team & Collaborators
 
 <img src="/assets/images/team/0.jpg" alt="Vatsal Sanjay" loading="lazy" width="200" height="200">
 
+- Assistant Professor, Department of Physics, Durham Univ. / since 2025
 - [Postdoc, Phys. Fluids - Univ. Twente / 2022-25](https://pof.tnw.utwente.nl/people/profile/1330)
 - Ph.D., Phys. Fluids - Univ. Twente / 2018-22, **Thesis:** <a href="https://doi.org/10.3990/1.9789036554077" class="pdf-link" style="display: inline-flex; align-items: center; margin-left: 5px;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Viscous Free-Surface Flows</a>
 - B.Tech + M.Tech, Two-Phase Flow & Instability Lab, IIT-Roorkee / 2013-18, **Thesis:** <a href="http://dx.doi.org/10.13140/RG.2.2.22294.04166" class="pdf-link" style="display: inline-flex; align-items: center; margin-left: 5px;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Understanding of mutual interactions between liquid jets: Entrainment and sheet formation</a>
