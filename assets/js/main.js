@@ -303,14 +303,35 @@
 
   /* Smooth Scrolling
    * -------------------------------------------------- */
-  document.querySelectorAll("a[href^=\"#\"]").forEach((anchor) => {
+  document.querySelectorAll("a[href^=\"#\"], a[href^=\"/#\"]").forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute("href"));
-      if (target) {
-        target.scrollIntoView({
-          behavior: "smooth",
-        });
+      const href = this.getAttribute("href");
+      
+      // Handle both "#section" and "/#section" formats
+      if (href.startsWith("/#")) {
+        // Check if we're on the home page
+        if (window.location.pathname === "/" || 
+            window.location.pathname === "/index.html") {
+          e.preventDefault();
+          const targetId = href.substring(2); // Remove "/#"
+          const target = document.getElementById(targetId);
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start"
+            });
+          }
+        }
+        // If not on home page, let the browser handle the navigation
+      } else if (href.startsWith("#")) {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+        }
       }
     });
   });
