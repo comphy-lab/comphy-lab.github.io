@@ -179,6 +179,11 @@ echo ""
 echo "🔨 Building site and generating search database..."
 ./scripts/build.sh
 
+# Install husky hooks
+echo ""
+echo "🪝 Installing Git hooks (husky)..."
+npx husky install
+
 # Run simple validation tests
 echo ""
 echo "🧪 Running validation tests..."
@@ -202,6 +207,8 @@ echo "📚 Useful commands:"
 echo "   - Build site: ./scripts/build.sh"
 echo "   - Check code: ./scripts/lint-check.sh"
 echo "   - Fix code issues: ./scripts/lint-check.sh --fix"
-echo "   - Run tests: npm test (requires full npm install)"
+echo "   - Run tests: npm test"
 echo "   - Update dependencies: bundle update && npm update"
+echo ""
+echo "✅ Pre-commit hooks are now installed and will run automatically on git commit"
 echo ""
