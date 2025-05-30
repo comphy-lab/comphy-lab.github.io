@@ -83,6 +83,7 @@ A static website for the Computational Multiphase Physics Laboratory, built with
    - Install Bundler if not present
    - Install all Ruby gems and npm packages
    - Build the site and generate search database
+   - Install Git hooks for pre-commit checks (via Husky)
    - Run validation tests
 
 2. **Manual Setup (Alternative)**
@@ -764,13 +765,29 @@ The repository uses automated tools to ensure code quality and consistency:
 
 #### Setup
 
-1. Install Node.js dependencies:
+1. Install dependencies (automatically includes pre-commit hooks):
+
+   ```bash
+   ./scripts/setup.sh
+   ```
+
+   Or manually:
 
    ```bash
    npm install
+   npx husky install
    ```
 
-2. Git hooks will be automatically set up via Husky
+#### Pre-commit Hooks
+
+This repository uses Husky and lint-staged to automatically check and format code before commits:
+
+- **JavaScript files**: ESLint (with auto-fix) + Prettier
+- **CSS files**: Prettier formatting
+- **Markdown files**: markdownlint-cli2
+- **JSON/YAML files**: Prettier formatting
+
+When you commit, these checks run automatically on staged files only. If any issues are found that can't be auto-fixed, the commit will be blocked.
 
 #### Linters
 
@@ -785,12 +802,16 @@ The repository uses automated tools to ensure code quality and consistency:
 - **Tests**: Jest
   - Run manually: `npm test`
 
-#### Git Hooks
+#### How Pre-commit Works
 
-- **Pre-commit**: Automatically runs linters on staged files
-  - Only lints files that are staged for commit
-  - Prevents committing code with linting errors
-  - Automatically formats code when possible
+1. Stage your changes: `git add .`
+2. Commit: `git commit -m "your message"`
+3. Pre-commit hooks automatically:
+   - Run ESLint on JavaScript files (auto-fixes when possible)
+   - Format all files with Prettier
+   - Check Markdown files with markdownlint
+   - If all checks pass, the commit proceeds
+   - If any check fails, the commit is blocked with error details
 
 #### Skip Hooks
 
