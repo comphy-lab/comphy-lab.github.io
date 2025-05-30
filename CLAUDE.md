@@ -20,6 +20,7 @@ This repository contains the CoMPhy Lab website, a static site built with Jekyll
   - Install Bundler if not present
   - Install all Ruby gems and npm packages
   - Build the site and generate search database
+  - Install Git hooks for pre-commit checks (via Husky)
   - Run validation tests
 
 - **Manual dependency installation (if setup.sh was already run):**
@@ -146,6 +147,25 @@ This repository contains the CoMPhy Lab website, a static site built with Jekyll
   - Load command-palette.js before command-data.js
   - Load Fuse.js before any code that uses it
   - Run lint-check.sh to automatically fix order issues
+
+## Pre-commit Hooks
+
+This repository uses Husky and lint-staged for automatic code quality checks:
+
+- **Automatic Installation**: Hooks are installed automatically when you run `./scripts/setup.sh`
+- **What Gets Checked**: Only staged files are checked before commit
+- **JavaScript**: ESLint (with auto-fix) + Prettier formatting
+- **CSS**: Prettier formatting
+- **Markdown**: markdownlint-cli2 validation
+- **JSON/YAML**: Prettier formatting
+
+If a commit fails due to linting errors:
+1. Review the error messages
+2. Fix any issues that couldn't be auto-fixed
+3. Stage the fixes: `git add .`
+4. Retry the commit
+
+To bypass hooks in emergencies: `git commit --no-verify`
 
 ## Scripts Overview
 
