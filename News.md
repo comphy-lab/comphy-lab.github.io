@@ -13,6 +13,10 @@
 
 Starting <strong>July 1st, 2025</strong>, the CoMPhy Lab will be relocating to Durham University, UK. We are excited to join the [Condensed Matter Physics section](https://www.durham.ac.uk/research/institutes-and-centres/condensed-matter-physics/) in the [Department of Physics](https://www.durham.ac.uk/departments/academic/physics/) and continue our research in computational physics and fluid dynamics in our new home.
 
+### June
+
+- <strong>Jnandeep Talukdar</strong> <a href="https://github.com/spilltheT"><i class="fa-brands fa-github" style="font-size: 1.5em; color: #8a2be2;"></i></a> graduated with a master's degree (grade: 10/10) from University of Twente. <strong>Thesis:</strong> <a href="https://bit.ly/thesisJnan" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf" style="margin-right: 8px; font-size: 1.2em; color: #e63946;"></i>Singularities with Surfactants</a>
+
 ### May
 
 - [Bashkatov, A., Bürkle, F., Demirkır, Ç., Ding, W., <strong>Sanjay, V.</strong>, Babich, A., Yang, X., Mutschke, G., Czarske, J., Lohse, D., et al. Electrolyte droplet spraying in H2 bubbles during water electrolysis under normal and microgravity conditions. Nat. Commun., 16, 4580 (2025).](/research#17)
