@@ -5,7 +5,6 @@ title: Research
 
 # Research
 
-
 ## Sort by topic
 
 <tags><span>Bubbles</span></tags>
@@ -34,6 +33,13 @@ title: Research
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/49KoJwXiDl4?si=uxdpYyKFFd8E6jvN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+### Saini, M., <strong>Sanjay, V.</strong>, Saade, Y., Lohse, D., & Popinet, S. Implementation of integral surface tension formulations in a volume of fluid framework and their applications to Marangoni flows. arXiv preprint arXiv:2502.02712 (2025).
+
+<tags><span>Marangoni flows</span><span>Surface tension</span><span>Numerical methods</span></tags>
+
+[![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2502.02712&color=green)](https://arxiv.org/abs/2502.02712)
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
+
 ### Mclauchlan, J., Walker, J. S., <strong>Sanjay, V.</strong>, Jalaal, M., Reid, J. P., Squires, A. M., & Souslov, A. Bouncing microdroplets on hydrophobic surfaces. arXiv preprint arXiv:2503.22527 (2025).
 
 <tags><span>Drops</span><span>Bouncing</span></tags>
@@ -53,7 +59,6 @@ title: Research
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/QbQ4wrTjTks?si=SZsmKgXX28Fxcgru" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
 
 <h3 id="16">[16] <strong>Dixit, A.</strong>, Oratis, A., Zinelis, K., Lohse, D., & <strong>Sanjay, V.</strong> Viscoelastic Worthington Jets and Droplets Produced by Bursting Bubbles. J. Fluid Mech., 1010, A2 (2025).</h3>
 
@@ -75,7 +80,6 @@ title: Research
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/VatsalSy/Impact-forces-of-water-drops-falling-on-superhydrophobic-surfaces.git)
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
 
-
 ![Parameter space of drop impact](https://www.dropbox.com/scl/fi/rwrl444r73nayhw1jl4j2/SL2-theory_num.png?rlkey=ekywyjaui2n79djl4qtgevegn&raw=1){: width="75%" .center-block style="display: block; margin-left: auto; margin-right: auto;"}
 
 <h3 id="14">[14] <strong>Sanjay, V.</strong>, Zhang, B., Lv, C., & Lohse, D. The role of viscosity on drop impact forces on non-wetting surfaces. J. Fluid Mech., 1004, A6 (2025).</h3>
@@ -89,7 +93,8 @@ title: Research
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=ffq7kMMX3_ijm5ZP&amp;list=PLf5C5HCrvhLH8BwyeMSusdvyFmQYGP2qt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-#### Highlights
+### Highlights
+
 * Cover of that volume of J. Fluid Mech.
 
 <div style="text-align: center; margin: 15px 0;">
@@ -121,7 +126,8 @@ title: Research
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=KXlRYHJvqW3zel4B&amp;list=PLf5C5HCrvhLHDfTeG_mk3Ul5NRDxCIOee" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-#### Highlights
+### Highlights
+
 * Cover of that volume of J. Fluid Mech.
 
 <div style="text-align: center; margin: 15px 0;">
@@ -140,7 +146,6 @@ title: Research
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=EskoUUszojk07SjU&amp;list=PLf5C5HCrvhLHG5t3iPscUuEp_gbD4XHyU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
 
 <h3 id="10">[10] <strong>Sanjay, V.</strong>, Lakshman, S., Chantelot, P., Snoeijer, J. H., & Lohse, D. Drop impact on viscous liquid films. J. Fluid Mech., 958, A25 (2023).</h3>
 
@@ -184,7 +189,8 @@ title: Research
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=CBVTgXd3QiYucPOG&amp;list=PLf5C5HCrvhLGmlYTF1Gg2WviZ-Bkmy2qr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-#### Highlights
+### Highlights
+
 * As of March/April 2024, this highly cited paper received enough citations to place it in the top 1% of the academic field of Physics based on a highly cited threshold for the field and publication year. Source: Web of Science.
 * Editor's Suggestion of that issue of Phys. Rev. Lett.
 * Research Highlight: Castelvecchi, D. The physics of a bouncing droplet's impact. _Nature_, 609, 225 (2022). [![DOI](https://img.shields.io/static/v1.svg?style=flat-square&label=DOI:&message=10.1038/d41586-022-02302-w&color=green)](https://doi.org/10.1038/d41586-022-02302-w)
