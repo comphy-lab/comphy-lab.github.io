@@ -6,237 +6,249 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This repository contains the CoMPhy Lab website, a static site built with Jekyll for the Computational Multiphase Physics Laboratory. The site features research publications, team member information, teaching materials, and lab news.
 
-## Build and Development Commands
+## Key Architecture Patterns
 
-- **Complete setup (for fresh or existing environments):**
+### Command Palette and Search System
 
-  ```bash
-  ./scripts/setup.sh
-  ```
-  
-  This script will automatically:
-  - Install Ruby via rbenv if not present
-  - Install Node.js via nvm if not present
-  - Install Bundler if not present
-  - Install all Ruby gems and npm packages
-  - Build the site and generate search database
-  - Install Git hooks for pre-commit checks (via Husky)
-  - Run validation tests
+The website implements a sophisticated command palette system that requires coordination between multiple files:
 
-- **Manual dependency installation (if setup.sh was already run):**
+- **`command-palette.js`** must load before **`command-data.js`** (dependency order)
+- **Fuse.js** powers fuzzy search functionality
+- Search database (`search_db.json`) is maintained in a separate repository and updated via GitHub Actions
+- Context-aware commands based on current page location
+- Keyboard shortcut: ⌘K (Mac) / Ctrl+K (Windows)
 
-  ```bash
-  bundle install && npm install
-  ```
-  
-- **Update dependencies:**
+### Theme System Architecture
 
-  ```bash
-  bundle update && npm update
-  ```
+- CSS variables defined in `:root` for light theme, overridden in `[data-theme="dark"]`
+- Theme state persisted in localStorage and synced across all pages
+- Page-specific theme variables in `research.css`, `teaching.css`, `team.css`
+- Smooth transitions between themes using CSS transitions
 
-- **Build site and generate search database:**
+### Research Tag Filtering
 
-  ```bash
-  ./scripts/build.sh
-  ```
+- Client-side JavaScript filtering with SEO-friendly static pages
+- Pre-generated tag pages that redirect to filtered views
+- Multiple URL variations for better SEO coverage
+- Tags must be added to `_research/index.md` using `<tags><span>TagName</span></tags>` format
 
-- **Run local server:**
+## Essential Commands
 
-  ```bash
-  bundle exec jekyll serve
-  ```
+```bash
+# Initial setup (installs Ruby/Node.js if needed)
+./scripts/setup.sh
 
-- **View website in browser:**
-  <http://localhost:4000>
+# Build site with all assets
+./scripts/build.sh
 
-- **Generate SEO tags:**
+# Local development server
+bundle exec jekyll serve
 
-  ```bash
-  bundle exec ruby scripts/generate_seo_tags.rb
-  ```
+# Run before committing
+./scripts/lint-check.sh
 
-- **Generate filtered research pages:**
+# Run a single test
+npm test -- command-data.test.js
 
-  ```bash
-  bundle exec ruby scripts/generate_filtered_research.rb
-  ```
-  
-- **Run code checks and auto-fixes:**
+# Run tests with coverage
+npm test -- --coverage
 
-  ```bash
-  ./scripts/lint-check.sh
-  ```
+# Fix common issues
+./scripts/fix-script-order.sh    # Fix script loading order
+./scripts/fix-js-line-length.sh  # Enforce 80 char limit
+./scripts/fix-quotes.sh          # Standardize to double quotes
+```
 
-- **Run tests:**
+## Content Management
 
-  ```bash
-  # Jest tests with coverage
-  npm test -- --coverage
-  
-  # Simple validation tests
-  node scripts/simple-test.js
-  
-  # Test wrapper
-  ./scripts/runTests.sh
-  ```
+### Adding Research Papers
 
-- **Fix JavaScript issues:**
+Add to `_research/index.md` with this exact format:
 
-  ```bash
-  # Fix line length (80 chars max)
-  ./scripts/fix-js-line-length.sh
-  
-  # Convert single to double quotes
-  ./scripts/fix-quotes.sh
-  
-  # Fix script loading order
-  ./scripts/fix-script-order.sh
-  ```
+```markdown
+<h3 id="NUMBER">[NUMBER] Author1, A., **Author2, B.**, & Author3, C. Title. _Journal_, Volume, Pages (Year).</h3>
 
-## Code Organization
+<tags><span>Tag1</span><span>Tag2</span><span>Featured</span></tags>
 
-- **Jekyll Collections:** `_team`, `_research`, `_teaching`
-- **Layouts:** Located in `_layouts/` directory with corresponding CSS files
-- **Assets:** CSS, JavaScript, images, and favicon files in `assets/` directory
-- **Content:** Primarily in Markdown format with HTML for complex components
+[![Badge](https://img.shields.io/static/v1.svg?style=flat-square&label=LABEL&message=MESSAGE&color=COLOR)](URL)
+```
 
-## Key Features and Components
+- Use `**Name**` for lab members
+- Add `<span>Featured</span>` tag to display on homepage (max 2)
+- ID attribute enables direct linking: `/research/#NUMBER`
 
-1. **Search and Command Palette:**
-   - Triggered by keyboard shortcut (⌘K on Mac, ctrl+K on Windows)
-   - JavaScript implementation in `assets/js/command-data.js` and `assets/js/command-palette.js`
-   - CSS styling in `assets/css/command-palette.css`
+### Team Member Format
 
-2. **Theme Toggle:**
-   - Light/dark mode support across all pages
-   - Theme variables in `assets/css/styles.css` and page-specific CSS
-   - Theme state persisted via localStorage
+In `_team/index.md`:
 
-3. **Research Publications:**
-   - Filterable by tags
-   - Pre-generated SEO-friendly tag pages
-   - Publication entries in `_research/index.md`
+```html
+<img src="../assets/images/team/NUMBER.webp" alt="Name" width="250" height="250" class="member-image">
+```
 
-4. **Responsive Design:**
-   - Breakpoints at 1700px, 1300px, 900px, 768px, 500px
-   - Mobile-first approach for media queries
+### News
 
-## Content Management Guidelines
+Managing news items across the site:
 
-- **Research Papers:** Add to `_research/index.md` following the established format
-- **Team Members:** Modify `_team/index.md` using the existing structure
-- **Teaching Content:** Add course pages to `_teaching/` directory
-- **News:** Update `News.md` with new announcements
+- **Using slash command**: `/add-news "Your news content here"` - automatically handles both News.md and history.md
+- **Manual editing**:
+  - Add to both `News.md` (main page) and `history.md` (archive)
+  - News.md maintains only 5 most recent items (plus pinned Durham announcement)
+  - Format: `- News content` under `### Month Year` headers
+- **Important notes**:
+  - Pinned items have no month/year header
+  - Maintain blank lines between sections
+  - Older items removed from News.md remain in history.md
 
-## CSS Architecture
+### Teaching Course Pages
 
-- CSS variables for colors, typography, and spacing
-- Page-specific styles in dedicated CSS files (research.css, teaching.css, team.css)
-- Dark theme support via [data-theme="dark"] selector
-- Mobile-first responsive design
+- Main page: `_teaching/index.md` (uses `teaching` layout)
+- Course pages: `_teaching/YYYY-CourseName-Location.md` (uses `teaching-course` layout)
+- Images: Store in `/assets/images/teaching/` (600x400px for cards, 1200x400px for banners)
 
-## JavaScript Guidelines
+## Critical Implementation Details
 
-- Use ES6+ features (arrow functions, const/let, template literals)
-- Include 'use strict' mode
-- Use async/await for asynchronous operations
-- Implement error handling with try/catch blocks
-- Use camelCase for variable and function names
-- Follow proper dependency order in script loading:
-  - Load command-palette.js before command-data.js
-  - Load Fuse.js before any code that uses it
-  - Run lint-check.sh to automatically fix order issues
+### Script Dependencies
 
-## Pre-commit Hooks
+The lint-check.sh script automatically fixes these, but be aware:
 
-This repository uses Husky and lint-staged for automatic code quality checks:
+- Fuse.js must load before any search functionality
+- command-palette.js must load before command-data.js
+- Theme initialization must happen early in page load
 
-- **Automatic Installation**: Hooks are installed automatically when you run `./scripts/setup.sh`
-- **What Gets Checked**: Only staged files are checked before commit
-- **JavaScript**: ESLint (with auto-fix) + Prettier formatting
-- **CSS**: Prettier formatting
-- **Markdown**: markdownlint-cli2 validation
-- **JSON/YAML**: Prettier formatting
+### Pre-commit Hooks
 
-If a commit fails due to linting errors:
-1. Review the error messages
-2. Fix any issues that couldn't be auto-fixed
-3. Stage the fixes: `git add .`
-4. Retry the commit
+Automatically installed via setup.sh using Husky:
 
-To bypass hooks in emergencies: `git commit --no-verify`
+- ESLint with auto-fix for JavaScript
+- Prettier for formatting
+- markdownlint for Markdown files
+- Only staged files are checked
+- Bypass with `git commit --no-verify` in emergencies
 
-## Scripts Overview
+### Search Database Updates
 
-### Core Scripts
+- Maintained in [comphy-lab/comphy-search](https://github.com/comphy-lab/comphy-search) repository
+- Updated daily via GitHub Actions
+- Includes blog content from blogs.comphy-lab.org
+- Manual trigger available in Actions tab
 
-- **setup.sh** - Complete environment setup (installs Ruby/Node.js if needed)
-- **build.sh** - Builds site, generates search database, SEO tags, and filtered pages
-- **lint-check.sh** - Runs all linters and auto-fixes issues
+### CSS Variable System
 
-### Utility Scripts
+Key variables for customization:
 
-- **fix-js-line-length.sh** - Ensures JS files stay within 80 character limit
-- **fix-quotes.sh** - Standardizes quotes in JavaScript files
-- **fix-script-order.sh** - Fixes script dependency loading order
-- **simple-test.js** - Lightweight test runner for basic validation
-- **runTests.sh** - Wrapper for running npm tests
+```css
+/* Colors */
+--primary-color, --secondary-color, --accent-color
+--text-color, --bg-color, --card-bg
+/* Typography */
+--font-family-serif, --font-family-sans
+/* Spacing */
+--spacing-unit, --content-max-width
+/* Shadows & Transitions */
+--shadow-sm, --shadow-md, --transition-speed
+```
 
-### Ruby Scripts
+## Testing Strategy
 
-- **generate_seo_tags.rb** - Creates SEO meta tags for all pages
-- **generate_filtered_research.rb** - Generates tag-based research filter pages
+### Test Coverage Areas
 
-## Testing
+- Command palette functionality (navigation, search, keyboard shortcuts)
+- Line breaking utilities (80-character enforcement)
+- Platform detection (Mac vs Windows shortcuts)
+- Teaching page sorting algorithms
+- Browser API mocks in `setup.js`
 
-### Running Tests
+### Running Specific Tests
 
-- Use `npm test` for full Jest test suite
-- Use `npm test -- --coverage` for coverage report
-- Use `node scripts/simple-test.js` for quick validation
-- Tests are located in `/tests` directory
+```bash
+# Test command palette
+npm test -- command-data.test.js
 
-### Test Files
+# Test with watch mode for development
+npm test -- --watch
 
-- **command-data.test.js** - Tests command palette functionality
-- **fix-line-length.test.js** - Tests line breaking utilities
-- **platform-utils.test.js** - Tests platform detection
-- **shortcut-key.test.js** - Tests keyboard shortcuts
-- **teaching.test.js** - Tests course sorting
-- **setup.js** - Browser environment mocks
+# Quick validation without Jest
+node scripts/simple-test.js
+```
 
-### Writing Tests
+## Performance Considerations
 
-- Follow existing patterns in test files
-- Mock browser APIs using setup.js
-- Aim for 80%+ code coverage
-- Test edge cases and error handling
+### Build Process
 
-## Deployment Process
+The build.sh script performs these operations in sequence:
 
-- Site is automatically deployed via GitHub Pages when changes are merged to main
-- GitHub Actions workflows trigger the build and deployment process
-- Cloudflare cache is purged automatically on deployment
+1. Jekyll build with production environment
+2. Search database generation (if in GitHub Actions)
+3. SEO tag generation
+4. Filtered research page creation
 
-## Important Instructions
+### Asset Optimization
 
-### Setup Process
+- Images should be optimized before adding
+- Use WebP format where possible
+- Lazy loading implemented for images
+- CSS consolidated by breakpoint for better caching
 
-- **Always use `./scripts/setup.sh` for environment setup** - This single script handles both fresh installations and existing environments
-- Do not create separate setup scripts - everything is consolidated in setup.sh
-- The script automatically installs Ruby/Node.js if not present
+## Important Conventions
 
 ### File Management
 
 - ALWAYS prefer editing existing files over creating new ones
-- NEVER proactively create documentation files unless explicitly requested
-- Do what has been asked; nothing more, nothing less
+- Developer documentation (README.md, CONTRIBUTING.md, etc.) should NEVER be created unless explicitly requested
+- Site content markdown files (research papers, news items, teaching pages) follow their specific workflows:
+  - Research: Add to `_research/index.md` following the documented format
+  - News: Use `/add-news` command or edit `News.md` and `history.md`
+  - Teaching: Create course pages in `_teaching/` directory when adding new courses
+- Follow existing patterns in the codebase
 
-### Development Workflow
+### Code Style
 
-1. Run `./scripts/setup.sh` for initial setup
-2. Use `./scripts/build.sh` to build the site
-3. Run `bundle exec jekyll serve` for local development
-4. Use `./scripts/lint-check.sh` before committing
-5. Run tests with `npm test` to ensure quality
+- 80-character line limit for JavaScript
+- Double quotes for strings
+- ES6+ features (arrow functions, const/let, async/await)
+- Mobile-first CSS with min-width media queries
+- BEM naming for CSS classes
+
+### Git Workflow
+
+- Work on feature branches
+- Run `./scripts/lint-check.sh` before committing
+- Ensure tests pass with `npm test`
+- Reference issue numbers in commits
+
+## Custom Slash Commands
+
+### /add-news
+
+Adds a news item to both News.md and history.md while maintaining the 5-item limit on the main page.
+
+**Workflow:**
+
+1. Add the news item to the appropriate month/year section in both files
+2. If month/year doesn't exist, create it
+3. Keep only 5 most recent news items in News.md (excluding the pinned Durham announcement)
+4. Preserve the pinned item (recognized by not having ### Month header above it)
+
+**Usage:**
+
+```bash
+/add-news "Your news content here"
+```
+
+**Implementation steps:**
+
+1. Read both News.md and history.md
+2. Ask for month/year if not provided or unclear
+3. Add to history.md in the correct chronological position
+4. Add to News.md in the correct position
+5. Count non-pinned news items in News.md
+6. If count > 5, remove oldest items from News.md only
+7. Save both files
+
+**Important notes:**
+
+- The pinned Durham announcement has no month/year header
+- News items start with "- " (dash and space)
+- Maintain blank lines between sections for proper formatting
+- In history.md, years are sorted descending (newest first)
+- Within a year, months appear in chronological order
