@@ -180,7 +180,11 @@ The build.sh script performs these operations in sequence:
 ### File Management
 
 - ALWAYS prefer editing existing files over creating new ones
-- NEVER create documentation files unless explicitly requested
+- Developer documentation (README.md, CONTRIBUTING.md, etc.) should NEVER be created unless explicitly requested
+- Site content markdown files (research papers, news items, teaching pages) follow their specific workflows:
+  - Research: Add to `_research/index.md` following the documented format
+  - News: Use `/add-news` command or edit `News.md` and `history.md`
+  - Teaching: Create course pages in `_teaching/` directory when adding new courses
 - Follow existing patterns in the codebase
 
 ### Code Style
