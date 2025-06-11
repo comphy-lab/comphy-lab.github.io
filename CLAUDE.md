@@ -85,6 +85,20 @@ In `_team/index.md`:
 <img src="../assets/images/team/NUMBER.webp" alt="Name" width="250" height="250" class="member-image">
 ```
 
+### News
+
+Managing news items across the site:
+
+- **Using slash command**: `/add-news "Your news content here"` - automatically handles both News.md and history.md
+- **Manual editing**:
+  - Add to both `News.md` (main page) and `history.md` (archive)
+  - News.md maintains only 5 most recent items (plus pinned Durham announcement)
+  - Format: `- News content` under `### Month Year` headers
+- **Important notes**:
+  - Pinned items have no month/year header
+  - Maintain blank lines between sections
+  - Older items removed from News.md remain in history.md
+
 ### Teaching Course Pages
 
 - Main page: `_teaching/index.md` (uses `teaching` layout)
