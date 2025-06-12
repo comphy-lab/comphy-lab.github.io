@@ -5,7 +5,7 @@ title: Our Team & Collaborators
 
 ## Present Team
 
-### Vatsal Sanjay (PI)
+### Dr. Vatsal Sanjay (PI)
 
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/VatsalSy)
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?user=tHb_qZoAAAAJ&hl=en)
@@ -23,7 +23,7 @@ title: Our Team & Collaborators
 
 [Download CV](https://raw.githubusercontent.com/VatsalSy/Vatsal_CV/master/Vatsal_CV.pdf){: .cv-button}
 
-### Ayush Dixit (Ph.D)
+### Ayush Dixit MSc
 
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/ayushkumardixit)
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?hl=en&user=ws43SmkAAAAJ)
@@ -37,7 +37,7 @@ Joint with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 
 **Research Interest:** Viscoelastic Flows, Bursting Bubbles, Respiratory Drops.
 
-### Aman Bhargava (Ph.D)
+### Aman Bhargava MSc
 
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/amanb1901)
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?hl=en&user=AmGOP8gAAAAJ)
@@ -52,7 +52,7 @@ Joint with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 
 **Research Interest:** Inertial Contact Line, Drop Retraction.
 
-### Jnandeep Talukdar (M.Sc.)
+### Jnandeep Talukdar MSc
 
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/spilltheT)
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?hl=en&user=Coxj4VQAAAAJ)
@@ -68,7 +68,7 @@ Joint with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 
 **Research Interest:** Surfactant Dynamics, Dissipative Anomaly, Soft Wetting.
 
-### Saumili Jana (M.Sc.)
+### Saumili Jana MSc
 
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/SaumiliJana)
 
@@ -82,7 +82,7 @@ Joint with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 
 **Research Interest:** Soft Impact.
 
-### Floris Hoek (M.Sc.)
+### Floris Hoek BSc
 
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/Floris-Hoek)
 
