@@ -18,14 +18,14 @@ title: Our Team & Collaborators
 - Department of Physics, Durham Univ. / since 2025
 - [Postdoc, Phys. Fluids - Univ. Twente / 2022&#8209;25](https://pof.tnw.utwente.nl/people/profile/1330)
 - **Ph.D.**, Phys. Fluids - Univ. Twente / 2018&#8209;22,  <a href="https://doi.org/10.3990/1.9789036554077" class="pdf-link" style="display: inline-flex; align-items: center; margin-left: 5px;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Viscous Free-Surface Flows</a>
-- **B.Tech + M.Tech**, Two-Phase Flow & Instability Lab, IIT-R / 2013&#8209;18, <a href="http://dx.doi.org/10.13140/RG.2.2.22294.04166" class="pdf-link" style="display: inline-flex; align-items: center; margin-left: 5px;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Understanding of mutual interactions between liquid jets: Entrainment and sheet formation</a>
+- **B.Tech. + M.Tech.**, Two-Phase Flow & Instability Lab, IIT-R / 2013&#8209;18, <a href="http://dx.doi.org/10.13140/RG.2.2.22294.04166" class="pdf-link" style="display: inline-flex; align-items: center; margin-left: 5px;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Understanding of mutual interactions between liquid jets: Entrainment and sheet formation</a>
 - [Personal Website](https://vatsalsanjay.com), Photo: Florian Braakman.
 
 **Research Interest:** See [research page](/research)
 
 [Download CV](https://raw.githubusercontent.com/VatsalSy/Vatsal_CV/master/Vatsal_CV.pdf){: .cv-button}
 
-### Ayush Dixit MSc
+### Ayush Dixit M.Sc.
 
 <span style="font-size: 1.1em;">Ph.D. Student, University of Twente</span>
 
@@ -36,16 +36,16 @@ Co-advised with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 
 <img src="/assets/images/team/1.jpg" alt="Ayush Dixit" loading="lazy" width="200" height="200">
 
-- [Phys. Fluids - Univ. Twente / 2023-now](https://pof.tnw.utwente.nl/people/profile/2068)
+- [Phys. Fluids - Univ. Twente / 2023&#8209;now](https://pof.tnw.utwente.nl/people/profile/2068)
 - **B.Tech + M.Tech**, Two-Phase Flow & Instability Lab, IIT-R / 2018&#8209;23, <a href="http://dx.doi.org/10.13140/RG.2.2.23218.79040" class="pdf-link" style="display: inline-flex; align-items: center; margin-left: 5px;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Understanding interfacial interaction in macro and nano scales</a>
 
 **Research Interest:** Viscoelastic Flows, Bursting Bubbles, Respiratory Drops.
 
-### Aman Bhargava MSc
+### Aman Bhargava M.Sc.
 
 <span style="font-size: 1.1em;">Ph.D. Student, University of Twente</span>
 
-Co-advised with with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
+Co-advised with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/amanb1901)
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?hl=en&user=AmGOP8gAAAAJ)
@@ -58,11 +58,11 @@ Co-advised with with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 
 **Research Interest:** Inertial Contact Line, Drop Retraction.
 
-### Jnandeep Talukdar MSc
+### Jnandeep Talukdar M.Sc.
 
 <span style="font-size: 1.1em;">Ph.D. Student, University of Twente</span>
 
-Co-advised with with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
+Co-advised with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/spilltheT)
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?hl=en&user=Coxj4VQAAAAJ)
@@ -70,17 +70,17 @@ Co-advised with with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 
 <img src="/assets/images/team/3.jpg" alt="Jnandeep Talukdar" loading="lazy" width="200" height="200">
 
-- [Phys. Fluids - Univ. Twente / 2025-now](https://pof.tnw.utwente.nl/people/profile/1938)
+- [Phys. Fluids - Univ. Twente / 2025&#8209;now](https://pof.tnw.utwente.nl/people/profile/1938)
 - **M.Sc.**, Phys. Fluids - Univ. Twente / 2023&#8209;25, <a href="https://bit.ly/thesisJnan" class="pdf-link" style="display: inline-flex; align-items: center; margin-left: 5px;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Singularities with Surfactants</a>
 - **B.Tech.** Mech. Eng., IIT-P / 2019&#8209;23
 
 **Research Interest:** Surfactant Dynamics, Dissipative Anomaly, Soft Wetting.
 
-### Saumili Jana MSc
+### Saumili Jana M.Sc.
 
 <span style="font-size: 1.1em;">Ph.D. Student, University of Twente</span>
 
-Co-advised with with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
+Co-advised with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/SaumiliJana)
 
@@ -91,11 +91,11 @@ Co-advised with with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 
 **Research Interest:** Soft Impact.
 
-### Floris Hoek BSc
+### Floris Hoek B.Sc.
 
 <span style="font-size: 1.1em;">M.Sc. Student, University of Twente</span>
 
-Co-advised with with [Martin van der Hoef](https://pof.tnw.utwente.nl/people/profile/244) & [Alvaro Marin](https://pof.tnw.utwente.nl/people/profile/243)
+Co-advised with [Martin van der Hoef](https://pof.tnw.utwente.nl/people/profile/244) & [Alvaro Marin](https://pof.tnw.utwente.nl/people/profile/243)
 
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/Floris-Hoek)
 
@@ -308,7 +308,7 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 
 **Collaboration on:** Electrolysis, Bubble Coalescence, Swimming Bubbles.
 
-### Arivazhagan (Ari) Balasubramanian MSc
+### Arivazhagan (Ari) Balasubramanian M.Sc.
 
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?user=xyheRZ8AAAAJ)
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/GbArivazhagan)
@@ -329,14 +329,14 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 
 ## Our Alumni
 
-### Milan Sent BSc
+### Milan Sent B.Sc.
 
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/mdjsent)
 
 - **2025:** Graduated with B.Sc., Univ. Twente
 - <a href="https://tinyurl.com/2ycunjcr" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Spinning Pizza</a>
 
-### Valentin Rosario MSc
+### Valentin Rosario M.Sc.
 
 [<i class="fa-brands fa-linkedin" style="font-size: 1.5em; color: black;"></i>](https://www.linkedin.com/in/valentin-rosario-6377602b2/?originalSubdomain=nl)
 [<i class="fa-brands fa-github" style="font-size: 2em; color: black;"></i>](https://github.com/ValeRos9)
@@ -344,7 +344,7 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 - **2024:** Graduated with M.Sc., Univ. Amsterdam
 - <a href="https://tinyurl.com/2cjsjvr4" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Modelling the Ward--Hunt ice-shelf as viscoelastic solid</a>
 
-### Swen van den Heuvel MSc
+### Swen van den Heuvel M.Sc.
 
 [<i class="fa-brands fa-linkedin" style="font-size: 1.5em; color: black;"></i>](https://www.linkedin.com/in/swen-van-den-heuvel-33a1901aa/)
 
@@ -352,7 +352,7 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 - **2023:** [Graduated with M.Sc., Univ. Twente](https://pof.tnw.utwente.nl/people/profile/2119)
 - <a href="https://bit.ly/4er5VaH" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Hydrodynamic forces acting on vertically rising bubbles</a>
 
-### Niels Kuipers BSc
+### Niels Kuipers B.Sc.
 
 [<i class="fa-brands fa-linkedin" style="font-size: 1.5em; color: black;"></i>](https://www.linkedin.com/in/nielskuipers1/)
 
@@ -360,18 +360,18 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 - **2023:** [Graduated with B.Sc., Univ. Twente](https://pof.tnw.utwente.nl/people/profile/2064)
 - <a href="https://tinyurl.com/258jvdyv" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Partial coalescence of drops on viscous films</a>
 
-### C. H. (Luuk) Maurits MSc
+### C. H. (Luuk) Maurits M.Sc.
 
 - **2023:** [Graduated with M.Sc., Univ. Twente](https://pof.tnw.utwente.nl/people/profile/1741)
 - <a href="https://bit.ly/ThesisLuuk" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>When Laplace meets Marangoni</a>
 
-### Tom Appleford MSc
+### Tom Appleford M.Sc.
 
 - **Now:** [Ph.D. Student, Fluid Lab - Univ. Amsterdam](https://www.fluidlab.nl/team)
 - **2022:** [Graduated with M.Sc., Univ. Amsterdam](https://pof.tnw.utwente.nl/people/profile/1741)
 - <a href="https://bit.ly/ThesisTom" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>The deformation of a droplet in a viscoplastic simple shear flow</a>
 
-### Twan Heijink BSc
+### Twan Heijink B.Sc.
 
 [<i class="fa-brands fa-linkedin" style="font-size: 1.5em; color: black;"></i>](https://www.linkedin.com/in/twanheijink/)
 
@@ -379,7 +379,7 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 - **2021:** [Graduated with B.Sc., Saxion Univ.](https://pof.tnw.utwente.nl/people/profile/1822)
 - <a href="https://bit.ly/ThesisTwanHeijink" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Standing waves at a fluid-fluid interface with plastocapillarity</a>
 
-### Steven Meuleman MSc
+### Steven Meuleman M.Sc.
 
 [<i class="fa-brands fa-linkedin" style="font-size: 1.5em; color: black;"></i>](https://www.linkedin.com/in/steven-meuleman/)
 
@@ -387,7 +387,7 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 - **2020:** Graduated with B.Sc., Univ. Twente
 - <a href="https://bit.ly/ThesisStevenM" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Simulations of foam generation for a custom axisymmetric core-shell nozzle</a>
 
-### Thijmen Kroeze MSc
+### Thijmen Kroeze M.Sc.
 
 [<i class="fa-brands fa-linkedin" style="font-size: 1.5em; color: black;"></i>](https://www.linkedin.com/in/thijmen-kroeze-535aa3207/)
 
@@ -395,13 +395,13 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 - **2020:** [Graduated with B.Sc., Univ. Twente](https://pof.tnw.utwente.nl/people/profile/1630)
 - <a href="https://bit.ly/ThesisThijmenKroeze" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Singular jet dynamics of drop impacts at high Bond numbers</a>
 
-### Coen Verschuur MSc
+### Coen Verschuur M.Sc.
 
 - **Now:** [Ph.D. Student, Phys. Fluids - Univ. Twente](https://pof.tnw.utwente.nl/people/profile/1709)
 - **2020:** [Graduated with B.Sc., Univ. Twente](https://pof.tnw.utwente.nl/people/profile/1709)
 - <a href="https://bit.ly/ThesisCoenVerschuur" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Early time dynamics in immiscible drop impacts</a>
 
-### Pim J. Dekker MSc
+### Pim J. Dekker M.Sc.
 
 [<i class="fa-brands fa-linkedin" style="font-size: 1.5em; color: black;"></i>](https://www.linkedin.com/in/pim-dekker/)
 
@@ -409,7 +409,7 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 - **2019:** [Graduated with B.Sc., Univ. Twente](https://pof.tnw.utwente.nl/people/profile/1431)
 - <a href="https://bit.ly/ThesisPimDekker" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Spreading of a drop on a water-air interface</a>
 
-### Laurence Bruggink MSc
+### Laurence Bruggink M.Sc.
 
 [<i class="fa-brands fa-linkedin" style="font-size: 1.5em; color: black;"></i>](https://www.linkedin.com/in/laurence-bruggink-b733b222a/)
 
