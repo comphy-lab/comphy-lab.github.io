@@ -379,6 +379,18 @@
   color: var(--member-content-text);
 }
 
+/* Prevent breaking of date ranges */
+.member-content li::first-line {
+  word-break: keep-all;
+}
+
+/* Keep date ranges together */
+.member-content li {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: manual;
+}
+
 /* Special styling for collaboration sections */
 .member-content p strong,
 .team-member strong,
