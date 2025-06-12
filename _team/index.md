@@ -7,6 +7,8 @@ title: Our Team & Collaborators
 
 ### Dr. Vatsal Sanjay (PI)
 
+<span style="font-size: 1.1em;">Assistant Professor, Durham University</span>
+
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/VatsalSy)
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?user=tHb_qZoAAAAJ&hl=en)
 [<i class="fa-brands fa-bluesky" style="font-size: 2em; color: #0085ff;"></i>](https://bsky.app/profile/comphy-lab.org)
@@ -25,6 +27,8 @@ title: Our Team & Collaborators
 
 ### Ayush Dixit MSc
 
+<span style="font-size: 1.1em;">Ph.D. Student, University of Twente</span>
+
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/ayushkumardixit)
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?hl=en&user=ws43SmkAAAAJ)
 
@@ -38,6 +42,8 @@ Joint with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 **Research Interest:** Viscoelastic Flows, Bursting Bubbles, Respiratory Drops.
 
 ### Aman Bhargava MSc
+
+<span style="font-size: 1.1em;">Ph.D. Student, University of Twente</span>
 
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/amanb1901)
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?hl=en&user=AmGOP8gAAAAJ)
@@ -53,6 +59,8 @@ Joint with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 **Research Interest:** Inertial Contact Line, Drop Retraction.
 
 ### Jnandeep Talukdar MSc
+
+<span style="font-size: 1.1em;">Ph.D. Student, University of Twente</span>
 
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/spilltheT)
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?hl=en&user=Coxj4VQAAAAJ)
@@ -70,6 +78,8 @@ Joint with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 
 ### Saumili Jana MSc
 
+<span style="font-size: 1.1em;">Ph.D. Student, University of Twente</span>
+
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/SaumiliJana)
 
 <img src="/assets/images/team/4.jpg" alt="Saumili Jana" loading="lazy" width="200" height="200">
@@ -82,6 +92,8 @@ Joint with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 **Research Interest:** Soft Impact.
 
 ### Floris Hoek BSc
+
+<span style="font-size: 1.1em;">M.Sc. Student, University of Twente</span>
 
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/Floris-Hoek)
 
