@@ -133,7 +133,7 @@
   box-shadow: 0 4px 12px var(--team-shadow);
   border-radius: 10px;
   overflow: hidden;
-  padding: 1.2rem 0.8rem; /* Balanced horizontal padding */
+  padding: 1rem 0.7rem; /* Reduced padding for more content space */
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -681,7 +681,7 @@ section.s-map h2::after,
   }
 
   .team-member {
-    padding: 1.2rem 0.8rem; /* Keep consistent with desktop */
+    padding: 1rem 0.7rem; /* Keep consistent with desktop */
     width: calc(100% - 0px); /* Full width on smaller screens */
   }
 }
@@ -778,7 +778,7 @@ section.s-map h2::after,
     max-width: 400px; /* Wider for more content */
     margin-left: auto;
     margin-right: auto;
-    padding: 1.2rem 0.8rem; /* Keep consistent with desktop */
+    padding: 1rem 0.7rem; /* Keep consistent with desktop */
     width: 100%; /* Full width on mobile */
   }
 
