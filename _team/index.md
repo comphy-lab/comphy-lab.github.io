@@ -15,10 +15,10 @@ title: Our Team & Collaborators
 
 <img src="/assets/images/team/0.jpg" alt="Vatsal Sanjay" loading="lazy" width="200" height="200">
 
-- Assistant Professor, Department of Physics, Durham Univ. / since 2025
+- Department of Physics, Durham Univ. / since 2025
 - [Postdoc, Phys. Fluids - Univ. Twente / 2022-25](https://pof.tnw.utwente.nl/people/profile/1330)
-- Ph.D., Phys. Fluids - Univ. Twente / 2018-22,  <a href="https://doi.org/10.3990/1.9789036554077" class="pdf-link" style="display: inline-flex; align-items: center; margin-left: 5px;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Viscous Free-Surface Flows</a>
-- B.Tech + M.Tech, Two-Phase Flow & Instability Lab, IIT-Roorkee / 2013-18,  <a href="http://dx.doi.org/10.13140/RG.2.2.22294.04166" class="pdf-link" style="display: inline-flex; align-items: center; margin-left: 5px;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Understanding of mutual interactions between liquid jets: Entrainment and sheet formation</a>
+- **Ph.D.**, Phys. Fluids - Univ. Twente / 2018-22,  <a href="https://doi.org/10.3990/1.9789036554077" class="pdf-link" style="display: inline-flex; align-items: center; margin-left: 5px;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Viscous Free-Surface Flows</a>
+- **B.Tech + M.Tech**, Two-Phase Flow & Instability Lab, IIT Roorkee / 2013-18, <a href="http://dx.doi.org/10.13140/RG.2.2.22294.04166" class="pdf-link" style="display: inline-flex; align-items: center; margin-left: 5px;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Understanding of mutual interactions between liquid jets: Entrainment and sheet formation</a>
 - [Personal Website](https://vatsalsanjay.com), Photo: Florian Braakman.
 
 **Research Interest:** See [research page](/research)
@@ -36,8 +36,8 @@ Joint supervision with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse
 
 <img src="/assets/images/team/1.jpg" alt="Ayush Dixit" loading="lazy" width="200" height="200">
 
-- [Ph.D. Student, Phys. Fluids - Univ. Twente / 2023-now](https://pof.tnw.utwente.nl/people/profile/2068)
-- B.Tech + M.Tech, Two-Phase Flow & Instability Lab, IIT-Roorkee / 2018-23,<a href="http://dx.doi.org/10.13140/RG.2.2.23218.79040" class="pdf-link" style="display: inline-flex; align-items: center; margin-left: 5px;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Understanding interfacial interaction in macro and nano scales</a>
+- [Phys. Fluids - Univ. Twente / 2023-now](https://pof.tnw.utwente.nl/people/profile/2068)
+- **B.Tech + M.Tech**, Two-Phase Flow & Instability Lab, IIT Roorkee / 2018-23, <a href="http://dx.doi.org/10.13140/RG.2.2.23218.79040" class="pdf-link" style="display: inline-flex; align-items: center; margin-left: 5px;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Understanding interfacial interaction in macro and nano scales</a>
 
 **Research Interest:** Viscoelastic Flows, Bursting Bubbles, Respiratory Drops.
 
@@ -52,9 +52,9 @@ Joint supervision with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse
 
 <img src="/assets/images/team/2.jpg" alt="Aman Bhargava" loading="lazy" width="200" height="200">
 
-- [Ph.D. Student, Phys. Fluids - Univ. Twente / 2024-now](https://pof.tnw.utwente.nl/people/profile/2120)
-- M.Sc. Chemical Engineering, Purdue University / 2022-23
-- B.Tech. (Hons.) Chemical Engineering, IIT-Bombay / 2018-22
+- [Phys. Fluids - Univ. Twente / 2024-now](https://pof.tnw.utwente.nl/people/profile/2120)
+- **M.Sc.** Chem. Eng., Purdue University / 2022-23
+- **B.Tech. (Hons.)** Chem. Eng., IIT Bombay / 2018-22
 
 **Research Interest:** Inertial Contact Line, Drop Retraction.
 
@@ -70,9 +70,9 @@ Joint supervision with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse
 
 <img src="/assets/images/team/3.jpg" alt="Jnandeep Talukdar" loading="lazy" width="200" height="200">
 
-- [Ph.D. Student, Phys. Fluids - Univ. Twente / 2025-now](https://pof.tnw.utwente.nl/people/profile/1938)
-- M.Sc. Student, Phys. Fluids - Univ. Twente / 2023-25
-- B.Tech. Mechanical Engineering, IIT-Patna / 2019-23
+- [Phys. Fluids - Univ. Twente / 2025-now](https://pof.tnw.utwente.nl/people/profile/1938)
+- **M.Sc.**, Phys. Fluids - Univ. Twente / 2023-25, <a href="https://bit.ly/thesisJnan" class="pdf-link" style="display: inline-flex; align-items: center; margin-left: 5px;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Singularities with Surfactants</a>
+- **B.Tech.** Mech. Eng., IIT Patna / 2019-23
 
 **Research Interest:** Surfactant Dynamics, Dissipative Anomaly, Soft Wetting.
 
@@ -86,8 +86,8 @@ Joint supervision with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse
 
 <img src="/assets/images/team/4.jpg" alt="Saumili Jana" loading="lazy" width="200" height="200">
 
-- [Ph.D. Student, Phys. Fluids - Univ. Twente / 2025-now](https://pof.tnw.utwente.nl/people/profile/2152)
-- B.Tech.+M.Tech. Student, IIT-Kharagpur / 2020-25
+- [Phys. Fluids - Univ. Twente / 2025-now](https://pof.tnw.utwente.nl/people/profile/2152)
+- **B.Tech.+M.Tech.**, Mech. Eng., IIT Kharagpur / 2020-25, <a href="https://bit.ly/ThesisJana" class="pdf-link" style="display: inline-flex; align-items: center; margin-left: 5px;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Retract or Collapse? The Role of Viscosity and Viscoelasticity on Bubble Dynamics</a>
 
 **Research Interest:** Soft Impact.
 
@@ -95,13 +95,13 @@ Joint supervision with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse
 
 <span style="font-size: 1.1em;">M.Sc. Student, University of Twente</span>
 
-Joint supervision with [Martin van der Hoef](https://pof.tnw.utwente.nl/people/profile/244) and [Alvaro Marin](https://pof.tnw.utwente.nl/people/profile/243)
+Joint supervision with [Martin van der Hoef](https://pof.tnw.utwente.nl/people/profile/244) & [Alvaro Marin](https://pof.tnw.utwente.nl/people/profile/243)
 
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/Floris-Hoek)
 
 <img src="/assets/images/team/6.jpg" alt="Floris Hoek" loading="lazy" width="200" height="200">
 
-- [M.Sc. Student, Phys. Fluids - Univ. Twente / 2024](https://pof.tnw.utwente.nl/people/profile/1937)
+- [Phys. Fluids - Univ. Twente / 2024](https://pof.tnw.utwente.nl/people/profile/1937)
 
 **Research Interest:** Molecular Dynamics Simulations of Evaporation-Driven Colloidal Self-Assembly.
 
@@ -239,7 +239,7 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?user=I1jFG_oAAAAJ)
 [<i class="fa-brands fa-x-twitter" style="font-size: 2em; color: #000000;"></i>](https://x.com/RatulDG)
 
-- [Assc. Professor, IIT-Bombay](https://sites.google.com/view/ratuldasgupta/home)
+- [Assc. Professor, IIT Bombay](https://sites.google.com/view/ratuldasgupta/home)
 
 **Collaboration on:** Waves, Dissipative Anomaly.
 
