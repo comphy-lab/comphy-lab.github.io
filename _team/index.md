@@ -139,7 +139,7 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 
 **Collaboration on:** Electrolysis, Bubble Coalescence, Swimming Bubbles.
 
-### Assoc. Prof. Maziyar (Mazi) Jalaal
+### Dr. Maziyar (Mazi) Jalaal
 
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?user=FE8TQeUAAAAJ)
 [<i class="fa-brands fa-x-twitter" style="font-size: 2em; color: #000000;"></i>](https://x.com/maziyarj)
@@ -149,7 +149,7 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 
 **Collaboration on:** Plastocapillarity, Viscoplastic Flows.
 
-### Asst. Prof. Uddalok (Udo) Sen
+### Dr. Uddalok (Udo) Sen
 
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?user=a6h2uMQAAAAJ)
 
@@ -193,7 +193,7 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?user=BDzF8kMAAAAJ)
 [<i class="fa-brands fa-wikipedia-w" style="font-size: 2em; color: #000000;"></i>](https://en.wikipedia.org/wiki/John_Martin_Kolinski)
 
-- [Asst. Professor, EPFL (École Polytechnique Fédérale de Lausanne)](https://people.epfl.ch/john.kolinski)
+- [Assistant Professor, EPFL (École Polytechnique Fédérale de Lausanne)](https://people.epfl.ch/john.kolinski)
 
 **Collaboration on:** Soft Impact
 
@@ -202,17 +202,17 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?user=ncqnphMAAAAJ)
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/rcrc15)
 
-- [Asst. Professor, Univ. Illinois Urbana-Champaign](https://publish.illinois.edu/constanteamores/home/)
+- [Assistant Professor, Univ. Illinois Urbana-Champaign](https://publish.illinois.edu/constanteamores/home/)
 
 **Collaboration on:** Non-Newtonian Flows, Bubble Bursting, Herschel--Bulkley Fluids, Elastic Coating.
 
-### Assoc. Prof. Radu Cimpeanu
+### Dr. Radu Cimpeanu
 
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?user=6grZnhQAAAAJ&hl=en&inst=5726176096060060532&oi=ao)
 [<i class="fa-brands fa-x-twitter" style="font-size: 2em; color: #000000;"></i>](https://x.com/rcimpeanu)
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: #000000;"></i>](https://github.com/RaduCimpeanu)
 
-- [Assc. Professor, Univ. Warwick](https://www.raducimpeanu.com/)
+- [Associate Professor, Univ. Warwick](https://www.raducimpeanu.com/)
 
 **Collaboration on:** Open-Source Code Development, Non-Coalescence Impacts.
 
@@ -221,7 +221,7 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?user=226dDBAAAAAJ)
 [<i class="fa-brands fa-x-twitter" style="font-size: 2em; color: #000000;"></i>](https://x.com/FengFluidsLab)
 
-- [Asst. Professor, Univ. Illinois Urbana-Champaign](https://fengfluidslab.web.illinois.edu/wp/)
+- [Assistant Professor, Univ. Illinois Urbana-Champaign](https://fengfluidslab.web.illinois.edu/wp/)
 
 **Collaboration on:** Elastic Coating, Bursting Bubbles.
 
@@ -234,12 +234,12 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 
 **Collaboration on:** Surfactant Dynamics, Viscoelastic Drop Impact.
 
-### Assoc. Prof. Ratul Dasgupta
+### Dr. Ratul Dasgupta
 
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?user=I1jFG_oAAAAJ)
 [<i class="fa-brands fa-x-twitter" style="font-size: 2em; color: #000000;"></i>](https://x.com/RatulDG)
 
-- [Assc. Professor, IIT Bombay](https://sites.google.com/view/ratuldasgupta/home)
+- [Associate Professor, IIT Bombay](https://sites.google.com/view/ratuldasgupta/home)
 
 **Collaboration on:** Waves, Dissipative Anomaly.
 
