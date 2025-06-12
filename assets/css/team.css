@@ -379,16 +379,17 @@
   color: var(--member-content-text);
 }
 
-/* Prevent breaking of date ranges */
-.member-content li::first-line {
-  word-break: keep-all;
-}
-
 /* Keep date ranges together */
 .member-content li {
   overflow-wrap: break-word;
   word-wrap: break-word;
   hyphens: manual;
+}
+
+/* Prevent line breaks for specific spans */
+.no-break {
+  white-space: nowrap;
+  display: inline-block;
 }
 
 /* Special styling for collaboration sections */
