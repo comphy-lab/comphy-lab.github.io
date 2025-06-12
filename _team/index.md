@@ -5,7 +5,7 @@ title: Our Team & Collaborators
 
 ## Present Team
 
-### Dr. Vatsal Sanjay (PI)
+### Dr. Vatsal Sanjay
 
 <span style="font-size: 1.1em;">Assistant Professor, Durham University</span>
 
@@ -29,12 +29,12 @@ title: Our Team & Collaborators
 
 <span style="font-size: 1.1em;">Ph.D. Student, University of Twente</span>
 
+Joint supervision with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
+
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/ayushkumardixit)
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?hl=en&user=ws43SmkAAAAJ)
 
 <img src="/assets/images/team/1.jpg" alt="Ayush Dixit" loading="lazy" width="200" height="200">
-
-Joint with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 
 - [Ph.D. Student, Phys. Fluids - Univ. Twente / 2023-now](https://pof.tnw.utwente.nl/people/profile/2068)
 - B.Tech + M.Tech, Two-Phase Flow & Instability Lab, IIT-Roorkee / 2018-23,<a href="http://dx.doi.org/10.13140/RG.2.2.23218.79040" class="pdf-link" style="display: inline-flex; align-items: center; margin-left: 5px;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Understanding interfacial interaction in macro and nano scales</a>
@@ -45,12 +45,12 @@ Joint with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 
 <span style="font-size: 1.1em;">Ph.D. Student, University of Twente</span>
 
+Joint supervision with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
+
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/amanb1901)
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?hl=en&user=AmGOP8gAAAAJ)
 
 <img src="/assets/images/team/2.jpg" alt="Aman Bhargava" loading="lazy" width="200" height="200">
-
-Joint with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 
 - [Ph.D. Student, Phys. Fluids - Univ. Twente / 2024-now](https://pof.tnw.utwente.nl/people/profile/2120)
 - M.Sc. Chemical Engineering, Purdue University / 2022-23
@@ -62,13 +62,13 @@ Joint with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 
 <span style="font-size: 1.1em;">Ph.D. Student, University of Twente</span>
 
+Joint supervision with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
+
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/spilltheT)
 [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?hl=en&user=Coxj4VQAAAAJ)
 [<i class="fa-brands fa-bluesky" style="font-size: 2em; color: #0085ff;"></i>](https://bsky.app/profile/jnandeep.bsky.social)
 
 <img src="/assets/images/team/3.jpg" alt="Jnandeep Talukdar" loading="lazy" width="200" height="200">
-
-Joint with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 
 - [Ph.D. Student, Phys. Fluids - Univ. Twente / 2025-now](https://pof.tnw.utwente.nl/people/profile/1938)
 - M.Sc. Student, Phys. Fluids - Univ. Twente / 2023-25
@@ -80,11 +80,11 @@ Joint with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 
 <span style="font-size: 1.1em;">Ph.D. Student, University of Twente</span>
 
+Joint supervision with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
+
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/SaumiliJana)
 
 <img src="/assets/images/team/4.jpg" alt="Saumili Jana" loading="lazy" width="200" height="200">
-
-Joint with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 
 - [Ph.D. Student, Phys. Fluids - Univ. Twente / 2025-now](https://pof.tnw.utwente.nl/people/profile/2152)
 - B.Tech.+M.Tech. Student, IIT-Kharagpur / 2020-25
@@ -95,11 +95,11 @@ Joint with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 
 <span style="font-size: 1.1em;">M.Sc. Student, University of Twente</span>
 
+Joint supervision with [Martin van der Hoef](https://pof.tnw.utwente.nl/people/profile/244) and [Alvaro Marin](https://pof.tnw.utwente.nl/people/profile/243)
+
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/Floris-Hoek)
 
 <img src="/assets/images/team/6.jpg" alt="Floris Hoek" loading="lazy" width="200" height="200">
-
-Joint with [Martin van der Hoef](https://pof.tnw.utwente.nl/people/profile/244) and [Alvaro Marin](https://pof.tnw.utwente.nl/people/profile/243)
 
 - [M.Sc. Student, Phys. Fluids - Univ. Twente / 2024](https://pof.tnw.utwente.nl/people/profile/1937)
 
