@@ -15,7 +15,7 @@ Starting <strong>July 1st, 2025</strong>, the CoMPhy Lab will be relocating to D
 
 ### June
 
-- <strong>Jnandeep Talukdar</strong> <a href="https://github.com/spilltheT"><i class="fa-brands fa-github" style="font-size: 1.5em; color: #8a2be2;"></i></a> graduated with a master's degree (grade: 10/10) from University of Twente. <strong>Thesis:</strong> <a href="https://bit.ly/thesisJnan" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf" style="margin-right: 8px; font-size: 1.2em; color: #e63946;"></i>Singularities with Surfactants</a>
+- <strong>Jnandeep Talukdar</strong> <a href="https://github.com/spilltheT"><i class="fa-brands fa-github" style="font-size: 1.5em; color: #8a2be2;"></i></a> graduated with a master's degree (Cum Laude - the highest grade in Dutch master's degree) from University of Twente. <strong>Thesis:</strong> <a href="https://bit.ly/thesisJnan" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf" style="margin-right: 8px; font-size: 1.2em; color: #e63946;"></i>Singularities with Surfactants</a>
 
 ### May
 
