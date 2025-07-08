@@ -227,7 +227,7 @@ title: Research
 
 <tags><span>Jets</span><span>Bubbles</span></tags>
 
-[![PDF](https://img.shields.io/static/v1.svg?style=flat-square&label=PDF&message=Available&color=green)](https://www.dropbox.com/s/ug7njhulcy9zq8lib911j/2019-Vatsal-_Consequences-of-Inclined-and-Dual-Jet-Impingement-in-Stagnant-Liquid-and-Stratified-Layers.pdf?rlkey=l00thknv7wt55sb0bcuiy8isw&dl=0)
+[![PDF](https://img.shields.io/static/v1.svg?style=flat-square&label=PDF&message=Available&color=green)](https://www.dropbox.com/scl/fi/ug7njhulcy9zq8lib911j/2019-Vatsal-_Consequences-of-Inclined-and-Dual-Jet-Impingement-in-Stagnant-Liquid-and-Stratified-Layers.pdf?rlkey=l00thknv7wt55sb0bcuiy8isw&dl=0)
 [![DOI](https://img.shields.io/static/v1.svg?style=flat-square&label=DOI&message=10.1002/aic.16373&color=orange)](https://doi.org/10.1002/aic.16373)
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
 
@@ -239,7 +239,7 @@ title: Research
 
 <tags><span>Jets</span></tags>
 
-[![PDF](https://img.shields.io/static/v1.svg?style=flat-square&label=PDF&message=Available&color=green)](https://www.dropbox.com/s/ranuyet8h7nub3s/%5B2018-Vatsal-preprint%5D_Formation%20of%20fluid%20structures%20due%20to%20jet-jet%20and%20jet-sheet%20interactions.pdf?dl=0)
+[![PDF](https://img.shields.io/static/v1.svg?style=flat-square&label=PDF&message=Available&color=green)](https://www.dropbox.com/scl/fi/zbs17s77qlu2l2i4c6sak/2018-Vatsal-preprint-_Formation-of-fluid-structures-due-to-jet-jet-and-jet-sheet-interactions.pdf?rlkey=beya847mr9hf8bbdabwyanrmf&dl=0)
 [![DOI](https://img.shields.io/static/v1.svg?style=flat-square&label=DOI&message=10.1016/j.ces.2018.06.055&color=orange)](https://doi.org/10.1016/j.ces.2018.06.055)
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
 
@@ -249,7 +249,7 @@ title: Research
 
 <tags><span>Others</span><span>Fire</span><span>Evacuation</span></tags>
 
-[![PDF](https://img.shields.io/static/v1.svg?style=flat-square&label=PDF&message=Available&color=green)](https://www.dropbox.com/s/6kfiem9zcvjr2vf/%5B2018-Vatsal%5D_Numerical%20assessment%20of%20hazard%20in%20compartmental%20fire%20having%20steady%20heat%20release%20rate%20from%20the%20source.pdf?dl=0)
+[![PDF](https://img.shields.io/static/v1.svg?style=flat-square&label=PDF&message=Available&color=green)](https://www.dropbox.com/scl/fi/c9vob7a6kso4ai4mygpj2/2018-Vatsal-_Numerical-assessment-of-hazard-in-compartmental-fire-having-steady-heat-release-rate-from-the-source.pdf?rlkey=e8rjz2d3e8nt0xof863i3xb3p&dl=0)
 [![DOI](https://img.shields.io/static/v1.svg?style=flat-square&label=DOI&message=10.1007/s12273-017-0411-y&color=orange)](https://doi.org/10.1007/s12273-017-0411-y)
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
 
@@ -261,7 +261,7 @@ title: Research
 
 <tags><span>Jets</span><span>Sheets</span></tags>
 
-[![PDF](https://img.shields.io/static/v1.svg?style=flat-square&label=PDF&message=Available&color=green)](https://www.dropbox.com/s/e9uo0hcrm9es8hr/%5B2017-Vatsal-preprint%5D_Formation%20of%20liquid%20chain%20by%20collision%20of%20two%20laminar%20jets.pdf?dl=0)
+[![PDF](https://img.shields.io/static/v1.svg?style=flat-square&label=PDF&message=Available&color=green)](https://www.dropbox.com/scl/fi/fmk08c3z9twdat138v8b3/2017-Vatsal-preprint-_Formation-of-liquid-chain-by-collision-of-two-laminar-jets.pdf?rlkey=imwh2a606aecpbvjq3ctdq168&dl=0)
 [![DOI](https://img.shields.io/static/v1.svg?style=flat-square&label=DOI&message=10.1063/1.4998288&color=orange)](https://doi.org/10.1063/1.4998288)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/VatsalSy/FluidChains)
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
@@ -272,7 +272,7 @@ title: Research
 
 <tags><span>Jets</span><span>Bubbles</span></tags>
 
-[![PDF](https://img.shields.io/static/v1.svg?style=flat-square&label=PDF&message=Available&color=green)](https://www.dropbox.com/s/bm49xi8ic6i3icf/%5B2017-Vatsal-preprint%5D_On%20Air%20Entrainment%20in%20a%20Water%20pool%20by%20Impingement%20of%20a%20Jet.pdf?dl=0)
+[![PDF](https://img.shields.io/static/v1.svg?style=flat-square&label=PDF&message=Available&color=green)](https://www.dropbox.com/scl/fi/37ek49y5ae1t1lr18q95n/2017-Vatsal-preprint-_On-Air-Entrainment-in-a-Water-pool-by-Impingement-of-a-Jet.pdf?rlkey=iqb3ejms8t990owpiuqmpy0k6&dl=0)
 [![DOI](https://img.shields.io/static/v1.svg?style=flat-square&label=DOI&message=10.1002/aic.15828&color=orange)](https://doi.org/10.1002/aic.15828)
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
 
