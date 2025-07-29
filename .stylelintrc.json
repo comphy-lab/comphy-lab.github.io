@@ -1,10 +1,11 @@
 {
   "extends": "stylelint-config-standard",
+  "ignoreFiles": [
+    "assets/css/fontello/**/*.css",
+    "assets/css/academicons.min.css",
+    "assets/css/academicons-1.7.0/**/*.css"
+  ],
   "rules": {
-    "indentation": 2,
-    "string-quotes": "double",
-    "color-hex-case": "lower",
-    "max-empty-lines": 2,
     "selector-class-pattern": null,
     "selector-id-pattern": null,
     "custom-property-pattern": null,
@@ -17,11 +18,38 @@
           "Libre Baskerville",
           "Open Sans",
           "FontAwesome",
-          "Academicons"
+          "Academicons",
+          "fontello"
         ]
       }
     ],
     "no-descending-specificity": null,
-    "function-url-quotes": "always"
+    "function-url-quotes": "always",
+    "color-function-notation": "legacy",
+    "alpha-value-notation": "number",
+    "media-feature-range-notation": "prefix",
+    "selector-pseudo-element-colon-notation": "single",
+    "color-hex-length": "short",
+    "number-max-precision": 8,
+    "declaration-block-single-line-max-declarations": 10,
+    "rule-empty-line-before": [
+      "always",
+      {
+        "except": ["after-single-line-comment", "first-nested"],
+        "ignore": ["after-comment"]
+      }
+    ],
+    "comment-empty-line-before": null,
+    "property-no-vendor-prefix": null,
+    "keyframes-name-pattern": null,
+    "selector-type-no-unknown": [
+      true,
+      {
+        "ignoreTypes": ["tags", "bsky-embed"]
+      }
+    ],
+    "shorthand-property-no-redundant-values": null,
+    "no-duplicate-selectors": null,
+    "font-family-name-quotes": null
   }
 }
