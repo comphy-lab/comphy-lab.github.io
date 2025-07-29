@@ -22,6 +22,10 @@ title: History
 
 Starting <strong>July 1st, 2025</strong>, the CoMPhy Lab will be relocating to Durham University, UK. We are excited to join the [Condensed Matter Physics section](https://www.durham.ac.uk/research/institutes-and-centres/condensed-matter-physics/) in the [Department of Physics](https://www.durham.ac.uk/departments/academic/physics/) and continue our research in computational physics and fluid dynamics in our new home.
 
+### July
+
+- <strong>Saumili Jana</strong> <a href="https://github.com/SaumiliJana"><i class="fa-brands fa-github" style="font-size: 1.5em; color: #8a2be2;"></i></a> received the award for best master's thesis from IIT Kharagpur. <strong>Thesis:</strong> <a href="https://bit.ly/ThesisJana" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf" style="margin-right: 8px; font-size: 1.2em; color: #e63946;"></i>Retract or Collapse? The Role of Viscosity and Viscoelasticity on Bubble Dynamics</a>
+
 ### June
 
 - <strong>Jnandeep Talukdar</strong> <a href="https://github.com/spilltheT"><i class="fa-brands fa-github" style="font-size: 1.5em; color: #8a2be2;"></i></a> graduated with a master's degree (Cum Laude - the highest grade in Dutch master's degree) from University of Twente. <strong>Thesis:</strong> <a href="https://bit.ly/thesisJnan" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf" style="margin-right: 8px; font-size: 1.2em; color: #e63946;"></i>Singularities with Surfactants</a>
