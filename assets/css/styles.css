@@ -8,7 +8,7 @@
  * to minimize code redundancy. It's organized into logical sections for easier maintenance.
  */
 
-/*--------------------------------------------------------------
+/* --------------------------------------------------------------
  * TABLE OF CONTENTS:
  * ------------------
  * 1. Variable Definitions (Light & Dark Themes)
@@ -25,11 +25,11 @@
  * 12. Footer
  * 13. Utility Components
  * 14. Media Queries
- *--------------------------------------------------------------*/
+ *-------------------------------------------------------------- */
 
-/*--------------------------------------------------------------
+/* --------------------------------------------------------------
  * 1. VARIABLE DEFINITIONS
- *--------------------------------------------------------------*/
+ *-------------------------------------------------------------- */
 
 /* Light Theme Variables */
 :root {
@@ -38,19 +38,19 @@
   --color-secondary: #2b2b2b;
   --color-heading-h1: #68236d; /* Purple for h1 headings */
   --color-heading-h2: #0156b3; /* Blue for h2 */
-  --color-heading-h3: #333333; /* Dark gray for h3 */
-  --color-text: #333333;
-  --color-background: #ffffff;
+  --color-heading-h3: #333; /* Dark gray for h3 */
+  --color-text: #333;
+  --color-background: #fff;
   --color-link: #0056b3;
   --color-link-hover: #004494;
 
   /* Color System - Neutrals */
-  --color-white: #ffffff;
-  --color-black: #000000;
+  --color-white: #fff;
+  --color-black: #000;
   --color-near-black: #1a1a1a;
   --color-gray-light: #f3f3f3;
-  --color-gray-medium: #666666;
-  --color-gray-dark: #333333;
+  --color-gray-medium: #666;
+  --color-gray-dark: #333;
   --color-gray-xdark: #1e1e1e;
   --color-gray-xxxdark: #121212;
 
@@ -83,7 +83,6 @@
   --color-black-alpha-30: rgba(0, 0, 0, 0.3);
   --color-black-alpha-40: rgba(0, 0, 0, 0.4);
   --color-black-alpha-80: rgba(0, 0, 0, 0.8);
-
   --color-white-alpha-10: rgba(255, 255, 255, 0.1);
   --color-white-alpha-20: rgba(255, 255, 255, 0.2);
   --color-white-alpha-25: rgba(255, 255, 255, 0.25);
@@ -93,14 +92,12 @@
   --color-white-alpha-70: rgba(255, 255, 255, 0.7);
   --color-white-alpha-85: rgba(255, 255, 255, 0.85);
   --color-white-alpha-95: rgba(255, 255, 255, 0.95);
-
   --color-primary-alpha-05: rgba(0, 86, 179, 0.05);
   --color-primary-alpha-10: rgba(0, 86, 179, 0.1);
   --color-primary-alpha-15: rgba(0, 86, 179, 0.15);
   --color-primary-alpha-20: rgba(0, 86, 179, 0.2);
   --color-primary-alpha-25: rgba(0, 86, 179, 0.25);
   --color-primary-alpha-30: rgba(0, 86, 179, 0.3);
-
   --color-blue-bright-alpha-05: rgba(76, 110, 245, 0.05);
   --color-blue-bright-alpha-08: rgba(76, 110, 245, 0.08);
   --color-blue-bright-alpha-10: rgba(76, 110, 245, 0.1);
@@ -109,7 +106,6 @@
   --color-blue-bright-alpha-25: rgba(76, 110, 245, 0.25);
   --color-blue-bright-alpha-30: rgba(76, 110, 245, 0.3);
   --color-blue-bright-alpha-50: rgba(76, 110, 245, 0.5);
-
   --color-red-darker-alpha-20: rgba(250, 82, 82, 0.2);
   --color-header-base-alpha-15: rgba(104, 35, 109, 0.15);
   --color-header-base-alpha-20: rgba(104, 35, 109, 0.2);
@@ -117,7 +113,7 @@
 
   /* Typography */
   --font-primary:
-    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Arial",
+    system-ui, -apple-system, blinkmacsystemfont, "Segoe UI", "Arial",
     sans-serif;
 
   /* Heading Styling */
@@ -287,7 +283,7 @@
   --color-link-hover: #6fa1ff;
   --color-gray-dark: #a0a0a0;
   --color-gray-xdark: #2a2a2a;
-  --color-gray-footer-bg: #333333;
+  --color-gray-footer-bg: #333;
   --color-strong: #ff8650;
 
   /* Status Colors */
@@ -362,7 +358,7 @@
   --intro-content-bg-end: var(--color-darker-gray-alpha-85);
   --intro-content-border: var(--color-white-alpha-10);
   --intro-content-shadow: var(--color-black-alpha-30);
-  --intro-title-gradient-1: #ff8888;
+  --intro-title-gradient-1: #f88;
   --intro-title-gradient-2: var(--color-heading-h1);
   --intro-title-gradient-3: #8897ff;
   --intro-title-gradient-4: #514880;
@@ -455,9 +451,9 @@
   --copy-btn-copied-text: var(--color-background);
 }
 
-/*--------------------------------------------------------------
+/* --------------------------------------------------------------
  * 2. BASE ELEMENT STYLES
- *--------------------------------------------------------------*/
+ *-------------------------------------------------------------- */
 
 html {
   font-size: 62.5%; /* For easier rem calculations - 1rem = 10px */
@@ -465,8 +461,8 @@ html {
 }
 
 *,
-*::before,
-*::after {
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -508,9 +504,9 @@ body {
   word-wrap: break-word;
 }
 
-/*--------------------------------------------------------------
+/* --------------------------------------------------------------
  * 3. TYPOGRAPHY & TEXT STYLING
- *--------------------------------------------------------------*/
+ *-------------------------------------------------------------- */
 
 /* Global Heading Styles */
 h2 {
@@ -524,17 +520,23 @@ h2 {
   letter-spacing: 0.01em;
 }
 
-h2::after {
+h2:after {
   content: none;
   display: none;
 }
 
 /* Strong Element Styling - Applied globally with specific exceptions */
-strong:not(a strong):not(h1 strong):not(h2 strong):not(h3 strong):not(
-    h4 strong
-  ):not(h5 strong):not(h6 strong),
-#news-content strong:not(a strong):not(a *),
-.s-about__desc strong:not(a strong):not(a *) {
+strong:not(
+    a strong,
+    h1 strong,
+    h2 strong,
+    h3 strong,
+    h4 strong,
+    h5 strong,
+    h6 strong
+  ),
+#news-content strong:not(a strong, a *),
+.s-about__desc strong:not(a strong, a *) {
   font-weight: 600;
   color: var(--strong-text-color);
   background: linear-gradient(
@@ -603,14 +605,14 @@ a:hover {
   );
 }
 
-/*--------------------------------------------------------------
+/* --------------------------------------------------------------
  * 4. ICON STYLING
- *--------------------------------------------------------------*/
+ *-------------------------------------------------------------- */
 
 /* Base icon styling */
 .fa-solid:not(.s-header__nav-list .fa-solid),
 .fa-brands:not(.s-header__nav-list .fa-brands),
-.ai:not(.s-header__nav-list .ai):not(.team-member .ai),
+.ai:not(.s-header__nav-list .ai, .team-member .ai),
 .s-footer i,
 .site-footer i,
 .footer-left i,
@@ -718,9 +720,9 @@ a:hover {
   color: var(--icon-color-newspaper) !important;
 }
 
-/*--------------------------------------------------------------
+/* --------------------------------------------------------------
  * 5. PRELOADER AND ANIMATIONS
- *--------------------------------------------------------------*/
+ *-------------------------------------------------------------- */
 
 /* Preloader */
 #preloader {
@@ -749,6 +751,7 @@ a:hover {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -760,15 +763,16 @@ a:hover {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-/*--------------------------------------------------------------
+/* --------------------------------------------------------------
  * 6. HEADER & NAVIGATION
- *--------------------------------------------------------------*/
+ *-------------------------------------------------------------- */
 
 .s-header {
   position: fixed;
@@ -816,8 +820,8 @@ a:hover {
   position: relative;
 }
 
-.s-header__menu-icon::before,
-.s-header__menu-icon::after {
+.s-header__menu-icon:before,
+.s-header__menu-icon:after {
   content: "";
   position: absolute;
   width: 100%;
@@ -826,11 +830,11 @@ a:hover {
   transition: transform 0.3s ease;
 }
 
-.s-header__menu-icon::before {
+.s-header__menu-icon:before {
   transform: translateY(-8px);
 }
 
-.s-header__menu-icon::after {
+.s-header__menu-icon:after {
   transform: translateY(8px);
 }
 
@@ -958,9 +962,9 @@ a:hover {
   transform: rotate(0);
 }
 
-/*--------------------------------------------------------------
+/* --------------------------------------------------------------
  * 7. INTRO SECTION
- *--------------------------------------------------------------*/
+ *-------------------------------------------------------------- */
 
 .s-intro {
   min-height: 100vh;
@@ -1029,7 +1033,6 @@ a:hover {
 
 .s-intro__title {
   font-size: 5rem;
-  font-weight: bold;
   margin-bottom: 3rem;
   opacity: 0;
   animation: fadeInUp 1s ease forwards;
@@ -1050,7 +1053,7 @@ a:hover {
   font-weight: 800;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizelegibility;
 }
 
 [data-theme="dark"] .s-intro__title {
@@ -1102,7 +1105,7 @@ a:hover {
   background-color: var(--intro-subtitle-button-bg);
   box-shadow: 0 2px 8px var(--intro-subtitle-button-shadow);
   color: var(--intro-subtitle-button-text);
-  text-shadow: 0px 1px 2px var(--intro-subtitle-button-text-shadow);
+  text-shadow: 0 1px 2px var(--intro-subtitle-button-text-shadow);
 }
 
 [data-theme="dark"] .s-intro__subtitle a.smoothscroll:hover {
@@ -1162,9 +1165,9 @@ a:hover {
   box-shadow: var(--shadow-sm);
 }
 
-/*--------------------------------------------------------------
+/* --------------------------------------------------------------
  * 8. ABOUT SECTION
- *--------------------------------------------------------------*/
+ *-------------------------------------------------------------- */
 
 .s-about {
   padding: 10rem 2rem 4rem 2rem;
@@ -1264,6 +1267,7 @@ h3.news-header {
   border-bottom: 2px solid #68236d !important;
   padding-bottom: 2px !important;
 }
+
 [data-theme="dark"] h3.news-header {
   font-size: 1.75em !important;
   color: #9a349f !important;
@@ -1408,9 +1412,9 @@ h3.news-header {
   transform: translateY(1px);
 }
 
-/*--------------------------------------------------------------
+/* --------------------------------------------------------------
  * 9. CODE BLOCK STYLING & COPYABLE ELEMENTS
- *--------------------------------------------------------------*/
+ *-------------------------------------------------------------- */
 
 /* Code block styling for contact info */
 .s-about__desc code.copyable {
@@ -1439,7 +1443,7 @@ h3.news-header {
   color: var(--copyable-text);
 }
 
-.s-about__desc code.copyable::before {
+.s-about__desc code.copyable:before {
   content: "Click to copy";
   position: absolute;
   top: -30px;
@@ -1457,7 +1461,7 @@ h3.news-header {
   pointer-events: none;
 }
 
-.s-about__desc code.copyable::after {
+.s-about__desc code.copyable:after {
   content: "";
   position: absolute;
   top: -10px;
@@ -1471,20 +1475,20 @@ h3.news-header {
   pointer-events: none;
 }
 
-.s-about__desc code.copyable:hover::before,
-.s-about__desc code.copyable:hover::after {
+.s-about__desc code.copyable:hover:before,
+.s-about__desc code.copyable:hover:after {
   opacity: 1;
   visibility: visible;
   transform: translateX(-50%) translateY(0);
 }
 
-.s-about__desc code.copyable.copied::before {
+.s-about__desc code.copyable.copied:before {
   content: "Copied!";
   background: var(--copy-btn-copied-bg);
   color: var(--copy-btn-copied-text);
 }
 
-.s-about__desc code.copyable.copied::after {
+.s-about__desc code.copyable.copied:after {
   border-top-color: var(--copy-btn-copied-bg);
 }
 
@@ -1566,15 +1570,15 @@ h3.news-header {
   pointer-events: none;
 }
 
-/*--------------------------------------------------------------
+/* --------------------------------------------------------------
  * 10. TEAM SECTION
- *--------------------------------------------------------------*/
+ *-------------------------------------------------------------- */
 
 /* Team page styles are now defined in team.css for better organization and precedence */
 
-/*--------------------------------------------------------------
+/* --------------------------------------------------------------
  * 11. FEATURED SECTION
- *--------------------------------------------------------------*/
+ *-------------------------------------------------------------- */
 
 .s-featured {
   padding: 0 var(--space-md);
@@ -1597,13 +1601,13 @@ h3.news-header {
 .s-featured__grid > hr:not(.custom-hr),
 .s-featured__left > hr:not(.custom-hr),
 #featured:after,
-#featured::after,
+#featured:after,
 section#featured:after,
-section#featured::after,
+section#featured:after,
 .target-section#featured:after,
-.target-section#featured::after,
+.target-section#featured:after,
 [id="featured"]:after,
-[id="featured"]::after {
+[id="featured"]:after {
   display: none !important;
   content: none !important;
   background-color: transparent !important;
@@ -1667,7 +1671,7 @@ section#featured::after,
   position: relative;
 }
 
-.s-featured__header .text-pretitle::after {
+.s-featured__header .text-pretitle:after {
   content: "";
   display: block;
   height: 2px;
@@ -1763,9 +1767,9 @@ section#featured::after,
   display: none;
 }
 
-/*--------------------------------------------------------------
+/* --------------------------------------------------------------
  * 12. RESEARCH SECTION
- *--------------------------------------------------------------*/
+ *-------------------------------------------------------------- */
 
 .s-research {
   padding: 12rem 0 8rem;
@@ -1856,9 +1860,9 @@ section#featured::after,
   vertical-align: middle;
 }
 
-/*--------------------------------------------------------------
+/* --------------------------------------------------------------
  * 13. JOIN US SECTION
- *--------------------------------------------------------------*/
+ *-------------------------------------------------------------- */
 
 .s-join {
   padding: 12rem 0 8rem;
@@ -1951,9 +1955,9 @@ section#featured::after,
   margin-top: 4rem;
 }
 
-/*--------------------------------------------------------------
+/* --------------------------------------------------------------
  * 14. FOOTER
- *--------------------------------------------------------------*/
+ *-------------------------------------------------------------- */
 
 /* Minimal footer */
 .s-footer {
@@ -2108,9 +2112,9 @@ section#featured::after,
   display: block;
 }
 
-/*--------------------------------------------------------------
+/* --------------------------------------------------------------
  * 15. MARKDOWN CONTENT STYLES
- *--------------------------------------------------------------*/
+ *-------------------------------------------------------------- */
 
 .markdown-content strong,
 .markdown-content b {
@@ -2150,9 +2154,9 @@ section#featured::after,
   margin: 2rem 0;
 }
 
-/*--------------------------------------------------------------
+/* --------------------------------------------------------------
  * 16. YOUTUBE STATS CARD
- *--------------------------------------------------------------*/
+ *-------------------------------------------------------------- */
 
 .youtube-stats-light {
   display: block;
@@ -2182,9 +2186,9 @@ img.youtube-stats-dark {
   box-sizing: border-box;
 }
 
-/*--------------------------------------------------------------
+/* --------------------------------------------------------------
  * 17. MEDIA QUERIES
- *--------------------------------------------------------------*/
+ *-------------------------------------------------------------- */
 
 /* Large Screens (1700px and below) */
 @media screen and (max-width: 1700px) {
