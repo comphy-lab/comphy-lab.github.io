@@ -26,11 +26,17 @@ Feel free to contact us for discussions about our work or anything else related 
 
 [![Location](https://img.shields.io/badge/-Physics%20of%20Fluids-4285F4?style=flat&logo=googlemaps&logoColor=white)](https://maps.app.goo.gl/jSTCYnfcndF1uZPV8)
 [![Website](https://img.shields.io/badge/-comphy--lab.org-4285F4?style=flat&logo=googlechrome&logoColor=white)](http://www.comphy-lab.org)
-[![Email](https://img.shields.io/badge/-mailto:vatsalsy@comphy--lab.org-EA4335?style=flat&logo=gmail&logoColor=white)](mailto:vatsalsy@comphy-lab.org)
+[![Email](https://img.shields.io/badge/-mailto:vatsal.sanjay@comphy--lab.org-EA4335?style=flat&logo=gmail&logoColor=white)](mailto:vatsal.sanjay@comphy-lab.org)
 
 <div class="email-container">
-    <span class="email-text">vatsalsy@comphy-lab.org</span>
-    <button class="copy-btn" onclick="copyEmail(this)" data-text="vatsalsy@comphy-lab.org" aria-label="Copy email address vatsalsy@comphy-lab.org">
+    <span class="email-text">vatsal.sanjay@comphy-lab.org</span>
+    <button class="copy-btn" onclick="copyEmail(this)" data-text="vatsal.sanjay@comphy-lab.org" aria-label="Copy email address vatsal.sanjay@comphy-lab.org">
+        <i class="fas fa-copy"></i>
+    </button>
+</div>
+<div class="email-container">
+    <span class="email-text">vatsal.sanjay@durham.ac.uk</span>
+    <button class="copy-btn" onclick="copyEmail(this)" data-text="vatsal.sanjay@durham.ac.uk" aria-label="Copy email address vatsal.sanjay@durham.ac.uk">
         <i class="fas fa-copy"></i>
     </button>
 </div>
