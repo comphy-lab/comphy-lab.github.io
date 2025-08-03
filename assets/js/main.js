@@ -70,7 +70,7 @@
         historyBtn.href = "/history";
         historyBtn.className = "s-news__history-btn";
         historyBtn.innerHTML =
-          "<i class=\"fa-solid fa-arrow-right\" style=\"margin-right: 8px; font-size: 1.2em;\"></i>Archive";
+          '<i class="fa-solid fa-arrow-right" style="margin-right: 8px; font-size: 1.2em;"></i>Archive';
         historyBtn.setAttribute("role", "button");
         historyBtn.setAttribute("tabindex", "0");
         historyBtn.setAttribute("aria-label", "View archive of all news items");
@@ -163,20 +163,38 @@
             let content = [section.cloneNode(true)];
             let nextEl = section.nextElementSibling;
 
-            while (nextEl && !nextEl.matches("h3")) {
-              // Skip the Highlights section and its list
+            while (nextEl) {
+              // Stop at any h3 element (including Highlights)
+              if (nextEl.matches("h3")) {
+                break;
+              }
+
+              // Skip any element that contains "Highlights" text
               if (
-                nextEl.textContent.trim() === "Highlights" ||
-                (nextEl.matches("ul") &&
-                  nextEl.previousElementSibling &&
-                  nextEl.previousElementSibling.textContent.trim() ===
-                    "Highlights")
+                nextEl.textContent &&
+                nextEl.textContent.includes("Highlights")
+              ) {
+                console.log(
+                  "Skipping element with Highlights:",
+                  nextEl.tagName,
+                  nextEl.textContent.substring(0, 50)
+                );
+                nextEl = nextEl.nextElementSibling;
+                continue;
+              }
+
+              // Skip ul elements that might be part of a Highlights section
+              if (
+                nextEl.matches("ul") &&
+                nextEl.previousElementSibling &&
+                nextEl.previousElementSibling.textContent &&
+                nextEl.previousElementSibling.textContent.includes("Highlights")
               ) {
                 nextEl = nextEl.nextElementSibling;
                 continue;
               }
 
-              // Include everything else (tags, images, iframes)
+              // Include everything else (tags, images, iframes, badges)
               const clone = nextEl.cloneNode(true);
 
               // If it"s a tags element, make spans clickable
@@ -303,22 +321,24 @@
 
   /* Smooth Scrolling
    * -------------------------------------------------- */
-  document.querySelectorAll("a[href^=\"#\"], a[href^=\"/#\"]").forEach((anchor) => {
+  document.querySelectorAll('a[href^="#"], a[href^="/#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       const href = this.getAttribute("href");
-      
+
       // Handle both "#section" and "/#section" formats
       if (href.startsWith("/#")) {
         // Check if we're on the home page
-        if (window.location.pathname === "/" || 
-            window.location.pathname === "/index.html") {
+        if (
+          window.location.pathname === "/" ||
+          window.location.pathname === "/index.html"
+        ) {
           e.preventDefault();
           const targetId = href.substring(2); // Remove "/#"
           const target = document.getElementById(targetId);
           if (target) {
             target.scrollIntoView({
               behavior: "smooth",
-              block: "start"
+              block: "start",
             });
           }
         }
@@ -329,7 +349,7 @@
         if (target) {
           target.scrollIntoView({
             behavior: "smooth",
-            block: "start"
+            block: "start",
           });
         }
       }
@@ -352,7 +372,7 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     const images = document.querySelectorAll(
-      ".member-image img[loading=\"lazy\"]"
+      '.member-image img[loading="lazy"]'
     );
 
     images.forEach((img) => {
