@@ -33,6 +33,26 @@
           const parsedHtml = marked.parse(text);
           const sanitizedHtml = DOMPurify.sanitize(parsedHtml);
           aboutContent.innerHTML = sanitizedHtml;
+
+          // Re-bind copy email handlers for dynamically injected content
+          const aboutCopyButtons = aboutContent.querySelectorAll(".copy-btn");
+          aboutCopyButtons.forEach((button) => {
+            // Attach click to use the global copyEmail handler
+            button.addEventListener("click", function () {
+              window.copyEmail(this);
+            });
+
+            // Ensure accessible name is present
+            const emailText =
+              button.getAttribute("data-text") ||
+              button.getAttribute("data-clipboard-text");
+            if (!button.hasAttribute("aria-label") && emailText) {
+              button.setAttribute(
+                "aria-label",
+                `Copy email address ${emailText}`
+              );
+            }
+          });
         }
       } catch (error) {
         console.error("Error loading about content:", error);
