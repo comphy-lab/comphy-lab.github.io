@@ -11,6 +11,8 @@ This plan outlines the tasks to be completed on the `aug-updates` branch before 
 
 - ✅ **Saumili Graduation Post** - Added July 2025 news about best master's thesis award
 - ✅ **Fix Failing CI Tests** - Fixed CSS linting issues for weekly tests
+- ✅ **Quick performance pass** - Implemented lazy-loading/decoding for news, history, about images; set footer logos to lazy with low fetchpriority; added rel="noopener noreferrer" to external links
+- ✅ **Durham links update** - Pointed all Durham University links to staff profile: [durham.ac.uk/staff/vatsal-sanjay](https://www.durham.ac.uk/staff/vatsal-sanjay/)
 
 ## Tasks
 
@@ -46,14 +48,14 @@ This plan outlines the tasks to be completed on the `aug-updates` branch before 
 
 **Priority:** Medium  
 **Estimated Time:** 3-4 hours  
-**Status:** Pending
+**Status:** In Progress
 
 #### Subtasks:
 
 - [ ] Audit current page load times
 - [ ] Optimize image assets:
   - [ ] Convert remaining images to WebP format
-  - [ ] Implement proper lazy loading
+  - [x] Implement proper lazy loading
   - [ ] Ensure appropriate image dimensions
 - [ ] Review and optimize CSS:
   - [ ] Remove unused styles
