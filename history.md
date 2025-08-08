@@ -12,7 +12,7 @@ title: History
 <div class="news-flex-row">
   <div class="news-flex-row__image-container">
     <a href="https://www.durham.ac.uk">
-      <img src="/assets/logos/Durham-University_NoText.png" alt="Durham University" class="news-image" style="box-shadow: none;">
+      <img src="/assets/logos/Durham-University_NoText.png" alt="Durham University" class="news-image" style="box-shadow: none;" loading="lazy" decoding="async">
     </a>
   </div>
   <div class="news-flex-row__links-container">
@@ -37,7 +37,7 @@ Starting <strong>July 1st, 2025</strong>, the CoMPhy Lab will be relocating to D
 <div class="news-flex-row">
   <div class="news-flex-row__image-container">
     <a href="/research#17">
-      <img src="/assets/images/research/NatComm-jet-drop.png" alt="Drop injection" class="news-image">
+      <img src="/assets/images/research/NatComm-jet-drop.png" alt="Drop injection" class="news-image" loading="lazy" decoding="async">
     </a>
   </div>
   <div class="news-flex-row__links-container">
@@ -50,7 +50,7 @@ Starting <strong>July 1st, 2025</strong>, the CoMPhy Lab will be relocating to D
 <div class="news-flex-row">
   <div class="news-flex-row__image-container">
     <a href="/research#16">
-      <img src="/assets/images/research/S002211202500237X_figAb.png" alt="Worthington Jets and Droplets" class="news-image">
+      <img src="/assets/images/research/S002211202500237X_figAb.png" alt="Worthington Jets and Droplets" class="news-image" loading="lazy" decoding="async">
     </a>
   </div>
   <div class="news-flex-row__links-container">
@@ -64,7 +64,7 @@ Starting <strong>July 1st, 2025</strong>, the CoMPhy Lab will be relocating to D
 
 <div class="news-flex-row">
   <div class="news-flex-row__image-container">
-    <img src="/assets/images/news/vatsal-ammodo-2025.jpg" alt="Vatsal Sanjay - Ammodo Science Fellowship" class="news-image">
+    <img src="/assets/images/news/vatsal-ammodo-2025.jpg" alt="Vatsal Sanjay - Ammodo Science Fellowship" class="news-image" loading="lazy" decoding="async">
   </div>
   <div class="news-flex-row__links-container">
     <a href="https://ammodo-science.webflow.io/researches/vatsal-sanjay" class="doi-link"><i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 8px; font-size: 1.2em;"></i>Read More</a>
@@ -90,7 +90,7 @@ Starting <strong>July 1st, 2025</strong>, the CoMPhy Lab will be relocating to D
 <div class="news-flex-row">
   <div class="news-flex-row__image-container">
     <a href="/research#15">
-      <img src="/assets/images/research/drop-impact-prl.png" alt="Drop impact PRL paper" class="news-image">
+      <img src="/assets/images/research/drop-impact-prl.png" alt="Drop impact PRL paper" class="news-image" loading="lazy" decoding="async">
     </a>
   </div>
   <div class="news-flex-row__links-container">
@@ -107,7 +107,7 @@ Starting <strong>July 1st, 2025</strong>, the CoMPhy Lab will be relocating to D
 <div class="news-flex-row">
   <div class="news-flex-row__image-container">
     <a href="/research#14">
-      <img src="/assets/images/covers/2025-02-JFM_Vol1004.jpeg" alt="JFM cover" class="news-image">
+      <img src="/assets/images/covers/2025-02-JFM_Vol1004.jpeg" alt="JFM cover" class="news-image" loading="lazy" decoding="async">
     </a>
   </div>
   <div class="news-flex-row__links-container">
@@ -127,7 +127,7 @@ Starting <strong>July 1st, 2025</strong>, the CoMPhy Lab will be relocating to D
 <div class="news-flex-row">
   <div class="news-flex-row__image-container">
     <a href="/research#12">
-      <img src="/assets/images/covers/2024-12-JFM_Vol1001.jpeg" alt="JFM cover" class="news-image">
+      <img src="/assets/images/covers/2024-12-JFM_Vol1001.jpeg" alt="JFM cover" class="news-image" loading="lazy" decoding="async">
     </a>
   </div>
   <div class="news-flex-row__links-container">

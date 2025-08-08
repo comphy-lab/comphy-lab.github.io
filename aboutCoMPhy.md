@@ -56,6 +56,6 @@ Feel free to contact us for discussions about our work or anything else related 
 For supplementary videos and teaser of our upcoming work:
 
 <a href="https://www.youtube.com/@CoMPhyLab" target="_blank" rel="noopener noreferrer" aria-label="Visit our YouTube channel">
-  <img class="youtube-stats-light" alt="Vatsal's YouTube Stats" src="https://cust-youtube-stats-card.vercel.app/api?channelid=UC-eTdHrAM_eQrWOtNLoT19w&theme=solarized_light&hide_border=true" width="auto" height="200px">
-  <img class="youtube-stats-dark" alt="Vatsal's YouTube Stats" src="https://cust-youtube-stats-card.vercel.app/api?channelid=UC-eTdHrAM_eQrWOtNLoT19w&theme=vision_friendly_dark&hide_border=true" width="auto" height="200px">
+  <img class="youtube-stats-light" alt="Vatsal's YouTube Stats" src="https://cust-youtube-stats-card.vercel.app/api?channelid=UC-eTdHrAM_eQrWOtNLoT19w&theme=solarized_light&hide_border=true" width="auto" height="200px" loading="lazy" decoding="async">
+  <img class="youtube-stats-dark" alt="Vatsal's YouTube Stats" src="https://cust-youtube-stats-card.vercel.app/api?channelid=UC-eTdHrAM_eQrWOtNLoT19w&theme=vision_friendly_dark&hide_border=true" width="auto" height="200px" loading="lazy" decoding="async">
 </a>
