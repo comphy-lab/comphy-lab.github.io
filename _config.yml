@@ -37,3 +37,9 @@ exclude:
   - tests
   - jest.config.js
   - package*.json
+  # AI/dev tooling files and directories (do not build or watch)
+  - .cursor
+  - .cursor/**
+  - .claude
+  - .claude/**
+  - CLAUDE.md
