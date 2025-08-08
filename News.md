@@ -2,7 +2,7 @@
 
 <div class="news-flex-row">
   <div class="news-flex-row__image-container">
-    <a href="https://www.durham.ac.uk">
+    <a href="https://www.durham.ac.uk/staff/vatsal-sanjay/">
       <img src="/assets/logos/Durham-University_NoText.png" alt="Durham University" class="news-image" style="box-shadow: none;" loading="lazy" decoding="async">
     </a>
   </div>
