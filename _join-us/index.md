@@ -63,12 +63,12 @@ We are always looking for enthusiastic PhD students interested in:
 
 If you are interested, please send your:
 
-- CV
-- Academic transcripts
-- Brief research statement
-- Names of 2–3 references
+1. CV
+2. Academic transcripts
+3. Brief research statement
+4. Names of 2–3 references
 
-to:
+Send your materials to:
 
 <div class="email-container">
   <span class="email-text">vatsal.sanjay@comphy-lab.org</span>

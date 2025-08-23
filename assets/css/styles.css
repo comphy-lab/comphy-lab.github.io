@@ -2183,6 +2183,29 @@ section#featured:after,
   margin: 2rem 0;
 }
 
+/* Join page markdown refinements */
+.join-content .markdown-content h2 {
+  font-size: 2.4rem;
+  color: var(--color-primary);
+  margin: 2.4rem 0 1.2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--position-h2-border);
+}
+
+.join-content .markdown-content p {
+  margin: 0 0 1.2rem;
+}
+
+.join-content .markdown-content ul,
+.join-content .markdown-content ol {
+  margin: 0 0 1.2rem 2rem;
+  padding: 0;
+}
+
+.join-content .markdown-content li {
+  margin: 0.4rem 0;
+}
+
 /* --------------------------------------------------------------
  * 16. YOUTUBE STATS CARD
  *-------------------------------------------------------------- */
