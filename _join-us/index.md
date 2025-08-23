@@ -8,7 +8,7 @@ permalink: /join/
   <div class="row">
     <div class="join-content">
       <h1>Join Us</h1>
-      
+
       <div class="position-section">
         <h2>Ongoing Projects</h2>
         <p>Explore active topics you can join right now. Each item links to a
