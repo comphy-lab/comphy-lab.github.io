@@ -68,7 +68,22 @@ If you are interested, please send your:
 - Brief research statement
 - Names of 2–3 references
 
-to: [vatsal.sanjay@comphy-lab.org](mailto:vatsal.sanjay@comphy-lab.org), [vatsal.sanjay@durham.ac.uk](mailto:vatsal.sanjay@durham.ac.uk)
+to:
+
+<div class="email-container">
+  <span class="email-text">vatsal.sanjay@comphy-lab.org</span>
+  <button class="copy-btn" data-clipboard-text="vatsal.sanjay@comphy-lab.org" onclick="copyEmail(this)" aria-label="Copy email address vatsal.sanjay@comphy-lab.org">
+    <i class="fa-regular fa-copy"></i>
+  </button>
+  
+</div>
+
+<div class="email-container">
+  <span class="email-text">vatsal.sanjay@durham.ac.uk</span>
+  <button class="copy-btn" data-clipboard-text="vatsal.sanjay@durham.ac.uk" onclick="copyEmail(this)" aria-label="Copy email address vatsal.sanjay@durham.ac.uk">
+    <i class="fa-regular fa-copy"></i>
+  </button>
+</div>
 
 ## Postdoctoral Positions
 
