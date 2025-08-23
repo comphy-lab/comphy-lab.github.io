@@ -23,6 +23,13 @@ title: Research
 
 ## Work in Progress
 
+### Appleford, T., <strong>Sanjay, V.</strong>, Jalaal, M. On the Rheology of Two-Dimensional Dilute Emulsions. arXiv preprint arXiv:2508.13022 (2025).
+
+<tags><span>Emulsions</span><span>Rheology</span></tags>
+
+[![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2508.13022&color=green)](https://arxiv.org/abs/2508.13022)
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
+
 ### Demirkır, Ç., Yang, R., Bashkatov, A., <strong>Sanjay, V.</strong>, Lohse, D., & Krug, D. To jump or not to jump: Adhesion and viscous dissipation dictate the detachment of coalescing wall-attached bubbles. Submitted to Phys. Rev. Lett. (2025).
 
 <tags><span>Bubbles</span><span>Coalescence</span></tags>

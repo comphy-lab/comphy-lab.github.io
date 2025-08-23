@@ -141,7 +141,7 @@
 
 /* Main title */
 .research-content h1 {
-  font-size: 2.5em;
+  font-size: 3em;
   color: var(--research-heading-color);
   margin-bottom: 2rem;
   text-align: center;
@@ -159,13 +159,13 @@
 
 @media screen and (max-width: 600px) {
   .research-content h1 {
-    font-size: 2em;
+    font-size: 2.25em;
   }
 }
 
 /* Year sections */
 .research-content h2 {
-  font-size: 2.25rem;
+  font-size: 2.5rem;
   color: var(--color-heading-h2);
   margin: 3rem 0 1.5rem;
   padding: 0.5rem 1rem;
@@ -176,14 +176,14 @@
 
 @media screen and (max-width: 600px) {
   .research-content h2 {
-    font-size: 1.75rem;
+    font-size: 2rem;
     margin: 2rem 0 1rem;
   }
 }
 
 /* Paper titles */
 .research-content h3 {
-  font-size: 1.75rem;
+  font-size: 2rem;
   line-height: 1.5;
   margin: 2rem 0 0.75rem;
   color: var(--color-heading-h3);
@@ -199,7 +199,7 @@
 
 @media screen and (max-width: 600px) {
   .research-content h3 {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     padding-left: 0.75rem;
   }
 }
@@ -302,7 +302,7 @@
 
 /* Highlight boxes */
 .research-content h4 {
-  font-size: 1.25rem;
+  font-size: 1.4rem;
   color: var(--research-subheading-color);
   margin: 1rem 0 0.5rem;
   padding-left: 1rem;
@@ -314,7 +314,7 @@
   padding: 1rem;
   margin: 0.5rem 0 1.5rem;
   border-radius: 0 8px 8px 0;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   color: var(--color-gray-medium);
 }
 
@@ -346,7 +346,7 @@
   color: var(--color-gray-medium);
   margin: 0.5rem 0;
   padding-left: 1rem;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
 }
 
 /* Animations */
@@ -400,7 +400,7 @@
 
 /* Regular text (for paper descriptions) */
 .research-content p {
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   line-height: 1.6;
   color: var(--research-text-color);
   margin-bottom: 1rem;
@@ -427,19 +427,19 @@
   }
 
   .research-content p {
-    font-size: 1.1rem;
-  }
-
-  .research-content h4 {
     font-size: 1.15rem;
   }
 
+  .research-content h4 {
+    font-size: 1.25rem;
+  }
+
   .research-content h4 + p {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
   }
 
   .paper-status {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
   }
 }
 
@@ -531,7 +531,7 @@
 }
 
 .toc-nav h3 {
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: var(--color-secondary);
   margin-bottom: 1rem;
   padding-bottom: 0.5rem;
@@ -556,7 +556,7 @@
 .toc-list a {
   color: var(--color-gray-medium);
   text-decoration: none;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   transition: all 0.3s ease;
   display: block;
   padding: 0.5rem 1rem;
@@ -634,7 +634,7 @@
 .research-content tags {
   display: inline-flex;
   gap: 0.5rem;
-  font-size: 1.25rem;
+  font-size: 1.4rem;
   font-weight: 500;
   margin: 0.5rem 0 1rem 0;
 }
@@ -746,7 +746,7 @@
 /* Responsive adjustments for tags */
 @media screen and (max-width: 600px) {
   .research-content tags {
-    font-size: 0.85rem;
+    font-size: 1rem;
   }
 
   .research-content tags span {
