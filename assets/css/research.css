@@ -2,10 +2,14 @@
 :root {
   --research-bg-color: var(--color-background);
   --research-text-color: var(--color-text);
-  --research-heading-color: var(--color-heading-h1, #68236D);
+  --research-heading-color: var(--color-heading-h1, #68236d);
   --research-subheading-color: var(--color-blue-bright);
   --research-border-color: var(--color-gray-light);
-  --research-section-bg: linear-gradient(to right, var(--color-gray-light), transparent);
+  --research-section-bg: linear-gradient(
+    to right,
+    var(--color-gray-light),
+    transparent
+  );
   --research-paper-bg: var(--color-white);
   --research-paper-highlight: var(--color-blue-bright-alpha-05);
   --research-paper-highlight-border: var(--color-blue-bright-alpha-20);
@@ -15,10 +19,14 @@
 [data-theme="dark"] {
   --research-bg-color: var(--color-background);
   --research-text-color: var(--color-text);
-  --research-heading-color: var(--color-heading-h1, #9A349F);
+  --research-heading-color: var(--color-heading-h1, #9a349f);
   --research-subheading-color: var(--color-blue-bright);
   --research-border-color: var(--color-gray-xdark);
-  --research-section-bg: linear-gradient(to right, var(--color-gray-xdark), var(--color-gray-xxxdark));
+  --research-section-bg: linear-gradient(
+    to right,
+    var(--color-gray-xdark),
+    var(--color-gray-xxxdark)
+  );
   --research-paper-bg: var(--color-gray-xdark);
   --research-paper-highlight: var(--color-blue-bright-alpha-10);
   --research-paper-highlight-border: var(--color-blue-bright-alpha-30);
@@ -133,11 +141,15 @@
 
 /* Main title */
 .research-content h1 {
-  font-size: 2.5em;
+  font-size: 3em;
   color: var(--research-heading-color);
   margin-bottom: 2rem;
   text-align: center;
-  background: linear-gradient(45deg, var(--research-subheading-color), var(--research-heading-color));
+  background: linear-gradient(
+    45deg,
+    var(--research-subheading-color),
+    var(--research-heading-color)
+  );
   -webkit-background-clip: text;
   background-clip: text; /* Standard property for compatibility */
   -webkit-text-fill-color: transparent;
@@ -147,13 +159,13 @@
 
 @media screen and (max-width: 600px) {
   .research-content h1 {
-    font-size: 2em;
+    font-size: 2.25em;
   }
 }
 
 /* Year sections */
 .research-content h2 {
-  font-size: 2.25rem;
+  font-size: 2.5rem;
   color: var(--color-heading-h2);
   margin: 3rem 0 1.5rem;
   padding: 0.5rem 1rem;
@@ -164,14 +176,14 @@
 
 @media screen and (max-width: 600px) {
   .research-content h2 {
-    font-size: 1.75rem;
+    font-size: 2rem;
     margin: 2rem 0 1rem;
   }
 }
 
 /* Paper titles */
 .research-content h3 {
-  font-size: 1.75rem;
+  font-size: 2rem;
   line-height: 1.5;
   margin: 2rem 0 0.75rem;
   color: var(--color-heading-h3);
@@ -187,7 +199,7 @@
 
 @media screen and (max-width: 600px) {
   .research-content h3 {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     padding-left: 0.75rem;
   }
 }
@@ -290,7 +302,7 @@
 
 /* Highlight boxes */
 .research-content h4 {
-  font-size: 1.25rem;
+  font-size: 1.4rem;
   color: var(--research-subheading-color);
   margin: 1rem 0 0.5rem;
   padding-left: 1rem;
@@ -302,7 +314,7 @@
   padding: 1rem;
   margin: 0.5rem 0 1.5rem;
   border-radius: 0 8px 8px 0;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   color: var(--color-gray-medium);
 }
 
@@ -334,18 +346,19 @@
   color: var(--color-gray-medium);
   margin: 0.5rem 0;
   padding-left: 1rem;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
 }
 
 /* Animations */
 @keyframes fadeIn {
-  from { 
-    opacity: 0; 
-    transform: translateY(20px); 
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  to { 
-    opacity: 1; 
-    transform: translateY(0); 
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -358,16 +371,16 @@
   .s-research {
     padding: 0;
   }
-  
+
   .video-container {
     display: none;
   }
-  
+
   .research-content {
     max-width: 100%;
     padding: 0;
   }
-  
+
   .research-content h1 {
     -webkit-text-fill-color: initial;
     background: none;
@@ -379,15 +392,15 @@
     border-bottom: 1px solid var(--color-gray-light);
     border-left: none;
   }
-  
+
   .badge-container {
     display: none;
   }
-} 
+}
 
 /* Regular text (for paper descriptions) */
 .research-content p {
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   line-height: 1.6;
   color: var(--research-text-color);
   margin-bottom: 1rem;
@@ -414,21 +427,21 @@
   }
 
   .research-content p {
-    font-size: 1.1rem;
-  }
-
-  .research-content h4 {
     font-size: 1.15rem;
   }
 
+  .research-content h4 {
+    font-size: 1.25rem;
+  }
+
   .research-content h4 + p {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
   }
 
   .paper-status {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
   }
-} 
+}
 
 /* Paper title container */
 .paper-title-container {
@@ -465,14 +478,22 @@
 
 /* Success animation */
 @keyframes copySuccess {
-  0% { transform: translateY(-50%) scale(1); }
-  50% { transform: translateY(-50%) scale(1.2); }
-  100% { transform: translateY(-50%) scale(1); }
+  0% {
+    transform: translateY(-50%) scale(1);
+  }
+
+  50% {
+    transform: translateY(-50%) scale(1.2);
+  }
+
+  100% {
+    transform: translateY(-50%) scale(1);
+  }
 }
 
 .copy-success {
   animation: copySuccess 0.3s ease-in-out;
-} 
+}
 
 .research-layout {
   position: relative;
@@ -510,7 +531,7 @@
 }
 
 .toc-nav h3 {
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: var(--color-secondary);
   margin-bottom: 1rem;
   padding-bottom: 0.5rem;
@@ -535,7 +556,7 @@
 .toc-list a {
   color: var(--color-gray-medium);
   text-decoration: none;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   transition: all 0.3s ease;
   display: block;
   padding: 0.5rem 1rem;
@@ -607,13 +628,13 @@
   .toc-sidebar {
     display: none;
   }
-} 
+}
 
 /* Tags styling */
 .research-content tags {
   display: inline-flex;
   gap: 0.5rem;
-  font-size: 1.25rem;
+  font-size: 1.4rem;
   font-weight: 500;
   margin: 0.5rem 0 1rem 0;
 }
@@ -639,21 +660,21 @@
 }
 
 /* Fix for top filter tags in dark theme */
-[data-theme="dark"] tags span, 
+[data-theme="dark"] tags span,
 [data-theme="dark"] tags a.tag-link {
   background: var(--color-blue-bright-alpha-20);
   color: var(--research-text-color);
   border: 1px solid var(--color-blue-bright-alpha-40);
 }
 
-[data-theme="dark"] tags span:hover, 
+[data-theme="dark"] tags span:hover,
 [data-theme="dark"] tags a.tag-link:hover {
   background: var(--color-blue-bright-alpha-20);
   border-color: var(--color-blue-bright-alpha-40);
 }
 
 /* Fix for active tags in dark theme */
-[data-theme="dark"] tags span.active, 
+[data-theme="dark"] tags span.active,
 [data-theme="dark"] tags a.tag-link.active {
   background: var(--color-blue-bright-alpha-80);
   color: var(--research-text-color);
@@ -686,11 +707,11 @@
   background: var(--color-blue-bright-alpha-10);
 }
 
-.research-content tags span:nth-of-type(n+4) {
+.research-content tags span:nth-of-type(n + 4) {
   background: var(--color-primary-alpha-5);
 }
 
-[data-theme="dark"] .research-content tags span:nth-of-type(n+4) {
+[data-theme="dark"] .research-content tags span:nth-of-type(n + 4) {
   background: var(--color-blue-bright-alpha-10);
 }
 
@@ -725,40 +746,51 @@
 /* Responsive adjustments for tags */
 @media screen and (max-width: 600px) {
   .research-content tags {
-    font-size: 0.85rem;
+    font-size: 1rem;
   }
+
   .research-content tags span {
     padding: 0.3rem 0.8rem;
   }
-} 
+}
 
 html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 120px; /* Increased to account for fixed header */
+  scroll-behavior: smooth;
+  scroll-padding-top: 120px; /* Increased to account for fixed header */
 }
 
 /* Highlight the target container when navigated to via anchor */
 .paper-container:target {
-    background-color: var(--research-paper-highlight);
-    border-color: var(--research-paper-highlight-border);
-    box-shadow: 0 4px 12px var(--research-shadow);
+  background-color: var(--research-paper-highlight);
+  border-color: var(--research-paper-highlight-border);
+  box-shadow: 0 4px 12px var(--research-shadow);
 }
 
 /* Critical CSS for fastest paint */
 .s-header {
   visibility: visible;
 }
-.research-content h1, .research-content h2 {
+
+.research-content h1,
+.research-content h2 {
   visibility: visible;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
 }
+
 .toc-nav {
   visibility: visible;
 }
+
 .paper-container img {
   opacity: 0;
   transition: opacity 0.2s ease-out;
 }
+
 .paper-container img.loaded {
   opacity: 1;
 }
@@ -768,7 +800,8 @@ html {
   opacity: 1; /* Ensure visibility */
 }
 /* Tag minimal */
-[data-theme="dark"] tags span, [data-theme="dark"] tags a.tag-link {
+[data-theme="dark"] tags span,
+[data-theme="dark"] tags a.tag-link {
   background-color: var(--research-bg-color); /* Corrected variable */
   color: var(--research-text-color);
   border: 1px solid var(--color-blue-bright-alpha-30);

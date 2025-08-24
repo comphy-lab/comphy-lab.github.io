@@ -89,7 +89,8 @@
   color: #f0f0f0; /* Always use white text */
 }
 
-.command-palette-command:hover, .command-palette-command.selected {
+.command-palette-command:hover,
+.command-palette-command.selected {
   background-color: rgba(104, 35, 109, 0.3); /* Darker hover state */
 }
 
@@ -138,7 +139,9 @@
 }
 
 /* Style for search results section */
-.command-palette-section:has(.command-palette-section-title:contains("Search Results")) {
+.command-palette-section:has(
+    .command-palette-section-title:contains("Search Results")
+  ) {
   border-top: 1px solid rgba(104, 35, 109, 0.2);
   margin-top: 10px;
   padding-top: 10px;
@@ -168,7 +171,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #000000;
+  color: #000;
   text-decoration: none;
   font-size: 1.6rem;
   transition: all 0.3s ease;
@@ -201,13 +204,13 @@
 .command-k-style-btn .search-icon {
   margin-left: 4px;
   font-size: 1em;
-  color: #000000;
+  color: #000;
 }
 
 .command-k-style-btn .default-theme-text,
 .command-k-style-btn .mac-theme-text {
   font-weight: 500;
-  color: #000000;
+  color: #000;
 }
 
 /* Hide previous button styling */
@@ -216,7 +219,8 @@
 }
 
 /* Hide one of the shortcut texts depending on platform */
-.mac-theme-text, .default-theme-text {
+.mac-theme-text,
+.default-theme-text {
   display: none;
 }
 
@@ -226,19 +230,19 @@
     margin: 0.8rem 0;
     width: 100%;
   }
-  
+
   .command-k-style-btn {
     width: 100%;
     justify-content: center;
     padding: 0.8rem;
   }
-  
+
   .simple-command-palette-modal {
     width: 95vw;
     max-width: 95vw;
     top: 15%;
   }
-  
+
   .command-palette-excerpt {
     display: none; /* Hide excerpts on mobile to save space */
   }
@@ -281,7 +285,7 @@
 
 .shortcut-help-content h2 {
   margin-top: 0;
-  color: #68236D;
+  color: #68236d;
 }
 
 .shortcut-help-content table {
@@ -302,7 +306,7 @@
   padding: 3px 6px;
   font-size: 0.9em;
   line-height: 1.4;
-  color: #68236D;
+  color: #68236d;
   background-color: rgba(104, 35, 109, 0.15);
   border: 1px solid rgba(104, 35, 109, 0.3);
   border-radius: 4px;
@@ -319,7 +323,7 @@
 
 .shortcut-help-footer button {
   padding: 8px 16px;
-  background-color: #68236D;
+  background-color: #68236d;
   color: white;
   border: none;
   border-radius: 6px;
@@ -341,22 +345,22 @@
     color: #f0f0f0;
     border-color: rgba(104, 35, 109, 0.3);
   }
-  
+
   .shortcut-help-content h2 {
     color: #d4a5db;
   }
-  
+
   .shortcut-help-content th,
   .shortcut-help-content td {
     border-bottom-color: rgba(104, 35, 109, 0.3);
   }
-  
+
   .shortcut-help-content kbd {
     color: #f0f0f0;
     background-color: rgba(104, 35, 109, 0.25);
     border-color: rgba(104, 35, 109, 0.4);
   }
-  
+
   .shortcut-help-footer button:hover {
     background-color: #8d3092;
   }
@@ -394,9 +398,12 @@
   margin: 0 3px;
   font-size: 12px;
   line-height: 1;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   font-weight: 600;
 }
 
-/* Footer dark styling is now applied to all color schemes above */ 
+/* Footer dark styling is now applied to all color schemes above */

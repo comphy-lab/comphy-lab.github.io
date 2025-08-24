@@ -1,13 +1,13 @@
 /* Teaching Section Styles
------------------------------------*/
+----------------------------------- */
 
 /* Dark theme variables for teaching page */
 :root {
-  --teaching-bg-color: #ffffff;
-  --teaching-text-color: #333333;
-  --teaching-heading-color: #68236D;
+  --teaching-bg-color: #fff;
+  --teaching-text-color: #333;
+  --teaching-heading-color: #68236d;
   --teaching-subheading-color: #4169e1;
-  --teaching-card-bg: #ffffff;
+  --teaching-card-bg: #fff;
   --teaching-border-color: #eaeaea;
   --teaching-shadow: rgba(0, 0, 0, 0.08);
   --teaching-course-border: #4169e1;
@@ -16,10 +16,10 @@
 [data-theme="dark"] {
   --teaching-bg-color: #121212;
   --teaching-text-color: #e0e0e0;
-  --teaching-heading-color: #9A349F;
+  --teaching-heading-color: #9a349f;
   --teaching-subheading-color: #6fa1ff;
   --teaching-card-bg: #1e1e1e;
-  --teaching-border-color: #333333;
+  --teaching-border-color: #333;
   --teaching-shadow: rgba(0, 0, 0, 0.3);
   --teaching-course-border: #6fa1ff;
 }
@@ -73,7 +73,7 @@
 }
 
 [data-theme="dark"] .teaching-content hr {
-  background: #444444;
+  background: #444;
   height: 1px;
   opacity: 1;
 }
@@ -81,7 +81,7 @@
 .teaching-content h3 {
   font-size: 1.8rem;
   margin: 1.5rem 0 1rem;
-  color: var(--color-heading-h3, #000000);
+  color: var(--color-heading-h3, #000);
 }
 
 .teaching-content h4 {
@@ -95,12 +95,14 @@
   line-height: 1.6;
 }
 
-.teaching-content ul, .teaching-content ol {
+.teaching-content ul,
+.teaching-content ol {
   margin-bottom: 1.5rem;
   padding-left: 2rem;
 }
 
-.teaching-content ul li, .teaching-content ol li {
+.teaching-content ul li,
+.teaching-content ol li {
   margin-bottom: 0.5rem;
   line-height: 1.6;
 }
@@ -112,7 +114,7 @@
 /* Ensure bold text is white in dark mode */
 [data-theme="dark"] .teaching-content strong,
 [data-theme="dark"] .teaching-content b {
-  color: #ffffff;
+  color: #fff;
   font-weight: 700;
 }
 
@@ -138,7 +140,9 @@
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 12px var(--teaching-shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -192,13 +196,14 @@
   align-self: flex-start;
   display: inline-block;
   padding: 0.5rem 1.2rem;
-  background-color: #68246D;
+  background-color: #68246d;
   color: #fff !important;
   text-decoration: none;
   border-radius: 4px;
   font-weight: 500;
   transition: background-color 0.3s ease;
 }
+
 .course-card__link:link,
 .course-card__link:visited,
 .course-card__link:hover,
@@ -206,6 +211,7 @@
   color: #fff !important;
   text-decoration: none;
 }
+
 [data-theme="dark"] .course-card__link,
 [data-theme="dark"] .course-card__link:link,
 [data-theme="dark"] .course-card__link:visited,
@@ -258,7 +264,7 @@
   margin-bottom: 0.5rem;
 }
 
-.course-schedule ul li::before {
+.course-schedule ul li:before {
   content: "•";
   position: absolute;
   left: 0;
@@ -307,7 +313,7 @@
 }
 
 [data-theme="dark"] .course-details__item p {
-  color: #ffffff;
+  color: #fff;
   font-weight: 500;
 }
 
@@ -345,7 +351,7 @@
 }
 
 /* Add a hazy overlay to the course image */
-.course-image::after {
+.course-image:after {
   content: "";
   position: absolute;
   top: 0;
@@ -431,7 +437,7 @@
 .schedule-container ul li strong {
   display: inline-block;
   color: #333;
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
   background-color: rgba(65, 105, 225, 0.1);
   padding: 0.3rem 0.5rem;
   border-radius: 4px;
@@ -447,7 +453,7 @@
 }
 
 /* Bold italic text styling */
-.schedule-container em strong, 
+.schedule-container em strong,
 .schedule-container strong em {
   color: #4169e1;
 }
@@ -475,7 +481,7 @@
   line-height: 1.6;
 }
 
-.schedule-container ul li ul li::before {
+.schedule-container ul li ul li:before {
   content: "→";
   position: absolute;
   left: 0;
@@ -504,7 +510,7 @@
   padding-left: 0.5rem;
 }
 
-.schedule-container > ul > li::before {
+.schedule-container > ul > li:before {
   content: "•";
   position: absolute;
   left: 0;
@@ -530,7 +536,7 @@
   line-height: 1.6;
 }
 
-.schedule-container ul li ul li::before {
+.schedule-container ul li ul li:before {
   content: "→";
   position: absolute;
   left: 0;
@@ -573,7 +579,7 @@
 
 .email-text {
   font-size: 1.5rem;
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
   margin-right: auto;
   color: #444;
 }
@@ -606,35 +612,35 @@
   .s-teaching {
     padding: 5rem 0;
   }
-  
+
   .s-teaching__desc h1 {
     font-size: 3rem;
   }
-  
+
   .teaching-grid {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
-  
+
   .schedule-container {
     padding: 1.8rem;
   }
-  
+
   .schedule-container h2 {
     font-size: 2.3rem;
   }
-  
+
   .schedule-container ul li {
     font-size: 1.3rem;
   }
-  
+
   .schedule-container ul li strong {
     font-size: 1.3rem;
   }
-  
+
   .schedule-container ul li ul li {
     font-size: 1.3rem;
   }
-  
+
   .schedule-container ul li ul li em,
   .schedule-container em {
     font-size: 1.3rem;
@@ -645,70 +651,70 @@
   .s-teaching {
     padding: 4rem 0;
   }
-  
+
   .s-teaching__desc h1 {
     font-size: 2.4rem;
   }
-  
+
   .teaching-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .schedule-container {
     padding: 1.5rem 1rem;
     font-size: 1.1rem;
   }
-  
+
   .schedule-container h2 {
     font-size: 2rem;
     margin-bottom: 1.5rem;
   }
-  
+
   .schedule-container h3 {
     font-size: 1.7rem;
     padding: 0.4rem 1rem;
   }
-  
+
   .schedule-container h4 {
     font-size: 1.5rem;
   }
-  
+
   .schedule-container ul li {
     font-size: 1.2rem;
     line-height: 1.6;
   }
-  
+
   .schedule-container ul li strong {
     font-size: 1.2rem;
   }
-  
+
   .schedule-container ul li ul li {
     font-size: 1.2rem;
     line-height: 1.5;
   }
-  
-  .schedule-container ul li ul li::before {
+
+  .schedule-container ul li ul li:before {
     font-size: 1.2rem;
     top: 0.2rem;
   }
-  
+
   .schedule-container ul li ul li em,
   .schedule-container em {
     font-size: 1.2rem;
   }
-  
+
   .email-container {
     max-width: 100%;
     padding: 1rem 1.2rem;
   }
-  
+
   .email-text {
     font-size: 1.3rem;
     word-break: break-all;
   }
-  
+
   .copy-btn {
     font-size: 1.3rem;
     padding: 0.4rem 0.7rem;
   }
-} 
+}

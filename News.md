@@ -2,8 +2,8 @@
 
 <div class="news-flex-row">
   <div class="news-flex-row__image-container">
-    <a href="https://www.durham.ac.uk">
-      <img src="/assets/logos/Durham-University_NoText.png" alt="Durham University" class="news-image" style="box-shadow: none;">
+    <a href="https://www.durham.ac.uk/staff/vatsal-sanjay/">
+      <img src="/assets/logos/Durham-University_NoText.png" alt="Durham University" class="news-image" style="box-shadow: none;" loading="lazy" decoding="async">
     </a>
   </div>
   <div class="news-flex-row__links-container">
@@ -12,6 +12,10 @@
 </div>
 
 Starting <strong>July 1st, 2025</strong>, the CoMPhy Lab will be relocating to Durham University, UK. We are excited to join the [Condensed Matter Physics section](https://www.durham.ac.uk/research/institutes-and-centres/condensed-matter-physics/) in the [Department of Physics](https://www.durham.ac.uk/departments/academic/physics/) and continue our research in computational physics and fluid dynamics in our new home.
+
+### July
+
+- <strong>Saumili Jana</strong> <a href="https://github.com/SaumiliJana"><i class="fa-brands fa-github" style="font-size: 1.5em; color: #8a2be2;"></i></a> received the award for best master's thesis from IIT Kharagpur. <strong>Thesis:</strong> <a href="https://bit.ly/ThesisJana" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf" style="margin-right: 8px; font-size: 1.2em; color: #e63946;"></i>Retract or Collapse? The Role of Viscosity and Viscoelasticity on Bubble Dynamics</a>
 
 ### June
 
@@ -24,7 +28,7 @@ Starting <strong>July 1st, 2025</strong>, the CoMPhy Lab will be relocating to D
 <div class="news-flex-row">
   <div class="news-flex-row__image-container">
     <a href="/research#17">
-      <img src="/assets/images/research/NatComm-jet-drop.png" alt="Drop injection" class="news-image">
+      <img src="/assets/images/research/NatComm-jet-drop.png" alt="Drop injection" class="news-image" loading="lazy" decoding="async">
     </a>
   </div>
   <div class="news-flex-row__links-container">
@@ -37,7 +41,7 @@ Starting <strong>July 1st, 2025</strong>, the CoMPhy Lab will be relocating to D
 <div class="news-flex-row">
   <div class="news-flex-row__image-container">
     <a href="/research#16">
-      <img src="/assets/images/research/S002211202500237X_figAb.png" alt="Worthington Jets and Droplets" class="news-image">
+      <img src="/assets/images/research/S002211202500237X_figAb.png" alt="Worthington Jets and Droplets" class="news-image" loading="lazy" decoding="async">
     </a>
   </div>
   <div class="news-flex-row__links-container">
@@ -51,7 +55,7 @@ Starting <strong>July 1st, 2025</strong>, the CoMPhy Lab will be relocating to D
 
 <div class="news-flex-row">
   <div class="news-flex-row__image-container">
-    <img src="/assets/images/news/vatsal-ammodo-2025.jpg" alt="Vatsal Sanjay - Ammodo Science Fellowship" class="news-image">
+    <img src="/assets/images/news/vatsal-ammodo-2025.jpg" alt="Vatsal Sanjay - Ammodo Science Fellowship" class="news-image" loading="lazy" decoding="async">
   </div>
   <div class="news-flex-row__links-container">
     <a href="https://ammodo-science.webflow.io/researches/vatsal-sanjay" class="doi-link"><i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 8px; font-size: 1.2em;"></i>Read More</a>
@@ -60,14 +64,4 @@ Starting <strong>July 1st, 2025</strong>, the CoMPhy Lab will be relocating to D
 
 <div class="news-credit">
   Image credit: J. Heitman, B. J. Howlett, P. W. Crous, E. H. Stukenbrock, T. Y. James & N. A. R. Gow, The fungal kingdom, John Wiley & Sons (2020)
-</div>
-
-### March
-
-- <a href="https://en.wikipedia.org/wiki/Detlef_Lohse"><strong>Prof. Detlef Lohse</strong></a> shares his scientific journey in <a href="https://www.youtube.com/@TheLivingHistoriesSeries" class="blue-link">The Living Histories Series</a>. His inspiring discussion on curiosity, mentorship, and the "puzzle solving" joy of science offers valuable insights for researchers at all career stages.
-
-<div class="news-flex-row">
-  <div class="news-flex-row__links-container">
-    <a href="https://bit.ly/3DXBixh" class="youtube-link"><i class="fa-brands fa-youtube" style="margin-right: 8px; font-size: 1.2em;"></i>Watch on YouTube</a>
-  </div>
 </div>

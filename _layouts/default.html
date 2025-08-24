@@ -87,6 +87,10 @@
   {% endif %}
   <link rel="stylesheet" href="/assets/css/command-palette.css" media="print" onload="this.media='all'">
 
+  <!-- Core utilities (must load first) -->
+  <script defer src="/assets/js/utils.js"></script>
+  <script defer src="/assets/js/search-manager.js"></script>
+  
   <!-- Command palette (implementation in assets/js/command-palette.js) -->
   <script defer src="/assets/js/command-palette.js"></script>
 
@@ -97,7 +101,6 @@
   <script defer src="/assets/js/main.js"></script>
   <script defer src="/assets/js/command-data.js"></script>
   <script defer src="/assets/js/platform-utils.js"></script>
-  <script defer src="/assets/js/shortcut-key.js"></script>
 
   <script>
     document.documentElement.classList.remove('no-js');
@@ -240,16 +243,16 @@
   <footer class="site-footer">
     <div class="footer-left">
       <a href="http://basilisk.fr/sandbox/vatsal/" target="_blank" rel="noopener noreferrer">
-        <img src="/assets/logos/logoBasilisk_TransparentBackground.png" alt="Basilisk C" class="footer-logo">
+                  <img src="/assets/logos/logoBasilisk_TransparentBackground.png" alt="Basilisk C" class="footer-logo" loading="lazy" decoding="async" fetchpriority="low">
       </a>
       <a href="https://pof.tnw.utwente.nl/" target="_blank" rel="noopener noreferrer">
-        <img src="/assets/logos/LogoPof_transparent_white.png" alt="Physics of Fluids" class="footer-logo pof-logo">
+        <img src="/assets/logos/LogoPof_transparent_white.png" alt="Physics of Fluids" class="footer-logo pof-logo" loading="lazy" decoding="async" fetchpriority="low">
       </a>
       <a href="https://www.vatsalsanjay.com/" target="_blank" rel="noopener noreferrer">
-        <img src="/assets/logos/Logo_Vatsal_v3_OutLine.png" alt="Vatsal Sanjay" class="footer-logo">
+        <img src="/assets/logos/Logo_Vatsal_v3_OutLine.png" alt="Vatsal Sanjay" class="footer-logo" loading="lazy" decoding="async" fetchpriority="low">
       </a>
-      <a href="https://www.durham.ac.uk/" target="_blank" rel="noopener noreferrer">
-        <img src="/assets/logos/Durham-University-white.png" alt="Durham University" class="footer-logo">
+      <a href="https://www.durham.ac.uk/staff/vatsal-sanjay/" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/logos/Durham-University-white.png" alt="Durham University" class="footer-logo" loading="lazy" decoding="async" fetchpriority="low">
       </a>
     </div>
     <div class="footer-center">

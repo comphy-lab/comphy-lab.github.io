@@ -19,7 +19,7 @@
   /* Load About Content - Only on main page
    * -------------------------------------------------- */
   const loadAboutContent = async () => {
-    // Only load aboutCoMPhy.md if we"re on the main page
+    // Only load aboutCoMPhy.md if we're on the main page
     if (
       window.location.pathname === "/" ||
       window.location.pathname === "/index.html"
@@ -33,6 +33,35 @@
           const parsedHtml = marked.parse(text);
           const sanitizedHtml = DOMPurify.sanitize(parsedHtml);
           aboutContent.innerHTML = sanitizedHtml;
+
+          // Re-bind copy email handlers for dynamically injected content
+          const aboutCopyButtons = aboutContent.querySelectorAll(".copy-btn");
+          aboutCopyButtons.forEach((button) => {
+            if (
+              typeof Utils !== "undefined" &&
+              Utils.copyToClipboard &&
+              Utils.initAccessibleButton
+            ) {
+              // Attach click to use the shared utility
+              button.addEventListener("click", function () {
+                Utils.copyToClipboard(this);
+              });
+
+              // Ensure accessible name is present using utility
+              const emailText =
+                button.getAttribute("data-text") ||
+                button.getAttribute("data-clipboard-text");
+              Utils.initAccessibleButton(
+                button,
+                `Copy email address ${emailText}`
+              );
+            } else {
+              console.warn(
+                "Utils.js or its functions are not available. Copy buttons in about section are disabled."
+              );
+              button.disabled = true;
+            }
+          });
         }
       } catch (error) {
         console.error("Error loading about content:", error);
@@ -43,7 +72,7 @@
   /* Load News Content - Only on main page
    * -------------------------------------------------- */
   const loadNewsContent = async () => {
-    // Only load News.md if we"re on the main page
+    // Only load News.md if we're on the main page
     if (
       window.location.pathname === "/" ||
       window.location.pathname === "/index.html"
@@ -70,7 +99,7 @@
         historyBtn.href = "/history";
         historyBtn.className = "s-news__history-btn";
         historyBtn.innerHTML =
-          "<i class=\"fa-solid fa-arrow-right\" style=\"margin-right: 8px; font-size: 1.2em;\"></i>Archive";
+          '<i class="fa-solid fa-arrow-right" style="margin-right: 8px; font-size: 1.2em;"></i>Archive';
         historyBtn.setAttribute("role", "button");
         historyBtn.setAttribute("tabindex", "0");
         historyBtn.setAttribute("aria-label", "View archive of all news items");
@@ -108,7 +137,7 @@
   /* Load Featured Papers - Only on main page
    * -------------------------------------------------- */
   const loadFeaturedPapers = async () => {
-    // Only load featured papers if we"re on the main page
+    // Only load featured papers if we're on the main page
     if (
       window.location.pathname === "/" ||
       window.location.pathname === "/index.html"
@@ -163,23 +192,41 @@
             let content = [section.cloneNode(true)];
             let nextEl = section.nextElementSibling;
 
-            while (nextEl && !nextEl.matches("h3")) {
-              // Skip the Highlights section and its list
+            while (nextEl) {
+              // Stop at any h3 element (including Highlights)
+              if (nextEl.matches("h3")) {
+                break;
+              }
+
+              // Skip any element that contains "Highlights" text
               if (
-                nextEl.textContent.trim() === "Highlights" ||
-                (nextEl.matches("ul") &&
-                  nextEl.previousElementSibling &&
-                  nextEl.previousElementSibling.textContent.trim() ===
-                    "Highlights")
+                nextEl.textContent &&
+                nextEl.textContent.includes("Highlights")
+              ) {
+                console.log(
+                  "Skipping element with Highlights:",
+                  nextEl.tagName,
+                  nextEl.textContent.substring(0, 50)
+                );
+                nextEl = nextEl.nextElementSibling;
+                continue;
+              }
+
+              // Skip ul elements that might be part of a Highlights section
+              if (
+                nextEl.matches("ul") &&
+                nextEl.previousElementSibling &&
+                nextEl.previousElementSibling.textContent &&
+                nextEl.previousElementSibling.textContent.includes("Highlights")
               ) {
                 nextEl = nextEl.nextElementSibling;
                 continue;
               }
 
-              // Include everything else (tags, images, iframes)
+              // Include everything else (tags, images, iframes, badges)
               const clone = nextEl.cloneNode(true);
 
-              // If it"s a tags element, make spans clickable
+              // If it's a tags element, make spans clickable
               if (clone.matches("tags")) {
                 Array.from(clone.children).forEach((span) => {
                   span.style.cursor = "pointer";
@@ -203,7 +250,7 @@
 
             // Make the entire container clickable
             paperDiv.addEventListener("click", (e) => {
-              // Don"t navigate if clicking on a link, tag, or iframe
+              // Don't navigate if clicking on a link, tag, or iframe
               if (
                 e.target.closest("a") ||
                 e.target.closest("tags") ||
@@ -252,7 +299,7 @@
         if (featuredContainer) {
           featuredContainer.innerHTML = `
                         <div class="featured-error">
-                            <p>We"re having trouble loading the featured papers. Please try refreshing the page or check back later.</p>
+                            <p>We're having trouble loading the featured papers. Please try refreshing the page or check back later.</p>
                         </div>
                     `;
         }
@@ -303,22 +350,24 @@
 
   /* Smooth Scrolling
    * -------------------------------------------------- */
-  document.querySelectorAll("a[href^=\"#\"], a[href^=\"/#\"]").forEach((anchor) => {
+  document.querySelectorAll('a[href^="#"], a[href^="/#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       const href = this.getAttribute("href");
-      
+
       // Handle both "#section" and "/#section" formats
       if (href.startsWith("/#")) {
         // Check if we're on the home page
-        if (window.location.pathname === "/" || 
-            window.location.pathname === "/index.html") {
+        if (
+          window.location.pathname === "/" ||
+          window.location.pathname === "/index.html"
+        ) {
           e.preventDefault();
           const targetId = href.substring(2); // Remove "/#"
           const target = document.getElementById(targetId);
           if (target) {
             target.scrollIntoView({
               behavior: "smooth",
-              block: "start"
+              block: "start",
             });
           }
         }
@@ -329,7 +378,7 @@
         if (target) {
           target.scrollIntoView({
             behavior: "smooth",
-            block: "start"
+            block: "start",
           });
         }
       }
@@ -352,7 +401,7 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     const images = document.querySelectorAll(
-      ".member-image img[loading=\"lazy\"]"
+      '.member-image img[loading="lazy"]'
     );
 
     images.forEach((img) => {
@@ -365,96 +414,46 @@
       }
     });
 
-    // Email copy functionality
-    const copyButtons = document.querySelectorAll(".copy-btn");
-    copyButtons.forEach((button) => {
-      button.addEventListener("click", function () {
-        const textToCopy = this.getAttribute("data-clipboard-text");
-        const textarea = document.createElement("textarea");
-        textarea.value = textToCopy;
-        textarea.style.position = "fixed";
-        textarea.style.left = "-9999px";
-        document.body.appendChild(textarea);
+    // Email copy functionality using shared utility
+    if (
+      typeof Utils !== "undefined" &&
+      Utils.copyToClipboard &&
+      Utils.initAccessibleButton
+    ) {
+      const copyButtons = document.querySelectorAll(".copy-btn");
+      copyButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+          Utils.copyToClipboard(this);
+        });
 
-        try {
-          textarea.select();
-          document.execCommand("copy");
-          this.classList.add("copied");
-          const icon = this.querySelector("i");
-          icon.classList.remove("fa-copy");
-          icon.classList.add("fa-check");
-
-          setTimeout(() => {
-            this.classList.remove("copied");
-            icon.classList.remove("fa-check");
-            icon.classList.add("fa-copy");
-          }, 2000);
-        } catch (err) {
-          console.error("Copy failed:", err);
-        } finally {
-          document.body.removeChild(textarea);
-        }
+        // Add accessible attributes using utility
+        const emailText =
+          button.getAttribute("data-text") ||
+          button.getAttribute("data-clipboard-text");
+        Utils.initAccessibleButton(button, `Copy email address ${emailText}`);
       });
-    });
-
-    // Add accessible names to all copy buttons on document load
-    copyButtons.forEach((button) => {
-      // Get the email text from data-text or data-clipboard-text attribute
-      const emailText =
-        button.getAttribute("data-text") ||
-        button.getAttribute("data-clipboard-text");
-      // Add aria-label if it doesn"t exist
-      if (!button.hasAttribute("aria-label") && emailText) {
-        button.setAttribute("aria-label", `Copy email address ${emailText}`);
-      }
-    });
+    } else {
+      console.warn(
+        "Utils.js or its functions are not available. Copy buttons are disabled."
+      );
+      const copyButtons = document.querySelectorAll(".copy-btn");
+      copyButtons.forEach((button) => {
+        button.disabled = true;
+      });
+    }
   });
 
   /* Copy Email Functionality
    * -------------------------------------------------- */
-  window.copyEmail = function (button) {
-    const text =
-      button.getAttribute("data-text") ||
-      button.getAttribute("data-clipboard-text");
-    navigator.clipboard
-      .writeText(text)
-      .then(() => {
-        const icon = button.querySelector("i");
-        button.classList.add("copied");
-        icon.classList.remove("fa-copy");
-        icon.classList.add("fa-check");
-
-        setTimeout(() => {
-          button.classList.remove("copied");
-          icon.classList.remove("fa-check");
-          icon.classList.add("fa-copy");
-        }, 2000);
-      })
-      .catch((err) => {
-        console.error("Copy failed:", err);
-        // Fallback for older browsers
-        const textarea = document.createElement("textarea");
-        textarea.value = text;
-        textarea.style.position = "fixed";
-        textarea.style.opacity = "0";
-        document.body.appendChild(textarea);
-        textarea.select();
-        try {
-          document.execCommand("copy");
-          button.classList.add("copied");
-          const icon = button.querySelector("i");
-          icon.classList.remove("fa-copy");
-          icon.classList.add("fa-check");
-
-          setTimeout(() => {
-            button.classList.remove("copied");
-            icon.classList.remove("fa-check");
-            icon.classList.add("fa-copy");
-          }, 2000);
-        } catch (err) {
-          console.error("Fallback failed:", err);
-        }
-        document.body.removeChild(textarea);
-      });
-  };
+  // Copy email functionality now handled by Utils.copyToClipboard
+  // Maintained for backwards compatibility
+  if (typeof Utils !== "undefined" && Utils.copyToClipboard) {
+    window.copyEmail = Utils.copyToClipboard;
+  } else {
+    window.copyEmail = () => {
+      console.warn(
+        "Utils.js or its functions are not available. window.copyEmail is a no-op."
+      );
+    };
+  }
 })(document.documentElement);

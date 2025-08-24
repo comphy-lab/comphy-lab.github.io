@@ -73,42 +73,9 @@
   }
   </script>
 
-  <!-- Simple command palette initialization -->
-  <script>
-    // Make the command palette opening function globally available
-    window.openCommandPalette = function() {
-      const palette = document.getElementById('simple-command-palette');
-      if (palette) {
-        palette.style.display = 'block';
-        const input = document.getElementById('command-palette-input');
-        if (input) {
-          input.value = '';
-          input.focus();
-          if (typeof renderCommandResults === 'function') {
-            renderCommandResults('');
-          }
-        }
-      }
-    };
-
-    // Ensure search database is preloaded for command palette search functionality
-    window.addEventListener('DOMContentLoaded', function() {
-      // Try to prefetch the search database if it exists
-      fetch('/assets/js/search_db.json').then(response => {
-        if (response.ok) {
-          return response.json();
-        }
-        throw new Error('Search database not found');
-      }).then(data => {
-        console.log('Search database prefetched for command palette');
-        window.searchData = data;
-      }).catch(err => {
-        console.warn('Could not prefetch search database for command palette:', err.message);
-      });
-    });
-  </script>
-
-  <!-- JavaScript dependencies -->
+  <!-- JavaScript dependencies - Core utilities first -->
+  <script defer src="/assets/js/utils.js"></script>
+  <script defer src="/assets/js/search-manager.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
   <script defer src="/assets/js/main.js"></script>
@@ -386,16 +353,16 @@
     <footer class="site-footer">
       <div class="footer-left">
         <a href="http://basilisk.fr/sandbox/vatsal/" target="_blank" rel="noopener noreferrer">
-          <img src="/assets/logos/logoBasilisk_TransparentBackground.png" alt="Basilisk C" class="footer-logo">
+          <img src="/assets/logos/logoBasilisk_TransparentBackground.png" alt="Basilisk C" class="footer-logo" loading="lazy" decoding="async" fetchpriority="low">
         </a>
         <a href="https://pof.tnw.utwente.nl/" target="_blank" rel="noopener noreferrer">
-          <img src="/assets/logos/LogoPof_transparent_white.png" alt="Physics of Fluids" class="footer-logo pof-logo">
+          <img src="/assets/logos/LogoPof_transparent_white.png" alt="Physics of Fluids" class="footer-logo pof-logo" loading="lazy" decoding="async" fetchpriority="low">
         </a>
         <a href="https://www.vatsalsanjay.com/" target="_blank" rel="noopener noreferrer">
-          <img src="/assets/logos/Logo_Vatsal_v3_OutLine.png" alt="Vatsal Sanjay" class="footer-logo">
+          <img src="/assets/logos/Logo_Vatsal_v3_OutLine.png" alt="Vatsal Sanjay" class="footer-logo" loading="lazy" decoding="async" fetchpriority="low">
         </a>
-        <a href="https://www.durham.ac.uk/" target="_blank" rel="noopener noreferrer">
-          <img src="/assets/logos/Durham-University-white.png" alt="Durham University" class="footer-logo">
+        <a href="https://www.durham.ac.uk/staff/vatsal-sanjay/" target="_blank" rel="noopener noreferrer">
+          <img src="/assets/logos/Durham-University-white.png" alt="Durham University" class="footer-logo" loading="lazy" decoding="async" fetchpriority="low">
         </a>
       </div>
       <div class="footer-center">

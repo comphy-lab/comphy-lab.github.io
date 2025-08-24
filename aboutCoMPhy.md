@@ -26,13 +26,29 @@ Feel free to contact us for discussions about our work or anything else related 
 
 [![Location](https://img.shields.io/badge/-Physics%20of%20Fluids-4285F4?style=flat&logo=googlemaps&logoColor=white)](https://maps.app.goo.gl/jSTCYnfcndF1uZPV8)
 [![Website](https://img.shields.io/badge/-comphy--lab.org-4285F4?style=flat&logo=googlechrome&logoColor=white)](http://www.comphy-lab.org)
-[![Email](https://img.shields.io/badge/-mailto:vatsalsy@comphy--lab.org-EA4335?style=flat&logo=gmail&logoColor=white)](mailto:vatsalsy@comphy-lab.org)
+[![Email](https://img.shields.io/badge/-mailto:vatsal.sanjay@comphy--lab.org-EA4335?style=flat&logo=gmail&logoColor=white)](mailto:vatsal.sanjay@comphy-lab.org)
 
 <div class="email-container">
-    <span class="email-text">vatsalsy@comphy-lab.org</span>
-    <button class="copy-btn" onclick="copyEmail(this)" data-text="vatsalsy@comphy-lab.org" aria-label="Copy email address vatsalsy@comphy-lab.org">
-        <i class="fas fa-copy"></i>
+  <span class="email-text">vatsal.sanjay@comphy-lab.org</span>
+  <div class="email-actions">
+    <a class="email-link" href="mailto:vatsal.sanjay@comphy-lab.org" aria-label="Email vatsal.sanjay@comphy-lab.org">
+      <i class="fa-regular fa-envelope"></i>
+    </a>
+    <button class="copy-btn" data-clipboard-text="vatsal.sanjay@comphy-lab.org" onclick="copyEmail(this)" aria-label="Copy email address vatsal.sanjay@comphy-lab.org">
+      <i class="fa-regular fa-copy"></i>
     </button>
+  </div>
+</div>
+<div class="email-container">
+  <span class="email-text">vatsal.sanjay@durham.ac.uk</span>
+  <div class="email-actions">
+    <a class="email-link" href="mailto:vatsal.sanjay@durham.ac.uk" aria-label="Email vatsal.sanjay@durham.ac.uk">
+      <i class="fa-regular fa-envelope"></i>
+    </a>
+    <button class="copy-btn" data-clipboard-text="vatsal.sanjay@durham.ac.uk" onclick="copyEmail(this)" aria-label="Copy email address vatsal.sanjay@durham.ac.uk">
+      <i class="fa-regular fa-copy"></i>
+    </button>
+  </div>
 </div>
 
 ### Academic Profiles
@@ -50,6 +66,6 @@ Feel free to contact us for discussions about our work or anything else related 
 For supplementary videos and teaser of our upcoming work:
 
 <a href="https://www.youtube.com/@CoMPhyLab" target="_blank" rel="noopener noreferrer" aria-label="Visit our YouTube channel">
-  <img class="youtube-stats-light" alt="Vatsal's YouTube Stats" src="https://cust-youtube-stats-card.vercel.app/api?channelid=UC-eTdHrAM_eQrWOtNLoT19w&theme=solarized_light&hide_border=true" width="auto" height="200px">
-  <img class="youtube-stats-dark" alt="Vatsal's YouTube Stats" src="https://cust-youtube-stats-card.vercel.app/api?channelid=UC-eTdHrAM_eQrWOtNLoT19w&theme=vision_friendly_dark&hide_border=true" width="auto" height="200px">
+  <img class="youtube-stats-light" alt="Vatsal's YouTube Stats" src="https://cust-youtube-stats-card.vercel.app/api?channelid=UC-eTdHrAM_eQrWOtNLoT19w&theme=solarized_light&hide_border=true" width="auto" height="200px" loading="lazy" decoding="async">
+  <img class="youtube-stats-dark" alt="Vatsal's YouTube Stats" src="https://cust-youtube-stats-card.vercel.app/api?channelid=UC-eTdHrAM_eQrWOtNLoT19w&theme=vision_friendly_dark&hide_border=true" width="auto" height="200px" loading="lazy" decoding="async">
 </a>
