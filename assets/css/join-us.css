@@ -109,7 +109,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: var(--join-subheading-color);
   /* Add slight ring in light mode for contrast on white backgrounds */
   box-shadow: none;
   line-height: 3rem;
@@ -117,16 +117,16 @@
 }
 
 .phd-section .section-icon {
-  background-color: var(--join-phd-accent) !important;
+  color: var(--join-phd-accent) !important;
 }
 .postdoc-section .section-icon {
-  background-color: var(--join-postdoc-accent) !important;
+  color: var(--join-postdoc-accent) !important;
 }
 .masters-section .section-icon {
-  background-color: var(--join-masters-accent) !important;
+  color: var(--join-masters-accent) !important;
 }
 .internship-section .section-icon {
-  background-color: var(--join-internship-accent) !important;
+  color: var(--join-internship-accent) !important;
 }
 
 /* Ensure the icon glyph inherits the intended color and remains visible */
@@ -134,12 +134,11 @@
   color: inherit !important;
 }
 
-/* Improve contrast in light theme: subtle ring around the colored circle */
+/* Light theme: offwhite chip, no ring; glyph inherits section accent */
 [data-theme="light"] .section-icon {
-  /* Stronger outline for contrast on white background */
-  box-shadow:
-    0 0 0 2px var(--join-card-border),
-    0 1px 2px var(--color-black-alpha-10);
+  background-color: var(--color-gray-light);
+  border: none;
+  box-shadow: none;
 }
 
 /* Ensure glyph inherits accent color set on container in light mode */
@@ -147,34 +146,11 @@
   color: inherit !important;
 }
 
-/* Invert treatment in light theme for maximum contrast:
-   white chip, colored border, colored glyph per section */
-[data-theme="light"] .phd-section .section-icon {
-  background-color: var(--color-white) !important;
-  color: var(--join-phd-accent) !important;
-  border: 2px solid var(--join-phd-accent) !important;
-  box-shadow: 0 1px 2px var(--color-black-alpha-10);
-}
-
-[data-theme="light"] .postdoc-section .section-icon {
-  background-color: var(--color-white) !important;
-  color: var(--join-postdoc-accent) !important;
-  border: 2px solid var(--join-postdoc-accent) !important;
-  box-shadow: 0 1px 2px var(--color-black-alpha-10);
-}
-
-[data-theme="light"] .masters-section .section-icon {
-  background-color: var(--color-white) !important;
-  color: var(--join-masters-accent) !important;
-  border: 2px solid var(--join-masters-accent) !important;
-  box-shadow: 0 1px 2px var(--color-black-alpha-10);
-}
-
-[data-theme="light"] .internship-section .section-icon {
-  background-color: var(--color-white) !important;
-  color: var(--join-internship-accent) !important;
-  border: 2px solid var(--join-internship-accent) !important;
-  box-shadow: 0 1px 2px var(--color-black-alpha-10);
+/* Dark theme: white chip, no ring; glyph inherits section accent */
+[data-theme="dark"] .section-icon {
+  background-color: var(--color-white);
+  border: none;
+  box-shadow: none;
 }
 
 /* Section content styling */
