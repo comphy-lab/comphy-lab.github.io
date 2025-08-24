@@ -1,0 +1,315 @@
+/* Join Us Page Styles
+================================ */
+
+/* Dark theme variables for join us page */
+:root {
+  --join-bg-color: var(--color-background);
+  --join-text-color: var(--color-text);
+  --join-heading-color: var(--color-heading-h1, #68236d);
+  --join-subheading-color: var(--color-primary);
+  --join-card-bg: var(--color-white);
+  --join-card-border: var(--color-gray-light);
+  --join-card-shadow: var(--color-black-alpha-08);
+  --join-card-hover-shadow: var(--color-black-alpha-15);
+  --join-section-border: var(--color-primary-alpha-20);
+  --join-project-accent: var(--color-strong);
+  --join-phd-accent: var(--color-primary);
+  --join-postdoc-accent: var(--color-blue-bright);
+  --join-masters-accent: var(--color-orange-bright);
+  --join-internship-accent: var(--color-success);
+}
+
+[data-theme="dark"] {
+  --join-bg-color: var(--color-background);
+  --join-text-color: var(--color-text);
+  --join-heading-color: var(--color-heading-h1, #9a349f);
+  --join-subheading-color: var(--color-primary);
+  --join-card-bg: var(--color-gray-xdark);
+  --join-card-border: var(--color-gray-dark);
+  --join-card-shadow: var(--color-black-alpha-30);
+  --join-card-hover-shadow: var(--color-black-alpha-40);
+  --join-section-border: var(--color-primary-alpha-30);
+  --join-project-accent: var(--color-strong);
+  --join-phd-accent: var(--color-primary);
+  --join-postdoc-accent: var(--color-blue-bright);
+  --join-masters-accent: var(--color-orange-bright);
+  --join-internship-accent: var(--color-success);
+}
+
+/* Join page main container */
+.s-join {
+  background-color: var(--join-bg-color);
+  color: var(--join-text-color);
+  transition:
+    background-color 0.15s linear,
+    color 0.15s linear;
+}
+
+.join-content {
+  color: var(--join-text-color);
+}
+
+/* Main heading styles */
+.join-content h1 {
+  color: var(--join-heading-color);
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* Section containers */
+.position-section {
+  background: var(--join-card-bg);
+  border: 1px solid var(--join-card-border);
+  border-radius: 12px;
+  padding: 3rem;
+  margin: 3rem 0;
+  box-shadow: 0 4px 12px var(--join-card-shadow);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.position-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--join-card-hover-shadow);
+}
+
+/* Section accent borders */
+.position-section.phd-section {
+  border-left: 6px solid var(--join-phd-accent);
+}
+
+.position-section.postdoc-section {
+  border-left: 6px solid var(--join-postdoc-accent);
+}
+
+.position-section.masters-section {
+  border-left: 6px solid var(--join-masters-accent);
+}
+
+.position-section.internship-section {
+  border-left: 6px solid var(--join-internship-accent);
+}
+
+/* Section headings */
+.position-section h2 {
+  color: var(--join-subheading-color);
+  margin-bottom: 2rem;
+  font-size: 2.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.section-icon {
+  font-size: 2rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.phd-section .section-icon {
+  background-color: var(--join-phd-accent);
+}
+
+.postdoc-section .section-icon {
+  background-color: var(--join-postdoc-accent);
+}
+
+.masters-section .section-icon {
+  background-color: var(--join-masters-accent);
+}
+
+.internship-section .section-icon {
+  background-color: var(--join-internship-accent);
+}
+
+/* Section content styling */
+.position-section p {
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.position-section ul {
+  margin: 1.5rem 0;
+  padding-left: 2rem;
+}
+
+.position-section li {
+  margin: 0.8rem 0;
+  line-height: 1.6;
+}
+
+/* Email containers in position sections */
+.position-section .email-container {
+  margin: 1rem 0;
+}
+
+/* Projects showcase section */
+.projects-showcase {
+  margin: 5rem 0 3rem 0;
+  padding: 3rem 0;
+  border-top: 2px solid var(--join-section-border);
+}
+
+.projects-showcase h2 {
+  color: var(--join-heading-color);
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.8rem;
+}
+
+.projects-intro {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 1.35rem;
+  color: var(--join-text-color);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
+/* Project grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 2.5rem;
+  margin: 3rem 0;
+}
+
+/* Individual project cards */
+.project-card {
+  background: var(--join-card-bg);
+  border: 1px solid var(--join-card-border);
+  border-radius: 10px;
+  padding: 2.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  border-left: 4px solid var(--join-project-accent);
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px var(--join-card-hover-shadow);
+  border-left-width: 6px;
+}
+
+.project-card h3 {
+  color: var(--join-subheading-color);
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  line-height: 1.3;
+}
+
+.project-card p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  color: var(--join-text-color);
+}
+
+.project-card .pdf-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--join-project-accent);
+  color: white !important;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.project-card .pdf-link:hover {
+  background-color: var(--color-strong);
+  transform: translateX(3px);
+  box-shadow: 0 4px 12px var(--color-black-alpha-20);
+}
+
+.project-card .pdf-link i {
+  font-size: 1.1rem;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  .position-section {
+    padding: 2rem;
+    margin: 2rem 0;
+  }
+
+  .position-section h2 {
+    font-size: 2rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .section-icon {
+    margin-bottom: 0.5rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .project-card {
+    padding: 2rem;
+  }
+
+  .project-card h3 {
+    font-size: 1.6rem;
+  }
+
+  .projects-showcase h2 {
+    font-size: 2.4rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .position-section {
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .project-card {
+    padding: 1.5rem;
+  }
+
+  .projects-intro {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+  }
+}
+
+/* Enhanced dark mode support */
+[data-theme="dark"] .position-section {
+  background-color: var(--join-card-bg);
+  border-color: var(--join-card-border);
+}
+
+[data-theme="dark"] .project-card {
+  background-color: var(--join-card-bg);
+  border-color: var(--join-card-border);
+}
+
+[data-theme="dark"] .position-section:hover,
+[data-theme="dark"] .project-card:hover {
+  box-shadow: 0 8px 24px var(--join-card-hover-shadow);
+}
+
+/* Smooth transitions for theme changes */
+.position-section,
+.project-card,
+.projects-showcase {
+  transition:
+    background-color 0.15s linear,
+    border-color 0.15s linear,
+    color 0.15s linear;
+}
