@@ -82,22 +82,18 @@ We occasionally have openings for postdoctoral researchers to lead independent r
 - Grant writing and proposal development
 - Mentoring junior researchers
 
-When positions are available, they will be advertised here and on:
-
-- <a href="https://www.academictransfer.com/" target="_blank" rel="noopener noreferrer">Academic Transfer</a>
-- <a href="https://euraxess.ec.europa.eu/" target="_blank" rel="noopener noreferrer">EURAXESS</a>
+When positions are available, they will be advertised here.
 
 We also support applications to externally funded postdoctoral fellowships that
 require a UK host, including:
 
 - [Marie Skłodowska‑Curie Postdoctoral Fellowships (MSCA PF)](https://marie-sklodowska-curie-actions.ec.europa.eu/actions/postdoctoral-fellowships)
-- [UKRI EPSRC Postdoctoral Fellowships](https://www.ukri.org/opportunity/epsrc-postdoctoral-fellowships/)
-- [Leverhulme Trust Early Career Fellowships](https://www.leverhulme.ac.uk/early-career-fellowships)
+- [UKRI EPSRC Postdoctoral Fellowships](https://www.ukri.org/opportunity/?filter_council%5B0%5D=820&filter_funding_type%5B0%5D=18&filter_status%5B0%5D=open&filter_status%5B1%5D=upcoming&filter_submitted=true&filter_order=publication_date/)
+- [Leverhulme Trust Early Career Fellowships](https://www.leverhulme.ac.uk/schemes-at-a-glance?field_require_funding_for_tid=5)
 - [Royal Society Newton International Fellowship](https://royalsociety.org/grants-schemes-awards/grants/newton-international/)
-- [Royal Academy of Engineering Research Fellowships](https://raeng.org.uk/grants-prizes/grants/support-for-research/research-fellowship/)
-- [Royal Commission for the Exhibition of 1851 Research Fellowships](https://royalcommission1851.org/awards/research-fellowships)
-- [UKRI Future Leaders Fellowships](https://www.ukri.org/opportunity/future-leaders-fellowships/)
-- [Commonwealth Scholarships Commission fellowships](https://cscuk.fcdo.gov.uk/)
+- [Royal Academy of Engineering Research Fellowships](https://raeng.org.uk/programmes-and-prizes/programmes/uk-grants-and-prizes/support-for-research/research-fellowships/)
+- [Royal Commission for the Exhibition of 1851 Research Fellowships](https://royalcommission1851.org/fellowships/research-fellowships)
+- [Commonwealth Scholarships Commission fellowships](https://cscuk.fcdo.gov.uk/about-us/scholarships-and-fellowships/)
 
 If you're interested, please email a brief statement of interest and your CV.
 Reaching out 2–4 months before a call deadline is ideal so we can plan a strong
@@ -154,6 +150,10 @@ We welcome motivated students for summer internships and short-term research pro
 **Application process:**
 
 Send a short note describing your interests and any prior experience, along with your transcript, to the email addresses above. Include your preferred internship timeline and any specific research areas of interest.
+
+Eligible PhD candidates from Commonwealth countries may also consider the
+[Commonwealth Split-site PhD Scholarships](https://cscuk.fcdo.gov.uk/scholarships/commonwealth-split-site-scholarships-for-low-and-middle-income-countries/)
+to undertake a 1‑year research period at CoMPhy Lab as part of their PhD.
 
 </div>
 
