@@ -4,6 +4,32 @@ title: "Join Us"
 permalink: /join/
 ---
 
+We are always looking for enthusiastic researchers to join our group. We welcome applicants with strong backgrounds in physics, applied mathematics, or engineering, especially in continuum mechanics, numerics, and scientific computing.
+
+<div class="email-container">
+  <span class="email-text">vatsal.sanjay@comphy-lab.org</span>
+  <div class="email-actions">
+    <a class="email-link" href="mailto:vatsal.sanjay@comphy-lab.org" aria-label="Email vatsal.sanjay@comphy-lab.org">
+      <i class="fa-regular fa-envelope"></i>
+    </a>
+    <button class="copy-btn" data-clipboard-text="vatsal.sanjay@comphy-lab.org" onclick="copyEmail(this)" aria-label="Copy email address vatsal.sanjay@comphy-lab.org">
+      <i class="fa-regular fa-copy"></i>
+    </button>
+  </div>
+</div>
+
+<div class="email-container">
+  <span class="email-text">vatsal.sanjay@durham.ac.uk</span>
+  <div class="email-actions">
+    <a class="email-link" href="mailto:vatsal.sanjay@durham.ac.uk" aria-label="Email vatsal.sanjay@durham.ac.uk">
+      <i class="fa-regular fa-envelope"></i>
+    </a>
+    <button class="copy-btn" data-clipboard-text="vatsal.sanjay@durham.ac.uk" onclick="copyEmail(this)" aria-label="Copy email address vatsal.sanjay@durham.ac.uk">
+      <i class="fa-regular fa-copy"></i>
+    </button>
+  </div>
+</div>
+
 <div class="projects-showcase" markdown="1">
 
 ## Current Research Projects
@@ -104,48 +130,7 @@ Study hot droplet impacts on cold substrates in gels transitioning from Newtonia
 
 </div>
 
-<div class="position-section phd-section" markdown="1">
-
-## <span class="section-icon"><i class="fa-solid fa-graduation-cap"></i></span> PhD (CMP) — Admissions and Studentships
-
-We welcome applicants with strong backgrounds in physics, applied mathematics,
-or engineering, especially in continuum mechanics, numerics, and scientific
-computing.
-
-**Admissions (concise):**
-
-- Entry: First-class BSc or at least a 2:1 MPhys/MSc (or international
-  equivalent). English requirements apply for non‑native speakers.
-  ([How to Apply](https://www.durham.ac.uk/study/postgraduate/research-degrees/how-to-apply/))
-
-**How to apply (CMP):**
-
-- Identify a prospective supervisor in Condensed Matter Physics (CMP) and select
-  CMP as your section in the application.
-- Prepare: ≤1‑page research statement, CV, transcripts/certificates, two
-  referees’ emails, English test (if needed).
-- Submit via Durham’s Postgraduate Applicant Portal.
-  ([How to Apply](https://www.durham.ac.uk/study/postgraduate/research-degrees/how-to-apply/))
-
-**Funding routes commonly used in CMP:**
-
-- EPSRC Doctoral Training Partnership (DTP)
-- SOFI CDT (Soft Matter & Functional Interfaces)
-- Durham University studentships
-- China Scholarship Council (CSC)
-  ([Fees & Funding](https://www.durham.ac.uk/study/postgraduate/research-degrees/fees-and-funding/),
-  [Physics studentships](https://www.durham.ac.uk/departments/academic/physics/postgraduate-study/studentships-funding/))
-
-**Timeline (typical Oct start):**
-
-- Sep–Dec: contact supervisors; submit early for internal ranking
-- Dec–Feb: interviews/allocations across EPSRC routes
-- Spring: funding decisions
-
-If you’re unsure about fit or funding, email us with a brief statement of
-interest and CV.
-
-</div>
+<!-- Removed standalone PhD block; integrated into PhD Positions section below -->
 
 <div class="position-section postdoc-section" markdown="1">
 
@@ -214,31 +199,22 @@ We are always looking for enthusiastic PhD students to join our research group a
 3. Brief research statement (1-2 pages)
 4. Names and contact information of 2–3 references
 
-**Send your application to:**
+**Admissions and studentships (CMP, concise):**
 
-<div class="email-container">
-  <span class="email-text">vatsal.sanjay@comphy-lab.org</span>
-  <div class="email-actions">
-    <a class="email-link" href="mailto:vatsal.sanjay@comphy-lab.org" aria-label="Email vatsal.sanjay@comphy-lab.org">
-      <i class="fa-regular fa-envelope"></i>
-    </a>
-    <button class="copy-btn" data-clipboard-text="vatsal.sanjay@comphy-lab.org" onclick="copyEmail(this)" aria-label="Copy email address vatsal.sanjay@comphy-lab.org">
-      <i class="fa-regular fa-copy"></i>
-    </button>
-  </div>
-</div>
-
-<div class="email-container">
-  <span class="email-text">vatsal.sanjay@durham.ac.uk</span>
-  <div class="email-actions">
-    <a class="email-link" href="mailto:vatsal.sanjay@durham.ac.uk" aria-label="Email vatsal.sanjay@durham.ac.uk">
-      <i class="fa-regular fa-envelope"></i>
-    </a>
-    <button class="copy-btn" data-clipboard-text="vatsal.sanjay@durham.ac.uk" onclick="copyEmail(this)" aria-label="Copy email address vatsal.sanjay@durham.ac.uk">
-      <i class="fa-regular fa-copy"></i>
-    </button>
-  </div>
-</div>
+- Entry: First-class BSc or at least a 2:1 MPhys/MSc (or international
+  equivalent). English requirements apply for non‑native speakers.
+  ([How to Apply](https://www.durham.ac.uk/study/postgraduate/research-degrees/how-to-apply/))
+- How to apply: identify a CMP supervisor and select CMP in the portal; prepare
+  a ≤1‑page research statement, CV, transcripts/certificates, two referees’
+  emails, and English test if needed; submit via the Postgraduate Applicant
+  Portal. ([How to Apply](https://www.durham.ac.uk/study/postgraduate/research-degrees/how-to-apply/))
+- Funding routes we commonly use: EPSRC DTP, SOFI CDT, Durham studentships,
+  CSC. See
+  [Fees & Funding](https://www.durham.ac.uk/study/postgraduate/research-degrees/fees-and-funding/)
+  and
+  [Physics studentships](https://www.durham.ac.uk/departments/academic/physics/postgraduate-study/studentships-funding/).
+- Timeline (Oct start): Sep–Dec contact supervisors/submit early; Dec–Feb
+  interviews/allocations; Spring decisions.
 
 </div>
 
