@@ -142,10 +142,9 @@
     0 1px 2px var(--color-black-alpha-10);
 }
 
-/* Optional: slightly darker glyph in light theme for legibility */
+/* Ensure glyph inherits accent color set on container in light mode */
 [data-theme="light"] .section-icon i {
-  color: rgba(255, 255, 255, 0.95) !important;
-  mix-blend-mode: normal;
+  color: inherit !important;
 }
 
 /* Invert treatment in light theme for maximum contrast:
