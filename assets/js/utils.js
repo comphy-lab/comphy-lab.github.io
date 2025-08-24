@@ -6,12 +6,47 @@
  */
 
 /**
- * Determines whether the user's platform is macOS.
+ * Determines whether the user's platform is macOS with robust detection.
+ *
+ * Rules:
+ * - Prefer navigator.userAgentData.platform when available
+ * - Always exclude touch devices (maxTouchPoints > 0) to avoid iPadOS spoofing
+ * - Fallback to navigator.userAgent and navigator.platform (case-insensitive)
+ * - Return false for iPad/iPhone/iPod-like devices
  *
  * @returns {boolean} True if the current platform is macOS; otherwise, false.
  */
 function isMacPlatform() {
-  return navigator.platform.toUpperCase().indexOf("MAC") >= 0;
+  try {
+    // Exclude touch-capable devices (e.g., iPadOS reporting "MacIntel")
+    if (
+      typeof navigator !== "undefined" &&
+      typeof navigator.maxTouchPoints === "number" &&
+      navigator.maxTouchPoints > 0
+    ) {
+      return false;
+    }
+
+    // Use User-Agent Client Hints when available
+    if (
+      typeof navigator !== "undefined" &&
+      navigator.userAgentData &&
+      typeof navigator.userAgentData.platform === "string"
+    ) {
+      return /mac/i.test(navigator.userAgentData.platform);
+    }
+
+    // Fallback to UA string and platform
+    const platform = (navigator && navigator.platform) || "";
+    const userAgent = (navigator && navigator.userAgent) || "";
+
+    const isiOSLike = /ipad|iphone|ipod/i.test(userAgent);
+    if (isiOSLike) return false;
+
+    return /mac/i.test(platform) || /macintosh|mac os x/i.test(userAgent);
+  } catch (error) {
+    return false;
+  }
 }
 
 /**
@@ -74,6 +109,9 @@ function createModal(options) {
   contentEl.style.overflow = "auto";
   contentEl.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.3)";
   contentEl.setAttribute("tabindex", "-1");
+  // A11y roles/attributes
+  contentEl.setAttribute("role", "dialog");
+  contentEl.setAttribute("aria-modal", "true");
 
   // Set content
   if (typeof content === "string") {
@@ -82,21 +120,111 @@ function createModal(options) {
     contentEl.appendChild(content);
   }
 
+  // Try to associate a label/description if present
+  const heading = contentEl.querySelector("h1, h2, h3");
+  if (heading) {
+    if (!heading.id) {
+      heading.id = `modal-title-${Date.now()}`;
+    }
+    contentEl.setAttribute("aria-labelledby", heading.id);
+  } else {
+    contentEl.setAttribute("aria-label", "Dialog");
+  }
+  const description = contentEl.querySelector("p");
+  if (description) {
+    if (!description.id) {
+      description.id = `modal-desc-${Date.now()}`;
+    }
+    contentEl.setAttribute("aria-describedby", description.id);
+  }
+
   modal.appendChild(contentEl);
 
-  // Close when clicking outside
-  modal.addEventListener("click", (e) => {
+  // Focus management
+  const previouslyFocusedElement = document.activeElement;
+  const focusWhenAttached = () => {
+    if (document.body && document.body.contains(modal)) {
+      contentEl.focus();
+    } else {
+      requestAnimationFrame(focusWhenAttached);
+    }
+  };
+  requestAnimationFrame(focusWhenAttached);
+
+  // Focus trap helpers
+  const getFocusableElements = () => {
+    const selector = [
+      "a[href]",
+      "area[href]",
+      "input:not([disabled])",
+      "select:not([disabled])",
+      "textarea:not([disabled])",
+      "button:not([disabled])",
+      "[tabindex]:not([tabindex='-1'])",
+    ].join(",");
+    const elements = Array.from(contentEl.querySelectorAll(selector));
+    // Include the dialog container itself if focusable
+    if (contentEl.getAttribute("tabindex") !== null) {
+      elements.unshift(contentEl);
+    }
+    return elements.filter(
+      (el) => el.offsetParent !== null || el === contentEl
+    );
+  };
+
+  const onKeyDown = (e) => {
+    if (e.key === "Escape") {
+      e.stopPropagation();
+      closeModal();
+      return;
+    }
+    if (e.key === "Tab") {
+      const focusable = getFocusableElements();
+      if (focusable.length === 0) {
+        e.preventDefault();
+        contentEl.focus();
+        return;
+      }
+      const currentIndex = focusable.indexOf(document.activeElement);
+      let nextIndex = currentIndex;
+      if (e.shiftKey) {
+        nextIndex = currentIndex <= 0 ? focusable.length - 1 : currentIndex - 1;
+      } else {
+        nextIndex =
+          currentIndex === focusable.length - 1 ? 0 : currentIndex + 1;
+      }
+      e.preventDefault();
+      focusable[nextIndex].focus();
+    }
+  };
+
+  const onBackdropClick = (e) => {
     if (e.target === modal) {
       closeModal();
     }
-  });
+  };
+
+  modal.addEventListener("keydown", onKeyDown);
+  // Close when clicking outside
+  modal.addEventListener("click", onBackdropClick);
 
   // Close function
   const closeModal = () => {
+    // Remove listeners first
+    modal.removeEventListener("keydown", onKeyDown);
+    modal.removeEventListener("click", onBackdropClick);
+
     if (modal.parentNode) {
       document.body.removeChild(modal);
-      if (onClose) onClose();
     }
+
+    // Restore focus
+    if (previouslyFocusedElement && previouslyFocusedElement.focus) {
+      previouslyFocusedElement.focus();
+    }
+
+    // Invoke callback last
+    if (onClose) onClose();
   };
 
   // Expose close function
