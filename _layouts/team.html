@@ -73,42 +73,9 @@
   }
   </script>
 
-  <!-- Simple command palette initialization -->
-  <script>
-    // Make the command palette opening function globally available
-    window.openCommandPalette = function() {
-      const palette = document.getElementById('simple-command-palette');
-      if (palette) {
-        palette.style.display = 'block';
-        const input = document.getElementById('command-palette-input');
-        if (input) {
-          input.value = '';
-          input.focus();
-          if (typeof renderCommandResults === 'function') {
-            renderCommandResults('');
-          }
-        }
-      }
-    };
-
-    // Ensure search database is preloaded for command palette search functionality
-    window.addEventListener('DOMContentLoaded', function() {
-      // Try to prefetch the search database if it exists
-      fetch('/assets/js/search_db.json').then(response => {
-        if (response.ok) {
-          return response.json();
-        }
-        throw new Error('Search database not found');
-      }).then(data => {
-        console.log('Search database prefetched for command palette');
-        window.searchData = data;
-      }).catch(err => {
-        console.warn('Could not prefetch search database for command palette:', err.message);
-      });
-    });
-  </script>
-
-  <!-- JavaScript dependencies -->
+  <!-- JavaScript dependencies - Core utilities first -->
+  <script defer src="/assets/js/utils.js"></script>
+  <script defer src="/assets/js/search-manager.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
   <script defer src="/assets/js/main.js"></script>
