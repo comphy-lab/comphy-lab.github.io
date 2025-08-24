@@ -103,17 +103,12 @@
 
 .section-icon {
   font-size: 2rem;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   color: var(--join-subheading-color);
-  /* Add slight ring in light mode for contrast on white backgrounds */
+  background: transparent;
   box-shadow: none;
-  line-height: 3rem;
-  background-clip: padding-box;
 }
 
 .phd-section .section-icon {
@@ -134,9 +129,9 @@
   color: inherit !important;
 }
 
-/* Light theme: offwhite chip, no ring; glyph inherits section accent */
+/* Light theme: no chip/ring, glyph inherits section accent */
 [data-theme="light"] .section-icon {
-  background-color: var(--color-gray-light);
+  background: transparent;
   border: none;
   box-shadow: none;
 }
@@ -146,9 +141,9 @@
   color: inherit !important;
 }
 
-/* Dark theme: white chip, no ring; glyph inherits section accent */
+/* Dark theme: no chip/ring, glyph inherits section accent */
 [data-theme="dark"] .section-icon {
-  background-color: var(--color-white);
+  background: transparent;
   border: none;
   box-shadow: none;
 }
