@@ -192,28 +192,17 @@ We are always looking for enthusiastic PhD students to join our research group a
 - Conference attendance and networking opportunities
 - Mentorship in both research and career development
 
-**Application Requirements:**
-
-1. CV with academic background
-2. Academic transcripts (Bachelor's and Master's)
-3. Brief research statement (1-2 pages)
-4. Names and contact information of 2–3 references
-
-**Admissions and studentships (CMP, concise):**
+**Admissions and studentships:**
 
 - Entry: First-class BSc or at least a 2:1 MPhys/MSc (or international
   equivalent). English requirements apply for non‑native speakers.
   ([How to Apply](https://www.durham.ac.uk/study/postgraduate/research-degrees/how-to-apply/))
-- How to apply (for CoMPhy): email us first with a ≤1‑page statement of fit and
-  CV. In the portal, select CMP, name a CoMPhy supervisor, and upload
-  transcripts/certificates, two referees’ emails, and an English test if
-  needed. Submit via the Postgraduate Applicant Portal.
+- How to apply (CoMPhy Lab)?
+  - email us ([vatsal.sanjay@comphy-lab.org](mailto:vatsal.sanjay@comphy-lab.org)/[vatsal.sanjay@durham.ac.uk](mailto:vatsal.sanjay@durham.ac.uk)) with a brief statement of fit and CV.
+  - In the portal, select CMP, name Dr. Vatsal Sanjay as supervisor. Final applications can only be submitted via the Postgraduate Applicant Portal.
   ([How to Apply](https://www.durham.ac.uk/study/postgraduate/research-degrees/how-to-apply/))
-- Funding we typically target: EPSRC DTP (Physics), SOFI CDT, Durham
-  studentships, CSC joint awards. See
-  [Fees & Funding](https://www.durham.ac.uk/study/postgraduate/research-degrees/fees-and-funding/)
-  and
-  [Physics studentships](https://www.durham.ac.uk/departments/academic/physics/postgraduate-study/studentships-funding/).
+- Funding we typically target: [EPSRC DTP (Physics)](https://www.ukri.org/councils/epsrc/), [Durham studentships](https://www.durham.ac.uk/departments/academic/physics/postgraduate-study/studentships-funding/available-studentships/), [CSC](https://www.durham.ac.uk/study/scholarships/international/chinese-scholarships-council/).
+See: [Fees & Funding](https://www.durham.ac.uk/study/postgraduate/research-degrees/fees-and-funding/) and [Physics studentships](https://www.durham.ac.uk/departments/academic/physics/postgraduate-study/studentships-funding/).
 - Timeline (Oct start): contact CoMPhy Sep–Dec; internal ranking/interviews
   Dec–Feb; Spring decisions. Early contact helps your application.
 
@@ -227,21 +216,21 @@ We offer exciting research projects for Bachelor's and Master's students interes
 
 **Project Types:**
 
-- Computational fluid dynamics simulations using Basilisk C
-- Data analysis and visualization of complex flow phenomena
-- Development of numerical methods and algorithms
-- Experimental-computational comparison studies
+- Computational fluid dynamics simulations using state-of-the-art [numerical techniques](https://www.github.com/comphy-lab).
+- Data analysis and visualization of complex flow phenomena.
+- Development of numerical methods and algorithms.
+- Experimental-computational comparison studies.
 
 **What you'll gain:**
 
 - Experience with high-performance computing
-- Skills in scientific programming (C, Python, MATLAB)
+- Skills in scientific programming (C, Python, Julia, MATLAB)
 - Understanding of advanced numerical methods
 - Opportunity to contribute to published research
 
-See the projects above.
-
 Contact us to discuss project fit and scope for your specific interests and timeline.
+
+> See the projects above.
 
 </div>
 
@@ -253,23 +242,23 @@ We welcome motivated students for summer internships and short-term research pro
 
 **Internship Details:**
 
-- Duration: 2-6 months (flexible based on academic calendar)
-- Focus on specific research questions within ongoing projects
-- Close mentorship and regular progress meetings
-- Opportunity to present results at group seminars
+- Duration: 2-6 months (flexible based on academic calendar).
+- Focus on specific research questions within ongoing projects.
+- Close mentorship and regular progress meetings.
+- Opportunity to present results at group seminars.
 
 **Ideal candidates have:**
 
-- Background in physics, mathematics, or engineering
-- Basic programming experience (any language)
-- Curiosity about fluid mechanics and computational methods
-- Strong motivation for hands-on research
+- Background in physics, mathematics, or engineering.
+- Basic programming experience (any language).
+- Curiosity about soft matter, fluid mechanics and computational methods.
+- Strong motivation for hands-on research.
 
 **Application process:**
 
 Send a short note describing your interests and any prior experience, along with your transcript, to the email addresses above. Include your preferred internship timeline and any specific research areas of interest.
 
-Eligible PhD candidates from Commonwealth countries may also consider the
+> Eligible PhD candidates from Commonwealth countries may also consider the
 [Commonwealth Split-site PhD Scholarships](https://cscuk.fcdo.gov.uk/scholarships/commonwealth-split-site-scholarships-for-low-and-middle-income-countries/)
 to undertake a 1‑year research period at CoMPhy Lab as part of their PhD.
 
