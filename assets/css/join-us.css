@@ -106,28 +106,27 @@
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   color: white;
   /* Add slight ring in light mode for contrast on white backgrounds */
   box-shadow: none;
+  line-height: 3rem;
+  background-clip: padding-box;
 }
 
 .phd-section .section-icon {
-  background-color: var(--join-phd-accent);
+  background-color: var(--join-phd-accent) !important;
 }
-
 .postdoc-section .section-icon {
-  background-color: var(--join-postdoc-accent);
+  background-color: var(--join-postdoc-accent) !important;
 }
-
 .masters-section .section-icon {
-  background-color: var(--join-masters-accent);
+  background-color: var(--join-masters-accent) !important;
 }
-
 .internship-section .section-icon {
-  background-color: var(--join-internship-accent);
+  background-color: var(--join-internship-accent) !important;
 }
 
 /* Ensure the icon glyph inherits the intended color and remains visible */
@@ -137,7 +136,16 @@
 
 /* Improve contrast in light theme: subtle ring around the colored circle */
 [data-theme="light"] .section-icon {
-  box-shadow: 0 0 0 1px var(--join-card-border);
+  /* Stronger outline for contrast on white background */
+  box-shadow:
+    0 0 0 2px var(--join-card-border),
+    0 1px 2px var(--color-black-alpha-10);
+}
+
+/* Optional: slightly darker glyph in light theme for legibility */
+[data-theme="light"] .section-icon i {
+  color: rgba(255, 255, 255, 0.95) !important;
+  mix-blend-mode: normal;
 }
 
 /* Section content styling */
