@@ -4,8 +4,6 @@ title: "Join Us"
 permalink: /join/
 ---
 
-# Join Us
-
 <div class="position-section phd-section">
   <h2><span class="section-icon"><i class="fa-solid fa-graduation-cap"></i></span>PhD Positions</h2>
   
