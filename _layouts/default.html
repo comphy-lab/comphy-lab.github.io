@@ -87,6 +87,10 @@
   {% endif %}
   <link rel="stylesheet" href="/assets/css/command-palette.css" media="print" onload="this.media='all'">
 
+  <!-- Core utilities (must load first) -->
+  <script defer src="/assets/js/utils.js"></script>
+  <script defer src="/assets/js/search-manager.js"></script>
+  
   <!-- Command palette (implementation in assets/js/command-palette.js) -->
   <script defer src="/assets/js/command-palette.js"></script>
 
@@ -97,7 +101,6 @@
   <script defer src="/assets/js/main.js"></script>
   <script defer src="/assets/js/command-data.js"></script>
   <script defer src="/assets/js/platform-utils.js"></script>
-  <script defer src="/assets/js/shortcut-key.js"></script>
 
   <script>
     document.documentElement.classList.remove('no-js');
