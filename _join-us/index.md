@@ -82,7 +82,10 @@ We occasionally have openings for postdoctoral researchers to lead independent r
 - Grant writing and proposal development
 - Mentoring junior researchers
 
-When positions are available, they will be advertised here.
+When positions are available, they will be advertised here and on:
+
+- <a href="https://www.academictransfer.com/" target="_blank" rel="noopener noreferrer">Academic Transfer</a>
+- <a href="https://euraxess.ec.europa.eu/" target="_blank" rel="noopener noreferrer">EURAXESS</a>
 
 We also support applications to externally funded postdoctoral fellowships that
 require a UK host, including:
