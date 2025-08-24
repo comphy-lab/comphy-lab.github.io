@@ -205,19 +205,11 @@
   margin-bottom: 2rem;
   text-align: center;
   position: relative;
-  padding-bottom: 1rem;
+  padding-bottom: 0;
 }
 
 .project-category h3:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
-  background-color: var(--join-project-accent);
-  border-radius: 2px;
+  content: none;
 }
 
 /* Different accent colors for each category */
