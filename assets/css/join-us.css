@@ -174,12 +174,47 @@
   line-height: 1.7;
 }
 
+/* Project categories */
+.project-category {
+  margin: 4rem 0;
+}
+
+.project-category h3 {
+  color: var(--join-subheading-color);
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.project-category h3:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: var(--join-project-accent);
+  border-radius: 2px;
+}
+
+/* Different accent colors for each category */
+.soft-matter-category h3:after {
+  background-color: var(--join-phd-accent);
+}
+
+.free-surface-category h3:after {
+  background-color: var(--join-postdoc-accent);
+}
+
 /* Project grid */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   gap: 2.5rem;
-  margin: 3rem 0;
+  margin: 2rem 0;
 }
 
 /* Individual project cards */
@@ -269,6 +304,10 @@
 
   .projects-showcase h2 {
     font-size: 2.4rem;
+  }
+
+  .project-category h3 {
+    font-size: 2rem;
   }
 }
 
