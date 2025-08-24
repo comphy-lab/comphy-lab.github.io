@@ -37,21 +37,19 @@
           // Re-bind copy email handlers for dynamically injected content
           const aboutCopyButtons = aboutContent.querySelectorAll(".copy-btn");
           aboutCopyButtons.forEach((button) => {
-            // Attach click to use the global copyEmail handler
+            // Attach click to use the shared utility
             button.addEventListener("click", function () {
-              window.copyEmail(this);
+              Utils.copyToClipboard(this);
             });
 
-            // Ensure accessible name is present
+            // Ensure accessible name is present using utility
             const emailText =
               button.getAttribute("data-text") ||
               button.getAttribute("data-clipboard-text");
-            if (!button.hasAttribute("aria-label") && emailText) {
-              button.setAttribute(
-                "aria-label",
-                `Copy email address ${emailText}`
-              );
-            }
+            Utils.initAccessibleButton(
+              button,
+              `Copy email address ${emailText}`
+            );
           });
         }
       } catch (error) {
@@ -405,96 +403,24 @@
       }
     });
 
-    // Email copy functionality
+    // Email copy functionality using shared utility
     const copyButtons = document.querySelectorAll(".copy-btn");
     copyButtons.forEach((button) => {
       button.addEventListener("click", function () {
-        const textToCopy = this.getAttribute("data-clipboard-text");
-        const textarea = document.createElement("textarea");
-        textarea.value = textToCopy;
-        textarea.style.position = "fixed";
-        textarea.style.left = "-9999px";
-        document.body.appendChild(textarea);
-
-        try {
-          textarea.select();
-          document.execCommand("copy");
-          this.classList.add("copied");
-          const icon = this.querySelector("i");
-          icon.classList.remove("fa-copy");
-          icon.classList.add("fa-check");
-
-          setTimeout(() => {
-            this.classList.remove("copied");
-            icon.classList.remove("fa-check");
-            icon.classList.add("fa-copy");
-          }, 2000);
-        } catch (err) {
-          console.error("Copy failed:", err);
-        } finally {
-          document.body.removeChild(textarea);
-        }
+        Utils.copyToClipboard(this);
       });
-    });
 
-    // Add accessible names to all copy buttons on document load
-    copyButtons.forEach((button) => {
-      // Get the email text from data-text or data-clipboard-text attribute
+      // Add accessible attributes using utility
       const emailText =
         button.getAttribute("data-text") ||
         button.getAttribute("data-clipboard-text");
-      // Add aria-label if it doesn"t exist
-      if (!button.hasAttribute("aria-label") && emailText) {
-        button.setAttribute("aria-label", `Copy email address ${emailText}`);
-      }
+      Utils.initAccessibleButton(button, `Copy email address ${emailText}`);
     });
   });
 
   /* Copy Email Functionality
    * -------------------------------------------------- */
-  window.copyEmail = function (button) {
-    const text =
-      button.getAttribute("data-text") ||
-      button.getAttribute("data-clipboard-text");
-    navigator.clipboard
-      .writeText(text)
-      .then(() => {
-        const icon = button.querySelector("i");
-        button.classList.add("copied");
-        icon.classList.remove("fa-copy");
-        icon.classList.add("fa-check");
-
-        setTimeout(() => {
-          button.classList.remove("copied");
-          icon.classList.remove("fa-check");
-          icon.classList.add("fa-copy");
-        }, 2000);
-      })
-      .catch((err) => {
-        console.error("Copy failed:", err);
-        // Fallback for older browsers
-        const textarea = document.createElement("textarea");
-        textarea.value = text;
-        textarea.style.position = "fixed";
-        textarea.style.opacity = "0";
-        document.body.appendChild(textarea);
-        textarea.select();
-        try {
-          document.execCommand("copy");
-          button.classList.add("copied");
-          const icon = button.querySelector("i");
-          icon.classList.remove("fa-copy");
-          icon.classList.add("fa-check");
-
-          setTimeout(() => {
-            button.classList.remove("copied");
-            icon.classList.remove("fa-check");
-            icon.classList.add("fa-copy");
-          }, 2000);
-        } catch (err) {
-          console.error("Fallback failed:", err);
-        }
-        document.body.removeChild(textarea);
-      });
-  };
+  // Copy email functionality now handled by Utils.copyToClipboard
+  // Maintained for backwards compatibility
+  window.copyEmail = Utils.copyToClipboard;
 })(document.documentElement);
