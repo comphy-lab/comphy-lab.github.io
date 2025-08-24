@@ -19,7 +19,7 @@
   /* Load About Content - Only on main page
    * -------------------------------------------------- */
   const loadAboutContent = async () => {
-    // Only load aboutCoMPhy.md if we"re on the main page
+    // Only load aboutCoMPhy.md if we're on the main page
     if (
       window.location.pathname === "/" ||
       window.location.pathname === "/index.html"
@@ -37,19 +37,30 @@
           // Re-bind copy email handlers for dynamically injected content
           const aboutCopyButtons = aboutContent.querySelectorAll(".copy-btn");
           aboutCopyButtons.forEach((button) => {
-            // Attach click to use the shared utility
-            button.addEventListener("click", function () {
-              Utils.copyToClipboard(this);
-            });
+            if (
+              typeof Utils !== "undefined" &&
+              Utils.copyToClipboard &&
+              Utils.initAccessibleButton
+            ) {
+              // Attach click to use the shared utility
+              button.addEventListener("click", function () {
+                Utils.copyToClipboard(this);
+              });
 
-            // Ensure accessible name is present using utility
-            const emailText =
-              button.getAttribute("data-text") ||
-              button.getAttribute("data-clipboard-text");
-            Utils.initAccessibleButton(
-              button,
-              `Copy email address ${emailText}`
-            );
+              // Ensure accessible name is present using utility
+              const emailText =
+                button.getAttribute("data-text") ||
+                button.getAttribute("data-clipboard-text");
+              Utils.initAccessibleButton(
+                button,
+                `Copy email address ${emailText}`
+              );
+            } else {
+              console.warn(
+                "Utils.js or its functions are not available. Copy buttons in about section are disabled."
+              );
+              button.disabled = true;
+            }
           });
         }
       } catch (error) {
@@ -61,7 +72,7 @@
   /* Load News Content - Only on main page
    * -------------------------------------------------- */
   const loadNewsContent = async () => {
-    // Only load News.md if we"re on the main page
+    // Only load News.md if we're on the main page
     if (
       window.location.pathname === "/" ||
       window.location.pathname === "/index.html"
@@ -126,7 +137,7 @@
   /* Load Featured Papers - Only on main page
    * -------------------------------------------------- */
   const loadFeaturedPapers = async () => {
-    // Only load featured papers if we"re on the main page
+    // Only load featured papers if we're on the main page
     if (
       window.location.pathname === "/" ||
       window.location.pathname === "/index.html"
@@ -215,7 +226,7 @@
               // Include everything else (tags, images, iframes, badges)
               const clone = nextEl.cloneNode(true);
 
-              // If it"s a tags element, make spans clickable
+              // If it's a tags element, make spans clickable
               if (clone.matches("tags")) {
                 Array.from(clone.children).forEach((span) => {
                   span.style.cursor = "pointer";
@@ -239,7 +250,7 @@
 
             // Make the entire container clickable
             paperDiv.addEventListener("click", (e) => {
-              // Don"t navigate if clicking on a link, tag, or iframe
+              // Don't navigate if clicking on a link, tag, or iframe
               if (
                 e.target.closest("a") ||
                 e.target.closest("tags") ||
@@ -288,7 +299,7 @@
         if (featuredContainer) {
           featuredContainer.innerHTML = `
                         <div class="featured-error">
-                            <p>We"re having trouble loading the featured papers. Please try refreshing the page or check back later.</p>
+                            <p>We're having trouble loading the featured papers. Please try refreshing the page or check back later.</p>
                         </div>
                     `;
         }
@@ -404,23 +415,45 @@
     });
 
     // Email copy functionality using shared utility
-    const copyButtons = document.querySelectorAll(".copy-btn");
-    copyButtons.forEach((button) => {
-      button.addEventListener("click", function () {
-        Utils.copyToClipboard(this);
-      });
+    if (
+      typeof Utils !== "undefined" &&
+      Utils.copyToClipboard &&
+      Utils.initAccessibleButton
+    ) {
+      const copyButtons = document.querySelectorAll(".copy-btn");
+      copyButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+          Utils.copyToClipboard(this);
+        });
 
-      // Add accessible attributes using utility
-      const emailText =
-        button.getAttribute("data-text") ||
-        button.getAttribute("data-clipboard-text");
-      Utils.initAccessibleButton(button, `Copy email address ${emailText}`);
-    });
+        // Add accessible attributes using utility
+        const emailText =
+          button.getAttribute("data-text") ||
+          button.getAttribute("data-clipboard-text");
+        Utils.initAccessibleButton(button, `Copy email address ${emailText}`);
+      });
+    } else {
+      console.warn(
+        "Utils.js or its functions are not available. Copy buttons are disabled."
+      );
+      const copyButtons = document.querySelectorAll(".copy-btn");
+      copyButtons.forEach((button) => {
+        button.disabled = true;
+      });
+    }
   });
 
   /* Copy Email Functionality
    * -------------------------------------------------- */
   // Copy email functionality now handled by Utils.copyToClipboard
   // Maintained for backwards compatibility
-  window.copyEmail = Utils.copyToClipboard;
+  if (typeof Utils !== "undefined" && Utils.copyToClipboard) {
+    window.copyEmail = Utils.copyToClipboard;
+  } else {
+    window.copyEmail = () => {
+      console.warn(
+        "Utils.js or its functions are not available. window.copyEmail is a no-op."
+      );
+    };
+  }
 })(document.documentElement);
