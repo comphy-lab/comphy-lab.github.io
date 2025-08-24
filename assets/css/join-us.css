@@ -110,6 +110,8 @@
   align-items: center;
   justify-content: center;
   color: white;
+  /* Add slight ring in light mode for contrast on white backgrounds */
+  box-shadow: none;
 }
 
 .phd-section .section-icon {
@@ -126,6 +128,16 @@
 
 .internship-section .section-icon {
   background-color: var(--join-internship-accent);
+}
+
+/* Ensure the icon glyph inherits the intended color and remains visible */
+.section-icon i {
+  color: inherit !important;
+}
+
+/* Improve contrast in light theme: subtle ring around the colored circle */
+[data-theme="light"] .section-icon {
+  box-shadow: 0 0 0 1px var(--join-card-border);
 }
 
 /* Section content styling */
