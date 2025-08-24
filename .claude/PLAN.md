@@ -13,6 +13,7 @@ This plan outlines the tasks to be completed on the `aug-updates` branch before 
 - ✅ **Fix Failing CI Tests** - Fixed CSS linting issues for weekly tests
 - ✅ **Quick performance pass** - Implemented lazy-loading/decoding for news, history, about images; set footer logos to lazy with low fetchpriority; added rel="noopener noreferrer" to external links
 - ✅ **Durham links update** - Pointed all Durham University links to staff profile: [durham.ac.uk/staff/vatsal-sanjay](https://www.durham.ac.uk/staff/vatsal-sanjay/)
+- ✅ **Join Us Page Revamp** - Complete redesign with structured sections, color-coded position types, thematic project categories, responsive design, and streamlined application process
 
 ## Tasks
 
@@ -20,27 +21,34 @@ This plan outlines the tasks to be completed on the `aug-updates` branch before 
 
 **Priority:** High  
 **Estimated Time:** 2-3 hours  
-**Status:** Pending
+**Status:** ✅ Completed
 
 #### Subtasks:
 
-- [ ] Review current join us page structure and content
-- [ ] Design improved layout with better visual hierarchy
-- [ ] Update content for clarity and engagement
-- [ ] Add clear sections for:
-  - [ ] PhD positions
-  - [ ] Postdoc opportunities
-  - [ ] Master's projects
-  - [ ] Undergraduate research
-- [ ] Implement responsive design improvements
-- [ ] Add call-to-action buttons or contact information
-- [ ] Test on multiple devices
+- [x] Review current join us page structure and content
+- [x] Design improved layout with better visual hierarchy
+- [x] Update content for clarity and engagement
+- [x] Add clear sections for:
+  - [x] PhD positions
+  - [x] Postdoc opportunities
+  - [x] Master's projects (Bachelor's/Master's/Level-4 Projects)
+  - [x] Undergraduate research (Internships)
+- [x] Implement responsive design improvements
+- [x] Add call-to-action buttons or contact information
+- [x] Test on multiple devices
 
 #### Details:
 
-- Focus on making the page more inviting and informative
-- Consider adding testimonials or current member quotes
-- Ensure consistency with overall site design
+- ✅ **Complete redesign implemented with structured sections**
+- ✅ **Added section cards with color-coded icons and hover effects**
+- ✅ **Organized research projects into thematic categories:**
+  - Soft Matter Singularities (4 projects)
+  - Free-Surface Flows (3 projects)
+- ✅ **Improved visual hierarchy with styled headers and accent lines**
+- ✅ **Streamlined PhD application process with direct links to funding sources**
+- ✅ **Added responsive grid layout and mobile-first design**
+- ✅ **Full dark mode support with CSS variables**
+- ✅ **Enhanced typography and spacing for better readability**
 
 ---
 
@@ -119,18 +127,18 @@ This plan outlines the tasks to be completed on the `aug-updates` branch before 
 
 1. ✅ **Fix CI tests first** (Critical blocker) - Completed
 2. ✅ **Add Saumili graduation post** (Quick win) - Completed
-3. **Revamp Join Us page** (High visibility)
+3. ✅ **Revamp Join Us page** (High visibility) - Completed
 4. **Optimization improvements** (Performance enhancement)
 
 ## Pre-merge Checklist
 
 - [x] All CI tests passing
-- [ ] Run full build locally: `./scripts/build.sh`
-- [ ] Test site locally: `bundle exec jekyll serve`
-- [ ] Review changes on different devices
-- [ ] Update any relevant documentation
-- [ ] Create PR with detailed description
-- [ ] Request review if needed
+- [x] Run full build locally: `./scripts/build.sh`
+- [x] Test site locally: `bundle exec jekyll serve`
+- [x] Review changes on different devices
+- [x] Update any relevant documentation
+- [x] Create PR with detailed description
+- [x] Request review if needed
 
 ## Notes
 
