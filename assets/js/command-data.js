@@ -13,7 +13,7 @@
         window.location.href = "/";
       },
       section: "Navigation",
-      icon: "<i class=\"fa-solid fa-home\"></i>",
+      icon: '<i class="fa-solid fa-home"></i>',
     },
     {
       id: "team",
@@ -22,7 +22,7 @@
         window.location.href = "/team/";
       },
       section: "Navigation",
-      icon: "<i class=\"fa-solid fa-users\"></i>",
+      icon: '<i class="fa-solid fa-users"></i>',
     },
     {
       id: "research",
@@ -31,7 +31,7 @@
         window.location.href = "/research";
       },
       section: "Navigation",
-      icon: "<i class=\"fa-solid fa-flask\"></i>",
+      icon: '<i class="fa-solid fa-flask"></i>',
     },
     {
       id: "teaching",
@@ -40,7 +40,7 @@
         window.location.href = "/teaching";
       },
       section: "Navigation",
-      icon: "<i class=\"fa-solid fa-chalkboard-teacher\"></i>",
+      icon: '<i class="fa-solid fa-chalkboard-teacher"></i>',
     },
     {
       id: "join",
@@ -49,7 +49,7 @@
         window.location.href = "/join";
       },
       section: "Navigation",
-      icon: "<i class=\"fa-solid fa-handshake\"></i>",
+      icon: '<i class="fa-solid fa-handshake"></i>',
     },
     {
       id: "blog",
@@ -59,7 +59,7 @@
       },
 
       section: "Navigation",
-      icon: "<i class=\"fa-solid fa-rss\"></i>",
+      icon: '<i class="fa-solid fa-rss"></i>',
     },
     {
       id: "back",
@@ -68,7 +68,7 @@
         window.history.back();
       },
       section: "Navigation",
-      icon: "<i class=\"fa-solid fa-arrow-left\"></i>",
+      icon: '<i class="fa-solid fa-arrow-left"></i>',
     },
     {
       id: "forward",
@@ -77,7 +77,7 @@
         window.history.forward();
       },
       section: "Navigation",
-      icon: "<i class=\"fa-solid fa-arrow-right\"></i>",
+      icon: '<i class="fa-solid fa-arrow-right"></i>',
     },
 
     // External links
@@ -89,7 +89,7 @@
       },
 
       section: "External Links",
-      icon: "<i class=\"fa-brands fa-github\"></i>",
+      icon: '<i class="fa-brands fa-github"></i>',
     },
     {
       id: "scholar",
@@ -102,7 +102,7 @@
       },
 
       section: "External Links",
-      icon: "<i class=\"ai ai-google-scholar\"></i>",
+      icon: '<i class="ai ai-google-scholar"></i>',
     },
     {
       id: "youtube",
@@ -112,7 +112,7 @@
       },
 
       section: "External Links",
-      icon: "<i class=\"fa-brands fa-youtube\"></i>",
+      icon: '<i class="fa-brands fa-youtube"></i>',
     },
     {
       id: "bluesky",
@@ -122,7 +122,7 @@
       },
 
       section: "External Links",
-      icon: "<i class=\"fa-brands fa-bluesky\"></i>",
+      icon: '<i class="fa-brands fa-bluesky"></i>',
     },
 
     // Tools
@@ -133,7 +133,7 @@
         window.scrollTo({ top: 0, behavior: "smooth" });
       },
       section: "Tools",
-      icon: "<i class=\"fa-solid fa-arrow-up\"></i>",
+      icon: '<i class="fa-solid fa-arrow-up"></i>',
     },
     {
       id: "bottom",
@@ -146,7 +146,7 @@
       },
 
       section: "Tools",
-      icon: "<i class=\"fa-solid fa-arrow-down\"></i>",
+      icon: '<i class="fa-solid fa-arrow-down"></i>',
     },
 
     // Help commands
@@ -161,7 +161,7 @@
       },
 
       section: "Help",
-      icon: "<i class=\"fa-brands fa-github\"></i>",
+      icon: '<i class="fa-brands fa-github"></i>',
     },
   ];
 
@@ -169,37 +169,10 @@
 
   // Define the displayShortcutsHelp function globally
   window.displayShortcutsHelp = function () {
-    // Create and display shortcut help modal
-    // Create a modal to show all available shortcuts
-    const modal = document.createElement("div");
-    modal.style.position = "fixed";
-    modal.style.top = "0";
-    modal.style.left = "0";
-    modal.style.width = "100%";
-    modal.style.height = "100%";
-    modal.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
-    modal.style.zIndex = "2000";
-    modal.style.display = "flex";
-    modal.style.justifyContent = "center";
-    modal.style.alignItems = "center";
-
-    const content = document.createElement("div");
-    content.style.backgroundColor = "white";
-    content.style.borderRadius = "8px";
-    content.style.padding = "20px";
-    content.style.maxWidth = "600px";
-    content.style.maxHeight = "80vh";
-    content.style.overflow = "auto";
-    content.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.3)";
-
-    // Media query for dark mode
-    if (
+    // Create and display shortcut help modal using shared utility
+    const darkMode =
       window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-    ) {
-      content.style.backgroundColor = "#333";
-      content.style.color = "#fff";
-    }
+      window.matchMedia("(prefers-color-scheme: dark)").matches;
 
     // Group commands by section
     const sections = {};
@@ -210,15 +183,16 @@
       sections[command.section].push(command);
     });
 
-    let html = "<h2 style=\"margin-top: 0;\">Commands</h2>";
-    html += "<p>Press Ctrl+K (⌘K on Mac) to open the command palette</p>";
+    let html = '<h2 style="margin-top: 0;">Commands</h2>';
+    const shortcutKey = Utils.isMacPlatform() ? "⌘K" : "Ctrl+K";
+    html += `<p>Press ${shortcutKey} to open the command palette</p>`;
 
     // Add each section and its commands
     Object.keys(sections).forEach((section) => {
       html += `<h3>${section}</h3>`;
-      html += "<table style=\"width: 100%; border-collapse: collapse;\">";
+      html += '<table style="width: 100%; border-collapse: collapse;">';
       html +=
-        "<tr><th style=\"text-align: left; padding: 8px; border-bottom: 1px solid #ddd;\">Command</th></tr>";
+        '<tr><th style="text-align: left; padding: 8px; border-bottom: 1px solid #ddd;">Command</th></tr>';
 
       sections[section].forEach((command) => {
         html += `<tr>
@@ -231,139 +205,26 @@
 
     // Add close button
     html +=
-      "<div style=\"text-align: center; margin-top: 20px;\"><button id=\"close-shortcuts-help\" style=\"padding: 8px 16px; background-color: #5b79a8; color: white; border: none; border-radius: 4px; cursor: pointer;\">Close</button></div>";
+      '<div style="text-align: center; margin-top: 20px;"><button id="close-shortcuts-help" style="padding: 8px 16px; background-color: #5b79a8; color: white; border: none; border-radius: 4px; cursor: pointer;">Close</button></div>';
 
-    content.innerHTML = html;
-    modal.appendChild(content);
+    // Create modal using shared utility
+    const modal = Utils.createModal({
+      content: html,
+      darkMode: darkMode,
+    });
+
     document.body.appendChild(modal);
 
     // Add event listener to close
     document
       .getElementById("close-shortcuts-help")
       .addEventListener("click", () => {
-        document.body.removeChild(modal);
+        modal.closeModal();
       });
-
-    // Close when clicking outside
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal) {
-        document.body.removeChild(modal);
-      }
-    });
   };
 
-  // Search database integration
-  window.searchDatabaseForCommandPalette = async function (query) {
-    // Only perform search if query is at least 3 characters long
-    if (!query || query.length < 3) {
-      return [];
-    }
-
-    // Perform search on database with query
-
-    try {
-      // Check if we have a searchIndex already loaded in window
-      if (!window.searchFuse && window.searchData) {
-        // If we already have search data but no Fuse object
-        try {
-          window.searchFuse = new Fuse(window.searchData, {
-            keys: [
-              { name: "title", weight: 0.7 },
-              { name: "content", weight: 0.2 },
-              { name: "tags", weight: 0.1 },
-              { name: "categories", weight: 0.1 },
-            ],
-            includeScore: true,
-            threshold: 0.4,
-          });
-        } catch (e) {
-          console.error("Error creating Fuse instance:", e);
-          return [];
-        }
-      } else if (!window.searchFuse) {
-        // Try to fetch search database if it doesn"t exist yet
-        try {
-          const response = await fetch("/assets/js/search_db.json");
-          if (response.ok) {
-            try {
-              const searchData = await response.json();
-              if (!searchData || !Array.isArray(searchData)) {
-                console.warn("Search database has invalid format");
-                return [];
-              }
-              window.searchData = searchData;
-              window.searchFuse = new Fuse(searchData, {
-                keys: [
-                  { name: "title", weight: 0.7 },
-                  { name: "content", weight: 0.2 },
-                  { name: "tags", weight: 0.1 },
-                  { name: "categories", weight: 0.1 },
-                ],
-                includeScore: true,
-                threshold: 0.4,
-              });
-            } catch (e) {
-              console.error("Error parsing search database JSON:", e);
-              return [];
-            }
-          } else {
-            console.warn(`No search database found (${response.status})`);
-            return [];
-          }
-        } catch (e) {
-          console.error("Error loading search database:", e);
-          return [];
-        }
-      }
-
-      // Perform the search
-      if (window.searchFuse) {
-        try {
-          const results = window.searchFuse.search(query);
-
-          // Sort results by priority first, then by Fuse.js score
-          // Lower priority number = higher priority (1 is highest, 5 is lowest)
-          const sortedResults = results.sort((a, b) => {
-            // First compare by priority
-            const priorityA = a.item.priority || 5; // Default to lowest priority if not specified
-            const priorityB = b.item.priority || 5;
-
-            if (priorityA !== priorityB) {
-              return priorityA - priorityB; // Lower priority number comes first
-            }
-
-            // If priorities are equal, use Fuse.js score (lower score = better match)
-            return a.score - b.score;
-          });
-
-          // Return at most 5 results to avoid cluttering the command palette
-          return sortedResults.slice(0, 5).map((result) => ({
-            id: `search-result-${result.refIndex}`,
-            title: result.item.title || "Untitled",
-            handler: () => {
-              if (result.item.url) {
-                window.location.href = result.item.url;
-              }
-            },
-            section: "Search Results",
-            icon: "<i class=\"fa-solid fa-file-lines\"></i>",
-            excerpt:
-              result.item.excerpt ||
-              (result.item.content &&
-                result.item.content.substring(0, 100) + "...") ||
-              "",
-          }));
-        } catch (e) {
-          console.error("Error performing search with Fuse:", e);
-          return [];
-        }
-      }
-    } catch (e) {
-      console.error("Error searching database:", e);
-    }
-
-    return [];
-  };
+  // Search database integration is now handled by SearchManager
+  // Backwards compatibility maintained through SearchManager exports
 
   // Add page-specific command function
   window.addContextCommands = function () {
@@ -378,37 +239,10 @@
           id: "filter-research",
           title: "Filter Research by Tag",
           handler: () => {
-            // Create and display a modal showing all available tags
-            const modal = document.createElement("div");
-            modal.style.position = "fixed";
-            modal.style.top = "0";
-            modal.style.left = "0";
-            modal.style.width = "100%";
-            modal.style.height = "100%";
-            modal.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
-            modal.style.zIndex = "2000";
-            modal.style.display = "flex";
-            modal.style.justifyContent = "center";
-            modal.style.alignItems = "center";
-
-            const content = document.createElement("div");
-            content.style.backgroundColor = "white";
-            content.style.borderRadius = "8px";
-            content.style.padding = "20px";
-            content.style.maxWidth = "600px";
-            content.style.maxHeight = "80vh";
-            content.style.overflow = "auto";
-            content.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.3)";
-            content.setAttribute("tabindex", "-1"); // Make the content focusable for keyboard events
-
-            // Media query for dark mode
-            if (
+            // Check for dark mode
+            const darkMode =
               window.matchMedia &&
-              window.matchMedia("(prefers-color-scheme: dark)").matches
-            ) {
-              content.style.backgroundColor = "#333";
-              content.style.color = "#fff";
-            }
+              window.matchMedia("(prefers-color-scheme: dark)").matches;
 
             // Collect all unique tags from the page
             const tagElements = document.querySelectorAll("tags span");
@@ -417,9 +251,9 @@
               tags.add(tag.textContent);
             });
 
-            let html = "<h2 style=\"margin-top: 0;\">Filter Research by Tag</h2>";
+            let html = '<h2 style="margin-top: 0;">Filter Research by Tag</h2>';
             html +=
-              "<div class=\"tag-filter-container\" style=\"display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0;\">";
+              '<div class="tag-filter-container" style="display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0;">';
 
             // Add clickable tag buttons
             tags.forEach((tag) => {
@@ -437,11 +271,18 @@
 
             // Add close button
             html +=
-              "<div style=\"text-align: center; margin-top: 20px;\"><button id=\"close-tag-filter\" style=\"padding: 8px 16px; background-color: #333; color: white; border: none; border-radius: 4px; cursor: pointer;\">Close</button></div>";
+              '<div style="text-align: center; margin-top: 20px;"><button id="close-tag-filter" style="padding: 8px 16px; background-color: #333; color: white; border: none; border-radius: 4px; cursor: pointer;">Close</button></div>';
 
-            content.innerHTML = html;
-            modal.appendChild(content);
+            // Create modal using shared utility
+            const modal = Utils.createModal({
+              content: html,
+              darkMode: darkMode,
+            });
+
             document.body.appendChild(modal);
+
+            // Get content element for focus and event handling
+            const content = modal.querySelector('div[tabindex="-1"]');
 
             // Get all tag buttons
             const tagButtons = content.querySelectorAll(".tag-filter-btn");
@@ -490,8 +331,8 @@
                 ).find((tag) => tag.textContent === tagText);
 
                 if (matchingTag) {
-                  // Remove the modal first
-                  document.body.removeChild(modal);
+                  // Close the modal first
+                  modal.closeModal();
                   // Then trigger the click
                   matchingTag.click();
                 }
@@ -505,7 +346,7 @@
 
               if (e.key === "Escape") {
                 // Close the modal
-                document.body.removeChild(modal);
+                modal.closeModal();
               } else if (e.key === "Enter") {
                 // Click the selected button
                 if (tagButtons[selectedButtonIndex]) {
@@ -543,21 +384,14 @@
             document
               .getElementById("close-tag-filter")
               .addEventListener("click", () => {
-                document.body.removeChild(modal);
+                modal.closeModal();
               });
-
-            // Close when clicking outside
-            modal.addEventListener("click", (e) => {
-              if (e.target === modal) {
-                document.body.removeChild(modal);
-              }
-            });
 
             // Focus the content element to capture keyboard events
             content.focus();
           },
           section: "Page Actions",
-          icon: "<i class=\"fa-solid fa-filter\"></i>",
+          icon: '<i class="fa-solid fa-filter"></i>',
         },
       ];
     }
@@ -571,7 +405,7 @@
             window.location.href = "/join";
           },
           section: "Page Actions",
-          icon: "<i class=\"fa-solid fa-envelope\"></i>",
+          icon: '<i class="fa-solid fa-envelope"></i>',
         },
       ];
     }
@@ -588,7 +422,7 @@
             }
           },
           section: "Page Actions",
-          icon: "<i class=\"fa-solid fa-sort\"></i>",
+          icon: '<i class="fa-solid fa-sort"></i>',
         },
       ];
     }

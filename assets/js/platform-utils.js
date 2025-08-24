@@ -1,21 +1,27 @@
 "use strict";
 
 /**
- * Determines whether the user"s platform is macOS.
- *
- * @returns {boolean} True if the current platform is macOS; otherwise, false.
+ * Platform utilities - now delegates to shared Utils module
+ * This file maintains backwards compatibility while using the centralized utilities
  */
-function isMacPlatform() {
-  return navigator.platform.toUpperCase().indexOf("MAC") >= 0;
-}
+
+// Auto-initialize when DOM is loaded (maintains existing behavior)
+document.addEventListener("DOMContentLoaded", function () {
+  // Use shared utility if available, otherwise fallback to local implementation
+  if (window.Utils && window.Utils.updatePlatformSpecificElements) {
+    window.Utils.updatePlatformSpecificElements();
+  } else {
+    // Fallback implementation (should not be needed if utils.js loads first)
+    updatePlatformSpecificElementsFallback();
+  }
+});
 
 /**
- * Updates UI elements to reflect the user"s platform.
- *
- * Elements with the class `.mac-theme-text` are shown and `.default-theme-text` are hidden on Mac platforms; the reverse occurs on non-Mac platforms.
+ * Fallback implementation for platform-specific element updates
+ * Only used if Utils module is not available
  */
-function updatePlatformSpecificElements() {
-  const isMac = isMacPlatform();
+function updatePlatformSpecificElementsFallback() {
+  const isMac = navigator.platform.toUpperCase().indexOf("MAC") >= 0;
 
   // Update all platform-specific text elements
   document.querySelectorAll(".default-theme-text").forEach((element) => {
@@ -27,9 +33,19 @@ function updatePlatformSpecificElements() {
   });
 }
 
-// Initialize when DOM is loaded
-document.addEventListener("DOMContentLoaded", updatePlatformSpecificElements);
+// Export functions for backwards compatibility - delegate to Utils if available
+window.isMacPlatform = function () {
+  if (window.Utils && window.Utils.isMacPlatform) {
+    return window.Utils.isMacPlatform();
+  }
+  // Fallback
+  return navigator.platform.toUpperCase().indexOf("MAC") >= 0;
+};
 
-// Export functions for use in other scripts
-window.isMacPlatform = isMacPlatform;
-window.updatePlatformSpecificElements = updatePlatformSpecificElements;
+window.updatePlatformSpecificElements = function () {
+  if (window.Utils && window.Utils.updatePlatformSpecificElements) {
+    return window.Utils.updatePlatformSpecificElements();
+  }
+  // Fallback
+  updatePlatformSpecificElementsFallback();
+};

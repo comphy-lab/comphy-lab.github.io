@@ -40,11 +40,11 @@ function renderCommandResults(query) {
   // Filter commands based on query
   const filteredCommands = query
     ? commands.filter(
-      (cmd) =>
-        cmd.title.toLowerCase().includes(query.toLowerCase()) ||
+        (cmd) =>
+          cmd.title.toLowerCase().includes(query.toLowerCase()) ||
           (cmd.section &&
             cmd.section.toLowerCase().includes(query.toLowerCase()))
-    )
+      )
     : commands;
 
   // Group by section
@@ -57,14 +57,9 @@ function renderCommandResults(query) {
   });
 
   // If query is at least 3 characters, search the database as well
-  if (
-    query &&
-    query.length >= 3 &&
-    typeof window.searchDatabaseForCommandPalette === "function"
-  ) {
-    // We"ll use a promise to handle the async search
-    window
-      .searchDatabaseForCommandPalette(query)
+  if (query && query.length >= 3 && window.SearchManager) {
+    // Use the centralized search manager
+    window.SearchManager.searchForCommandPalette(query)
       .then((searchResults) => {
         if (searchResults && searchResults.length > 0) {
           // Add search results to sections
@@ -159,37 +154,8 @@ function renderSections(sections, container) {
  * @remark If the search database cannot be loaded, search functionality will be unavailable, but the command palette UI will still function.
  */
 function initCommandPalette() {
-  // Ensure search database is preloaded for command palette search functionality
-  // Try to prefetch the search database if it exists
-  fetch("/assets/js/search_db.json")
-    .then((response) => {
-      if (response.ok) {
-        return response.json();
-      }
-      throw new Error("Search database not found");
-    })
-    .then((data) => {
-      // Search database successfully prefetched
-      window.searchData = data;
-
-      // Initialize Fuse.js with weighted keys
-      window.searchFuse = new Fuse(data, {
-        keys: [
-          { name: "title", weight: 0.7 },
-          { name: "content", weight: 0.2 },
-          { name: "tags", weight: 0.1 },
-          { name: "categories", weight: 0.1 },
-        ],
-        includeScore: true,
-        threshold: 0.4,
-      });
-    })
-    .catch((err) => {
-      console.warn(
-        "Could not prefetch search database for command palette:",
-        err.message
-      );
-    });
+  // Search database initialization is now handled by SearchManager
+  // which auto-prefetches on document load
 
   // Set up backdrop click to close
   const backdrop = document.querySelector(".simple-command-palette-backdrop");
@@ -284,19 +250,13 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initialize the command palette
   initCommandPalette();
 
-  // Show appropriate shortcut text based on platform
-  const isMac = window.isMacPlatform();
-  document.querySelectorAll(".mac-theme-text").forEach((el) => {
-    el.style.display = isMac ? "inline" : "none";
-  });
-  document.querySelectorAll(".default-theme-text").forEach((el) => {
-    el.style.display = isMac ? "none" : "inline";
-  });
+  // Show appropriate shortcut text based on platform using shared utility
+  Utils.updatePlatformSpecificElements();
 
   // Set the appropriate shortcut hint based on platform
   const shortcutHint = document.getElementById("command-palette-shortcut");
   if (shortcutHint) {
-    shortcutHint.textContent = isMac ? "⌘K" : "Ctrl+K";
+    shortcutHint.textContent = Utils.isMacPlatform() ? "⌘K" : "Ctrl+K";
   }
 
   // Ensure command palette button works correctly
@@ -319,49 +279,5 @@ document.addEventListener("DOMContentLoaded", function () {
 window.renderCommandResults = renderCommandResults;
 window.renderSections = renderSections;
 
-// Function to search the database with priority sorting
-window.searchDatabaseForCommandPalette = async function (query) {
-  if (!window.searchFuse) {
-    return [];
-  }
-
-  try {
-    const results = window.searchFuse.search(query);
-
-    // Sort results by priority first, then by Fuse.js score
-    // Lower priority number = higher priority (1 is highest, 5 is lowest)
-    const sortedResults = results.sort((a, b) => {
-      // First compare by priority
-      const priorityA = a.item.priority || 5; // Default to lowest priority if not specified
-      const priorityB = b.item.priority || 5;
-
-      if (priorityA !== priorityB) {
-        return priorityA - priorityB; // Lower priority number comes first
-      }
-
-      // If priorities are equal, use Fuse.js score (lower score = better match)
-      return a.score - b.score;
-    });
-
-    // Return at most 5 results
-    return sortedResults.slice(0, 5).map((result) => ({
-      id: `search-result-${result.refIndex}`,
-      title: result.item.title || "Untitled",
-      handler: () => {
-        if (result.item.url) {
-          window.location.href = result.item.url;
-        }
-      },
-      section: "Search Results",
-      icon: "<i class=\"fa-solid fa-file-lines\"></i>",
-      excerpt:
-        result.item.excerpt ||
-        (result.item.content &&
-          result.item.content.substring(0, 100) + "...") ||
-        "",
-    }));
-  } catch (e) {
-    console.error("Error searching database:", e);
-    return [];
-  }
-};
+// Search functionality is now handled by SearchManager
+// Backwards compatibility maintained through SearchManager exports

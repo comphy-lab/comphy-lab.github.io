@@ -1,11 +1,11 @@
 /* Base theme variables */
 :root {
   /* Color palette */
-  --color-white: #ffffff;
-  --color-black: #000000;
+  --color-white: #fff;
+  --color-black: #000;
   --color-gray-light: #f5f5f5;
-  --color-gray-medium: #666666;
-  --color-gray-dark: #333333;
+  --color-gray-medium: #666;
+  --color-gray-dark: #333;
   --color-gray-xdark: #2a2a2a;
   --color-gray-xxxdark: #121212;
   --color-purple-light: #9a349f;
@@ -190,7 +190,7 @@
   padding-bottom: 0;
 }
 
-.team-section h3::after {
+.team-section h3:after {
   display: none;
 }
 
@@ -224,7 +224,7 @@
   opacity: 1;
 }
 
-.member-image.error::after {
+.member-image.error:after {
   content: "Image loading failed. Please refresh.";
   position: absolute;
   top: 50%;
@@ -236,7 +236,7 @@
   width: 90%;
 }
 
-.member-image::after {
+.member-image:after {
   content: "";
   position: absolute;
   top: 0;
@@ -254,14 +254,15 @@
   will-change: transform;
 }
 
-.member-image.loaded::after {
+.member-image.loaded:after {
   display: none;
 }
 
-@-webkit-keyframes loading-wave {
+@keyframes loading-wave {
   0% {
     left: -100%;
   }
+
   100% {
     left: 200%;
   }
@@ -271,6 +272,7 @@
   0% {
     left: -100%;
   }
+
   100% {
     left: 200%;
   }
@@ -326,7 +328,7 @@
   color: #e63946;
 }
 
-.member-content h2::after {
+.member-content h2:after {
   display: none;
 }
 
@@ -480,11 +482,11 @@
 }
 
 .team-member .fa-x-twitter {
-  color: #000000 !important;
+  color: #000 !important;
 }
 
 .team-member .fa-wikipedia-w {
-  color: #000000 !important;
+  color: #000 !important;
   font-size: 1.4em;
 }
 
@@ -494,7 +496,7 @@
 [data-theme="dark"] .team-member .fa-x-twitter,
 [data-theme="dark"] .team-member .fa-bluesky,
 [data-theme="dark"] .team-member .fa-wikipedia-w {
-  color: #ffffff !important;
+  color: #fff !important;
 }
 
 /* Hover effects */
@@ -553,12 +555,12 @@
 /* Override and remove any automatic after elements on map headings */
 .s-map h1:after,
 .s-map h2:after,
-.s-map h2::after,
-.s-map h1::after,
+.s-map h2:after,
+.s-map h1:after,
 section.s-map h2:after,
-section.s-map h2::after,
+section.s-map h2:after,
 .s-map .column h2:after,
-.s-map .column h2::after {
+.s-map .column h2:after {
   content: none !important;
   display: none !important;
   background: none !important;
@@ -596,8 +598,8 @@ section.s-map h2::after,
 }
 
 /* Extra specificity to override any other styles */
-.s-map .map-heading::before,
-.s-map .map-heading::after,
+.s-map .map-heading:before,
+.s-map .map-heading:after,
 .s-map .map-heading:before,
 .s-map .map-heading:after {
   display: none !important;

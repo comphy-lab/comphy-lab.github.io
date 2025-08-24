@@ -23,6 +23,13 @@ title: Research
 
 ## Work in Progress
 
+### Appleford, T., <strong>Sanjay, V.</strong>, Jalaal, M. On the Rheology of Two-Dimensional Dilute Emulsions. arXiv preprint arXiv:2508.13022 (2025).
+
+<tags><span>Emulsions</span><span>Rheology</span></tags>
+
+[![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2508.13022&color=green)](https://arxiv.org/abs/2508.13022)
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
+
 ### Demirkır, Ç., Yang, R., Bashkatov, A., <strong>Sanjay, V.</strong>, Lohse, D., & Krug, D. To jump or not to jump: Adhesion and viscous dissipation dictate the detachment of coalescing wall-attached bubbles. Submitted to Phys. Rev. Lett. (2025).
 
 <tags><span>Bubbles</span><span>Coalescence</span></tags>
@@ -93,7 +100,7 @@ title: Research
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=ffq7kMMX3_ijm5ZP&amp;list=PLf5C5HCrvhLH8BwyeMSusdvyFmQYGP2qt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-### Highlights
+#### Highlights
 
 * Cover of that volume of J. Fluid Mech.
 
@@ -126,7 +133,7 @@ title: Research
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=KXlRYHJvqW3zel4B&amp;list=PLf5C5HCrvhLHDfTeG_mk3Ul5NRDxCIOee" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-### Highlights
+#### Highlights
 
 * Cover of that volume of J. Fluid Mech.
 
@@ -189,7 +196,7 @@ title: Research
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=CBVTgXd3QiYucPOG&amp;list=PLf5C5HCrvhLGmlYTF1Gg2WviZ-Bkmy2qr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-### Highlights
+#### Highlights
 
 * As of March/April 2024, this highly cited paper received enough citations to place it in the top 1% of the academic field of Physics based on a highly cited threshold for the field and publication year. Source: Web of Science.
 * Editor's Suggestion of that issue of Phys. Rev. Lett.

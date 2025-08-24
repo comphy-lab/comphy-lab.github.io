@@ -24,6 +24,8 @@ collections:
   teaching:
     output: true
     permalink: /:collection/:name
+  join-us:
+    output: true
 
 # Exclude from processing
 exclude:
@@ -37,3 +39,9 @@ exclude:
   - tests
   - jest.config.js
   - package*.json
+  # AI/dev tooling files and directories (do not build or watch)
+  - .cursor
+  - .cursor/**
+  - .claude
+  - .claude/**
+  - CLAUDE.md
