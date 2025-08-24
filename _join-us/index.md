@@ -4,165 +4,12 @@ title: "Join Us"
 permalink: /join/
 ---
 
-<div class="position-section phd-section" markdown="1">
-
-## <span class="section-icon"><i class="fa-solid fa-graduation-cap"></i></span> PhD Positions
-
-We are always looking for enthusiastic PhD students to join our research group and contribute to cutting-edge computational multiphase physics research. We offer fully funded positions with opportunities for international collaboration and conference participation.
-
-**Research Areas:**
-
-- High-performance Computing and Numerical Methods
-- Multiphase flows and Interface Dynamics
-- Physics-based Modeling and Simulation
-- Soft Singularities in Fluid Systems
-- Droplet Dynamics and Respiratory Physics
-
-**What we offer:**
-
-- Fully funded PhD position with competitive stipend
-- Access to high-performance computing resources
-- Collaboration with leading international research groups
-- Conference attendance and networking opportunities
-- Mentorship in both research and career development
-
-**Application Requirements:**
-
-1. CV with academic background
-2. Academic transcripts (Bachelor's and Master's)
-3. Brief research statement (1-2 pages)
-4. Names and contact information of 2–3 references
-
-**Send your application to:**
-
-<div class="email-container">
-  <span class="email-text">vatsal.sanjay@comphy-lab.org</span>
-  <div class="email-actions">
-    <a class="email-link" href="mailto:vatsal.sanjay@comphy-lab.org" aria-label="Email vatsal.sanjay@comphy-lab.org">
-      <i class="fa-regular fa-envelope"></i>
-    </a>
-    <button class="copy-btn" data-clipboard-text="vatsal.sanjay@comphy-lab.org" onclick="copyEmail(this)" aria-label="Copy email address vatsal.sanjay@comphy-lab.org">
-      <i class="fa-regular fa-copy"></i>
-    </button>
-  </div>
-</div>
-
-<div class="email-container">
-  <span class="email-text">vatsal.sanjay@durham.ac.uk</span>
-  <div class="email-actions">
-    <a class="email-link" href="mailto:vatsal.sanjay@durham.ac.uk" aria-label="Email vatsal.sanjay@durham.ac.uk">
-      <i class="fa-regular fa-envelope"></i>
-    </a>
-    <button class="copy-btn" data-clipboard-text="vatsal.sanjay@durham.ac.uk" onclick="copyEmail(this)" aria-label="Copy email address vatsal.sanjay@durham.ac.uk">
-      <i class="fa-regular fa-copy"></i>
-    </button>
-  </div>
-</div>
-
-</div>
-
-<div class="position-section postdoc-section" markdown="1">
-
-## <span class="section-icon"><i class="fa-solid fa-user-tie"></i></span> Postdoctoral Positions
-
-We occasionally have openings for postdoctoral researchers to lead independent research projects within our computational multiphase physics framework. Postdoc positions offer excellent opportunities for career development and research leadership.
-
-**What we're looking for:**
-
-- PhD in Physics, Applied Mathematics, Mechanical Engineering, or related field
-- Strong background in computational fluid dynamics
-- Experience with numerical methods and high-performance computing
-- Independent research capabilities and leadership potential
-
-**Opportunities include:**
-
-- Leading research projects with PhD students
-- Developing new computational methods and tools
-- International collaborations and research visits
-- Grant writing and proposal development
-- Mentoring junior researchers
-
-When positions are available, they will be advertised here.
-
-We also support applications to externally funded postdoctoral fellowships that
-require a UK host, including:
-
-- [Marie Skłodowska‑Curie Postdoctoral Fellowships (MSCA PF)](https://marie-sklodowska-curie-actions.ec.europa.eu/actions/postdoctoral-fellowships)
-- [UKRI EPSRC Postdoctoral Fellowships](https://www.ukri.org/opportunity/?filter_council%5B0%5D=820&filter_funding_type%5B0%5D=18&filter_status%5B0%5D=open&filter_status%5B1%5D=upcoming&filter_submitted=true&filter_order=publication_date/)
-- [Leverhulme Trust Early Career Fellowships](https://www.leverhulme.ac.uk/schemes-at-a-glance?field_require_funding_for_tid=5)
-- [Royal Society Newton International Fellowship](https://royalsociety.org/grants-schemes-awards/grants/newton-international/)
-- [Royal Academy of Engineering Research Fellowships](https://raeng.org.uk/programmes-and-prizes/programmes/uk-grants-and-prizes/support-for-research/research-fellowships/)
-- [Royal Commission for the Exhibition of 1851 Research Fellowships](https://royalcommission1851.org/fellowships/research-fellowships)
-- [Commonwealth Scholarships Commission fellowships](https://cscuk.fcdo.gov.uk/about-us/scholarships-and-fellowships/)
-
-If you're interested, please email a brief statement of interest and your CV.
-Reaching out 2–4 months before a call deadline is ideal so we can plan a strong
-application together.
-
-</div>
-
-<div class="position-section masters-section" markdown="1">
-
-## <span class="section-icon"><i class="fa-solid fa-book"></i></span> Bachelor's/Master's (Level 4) Projects
-
-We offer exciting research projects for Bachelor's and Master's students interested in computational physics and fluid dynamics. These projects provide hands-on experience with cutting-edge simulation tools and real-world physics problems.
-
-**Project Types:**
-
-- Computational fluid dynamics simulations using Basilisk C
-- Data analysis and visualization of complex flow phenomena
-- Development of numerical methods and algorithms
-- Experimental-computational comparison studies
-
-**What you'll gain:**
-
-- Experience with high-performance computing
-- Skills in scientific programming (C, Python, MATLAB)
-- Understanding of advanced numerical methods
-- Opportunity to contribute to published research
-
-See the projects below and the official listings at the <a href="https://pof.tnw.utwente.nl/education/studentprojects" target="_blank" rel="noopener noreferrer">project page</a>.
-
-Contact us to discuss project fit and scope for your specific interests and timeline.
-
-</div>
-
-<div class="position-section internship-section" markdown="1">
-
-## <span class="section-icon"><i class="fa-solid fa-flask"></i></span> Internships
-
-We welcome motivated students for summer internships and short-term research projects. Our internship program provides intensive research experience in a collaborative environment.
-
-**Internship Details:**
-
-- Duration: 2-6 months (flexible based on academic calendar)
-- Focus on specific research questions within ongoing projects
-- Close mentorship and regular progress meetings
-- Opportunity to present results at group seminars
-
-**Ideal candidates have:**
-
-- Background in physics, mathematics, or engineering
-- Basic programming experience (any language)
-- Curiosity about fluid mechanics and computational methods
-- Strong motivation for hands-on research
-
-**Application process:**
-
-Send a short note describing your interests and any prior experience, along with your transcript, to the email addresses above. Include your preferred internship timeline and any specific research areas of interest.
-
-Eligible PhD candidates from Commonwealth countries may also consider the
-[Commonwealth Split-site PhD Scholarships](https://cscuk.fcdo.gov.uk/scholarships/commonwealth-split-site-scholarships-for-low-and-middle-income-countries/)
-to undertake a 1‑year research period at CoMPhy Lab as part of their PhD.
-
-</div>
-
 <div class="projects-showcase" markdown="1">
 
 ## Current Research Projects
 
 <div class="projects-intro" markdown="1">
-To get an idea of the kind of projects we are interested in, please have a look at our current research topics. Each project offers opportunities for students at different levels, from internships to PhD research.
+To get an idea of the kind of projects we are interested in, please have a look at our current research topics (see [Research](/research)). Also, below are some of the ongoing research projects:
 </div>
 
 <div class="project-category soft-matter-category" markdown="1">
@@ -254,5 +101,199 @@ Study hot droplet impacts on cold substrates in gels transitioning from Newtonia
 </div>
 
 </div>
+
+</div>
+
+<div class="position-section phd-section" markdown="1">
+
+## <span class="section-icon"><i class="fa-solid fa-graduation-cap"></i></span> PhD (CMP) — Admissions and Studentships
+
+We welcome applicants with strong backgrounds in physics, applied mathematics,
+or engineering, especially in continuum mechanics, numerics, and scientific
+computing.
+
+**Admissions (concise):**
+
+- Entry: First-class BSc or at least a 2:1 MPhys/MSc (or international
+  equivalent). English requirements apply for non‑native speakers.
+  ([How to Apply](https://www.durham.ac.uk/study/postgraduate/research-degrees/how-to-apply/))
+
+**How to apply (CMP):**
+
+- Identify a prospective supervisor in Condensed Matter Physics (CMP) and select
+  CMP as your section in the application.
+- Prepare: ≤1‑page research statement, CV, transcripts/certificates, two
+  referees’ emails, English test (if needed).
+- Submit via Durham’s Postgraduate Applicant Portal.
+  ([How to Apply](https://www.durham.ac.uk/study/postgraduate/research-degrees/how-to-apply/))
+
+**Funding routes commonly used in CMP:**
+
+- EPSRC Doctoral Training Partnership (DTP)
+- SOFI CDT (Soft Matter & Functional Interfaces)
+- Durham University studentships
+- China Scholarship Council (CSC)
+  ([Fees & Funding](https://www.durham.ac.uk/study/postgraduate/research-degrees/fees-and-funding/),
+  [Physics studentships](https://www.durham.ac.uk/departments/academic/physics/postgraduate-study/studentships-funding/))
+
+**Timeline (typical Oct start):**
+
+- Sep–Dec: contact supervisors; submit early for internal ranking
+- Dec–Feb: interviews/allocations across EPSRC routes
+- Spring: funding decisions
+
+If you’re unsure about fit or funding, email us with a brief statement of
+interest and CV.
+
+</div>
+
+<div class="position-section postdoc-section" markdown="1">
+
+## <span class="section-icon"><i class="fa-solid fa-user-tie"></i></span> Postdoctoral Positions
+
+We occasionally have openings for postdoctoral researchers to lead independent research projects within our computational multiphase physics framework. Postdoc positions offer excellent opportunities for career development and research leadership.
+
+**What we're looking for:**
+
+- PhD in Physics, Applied Mathematics, Mechanical Engineering, or related field
+- Strong background in computational fluid dynamics
+- Experience with numerical methods and high-performance computing
+- Independent research capabilities and leadership potential
+
+**Opportunities include:**
+
+- Leading research projects with PhD students
+- Developing new computational methods and tools
+- International collaborations and research visits
+- Grant writing and proposal development
+- Mentoring junior researchers
+
+When positions are available, they will be advertised here.
+
+We also support applications to externally funded postdoctoral fellowships that
+require a UK host, including:
+
+- [Marie Skłodowska‑Curie Postdoctoral Fellowships (MSCA PF)](https://marie-sklodowska-curie-actions.ec.europa.eu/actions/postdoctoral-fellowships)
+- [UKRI EPSRC Postdoctoral Fellowships](https://www.ukri.org/opportunity/?filter_council%5B0%5D=820&filter_funding_type%5B0%5D=18&filter_status%5B0%5D=open&filter_status%5B1%5D=upcoming&filter_submitted=true&filter_order=publication_date/)
+- [Leverhulme Trust Early Career Fellowships](https://www.leverhulme.ac.uk/schemes-at-a-glance?field_require_funding_for_tid=5)
+- [Royal Society Newton International Fellowship](https://royalsociety.org/grants-schemes-awards/grants/newton-international/)
+- [Royal Academy of Engineering Research Fellowships](https://raeng.org.uk/programmes-and-prizes/programmes/uk-grants-and-prizes/support-for-research/research-fellowships/)
+- [Royal Commission for the Exhibition of 1851 Research Fellowships](https://royalcommission1851.org/fellowships/research-fellowships)
+
+If you're interested, please email a brief statement of interest and your CV.
+Reaching out 2–4 months before a call deadline is ideal so we can plan a strong
+application together.
+
+</div>
+
+<div class="position-section phd-section" markdown="1">
+
+## <span class="section-icon"><i class="fa-solid fa-graduation-cap"></i></span> PhD Positions
+
+We are always looking for enthusiastic PhD students to join our research group and contribute to cutting-edge computational multiphase physics research. We offer fully funded positions with opportunities for international collaboration and conference participation.
+
+**Research Areas:**
+
+- High-performance Computing and Numerical Methods
+- Multiphase flows and Interface Dynamics
+- Physics-based Modeling and Simulation
+- Soft Singularities in Fluid Systems
+- Droplet Dynamics and Respiratory Physics
+
+**What we offer:**
+
+- Access to high-performance computing resources
+- Collaboration with leading international research groups
+- Conference attendance and networking opportunities
+- Mentorship in both research and career development
+
+**Application Requirements:**
+
+1. CV with academic background
+2. Academic transcripts (Bachelor's and Master's)
+3. Brief research statement (1-2 pages)
+4. Names and contact information of 2–3 references
+
+**Send your application to:**
+
+<div class="email-container">
+  <span class="email-text">vatsal.sanjay@comphy-lab.org</span>
+  <div class="email-actions">
+    <a class="email-link" href="mailto:vatsal.sanjay@comphy-lab.org" aria-label="Email vatsal.sanjay@comphy-lab.org">
+      <i class="fa-regular fa-envelope"></i>
+    </a>
+    <button class="copy-btn" data-clipboard-text="vatsal.sanjay@comphy-lab.org" onclick="copyEmail(this)" aria-label="Copy email address vatsal.sanjay@comphy-lab.org">
+      <i class="fa-regular fa-copy"></i>
+    </button>
+  </div>
+</div>
+
+<div class="email-container">
+  <span class="email-text">vatsal.sanjay@durham.ac.uk</span>
+  <div class="email-actions">
+    <a class="email-link" href="mailto:vatsal.sanjay@durham.ac.uk" aria-label="Email vatsal.sanjay@durham.ac.uk">
+      <i class="fa-regular fa-envelope"></i>
+    </a>
+    <button class="copy-btn" data-clipboard-text="vatsal.sanjay@durham.ac.uk" onclick="copyEmail(this)" aria-label="Copy email address vatsal.sanjay@durham.ac.uk">
+      <i class="fa-regular fa-copy"></i>
+    </button>
+  </div>
+</div>
+
+</div>
+
+<div class="position-section masters-section" markdown="1">
+
+## <span class="section-icon"><i class="fa-solid fa-book"></i></span> Bachelor's/Master's/Level-4 Projects
+
+We offer exciting research projects for Bachelor's and Master's students interested in computational physics and fluid dynamics. These projects provide hands-on experience with cutting-edge simulation tools and real-world physics problems.
+
+**Project Types:**
+
+- Computational fluid dynamics simulations using Basilisk C
+- Data analysis and visualization of complex flow phenomena
+- Development of numerical methods and algorithms
+- Experimental-computational comparison studies
+
+**What you'll gain:**
+
+- Experience with high-performance computing
+- Skills in scientific programming (C, Python, MATLAB)
+- Understanding of advanced numerical methods
+- Opportunity to contribute to published research
+
+See the projects above.
+
+Contact us to discuss project fit and scope for your specific interests and timeline.
+
+</div>
+
+<div class="position-section internship-section" markdown="1">
+
+## <span class="section-icon"><i class="fa-solid fa-flask"></i></span> Internships
+
+We welcome motivated students for summer internships and short-term research projects. Our internship program provides intensive research experience in a collaborative environment.
+
+**Internship Details:**
+
+- Duration: 2-6 months (flexible based on academic calendar)
+- Focus on specific research questions within ongoing projects
+- Close mentorship and regular progress meetings
+- Opportunity to present results at group seminars
+
+**Ideal candidates have:**
+
+- Background in physics, mathematics, or engineering
+- Basic programming experience (any language)
+- Curiosity about fluid mechanics and computational methods
+- Strong motivation for hands-on research
+
+**Application process:**
+
+Send a short note describing your interests and any prior experience, along with your transcript, to the email addresses above. Include your preferred internship timeline and any specific research areas of interest.
+
+Eligible PhD candidates from Commonwealth countries may also consider the
+[Commonwealth Split-site PhD Scholarships](https://cscuk.fcdo.gov.uk/scholarships/commonwealth-split-site-scholarships-for-low-and-middle-income-countries/)
+to undertake a 1‑year research period at CoMPhy Lab as part of their PhD.
 
 </div>
