@@ -82,12 +82,23 @@ We occasionally have openings for postdoctoral researchers to lead independent r
 - Grant writing and proposal development
 - Mentoring junior researchers
 
-When positions are available, they will be advertised here and on:
+When positions are available, they will be advertised here.
 
-- <a href="https://www.academictransfer.com/" target="_blank" rel="noopener noreferrer">Academic Transfer</a>
-- <a href="https://euraxess.ec.europa.eu/" target="_blank" rel="noopener noreferrer">EURAXESS</a>
+We also support applications to externally funded postdoctoral fellowships that
+require a UK host, including:
 
-If you'd like to discuss future opportunities, feel free to email us with a brief statement of interest and your CV.
+- [Marie Skłodowska‑Curie Postdoctoral Fellowships (MSCA PF)](https://marie-sklodowska-curie-actions.ec.europa.eu/actions/postdoctoral-fellowships)
+- [UKRI EPSRC Postdoctoral Fellowships](https://www.ukri.org/opportunity/epsrc-postdoctoral-fellowships/)
+- [Leverhulme Trust Early Career Fellowships](https://www.leverhulme.ac.uk/early-career-fellowships)
+- [Royal Society Newton International Fellowship](https://royalsociety.org/grants-schemes-awards/grants/newton-international/)
+- [Royal Academy of Engineering Research Fellowships](https://raeng.org.uk/grants-prizes/grants/support-for-research/research-fellowship/)
+- [Royal Commission for the Exhibition of 1851 Research Fellowships](https://royalcommission1851.org/awards/research-fellowships)
+- [UKRI Future Leaders Fellowships](https://www.ukri.org/opportunity/future-leaders-fellowships/)
+- [Commonwealth Scholarships Commission fellowships](https://cscuk.fcdo.gov.uk/)
+
+If you're interested, please email a brief statement of interest and your CV.
+Reaching out 2–4 months before a call deadline is ideal so we can plan a strong
+application together.
 
 </div>
 
