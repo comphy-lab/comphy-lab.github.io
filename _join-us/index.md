@@ -204,17 +204,18 @@ We are always looking for enthusiastic PhD students to join our research group a
 - Entry: First-class BSc or at least a 2:1 MPhys/MSc (or international
   equivalent). English requirements apply for non‑native speakers.
   ([How to Apply](https://www.durham.ac.uk/study/postgraduate/research-degrees/how-to-apply/))
-- How to apply: identify a CMP supervisor and select CMP in the portal; prepare
-  a ≤1‑page research statement, CV, transcripts/certificates, two referees’
-  emails, and English test if needed; submit via the Postgraduate Applicant
-  Portal. ([How to Apply](https://www.durham.ac.uk/study/postgraduate/research-degrees/how-to-apply/))
-- Funding routes we commonly use: EPSRC DTP, SOFI CDT, Durham studentships,
-  CSC. See
+- How to apply (for CoMPhy): email us first with a ≤1‑page statement of fit and
+  CV. In the portal, select CMP, name a CoMPhy supervisor, and upload
+  transcripts/certificates, two referees’ emails, and an English test if
+  needed. Submit via the Postgraduate Applicant Portal.
+  ([How to Apply](https://www.durham.ac.uk/study/postgraduate/research-degrees/how-to-apply/))
+- Funding we typically target: EPSRC DTP (Physics), SOFI CDT, Durham
+  studentships, CSC joint awards. See
   [Fees & Funding](https://www.durham.ac.uk/study/postgraduate/research-degrees/fees-and-funding/)
   and
   [Physics studentships](https://www.durham.ac.uk/departments/academic/physics/postgraduate-study/studentships-funding/).
-- Timeline (Oct start): Sep–Dec contact supervisors/submit early; Dec–Feb
-  interviews/allocations; Spring decisions.
+- Timeline (Oct start): contact CoMPhy Sep–Dec; internal ranking/interviews
+  Dec–Feb; Spring decisions. Early contact helps your application.
 
 </div>
 
