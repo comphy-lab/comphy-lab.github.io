@@ -341,6 +341,7 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 [<i class="fa-brands fa-linkedin" style="font-size: 1.5em; color: black;"></i>](https://www.linkedin.com/in/valentin-rosario-6377602b2/?originalSubdomain=nl)
 [<i class="fa-brands fa-github" style="font-size: 2em; color: black;"></i>](https://github.com/ValeRos9)
 
+- **Now:** Ph.D. Candidate, Leiden University
 - **2024:** Graduated with M.Sc., Univ. Amsterdam
 - <a href="https://tinyurl.com/2cjsjvr4" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Modelling the Ward--Hunt ice-shelf as viscoelastic solid</a>
 
