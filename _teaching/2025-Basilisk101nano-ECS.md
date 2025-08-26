@@ -170,69 +170,63 @@ Registration for this pre-conference session is handled through [ECS 2025](https
 
 <script>
 function copyEmail(button) {
+  // Get the email from the data attribute
   const textToCopy = button.getAttribute('data-text');
+  
+  // Debug log to see what we're trying to copy
+  console.log('Copying email:', textToCopy);
+  
   const originalIcon = button.innerHTML;
-  const originalLabel = button.getAttribute('aria-label');
-  const status = button.parentElement.querySelector('[aria-live]');
+  
+  // Use modern clipboard API first
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(textToCopy)
+      .then(() => {
+        // Success - show checkmark
+        button.innerHTML = '<i class="fa-solid fa-check"></i>';
+        button.classList.add('copied');
+        
+        setTimeout(() => {
+          button.innerHTML = originalIcon;
+          button.classList.remove('copied');
+        }, 2000);
+      })
+      .catch(() => {
+        // If modern API fails, use fallback
+        fallbackCopy(textToCopy, button, originalIcon);
+      });
+  } else {
+    // Use fallback for older browsers
+    fallbackCopy(textToCopy, button, originalIcon);
+  }
+}
 
-  const copyText = async () => {
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      try {
-        await navigator.clipboard.writeText(textToCopy);
-      } catch (error) {
-        throw new Error('Clipboard API failed');
-      }
-    } else {
-      // Fallback for older browsers
-      const textarea = document.createElement('textarea');
-      textarea.value = textToCopy;
-      textarea.setAttribute('readonly', '');
-      textarea.style.position = 'absolute';
-      textarea.style.left = '-9999px';
-      document.body.appendChild(textarea);
-      textarea.select();
-
-      if (!document.execCommand('copy')) {
-        throw new Error('Copy command failed');
-      }
-
-      document.body.removeChild(textarea);
-    }
-  };
-
-  copyText()
-    .then(() => {
-      // Show success feedback
+function fallbackCopy(text, button, originalIcon) {
+  const textarea = document.createElement('textarea');
+  textarea.value = text;
+  textarea.style.position = 'fixed';
+  textarea.style.left = '-999999px';
+  textarea.style.top = '-999999px';
+  document.body.appendChild(textarea);
+  textarea.focus();
+  textarea.select();
+  
+  try {
+    const successful = document.execCommand('copy');
+    if (successful) {
       button.innerHTML = '<i class="fa-solid fa-check"></i>';
       button.classList.add('copied');
-      button.setAttribute('aria-label', 'Email address copied to clipboard');
-
-      if (status) {
-        status.textContent = 'Email address copied to clipboard';
-      }
-
-      // Restore original state after delay
+      
       setTimeout(() => {
         button.innerHTML = originalIcon;
         button.classList.remove('copied');
-        button.setAttribute('aria-label', originalLabel);
-
-        if (status) {
-          status.textContent = '';
-        }
       }, 2000);
-    })
-    .catch((error) => {
-      // Handle error gracefully
-      console.warn('Failed to copy email address:', error);
-
-      if (status) {
-        status.textContent = 'Failed to copy email address';
-        setTimeout(() => {
-          status.textContent = '';
-        }, 3000);
-      }
-    });
+    }
+  } catch (err) {
+    console.error('Copy failed:', err);
+  } finally {
+    document.body.removeChild(textarea);
+  }
 }
 </script>
 
