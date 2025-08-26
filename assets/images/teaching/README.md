@@ -9,8 +9,9 @@ This directory contains images used for the Teaching section of the CoMPhy Lab w
 
 ## Current Images
 
-1. **basilisk-madrid.jpg** - Card image for the Basilisk C course at Universidad Carlos III de Madrid
-2. **basilisk-madrid-banner.jpg** - Banner image for the Basilisk C course page
+1. **basilisk-madrid.jpg** - Card image for Basilisk courses (used by both Madrid and ECS 2025)
+2. **basilisk-madrid-banner.jpg** - Banner image for Basilisk course pages (used by both Madrid and ECS 2025)
+3. **courseBanner-dark.jpg** - Dark mode banner for all course pages
 
 ## Adding New Images
 
