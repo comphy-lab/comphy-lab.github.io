@@ -168,67 +168,6 @@ Registration for this pre-conference session is handled through [ECS 2025](https
   </div>
 </div>
 
-<script>
-function copyEmail(button) {
-  // Get the email from the data attribute
-  const textToCopy = button.getAttribute('data-text');
-  
-  // Debug log to see what we're trying to copy
-  console.log('Copying email:', textToCopy);
-  
-  const originalIcon = button.innerHTML;
-  
-  // Use modern clipboard API first
-  if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(textToCopy)
-      .then(() => {
-        // Success - show checkmark
-        button.innerHTML = '<i class="fa-solid fa-check"></i>';
-        button.classList.add('copied');
-        
-        setTimeout(() => {
-          button.innerHTML = originalIcon;
-          button.classList.remove('copied');
-        }, 2000);
-      })
-      .catch(() => {
-        // If modern API fails, use fallback
-        fallbackCopy(textToCopy, button, originalIcon);
-      });
-  } else {
-    // Use fallback for older browsers
-    fallbackCopy(textToCopy, button, originalIcon);
-  }
-}
-
-function fallbackCopy(text, button, originalIcon) {
-  const textarea = document.createElement('textarea');
-  textarea.value = text;
-  textarea.style.position = 'fixed';
-  textarea.style.left = '-999999px';
-  textarea.style.top = '-999999px';
-  document.body.appendChild(textarea);
-  textarea.focus();
-  textarea.select();
-  
-  try {
-    const successful = document.execCommand('copy');
-    if (successful) {
-      button.innerHTML = '<i class="fa-solid fa-check"></i>';
-      button.classList.add('copied');
-      
-      setTimeout(() => {
-        button.innerHTML = originalIcon;
-        button.classList.remove('copied');
-      }, 2000);
-    }
-  } catch (err) {
-    console.error('Copy failed:', err);
-  } finally {
-    document.body.removeChild(textarea);
-  }
-}
-</script>
 
 <div style="margin-top: 2rem; text-align: center;">
   <a href="https://github.com/comphy-lab/Basilisk-101nano" class="course-card__link" target="_blank" rel="noopener noreferrer" aria-label="Course GitHub Repository">
