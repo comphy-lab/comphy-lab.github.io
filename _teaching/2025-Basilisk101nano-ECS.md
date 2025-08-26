@@ -166,17 +166,6 @@ Registration for this pre-conference session is handled through [ECS 2025](https
     </button>
   </div>
 </div>
-<div class="email-container">
-  <span class="email-text">vatsal.sanjay@durham.ac.uk</span>
-  <div class="email-actions">
-    <a class="email-link" href="mailto:vatsal.sanjay@durham.ac.uk" aria-label="Email vatsal.sanjay@durham.ac.uk">
-      <i class="fa-regular fa-envelope"></i>
-    </a>
-    <button class="copy-btn" data-clipboard-text="vatsal.sanjay@durham.ac.uk" onclick="copyEmail(this)" aria-label="Copy email address vatsal.sanjay@durham.ac.uk">
-      <i class="fa-regular fa-copy"></i>
-    </button>
-  </div>
-</div>
 
 
 <div style="margin-top: 2rem; text-align: center;">
