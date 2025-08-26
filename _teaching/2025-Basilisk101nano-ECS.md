@@ -15,7 +15,7 @@ permalink: /teaching/2025-Basilisk101nano-ECS
     const theme = document.documentElement.getAttribute('data-theme') || 'light';
     const lightImages = document.querySelectorAll('.light-mode-img');
     const darkImages = document.querySelectorAll('.dark-mode-img');
-    
+
     if (theme === 'dark') {
       lightImages.forEach(img => img.style.display = 'none');
       darkImages.forEach(img => img.style.display = 'block');
@@ -74,7 +74,9 @@ The hands-on format combines theoretical insights with live coding demonstration
 ## Course Schedule
 
 ### Hour 1: Foundations and First Steps (9:30-10:30)
+
 #### Think before you compute
+
 - **9:30-9:45** &nbsp;|&nbsp; **Opening & Philosophy**
   - Conservation laws and the "physics-first" approach to simulation
   - Why adaptive mesh refinement matters for coating flows
@@ -84,26 +86,30 @@ The hands-on format combines theoretical insights with live coding demonstration
 - **10:00-10:30** &nbsp;|&nbsp; **First Basilisk Code**
   - Implementing transport equations in practice
   - Compilation workflow and debugging basics
-  - *Hands-on exercise: modify and run your first simulation*
+  - _Hands-on exercise: modify and run your first simulation_
   - Conduction: [Live demo](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1st-workingAssignment) & [Takeaways](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1-conduction-takeaways)
 
 ### Hour 2: Interface Dynamics (10:30-11:30)
+
 #### Multiphase flow fundamentals
+
 - **10:30-10:50** &nbsp;|&nbsp; **Volume-of-Fluid Method**
   - Interface tracking for two-phase flows
   - Surface tension implementation in Basilisk
   - Adaptive refinement at fluid interfaces
 - **10:50-11:10** &nbsp;|&nbsp; **Example 1: Drop Impact**
   - Wetting condition?
-  - *Live demonstration with parameter variations*
+  - _Live demonstration with parameter variations_
   - [Drop impact assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment)
 - **11:10-11:30** &nbsp;|&nbsp; **Interactive Workshop**
   - Modify bulk properties and see immediate results.
   - Explore impact velocity effects on maximum force and spreading.
-  - *Group exercise: predict and test outcomes*
+  - _Group exercise: predict and test outcomes_
 
 ### Hour 3: Coating Applications (11:30-12:30)
+
 #### Contact line dynamics
+
 - **11:30-12:15** &nbsp;|&nbsp; **Example 2: Landau-Levich Dip Coating**
   - Contact line dynamics in coating processes.
   - Multiscale nature of the contact line problem.
@@ -127,7 +133,7 @@ The hands-on format combines theoretical insights with live coding demonstration
 
 **Required Software Installation:**
 
-This installation is tested on Ubuntu 22.04 and macOS 15.XX. 
+This installation is tested on Ubuntu 22.04 and macOS 15.XX.
 
 ```bash
 # Essential tools
@@ -148,6 +154,7 @@ Darcs is not supported in the latest version of Ubuntu using apt-get. Please see
 Registration for this pre-conference session is handled through [ECS 2025](https://ecs2025.org/program/#program).
 
 **Technical Support:**
+
 <div class="email-container">
   <span class="email-text">vatsal.sanjay@comphy-lab.org</span>
   <div class="email-actions">
