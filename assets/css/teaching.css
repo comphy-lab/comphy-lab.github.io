@@ -563,50 +563,7 @@
   font-weight: 600;
 }
 
-/* Email container styles */
-.email-container {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
-  background-color: #f8f9fa;
-  padding: 1.2rem 1.5rem;
-  border-radius: 8px;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-  border: 1px solid #e9ecef;
-}
-
-.email-text {
-  font-size: 1.5rem;
-  font-family: "Courier New", monospace;
-  margin-right: auto;
-  color: #444;
-}
-
-.copy-btn {
-  background-color: transparent;
-  border: none;
-  color: #4169e1;
-  cursor: pointer;
-  font-size: 1.5rem;
-  padding: 0.5rem 0.8rem;
-  transition: all 0.2s ease;
-  border-radius: 4px;
-}
-
-.copy-btn:hover {
-  background-color: rgba(65, 105, 225, 0.1);
-  color: #314b9c;
-}
-
-.copy-btn:active {
-  transform: scale(0.95);
-}
-
-.copy-btn.copied {
-  color: #27ae60;
-}
+/* Email containers inherit global styles from assets/css/styles.css */
 
 @media screen and (max-width: 800px) {
   .s-teaching {
@@ -703,18 +660,7 @@
     font-size: 1.2rem;
   }
 
-  .email-container {
-    max-width: 100%;
-    padding: 1rem 1.2rem;
-  }
-
-  .email-text {
-    font-size: 1.3rem;
-    word-break: break-all;
-  }
-
-  .copy-btn {
-    font-size: 1.3rem;
-    padding: 0.4rem 0.7rem;
-  }
+  /* Maintain responsive adjustments without changing visuals */
+  .email-container { max-width: 100%; }
+  .email-text { word-break: break-all; }
 }
