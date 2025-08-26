@@ -80,14 +80,12 @@ The hands-on format combines theoretical insights with live coding demonstration
   - Why adaptive mesh refinement matters for coating flows
 - **9:45-10:00** &nbsp;|&nbsp; **Example 0: Basic Conduction**
   - Setting up a simple heat diffusion problem
-  - Understanding Basilisk's syntax and structure
-  - *Live demonstration*
-  - [Conduction Theory & Takeaways](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1-conduction-takeaways)
+  - Understanding Basilisk's syntax and structure. Basilisk C [website](http://basilisk.fr) is your best friend.
 - **10:00-10:30** &nbsp;|&nbsp; **First Basilisk Code**
   - Implementing transport equations in practice
   - Compilation workflow and debugging basics
   - *Hands-on exercise: modify and run your first simulation*
-  - [1st Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1st-workingAssignment)
+  - Conduction: [Live demo](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1st-workingAssignment) & [Takeaways](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1-conduction-takeaways)
 
 ### Hour 2: Interface Dynamics (10:30-11:30)
 #### Multiphase flow fundamentals
@@ -96,30 +94,25 @@ The hands-on format combines theoretical insights with live coding demonstration
   - Surface tension implementation in Basilisk
   - Adaptive refinement at fluid interfaces
 - **10:50-11:10** &nbsp;|&nbsp; **Example 1: Drop Impact**
-  - Dynamic contact angles and wetting phenomena
-  - Splash dynamics and interface evolution
+  - Wetting condition?
   - *Live demonstration with parameter variations*
-  - [3rd Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment)
+  - [Drop impact assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment)
 - **11:10-11:30** &nbsp;|&nbsp; **Interactive Workshop**
-  - Modify surface properties and see immediate results
-  - Explore impact velocity effects on spreading
+  - Modify bulk properties and see immediate results.
+  - Explore impact velocity effects on maximum force and spreading.
   - *Group exercise: predict and test outcomes*
 
 ### Hour 3: Coating Applications (11:30-12:30)
-#### From theory to industrial relevance
-- **11:30-12:00** &nbsp;|&nbsp; **Example 2: Landau-Levich Dip Coating**
-  - Film entrainment mechanisms and thickness control
-  - Capillary number effects and scaling laws
-  - Contact line dynamics in coating processes
-  - *Live demonstration with industrial parameters*
-- **12:00-12:15** &nbsp;|&nbsp; **Advanced Features Overview**
-  - Non-Newtonian rheology for coating materials
-  - Parallel computing for large-scale problems
-  - Post-processing and visualization techniques
+#### Contact line dynamics
+- **11:30-12:15** &nbsp;|&nbsp; **Example 2: Landau-Levich Dip Coating**
+  - Contact line dynamics in coating processes.
+  - Multiscale nature of the contact line problem.
+  - Need for subgrid models.
+  - Landau-Levich dip coating assignment.
 - **12:15-12:30** &nbsp;|&nbsp; **Q&A and Next Steps**
-  - Discussion of participant-specific applications
-  - Resources for continued learning
-  - Community support and collaboration opportunities
+  - Discussion of participant-specific applications.
+  - Resources for continued learning.
+  - Community support and collaboration opportunities.
 
 ---
 
@@ -133,37 +126,38 @@ The hands-on format combines theoretical insights with live coding demonstration
 ## Pre-Course Setup
 
 **Required Software Installation:**
+
+This installation is tested on Ubuntu 22.04 and macOS 15.XX. 
+
 ```bash
 # Essential tools
 sudo apt-get install gcc make gawk git
 
 # Basilisk framework
-git clone https://github.com/comphy-lab/Basilisk-101.git
-cd Basilisk-101
-make
-
-# Alternative: Docker container
-docker pull comphylab/basilisk:ecs2025
+git clone https://github.com/comphy-lab/Basilisk-101nano.git
+cd Basilisk-101nano
+chmod +x ./reset_install_requirements.sh
+./reset_install_requirements.sh --hard
 ```
 
-**Backup Option:** Pre-configured environment will be available for participants unable to complete installation.
+For some known issues, please refer to: [Basilisk-C issues](https://github.com/comphy-lab/basilisk-C/issues) and [Issue #3](https://github.com/comphy-lab/basilisk-C/issues/3).
+Darcs is not supported in the latest version of Ubuntu using apt-get. Please see: [Darcs website](https://darcs.net/) for more information on how to install Darcs. You can also install Basilisk without Darcs. Please follow the instructions here: [Basilisk INSTALL](http://basilisk.fr/src/INSTALL).
 
 ## Registration & Resources
 
-Registration for this pre-conference session is handled through the official ECS 2025 registration portal. Space is limited to ensure hands-on interaction.
+Registration for this pre-conference session is handled through the official ECS 2025 registration portal.
 
 **Technical Support:**
 <div class="email-container">
-    <span class="email-text">vatsal.sanjay@comphy-lab.org</span>
-    <button class="copy-btn" onclick="copyEmail(this)" data-text="vatsal.sanjay@comphy-lab.org" aria-label="Copy email address vatsal.sanjay@comphy-lab.org">
-        <i class="fas fa-copy"></i>
+  <span class="email-text">vatsal.sanjay@comphy-lab.org</span>
+  <div class="email-actions">
+    <a class="email-link" href="mailto:vatsal.sanjay@comphy-lab.org" aria-label="Email vatsal.sanjay@comphy-lab.org">
+      <i class="fa-regular fa-envelope"></i>
+    </a>
+    <button class="copy-btn" data-clipboard-text="vatsal.sanjay@comphy-lab.org" onclick="copyEmail(this)" aria-label="Copy email address vatsal.sanjay@comphy-lab.org">
+      <i class="fa-regular fa-copy"></i>
     </button>
-</div>
-<div class="email-container">
-    <span class="email-text">vatsal.sanjay@durham.ac.uk</span>
-    <button class="copy-btn" onclick="copyEmail(this)" data-text="vatsal.sanjay@durham.ac.uk" aria-label="Copy email address vatsal.sanjay@durham.ac.uk">
-        <i class="fas fa-copy"></i>
-    </button>
+  </div>
 </div>
 
 <script>
@@ -199,7 +193,7 @@ function copyEmail(button) {
 </script>
 
 <div style="margin-top: 2rem; text-align: center;">
-  <a href="https://github.com/comphy-lab/Basilisk-101" class="course-card__link" target="_blank" rel="noopener noreferrer" aria-label="Course GitHub Repository">
+  <a href="https://github.com/comphy-lab/Basilisk-101nano" class="course-card__link" target="_blank" rel="noopener noreferrer" aria-label="Course GitHub Repository">
     <i class="fa-brands fa-github" style="margin-right: 0.5rem; font-style: normal;"></i>Course Examples & Resources
   </a>
 </div>
