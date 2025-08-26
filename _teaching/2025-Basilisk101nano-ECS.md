@@ -161,41 +161,78 @@ Registration for this pre-conference session is handled through [ECS 2025](https
     <a class="email-link" href="mailto:vatsal.sanjay@comphy-lab.org" aria-label="Email vatsal.sanjay@comphy-lab.org">
       <i class="fa-regular fa-envelope"></i>
     </a>
-    <button class="copy-btn" data-clipboard-text="vatsal.sanjay@comphy-lab.org" onclick="copyEmail(this)" aria-label="Copy email address vatsal.sanjay@comphy-lab.org">
+    <button class="copy-btn" data-text="vatsal.sanjay@comphy-lab.org" onclick="copyEmail(this)" aria-label="Copy email address vatsal.sanjay@comphy-lab.org">
       <i class="fa-regular fa-copy"></i>
     </button>
+    <div aria-live="polite" aria-atomic="true" style="position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden;"></div>
   </div>
 </div>
 
 <script>
 function copyEmail(button) {
   const textToCopy = button.getAttribute('data-text');
-  
-  // Create a temporary textarea element to copy from
-  const textarea = document.createElement('textarea');
-  textarea.value = textToCopy;
-  textarea.setAttribute('readonly', '');
-  textarea.style.position = 'absolute';
-  textarea.style.left = '-9999px';
-  document.body.appendChild(textarea);
-  
-  // Select and copy the text
-  textarea.select();
-  document.execCommand('copy');
-  
-  // Remove the temporary element
-  document.body.removeChild(textarea);
-  
-  // Show feedback
   const originalIcon = button.innerHTML;
-  button.innerHTML = '<i class="fas fa-check"></i>';
-  button.classList.add('copied');
-  
-  // Restore original state after a delay
-  setTimeout(() => {
-    button.innerHTML = originalIcon;
-    button.classList.remove('copied');
-  }, 2000);
+  const originalLabel = button.getAttribute('aria-label');
+  const status = button.parentElement.querySelector('[aria-live]');
+
+  const copyText = async () => {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      try {
+        await navigator.clipboard.writeText(textToCopy);
+      } catch (error) {
+        throw new Error('Clipboard API failed');
+      }
+    } else {
+      // Fallback for older browsers
+      const textarea = document.createElement('textarea');
+      textarea.value = textToCopy;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'absolute';
+      textarea.style.left = '-9999px';
+      document.body.appendChild(textarea);
+      textarea.select();
+
+      if (!document.execCommand('copy')) {
+        throw new Error('Copy command failed');
+      }
+
+      document.body.removeChild(textarea);
+    }
+  };
+
+  copyText()
+    .then(() => {
+      // Show success feedback
+      button.innerHTML = '<i class="fa-solid fa-check"></i>';
+      button.classList.add('copied');
+      button.setAttribute('aria-label', 'Email address copied to clipboard');
+
+      if (status) {
+        status.textContent = 'Email address copied to clipboard';
+      }
+
+      // Restore original state after delay
+      setTimeout(() => {
+        button.innerHTML = originalIcon;
+        button.classList.remove('copied');
+        button.setAttribute('aria-label', originalLabel);
+
+        if (status) {
+          status.textContent = '';
+        }
+      }, 2000);
+    })
+    .catch((error) => {
+      // Handle error gracefully
+      console.warn('Failed to copy email address:', error);
+
+      if (status) {
+        status.textContent = 'Failed to copy email address';
+        setTimeout(() => {
+          status.textContent = '';
+        }, 3000);
+      }
+    });
 }
 </script>
 
