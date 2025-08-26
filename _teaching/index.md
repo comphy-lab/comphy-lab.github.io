@@ -27,7 +27,7 @@ Welcome to the CoMPhy Lab's educational resources. Apart from the university cou
   </div>
   
   <div class="course-card">
-    <img src="/assets/images/teaching/basilisk-ecs.jpg" alt="Basilisk for Multiphase Flow Simulations" loading="lazy">
+    <img src="/assets/images/teaching/basilisk-madrid.jpg" alt="Basilisk for Multiphase Flow Simulations" loading="lazy">
     <div class="course-card__content">
       <h3 class="course-card__title">Basilisk for Multiphase Flow Simulations</h3>
       <div class="course-card__meta">

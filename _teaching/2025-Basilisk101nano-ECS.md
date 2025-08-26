@@ -5,7 +5,7 @@ permalink: /teaching/2025-Basilisk101nano-ECS
 ---
 
 <div class="course-image">
-  <img src="/assets/images/teaching/basilisk-ecs-banner.jpg" alt="Basilisk for Multiphase Flow Simulations" loading="lazy" class="light-mode-img">
+  <img src="/assets/images/teaching/basilisk-madrid-banner.jpg" alt="Basilisk for Multiphase Flow Simulations" loading="lazy" class="light-mode-img">
   <img src="/assets/images/teaching/courseBanner-dark.jpg" alt="Basilisk for Multiphase Flow Simulations" loading="lazy" class="dark-mode-img">
 </div>
 
