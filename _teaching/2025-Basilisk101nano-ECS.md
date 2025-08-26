@@ -145,7 +145,7 @@ Darcs is not supported in the latest version of Ubuntu using apt-get. Please see
 
 ## Registration & Resources
 
-Registration for this pre-conference session is handled through the official ECS 2025 registration portal.
+Registration for this pre-conference session is handled through [ECS 2025](https://ecs2025.org/program/#program).
 
 **Technical Support:**
 <div class="email-container">
