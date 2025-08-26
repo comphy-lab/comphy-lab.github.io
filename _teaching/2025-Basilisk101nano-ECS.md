@@ -1,0 +1,217 @@
+---
+layout: teaching-course
+title: "Basilisk for Multiphase Flow Simulations"
+permalink: /teaching/2025-Basilisk101nano-ECS
+---
+
+<div class="course-image">
+  <img src="/assets/images/teaching/basilisk-ecs-banner.jpg" alt="Basilisk for Multiphase Flow Simulations" loading="lazy" class="light-mode-img">
+  <img src="/assets/images/teaching/courseBanner-dark.jpg" alt="Basilisk for Multiphase Flow Simulations" loading="lazy" class="dark-mode-img">
+</div>
+
+<script>
+  // Function to update image visibility based on theme
+  function updateBannerImages() {
+    const theme = document.documentElement.getAttribute('data-theme') || 'light';
+    const lightImages = document.querySelectorAll('.light-mode-img');
+    const darkImages = document.querySelectorAll('.dark-mode-img');
+    
+    if (theme === 'dark') {
+      lightImages.forEach(img => img.style.display = 'none');
+      darkImages.forEach(img => img.style.display = 'block');
+    } else {
+      lightImages.forEach(img => img.style.display = 'block');
+      darkImages.forEach(img => img.style.display = 'none');
+    }
+  }
+  
+  // Run on page load
+  document.addEventListener('DOMContentLoaded', updateBannerImages);
+  
+  // Watch for theme changes
+  const observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+      if (mutation.attributeName === 'data-theme') {
+        updateBannerImages();
+      }
+    });
+  });
+  
+  observer.observe(document.documentElement, { attributes: true });
+</script>
+
+# Basilisk for Multiphase Flow Simulations
+
+<div class="course-details">
+  <div class="course-details__item">
+    <h4><i class="fa-solid fa-calendar-days"></i> Date</h4>
+    <p>September 15, 2025</p>
+  </div>
+  <div class="course-details__item">
+    <h4><i class="fa-solid fa-location-dot"></i> Location</h4>
+    <p>European Coating Symposium 2025</p>
+  </div>
+  <div class="course-details__item">
+    <h4><i class="fa-solid fa-clock"></i> Duration</h4>
+    <p>3 hours (9:30 AM - 12:30 PM)</p>
+  </div>
+</div>
+
+## What will you learn?
+
+- **Think before you compute!** Physics-first approach to multiphase flow simulation
+- **Run Basilisk simulations** Compile and execute your first high-fidelity simulations
+- **Interface tracking methods** Volume-of-Fluid (VOF) approach for two-phase flows
+- **Coating applications** Landau-Levich dip coating and droplet dynamics
+- **Real-world connections** From simulation results to physical understanding
+
+## Course Description
+
+This intensive 3-hour pre-conference training provides a focused introduction to high-fidelity multiphase flow simulation using Basilisk C, a powerful open-source framework. Designed for ECS 2025 participants with intermediate CFD background, the course emphasizes practical applications to coating processes while building foundational skills in adaptive mesh refinement and interface dynamics.
+
+The hands-on format combines theoretical insights with live coding demonstrations, enabling participants to immediately apply concepts. Through three carefully selected examples—basic heat conduction, drop impact dynamics, and Landau-Levich dip coating—attendees will gain practical experience with Basilisk's approach to conservation equations, interface tracking, and complex physics modeling relevant to coating applications.
+
+## Course Schedule
+
+### Hour 1: Foundations and First Steps (9:30-10:30)
+#### Think before you compute
+- **9:30-9:45** &nbsp;|&nbsp; **Opening & Philosophy**
+  - Conservation laws and the "physics-first" approach to simulation
+  - Why adaptive mesh refinement matters for coating flows
+- **9:45-10:00** &nbsp;|&nbsp; **Example 0: Basic Conduction**
+  - Setting up a simple heat diffusion problem
+  - Understanding Basilisk's syntax and structure
+  - *Live demonstration*
+  - [Conduction Theory & Takeaways](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1-conduction-takeaways)
+- **10:00-10:30** &nbsp;|&nbsp; **First Basilisk Code**
+  - Implementing transport equations in practice
+  - Compilation workflow and debugging basics
+  - *Hands-on exercise: modify and run your first simulation*
+  - [1st Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1st-workingAssignment)
+
+### Hour 2: Interface Dynamics (10:30-11:30)
+#### Multiphase flow fundamentals
+- **10:30-10:50** &nbsp;|&nbsp; **Volume-of-Fluid Method**
+  - Interface tracking for two-phase flows
+  - Surface tension implementation in Basilisk
+  - Adaptive refinement at fluid interfaces
+- **10:50-11:10** &nbsp;|&nbsp; **Example 1: Drop Impact**
+  - Dynamic contact angles and wetting phenomena
+  - Splash dynamics and interface evolution
+  - *Live demonstration with parameter variations*
+  - [3rd Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment)
+- **11:10-11:30** &nbsp;|&nbsp; **Interactive Workshop**
+  - Modify surface properties and see immediate results
+  - Explore impact velocity effects on spreading
+  - *Group exercise: predict and test outcomes*
+
+### Hour 3: Coating Applications (11:30-12:30)
+#### From theory to industrial relevance
+- **11:30-12:00** &nbsp;|&nbsp; **Example 2: Landau-Levich Dip Coating**
+  - Film entrainment mechanisms and thickness control
+  - Capillary number effects and scaling laws
+  - Contact line dynamics in coating processes
+  - *Live demonstration with industrial parameters*
+- **12:00-12:15** &nbsp;|&nbsp; **Advanced Features Overview**
+  - Non-Newtonian rheology for coating materials
+  - Parallel computing for large-scale problems
+  - Post-processing and visualization techniques
+- **12:15-12:30** &nbsp;|&nbsp; **Q&A and Next Steps**
+  - Discussion of participant-specific applications
+  - Resources for continued learning
+  - Community support and collaboration opportunities
+
+---
+
+## Prerequisites
+
+- Intermediate knowledge of fluid mechanics and CFD concepts
+- Basic programming experience (C preferred, but any language acceptable)
+- Understanding of partial differential equations
+- Laptop with Unix-like environment (Linux/Mac/WSL for Windows)
+
+## Pre-Course Setup
+
+**Required Software Installation:**
+```bash
+# Essential tools
+sudo apt-get install gcc make gawk git
+
+# Basilisk framework
+git clone https://github.com/comphy-lab/Basilisk-101.git
+cd Basilisk-101
+make
+
+# Alternative: Docker container
+docker pull comphylab/basilisk:ecs2025
+```
+
+**Backup Option:** Pre-configured environment will be available for participants unable to complete installation.
+
+## Registration & Resources
+
+Registration for this pre-conference session is handled through the official ECS 2025 registration portal. Space is limited to ensure hands-on interaction.
+
+**Technical Support:**
+<div class="email-container">
+    <span class="email-text">vatsal.sanjay@comphy-lab.org</span>
+    <button class="copy-btn" onclick="copyEmail(this)" data-text="vatsal.sanjay@comphy-lab.org" aria-label="Copy email address vatsal.sanjay@comphy-lab.org">
+        <i class="fas fa-copy"></i>
+    </button>
+</div>
+<div class="email-container">
+    <span class="email-text">vatsal.sanjay@durham.ac.uk</span>
+    <button class="copy-btn" onclick="copyEmail(this)" data-text="vatsal.sanjay@durham.ac.uk" aria-label="Copy email address vatsal.sanjay@durham.ac.uk">
+        <i class="fas fa-copy"></i>
+    </button>
+</div>
+
+<script>
+function copyEmail(button) {
+  const textToCopy = button.getAttribute('data-text');
+  
+  // Create a temporary textarea element to copy from
+  const textarea = document.createElement('textarea');
+  textarea.value = textToCopy;
+  textarea.setAttribute('readonly', '');
+  textarea.style.position = 'absolute';
+  textarea.style.left = '-9999px';
+  document.body.appendChild(textarea);
+  
+  // Select and copy the text
+  textarea.select();
+  document.execCommand('copy');
+  
+  // Remove the temporary element
+  document.body.removeChild(textarea);
+  
+  // Show feedback
+  const originalIcon = button.innerHTML;
+  button.innerHTML = '<i class="fas fa-check"></i>';
+  button.classList.add('copied');
+  
+  // Restore original state after a delay
+  setTimeout(() => {
+    button.innerHTML = originalIcon;
+    button.classList.remove('copied');
+  }, 2000);
+}
+</script>
+
+<div style="margin-top: 2rem; text-align: center;">
+  <a href="https://github.com/comphy-lab/Basilisk-101" class="course-card__link" target="_blank" rel="noopener noreferrer" aria-label="Course GitHub Repository">
+    <i class="fa-brands fa-github" style="margin-right: 0.5rem; font-style: normal;"></i>Course Examples & Resources
+  </a>
+</div>
+
+## Expected Outcomes
+
+By the end of this intensive 3-hour session, participants will:
+
+- **Execute Basilisk simulations** confidently on their own systems
+- **Modify key parameters** to explore different physical scenarios
+- **Understand VOF methodology** for interface tracking in multiphase flows
+- **Apply to coating processes** through the Landau-Levich example
+- **Connect theory to practice** by relating simulation results to physical phenomena
+
+This training provides the foundation for applying high-fidelity simulation techniques to coating research, with immediate practical skills and clear pathways for advanced applications.
