@@ -25,6 +25,23 @@ Welcome to the CoMPhy Lab's educational resources. Apart from the university cou
       <a href="/teaching/2025-Basilisk101-Madrid" class="course-card__link">View Course</a>
     </div>
   </div>
+  
+  <div class="course-card">
+    <img src="/assets/images/teaching/basilisk-ecs.jpg" alt="Basilisk for Multiphase Flow Simulations" loading="lazy">
+    <div class="course-card__content">
+      <h3 class="course-card__title">Basilisk for Multiphase Flow Simulations</h3>
+      <div class="course-card__meta">
+        <i class="fa-solid fa-location-dot"></i> European Coating Symposium 2025
+      </div>
+      <div class="course-card__meta">
+        <i class="fa-solid fa-calendar-days"></i> September 15, 2025
+      </div>
+      <p class="course-card__desc">
+        Intensive 3-hour pre-conference training focused on coating applications. Learn Basilisk fundamentals through hands-on examples: heat conduction, drop impact dynamics, and Landau-Levich dip coating.
+      </p>
+      <a href="/teaching/2025-Basilisk101nano-ECS" class="course-card__link">View Course</a>
+    </div>
+  </div>
 </div>
 
 ## About Our Teaching Philosophy
