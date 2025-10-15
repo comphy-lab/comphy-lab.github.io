@@ -47,6 +47,7 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 │       └── teaching         # Teaching images
 ├── scripts                    # Build and utility scripts
 │   ├── build.sh              # Main build script
+│   ├── deploy.sh             # Local dev server with smart port detection
 │   ├── generate_search_db.rb  # Search database generator
 │   └── setup.sh              # Complete setup script for fresh and existing environments
 ├── tests                      # Unit tests
@@ -104,6 +105,21 @@ A static website for the Computational Multiphase Physics Laboratory, built with
    ```
 
 3. **Build and Run**
+
+   **Quick Start (Recommended):**
+
+   ```bash
+   # Automatically finds available port and starts Jekyll with live reload
+   ./scripts/deploy.sh
+   ```
+
+   This script will:
+   - Find an available port (4001-4999) to avoid conflicts
+   - Start Jekyll development server with live reload
+   - Display the local URL (e.g., <http://localhost:4001>)
+   - Auto-refresh browser on file changes
+
+   **Manual Build (Alternative):**
 
    ```bash
    # Build the site and search database
@@ -548,6 +564,12 @@ The `scripts/` directory contains various utility scripts for development, testi
   - Generates the search database
   - Updates SEO tags
   - Creates filtered research pages by tags
+
+- **`deploy.sh`** - Local development server with smart port detection
+  - Automatically finds available ports (4001-4999)
+  - Starts Jekyll development server with live reload
+  - Handles port conflicts gracefully
+  - Auto-refreshes browser on file changes
 
 - **`lint-check.sh`** - Code quality and formatting
   - Runs all linters (ESLint, Stylelint, markdownlint)
