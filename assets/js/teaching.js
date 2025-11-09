@@ -41,7 +41,11 @@ function sortCoursesByDate() {
 
   // Target various potential course container structures, including the current structure
   const courseContainers = document.querySelectorAll(
-    '.s-teaching .course-item, .teaching-content .course-item, .course, .course-container, article.course, .teaching-course, .teaching-content > div[class*="course"], .teaching-content > div > a[href*="Course"], .teaching-content a[href*="Course"]'
+    ".s-teaching .course-item, .teaching-content .course-item, " +
+      ".course, .course-container, article.course, .teaching-course, " +
+      '.teaching-content > div[class*="course"], ' +
+      '.teaching-content > div > a[href*="Course"], ' +
+      '.teaching-content a[href*="Course"]'
   );
 
   // If no direct matches found, try to find the specific course structure on the page
