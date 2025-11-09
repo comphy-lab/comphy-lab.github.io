@@ -42,6 +42,23 @@ Welcome to the CoMPhy Lab's educational resources. Apart from the university cou
       <a href="/teaching/2025-Basilisk101nano-ECS" class="course-card__link">View Course</a>
     </div>
   </div>
+
+  <div class="course-card">
+    <img src="/assets/images/teaching/soft-matter.svg" alt="Introduction to Soft Matter" loading="lazy">
+    <div class="course-card__content">
+      <h3 class="course-card__title">Introduction to Soft Matter</h3>
+      <div class="course-card__meta">
+        <i class="fa-solid fa-location-dot"></i> Durham University
+      </div>
+      <div class="course-card__meta">
+        <i class="fa-solid fa-calendar-days"></i> Fall 2025
+      </div>
+      <p class="course-card__desc">
+        Comprehensive lecture notes covering fundamental concepts in soft matter physics and their applications.
+      </p>
+      <a href="https://blogs.comphy-lab.org/Lecture-Notes/Intro-Soft-Matter/0-README" class="course-card__link" target="_blank" rel="noopener noreferrer">View Lecture Notes</a>
+    </div>
+  </div>
 </div>
 
 ## About Our Teaching Philosophy
@@ -55,4 +72,4 @@ Our teaching approach emphasizes:
 - **Advanced numerical methods**: Mastering state-of-the-art techniques for complex problems
 - **Open science**: Sharing knowledge and tools with the scientific community. Checkout <a href="https://github.com/comphy-lab"><i class="fa-brands fa-github" style="font-size: 1.5em; color: black; font-style: normal;"></i></a>
 
-If you're interested in hosting a course or workshop with CoMPhy Lab, please [contact us](/join) for collaboration opportunities. 
+If you're interested in hosting a course or workshop with CoMPhy Lab, please [contact us](/join) for collaboration opportunities.
