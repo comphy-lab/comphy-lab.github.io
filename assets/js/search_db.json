@@ -287,9 +287,9 @@
     "priority": 1
   },
   {
-    "title": "Our Team & Collaborators - Dr. Pim J. Dekker",
+    "title": "Our Team & Collaborators - Pim J. Dekker M.Sc.",
     "content": "[ ](https://www.linkedin.com/in/pim-dekker/) - **Now:** [Ph.D. Student, Phys. Fluids - Univ. Twente](https://pof.tnw.utwente.nl/people/profile/1431) - **2019:** [Graduated with B.Sc., Univ. Twente](https://pof.tnw.utwente.nl/people/profile/1431) - Spreading of a drop on a water-air interface",
-    "url": "https://comphy-lab.org/team/#dr-pim-j-dekker",
+    "url": "https://comphy-lab.org/team/#pim-j-dekker-msc",
     "type": "website_section",
     "priority": 1
   },
@@ -320,7 +320,12 @@
     "content": "[11]Sanjay, V., Chantelot, P., & Lohse, D. When does an impacting drop stop bouncing? J. Fluid Mech., 958, A26 (2023).",
     "url": "https://comphy-lab.org/research/#11",
     "type": "paper",
-    "tags": ["Drops", "Bouncing", "Dissipative anomaly", "Featured"],
+    "tags": [
+      "Drops",
+      "Bouncing",
+      "Dissipative anomaly",
+      "Featured"
+    ],
     "priority": 1
   },
   {
@@ -355,7 +360,10 @@
     "content": "[14]Sanjay, V., Zhang, B., Lv, C., & Lohse, D. The role of viscosity on drop impact forces on non-wetting surfaces. J. Fluid Mech., 1004, A6 (2025).",
     "url": "https://comphy-lab.org/research/#14",
     "type": "paper",
-    "tags": ["Drops", "Impact forces"],
+    "tags": [
+      "Drops",
+      "Impact forces"
+    ],
     "priority": 2
   },
   {
@@ -363,7 +371,10 @@
     "content": "[13] Kayal, L.,Sanjay, V., Yewale, N., Kumar, A., & Dasgupta, R. Focusing of concentric free-surface waves. J. Fluid Mech., 1003, A14 (2025).",
     "url": "https://comphy-lab.org/research/#13",
     "type": "paper",
-    "tags": ["Waves", "Dissipative anomaly"],
+    "tags": [
+      "Waves",
+      "Dissipative anomaly"
+    ],
     "priority": 2
   },
   {
@@ -371,7 +382,12 @@
     "content": "[12] Balasubramanian, A. G.,Sanjay, V., Jalaal, M., Vinuesa, R., & Tammisola, O. Bursting bubble in an elastoviscoplastic medium. J. Fluid Mech., 1001, A9 (2024).",
     "url": "https://comphy-lab.org/research/#12",
     "type": "paper",
-    "tags": ["Bubbles", "Non-Newtonian", "Jets", "Soft-matter-singularities"],
+    "tags": [
+      "Bubbles",
+      "Non-Newtonian",
+      "Jets",
+      "Soft-matter-singularities"
+    ],
     "priority": 2
   },
   {
@@ -379,7 +395,11 @@
     "content": "[10]Sanjay, V., Lakshman, S., Chantelot, P., Snoeijer, J. H., & Lohse, D. Drop impact on viscous liquid films. J. Fluid Mech., 958, A25 (2023).",
     "url": "https://comphy-lab.org/research/#10",
     "type": "paper",
-    "tags": ["Drops", "Bouncing", "Superhydrophobic surfaces"],
+    "tags": [
+      "Drops",
+      "Bouncing",
+      "Superhydrophobic surfaces"
+    ],
     "priority": 2
   },
   {
@@ -402,7 +422,11 @@
     "content": "[9]Sanjay, V., Sen, U., Kant, P., and Lohse, D. Taylor\u2013Culick retractions and the influence of the surroundings. J. Fluid Mech., 948, A14 (2022).",
     "url": "https://comphy-lab.org/research/#9",
     "type": "paper",
-    "tags": ["Sheets", "Dissipative anomaly", "Retraction"],
+    "tags": [
+      "Sheets",
+      "Dissipative anomaly",
+      "Retraction"
+    ],
     "priority": 2
   },
   {
@@ -410,7 +434,11 @@
     "content": "[8] Zhang, B.,Sanjay, V., Shi, S., and Zhao, Y., and Lv, C., and Feng, X.-Q., & Lohse, D. Impact forces of water drops falling on superhydrophobic surfaces. Phys. Rev. Lett., 129(10), 104501 (2022).",
     "url": "https://comphy-lab.org/research/#8",
     "type": "paper",
-    "tags": ["Drops", "Superhydrophobic surfaces", "Impact forces"],
+    "tags": [
+      "Drops",
+      "Superhydrophobic surfaces",
+      "Impact forces"
+    ],
     "priority": 2
   },
   {
@@ -418,7 +446,12 @@
     "content": "[7]Sanjay, V., Lohse, D., & Jalaal, M. Bursting bubble in a viscoplastic medium. J. Fluid Mech., 922, A2 (2021).",
     "url": "https://comphy-lab.org/research/#7",
     "type": "paper",
-    "tags": ["Bubbles", "Jets", "Non-Newtonian", "Soft-matter-singularities"],
+    "tags": [
+      "Bubbles",
+      "Jets",
+      "Non-Newtonian",
+      "Soft-matter-singularities"
+    ],
     "priority": 2
   },
   {
@@ -426,7 +459,11 @@
     "content": "[6] Ram\u00edrez-Soto, O.,Sanjay, V., Lohse, D., Pham, J. T., & Vollmer, D. Lifting a sessile oil drop from a superamphiphobic surface with an impacting one. Sci. Adv., 6(34), eaba4330 (2020).",
     "url": "https://comphy-lab.org/research/#6",
     "type": "paper",
-    "tags": ["Drops", "Superamphiphobic-surfaces", "Lifting"],
+    "tags": [
+      "Drops",
+      "Superamphiphobic-surfaces",
+      "Lifting"
+    ],
     "priority": 2
   },
   {
@@ -434,7 +471,10 @@
     "content": "[5] Jain, A.,Sanjay, V., & Das, A. K. Consequences of inclined and dual jet impingement in stagnant liquid and stratified layers. AIChE J., 65(1), 372-384 (2019).",
     "url": "https://comphy-lab.org/research/#5",
     "type": "paper",
-    "tags": ["Jets", "Bubbles"],
+    "tags": [
+      "Jets",
+      "Bubbles"
+    ],
     "priority": 2
   },
   {
@@ -442,7 +482,9 @@
     "content": "[4] Soni, A.,Sanjay, V., & Das, A. K. Formation of fluid structures due to jet-jet and jet-sheet interactions. Chem. Eng. Sci., 191, 67-77 (2018).",
     "url": "https://comphy-lab.org/research/#4",
     "type": "paper",
-    "tags": ["Jets"],
+    "tags": [
+      "Jets"
+    ],
     "priority": 2
   },
   {
@@ -450,7 +492,11 @@
     "content": "[3]Sanjay, V., Das, A.K. Numerical assessment of hazard in compartmental fire having steady heat release rate from the source. Build. Simul. 11, 613\u2013624 (2018).",
     "url": "https://comphy-lab.org/research/#3",
     "type": "paper",
-    "tags": ["Others", "Fire", "Evacuation"],
+    "tags": [
+      "Others",
+      "Fire",
+      "Evacuation"
+    ],
     "priority": 2
   },
   {
@@ -458,7 +504,10 @@
     "content": "[2]Sanjay, V., & Das, A. K. Formation of liquid chain by collision of two laminar jets. Phys. Fluids, 29(11), 112101 (2017).",
     "url": "https://comphy-lab.org/research/#2",
     "type": "paper",
-    "tags": ["Jets", "Sheets"],
+    "tags": [
+      "Jets",
+      "Sheets"
+    ],
     "priority": 2
   },
   {
@@ -466,7 +515,10 @@
     "content": "[1]Sanjay, V., & Das, A. K. On air entrainment in a water pool by impingement of a jet. AIChE J., 63(11), 5169-5181 (2017).",
     "url": "https://comphy-lab.org/research/#1",
     "type": "paper",
-    "tags": ["Jets", "Bubbles"],
+    "tags": [
+      "Jets",
+      "Bubbles"
+    ],
     "priority": 2
   },
   {
