@@ -105,7 +105,7 @@ Co-advised with [Martin van der Hoef](https://pof.tnw.utwente.nl/people/profile/
 
 **Research Interest:** Molecular Dynamics Simulations of Evaporation-Driven Colloidal Self-Assembly.
 
-### Peter Croxford M.Sc.
+### Peter Croxford
 
 <span style="font-size: 1.1em;">Student, Durham University</span>
 
@@ -115,7 +115,7 @@ Co-advised with [Martin van der Hoef](https://pof.tnw.utwente.nl/people/profile/
 
 - Department of Physics, Durham Univ. / 2025&#8209;now
 
-**Research Interest:** Porous media flow, Bretherton drops and bubbles.
+**Research Interest:** Bretherton drops and bubbles.
 
 ### Mark Boulogne B.Sc.
 
@@ -428,11 +428,11 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 - **2020:** [Graduated with B.Sc., Univ. Twente](https://pof.tnw.utwente.nl/people/profile/1709)
 - <a href="https://bit.ly/ThesisCoenVerschuur" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Early time dynamics in immiscible drop impacts</a>
 
-### Pim J. Dekker M.Sc.
+### Dr. Pim J. Dekker
 
 [<i class="fa-brands fa-linkedin" style="font-size: 1.5em; color: black;"></i>](https://www.linkedin.com/in/pim-dekker/)
 
-- **Now:** [Ph.D. Student, Phys. Fluids - Univ. Twente](https://pof.tnw.utwente.nl/people/profile/1431)
+- **Now:** [Researcher at Education Applied Physics Univ. Twente-TNW](https://pof.tnw.utwente.nl/people/profile/1431)
 - **2019:** [Graduated with B.Sc., Univ. Twente](https://pof.tnw.utwente.nl/people/profile/1431)
 - <a href="https://bit.ly/ThesisPimDekker" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Spreading of a drop on a water-air interface</a>
 
