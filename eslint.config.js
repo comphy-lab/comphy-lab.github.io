@@ -11,9 +11,9 @@ module.exports = [
       }
     },
     rules: {
-      "indent": ["error", 2],
+      "indent": "off", // Disabled - handled by Prettier
       "linebreak-style": ["error", "unix"],
-      "quotes": ["error", "double"],
+      "quotes": ["error", "double", { "avoidEscape": true }],
       "semi": ["error", "always"],
       "no-unused-vars": "warn",
       "no-console": ["warn", { "allow": ["error", "warn"] }],

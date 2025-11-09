@@ -2,7 +2,6 @@
  * Command Palette functionality for CoMPhy Lab website
  * This file contains all the functionality for the command palette
  */
-/* global Fuse */
 
 // Make the command palette opening function globally available
 window.openCommandPalette = function () {
