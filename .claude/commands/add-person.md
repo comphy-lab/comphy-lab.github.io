@@ -126,5 +126,5 @@ Use appropriate icons based on available links:
 - Font Awesome icon sizes and colors must match existing entries in each section
 - Image dimensions are always `width="200" height="200"` for team members
 - The placeholder.jpg should never be used - use anonymous.svg instead
-- Links should use markdown format with icons in square brackets
+- Links should use Markdown format with icons in square brackets
 - All paths should use forward slashes and start with `/` for absolute paths
