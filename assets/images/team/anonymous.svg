@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <style>
+      .background {
+        fill: #f5f5f5;
+      }
+      .silhouette {
+        fill: #999;
+      }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect class="background" width="200" height="200" rx="8"/>
+
+  <!-- Person bust silhouette -->
+  <g class="silhouette">
+    <!-- Head -->
+    <circle cx="100" cy="75" r="35"/>
+
+    <!-- Shoulders and torso -->
+    <path d="M 100 110 Q 65 115 40 140 L 40 200 L 160 200 L 160 140 Q 135 115 100 110 Z"/>
+  </g>
+</svg>
