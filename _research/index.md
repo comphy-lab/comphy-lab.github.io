@@ -17,11 +17,34 @@ title: Research
 <tags><span>Impact forces</span></tags>
 <tags><span>Dissipative anomaly</span></tags>
 <tags><span>Soft-matter-singularities</span></tags>
+<tags><span>Elastic beads</span></tags>
+<tags><span>Bouncing</span></tags>
+<tags><span>Rupture</span></tags>
+<tags><span>Marangoni flows</span></tags>
+<tags><span>Numerical methods</span></tags>
 <tags><span>Featured</span></tags>
 
 > Click on any tag to filter papers by topic. Each paper can have multiple tags.
 
 ## Work in Progress
+
+### <strong>Dixit, A. K.</strong>, Zhao, C., Zaleski, S., Lohse, D., & <strong>Sanjay, V.</strong> Holey sheets: Double-Threshold Rupture of Draining Liquid Films. arXiv preprint arXiv:2509.12789 (2025).
+
+<tags><span>Sheets</span><span>Rupture</span><span>Soft-matter-singularities</span><span>Featured</span></tags>
+
+[![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2509.12789&color=green)](https://arxiv.org/abs/2509.12789)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/HoleySheet)
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=SLx4otVdr6omgNqb&amp;list=PLf5C5HCrvhLF6ltyZaWSOfNxmiJSubv67" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+### <strong>Jana, S.</strong>, Kolinski, J., Lohse, D., & <strong>Sanjay, V.</strong> Impacting spheres: from liquid drops to elastic beads. arXiv preprint arXiv:2510.24855 (2025).
+
+<tags><span>Drops</span><span>Impact forces</span><span>Elastic beads</span></tags>
+
+[![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2510.24855&color=green)](https://arxiv.org/abs/2510.24855)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/Soft-Sphere-Impacts)
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
 
 ### Appleford, T., <strong>Sanjay, V.</strong>, Jalaal, M. On the Rheology of Two-Dimensional Dilute Emulsions. arXiv preprint arXiv:2508.13022 (2025).
 
@@ -40,23 +63,25 @@ title: Research
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/49KoJwXiDl4?si=uxdpYyKFFd8E6jvN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-### Saini, M., <strong>Sanjay, V.</strong>, Saade, Y., Lohse, D., & Popinet, S. Implementation of integral surface tension formulations in a volume of fluid framework and their applications to Marangoni flows. arXiv preprint arXiv:2502.02712 (2025).
+## 2025
 
-<tags><span>Marangoni flows</span><span>Surface tension</span><span>Numerical methods</span></tags>
-
-[![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2502.02712&color=green)](https://arxiv.org/abs/2502.02712)
-[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
-
-### Mclauchlan, J., Walker, J. S., <strong>Sanjay, V.</strong>, Jalaal, M., Reid, J. P., Squires, A. M., & Souslov, A. Bouncing microdroplets on hydrophobic surfaces. arXiv preprint arXiv:2503.22527 (2025).
+<h3 id="19">[19] Mclauchlan, J., Walker, J. S., <strong>Sanjay, V.</strong>, Jalaal, M., Reid, J. P., Squires, A. M., & Souslov, A. Bouncing microdroplets on hydrophobic surfaces. Proc. Natl. Acad. Sci., 122, e2507309122 (2025).</h3>
 
 <tags><span>Drops</span><span>Bouncing</span></tags>
 
+[![PNAS](https://img.shields.io/static/v1.svg?style=flat-square&label=PNAS&message=OA&color=orange)](https://doi.org/10.1073/pnas.2507309122)
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2503.22527&color=green)](https://arxiv.org/abs/2503.22527)
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
 
-## 2025
+<h3 id="18">[18] Saini, M., <strong>Sanjay, V.</strong>, Saade, Y., Lohse, D., & Popinet, S. Implementation of integral surface tension formulations in a volume of fluid framework and their applications to Marangoni flows. J. Comput. Phys., 542, 114348 (2025).</h3>
 
-<h3 id="17">[17] Bashkatov, A., Bürkle, F., Demirkır, Ç., Ding, W., <strong>Sanjay, V.</strong>, Babich, A., Yang, X., Mutschke, G., Czarske, J., Lohse, D., et al. Electrolyte droplet spraying in H2 bubbles during water electrolysis under normal and microgravity conditions. Nat. Commun., 16, 4580 (2025).</h3>
+<tags><span>Marangoni flows</span><span>Numerical methods</span></tags>
+
+[![J. Comput. Phys.](https://img.shields.io/static/v1.svg?style=flat-square&label=J.%20Comput.%20Phys.&message=OA&color=orange)](https://doi.org/10.1016/j.jcp.2025.114348)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/marangoniSheet)
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
+
+<h3 id="17">[17] Bashkatov, A., Bürkle, F., Demirkır, Ç., Ding, W., <strong>Sanjay, V.</strong>, Babich, A., Yang, X., Mutschke, G., Czarske, J., Lohse, D., Krug, D., Lars, B., & Eckert, E. Electrolyte droplet spraying in H2 bubbles during water electrolysis under normal and microgravity conditions. Nat. Commun., 16, 4580 (2025).</h3>
 
 <tags><span>Bubbles</span><span>Jets</span><span>Coalescence</span><span>Soft-matter-singularities</span><span>Drops</span></tags>
 
@@ -69,7 +94,7 @@ title: Research
 
 <h3 id="16">[16] <strong>Dixit, A.</strong>, Oratis, A., Zinelis, K., Lohse, D., & <strong>Sanjay, V.</strong> Viscoelastic Worthington Jets and Droplets Produced by Bursting Bubbles. J. Fluid Mech., 1010, A2 (2025).</h3>
 
-<tags><span>Bubbles</span><span>Non-Newtonian</span><span>Jets</span><span>Soft-matter-singularities</span><span>Drops</span><span>Featured</span></tags>
+<tags><span>Bubbles</span><span>Non-Newtonian</span><span>Jets</span><span>Soft-matter-singularities</span><span>Drops</span></tags>
 
 [![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=OA&color=orange)](https://doi.org/10.1017/jfm.2025.237)
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2408.05089&color=green)](https://arxiv.org/abs/2408.05089)

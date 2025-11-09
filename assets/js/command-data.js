@@ -1,5 +1,5 @@
 // Command data for website command palette
-/* global Fuse, sortCoursesByDate */
+/* global sortCoursesByDate */
 (function () {
   // Initialize command data
 
