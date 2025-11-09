@@ -117,6 +117,20 @@ Co-advised with [Martin van der Hoef](https://pof.tnw.utwente.nl/people/profile/
 
 **Research Interest:** Porous media flow, Bretherton drops and bubbles.
 
+### Mark Boulogne B.Sc.
+
+<span style="font-size: 1.1em;">M.Sc. Student, University of Twente</span>
+
+Co-advised with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse) & [Aman Bhargava](https://pof.tnw.utwente.nl/people/profile/2120)
+
+[<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/mcboulogne)
+
+<img src="/assets/images/team/7.png" alt="Mark Boulogne" loading="lazy" width="200" height="200">
+
+- [Phys. Fluids - Univ. Twente / 2024&#8209;now](https://pof.tnw.utwente.nl/people/profile/2359)
+
+**Research Interest:** Drops and bubbles spreading on LIS.
+
 ### We need you!
 
 <img src="/assets/images/team/placeholder.jpg" alt="Join Us" loading="lazy" width="200" height="200">
