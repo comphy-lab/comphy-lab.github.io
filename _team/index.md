@@ -105,6 +105,18 @@ Co-advised with [Martin van der Hoef](https://pof.tnw.utwente.nl/people/profile/
 
 **Research Interest:** Molecular Dynamics Simulations of Evaporation-Driven Colloidal Self-Assembly.
 
+### Peter Croxford M.Sc.
+
+<span style="font-size: 1.1em;">Student, Durham University</span>
+
+[<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/PCrox)
+
+<img src="/assets/images/team/anonymous.svg" alt="Peter Croxford" loading="lazy" width="200" height="200">
+
+- Department of Physics, Durham Univ. / 2025&#8209;now
+
+**Research Interest:** Porous media flow, Bretherton drops and bubbles.
+
 ### We need you!
 
 <img src="/assets/images/team/placeholder.jpg" alt="Join Us" loading="lazy" width="200" height="200">
