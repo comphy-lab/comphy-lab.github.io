@@ -22,7 +22,7 @@ Parse a BibTeX entry and add it to `_research/index.md` following the exact form
    - For published papers: Use numbered format with `<h3 id="NUM">[NUM]`
    - For preprints: Use ### without numbering
    - Bold lab members: **Sanjay, V.** and **Dixit, A.**
-   - Use "et al." for author lists with more than 5 authors
+   - Always list all authors, never use "et al."
 
 4. **Interactive Elements**
    - Ask user for tags based on title keywords
@@ -64,7 +64,7 @@ If found, note it for removal after adding published version
 
 - Format: "Author1, A., Author2, B., & Author3, C."
 - Bold lab members: `<strong>Sanjay, V.</strong>` and `<strong>Dixit, A.</strong>`
-- Use "et al." if more than 5 authors: "Author1, A., Author2, B., Author3, C., et al."
+- Always list all authors regardless of number (do not use "et al.")
 
 ### Step 4: Determine Section and Number
 
@@ -136,7 +136,7 @@ Input BibTeX:
 ```bibtex
 @article{bashkatov2025electrolyte,
   title={Electrolyte droplet spraying in H2 bubbles during water electrolysis},
-  author={Bashkatov, A. and Bürkle, F. and Demirkır, Ç. and Ding, W. and Sanjay, V. and others},
+  author={Bashkatov, A. and Bürkle, F. and Demirkır, Ç. and Ding, W. and Sanjay, V. and Babich, A. and Yang, X. and Mutschke, G. and Czarske, J. and Lohse, D. and Krug, D. and Büttner, L. and Eckert, K.},
   journal={Nature Communications},
   volume={16},
   pages={4580},
@@ -148,7 +148,7 @@ Input BibTeX:
 Output (for paper [18]):
 
 ```markdown
-<h3 id="18">[18] Bashkatov, A., Bürkle, F., Demirkır, Ç., Ding, W., <strong>Sanjay, V.</strong>, et al. Electrolyte droplet spraying in H2 bubbles during water electrolysis. Nat. Commun., 16, 4580 (2025).</h3>
+<h3 id="18">[18] Bashkatov, A., Bürkle, F., Demirkır, Ç., Ding, W., <strong>Sanjay, V.</strong>, Babich, A., Yang, X., Mutschke, G., Czarske, J., Lohse, D., Krug, D., Büttner, L., & Eckert, K. Electrolyte droplet spraying in H2 bubbles during water electrolysis. Nat. Commun., 16, 4580 (2025).</h3>
 
 <tags><span>Bubbles</span><span>Jets</span></tags>
 
