@@ -63,6 +63,22 @@ title: Research
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/49KoJwXiDl4?si=uxdpYyKFFd8E6jvN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+### Verschuur, C. I., Oratis, A. T., <strong>Sanjay, V.</strong>, & Snoeijer, J. H. How elasticity affects bubble pinch-off. arXiv preprint arXiv:2511.20075 (2025).
+
+<tags><span>Bubbles</span><span>Soft-matter-singularities</span><span>Elastic beads</span></tags>
+
+[![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2511.20075&color=green)](https://arxiv.org/abs/2511.20075)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/ElasticPinchOff/)
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
+
+### Díaz, D., <strong>Bhargava, A.</strong>, Walz, F., Sharifi, A., Sumally, S., Berger, R., Kappl, M., Butt, H.-J., Lohse, D., Willers, T., <strong>Sanjay, V.</strong>, & Vollmer, D. Stood-up drop to measure receding contact angles. arXiv preprint arXiv:2511.20259 (2025).
+
+<tags><span>Drops</span><span>Superamphiphobic-surfaces</span></tags>
+
+[![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2511.20259&color=green)](https://arxiv.org/abs/2511.20259)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/Retracting-Droplet)
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
+
 ## 2025
 
 <h3 id="19">[19] Mclauchlan, J., Walker, J. S., <strong>Sanjay, V.</strong>, Jalaal, M., Reid, J. P., Squires, A. M., & Souslov, A. Bouncing microdroplets on hydrophobic surfaces. Proc. Natl. Acad. Sci., 122, e2507309122 (2025).</h3>
