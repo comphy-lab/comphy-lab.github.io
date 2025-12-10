@@ -22,6 +22,10 @@ title: History
 
 Starting <strong>July 1st, 2025</strong>, the CoMPhy Lab will be relocating to Durham University, UK. We are excited to join the [Condensed Matter Physics section](https://www.durham.ac.uk/research/institutes-and-centres/condensed-matter-physics/) in the [Department of Physics](https://www.durham.ac.uk/departments/academic/physics/) and continue our research in computational physics and fluid dynamics in our new home.
 
+### December
+
+- [Demirkır, Ç., Yang, R., Bashkatov, A., <strong>Sanjay, V.</strong>, Lohse, D., & Krug, D. To jump or not to jump: Adhesion and viscous dissipation dictate the detachment of coalescing wall-attached bubbles. Phys. Rev. Fluids, 10, 123602 (2025).](/research#20)
+
 ### November
 
 - <strong>Jnandeep Talukdar</strong> <a href="https://github.com/spilltheT"><i class="fa-brands fa-github" style="font-size: 1.5em; color: #8a2be2;"></i></a> won the <a href="https://khmw.nl/khmw-jong-talent-prijzen-khmw-young-talent-awards/" class="blue-link">KHMW Young Talent Graduation Award</a> for Mechanical Engineering and Materials Science 2025 for his master's thesis on fundamental research in droplet formation. <strong>Thesis:</strong> <a href="https://bit.ly/thesisJnan" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf" style="margin-right: 8px; font-size: 1.2em; color: #e63946;"></i>Singularities with Surfactants</a>
