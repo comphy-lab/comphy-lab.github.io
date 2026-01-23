@@ -3,21 +3,96 @@
 # Exit on error
 set -e
 
+# Parse command line arguments
+CLEAN_BUILD=false
+SKIP_SEO=false
+SKIP_RESEARCH=false
+
+show_help() {
+    cat << EOF
+Usage: ./scripts/build.sh [OPTIONS]
+
+Build the CoMPhy Lab Jekyll website with all assets and generated pages.
+
+OPTIONS:
+    -h, --help          Show this help message and exit
+    -c, --clean         Force clean rebuild (removes _site directory first)
+    --skip-seo          Skip SEO metadata generation
+    --skip-research     Skip pre-filtered research page generation
+    --skip-deps         Skip dependency installation (Ruby gems and npm packages)
+
+EXAMPLES:
+    ./scripts/build.sh              # Standard build
+    ./scripts/build.sh --clean      # Clean rebuild
+    ./scripts/build.sh --skip-seo   # Build without SEO generation
+
+EOF
+    exit 0
+}
+
+# Parse arguments
+SKIP_DEPS=false
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        -h|--help)
+            show_help
+            ;;
+        -c|--clean)
+            CLEAN_BUILD=true
+            shift
+            ;;
+        --skip-seo)
+            SKIP_SEO=true
+            shift
+            ;;
+        --skip-research)
+            SKIP_RESEARCH=true
+            shift
+            ;;
+        --skip-deps)
+            SKIP_DEPS=true
+            shift
+            ;;
+        *)
+            echo "Error: Unknown option $1"
+            echo "Run './scripts/build.sh --help' for usage information"
+            exit 1
+            ;;
+    esac
+done
+
 echo "Starting build process..."
+
+# Clean build if requested
+if [ "$CLEAN_BUILD" = true ]; then
+    echo "Performing clean rebuild..."
+    if [ -d "_site" ]; then
+        echo "Removing _site directory..."
+        rm -rf _site
+    fi
+    if [ -d ".jekyll-cache" ]; then
+        echo "Removing .jekyll-cache directory..."
+        rm -rf .jekyll-cache
+    fi
+fi
 
 # Check if running in GitHub Actions
 if [ -n "$GITHUB_ACTIONS" ]; then
     echo "Running in GitHub Actions environment"
     # GitHub Actions already has Ruby and Bundler set up via ruby/setup-ruby@v1
-    
-    # Install npm dependencies in GitHub Actions
-    echo "Installing npm dependencies in GitHub Actions environment..."
-    if [ -d "./scripts" ] && [ -f "./scripts/package.json" ]; then
-        (cd ./scripts && npm install --no-fund --no-audit --ignore-scripts)
-    fi
-    
-    if [ -f "./package.json" ]; then
-        npm install --no-fund --no-audit --ignore-scripts
+
+    if [ "$SKIP_DEPS" = false ]; then
+        # Install npm dependencies in GitHub Actions
+        echo "Installing npm dependencies in GitHub Actions environment..."
+        if [ -d "./scripts" ] && [ -f "./scripts/package.json" ]; then
+            (cd ./scripts && npm install --no-fund --no-audit --ignore-scripts)
+        fi
+
+        if [ -f "./package.json" ]; then
+            npm install --no-fund --no-audit --ignore-scripts
+        fi
+    else
+        echo "Skipping dependency installation (--skip-deps flag)"
     fi
 else
     # Try to detect the environment for local builds
@@ -93,20 +168,24 @@ else
 
     echo "Bundler version: $(bundle -v)"
 
-    # Install dependencies for local environment
-    echo "Installing Ruby dependencies..."
-    bundle install
+    if [ "$SKIP_DEPS" = false ]; then
+        # Install dependencies for local environment
+        echo "Installing Ruby dependencies..."
+        bundle install
 
-    # Install npm dependencies (for husky, lint-staged, etc.)
-    echo "Installing npm dependencies..."
-    if [ -d "./scripts" ] && [ -f "./scripts/package.json" ]; then
-        # Script directory has its own package.json
-        (cd ./scripts && npm install --no-fund --no-audit --ignore-scripts)
-    fi
-    
-    # Also install root npm dependencies if package.json exists
-    if [ -f "./package.json" ]; then
-        npm install --no-fund --no-audit --ignore-scripts
+        # Install npm dependencies (for husky, lint-staged, etc.)
+        echo "Installing npm dependencies..."
+        if [ -d "./scripts" ] && [ -f "./scripts/package.json" ]; then
+            # Script directory has its own package.json
+            (cd ./scripts && npm install --no-fund --no-audit --ignore-scripts)
+        fi
+
+        # Also install root npm dependencies if package.json exists
+        if [ -f "./package.json" ]; then
+            npm install --no-fund --no-audit --ignore-scripts
+        fi
+    else
+        echo "Skipping dependency installation (--skip-deps flag)"
     fi
 fi
 
@@ -115,17 +194,25 @@ echo "Building Jekyll site..."
 JEKYLL_ENV=production bundle exec jekyll build
 
 # Generate pre-filtered research pages
-echo "Generating pre-filtered research pages..."
-bundle exec ruby scripts/generate_filtered_research.rb
+if [ "$SKIP_RESEARCH" = false ]; then
+    echo "Generating pre-filtered research pages..."
+    bundle exec ruby scripts/generate_filtered_research.rb
+else
+    echo "Skipping research page generation (--skip-research flag)"
+fi
 
 # Check if search database exists
-if [ -f "assets/js/search_db.json" ]; then
-    # Generate SEO metadata from search database
-    echo "Generating SEO metadata from search database..."
-    chmod +x scripts/generate_seo_tags.rb
-    bundle exec ruby scripts/generate_seo_tags.rb
+if [ "$SKIP_SEO" = false ]; then
+    if [ -f "assets/js/search_db.json" ]; then
+        # Generate SEO metadata from search database
+        echo "Generating SEO metadata from search database..."
+        chmod +x scripts/generate_seo_tags.rb
+        bundle exec ruby scripts/generate_seo_tags.rb
+    else
+        echo "Warning: search_db.json not found - skipping SEO metadata generation"
+    fi
 else
-    echo "Warning: search_db.json not found - skipping SEO metadata generation"
+    echo "Skipping SEO metadata generation (--skip-seo flag)"
 fi
 
 echo "Build completed successfully!"
