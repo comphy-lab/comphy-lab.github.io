@@ -24,9 +24,8 @@ Feel free to contact us for discussions about our work or anything else related 
 
 ### Location & Website
 
-[![Location](https://img.shields.io/badge/-Physics%20of%20Fluids-4285F4?style=flat&logo=googlemaps&logoColor=white)](https://maps.app.goo.gl/jSTCYnfcndF1uZPV8)
+[![Location](https://img.shields.io/badge/-Durham%20University-4285F4?style=flat&logo=googlemaps&logoColor=white)](https://maps.app.goo.gl/btdPViKxEoXFmVxM9)
 [![Website](https://img.shields.io/badge/-comphy--lab.org-4285F4?style=flat&logo=googlechrome&logoColor=white)](http://www.comphy-lab.org)
-[![Email](https://img.shields.io/badge/-mailto:vatsal.sanjay@comphy--lab.org-EA4335?style=flat&logo=gmail&logoColor=white)](mailto:vatsal.sanjay@comphy-lab.org)
 
 <div class="email-container">
   <span class="email-text">vatsal.sanjay@comphy-lab.org</span>
