@@ -65,10 +65,25 @@ while [[ $# -gt 0 ]]; do
             show_help
             ;;
         -p|--port)
+            if [[ -z "${2:-}" || "$2" == -* ]]; then
+                echo -e "${RED}Error: -p|--port requires a numeric argument${NC}"
+                echo "Run './scripts/deploy.sh --help' for usage information"
+                exit 1
+            fi
+            if [[ ! "$2" =~ ^[0-9]+$ ]]; then
+                echo -e "${RED}Error: -p|--port must be numeric${NC}"
+                echo "Run './scripts/deploy.sh --help' for usage information"
+                exit 1
+            fi
             CUSTOM_PORT="$2"
             shift 2
             ;;
         --host)
+            if [[ -z "${2:-}" || "$2" == -* ]]; then
+                echo -e "${RED}Error: --host requires a host argument${NC}"
+                echo "Run './scripts/deploy.sh --help' for usage information"
+                exit 1
+            fi
             CUSTOM_HOST="$2"
             shift 2
             ;;
