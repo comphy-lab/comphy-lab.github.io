@@ -20,6 +20,7 @@ title: Research
 <tags><span>Elastic beads</span></tags>
 <tags><span>Bouncing</span></tags>
 <tags><span>Rupture</span></tags>
+<tags><span>Contact line</span></tags>
 <tags><span>Marangoni flows</span></tags>
 <tags><span>Numerical methods</span></tags>
 <tags><span>Featured</span></tags>
@@ -62,20 +63,23 @@ title: Research
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/ElasticPinchOff/)
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
 
-### Díaz, D., <strong>Bhargava, A.</strong>, Walz, F., Sharifi, A., Sumally, S., Berger, R., Kappl, M., Butt, H.-J., Lohse, D., Willers, T., <strong>Sanjay, V.</strong>, & Vollmer, D. Stood-up drop to measure receding contact angles. arXiv preprint arXiv:2511.20259 (2025).
-
-<tags><span>Drops</span><span>Superamphiphobic-surfaces</span></tags>
-
-[![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2511.20259&color=green)](https://arxiv.org/abs/2511.20259)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/Retracting-Droplet)
-[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
-
 ### Ghaemi, A. H., Yang, Z., Huang, A., <strong>Sanjay, V.</strong>, Feng, J., & Constante-Amores, C. R. Bursting bubbles in Herschel-Bulkley fluids: dynamics and jetting transitions. arXiv preprint arXiv:2511.23345 (2025).
 
 <tags><span>Bubbles</span><span>Non-Newtonian</span><span>Jets</span></tags>
 
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2511.23345&color=green)](https://arxiv.org/abs/2511.23345)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/BurstingBubble_Herschel-Bulkley/)
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
+
+## 2026
+
+<h3 id="21">[21] Díaz, D., <strong>Bhargava, A. S.</strong>, Walz, F., Sharifi, A., Summaly, S., Berger, R., Kappl, M., Butt, H.-J., Lohse, D., Willers, T., <strong>Sanjay, V.</strong>, & Vollmer, D. Stood-up Drop to Determine Receding Contact Angles. Soft Matter, 22, 657-667 (2026).</h3>
+
+<tags><span>Drops</span><span>Contact line</span></tags>
+
+[![Soft Matter](https://img.shields.io/static/v1.svg?style=flat-square&label=Soft%20Matter&message=OA&color=orange)](https://doi.org/10.1039/D5SM00985E)
+[![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2511.20259&color=green)](https://arxiv.org/abs/2511.20259)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/Retracting-Droplet)
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
 
 ## 2025
