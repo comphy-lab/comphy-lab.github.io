@@ -82,7 +82,13 @@ Add to `_research/index.md` with this exact format:
 In `_team/index.md`:
 
 ```html
-<img src="../assets/images/team/NUMBER.webp" alt="Name" width="250" height="250" class="member-image">
+<img
+  src="../assets/images/team/NUMBER.webp"
+  alt="Name"
+  width="250"
+  height="250"
+  class="member-image"
+/>
 ```
 
 ### News
@@ -97,6 +103,7 @@ Managing news items across the site:
 - **Important notes**:
   - Pinned items have no month/year header
   - Maintain blank lines between sections
+  - Months appear in reverse chronological order within each year
   - Older items removed from News.md remain in history.md
 
 ### Teaching Course Pages
@@ -239,8 +246,8 @@ Adds a news item to both News.md and history.md while maintaining the 5-item lim
 
 1. Read both News.md and history.md
 2. Ask for month/year if not provided or unclear
-3. Add to history.md in the correct chronological position
-4. Add to News.md in the correct position
+3. Add to history.md in reverse chronological position (latest first)
+4. Add to News.md in reverse chronological position (latest first)
 5. Count non-pinned news items in News.md
 6. If count > 5, remove oldest items from News.md only
 7. Save both files
@@ -251,4 +258,4 @@ Adds a news item to both News.md and history.md while maintaining the 5-item lim
 - News items start with "- " (dash and space)
 - Maintain blank lines between sections for proper formatting
 - In history.md, years are sorted descending (newest first)
-- Within a year, months appear in chronological order
+- Within a year, months appear in reverse chronological order
