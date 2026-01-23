@@ -5,6 +5,12 @@ title: History
 
 # History
 
+## 2026
+
+### January
+
+- [Díaz, D., <strong>Bhargava, A. S.</strong>, Walz, F., Sharifi, A., Summaly, S., Berger, R., Kappl, M., Butt, H.-J., Lohse, D., Willers, T., <strong>Sanjay, V.</strong>, & Vollmer, D. Stood-up Drop to Determine Receding Contact Angles. Soft Matter, 22, 657-667 (2026).](/research#21)
+
 ## 2025
 
 ### <i class="fa-solid fa-graduation-cap gradcap-icon"></i> CoMPhy Lab is Moving to Durham University!
@@ -21,6 +27,10 @@ title: History
 </div>
 
 Starting <strong>July 1st, 2025</strong>, the CoMPhy Lab will be relocating to Durham University, UK. We are excited to join the [Condensed Matter Physics section](https://www.durham.ac.uk/research/institutes-and-centres/condensed-matter-physics/) in the [Department of Physics](https://www.durham.ac.uk/departments/academic/physics/) and continue our research in computational physics and fluid dynamics in our new home.
+
+### December
+
+- [Demirkır, Ç., Yang, R., Bashkatov, A., <strong>Sanjay, V.</strong>, Lohse, D., & Krug, D. To jump or not to jump: Adhesion and viscous dissipation dictate the detachment of coalescing wall-attached bubbles. Phys. Rev. Fluids, 10, 123602 (2025).](/research#20)
 
 ### November
 
