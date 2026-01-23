@@ -20,6 +20,7 @@ title: Research
 <tags><span>Elastic beads</span></tags>
 <tags><span>Bouncing</span></tags>
 <tags><span>Rupture</span></tags>
+<tags><span>Contact line</span></tags>
 <tags><span>Marangoni flows</span></tags>
 <tags><span>Numerical methods</span></tags>
 <tags><span>Featured</span></tags>
@@ -51,17 +52,8 @@ title: Research
 <tags><span>Emulsions</span><span>Rheology</span></tags>
 
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2508.13022&color=green)](https://arxiv.org/abs/2508.13022)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/tappleford/droplet_under_shear_newtonian_2D)
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
-
-### Demirkır, Ç., Yang, R., Bashkatov, A., <strong>Sanjay, V.</strong>, Lohse, D., & Krug, D. To jump or not to jump: Adhesion and viscous dissipation dictate the detachment of coalescing wall-attached bubbles. Submitted to Phys. Rev. Lett. (2025).
-
-<tags><span>Bubbles</span><span>Coalescence</span></tags>
-
-[![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2501.05532&color=green)](https://arxiv.org/abs/2501.05532)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/VatsalSy/jumping-bubbles)
-[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
-
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/49KoJwXiDl4?si=uxdpYyKFFd8E6jvN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Verschuur, C. I., Oratis, A. T., <strong>Sanjay, V.</strong>, & Snoeijer, J. H. How elasticity affects bubble pinch-off. arXiv preprint arXiv:2511.20075 (2025).
 
@@ -71,15 +63,37 @@ title: Research
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/ElasticPinchOff/)
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
 
-### Díaz, D., <strong>Bhargava, A.</strong>, Walz, F., Sharifi, A., Sumally, S., Berger, R., Kappl, M., Butt, H.-J., Lohse, D., Willers, T., <strong>Sanjay, V.</strong>, & Vollmer, D. Stood-up drop to measure receding contact angles. arXiv preprint arXiv:2511.20259 (2025).
+### Ghaemi, A. H., Yang, Z., Huang, A., <strong>Sanjay, V.</strong>, Feng, J., & Constante-Amores, C. R. Bursting bubbles in Herschel-Bulkley fluids: dynamics and jetting transitions. arXiv preprint arXiv:2511.23345 (2025).
 
-<tags><span>Drops</span><span>Superamphiphobic-surfaces</span></tags>
+<tags><span>Bubbles</span><span>Non-Newtonian</span><span>Jets</span></tags>
 
+[![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2511.23345&color=green)](https://arxiv.org/abs/2511.23345)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/BurstingBubble_Herschel-Bulkley/)
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
+
+## 2026
+
+<h3 id="21">[21] Díaz, D., <strong>Bhargava, A. S.</strong>, Walz, F., Sharifi, A., Summaly, S., Berger, R., Kappl, M., Butt, H.-J., Lohse, D., Willers, T., <strong>Sanjay, V.</strong>, & Vollmer, D. Stood-up Drop to Determine Receding Contact Angles. Soft Matter, 22, 657-667 (2026).</h3>
+
+<tags><span>Drops</span><span>Contact line</span></tags>
+
+[![Soft Matter](https://img.shields.io/static/v1.svg?style=flat-square&label=Soft%20Matter&message=OA&color=orange)](https://doi.org/10.1039/D5SM00985E)
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2511.20259&color=green)](https://arxiv.org/abs/2511.20259)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/Retracting-Droplet)
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
 
 ## 2025
+
+<h3 id="20">[20] Demirkır, Ç., Yang, R., Bashkatov, A., <strong>Sanjay, V.</strong>, Lohse, D., & Krug, D. To jump or not to jump: Adhesion and viscous dissipation dictate the detachment of coalescing wall-attached bubbles. Phys. Rev. Fluids, 10, 123602 (2025).</h3>
+
+<tags><span>Bubbles</span><span>Coalescence</span></tags>
+
+[![PRF](https://img.shields.io/static/v1.svg?style=flat-square&label=PRF&message=OA&color=orange)](https://doi.org/10.1103/nq3w-57gg)
+[![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2501.05532&color=green)](https://arxiv.org/abs/2501.05532)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/VatsalSy/jumping-bubbles)
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/49KoJwXiDl4?si=uxdpYyKFFd8E6jvN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <h3 id="19">[19] Mclauchlan, J., Walker, J. S., <strong>Sanjay, V.</strong>, Jalaal, M., Reid, J. P., Squires, A. M., & Souslov, A. Bouncing microdroplets on hydrophobic surfaces. Proc. Natl. Acad. Sci., 122, e2507309122 (2025).</h3>
 
@@ -191,6 +205,7 @@ title: Research
 <tags><span>Drops</span><span>Bouncing</span><span>Dissipative anomaly</span><span>Featured</span></tags>
 
 [![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=OA&color=orange)](https://doi.org/10.1017/jfm.2023.55)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/Drop-Impact)
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=EskoUUszojk07SjU&amp;list=PLf5C5HCrvhLHG5t3iPscUuEp_gbD4XHyU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -200,6 +215,7 @@ title: Research
 <tags><span>Drops</span><span>Bouncing</span><span>Superhydrophobic surfaces</span></tags>
 
 [![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=OA&color=orange)](https://doi.org/10.1017/jfm.2023.13)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/VatsalSy/Drop-impact-on-viscous-liquid-films)
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=o-jd-NqOMsXtj8HG&amp;list=PLf5C5HCrvhLHJXLqwpylEwYc2rVtTsCUX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -221,6 +237,7 @@ title: Research
 <tags><span>Sheets</span><span>Dissipative anomaly</span><span>Retraction</span></tags>
 
 [![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=OA&color=orange)](https://doi.org/10.1017/jfm.2022.671)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/VatsalSy/Taylor-Culick-retractions)
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=tDjjLeag-69MkjG3&amp;list=PLf5C5HCrvhLHsSDmgLAql-hcAEZrejs2V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
