@@ -5,6 +5,12 @@ title: History
 
 # History
 
+## 2026
+
+### January
+
+- [Díaz, D., <strong>Bhargava, A. S.</strong>, Walz, F., Sharifi, A., Summaly, S., Berger, R., Kappl, M., Butt, H.-J., Lohse, D., Willers, T., <strong>Sanjay, V.</strong>, & Vollmer, D. Stood-up Drop to Determine Receding Contact Angles. Soft Matter, 22, 657-667 (2026).](/research#21)
+
 ## 2025
 
 ### <i class="fa-solid fa-graduation-cap gradcap-icon"></i> CoMPhy Lab is Moving to Durham University!

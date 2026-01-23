@@ -1,3 +1,11 @@
+## 2026
+
+### January
+
+- [Díaz, D., <strong>Bhargava, A. S.</strong>, Walz, F., Sharifi, A., Summaly, S., Berger, R., Kappl, M., Butt, H.-J., Lohse, D., Willers, T., <strong>Sanjay, V.</strong>, & Vollmer, D. Stood-up Drop to Determine Receding Contact Angles. Soft Matter, 22, 657-667 (2026).](/research#21)
+
+## 2025
+
 ### <i class="fa-solid fa-graduation-cap gradcap-icon"></i> CoMPhy Lab is Moving to Durham University!
 
 <div class="news-flex-row">
@@ -28,7 +36,3 @@ Starting <strong>July 1st, 2025</strong>, the CoMPhy Lab will be relocating to D
 ### August
 
 - [Mclauchlan, J., Walker, J. S., <strong>Sanjay, V.</strong>, Jalaal, M., Reid, J. P., Squires, A. M., & Souslov, A. Bouncing microdroplets on hydrophobic surfaces. Proc. Natl. Acad. Sci., 122, e2507309122 (2025).](/research#19)
-
-### July
-
-- <strong>Saumili Jana</strong> <a href="https://github.com/SaumiliJana"><i class="fa-brands fa-github" style="font-size: 1.5em; color: #8a2be2;"></i></a> received the award for best master's thesis from IIT Kharagpur. <strong>Thesis:</strong> <a href="https://bit.ly/ThesisJana" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf" style="margin-right: 8px; font-size: 1.2em; color: #e63946;"></i>Retract or Collapse? The Role of Viscosity and Viscoelasticity on Bubble Dynamics</a>
