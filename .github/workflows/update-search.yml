@@ -18,6 +18,8 @@ permissions:
 jobs:
   update-search:
     runs-on: ubuntu-latest
+    env:
+      APP_BOT_USER_ID: 256885647
 
     steps:
       - name: Create GitHub App token
@@ -46,10 +48,10 @@ jobs:
           APP_TOKEN: ${{ steps.app-token.outputs.token }}
           GIT_AUTHOR_NAME: comphy-search-updater[bot]
           GIT_AUTHOR_EMAIL: >-
-            ${{ secrets.APP_ID }}+comphy-search-updater[bot]@users.noreply.github.com
+            ${{ env.APP_BOT_USER_ID }}+comphy-search-updater[bot]@users.noreply.github.com
           GIT_COMMITTER_NAME: comphy-search-updater[bot]
           GIT_COMMITTER_EMAIL: >-
-            ${{ secrets.APP_ID }}+comphy-search-updater[bot]@users.noreply.github.com
+            ${{ env.APP_BOT_USER_ID }}+comphy-search-updater[bot]@users.noreply.github.com
         run: |
           git add assets/js/search_db.json
           if git diff --staged --quiet; then
