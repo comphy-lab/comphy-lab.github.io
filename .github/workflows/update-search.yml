@@ -20,9 +20,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Create GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0 # Fetch all history for proper git operations
+          token: ${{ steps.app-token.outputs.token }}
 
       - name: Clone comphy-search repository
         run: |
@@ -32,13 +40,6 @@ jobs:
       - name: Copy search database
         run: |
           cp comphy-search/search_db.json assets/js/search_db.json
-
-      - name: Create GitHub App token
-        id: app-token
-        uses: actions/create-github-app-token@v1
-        with:
-          app-id: ${{ secrets.APP_ID }}
-          private-key: ${{ secrets.APP_PRIVATE_KEY }}
 
       - name: Commit and push changes with app token
         env:
@@ -51,5 +52,5 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "Update search database from comphy-search repository"
-            git push https://x-access-token:${APP_TOKEN}@github.com/${GITHUB_REPOSITORY}.git HEAD:main
+            git push origin HEAD:main
           fi
