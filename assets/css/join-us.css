@@ -114,12 +114,15 @@
 .phd-section .section-icon {
   color: var(--join-phd-accent) !important;
 }
+
 .postdoc-section .section-icon {
   color: var(--join-postdoc-accent) !important;
 }
+
 .masters-section .section-icon {
   color: var(--join-masters-accent) !important;
 }
+
 .internship-section .section-icon {
   color: var(--join-internship-accent) !important;
 }

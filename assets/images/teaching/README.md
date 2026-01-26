@@ -16,7 +16,8 @@ This directory contains images used for the Teaching section of the CoMPhy Lab w
 ## Adding New Images
 
 When adding new course images, please:
+
 1. Maintain the naming convention: `[course-name]-[location].[extension]`
 2. Optimize images for web (compress to reduce file size)
 3. Include alt text in the HTML/Markdown where the image is used
-4. Update this README with the new image information 
+4. Update this README with the new image information

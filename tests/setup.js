@@ -1,47 +1,40 @@
 // Setup file for Jest tests
 
-// Mock browser global objects
-global.window = {
-  commandData: [],
-  searchData: [],
-  location: {
-    href: '',
-    pathname: '/'
-  },
-  history: {
-    back: jest.fn(),
-    forward: jest.fn()
-  },
-  open: jest.fn(),
-  scrollTo: jest.fn(),
-  matchMedia: jest.fn().mockImplementation(query => ({
-    matches: false,
-    addListener: jest.fn(),
-    removeListener: jest.fn()
-  }))
-};
+if (typeof window === "undefined" || typeof document === "undefined") {
+  throw new Error("Jest setup requires the jsdom test environment.");
+}
 
-// Mock document
-global.document = {
-  body: {
-    scrollHeight: 1000,
-    appendChild: jest.fn(),
-    removeChild: jest.fn()
-  },
-  createElement: jest.fn().mockImplementation(tagName => ({
-    tagName,
-    style: {},
-    setAttribute: jest.fn(),
+// Ensure globals used by site scripts are present.
+window.commandData = [];
+window.searchData = [];
+
+if (!window.history) {
+  window.history = {};
+}
+window.history.back = window.history.back || jest.fn();
+window.history.forward = window.history.forward || jest.fn();
+
+window.open = window.open || jest.fn();
+window.scrollTo = window.scrollTo || jest.fn();
+
+if (!window.matchMedia) {
+  window.matchMedia = jest.fn().mockImplementation((query) => ({
+    matches: false,
+    media: query,
+    addListener: jest.fn(),
+    removeListener: jest.fn(),
     addEventListener: jest.fn(),
-    appendChild: jest.fn(),
-    focus: jest.fn(),
-  })),
-  addEventListener: jest.fn(),
-  querySelectorAll: jest.fn().mockImplementation(() => []),
-  getElementById: jest.fn().mockImplementation(() => ({
-    addEventListener: jest.fn()
-  }))
-};
+    removeEventListener: jest.fn(),
+    dispatchEvent: jest.fn()
+  }));
+}
+
+if (document.body) {
+  Object.defineProperty(document.body, "scrollHeight", {
+    configurable: true,
+    get: () => 1000
+  });
+}
 
 // Console mocks
 global.console = {
@@ -52,7 +45,7 @@ global.console = {
 };
 
 // Mock fetch API
-global.fetch = jest.fn().mockImplementation(() => 
+global.fetch = jest.fn().mockImplementation(() =>
   Promise.resolve({
     ok: true,
     json: () => Promise.resolve([])
