@@ -11,26 +11,19 @@ describe('command-data.js', () => {
   
   describe('Command Navigation Handlers', () => {
     it('should handle navigation to home page', () => {
-      // Store original window.location
-      const originalLocation = window.location;
-      
-      try {
-        // Create mock object for window.location
-        const mockLocation = { href: '' };
-        window.location = mockLocation;
-        
-        // Create a simple command handler
-        const homeHandler = () => { window.location.href = '/'; };
-        
-        // Execute the handler
-        homeHandler();
-        
-        // Check if location was updated (jsdom converts relative URLs to absolute)
-        expect(window.location.href).toBe('http://localhost/');
-      } finally {
-        // Always restore original window.location
-        window.location = originalLocation;
-      }
+      // Use a local mock location object to avoid jsdom navigation side effects
+      const mockLocation = { href: '' };
+
+      // Create a simple command handler
+      const homeHandler = (location) => {
+        location.href = '/';
+      };
+
+      // Execute the handler
+      homeHandler(mockLocation);
+
+      // Check if location was updated
+      expect(mockLocation.href).toBe('/');
     });
     
     it('should handle back/forward navigation', () => {

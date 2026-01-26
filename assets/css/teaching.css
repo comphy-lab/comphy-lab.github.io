@@ -661,6 +661,11 @@
   }
 
   /* Maintain responsive adjustments without changing visuals */
-  .email-container { max-width: 100%; }
-  .email-text { word-break: break-all; }
+  .email-container {
+    max-width: 100%;
+  }
+
+  .email-text {
+    word-break: break-all;
+  }
 }

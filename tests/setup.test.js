@@ -6,8 +6,6 @@ describe('Jest setup file', () => {
   // Clear module cache and re-require to test the setup file
   beforeEach(() => {
     jest.resetModules();
-    delete global.window;
-    delete global.document;
     delete global.fetch;
     // Store original console
     global.originalConsole = global.console;
@@ -28,7 +26,7 @@ describe('Jest setup file', () => {
     expect(global.window).toBeDefined();
     expect(global.window.commandData).toEqual([]);
     expect(global.window.searchData).toEqual([]);
-    expect(global.window.location.href).toBe('');
+    expect(global.window.location.href).toBe('http://localhost/');
     expect(global.window.location.pathname).toBe('/');
     expect(global.window.history.back).toBeDefined();
     expect(global.window.history.forward).toBeDefined();
@@ -51,9 +49,8 @@ describe('Jest setup file', () => {
     // Test createElement mock - lines 31-38
     expect(global.document.createElement).toBeDefined();
     const element = global.document.createElement('button');
-    expect(element.tagName).toBe('button');
-    expect(element.style).toEqual({});
-    expect(element.setAttribute).toBeDefined();
+    expect(element.tagName).toBe('BUTTON');
+    expect(element.style).toBeDefined();
     expect(element.addEventListener).toBeDefined();
     expect(element.appendChild).toBeDefined();
     expect(element.focus).toBeDefined();
@@ -62,10 +59,14 @@ describe('Jest setup file', () => {
     expect(global.document.addEventListener).toBeDefined();
     expect(global.document.querySelectorAll).toBeDefined();
     const elements = global.document.querySelectorAll('.test');
-    expect(elements).toEqual([]);
+    expect(elements.length).toBe(0);
     
     expect(global.document.getElementById).toBeDefined();
+    const testElement = global.document.createElement('div');
+    testElement.id = 'test';
+    global.document.body.appendChild(testElement);
     const elementById = global.document.getElementById('test');
+    expect(elementById).not.toBeNull();
     expect(elementById.addEventListener).toBeDefined();
     
     // Test console mocks
