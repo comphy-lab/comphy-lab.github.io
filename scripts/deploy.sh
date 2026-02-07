@@ -3,7 +3,7 @@
 # deploy.sh - Find an available port and start Jekyll development server
 # Usage: ./scripts/deploy.sh [OPTIONS]
 
-set -e
+set -euo pipefail
 
 # Color codes for output
 GREEN='\033[0;32m'
@@ -25,6 +25,26 @@ ENABLE_INCREMENTAL=false
 CUSTOM_PORT=""
 CUSTOM_HOST="localhost"
 OPEN_BROWSER=false
+
+check_requirements() {
+    if ! command -v lsof >/dev/null 2>&1; then
+        echo -e "${RED}Error: lsof is required but not installed.${NC}"
+        echo "Install lsof and rerun './scripts/deploy.sh'"
+        exit 1
+    fi
+
+    if ! command -v bundle >/dev/null 2>&1; then
+        echo -e "${RED}Error: bundler is required but not installed.${NC}"
+        echo "Run './scripts/setup.sh' and rerun './scripts/deploy.sh'"
+        exit 1
+    fi
+
+    if ! bundle exec jekyll --version >/dev/null 2>&1; then
+        echo -e "${RED}Error: Jekyll is not available in the current bundle.${NC}"
+        echo "Run './scripts/setup.sh' and rerun './scripts/deploy.sh'"
+        exit 1
+    fi
+}
 
 show_help() {
     cat << EOF
@@ -75,12 +95,22 @@ while [[ $# -gt 0 ]]; do
                 echo "Run './scripts/deploy.sh --help' for usage information"
                 exit 1
             fi
+            if (( "$2" < 1 || "$2" > 65535 )); then
+                echo -e "${RED}Error: -p|--port must be between 1 and 65535${NC}"
+                echo "Run './scripts/deploy.sh --help' for usage information"
+                exit 1
+            fi
             CUSTOM_PORT="$2"
             shift 2
             ;;
         --host)
             if [[ -z "${2:-}" || "$2" == -* ]]; then
                 echo -e "${RED}Error: --host requires a host argument${NC}"
+                echo "Run './scripts/deploy.sh --help' for usage information"
+                exit 1
+            fi
+            if [[ ! "$2" =~ ^[A-Za-z0-9._:-]+$ ]]; then
+                echo -e "${RED}Error: --host contains invalid characters${NC}"
                 echo "Run './scripts/deploy.sh --help' for usage information"
                 exit 1
             fi
@@ -115,7 +145,7 @@ done
 is_port_available() {
     local port=$1
     # Check if port is in use using lsof
-    if lsof -i :$port >/dev/null 2>&1; then
+    if lsof -i :"$port" >/dev/null 2>&1; then
         return 1  # Port is in use
     else
         return 0  # Port is available
@@ -160,10 +190,12 @@ echo -e "${BLUE}  Jekyll Development Server${NC}"
 echo -e "${BLUE}================================${NC}"
 echo ""
 
+check_requirements
+
 # Determine port to use
 if [ -n "$CUSTOM_PORT" ]; then
     echo -e "${BLUE}Using custom port: ${CUSTOM_PORT}${NC}"
-    if ! is_port_available $CUSTOM_PORT; then
+    if ! is_port_available "$CUSTOM_PORT"; then
         echo -e "${YELLOW}⚠ Warning: Port ${CUSTOM_PORT} is already in use${NC}"
         echo -e "${YELLOW}Server may fail to start or conflict with existing service${NC}"
     fi
@@ -178,8 +210,8 @@ else
     fi
 fi
 
-# Build Jekyll command with options
-JEKYLL_CMD="bundle exec jekyll serve --port $PORT --host $CUSTOM_HOST"
+# Build Jekyll command with options safely as an array
+JEKYLL_CMD=(bundle exec jekyll serve --port "$PORT" --host "$CUSTOM_HOST")
 
 # Add livereload if enabled
 if [ "$ENABLE_LIVERELOAD" = true ]; then
@@ -188,18 +220,18 @@ if [ "$ENABLE_LIVERELOAD" = true ]; then
     if [ -z "$LIVERELOAD_PORT" ]; then
         echo -e "${RED}Failed to find an available livereload port. Disabling livereload.${NC}"
     else
-        JEKYLL_CMD="$JEKYLL_CMD --livereload --livereload-port $LIVERELOAD_PORT"
+        JEKYLL_CMD+=(--livereload --livereload-port "$LIVERELOAD_PORT")
     fi
 fi
 
 # Add drafts if enabled
 if [ "$ENABLE_DRAFTS" = true ]; then
-    JEKYLL_CMD="$JEKYLL_CMD --drafts"
+    JEKYLL_CMD+=(--drafts)
 fi
 
 # Add incremental if enabled
 if [ "$ENABLE_INCREMENTAL" = true ]; then
-    JEKYLL_CMD="$JEKYLL_CMD --incremental"
+    JEKYLL_CMD+=(--incremental)
 fi
 
 # Display server configuration
@@ -230,4 +262,4 @@ if [ "$OPEN_BROWSER" = true ]; then
 fi
 
 # Start Jekyll with the configured options
-$JEKYLL_CMD
+"${JEKYLL_CMD[@]}"
