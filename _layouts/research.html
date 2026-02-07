@@ -414,7 +414,7 @@
         }
 
         // Handle tag filtering
-        const allTags = document.querySelectorAll('tags span');
+        const allTags = document.querySelectorAll('.tags span');
         const paperContainers = document.querySelectorAll('.paper-container');
         let activeTag = null;
 
@@ -424,7 +424,7 @@
 
         // Function to highlight matching tags
         const updateMatchingTags = (tagText, shouldHighlight) => {
-          document.querySelectorAll('tags span').forEach(tag => {
+          document.querySelectorAll('.tags span').forEach(tag => {
             if (tag.textContent === tagText) {
               // First remove any active class
               tag.classList.remove('active');
@@ -465,7 +465,7 @@
 
             // Filter papers
             paperContainers.forEach(container => {
-              const containerTags = container.querySelector('tags');
+              const containerTags = container.querySelector('.tags');
               if (containerTags && containerTags.textContent.includes(tagText)) {
                 container.classList.remove('hidden');
               } else {

@@ -1758,14 +1758,14 @@ section#featured:after,
 }
 
 /* Style tags */
-.featured-paper tags {
+.featured-paper .tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   margin: 1rem 0;
 }
 
-.featured-paper tags span {
+.featured-paper .tags span {
   display: inline-block;
   padding: 0.4rem 0.8rem;
   background: var(--tag-bg);
@@ -1778,7 +1778,7 @@ section#featured:after,
   border: 1px solid var(--tag-border);
 }
 
-.featured-paper tags span:hover {
+.featured-paper .tags span:hover {
   background: var(--tag-bg-hover);
   transform: translateY(-2px);
   border-color: var(--tag-border-hover);
