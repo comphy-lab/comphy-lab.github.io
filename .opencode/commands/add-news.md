@@ -11,7 +11,7 @@ Follow these steps:
    - Years are organized with `## Year` headings (e.g., `## 2026`, `## 2025`)
    - Years are sorted descending (newest first)
    - Create year section if it doesn't exist
-   - Months within a year are in chronological order (January at top)
+   - Months within a year are in reverse chronological order (December at top)
    - Format: `- [news content]`
 5. Add the same item to News.md:
    - Years are organized with `## Year` headings

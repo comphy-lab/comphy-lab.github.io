@@ -30,7 +30,7 @@ The website implements a sophisticated command palette system that requires coor
 - Client-side JavaScript filtering with SEO-friendly static pages
 - Pre-generated tag pages that redirect to filtered views
 - Multiple URL variations for better SEO coverage
-- Tags must be added to `_research/index.md` using `<tags><span>TagName</span></tags>` format
+- Tags must be added to `_research/index.md` using `<div class="tags"><span>TagName</span></div>` format
 
 ## Essential Commands
 
@@ -68,7 +68,7 @@ Add to `_research/index.md` with this exact format:
 ```markdown
 <h3 id="NUMBER">[NUMBER] Author1, A., **Author2, B.**, & Author3, C. Title. _Journal_, Volume, Pages (Year).</h3>
 
-<tags><span>Tag1</span><span>Tag2</span><span>Featured</span></tags>
+<div class="tags"><span>Tag1</span><span>Tag2</span><span>Featured</span></div>
 
 [![Badge](https://img.shields.io/static/v1.svg?style=flat-square&label=LABEL&message=MESSAGE&color=COLOR)](URL)
 ```
