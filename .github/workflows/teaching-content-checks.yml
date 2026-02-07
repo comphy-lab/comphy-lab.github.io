@@ -1,0 +1,42 @@
+name: Teaching Content Checks
+
+on:
+  pull_request:
+    branches: ["main"]
+    paths:
+      - "_teaching/**/*.md"
+      - ".markdownlint-cli2.jsonc"
+      - ".prettierrc.json"
+      - "package.json"
+      - "package-lock.json"
+  push:
+    branches: ["main"]
+    paths:
+      - "_teaching/**/*.md"
+      - ".markdownlint-cli2.jsonc"
+      - ".prettierrc.json"
+      - "package.json"
+      - "package-lock.json"
+
+jobs:
+  markdown-quality:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run markdownlint for teaching content
+        run: npx markdownlint-cli2 --config .markdownlint-cli2.jsonc "_teaching/**/*.md"
+
+      - name: Check prettier formatting for teaching content
+        run: npx prettier --check "_teaching/**/*.md"
