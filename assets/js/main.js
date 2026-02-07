@@ -161,7 +161,7 @@
         let featuredSections = Array.from(paperSections).filter((section) => {
           // Find the next tags element
           let nextEl = section.nextElementSibling;
-          while (nextEl && !nextEl.matches("tags")) {
+          while (nextEl && !nextEl.matches(".tags")) {
             nextEl = nextEl.nextElementSibling;
           }
           return nextEl && nextEl.textContent.includes("Featured");
@@ -227,7 +227,7 @@
               const clone = nextEl.cloneNode(true);
 
               // If it's a tags element, make spans clickable
-              if (clone.matches("tags")) {
+              if (clone.matches(".tags")) {
                 Array.from(clone.children).forEach((span) => {
                   span.style.cursor = "pointer";
                   span.addEventListener("click", (e) => {
@@ -253,7 +253,7 @@
               // Don't navigate if clicking on a link, tag, or iframe
               if (
                 e.target.closest("a") ||
-                e.target.closest("tags") ||
+                e.target.closest(".tags") ||
                 e.target.closest("iframe")
               ) {
                 return;
