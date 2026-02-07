@@ -1,0 +1,32 @@
+name: Content Rules Checks
+
+on:
+  pull_request:
+    branches: ["main"]
+    paths:
+      - "history.md"
+      - "_research/index.md"
+      - ".opencode/commands/add-news.md"
+      - "CLAUDE.md"
+      - "README.md"
+      - "scripts/validate-content-rules.sh"
+  push:
+    branches: ["main"]
+    paths:
+      - "history.md"
+      - "_research/index.md"
+      - ".opencode/commands/add-news.md"
+      - "CLAUDE.md"
+      - "README.md"
+      - "scripts/validate-content-rules.sh"
+
+jobs:
+  content-rules:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate history and research content rules
+        run: ./scripts/validate-content-rules.sh
