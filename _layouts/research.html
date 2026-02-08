@@ -62,6 +62,9 @@
   }
   </script>
 
+  <!-- Core utilities (must load first) -->
+  <script defer src="/assets/js/utils.js"></script>
+
   <!-- Command palette (implementation in assets/js/command-palette.js) -->
   <script defer src="/assets/js/command-palette.js"></script>
 
@@ -274,12 +277,6 @@
     </footer>
   </div>
 
-  <!-- Core scripts -->
-  <script defer src="/assets/js/main.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <!-- Search dependencies -->
-  <script defer src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
-
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       // Generate table of contents
@@ -419,7 +416,7 @@
         }
 
         // Handle tag filtering
-        const allTags = document.querySelectorAll('tags span');
+        const allTags = document.querySelectorAll('.tags span');
         const paperContainers = document.querySelectorAll('.paper-container');
         let activeTag = null;
 
@@ -429,7 +426,7 @@
 
         // Function to highlight matching tags
         const updateMatchingTags = (tagText, shouldHighlight) => {
-          document.querySelectorAll('tags span').forEach(tag => {
+          document.querySelectorAll('.tags span').forEach(tag => {
             if (tag.textContent === tagText) {
               // First remove any active class
               tag.classList.remove('active');
@@ -470,7 +467,7 @@
 
             // Filter papers
             paperContainers.forEach(container => {
-              const containerTags = container.querySelector('tags');
+              const containerTags = container.querySelector('.tags');
               if (containerTags && containerTags.textContent.includes(tagText)) {
                 container.classList.remove('hidden');
               } else {

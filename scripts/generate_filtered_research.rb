@@ -16,7 +16,7 @@ doc = Nokogiri::HTML(html)
 
 # Find all unique tags
 all_tags = []
-doc.css('tags span').each do |tag|
+doc.css('.tags span').each do |tag|
   all_tags << tag.text unless all_tags.include?(tag.text)
 end
 
