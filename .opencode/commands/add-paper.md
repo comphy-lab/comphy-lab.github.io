@@ -150,7 +150,7 @@ Output (for paper [18]):
 ```markdown
 <h3 id="18">[18] Bashkatov, A., Bürkle, F., Demirkır, Ç., Ding, W., <strong>Sanjay, V.</strong>, Babich, A., Yang, X., Mutschke, G., Czarske, J., Lohse, D., Krug, D., Büttner, L., & Eckert, K. Electrolyte droplet spraying in H2 bubbles during water electrolysis. Nat. Commun., 16, 4580 (2025).</h3>
 
-<tags><span>Bubbles</span><span>Jets</span></tags>
+<div class="tags"><span>Bubbles</span><span>Jets</span></div>
 
 [![Nat. Commun.](https://img.shields.io/static/v1.svg?style=flat-square&label=Nat.%20Commun.&message=OA&color=orange)](https://doi.org/10.1038/s41467-025-59762-7)
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)

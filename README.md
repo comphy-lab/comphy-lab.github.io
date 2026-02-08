@@ -227,7 +227,7 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 ```markdown
 <h3 id="NUMBER">[NUMBER] Author1, A., **Author2, B.**, & Author3, C. Title. _Journal_, Volume, Pages (Year).</h3>
 
-<tags><span>Tag1</span><span>Tag2</span><span>Featured</span></tags>
+<div class="tags"><span>Tag1</span><span>Tag2</span><span>Featured</span></div>
 
 [![Badge1](https://img.shields.io/static/v1.svg?style=flat-square&label=LABEL&message=MESSAGE&color=COLOR)](URL)
 [![Badge2](https://img.shields.io/static/v1.svg?style=flat-square&label=LABEL&message=MESSAGE&color=COLOR)](URL)
@@ -429,7 +429,7 @@ The search functionality includes content from our external blog at blogs.comphy
 Research papers can be tagged with multiple topics. Tags are defined in the markdown files using the following format:
 
 ```html
-<tags><span>Tag1</span><span>Tag2</span></tags>
+<div class="tags"><span>Tag1</span><span>Tag2</span></div>
 ```
 
 These tags are:

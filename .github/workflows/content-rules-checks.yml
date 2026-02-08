@@ -1,0 +1,36 @@
+name: Content Rules Checks
+
+on:
+  pull_request:
+    branches: ["main"]
+    paths:
+      - "history.md"
+      - "_research/index.md"
+      - "CLAUDE.md"
+      - "README.md"
+      - "scripts/validate-content-rules.sh"
+    paths-ignore:
+      - ".*/**/*.md"
+      - "**/.*/**/*.md"
+  push:
+    branches: ["main"]
+    paths:
+      - "history.md"
+      - "_research/index.md"
+      - "CLAUDE.md"
+      - "README.md"
+      - "scripts/validate-content-rules.sh"
+    paths-ignore:
+      - ".*/**/*.md"
+      - "**/.*/**/*.md"
+
+jobs:
+  content-rules:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate history and research content rules
+        run: bash scripts/validate-content-rules.sh

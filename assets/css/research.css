@@ -631,7 +631,7 @@
 }
 
 /* Tags styling */
-.research-content tags {
+.research-content .tags {
   display: inline-flex;
   gap: 0.5rem;
   font-size: 1.4rem;
@@ -640,7 +640,7 @@
 }
 
 /* Style each tag separately */
-.research-content tags span {
+.research-content .tags span {
   background: var(--color-primary-alpha-15);
   color: var(--color-primary);
   padding: 0.4rem 1rem;
@@ -653,29 +653,29 @@
   user-select: none;
 }
 
-[data-theme="dark"] .research-content tags span {
+[data-theme="dark"] .research-content .tags span {
   background: var(--color-blue-bright-alpha-20);
   color: var(--research-text-color);
   border: 1px solid var(--color-blue-bright-alpha-30);
 }
 
 /* Fix for top filter tags in dark theme */
-[data-theme="dark"] tags span,
-[data-theme="dark"] tags a.tag-link {
+[data-theme="dark"] .tags span,
+[data-theme="dark"] .tags a.tag-link {
   background: var(--color-blue-bright-alpha-20);
   color: var(--research-text-color);
   border: 1px solid var(--color-blue-bright-alpha-40);
 }
 
-[data-theme="dark"] tags span:hover,
-[data-theme="dark"] tags a.tag-link:hover {
+[data-theme="dark"] .tags span:hover,
+[data-theme="dark"] .tags a.tag-link:hover {
   background: var(--color-blue-bright-alpha-20);
   border-color: var(--color-blue-bright-alpha-40);
 }
 
 /* Fix for active tags in dark theme */
-[data-theme="dark"] tags span.active,
-[data-theme="dark"] tags a.tag-link.active {
+[data-theme="dark"] .tags span.active,
+[data-theme="dark"] .tags a.tag-link.active {
   background: var(--color-blue-bright-alpha-80);
   color: var(--research-text-color);
   border-color: var(--color-blue-bright-alpha-40);
@@ -683,56 +683,56 @@
   box-shadow: 0 2px 5px var(--color-blue-bright-alpha-40);
 }
 
-.research-content tags span:nth-of-type(1) {
+.research-content .tags span:nth-of-type(1) {
   background: var(--color-primary-alpha-15);
 }
 
-[data-theme="dark"] .research-content tags span:nth-of-type(1) {
+[data-theme="dark"] .research-content .tags span:nth-of-type(1) {
   background: var(--color-blue-bright-alpha-20);
 }
 
-.research-content tags span:nth-of-type(2) {
+.research-content .tags span:nth-of-type(2) {
   background: var(--color-primary-alpha-10);
 }
 
-[data-theme="dark"] .research-content tags span:nth-of-type(2) {
+[data-theme="dark"] .research-content .tags span:nth-of-type(2) {
   background: var(--color-blue-bright-alpha-15);
 }
 
-.research-content tags span:nth-of-type(3) {
+.research-content .tags span:nth-of-type(3) {
   background: var(--color-primary-alpha-5);
 }
 
-[data-theme="dark"] .research-content tags span:nth-of-type(3) {
+[data-theme="dark"] .research-content .tags span:nth-of-type(3) {
   background: var(--color-blue-bright-alpha-10);
 }
 
-.research-content tags span:nth-of-type(n + 4) {
+.research-content .tags span:nth-of-type(n + 4) {
   background: var(--color-primary-alpha-5);
 }
 
-[data-theme="dark"] .research-content tags span:nth-of-type(n + 4) {
+[data-theme="dark"] .research-content .tags span:nth-of-type(n + 4) {
   background: var(--color-blue-bright-alpha-10);
 }
 
-.research-content tags span:hover {
+.research-content .tags span:hover {
   transform: scale(1.1);
   box-shadow: 0 2px 5px var(--color-primary-alpha-10);
 }
 
-[data-theme="dark"] .research-content tags span:hover {
+[data-theme="dark"] .research-content .tags span:hover {
   box-shadow: 0 2px 5px rgba(120, 170, 255, 0.3);
   background: var(--color-blue-bright-alpha-30);
 }
 
-.research-content tags span.active {
+.research-content .tags span.active {
   background: #9333ea;
   color: var(--color-white);
   transform: scale(1.1);
   box-shadow: 0 2px 5px rgba(147, 51, 234, 0.2);
 }
 
-[data-theme="dark"] .research-content tags span.active {
+[data-theme="dark"] .research-content .tags span.active {
   background: #4d8dff;
   color: var(--color-white);
   box-shadow: 0 2px 6px rgba(77, 141, 255, 0.4);
@@ -745,11 +745,11 @@
 
 /* Responsive adjustments for tags */
 @media screen and (max-width: 600px) {
-  .research-content tags {
+  .research-content .tags {
     font-size: 1rem;
   }
 
-  .research-content tags span {
+  .research-content .tags span {
     padding: 0.3rem 0.8rem;
   }
 }
@@ -800,8 +800,8 @@ html {
   opacity: 1; /* Ensure visibility */
 }
 /* Tag minimal */
-[data-theme="dark"] tags span,
-[data-theme="dark"] tags a.tag-link {
+[data-theme="dark"] .tags span,
+[data-theme="dark"] .tags a.tag-link {
   background-color: var(--research-bg-color); /* Corrected variable */
   color: var(--research-text-color);
   border: 1px solid var(--color-blue-bright-alpha-30);
