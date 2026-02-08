@@ -9,9 +9,6 @@ on:
       - "CLAUDE.md"
       - "README.md"
       - "scripts/validate-content-rules.sh"
-    paths-ignore:
-      - ".*/**/*.md"
-      - "**/.*/**/*.md"
   push:
     branches: ["main"]
     paths:
@@ -20,9 +17,6 @@ on:
       - "CLAUDE.md"
       - "README.md"
       - "scripts/validate-content-rules.sh"
-    paths-ignore:
-      - ".*/**/*.md"
-      - "**/.*/**/*.md"
 
 jobs:
   content-rules:
