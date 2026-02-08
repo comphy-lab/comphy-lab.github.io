@@ -75,11 +75,20 @@ validate_history_order() {
       continue
     fi
 
-    if [[ $line =~ ^###[[:space:]]+([A-Za-z]+)[[:space:]]*$ ]]; then
-      local month_name="${BASH_REMATCH[1]}"
-      local month_number
-      month_number="$(month_to_number "$month_name")"
-      if (( month_number > 0 )); then
+    if [[ $line =~ ^###[[:space:]]+(.+)[[:space:]]*$ ]]; then
+      local section_heading="${BASH_REMATCH[1]}"
+      if [[ $section_heading =~ ^[A-Za-z]+$ ]]; then
+        local month_name="$section_heading"
+        local month_number
+        month_number="$(month_to_number "$month_name")"
+        if (( month_number == 0 )); then
+          log_error "history.md has invalid month heading '$month_name'. Use full English month names (January-December)."
+          continue
+        fi
+        if [[ -z "$current_year" ]]; then
+          log_error "history.md month '$month_name' appears before any year heading."
+          continue
+        fi
         if (( month_number >= previous_month )); then
           log_error "history.md month '$month_name' is out of order in $current_year. Months must be reverse chronological (December to January)."
         fi
