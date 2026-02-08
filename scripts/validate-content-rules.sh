@@ -8,6 +8,7 @@ RESEARCH_FILE="$REPO_ROOT/_research/index.md"
 ADD_NEWS_RULES_FILE="$REPO_ROOT/.opencode/commands/add-news.md"
 CLAUDE_FILE="$REPO_ROOT/CLAUDE.md"
 README_FILE="$REPO_ROOT/README.md"
+ADD_PAPER_RULES_FILE="$REPO_ROOT/.opencode/commands/add-paper.md"
 
 FAILURES=0
 
@@ -97,6 +98,10 @@ validate_docs_rules() {
 
   if has_match "<tags>|</tags>" "$README_FILE"; then
     log_error "README.md still documents deprecated <tags> markup."
+  fi
+
+  if has_match "<tags>|</tags>" "$ADD_PAPER_RULES_FILE"; then
+    log_error ".opencode/commands/add-paper.md still documents deprecated <tags> markup."
   fi
 }
 
