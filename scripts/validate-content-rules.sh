@@ -28,7 +28,16 @@ has_match() {
   fi
 }
 
+require_file() {
+  local file="$1"
+  if [[ ! -f "$file" ]]; then
+    log_error "Required file not found: $file"
+    return 1
+  fi
+}
+
 validate_history_order() {
+  require_file "$HISTORY_FILE" || return
   local previous_year=99999
   local current_year=""
   local previous_month=13
@@ -78,6 +87,8 @@ validate_history_order() {
 }
 
 validate_research_tags() {
+  require_file "$RESEARCH_FILE" || return
+
   if has_match "<tags>|</tags>" "$RESEARCH_FILE"; then
     log_error "_research/index.md still contains <tags> elements. Use <div class=\"tags\"> blocks."
   fi
@@ -88,6 +99,11 @@ validate_research_tags() {
 }
 
 validate_docs_rules() {
+  require_file "$ADD_NEWS_RULES_FILE" || return
+  require_file "$CLAUDE_FILE" || return
+  require_file "$README_FILE" || return
+  require_file "$ADD_PAPER_RULES_FILE" || return
+
   if ! has_match "reverse chronological order" "$ADD_NEWS_RULES_FILE"; then
     log_error ".opencode/commands/add-news.md must state reverse chronological month ordering."
   fi
