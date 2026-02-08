@@ -6,19 +6,23 @@ on:
     paths:
       - "history.md"
       - "_research/index.md"
-      - ".opencode/commands/add-news.md"
       - "CLAUDE.md"
       - "README.md"
       - "scripts/validate-content-rules.sh"
+    paths-ignore:
+      - ".*/**/*.md"
+      - "**/.*/**/*.md"
   push:
     branches: ["main"]
     paths:
       - "history.md"
       - "_research/index.md"
-      - ".opencode/commands/add-news.md"
       - "CLAUDE.md"
       - "README.md"
       - "scripts/validate-content-rules.sh"
+    paths-ignore:
+      - ".*/**/*.md"
+      - "**/.*/**/*.md"
 
 jobs:
   content-rules:
