@@ -37,7 +37,10 @@ require_file() {
 }
 
 validate_history_order() {
-  require_file "$HISTORY_FILE" || return
+  if ! require_file "$HISTORY_FILE"; then
+    # Missing file already counted in FAILURES; keep running other validations.
+    return 0
+  fi
   local previous_year=99999
   local current_year=""
   local previous_month=13
@@ -87,7 +90,10 @@ validate_history_order() {
 }
 
 validate_research_tags() {
-  require_file "$RESEARCH_FILE" || return
+  if ! require_file "$RESEARCH_FILE"; then
+    # Missing file already counted in FAILURES; keep running other validations.
+    return 0
+  fi
 
   if has_match "<tags>|</tags>" "$RESEARCH_FILE"; then
     log_error "_research/index.md still contains <tags> elements. Use <div class=\"tags\"> blocks."
@@ -99,10 +105,17 @@ validate_research_tags() {
 }
 
 validate_docs_rules() {
-  require_file "$ADD_NEWS_RULES_FILE" || return
-  require_file "$CLAUDE_FILE" || return
-  require_file "$README_FILE" || return
-  require_file "$ADD_PAPER_RULES_FILE" || return
+  local missing_required_file=0
+
+  require_file "$ADD_NEWS_RULES_FILE" || missing_required_file=1
+  require_file "$CLAUDE_FILE" || missing_required_file=1
+  require_file "$README_FILE" || missing_required_file=1
+  require_file "$ADD_PAPER_RULES_FILE" || missing_required_file=1
+
+  if (( missing_required_file > 0 )); then
+    # Missing files already counted in FAILURES; skip content checks safely.
+    return 0
+  fi
 
   if ! has_match "reverse chronological order" "$ADD_NEWS_RULES_FILE"; then
     log_error ".opencode/commands/add-news.md must state reverse chronological month ordering."
