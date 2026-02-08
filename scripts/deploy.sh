@@ -25,6 +25,7 @@ ENABLE_INCREMENTAL=false
 CUSTOM_PORT=""
 CUSTOM_HOST="localhost"
 OPEN_BROWSER=false
+LIVERELOAD_PORT=""
 
 check_requirements() {
     if ! command -v lsof >/dev/null 2>&1; then
@@ -95,12 +96,13 @@ while [[ $# -gt 0 ]]; do
                 echo "Run './scripts/deploy.sh --help' for usage information"
                 exit 1
             fi
-            if (( "$2" < 1 || "$2" > 65535 )); then
+            parsed_port=$((10#$2))
+            if (( parsed_port < 1 || parsed_port > 65535 )); then
                 echo -e "${RED}Error: -p|--port must be between 1 and 65535${NC}"
                 echo "Run './scripts/deploy.sh --help' for usage information"
                 exit 1
             fi
-            CUSTOM_PORT="$2"
+            CUSTOM_PORT="$parsed_port"
             shift 2
             ;;
         --host)
@@ -202,9 +204,7 @@ if [ -n "$CUSTOM_PORT" ]; then
     PORT=$CUSTOM_PORT
 else
     # Find an available port
-    PORT=$(find_available_port)
-
-    if [ -z "$PORT" ]; then
+    if ! PORT=$(find_available_port); then
         echo -e "${RED}Failed to find an available port. Exiting.${NC}"
         exit 1
     fi
@@ -215,13 +215,19 @@ JEKYLL_CMD=(bundle exec jekyll serve --port "$PORT" --host "$CUSTOM_HOST")
 
 # Add livereload if enabled
 if [ "$ENABLE_LIVERELOAD" = true ]; then
-    LIVERELOAD_PORT=$(find_available_livereload_port)
-
-    if [ -z "$LIVERELOAD_PORT" ]; then
+    if ! LIVERELOAD_PORT=$(find_available_livereload_port); then
         echo -e "${RED}Failed to find an available livereload port. Disabling livereload.${NC}"
+        ENABLE_LIVERELOAD=false
+        LIVERELOAD_PORT=""
     else
         JEKYLL_CMD+=(--livereload --livereload-port "$LIVERELOAD_PORT")
     fi
+fi
+
+# Derive URL-safe host for display/open (bracket IPv6 literals)
+URL_HOST="$CUSTOM_HOST"
+if [[ "$URL_HOST" == *:* && "$URL_HOST" != \[*\] ]]; then
+    URL_HOST="[$URL_HOST]"
 fi
 
 # Add drafts if enabled
@@ -237,7 +243,7 @@ fi
 # Display server configuration
 echo ""
 echo -e "${GREEN}🚀 Starting Jekyll server...${NC}"
-echo -e "${YELLOW}📍 URL: http://${CUSTOM_HOST}:${PORT}${NC}"
+echo -e "${YELLOW}📍 URL: http://${URL_HOST}:${PORT}${NC}"
 [ "$ENABLE_LIVERELOAD" = true ] && [ -n "$LIVERELOAD_PORT" ] && \
     echo -e "${GREEN}🔄 Live reload: enabled (port ${LIVERELOAD_PORT})${NC}"
 [ "$ENABLE_DRAFTS" = true ] && \
@@ -253,9 +259,9 @@ echo ""
 if [ "$OPEN_BROWSER" = true ]; then
     echo -e "${GREEN}🌐 Opening browser...${NC}"
     if [[ "$OSTYPE" == "darwin"* ]]; then
-        open "http://${CUSTOM_HOST}:${PORT}" &
+        open "http://${URL_HOST}:${PORT}" &
     elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
-        xdg-open "http://${CUSTOM_HOST}:${PORT}" &
+        xdg-open "http://${URL_HOST}:${PORT}" &
     else
         echo -e "${YELLOW}⚠ Auto-open not supported on this platform${NC}"
     fi
