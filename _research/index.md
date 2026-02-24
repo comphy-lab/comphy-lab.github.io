@@ -29,15 +29,7 @@ title: Research
 
 ## Work in Progress
 
-### <strong>Dixit, A. K.</strong>, Zhao, C., Zaleski, S., Lohse, D., & <strong>Sanjay, V.</strong> Holey sheets: Double-Threshold Rupture of Draining Liquid Films. arXiv preprint arXiv:2509.12789 (2025).
 
-<div class="tags"><span>Sheets</span><span>Rupture</span><span>Soft-matter-singularities</span><span>Featured</span></div>
-
-[![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2509.12789&color=green)](https://arxiv.org/abs/2509.12789)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/HoleySheet)
-[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
-
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=SLx4otVdr6omgNqb&amp;list=PLf5C5HCrvhLF6ltyZaWSOfNxmiJSubv67" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### <strong>Jana, S.</strong>, Kolinski, J., Lohse, D., & <strong>Sanjay, V.</strong> Impacting spheres: from liquid drops to elastic beads. arXiv preprint arXiv:2510.24855 (2025).
 
@@ -72,6 +64,17 @@ title: Research
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
 
 ## 2026
+
+<h3 id="22">[22] <strong>Dixit, A. K.</strong>, Zhao, C., Zaleski, S., Lohse, D., & <strong>Sanjay, V.</strong> Holes in Sheets: Double-Threshold Rupture of Draining Liquid Films. Phys. Rev. Lett., 136, 084001 (2026).</h3>
+
+<div class="tags"><span>Sheets</span><span>Rupture</span><span>Soft-matter-singularities</span><span>Featured</span></div>
+
+[![Phys. Rev. Lett.](https://img.shields.io/static/v1.svg?style=flat-square&label=Phys.%20Rev.%20Lett.&message=OA&color=orange)](https://doi.org/10.1103/bdpw-7mr5)
+[![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2509.12789&color=green)](https://arxiv.org/abs/2509.12789)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/HoleySheet)
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/HYkqepZIakc?si=e6Cklx7dPvdicILj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <h3 id="21">[21] Díaz, D., <strong>Bhargava, A. S.</strong>, Walz, F., Sharifi, A., Summaly, S., Berger, R., Kappl, M., Butt, H.-J., Lohse, D., Willers, T., <strong>Sanjay, V.</strong>, & Vollmer, D. Stood-up Drop to Determine Receding Contact Angles. Soft Matter, 22, 657-667 (2026).</h3>
 
