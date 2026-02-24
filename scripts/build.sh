@@ -7,6 +7,7 @@ set -e
 CLEAN_BUILD=false
 SKIP_SEO=false
 SKIP_RESEARCH=false
+BUNDLE_CMD=(bundle)
 
 show_help() {
     cat << EOF
@@ -28,6 +29,31 @@ EXAMPLES:
 
 EOF
     exit 0
+}
+
+get_required_ruby_version() {
+    if [ -f ".ruby-version" ]; then
+        awk 'NF {print $1; exit}' .ruby-version
+        return
+    fi
+
+    if [ -f "Gemfile" ]; then
+        awk -F '"' '/^[[:space:]]*ruby[[:space:]]+"/ {print $2; exit}' Gemfile | sed 's/[~><= ]//g'
+    fi
+}
+
+get_required_bundler_version() {
+    if [ -f "Gemfile.lock" ]; then
+        awk '/^BUNDLED WITH$/{getline; gsub(/^[[:space:]]+/, "", $0); print $0; exit}' Gemfile.lock
+    fi
+}
+
+ruby_major_minor() {
+    echo "$1" | awk -F. '{print $1 "." $2}'
+}
+
+run_bundle() {
+    "${BUNDLE_CMD[@]}" "$@"
 }
 
 # Parse arguments
@@ -77,7 +103,7 @@ if [ "$CLEAN_BUILD" = true ]; then
 fi
 
 # Check if running in GitHub Actions
-if [ -n "$GITHUB_ACTIONS" ]; then
+if [ -n "${GITHUB_ACTIONS:-}" ]; then
     echo "Running in GitHub Actions environment"
     # GitHub Actions already has Ruby and Bundler set up via ruby/setup-ruby@v1
 
@@ -158,20 +184,79 @@ else
         exit 1
     fi
 
-    echo "Ruby version: $(ruby -v)"
-    if ! command -v bundle &> /dev/null; then
-        echo "Bundler not found. Installing Bundler..."
-        gem install bundler --user-install --no-document
-        # Ensure the user‐install bin directory is in PATH
-        export PATH="$(ruby -e 'puts Gem.user_dir')/bin:$PATH"
+    REQUIRED_RUBY_VERSION="$(get_required_ruby_version)"
+    if [ -n "$REQUIRED_RUBY_VERSION" ]; then
+        REQUIRED_RUBY_MM="$(ruby_major_minor "$REQUIRED_RUBY_VERSION")"
+        CURRENT_RUBY_VERSION="$(ruby -e 'print RUBY_VERSION')"
+        CURRENT_RUBY_MM="$(ruby_major_minor "$CURRENT_RUBY_VERSION")"
+
+        if [ "$CURRENT_RUBY_MM" != "$REQUIRED_RUBY_MM" ]; then
+            echo "Current Ruby $CURRENT_RUBY_VERSION does not satisfy required Ruby $REQUIRED_RUBY_VERSION."
+
+            if [[ "$OSTYPE" == "darwin"* ]] && command -v brew &> /dev/null; then
+                BREW_PREFIX="$(brew --prefix)"
+                BREW_RUBY_FORMULA="ruby@${REQUIRED_RUBY_MM}"
+                BREW_RUBY_BIN="${BREW_PREFIX}/opt/${BREW_RUBY_FORMULA}/bin"
+
+                if ! brew list "$BREW_RUBY_FORMULA" &> /dev/null; then
+                    echo "Installing ${BREW_RUBY_FORMULA} using Homebrew..."
+                    if ! brew install "$BREW_RUBY_FORMULA"; then
+                        echo "Warning: Could not install ${BREW_RUBY_FORMULA}. Falling back to Homebrew ruby."
+                        BREW_RUBY_FORMULA="ruby"
+                        BREW_RUBY_BIN="${BREW_PREFIX}/opt/${BREW_RUBY_FORMULA}/bin"
+                        if [ ! -x "$BREW_RUBY_BIN/ruby" ]; then
+                            brew install ruby
+                        fi
+                    fi
+                fi
+
+                if [ -x "$BREW_RUBY_BIN/ruby" ]; then
+                    export PATH="$BREW_RUBY_BIN:$PATH"
+                    CURRENT_RUBY_VERSION="$(ruby -e 'print RUBY_VERSION')"
+                    CURRENT_RUBY_MM="$(ruby_major_minor "$CURRENT_RUBY_VERSION")"
+                fi
+            fi
+
+            if [ "$CURRENT_RUBY_MM" != "$REQUIRED_RUBY_MM" ]; then
+                echo "ERROR: Ruby ${REQUIRED_RUBY_MM}.x is required, but current Ruby is ${CURRENT_RUBY_VERSION}."
+                echo "Install the required Ruby version and ensure it is first in PATH."
+                exit 1
+            fi
+        fi
     fi
 
-    echo "Bundler version: $(bundle -v)"
+    echo "Ruby version: $(ruby -v)"
+
+    # Ensure Ruby user gem bin is available before bootstrapping bundler.
+    export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+
+    REQUIRED_BUNDLER_VERSION="$(get_required_bundler_version)"
+    if [ -n "$REQUIRED_BUNDLER_VERSION" ]; then
+        if ! bundle "_${REQUIRED_BUNDLER_VERSION}_" -v &> /dev/null; then
+            echo "Bundler ${REQUIRED_BUNDLER_VERSION} not found. Installing..."
+            gem install "bundler:${REQUIRED_BUNDLER_VERSION}" --user-install --no-document
+        fi
+
+        if ! bundle "_${REQUIRED_BUNDLER_VERSION}_" -v &> /dev/null; then
+            echo "ERROR: Failed to activate Bundler ${REQUIRED_BUNDLER_VERSION}."
+            exit 1
+        fi
+
+        BUNDLE_CMD=(bundle "_${REQUIRED_BUNDLER_VERSION}_")
+    else
+        if ! command -v bundle &> /dev/null; then
+            echo "Bundler not found. Installing Bundler..."
+            gem install bundler --user-install --no-document
+            export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+        fi
+    fi
+
+    echo "Bundler version: $(run_bundle -v)"
 
     if [ "$SKIP_DEPS" = false ]; then
         # Install dependencies for local environment
         echo "Installing Ruby dependencies..."
-        bundle install
+        run_bundle install
 
         # Install npm dependencies (for husky, lint-staged, etc.)
         echo "Installing npm dependencies..."
@@ -191,12 +276,12 @@ fi
 
 # Build the Jekyll site
 echo "Building Jekyll site..."
-JEKYLL_ENV=production bundle exec jekyll build
+JEKYLL_ENV=production run_bundle exec jekyll build
 
 # Generate pre-filtered research pages
 if [ "$SKIP_RESEARCH" = false ]; then
     echo "Generating pre-filtered research pages..."
-    bundle exec ruby scripts/generate_filtered_research.rb
+    run_bundle exec ruby scripts/generate_filtered_research.rb
 else
     echo "Skipping research page generation (--skip-research flag)"
 fi
@@ -207,7 +292,7 @@ if [ "$SKIP_SEO" = false ]; then
         # Generate SEO metadata from search database
         echo "Generating SEO metadata from search database..."
         chmod +x scripts/generate_seo_tags.rb
-        bundle exec ruby scripts/generate_seo_tags.rb
+        run_bundle exec ruby scripts/generate_seo_tags.rb
     else
         echo "Warning: search_db.json not found - skipping SEO metadata generation"
     fi
