@@ -7,6 +7,10 @@ title: History
 
 ## 2026
 
+### February
+
+- <strong>Ayush Dixit</strong> presents "Simulating Respiratory Droplet Formation: The Role of Non-Newtonian Fluid Dynamics," showing via large-scale simulations that viscoelastic respiratory-fluid effects are essential for accurate droplet-size predictions in airborne transmission models. Video: https://www.youtube.com/watch?v=uFP5K9i8ah8
+
 ### January
 
 - [Díaz, D., <strong>Bhargava, A. S.</strong>, Walz, F., Sharifi, A., Summaly, S., Berger, R., Kappl, M., Butt, H.-J., Lohse, D., Willers, T., <strong>Sanjay, V.</strong>, & Vollmer, D. Stood-up Drop to Determine Receding Contact Angles. Soft Matter, 22, 657-667 (2026).](/research#21)

@@ -1,5 +1,9 @@
 ## 2026
 
+### February
+
+- <strong>Ayush Dixit</strong> presents "Simulating Respiratory Droplet Formation: The Role of Non-Newtonian Fluid Dynamics," showing via large-scale simulations that viscoelastic respiratory-fluid effects are essential for accurate droplet-size predictions in airborne transmission models. Video: https://www.youtube.com/watch?v=uFP5K9i8ah8
+
 ### January
 
 - [Díaz, D., <strong>Bhargava, A. S.</strong>, Walz, F., Sharifi, A., Summaly, S., Berger, R., Kappl, M., Butt, H.-J., Lohse, D., Willers, T., <strong>Sanjay, V.</strong>, & Vollmer, D. Stood-up Drop to Determine Receding Contact Angles. Soft Matter, 22, 657-667 (2026).](/research#21)
@@ -32,7 +36,3 @@ Starting <strong>July 1st, 2025</strong>, the CoMPhy Lab will be relocating to D
 ### September
 
 - [Saini, M., <strong>Sanjay, V.</strong>, Saade, Y., Lohse, D., & Popinet, S. Implementation of integral surface tension formulations in a volume of fluid framework and their applications to Marangoni flows. J. Comput. Phys., 542, 114348 (2025).](/research#18)
-
-### August
-
-- [Mclauchlan, J., Walker, J. S., <strong>Sanjay, V.</strong>, Jalaal, M., Reid, J. P., Squires, A. M., & Souslov, A. Bouncing microdroplets on hydrophobic surfaces. Proc. Natl. Acad. Sci., 122, e2507309122 (2025).](/research#19)
