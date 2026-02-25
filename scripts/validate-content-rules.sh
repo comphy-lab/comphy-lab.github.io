@@ -5,10 +5,10 @@ set -euo pipefail
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 HISTORY_FILE="$REPO_ROOT/history.md"
 RESEARCH_FILE="$REPO_ROOT/_research/index.md"
-ADD_NEWS_RULES_FILE="$REPO_ROOT/.opencode/commands/add-news.md"
+ADD_NEWS_RULES_FILE="$REPO_ROOT/.agents/skills/add-news/SKILL.md"
 CLAUDE_FILE="$REPO_ROOT/CLAUDE.md"
 README_FILE="$REPO_ROOT/README.md"
-ADD_PAPER_RULES_FILE="$REPO_ROOT/.opencode/commands/add-paper.md"
+ADD_PAPER_RULES_FILE="$REPO_ROOT/.agents/skills/add-paper/SKILL.md"
 
 FAILURES=0
 
