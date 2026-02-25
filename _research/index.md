@@ -78,7 +78,7 @@ title: Research
 
 <h3 id="21">[21] Díaz, D., <strong>Bhargava, A. S.</strong>, Walz, F., Sharifi, A., Summaly, S., Berger, R., Kappl, M., Butt, H.-J., Lohse, D., Willers, T., <strong>Sanjay, V.</strong>, & Vollmer, D. Stood-up Drop to Determine Receding Contact Angles. Soft Matter, 22, 657-667 (2026).</h3>
 
-<div class="tags"><span>Drops</span><span>Contact line</span></div>
+<div class="tags"><span>Drops</span><span>Contact line</span><span>Superamphiphobic-surfaces</span><span>Featured</span></div>
 
 [![Soft Matter](https://img.shields.io/static/v1.svg?style=flat-square&label=Soft%20Matter&message=OA&color=orange)](https://doi.org/10.1039/D5SM00985E)
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2511.20259&color=green)](https://arxiv.org/abs/2511.20259)
