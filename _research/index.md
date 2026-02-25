@@ -69,7 +69,7 @@ title: Research
 
 <div class="tags"><span>Sheets</span><span>Rupture</span><span>Soft-matter-singularities</span><span>Featured</span></div>
 
-[![Phys. Rev. Lett.](https://img.shields.io/static/v1.svg?style=flat-square&label=Phys.%20Rev.%20Lett.&message=Subscription&color=orange)](https://doi.org/10.1103/bdpw-7mr5)
+[![Phys. Rev. Lett.](https://img.shields.io/static/v1.svg?style=flat-square&label=Phys.%20Rev.%20Lett.&message=DOI:%2010.1103%2Fbdpw-7mr5&color=orange)](https://doi.org/10.1103/bdpw-7mr5)
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2509.12789&color=green)](https://arxiv.org/abs/2509.12789)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/HoleySheet)
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
@@ -80,7 +80,7 @@ title: Research
 
 <div class="tags"><span>Drops</span><span>Contact line</span><span>Superamphiphobic-surfaces</span><span>Featured</span></div>
 
-[![Soft Matter](https://img.shields.io/static/v1.svg?style=flat-square&label=Soft%20Matter&message=Subscription&color=orange)](https://doi.org/10.1039/D5SM00985E)
+[![Soft Matter](https://img.shields.io/static/v1.svg?style=flat-square&label=Soft%20Matter&message=DOI:%2010.1039%2FD5SM00985E&color=orange)](https://doi.org/10.1039/D5SM00985E)
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2511.20259&color=green)](https://arxiv.org/abs/2511.20259)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/Retracting-Droplet)
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
@@ -140,7 +140,7 @@ title: Research
 
 <div class="tags"><span>Drops</span><span>Dissipative anomaly</span><span>Superamphiphobic-surfaces</span><span>Impact forces</span></div>
 
-[![PRL](https://img.shields.io/static/v1.svg?style=flat-square&label=PRL&message=134%2C%20104003&color=orange)](https://doi.org/10.1103/PhysRevLett.134.104003)
+[![PRL](https://img.shields.io/static/v1.svg?style=flat-square&label=PRL&message=OA&color=orange)](https://doi.org/10.1103/PhysRevLett.134.104003)
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2408.12714&color=green)](https://arxiv.org/abs/2408.12714)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/VatsalSy/Impact-forces-of-water-drops-falling-on-superhydrophobic-surfaces.git)
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
