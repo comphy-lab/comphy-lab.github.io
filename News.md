@@ -35,6 +35,4 @@ Starting <strong>July 1st, 2025</strong>, the CoMPhy Lab will be relocating to D
 
 - <strong>Jnandeep Talukdar</strong> <a href="https://github.com/spilltheT"><i class="fa-brands fa-github" style="font-size: 1.5em; color: #8a2be2;"></i></a> won the <a href="https://khmw.nl/khmw-jong-talent-prijzen-khmw-young-talent-awards/" class="blue-link">KHMW Young Talent Graduation Award</a> for Mechanical Engineering and Materials Science 2025 for his master's thesis on fundamental research in droplet formation. <strong>Thesis:</strong> <a href="https://bit.ly/thesisJnan" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf" style="margin-right: 8px; font-size: 1.2em; color: #e63946;"></i>Singularities with Surfactants</a>
 
-### September
 
-- [Saini, M., <strong>Sanjay, V.</strong>, Saade, Y., Lohse, D., & Popinet, S. Implementation of integral surface tension formulations in a volume of fluid framework and their applications to Marangoni flows. J. Comput. Phys., 542, 114348 (2025).](/research#18)
