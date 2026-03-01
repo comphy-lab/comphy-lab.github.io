@@ -23,7 +23,7 @@ Add the user-provided news item to both `News.md` and `history.md`.
    - Insert the same news bullet under the correct month.
    - Preserve special announcements (for example, the Durham announcement) as non-regular blocks.
 6. Enforce News.md item limit:
-   - Count only regular news bullets that start with `-`.
+   - Count only regular news bullets that start with a dash followed by a space (prefix: `-`).
    - Keep at most 5 regular items.
    - Remove oldest regular items first.
    - Never count or remove special announcement blocks for this limit.
