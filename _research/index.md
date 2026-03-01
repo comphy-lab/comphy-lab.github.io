@@ -29,8 +29,6 @@ title: Research
 
 ## Work in Progress
 
-
-
 ### <strong>Jana, S.</strong>, Kolinski, J., Lohse, D., & <strong>Sanjay, V.</strong> Impacting spheres: from liquid drops to elastic beads. arXiv preprint arXiv:2510.24855 (2025).
 
 <div class="tags"><span>Drops</span><span>Impact forces</span><span>Elastic beads</span></div>
