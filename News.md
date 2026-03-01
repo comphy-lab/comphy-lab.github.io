@@ -4,7 +4,7 @@
 
 - [<strong>Dixit, A. K.</strong>, Zhao, C., Zaleski, S., Lohse, D., & <strong>Sanjay, V.</strong> Holes in Sheets: Double-Threshold Rupture of Draining Liquid Films. Phys. Rev. Lett., 136, 084001 (2026).](/research#22)
 
-- <strong>Ayush Dixit</strong> presents "Simulating Respiratory Droplet Formation: The Role of Non-Newtonian Fluid Dynamics," showing via large-scale simulations that viscoelastic respiratory-fluid effects are essential for accurate droplet-size predictions in airborne transmission models. Video: https://www.youtube.com/watch?v=uFP5K9i8ah8
+- <strong>Ayush Dixit</strong> presents "Simulating Respiratory Droplet Formation: The Role of Non-Newtonian Fluid Dynamics," showing via large-scale simulations that viscoelastic respiratory-fluid effects are essential for accurate droplet-size predictions in airborne transmission models. Video: <https://www.youtube.com/watch?v=uFP5K9i8ah8>
 
 ### January
 
