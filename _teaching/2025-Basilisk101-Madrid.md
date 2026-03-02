@@ -74,30 +74,37 @@ The course combines theoretical lectures with extensive hands-on sessions, allow
 ## Course Schedule
 
 ### Monday: Foundations
+
 #### Think before you compute
+
 - **10:00-11:30** &nbsp;|&nbsp; **Lecture (1a)**
   - Conservation laws and the numerical solution of the Navier–Stokes equations
 - **11:45-13:00** &nbsp;|&nbsp; **Lecture (1b)**
   - Transport equations
-  - *Brief intro to Basilisk coding framework*
+  - _Brief intro to Basilisk coding framework_
 
 #### First coding steps
+
 - **15:00-18:00** &nbsp;|&nbsp; **Hybrid Session**
   - Implementing basic transport equations in Basilisk C.
   - Using headers in Basilisk, modular code structure, problem setup, and compilation
-  - *Whiteboard + coding*
+  - _Whiteboard + coding_
   - [1st Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/1st-workingAssignment)
 
 ### Tuesday: Advanced Implementation
+
 #### Coding like a pro
+
 - **10:00-11:15** &nbsp;|&nbsp; **Hackathon (1c)**
-  - Solving Navier–Stokes equations in Basilisk C. 
+  - Solving Navier–Stokes equations in Basilisk C.
   - [2nd Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/2nd-workingAssignment)
 - **11:30-13:00** &nbsp;|&nbsp; **Hackathon Continued**
   - Expanding on the morning tasks and code debugging
 
 ### Wednesday: Interface Dynamics
+
 #### Interface tracking methods
+
 - **10:00-11:30** &nbsp;|&nbsp; **Lecture (2a)**
   - Interface tracking methods (VoF, level set, phase-field approaches) and numerical strategies
 - **11:45-13:00** &nbsp;|&nbsp; **Hackathon (2b)**
@@ -105,10 +112,12 @@ The course combines theoretical lectures with extensive hands-on sessions, allow
   - [3rd Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/3rd-workingAssignment)
 
 #### Seminar
+
 - **13:30-14:00** &nbsp;|&nbsp; **Department seminar (2c)**
   - A note on the thrust of airfoils by [José Manuel Gordillo](https://scholar.google.com/citations?user=14wOsewAAAAJ&hl=en&inst=5726176096060060532&oi=ao)
 
 #### Non-Newtonian flows
+
 - **15:00-16:00** &nbsp;|&nbsp; **Lecture (3a)**
   - Non-Newtonian flows: viscoelasticity.
 - **16:15-18:00** &nbsp;|&nbsp; **Hackathon (3b)**
@@ -116,12 +125,14 @@ The course combines theoretical lectures with extensive hands-on sessions, allow
   - [4th Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment)
 
 ### Thursday: Special Topics
+
 #### Special topics
+
 - **10:00-11:30** &nbsp;|&nbsp; **Lecture (4a)**
   - Review and catching up on [4th Working Assignment](https://blogs.comphy-lab.org/Lecture-Notes/Basilisk101/4th-workingAssignment).
-  - Special Topics: Three-phase flows, 
+  - Special Topics: Three-phase flows,
 - **11:45-13:00** &nbsp;|&nbsp; **Hackathon (4b)**
-  - Special Topics: Holey Sheets, Contact line dynamics. 
+  - Special Topics: Holey Sheets, Contact line dynamics.
 - **15:00-16:30** &nbsp;|&nbsp; **Lecture (4c)**
   - Open discussion, deeper dives into advanced features, final code reviews, and next steps.
 
@@ -134,10 +145,10 @@ The course combines theoretical lectures with extensive hands-on sessions, allow
 - Understanding of partial differential equations
 - Laptop with ability to compile C code
 
-
 ## Registration
 
-For registration details, please contact 
+For registration details, please contact
+
 <div class="email-container">
     <span class="email-text">bubbles@ing.uc3m.es</span>
     <button class="copy-btn" onclick="copyEmail(this)" data-text="bubbles@ing.uc3m.es" aria-label="Copy email address bubbles@ing.uc3m.es">
@@ -193,4 +204,4 @@ function copyEmail(button) {
   <a href="https://github.com/comphy-lab/Basilisk-101" class="course-card__link" target="_blank" rel="noopener noreferrer" aria-label="Course GitHub Repository">
     <i class="fa-brands fa-github" style="margin-right: 0.5rem; font-style: normal;"></i>Course GitHub Repository
   </a>
-</div> 
+</div>
