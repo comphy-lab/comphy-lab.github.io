@@ -167,7 +167,6 @@ Registration for this pre-conference session is handled through [ECS 2025](https
   </div>
 </div>
 
-
 <div style="margin-top: 2rem; text-align: center;">
   <a href="https://github.com/comphy-lab/Basilisk-101nano" class="course-card__link" target="_blank" rel="noopener noreferrer" aria-label="Course GitHub Repository">
     <i class="fa-brands fa-github" style="margin-right: 0.5rem; font-style: normal;"></i>Course Examples & Resources
