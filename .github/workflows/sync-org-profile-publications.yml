@@ -7,42 +7,55 @@ on:
       - '_research/index.md'
       - 'scripts/sync_org_profile_publications.py'
       - '_org_profile/README.md'
+      - '.github/workflows/sync-org-profile-publications.yml'
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   sync-org-profile:
     runs-on: ubuntu-latest
+    env:
+      APP_BOT_USER_ID: ${{ secrets.APP_BOT_USER_ID }}
     steps:
+      - name: Create GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+
       - name: Checkout comphy-lab.github.io
         uses: actions/checkout@v4
+        with:
+          token: ${{ steps.app-token.outputs.token }}
 
       - name: Generate updated org profile section
-        run: |
-          python3 scripts/sync_org_profile_publications.py
+        run: python3 scripts/sync_org_profile_publications.py
 
       - name: Checkout org profile repo
         uses: actions/checkout@v4
         with:
           repository: comphy-lab/.github
           path: org-profile
-          token: ${{ secrets.ORG_PROFILE_REPO_PAT }}
+          token: ${{ steps.app-token.outputs.token }}
 
       - name: Update profile README
-        run: |
-          cp _org_profile/README.md org-profile/profile/README.md
+        run: cp _org_profile/README.md org-profile/profile/README.md
 
       - name: Commit and push if changed
         working-directory: org-profile
+        env:
+          GIT_AUTHOR_NAME: comphy-search-updater[bot]
+          GIT_AUTHOR_EMAIL: ${{ env.APP_BOT_USER_ID }}+comphy-search-updater[bot]@users.noreply.github.com
+          GIT_COMMITTER_NAME: comphy-search-updater[bot]
+          GIT_COMMITTER_EMAIL: ${{ env.APP_BOT_USER_ID }}+comphy-search-updater[bot]@users.noreply.github.com
         run: |
-          if git diff --quiet -- profile/README.md; then
+          git add profile/README.md
+          if git diff --staged --quiet; then
             echo "No changes to org profile README"
             exit 0
           fi
-          git config user.name "comphy-bot"
-          git config user.email "worthington@comphy-lab.org"
-          git add profile/README.md
           git commit -m "chore(profile): sync recent publications from comphy-lab.github.io"
-          git push
+          git push origin HEAD:main
