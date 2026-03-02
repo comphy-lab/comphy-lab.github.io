@@ -1,0 +1,48 @@
+name: Sync org profile recent publications
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '_research/index.md'
+      - 'scripts/sync_org_profile_publications.py'
+      - '_org_profile/README.md'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  sync-org-profile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout comphy-lab.github.io
+        uses: actions/checkout@v4
+
+      - name: Generate updated org profile section
+        run: |
+          python3 scripts/sync_org_profile_publications.py
+
+      - name: Checkout org profile repo
+        uses: actions/checkout@v4
+        with:
+          repository: comphy-lab/.github
+          path: org-profile
+          token: ${{ secrets.ORG_PROFILE_REPO_PAT }}
+
+      - name: Update profile README
+        run: |
+          cp _org_profile/README.md org-profile/profile/README.md
+
+      - name: Commit and push if changed
+        working-directory: org-profile
+        run: |
+          if git diff --quiet -- profile/README.md; then
+            echo "No changes to org profile README"
+            exit 0
+          fi
+          git config user.name "comphy-bot"
+          git config user.email "worthington@comphy-lab.org"
+          git add profile/README.md
+          git commit -m "chore(profile): sync recent publications from comphy-lab.github.io"
+          git push
