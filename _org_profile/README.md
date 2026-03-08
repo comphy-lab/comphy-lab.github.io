@@ -46,6 +46,7 @@ We are a computational physics research group based at the **Department of Physi
 ## 🛠️ Technical Expertise
 
 ### Languages & Tools
+
 <div align="center">
   
 ![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
@@ -58,6 +59,7 @@ We are a computational physics research group based at the **Department of Physi
 </div>
 
 ### Computational Frameworks
+
 <div align="center">
 
 ![Basilisk](https://img.shields.io/badge/Basilisk_C-🌊-blue?style=for-the-badge)
@@ -155,7 +157,6 @@ We are a computational physics research group based at the **Department of Physi
 [View all publications →](https://comphy-lab.org/research)
 <!-- RECENT_PUBLICATIONS_END -->
 
-
 ---
 
 ## 👥 Community & Collaboration
@@ -204,7 +205,6 @@ We are a computational physics research group based at the **Department of Physi
 ---
 
 ## 🌟 Get Involved
-
 
 ### 🔬 **Open Science Commitment**
 
