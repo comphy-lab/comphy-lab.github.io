@@ -35,6 +35,7 @@ Closes #
 - [ ] Documentation has been updated (if needed)
 - [ ] Changes have been tested locally
 - [ ] This PR is single-purpose and does not mix dependency/security updates with unrelated formatting or content cleanups
+- [ ] All review threads are resolved or have an explicit won't-fix / follow-up disposition before merge
 
 ## Additional Notes
 <!-- Add any additional context or notes for reviewers -->
