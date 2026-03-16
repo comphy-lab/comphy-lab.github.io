@@ -34,6 +34,7 @@ Closes #
 - [ ] Content is properly formatted
 - [ ] Documentation has been updated (if needed)
 - [ ] Changes have been tested locally
+- [ ] This PR is single-purpose and does not mix dependency/security updates with unrelated formatting or content cleanups
 
 ## Additional Notes
 <!-- Add any additional context or notes for reviewers -->

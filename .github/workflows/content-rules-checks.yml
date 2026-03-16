@@ -4,18 +4,26 @@ on:
   pull_request:
     branches: ["main"]
     paths:
-      - "history.md"
-      - "_research/index.md"
+      - ".agents/skills/add-news/SKILL.md"
+      - ".agents/skills/add-paper/SKILL.md"
+      - ".github/workflows/content-rules-checks.yml"
       - "CLAUDE.md"
       - "README.md"
+      - "history.md"
+      - "_research/index.md"
+      - "scripts/check-content-rules-trigger-parity.py"
       - "scripts/validate-content-rules.sh"
   push:
     branches: ["main"]
     paths:
-      - "history.md"
-      - "_research/index.md"
+      - ".agents/skills/add-news/SKILL.md"
+      - ".agents/skills/add-paper/SKILL.md"
+      - ".github/workflows/content-rules-checks.yml"
       - "CLAUDE.md"
       - "README.md"
+      - "history.md"
+      - "_research/index.md"
+      - "scripts/check-content-rules-trigger-parity.py"
       - "scripts/validate-content-rules.sh"
 
 jobs:
@@ -25,6 +33,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Check workflow trigger parity
+        run: python3 scripts/check-content-rules-trigger-parity.py
 
       - name: Validate history and research content rules
         run: bash scripts/validate-content-rules.sh
