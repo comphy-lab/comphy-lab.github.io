@@ -17,60 +17,55 @@ if [ ! -f "Gemfile" ]; then
   exit 1
 fi
 
+REQUIRED_RUBY_VERSION="$(tr -d '[:space:]' < .ruby-version)"
+REQUIRED_BUNDLER_VERSION="$(awk '/^BUNDLED WITH$/{getline; gsub(/^[[:space:]]+/, "", $0); print; exit}' Gemfile.lock)"
+
 # Check Ruby installation
 echo "📦 Checking Ruby installation..."
 
 # First check if Ruby is installed at all
 if ! command -v ruby &> /dev/null; then
   echo "❌ Ruby not found. Installing Ruby via rbenv..."
-  
+
   # Install rbenv
   if [ ! -d "$HOME/.rbenv" ]; then
     git clone https://github.com/rbenv/rbenv.git ~/.rbenv
     echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
     echo 'eval "$(rbenv init -)"' >> ~/.bashrc
-    
+
     # Also add to ~/.bash_profile for macOS compatibility
     echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
     echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
-    
+
     # Install ruby-build plugin
     git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
   fi
-  
+
   # Set PATH for current session
   export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init -)"
-  
-  # Install Ruby 3.2
-  echo "Installing Ruby 3.2.0..."
-  rbenv install 3.2.0
-  rbenv global 3.2.0
-  
+
+  # Install repo-pinned Ruby
+  echo "Installing Ruby ${REQUIRED_RUBY_VERSION}..."
+  rbenv install -s "${REQUIRED_RUBY_VERSION}"
+  rbenv local "${REQUIRED_RUBY_VERSION}"
+  rbenv rehash
+
   echo "✅ Ruby installed successfully: $(ruby --version)"
-  
+
 # Check if rbenv is being used and handle version issues
 elif command -v rbenv &> /dev/null && [ -f ".ruby-version" ]; then
-  REQUIRED_VERSION=$(cat .ruby-version)
-  echo "📌 Project requires Ruby $REQUIRED_VERSION (via .ruby-version)"
-  
+  echo "📌 Project requires Ruby ${REQUIRED_RUBY_VERSION} (via .ruby-version)"
+
   # Check if the required version is installed
-  if ! rbenv versions --bare | grep -q "^${REQUIRED_VERSION}$"; then
-    echo "⚠️  Ruby $REQUIRED_VERSION is not installed via rbenv"
-    echo "   Available versions:"
-    rbenv versions
-    echo ""
-    
-    # Try to use system Ruby or any available Ruby
-    if command -v /usr/bin/ruby &> /dev/null; then
-      echo "🔄 Using system Ruby instead..."
-      export PATH="/usr/bin:$PATH"
-    else
-      # Remove .ruby-version temporarily to use any available Ruby
-      echo "🔄 Temporarily bypassing .ruby-version to use available Ruby..."
-      mv .ruby-version .ruby-version.bak
-    fi
+  if ! rbenv versions --bare | grep -q "^${REQUIRED_RUBY_VERSION}$"; then
+    echo "⚠️  Ruby ${REQUIRED_RUBY_VERSION} is not installed via rbenv"
+    echo "Installing Ruby ${REQUIRED_RUBY_VERSION} via rbenv..."
+    rbenv install -s "${REQUIRED_RUBY_VERSION}"
   fi
+
+  rbenv local "${REQUIRED_RUBY_VERSION}"
+  rbenv rehash
 fi
 
 # Now check Ruby again
@@ -91,14 +86,21 @@ fi
 
 # Check Bundler installation
 echo "📦 Checking Bundler..."
-if command -v bundle &> /dev/null; then
-  BUNDLER_VERSION=$(bundle --version)
-  echo "✅ Bundler installed: $BUNDLER_VERSION"
+if gem list bundler -i -v "$REQUIRED_BUNDLER_VERSION" >/dev/null 2>&1; then
+  echo "✅ Bundler ${REQUIRED_BUNDLER_VERSION} is installed"
 else
-  echo "⚠️  Bundler not found. Installing..."
-  gem install bundler
-  echo "✅ Bundler installed"
+  echo "⚠️  Bundler ${REQUIRED_BUNDLER_VERSION} not found. Installing..."
+  gem install bundler -v "$REQUIRED_BUNDLER_VERSION"
+  echo "✅ Bundler ${REQUIRED_BUNDLER_VERSION} installed"
 fi
+
+if ! bundle _${REQUIRED_BUNDLER_VERSION}_ --version >/dev/null 2>&1; then
+  echo "❌ Bundler ${REQUIRED_BUNDLER_VERSION} is installed but not runnable"
+  exit 1
+fi
+
+echo "🧪 Checking Ruby/Bundler toolchain..."
+bash scripts/check-ruby-toolchain.sh
 
 # Check Node.js installation
 echo "📦 Checking Node.js..."
@@ -107,22 +109,22 @@ if command -v node &> /dev/null; then
   echo "✅ Node.js installed: $NODE_VERSION"
 else
   echo "❌ Node.js not found. Installing Node.js via nvm..."
-  
+
   # Install nvm
   if [ ! -d "$HOME/.nvm" ]; then
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
   fi
-  
+
   # Source nvm for current session
   export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-  
+
   # Install latest Node.js
   echo "Installing latest Node.js..."
   nvm install node
   nvm use node
-  
+
   echo "✅ Node.js installed successfully: $(node --version)"
 fi
 
@@ -139,7 +141,7 @@ fi
 # Install Ruby dependencies
 echo ""
 echo "💎 Installing Ruby dependencies..."
-bundle install
+bundle _${REQUIRED_BUNDLER_VERSION}_ install
 
 # Install Node.js dependencies
 echo ""

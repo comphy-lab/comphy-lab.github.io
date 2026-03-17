@@ -81,7 +81,8 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 
    This script will:
    - Check for Ruby/Node.js and install them if missing (via rbenv/nvm)
-   - Install Bundler if not present
+   - Install the repo-pinned Bundler version from `Gemfile.lock`
+   - Run a Ruby/Bundler preflight before installing dependencies
    - Install all Ruby gems and npm packages
    - Build the site and generate search database
    - Install Git hooks for pre-commit checks (via Husky)
@@ -90,15 +91,18 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 2. **Manual Setup (Alternative)**
 
    Prerequisites:
-   - Ruby (version 3.2.0 or higher)
-   - Bundler (`gem install bundler`)
+   - Ruby `3.2.2` (matches `.ruby-version`)
+   - Bundler `2.5.23` (`gem install bundler -v 2.5.23`)
    - Node.js and npm (for linting and testing)
 
    Install Dependencies:
 
    ```bash
+   # Ruby/Bundler preflight
+   bash scripts/check-ruby-toolchain.sh
+
    # Ruby dependencies
-   bundle install
+   bundle _2.5.23_ install
    
    # JavaScript dependencies
    npm install
@@ -555,6 +559,7 @@ The `scripts/` directory contains various utility scripts for development, testi
 
 - **`setup.sh`** - Complete environment setup for both fresh and existing installations
   - Installs Ruby via rbenv and Node.js via nvm if not present
+  - Installs the repo-pinned Bundler version and runs a Ruby/Bundler preflight
   - Installs all dependencies (Ruby gems and npm packages)
   - Builds the site and runs validation tests
   - Handles version conflicts gracefully

@@ -54,11 +54,8 @@ describe('command-data.js actual implementation', () => {
   });
 
   it('should handle page-specific initialization', () => {
-    // Mock being on team page
-    Object.defineProperty(window, 'location', {
-      value: { pathname: '/team/' },
-      configurable: true
-    });
+    // Update the current URL without replacing the jsdom location object.
+    window.history.replaceState({}, '', '/team/');
     
     require('../assets/js/command-data.js');
     

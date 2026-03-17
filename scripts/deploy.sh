@@ -111,8 +111,8 @@ while [[ $# -gt 0 ]]; do
                 echo "Run './scripts/deploy.sh --help' for usage information"
                 exit 1
             fi
-            if [[ ! "$2" =~ ^[A-Za-z0-9._:-]+$ ]]; then
-                echo -e "${RED}Error: --host contains invalid characters${NC}"
+            if [[ ! "$2" =~ ^[A-Za-z0-9._:-]+$ && ! "$2" =~ ^\[[0-9A-Fa-f:.]+\]$ ]]; then
+                echo -e "${RED}Error: --host must be a hostname, IPv4/IPv6 literal, or bracketed IPv6 literal${NC}"
                 echo "Run './scripts/deploy.sh --help' for usage information"
                 exit 1
             fi
