@@ -99,7 +99,7 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 
    ```bash
    # Ruby/Bundler preflight
-   ./scripts/check-ruby-toolchain.sh
+   bash scripts/check-ruby-toolchain.sh
 
    # Ruby dependencies
    bundle _2.5.23_ install
