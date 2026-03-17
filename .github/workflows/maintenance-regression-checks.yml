@@ -1,0 +1,42 @@
+name: Maintenance Regression Checks
+
+on:
+  pull_request:
+    branches: ["main"]
+    paths:
+      - ".agents/skills/add-news/SKILL.md"
+      - "scripts/deploy.sh"
+      - "tests/deploy-script-regression.sh"
+      - "tests/news-bullet-regression.test.js"
+      - "tests/fixtures/news-bullets/**"
+  push:
+    branches: ["main"]
+    paths:
+      - ".agents/skills/add-news/SKILL.md"
+      - "scripts/deploy.sh"
+      - "tests/deploy-script-regression.sh"
+      - "tests/news-bullet-regression.test.js"
+      - "tests/fixtures/news-bullets/**"
+
+jobs:
+  regressions:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run deploy.sh regression tests
+        run: bash tests/deploy-script-regression.sh
+
+      - name: Run add-news bullet regression tests
+        run: npm test -- --runInBand tests/news-bullet-regression.test.js

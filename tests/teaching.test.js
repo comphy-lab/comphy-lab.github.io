@@ -28,11 +28,8 @@ describe('teaching.js', () => {
   });
 
   it('should handle case when course elements exist on page load', () => {
-    // Mock being on teaching page
-    Object.defineProperty(window, 'location', {
-      value: { pathname: '/teaching' },
-      configurable: true
-    });
+    // Update the current URL without replacing the jsdom location object.
+    window.history.replaceState({}, '', '/teaching');
     
     // Create mock course elements
     document.body.innerHTML = `
