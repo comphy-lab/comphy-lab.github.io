@@ -48,7 +48,6 @@ if ! command -v ruby &> /dev/null; then
   # Install repo-pinned Ruby
   echo "Installing Ruby ${REQUIRED_RUBY_VERSION}..."
   rbenv install -s "${REQUIRED_RUBY_VERSION}"
-  rbenv global "${REQUIRED_RUBY_VERSION}"
   rbenv local "${REQUIRED_RUBY_VERSION}"
   rbenv rehash
 
@@ -101,7 +100,7 @@ if ! bundle _${REQUIRED_BUNDLER_VERSION}_ --version >/dev/null 2>&1; then
 fi
 
 echo "🧪 Checking Ruby/Bundler toolchain..."
-./scripts/check-ruby-toolchain.sh
+bash scripts/check-ruby-toolchain.sh
 
 # Check Node.js installation
 echo "📦 Checking Node.js..."

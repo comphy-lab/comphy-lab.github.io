@@ -82,8 +82,16 @@ def report(label: str, values: set[str]) -> None:
         print(f"  - {value}")
 
 
-validate_text = VALIDATE_SCRIPT.read_text()
-workflow_lines = WORKFLOW_FILE.read_text().splitlines()
+def read_text_or_exit(path: Path) -> str:
+    try:
+        return path.read_text()
+    except (OSError, UnicodeDecodeError) as exc:
+        print(f"Content-rules trigger parity check failed: could not read {path.relative_to(REPO_ROOT)} ({exc})")
+        sys.exit(1)
+
+
+validate_text = read_text_or_exit(VALIDATE_SCRIPT)
+workflow_lines = read_text_or_exit(WORKFLOW_FILE).splitlines()
 
 validated_paths = extract_validated_paths(validate_text)
 pull_request_paths = set(extract_event_paths(workflow_lines, "pull_request"))
