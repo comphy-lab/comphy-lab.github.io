@@ -63,6 +63,25 @@ title: Research
 
 ## 2026
 
+<h3 id="23">[23] <strong>Jana, S.</strong>, Kolinski, J., Lohse, D., & <strong>Sanjay, V.</strong> Impacting spheres: from liquid drops to elastic beads. Soft Matter, 22, 2226-2236 (2026).</h3>
+
+<div class="tags"><span>Drops</span><span>Impact forces</span><span>Elastic beads</span><span>Featured</span></div>
+
+[![Soft Matter](https://img.shields.io/static/v1.svg?style=flat-square&label=Soft%20Matter&message=DOI:%2010.1039%2FD5SM01078K&color=orange)](https://doi.org/10.1039/D5SM01078K)
+[![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2510.24855&color=green)](https://arxiv.org/abs/2510.24855)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/Soft-Sphere-Impacts)
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
+
+#### Highlights
+
+* Selected as the cover article for Soft Matter, Issue 11 (2026).
+
+<div style="text-align: center; margin: 15px 0;">
+    <a href="https://pubs.rsc.org/en/journals/journal/sm?issueid=sm022011&type=current">
+      <img src="/assets/images/covers/2026-03-SoftMatter_Issue11_cover.jpeg" alt="Soft Matter cover" style="max-width: 256px; border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); cursor: pointer;">
+    </a>
+</div>
+
 <h3 id="22">[22] <strong>Dixit, A. K.</strong>, Zhao, C., Zaleski, S., Lohse, D., & <strong>Sanjay, V.</strong> Holes in Sheets: Double-Threshold Rupture of Draining Liquid Films. Phys. Rev. Lett., 136, 084001 (2026).</h3>
 
 <div class="tags"><span>Sheets</span><span>Rupture</span><span>Soft-matter-singularities</span><span>Featured</span></div>
