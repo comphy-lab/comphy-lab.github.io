@@ -431,12 +431,16 @@ window.copyEmail = copyToClipboard; // Maintain existing API
 /**
  * Scroll-reveal: adds .is-inview to [data-animate-block] elements when they
  * enter the viewport. Works with the CSS transition rules in styles.css.
- * Falls back silently if IntersectionObserver is not available.
+ * Falls back by revealing content immediately if IntersectionObserver
+ * is not available.
  */
 function initScrollReveal() {
-  if (typeof IntersectionObserver === 'undefined') return;
   const blocks = document.querySelectorAll('[data-animate-block]');
   if (!blocks.length) return;
+  if (typeof IntersectionObserver === 'undefined') {
+    blocks.forEach((block) => block.classList.add('is-inview'));
+    return;
+  }
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
