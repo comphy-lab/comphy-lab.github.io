@@ -127,12 +127,44 @@ test_invalid_port_range_is_rejected() {
   assert_contains "$RUN_OUTPUT" "-p|--port must be between 1 and 65535" "invalid port range should fail with a clear error"
 }
 
+test_missing_port_argument_is_rejected() {
+  run_deploy "" --port
+  [[ "$RUN_STATUS" -ne 0 ]]
+  assert_contains "$RUN_OUTPUT" "-p|--port requires a numeric argument" \
+    "missing --port value should fail with a clear error"
+}
+
+test_port_flag_as_value_is_rejected() {
+  run_deploy "" --port --drafts
+  [[ "$RUN_STATUS" -ne 0 ]]
+  assert_contains "$RUN_OUTPUT" "-p|--port requires a numeric argument" \
+    "flag-as-value for --port should fail with a clear error"
+}
+
+test_missing_host_argument_is_rejected() {
+  run_deploy "" --host
+  [[ "$RUN_STATUS" -ne 0 ]]
+  assert_contains "$RUN_OUTPUT" "--host requires a host argument" \
+    "missing --host value should fail with a clear error"
+}
+
+test_nonnumeric_port_is_rejected() {
+  run_deploy "" --port abc
+  [[ "$RUN_STATUS" -ne 0 ]]
+  assert_contains "$RUN_OUTPUT" "-p|--port must be numeric" \
+    "non-numeric --port should fail with a clear error"
+}
+
 main() {
   test_livereload_port_exhaustion_does_not_abort
   test_ipv6_host_is_bracketed_for_url_display
   test_bracketed_ipv6_is_not_double_bracketed
   test_leading_zero_port_is_normalized
   test_invalid_port_range_is_rejected
+  test_missing_port_argument_is_rejected
+  test_port_flag_as_value_is_rejected
+  test_missing_host_argument_is_rejected
+  test_nonnumeric_port_is_rejected
   echo "deploy-script regression tests passed"
 }
 

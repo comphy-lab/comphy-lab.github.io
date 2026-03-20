@@ -59,7 +59,7 @@
 .teaching-content h2 {
   font-size: 2.2rem;
   margin: 2rem 0 1rem;
-  color: var(--color-heading-h2, #ff6b6b);
+  color: var(--color-heading-h2, #0156b3);
   border-bottom: 1px solid var(--teaching-border-color);
   padding-bottom: 0.5rem;
 }
@@ -81,7 +81,7 @@
 .teaching-content h3 {
   font-size: 1.8rem;
   margin: 1.5rem 0 1rem;
-  color: var(--color-heading-h3, #000);
+  color: var(--color-heading-h3, #333);
 }
 
 .teaching-content h4 {
@@ -365,14 +365,14 @@
 }
 
 /* Enhanced Course Schedule Container */
-.teaching-content h2:contains("Course Schedule") {
+/* Use .course-schedule-heading on the h2 preceding a .schedule-container */
+.course-schedule-heading {
   margin-top: 3rem;
 }
 
-.teaching-content h2:contains("Course Schedule") + h3,
-.teaching-content h2:contains("Course Schedule") + h3 ~ h3,
-.teaching-content h2:contains("Course Schedule") + h3 ~ h4,
-.teaching-content h2:contains("Course Schedule") + h3 ~ ul {
+.schedule-container h3,
+.schedule-container h4,
+.schedule-container ul {
   position: relative;
   z-index: 1;
 }
