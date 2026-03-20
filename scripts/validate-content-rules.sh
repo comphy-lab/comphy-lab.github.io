@@ -31,7 +31,7 @@ has_match() {
 require_file() {
   local file="$1"
   if [[ ! -f "$file" ]]; then
-    log_error "Required file not found: $file"
+    log_error "file not found: $file"
     return 1
   fi
 }
@@ -79,18 +79,19 @@ validate_history_order() {
       local section_heading="${BASH_REMATCH[1]}"
       if [[ $section_heading =~ ^[A-Za-z]+$ ]]; then
         local month_name="$section_heading"
+        # Check year context before anything else.
+        if [[ -z "$current_year" ]]; then
+          log_error "history.md: month heading '$month_name' appears before any year (## YYYY) heading."
+          continue
+        fi
         local month_number
         month_number="$(month_to_number "$month_name")"
         if (( month_number == 0 )); then
-          log_error "history.md has invalid month heading '$month_name'. Use full English month names (January-December)."
-          continue
-        fi
-        if [[ -z "$current_year" ]]; then
-          log_error "history.md month '$month_name' appears before any year heading."
+          log_error "history.md: unknown month name '### $month_name' — use full English month names (January–December)."
           continue
         fi
         if (( month_number >= previous_month )); then
-          log_error "history.md month '$month_name' is out of order in $current_year. Months must be reverse chronological (December to January)."
+          log_error "history.md: '### $month_name' is out of order under ## $current_year — months must descend (December to January)."
         fi
         previous_month=$month_number
       fi
