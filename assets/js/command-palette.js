@@ -3,9 +3,19 @@
  * This file contains all the functionality for the command palette
  */
 
-// Monotonic counter — incremented on every renderCommandResults call so that
-// async search callbacks can detect when their result is stale.
-let _searchToken = 0;
+// Store mutable state on window so duplicate script inclusion does not throw
+// on redeclaration before layout issues are fixed.
+window.__commandPaletteSearchToken =
+  window.__commandPaletteSearchToken || 0;
+
+function nextSearchToken() {
+  window.__commandPaletteSearchToken += 1;
+  return window.__commandPaletteSearchToken;
+}
+
+function getSearchToken() {
+  return window.__commandPaletteSearchToken;
+}
 
 // Make the command palette opening function globally available
 window.openCommandPalette = function () {
@@ -36,7 +46,7 @@ function renderCommandResults(query) {
 
   // Capture a token for this invocation; async callbacks compare against it
   // to detect stale results from a superseded search.
-  const token = ++_searchToken;
+  const token = nextSearchToken();
 
   // Clear results
   resultsContainer.innerHTML = "";
@@ -69,7 +79,7 @@ function renderCommandResults(query) {
     window.SearchManager.searchForCommandPalette(query)
       .then((searchResults) => {
         // Discard this result if a newer search has already been issued.
-        if (token !== _searchToken) return;
+        if (token !== getSearchToken()) return;
         if (searchResults && searchResults.length > 0) {
           // Add search results to sections
           sections["Search Results"] = searchResults;
@@ -166,6 +176,11 @@ function renderSections(sections, container) {
  * @remark If the search database cannot be loaded, search functionality will be unavailable, but the command palette UI will still function.
  */
 function initCommandPalette() {
+  if (window.__commandPaletteInitialized) {
+    return;
+  }
+  window.__commandPaletteInitialized = true;
+
   // Search database initialization is now handled by SearchManager
   // which auto-prefetches on document load
 
@@ -259,6 +274,11 @@ function initCommandPalette() {
 
 // Run initialization when DOM is loaded
 document.addEventListener("DOMContentLoaded", function () {
+  if (window.__commandPaletteDomReadyHandled) {
+    return;
+  }
+  window.__commandPaletteDomReadyHandled = true;
+
   // Initialize the command palette
   initCommandPalette();
 
@@ -291,7 +311,7 @@ document.addEventListener("DOMContentLoaded", function () {
 window.renderCommandResults = renderCommandResults;
 window.renderSections = renderSections;
 // Expose for testing only — do not rely on this outside of tests.
-window._getSearchToken = () => _searchToken;
+window._getSearchToken = getSearchToken;
 
 // Search functionality is now handled by SearchManager
 // Backwards compatibility maintained through SearchManager exports

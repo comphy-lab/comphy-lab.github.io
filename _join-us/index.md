@@ -7,18 +7,6 @@ permalink: /join/
 We are always looking for enthusiastic researchers to join our group. We welcome applicants with strong backgrounds in physics, applied mathematics, or engineering, especially in continuum mechanics, numerics, and scientific computing.
 
 <div class="email-container">
-  <span class="email-text">vatsal.sanjay@comphy-lab.org</span>
-  <div class="email-actions">
-    <a class="email-link" href="mailto:vatsal.sanjay@comphy-lab.org" aria-label="Email vatsal.sanjay@comphy-lab.org">
-      <i class="fa-regular fa-envelope"></i>
-    </a>
-    <button class="copy-btn" data-clipboard-text="vatsal.sanjay@comphy-lab.org" onclick="copyEmail(this)" aria-label="Copy email address vatsal.sanjay@comphy-lab.org">
-      <i class="fa-regular fa-copy"></i>
-    </button>
-  </div>
-</div>
-
-<div class="email-container">
   <span class="email-text">vatsal.sanjay@durham.ac.uk</span>
   <div class="email-actions">
     <a class="email-link" href="mailto:vatsal.sanjay@durham.ac.uk" aria-label="Email vatsal.sanjay@durham.ac.uk">
@@ -198,7 +186,7 @@ We are always looking for enthusiastic PhD students to join our research group a
   equivalent). English requirements apply for non‑native speakers.
   ([How to Apply](https://www.durham.ac.uk/study/postgraduate/research-degrees/how-to-apply/))
 - How to apply (CoMPhy Lab)?
-  - email us ([vatsal.sanjay@comphy-lab.org](mailto:vatsal.sanjay@comphy-lab.org)/[vatsal.sanjay@durham.ac.uk](mailto:vatsal.sanjay@durham.ac.uk)) with a brief statement of fit and CV.
+  - email us ([vatsal.sanjay@durham.ac.uk](mailto:vatsal.sanjay@durham.ac.uk)) with a brief statement of fit and CV.
   - In the portal, select CMP, name Dr. Vatsal Sanjay as supervisor. Final applications can only be submitted via the Postgraduate Applicant Portal.
   ([How to Apply](https://www.durham.ac.uk/study/postgraduate/research-degrees/how-to-apply/))
 - Funding we typically target: [EPSRC DTP (Physics)](https://www.ukri.org/councils/epsrc/), [Durham studentships](https://www.durham.ac.uk/departments/academic/physics/postgraduate-study/studentships-funding/available-studentships/), [CSC](https://www.durham.ac.uk/study/scholarships/international/chinese-scholarships-council/).
