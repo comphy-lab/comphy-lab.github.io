@@ -5,6 +5,7 @@ on:
     branches: ["main"]
     paths:
       - "_teaching/**/*.md"
+      - "assets/images/teaching/README.md"
       - ".markdownlint-cli2.jsonc"
       - ".prettierrc.json"
       - "package.json"
@@ -13,6 +14,7 @@ on:
     branches: ["main"]
     paths:
       - "_teaching/**/*.md"
+      - "assets/images/teaching/README.md"
       - ".markdownlint-cli2.jsonc"
       - ".prettierrc.json"
       - "package.json"
@@ -36,7 +38,13 @@ jobs:
         run: npm ci
 
       - name: Run markdownlint for teaching content
-        run: npx markdownlint-cli2 --config .markdownlint-cli2.jsonc "_teaching/**/*.md"
+        run: |
+          npx markdownlint-cli2 --config .markdownlint-cli2.jsonc \
+            "_teaching/**/*.md" \
+            "assets/images/teaching/README.md"
 
       - name: Check prettier formatting for teaching content
-        run: npx prettier --check "_teaching/**/*.md"
+        run: |
+          npx prettier --check \
+            "_teaching/**/*.md" \
+            "assets/images/teaching/README.md"

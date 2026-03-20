@@ -3,6 +3,10 @@
  * This file contains all the functionality for the command palette
  */
 
+// Monotonic counter — incremented on every renderCommandResults call so that
+// async search callbacks can detect when their result is stale.
+let _searchToken = 0;
+
 // Make the command palette opening function globally available
 window.openCommandPalette = function () {
   const palette = document.getElementById("simple-command-palette");
@@ -29,6 +33,10 @@ window.openCommandPalette = function () {
 function renderCommandResults(query) {
   const resultsContainer = document.getElementById("command-palette-results");
   if (!resultsContainer) return;
+
+  // Capture a token for this invocation; async callbacks compare against it
+  // to detect stale results from a superseded search.
+  const token = ++_searchToken;
 
   // Clear results
   resultsContainer.innerHTML = "";
@@ -60,6 +68,8 @@ function renderCommandResults(query) {
     // Use the centralized search manager
     window.SearchManager.searchForCommandPalette(query)
       .then((searchResults) => {
+        // Discard this result if a newer search has already been issued.
+        if (token !== _searchToken) return;
         if (searchResults && searchResults.length > 0) {
           // Add search results to sections
           sections["Search Results"] = searchResults;
@@ -100,7 +110,10 @@ function renderSections(sections, container) {
   // Create DOM elements for results
   Object.keys(sections).forEach((section) => {
     const sectionEl = document.createElement("div");
-    sectionEl.className = "command-palette-section";
+    sectionEl.className =
+      section === "Search Results"
+        ? "command-palette-section command-palette-section--search-results"
+        : "command-palette-section";
 
     const sectionTitle = document.createElement("div");
     sectionTitle.className = "command-palette-section-title";
@@ -277,6 +290,8 @@ document.addEventListener("DOMContentLoaded", function () {
 // Make functions available globally
 window.renderCommandResults = renderCommandResults;
 window.renderSections = renderSections;
+// Expose for testing only — do not rely on this outside of tests.
+window._getSearchToken = () => _searchToken;
 
 // Search functionality is now handled by SearchManager
 // Backwards compatibility maintained through SearchManager exports

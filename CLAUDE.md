@@ -57,6 +57,10 @@ npm test -- --coverage
 ./scripts/fix-script-order.sh    # Fix script loading order
 ./scripts/fix-js-line-length.sh  # Enforce 80 char limit
 ./scripts/fix-quotes.sh          # Standardize to double quotes
+
+# Lint teaching markdown files locally (mirrors CI gate)
+npx markdownlint-cli2 --config .markdownlint-cli2.jsonc "_teaching/**/*.md" "assets/images/teaching/README.md"
+npx prettier --check "_teaching/**/*.md" "assets/images/teaching/README.md"
 ```
 
 ## Content Management
