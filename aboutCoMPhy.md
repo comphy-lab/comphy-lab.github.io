@@ -28,17 +28,6 @@ Feel free to contact us for discussions about our work or anything else related 
 [![Website](https://img.shields.io/badge/-comphy--lab.org-4285F4?style=flat&logo=googlechrome&logoColor=white)](http://www.comphy-lab.org)
 
 <div class="email-container">
-  <span class="email-text">vatsal.sanjay@comphy-lab.org</span>
-  <div class="email-actions">
-    <a class="email-link" href="mailto:vatsal.sanjay@comphy-lab.org" aria-label="Email vatsal.sanjay@comphy-lab.org">
-      <i class="fa-regular fa-envelope"></i>
-    </a>
-    <button class="copy-btn" data-clipboard-text="vatsal.sanjay@comphy-lab.org" onclick="copyEmail(this)" aria-label="Copy email address vatsal.sanjay@comphy-lab.org">
-      <i class="fa-regular fa-copy"></i>
-    </button>
-  </div>
-</div>
-<div class="email-container">
   <span class="email-text">vatsal.sanjay@durham.ac.uk</span>
   <div class="email-actions">
     <a class="email-link" href="mailto:vatsal.sanjay@durham.ac.uk" aria-label="Email vatsal.sanjay@durham.ac.uk">
