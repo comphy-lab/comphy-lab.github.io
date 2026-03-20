@@ -29,14 +29,6 @@ title: Research
 
 ## Work in Progress
 
-### <strong>Jana, S.</strong>, Kolinski, J., Lohse, D., & <strong>Sanjay, V.</strong> Impacting spheres: from liquid drops to elastic beads. arXiv preprint arXiv:2510.24855 (2025).
-
-<div class="tags"><span>Drops</span><span>Impact forces</span><span>Elastic beads</span></div>
-
-[![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2510.24855&color=green)](https://arxiv.org/abs/2510.24855)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/Soft-Sphere-Impacts)
-[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
-
 ### Appleford, T., <strong>Sanjay, V.</strong>, Jalaal, M. On the Rheology of Two-Dimensional Dilute Emulsions. arXiv preprint arXiv:2508.13022 (2025).
 
 <div class="tags"><span>Emulsions</span><span>Rheology</span></div>
@@ -71,6 +63,8 @@ title: Research
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2510.24855&color=green)](https://arxiv.org/abs/2510.24855)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/Soft-Sphere-Impacts)
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Udc9Vqw5l_I?si=XKm7fPvd_aoD5xrw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 #### Highlights
 

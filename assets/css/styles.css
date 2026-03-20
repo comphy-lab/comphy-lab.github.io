@@ -112,7 +112,7 @@
   --color-peru-alpha-35: rgba(205, 133, 63, 0.35);
 
   /* Typography */
-  --font-primary: 'Jost', system-ui, -apple-system, blinkmacsystemfont, "Segoe UI", sans-serif;
+  --font-primary: "Helvetica Neue", Helvetica, Arial, system-ui, -apple-system, blinkmacsystemfont, "Segoe UI", sans-serif;
   --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
 
   /* Heading Styling */

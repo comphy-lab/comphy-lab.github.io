@@ -7,6 +7,22 @@ title: History
 
 ## 2026
 
+### March
+
+- [<strong>Jana, S.</strong>, Kolinski, J., Lohse, D., & <strong>Sanjay, V.</strong> Impacting spheres: from liquid drops to elastic beads. Soft Matter, 22, 2226-2236 (2026), selected as the cover article.](/research#23)
+
+<div class="news-flex-row">
+  <div class="news-flex-row__image-container">
+    <a href="/research#23">
+      <img src="/assets/images/covers/2026-03-SoftMatter_Issue11_cover.jpeg" alt="Soft Matter cover" class="news-image" loading="lazy" decoding="async">
+    </a>
+  </div>
+  <div class="news-flex-row__links-container">
+    <a href="/assets/images/covers/2026-03-SoftMatter_Issue11_front-cover.pdf" class="pdf-link"><i class="fa-solid fa-download" style="margin-right: 8px; font-size: 1.2em;"></i>Download Cover</a>
+    <a href="https://doi.org/10.1039/D5SM01078K" class="doi-link"><i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 8px; font-size: 1.2em;"></i>View Paper</a>
+  </div>
+</div>
+
 ### February
 
 - [<strong>Dixit, A. K.</strong>, Zhao, C., Zaleski, S., Lohse, D., & <strong>Sanjay, V.</strong> Holes in Sheets: Double-Threshold Rupture of Draining Liquid Films. Phys. Rev. Lett., 136, 084001 (2026).](/research#22)
