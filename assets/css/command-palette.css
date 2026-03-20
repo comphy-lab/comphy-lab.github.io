@@ -138,10 +138,8 @@
   line-height: 1.5;
 }
 
-/* Style for search results section */
-.command-palette-section:has(
-    .command-palette-section-title:contains("Search Results")
-  ) {
+/* Style for search results section (class set by renderSections in JS) */
+.command-palette-section--search-results {
   border-top: 1px solid rgba(104, 35, 109, 0.2);
   margin-top: 10px;
   padding-top: 10px;
