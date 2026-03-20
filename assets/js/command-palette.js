@@ -100,7 +100,10 @@ function renderSections(sections, container) {
   // Create DOM elements for results
   Object.keys(sections).forEach((section) => {
     const sectionEl = document.createElement("div");
-    sectionEl.className = "command-palette-section";
+    sectionEl.className =
+      section === "Search Results"
+        ? "command-palette-section command-palette-section--search-results"
+        : "command-palette-section";
 
     const sectionTitle = document.createElement("div");
     sectionTitle.className = "command-palette-section-title";
