@@ -427,3 +427,32 @@ window.Utils = {
 window.isMacPlatform = isMacPlatform;
 window.updatePlatformSpecificElements = updatePlatformSpecificElements;
 window.copyEmail = copyToClipboard; // Maintain existing API
+
+/**
+ * Scroll-reveal: adds .is-inview to [data-animate-block] elements when they
+ * enter the viewport. Works with the CSS transition rules in styles.css.
+ * Falls back by revealing content immediately if IntersectionObserver
+ * is not available.
+ */
+function initScrollReveal() {
+  const blocks = document.querySelectorAll('[data-animate-block]');
+  if (!blocks.length) return;
+  if (typeof IntersectionObserver === 'undefined') {
+    blocks.forEach((block) => block.classList.add('is-inview'));
+    return;
+  }
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-inview');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12 }
+  );
+  blocks.forEach((block) => observer.observe(block));
+}
+
+document.addEventListener('DOMContentLoaded', initScrollReveal);
