@@ -223,7 +223,13 @@
                 continue;
               }
 
-              // Include everything else (tags, images, iframes, badges)
+              // Keep homepage cards lightweight: skip embedded media.
+              if (nextEl.matches("iframe")) {
+                nextEl = nextEl.nextElementSibling;
+                continue;
+              }
+
+              // Include everything else (tags, images, badges)
               const clone = nextEl.cloneNode(true);
 
               // If it's a tags element, make spans clickable
