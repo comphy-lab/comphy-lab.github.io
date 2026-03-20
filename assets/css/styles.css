@@ -573,6 +573,15 @@ a:hover {
   transition: transform 0.3s ease;
 }
 
+/* Keep bullets vertically aligned to the first line for wrapped links in news.
+   Without this, .s-about__desc a { display: inline-block } causes the bullet
+   to align to the last baseline of wrapped multi-line citation links.
+   Exclude .news-flex-row links which need their own flex/block layout. */
+#news-content li > a,
+#news-content li > p > a {
+  display: inline;
+}
+
 .s-about__desc a:hover {
   transform: translateY(-2px);
 }
