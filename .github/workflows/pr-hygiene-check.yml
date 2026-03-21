@@ -46,10 +46,16 @@ jobs:
           CHANGED=$(git diff --name-only "$BASE"..."$HEAD" 2>/dev/null || \
                     git diff --name-only "$BASE" "$HEAD")
 
-          # Detect dependency/security signals
-          DEP_FILES=$(echo "$CHANGED" | grep -E '^package(-lock)?\.json$' | wc -l)
+          # Count package files — use grep with || true so pipefail does not
+          # exit when grep finds zero matches (exit 1 = no match, not an error
+          # for our purposes).
+          DEP_FILES=$(echo "$CHANGED" | { grep -cE '^package(-lock)?\.json$' || true; })
+
+          # Detect security/dependency signals in title only (not body) to
+          # avoid false-positives from maintenance PRs that mention CVEs in
+          # context rather than as the fix target.
           SEC_SIGNAL=0
-          if echo "$PR_TITLE $PR_BODY" | grep -qiE 'cve-|dependabot|security fix|bump .* to'; then
+          if echo "$PR_TITLE" | grep -qiE 'cve-[0-9]|dependabot|security fix|bump .+ to [0-9]'; then
             SEC_SIGNAL=1
           fi
 
@@ -61,13 +67,13 @@ jobs:
           fi
 
           # Count non-package files (app/content/docs/scripts)
-          UNRELATED=$(echo "$CHANGED" | grep -vE '^package(-lock)?\.json$' | wc -l)
+          UNRELATED=$(echo "$CHANGED" | { grep -cvE '^package(-lock)?\.json$' || true; })
 
           if [ "$UNRELATED" -gt 0 ]; then
             echo "⚠️  Mixed changes detected in a dependency/security PR:"
-            echo "   Dependency/security files: package*.json or CVE/Dependabot signal"
+            echo "   Dependency/security files: package*.json or CVE/Dependabot signal in title"
             echo "   Other files changed ($UNRELATED):"
-            echo "$CHANGED" | grep -vE '^package(-lock)?\.json$' | sed 's/^/     /'
+            echo "$CHANGED" | grep -vE '^package(-lock)?\.json$' | sed 's/^/     /' || true
             echo ""
             echo "   Project guidelines ask for single-purpose dependency/security PRs."
             echo "   To suppress this warning, add the 'mixed-changes-ok' label."

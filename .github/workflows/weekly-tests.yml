@@ -49,10 +49,16 @@ jobs:
 
       - name: Check markdown quality for teaching content
         run: |
-          npx markdownlint-cli2 --config .markdownlint-cli2.jsonc \
-            "_teaching/**/*.md" \
-            "assets/images/teaching/README.md" \
-          || true  # non-fatal when no teaching files exist yet
+          # Only run if teaching content files exist; markdownlint errors are
+          # real failures — do not swallow them with || true.
+          if compgen -G "_teaching/**/*.md" > /dev/null 2>&1 || \
+             [ -f "assets/images/teaching/README.md" ]; then
+            npx markdownlint-cli2 --config .markdownlint-cli2.jsonc \
+              "_teaching/**/*.md" \
+              "assets/images/teaching/README.md"
+          else
+            echo "ℹ️  No teaching content files found — skipping markdownlint."
+          fi
 
       # -----------------------------------------------------------------------
       # Ruby / Jekyll toolchain check
