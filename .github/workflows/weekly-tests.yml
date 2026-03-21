@@ -20,7 +20,7 @@ jobs:
           node-version: "20"
           cache: "npm"
 
-      - name: Install dependencies
+      - name: Install Node dependencies
         run: npm ci
 
       - name: Run tests
@@ -29,15 +29,57 @@ jobs:
       - name: Run linting
         run: npm run lint
 
+      # -----------------------------------------------------------------------
+      # Maintenance guardrails added in PRs #73/#76 — exercised weekly so
+      # toolchain drift and content-rules parity issues surface on a schedule
+      # rather than only when the relevant paths change.
+      # -----------------------------------------------------------------------
+
+      - name: Check content-rules trigger parity
+        run: python3 scripts/check-content-rules-trigger-parity.py
+
+      - name: Validate content rules
+        run: ./scripts/validate-content-rules.sh
+
+      - name: Run deploy-script regression tests
+        run: bash tests/deploy-script-regression.sh
+
+      - name: Run news-bullet and stale-search regression tests
+        run: npm test -- --runInBand tests/news-bullet-regression.test.js tests/command-palette-stale-search.test.js
+
+      - name: Check markdown quality for teaching content
+        run: |
+          npx markdownlint-cli2 --config .markdownlint-cli2.jsonc \
+            "_teaching/**/*.md" \
+            "assets/images/teaching/README.md" \
+          || true  # non-fatal when no teaching files exist yet
+
+      # -----------------------------------------------------------------------
+      # Ruby / Jekyll toolchain check
+      # (install rbenv + pinned Ruby so check-ruby-toolchain.sh can verify)
+      # -----------------------------------------------------------------------
+
+      - name: Set up Ruby (pinned version)
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version-file: ".ruby-version"
+          bundler-cache: true
+
+      - name: Check Ruby toolchain versions
+        run: bash scripts/check-ruby-toolchain.sh
+
+      - name: Jekyll build (Ruby + Node combined)
+        run: bundle exec jekyll build --destination _site_weekly_check
+
       - name: Create test summary
         if: always()
         run: |
           echo "## Weekly Test Results" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          if [ ${{ job.status }} == 'success' ]; then
-            echo "✅ All tests passed successfully!" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ job.status }}" = "success" ]; then
+            echo "✅ All checks passed successfully!" >> $GITHUB_STEP_SUMMARY
           else
-            echo "❌ Some tests failed. Please check the logs above." >> $GITHUB_STEP_SUMMARY
+            echo "❌ Some checks failed. Please review the logs above." >> $GITHUB_STEP_SUMMARY
           fi
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "Test run completed on $(date)" >> $GITHUB_STEP_SUMMARY
