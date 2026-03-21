@@ -189,6 +189,17 @@
             paperDiv.style.cursor = "pointer";
             let sectionHasStaticImage = false;
 
+            const hasNonBadgeImage = (element) => {
+              const images = element.matches("img")
+                ? [element]
+                : Array.from(element.querySelectorAll("img"));
+
+              return images.some((image) => {
+                const src = image.getAttribute("src") || "";
+                return !src.includes("img.shields.io");
+              });
+            };
+
             for (
               let cursor = section.nextElementSibling;
               cursor;
@@ -198,7 +209,7 @@
                 break;
               }
 
-              if (cursor.matches("img") || cursor.querySelector("img")) {
+              if (hasNonBadgeImage(cursor)) {
                 sectionHasStaticImage = true;
                 break;
               }
