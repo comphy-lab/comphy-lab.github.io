@@ -187,6 +187,22 @@
             const paperDiv = document.createElement("div");
             paperDiv.className = "featured-paper";
             paperDiv.style.cursor = "pointer";
+            let sectionHasStaticImage = false;
+
+            for (
+              let cursor = section.nextElementSibling;
+              cursor;
+              cursor = cursor.nextElementSibling
+            ) {
+              if (cursor.matches("h3")) {
+                break;
+              }
+
+              if (cursor.matches("img") || cursor.querySelector("img")) {
+                sectionHasStaticImage = true;
+                break;
+              }
+            }
 
             // Get all content until the next h3 or end
             let content = [section.cloneNode(true)];
@@ -223,8 +239,14 @@
                 continue;
               }
 
-              // Keep homepage cards lightweight: skip embedded media.
+              // Skip embedded media when the paper already has a static image.
+              // Otherwise keep the iframe so cards do not lose their only media.
               if (nextEl.matches("iframe")) {
+                if (!sectionHasStaticImage) {
+                  const iframeClone = nextEl.cloneNode(true);
+                  iframeClone.setAttribute("loading", "lazy");
+                  content.push(iframeClone);
+                }
                 nextEl = nextEl.nextElementSibling;
                 continue;
               }
