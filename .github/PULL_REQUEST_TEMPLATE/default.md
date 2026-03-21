@@ -36,6 +36,7 @@ Closes #
 - [ ] Changes have been tested locally
 - [ ] This PR is single-purpose and does not mix dependency/security updates with unrelated formatting or content cleanups
 - [ ] All review threads are resolved or have an explicit won't-fix / follow-up disposition before merge
+- [ ] Every accepted review finding that identifies a reproducible bug or edge case either lands a regression test in this PR **or** has a linked follow-up issue referenced in the thread resolution
 
 ## Additional Notes
 <!-- Add any additional context or notes for reviewers -->

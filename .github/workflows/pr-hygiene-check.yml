@@ -1,0 +1,84 @@
+name: PR Hygiene Check
+
+# Flags PRs that mix dependency/security changes with unrelated app or content
+# changes — which the project checklist explicitly discourages.
+#
+# Runs in WARNING mode: the job always exits 0 so it never blocks merge.
+# Switch `ENFORCE=true` to make it a hard failure once the pattern is stable.
+
+on:
+  pull_request:
+    branches: ["main"]
+    types: [opened, synchronize, reopened, labeled, unlabeled]
+
+env:
+  # Set to true to make the check block merges instead of warn
+  ENFORCE: "false"
+
+jobs:
+  hygiene:
+    name: PR hygiene — dependency/security separation
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check for mixed dependency/security + unrelated changes
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_BODY: ${{ github.event.pull_request.body }}
+          PR_LABELS: ${{ toJson(github.event.pull_request.labels.*.name) }}
+        run: |
+          set -euo pipefail
+
+          # Skip if the override label is present
+          if echo "$PR_LABELS" | grep -qi "mixed-changes-ok"; then
+            echo "ℹ️  Label 'mixed-changes-ok' present — skipping hygiene check."
+            exit 0
+          fi
+
+          BASE="${{ github.event.pull_request.base.sha }}"
+          HEAD="${{ github.event.pull_request.head.sha }}"
+
+          CHANGED=$(git diff --name-only "$BASE"..."$HEAD" 2>/dev/null || \
+                    git diff --name-only "$BASE" "$HEAD")
+
+          # Detect dependency/security signals
+          DEP_FILES=$(echo "$CHANGED" | grep -E '^package(-lock)?\.json$' | wc -l)
+          SEC_SIGNAL=0
+          if echo "$PR_TITLE $PR_BODY" | grep -qiE 'cve-|dependabot|security fix|bump .* to'; then
+            SEC_SIGNAL=1
+          fi
+
+          IS_DEP_OR_SEC=$(( DEP_FILES > 0 || SEC_SIGNAL > 0 ))
+
+          if [ "$IS_DEP_OR_SEC" -eq 0 ]; then
+            echo "✅ Not a dependency/security PR — no separation check needed."
+            exit 0
+          fi
+
+          # Count non-package files (app/content/docs/scripts)
+          UNRELATED=$(echo "$CHANGED" | grep -vE '^package(-lock)?\.json$' | wc -l)
+
+          if [ "$UNRELATED" -gt 0 ]; then
+            echo "⚠️  Mixed changes detected in a dependency/security PR:"
+            echo "   Dependency/security files: package*.json or CVE/Dependabot signal"
+            echo "   Other files changed ($UNRELATED):"
+            echo "$CHANGED" | grep -vE '^package(-lock)?\.json$' | sed 's/^/     /'
+            echo ""
+            echo "   Project guidelines ask for single-purpose dependency/security PRs."
+            echo "   To suppress this warning, add the 'mixed-changes-ok' label."
+            echo ""
+
+            if [ "$ENFORCE" = "true" ]; then
+              exit 1
+            else
+              echo "   (Running in warning mode — this check does not block merge.)"
+              exit 0
+            fi
+          else
+            echo "✅ Dependency/security PR contains only package files — looks clean."
+          fi
