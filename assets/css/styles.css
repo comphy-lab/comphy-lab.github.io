@@ -112,8 +112,8 @@
   --color-peru-alpha-35: rgba(205, 133, 63, 0.35);
 
   /* Typography */
-  --font-primary: "Helvetica Neue", Helvetica, Arial, system-ui, -apple-system, blinkmacsystemfont, "Segoe UI", sans-serif;
-  --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-primary: "Helvetica Neue", helvetica, arial, system-ui, -apple-system, blinkmacsystemfont, "Segoe UI", sans-serif;
+  --font-display: 'Cormorant Garamond', georgia, 'Times New Roman', serif;
 
   /* Heading Styling */
   --h2-gradient-start: #2b65c6;
@@ -797,7 +797,9 @@ a:hover {
 }
 
 [data-animate-block].is-inview [data-animate-el]:nth-child(2) { transition-delay: 0.1s; }
+
 [data-animate-block].is-inview [data-animate-el]:nth-child(3) { transition-delay: 0.2s; }
+
 [data-animate-block].is-inview [data-animate-el]:nth-child(4) { transition-delay: 0.3s; }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1005,7 +1007,7 @@ a:hover {
  *-------------------------------------------------------------- */
 
 /* Film-grain overlay on hero for depth — subtle, non-distracting */
-.s-intro::after {
+.s-intro:after {
   content: '';
   position: absolute;
   inset: 0;
@@ -2736,7 +2738,7 @@ img.youtube-stats-dark {
     animation: none;
   }
 
-  .s-intro::after {
+  .s-intro:after {
     display: none;
   }
 }
