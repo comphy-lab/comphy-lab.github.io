@@ -435,17 +435,17 @@ window.copyEmail = copyToClipboard; // Maintain existing API
  * is not available.
  */
 function initScrollReveal() {
-  const blocks = document.querySelectorAll('[data-animate-block]');
+  const blocks = document.querySelectorAll("[data-animate-block]");
   if (!blocks.length) return;
-  if (typeof IntersectionObserver === 'undefined') {
-    blocks.forEach((block) => block.classList.add('is-inview'));
+  if (typeof IntersectionObserver === "undefined") {
+    blocks.forEach((block) => block.classList.add("is-inview"));
     return;
   }
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('is-inview');
+          entry.target.classList.add("is-inview");
           observer.unobserve(entry.target);
         }
       });
@@ -455,4 +455,4 @@ function initScrollReveal() {
   blocks.forEach((block) => observer.observe(block));
 }
 
-document.addEventListener('DOMContentLoaded', initScrollReveal);
+document.addEventListener("DOMContentLoaded", initScrollReveal);
