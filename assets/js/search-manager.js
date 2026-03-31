@@ -26,6 +26,27 @@
     threshold: 0.4,
   };
 
+  const INTERNAL_SEARCH_PATTERNS = [
+    /https:\/\/blogs\.comphy-lab\.org\/Private-ToDo/i,
+    /https:\/\/blogs\.comphy-lab\.org\/0_ToDo/i,
+    /^Private todo blog public/i,
+    /^0_todo blog public/i,
+  ];
+
+  function isInternalSearchEntry(entry) {
+    const entryIdentityText = [entry?.title, entry?.url]
+      .filter(Boolean)
+      .join(" ");
+
+    return INTERNAL_SEARCH_PATTERNS.some((pattern) =>
+      pattern.test(entryIdentityText)
+    );
+  }
+
+  function sanitizeSearchData(data) {
+    return data.filter((entry) => !isInternalSearchEntry(entry));
+  }
+
   /**
    * Loads the search database from the server
    * @returns {Promise<Object[]>} Promise that resolves to search data array
@@ -61,9 +82,14 @@
           );
         }
 
-        searchData = data;
-        console.log(`Search database loaded: ${data.length} items`);
-        return data;
+        const sanitizedData = sanitizeSearchData(data);
+
+        searchData = sanitizedData;
+        console.log(
+          `Search database loaded: ${sanitizedData.length} items ` +
+            `(${data.length - sanitizedData.length} internal items filtered)`
+        );
+        return sanitizedData;
       } catch (error) {
         console.warn("Could not load search database:", error.message);
         searchData = []; // Set empty array to prevent further attempts
