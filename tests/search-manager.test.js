@@ -43,4 +43,38 @@ describe("search-manager sanitization", () => {
     expect(data[0].title).toBe("Teaching - Teaching: Methods");
     expect(data[0].url).toBe("https://comphy-lab.org/teaching/#teaching");
   });
+
+  it("keeps public pages whose content references internal backlog URLs", async () => {
+    global.fetch = jest.fn().mockResolvedValue({
+      ok: true,
+      json: () =>
+        Promise.resolve([
+          {
+            title: "Skill - Badge Shapes",
+            url: "https://comphy-lab.org/.agents/skills/add-paper/SKILL/#badge-shapes",
+            content:
+              "Example badge config referencing https://blogs.comphy-lab.org/0_ToDo-Blog-public/ for documentation only.",
+            priority: 3,
+          },
+          {
+            title: "Private todo blog public - Elasticity and viscoelasticity",
+            url:
+              "https://blogs.comphy-lab.org/Private-ToDo-Blog-public/" +
+              "#elasticity-and-viscoelasticity",
+            content: "internal planning item",
+            priority: 3,
+          },
+        ]),
+    });
+
+    require("../assets/js/search-manager.js");
+
+    const data = await window.SearchManager.loadSearchDatabase();
+
+    expect(data).toHaveLength(1);
+    expect(data[0].title).toBe("Skill - Badge Shapes");
+    expect(data[0].url).toBe(
+      "https://comphy-lab.org/.agents/skills/add-paper/SKILL/#badge-shapes"
+    );
+  });
 });
