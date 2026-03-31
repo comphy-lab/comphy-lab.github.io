@@ -34,12 +34,12 @@
   ];
 
   function isInternalSearchEntry(entry) {
-    const combinedText = [entry?.title, entry?.url, entry?.content]
+    const entryIdentityText = [entry?.title, entry?.url]
       .filter(Boolean)
       .join(" ");
 
     return INTERNAL_SEARCH_PATTERNS.some((pattern) =>
-      pattern.test(combinedText)
+      pattern.test(entryIdentityText)
     );
   }
 
