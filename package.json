@@ -42,6 +42,21 @@
   "overrides": {
     "form-data": "^4.0.4",
     "js-yaml": ">=4.1.1",
-    "flatted": "^3.4.2"
+    "flatted": "^3.4.2",
+    "anymatch": {
+      "picomatch": "^2.3.2"
+    },
+    "micromatch": {
+      "picomatch": "^2.3.2"
+    },
+    "jest-haste-map": {
+      "picomatch": "^4.0.4"
+    },
+    "jest-message-util": {
+      "picomatch": "^4.0.4"
+    },
+    "jest-util": {
+      "picomatch": "^4.0.4"
+    }
   }
 }
