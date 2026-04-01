@@ -29,7 +29,7 @@ jobs:
           repositories: comphy-lab.github.io,.github
 
       - name: Checkout comphy-lab.github.io
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           token: ${{ steps.app-token.outputs.token }}
 
@@ -37,7 +37,7 @@ jobs:
         run: python3 scripts/sync_org_profile_publications.py
 
       - name: Checkout org profile repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: comphy-lab/.github
           path: org-profile
