@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="base-url" content="{{ site.baseurl }}">
-  <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+  <title>{% if page.title %}{{ page.title | escape_once }} - {% endif %}{{ site.title | escape_once }}</title>
 
   <!-- Critical CSS for fastest paint -->
   <style>
@@ -36,10 +36,10 @@
   <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
   
   <!-- SEO Meta Tags -->
-  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}Detailed course information and materials from the Computational Multiphase Physics Laboratory{% endif %}">
+  <meta name="description" content="{% if page.description %}{{ page.description | escape_once }}{% else %}Detailed course information and materials from the Computational Multiphase Physics Laboratory{% endif %}">
   <meta name="author" content="CoMPhy Lab">
   <meta name="robots" content="index, follow">
-  <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}computational physics course, course materials, lectures, tutorials, multiphase physics education{% endif %}">
+  <meta name="keywords" content="{% if page.keywords %}{{ page.keywords | escape_once }}{% else %}computational physics course, course materials, lectures, tutorials, multiphase physics education{% endif %}">
 
   <!-- Font dependencies with font-display: swap -->
   <style>
@@ -67,14 +67,14 @@
   {
     "@context": "https://schema.org",
     "@type": "Course",
-    "name": "{% if page.title %}{{ page.title }}{% else %}Course - Computational Multiphase Physics{% endif %}",
-    "description": "{% if page.description %}{{ page.description }}{% else %}Detailed course information and materials{% endif %}",
+    "name": {{ page.title | default: "Course - Computational Multiphase Physics" | jsonify }},
+    "description": {{ page.description | default: "Detailed course information and materials" | jsonify }},
     "provider": {
       "@type": "Organization",
       "name": "Computational Multiphase Physics Laboratory",
-      "sameAs": "{{ site.url }}"
+      "sameAs": {{ site.url | jsonify }}
     },
-    "url": "{{ site.url }}{{ page.url }}"
+    "url": {{ site.url | append: page.url | jsonify }}
   }
   </script>
 
@@ -134,34 +134,13 @@
     document.documentElement.classList.remove('no-js');
     document.documentElement.classList.add('js');
   </script>
-  <script>
-    // Check if we're on localhost
-    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-      // Load Font Awesome stylesheets with improved error handling and version extraction
-      function loadStylesheet(href) {
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = href;
-        link.crossOrigin = 'anonymous';
-        link.onerror = () => console.error(`Failed to load stylesheet: ${href}`);
-        document.head.appendChild(link);
-        return link;
-      }
-
-      const FA_VERSION = '6.7.2';  // Extract version to a constant for easier updates
-      
-      loadStylesheet(`https://use.fontawesome.com/releases/v${FA_VERSION}/css/solid.css`);
-      loadStylesheet(`https://use.fontawesome.com/releases/v${FA_VERSION}/css/brands.css`);
-      loadStylesheet(`https://use.fontawesome.com/releases/v${FA_VERSION}/css/fontawesome.css`);
-    } else {
-      // Use Kit for production with defer
-      var script = document.createElement('script');
-      script.src = 'https://kit.fontawesome.com/b1cfd9ca75.js';
-      script.crossOrigin = 'anonymous';
-      script.defer = true;
-      document.head.appendChild(script);
-    }
-  </script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  >
 </head>
 <body id="top">
 
