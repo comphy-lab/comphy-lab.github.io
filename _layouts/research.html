@@ -355,33 +355,35 @@
             const badgeContainer = document.createElement('span');
             badgeContainer.className = 'badge-container';
             
-            // Get the text content before any badges
-            let textContent = '';
+            // Preserve non-badge content without reparsing it as HTML
+            const nonBadgeNodes = [];
             let hasNonBadgeContent = false;
             
             // First pass: collect all non-badge content
             for (let node of p.childNodes) {
               if (node.nodeType === 3) { // Text node
                 if (node.textContent.trim()) {
-                  textContent += node.textContent;
+                  nonBadgeNodes.push(document.createTextNode(node.textContent));
                   hasNonBadgeContent = true;
                 }
               } else if (node.nodeType === 1) { // Element node
                 const href = node.getAttribute('href');
                 if (!href || (!href.includes('arxiv.org') && !href.includes('github.com') && !href.includes('blogs.comphy-lab.org'))) {
-                  textContent += node.outerHTML;
+                  nonBadgeNodes.push(node.cloneNode(true));
                   hasNonBadgeContent = true;
                 }
               }
             }
             
             // Clear the paragraph
-            p.innerHTML = '';
+            p.replaceChildren();
             
             // Add back the text content if it exists
             if (hasNonBadgeContent) {
               const textSpan = document.createElement('span');
-              textSpan.innerHTML = textContent.trim();
+              nonBadgeNodes.forEach((node) => {
+                textSpan.appendChild(node);
+              });
               p.appendChild(textSpan);
             }
             

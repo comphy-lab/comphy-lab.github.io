@@ -3,6 +3,13 @@
 (function () {
   // Initialize command data
 
+  const openExternalUrl = (url) => {
+    const externalWindow = window.open(url, "_blank", "noopener,noreferrer");
+    if (externalWindow) {
+      externalWindow.opener = null;
+    }
+  };
+
   // Define the command data
   window.commandData = [
     // Navigation commands
@@ -85,7 +92,7 @@
       id: "github",
       title: "Visit GitHub",
       handler: () => {
-        window.open("https://github.com/comphy-lab", "_blank");
+        openExternalUrl("https://github.com/comphy-lab");
       },
 
       section: "External Links",
@@ -95,9 +102,8 @@
       id: "scholar",
       title: "Visit Google Scholar",
       handler: () => {
-        window.open(
+        openExternalUrl(
           "https://scholar.google.com/citations?user=tHb_qZoAAAAJ&hl=en",
-          "_blank"
         );
       },
 
@@ -108,7 +114,7 @@
       id: "youtube",
       title: "Visit YouTube Channel",
       handler: () => {
-        window.open("https://www.youtube.com/@CoMPhyLab", "_blank");
+        openExternalUrl("https://www.youtube.com/@CoMPhyLab");
       },
 
       section: "External Links",
@@ -118,7 +124,7 @@
       id: "bluesky",
       title: "Visit Bluesky",
       handler: () => {
-        window.open("https://bsky.app/profile/comphy-lab.org", "_blank");
+        openExternalUrl("https://bsky.app/profile/comphy-lab.org");
       },
 
       section: "External Links",
@@ -154,9 +160,8 @@
       id: "repository",
       title: "View Website Repository",
       handler: () => {
-        window.open(
-          "https://github.com/comphy-lab/comphy-lab.github.io",
-          "_blank"
+        openExternalUrl(
+          "https://github.com/comphy-lab/comphy-lab.github.io"
         );
       },
 
@@ -251,31 +256,65 @@
               tags.add(tag.textContent);
             });
 
-            let html = '<h2 style="margin-top: 0;">Filter Research by Tag</h2>';
-            html +=
-              '<div class="tag-filter-container" style="display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0;">';
+            const modalContent = document.createElement("div");
 
-            // Add clickable tag buttons
+            const heading = document.createElement("h2");
+            heading.style.marginTop = "0";
+            heading.textContent = "Filter Research by Tag";
+            modalContent.appendChild(heading);
+
+            const tagContainer = document.createElement("div");
+            tagContainer.className = "tag-filter-container";
+            tagContainer.style.display = "flex";
+            tagContainer.style.flexWrap = "wrap";
+            tagContainer.style.gap = "10px";
+            tagContainer.style.margin = "20px 0";
+            modalContent.appendChild(tagContainer);
+
             tags.forEach((tag) => {
-              html += `<button class="tag-filter-btn" style="padding: 8px 12px; background-color: #5b79a8; color: white; border: none; border-radius: 4px; cursor: pointer; margin: 5px;">${tag}</button>`;
+              const button = document.createElement("button");
+              button.className = "tag-filter-btn";
+              button.type = "button";
+              button.style.padding = "8px 12px";
+              button.style.backgroundColor = "#5b79a8";
+              button.style.color = "white";
+              button.style.border = "none";
+              button.style.borderRadius = "4px";
+              button.style.cursor = "pointer";
+              button.style.margin = "5px";
+              button.textContent = tag;
+              tagContainer.appendChild(button);
             });
 
-            html += "</div>";
+            const instructions = document.createElement("p");
+            instructions.style.marginTop = "15px";
+            instructions.style.fontSize = "0.9em";
+            instructions.style.textAlign = "center";
+            instructions.style.color = "#888";
+            instructions.textContent =
+              "Use arrow keys to navigate, Enter to select, and Esc to close.";
+            modalContent.appendChild(instructions);
 
-            // Add keyboard navigation info
-            html += `<div style="margin-top: 15px; font-size: 0.9em; text-align: center; color: #888;">
-              <span style="margin-right: 15px;"><kbd>←</kbd> <kbd>→</kbd> <kbd>↑</kbd> <kbd>↓</kbd> to navigate</span>
-              <span style="margin-right: 15px;"><kbd>enter</kbd> to select</span>
-              <span><kbd>esc</kbd> to close</span>
-            </div>`;
+            const closeWrapper = document.createElement("div");
+            closeWrapper.style.textAlign = "center";
+            closeWrapper.style.marginTop = "20px";
 
-            // Add close button
-            html +=
-              '<div style="text-align: center; margin-top: 20px;"><button id="close-tag-filter" style="padding: 8px 16px; background-color: #333; color: white; border: none; border-radius: 4px; cursor: pointer;">Close</button></div>';
+            const closeButton = document.createElement("button");
+            closeButton.id = "close-tag-filter";
+            closeButton.type = "button";
+            closeButton.style.padding = "8px 16px";
+            closeButton.style.backgroundColor = "#333";
+            closeButton.style.color = "white";
+            closeButton.style.border = "none";
+            closeButton.style.borderRadius = "4px";
+            closeButton.style.cursor = "pointer";
+            closeButton.textContent = "Close";
+            closeWrapper.appendChild(closeButton);
+            modalContent.appendChild(closeWrapper);
 
             // Create modal using shared utility
             const modal = Utils.createModal({
-              content: html,
+              content: modalContent,
               darkMode: darkMode,
             });
 
