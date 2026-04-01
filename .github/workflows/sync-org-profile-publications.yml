@@ -4,10 +4,10 @@ on:
   push:
     branches: [main]
     paths:
-      - '_research/index.md'
-      - 'scripts/sync_org_profile_publications.py'
-      - '_org_profile/README.md'
-      - '.github/workflows/sync-org-profile-publications.yml'
+      - "_research/index.md"
+      - "scripts/sync_org_profile_publications.py"
+      - "_org_profile/README.md"
+      - ".github/workflows/sync-org-profile-publications.yml"
   workflow_dispatch:
 
 permissions:
@@ -17,7 +17,7 @@ jobs:
   sync-org-profile:
     runs-on: ubuntu-latest
     env:
-      APP_BOT_USER_ID: ${{ secrets.APP_BOT_USER_ID }}
+      APP_BOT_USER_ID: 256885647
     steps:
       - name: Create GitHub App token
         id: app-token
@@ -26,9 +26,7 @@ jobs:
           app-id: ${{ secrets.APP_ID }}
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
           owner: ${{ github.repository_owner }}
-          repositories: |
-            comphy-lab.github.io
-            .github
+          repositories: comphy-lab.github.io,.github
 
       - name: Checkout comphy-lab.github.io
         uses: actions/checkout@v4
