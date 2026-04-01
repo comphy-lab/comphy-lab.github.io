@@ -156,7 +156,7 @@ title: Research
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/VatsalSy/Impact-forces-of-water-drops-falling-on-superhydrophobic-surfaces.git)
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
 
-![Parameter space of drop impact](https://www.dropbox.com/scl/fi/rwrl444r73nayhw1jl4j2/SL2-theory_num.png?rlkey=ekywyjaui2n79djl4qtgevegn&raw=1){: width="75%" .center-block style="display: block; margin-left: auto; margin-right: auto;"}
+![Parameter space of drop impact](/assets/images/research/drop-impact-prl.png){: width="75%" .center-block style="display: block; margin-left: auto; margin-right: auto;"}
 
 <h3 id="14">[14] <strong>Sanjay, V.</strong>, Zhang, B., Lv, C., & Lohse, D. The role of viscosity on drop impact forces on non-wetting surfaces. J. Fluid Mech., 1004, A6 (2025).</h3>
 
