@@ -143,6 +143,63 @@
       window.location.pathname === "/index.html"
     ) {
       try {
+        const sanitizeElement = (element) => {
+          if (typeof DOMPurify === "undefined") {
+            console.warn(
+              "Skipping featured content because DOMPurify is unavailable."
+            );
+            return null;
+          }
+
+          const wrapper = document.createElement("div");
+          wrapper.innerHTML = DOMPurify.sanitize(element.outerHTML);
+          return wrapper.firstElementChild;
+        };
+
+        const cloneTrustedIframe = (iframe) => {
+          const src = iframe.getAttribute("src") || "";
+          let parsedUrl;
+
+          try {
+            parsedUrl = new URL(src, window.location.origin);
+          } catch (error) {
+            console.warn("Skipping invalid featured iframe URL:", src, error);
+            return null;
+          }
+
+          const isTrustedYouTubeEmbed =
+            parsedUrl.protocol === "https:" &&
+            parsedUrl.hostname === "www.youtube-nocookie.com" &&
+            parsedUrl.pathname.startsWith("/embed/");
+
+          if (!isTrustedYouTubeEmbed) {
+            console.warn("Skipping untrusted featured iframe:", src);
+            return null;
+          }
+
+          const iframeClone = document.createElement("iframe");
+          ["width", "height", "title", "allow"].forEach((attribute) => {
+            const value = iframe.getAttribute(attribute);
+            if (value) {
+              iframeClone.setAttribute(attribute, value);
+            }
+          });
+          iframeClone.src = parsedUrl.toString();
+          iframeClone.setAttribute("loading", "lazy");
+          iframeClone.setAttribute(
+            "referrerpolicy",
+            "strict-origin-when-cross-origin"
+          );
+          iframeClone.setAttribute(
+            "sandbox",
+            "allow-scripts allow-same-origin allow-presentation"
+          );
+          if (iframe.hasAttribute("allowfullscreen")) {
+            iframeClone.setAttribute("allowfullscreen", "");
+          }
+          return iframeClone;
+        };
+
         const response = await fetch("/research/");
         if (!response.ok) {
           throw new Error(
@@ -216,7 +273,12 @@
             }
 
             // Get all content until the next h3 or end
-            let content = [section.cloneNode(true)];
+            const safeSection = sanitizeElement(section);
+            if (!safeSection) {
+              return;
+            }
+
+            let content = [safeSection];
             let nextEl = section.nextElementSibling;
 
             while (nextEl) {
@@ -254,16 +316,22 @@
               // Otherwise keep the iframe so cards do not lose their only media.
               if (nextEl.matches("iframe")) {
                 if (!sectionHasStaticImage) {
-                  const iframeClone = nextEl.cloneNode(true);
-                  iframeClone.setAttribute("loading", "lazy");
-                  content.push(iframeClone);
+                  const iframeClone = cloneTrustedIframe(nextEl);
+                  if (iframeClone) {
+                    content.push(iframeClone);
+                  }
                 }
                 nextEl = nextEl.nextElementSibling;
                 continue;
               }
 
               // Include everything else (tags, images, badges)
-              const clone = nextEl.cloneNode(true);
+              const clone = sanitizeElement(nextEl);
+
+              if (!clone) {
+                nextEl = nextEl.nextElementSibling;
+                continue;
+              }
 
               // If it's a tags element, make spans clickable
               if (clone.matches(".tags")) {
