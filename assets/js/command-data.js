@@ -103,7 +103,7 @@
       title: "Visit Google Scholar",
       handler: () => {
         openExternalUrl(
-          "https://scholar.google.com/citations?user=tHb_qZoAAAAJ&hl=en",
+          "https://scholar.google.com/citations?user=tHb_qZoAAAAJ&hl=en"
         );
       },
 
