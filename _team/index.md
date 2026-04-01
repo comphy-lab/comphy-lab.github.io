@@ -91,20 +91,6 @@ Co-advised with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse)
 
 **Research Interest:** Soft Impact.
 
-### Floris Hoek B.Sc.
-
-<span style="font-size: 1.1em;">M.Sc. Student, University of Twente</span>
-
-Co-advised with [Martin van der Hoef](https://pof.tnw.utwente.nl/people/profile/244) & [Alvaro Marin](https://pof.tnw.utwente.nl/people/profile/243)
-
-[<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/Floris-Hoek)
-
-<img src="/assets/images/team/6.jpg" alt="Floris Hoek" loading="lazy" width="200" height="200">
-
-- [Phys. Fluids - Univ. Twente / 2024](https://pof.tnw.utwente.nl/people/profile/1937)
-
-**Research Interest:** Molecular Dynamics Simulations of Evaporation-Driven Colloidal Self-Assembly.
-
 ### Peter Croxford
 
 <span style="font-size: 1.1em;">Student, Durham University</span>
@@ -116,20 +102,6 @@ Co-advised with [Martin van der Hoef](https://pof.tnw.utwente.nl/people/profile/
 - Department of Physics, Durham Univ. / 2025&#8209;now
 
 **Research Interest:** Bretherton drops and bubbles.
-
-### Mark Boulogne B.Sc.
-
-<span style="font-size: 1.1em;">M.Sc. Student, University of Twente</span>
-
-Co-advised with [Detlef Lohse](https://en.wikipedia.org/wiki/Detlef_Lohse) & [Aman Bhargava](https://pof.tnw.utwente.nl/people/profile/2120)
-
-[<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/mcboulogne)
-
-<img src="/assets/images/team/7.png" alt="Mark Boulogne" loading="lazy" width="200" height="200">
-
-- [Phys. Fluids - Univ. Twente / 2024&#8209;now](https://pof.tnw.utwente.nl/people/profile/2359)
-
-**Research Interest:** Drops and bubbles spreading on LIS.
 
 ### We need you!
 
@@ -355,10 +327,25 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 
 ## Our Alumni
 
+### Floris Hoek B.Sc.
+
+[<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/Floris-Hoek)
+
+- **2026:** Graduated with M.Sc., Univ. Twente
+- <a href="https://bit.ly/thesisFloris" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Colloidal shell formation inside an evaporating droplet</a>
+
+### Mark Boulogne B.Sc.
+
+[<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/mcboulogne)
+
+- **2026:** Graduated with M.Sc., Univ. Twente
+- <a href="https://bit.ly/thesisMark" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Droplets and bubbles spreading on liquid-infused surfaces</a>
+
 ### Milan Sent B.Sc.
 
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/mdjsent)
 
+- **Now:** M.Sc. Student, Applied Physics - Univ. Twente
 - **2025:** Graduated with B.Sc., Univ. Twente
 - <a href="https://tinyurl.com/2ycunjcr" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Spinning Pizza</a>
 
