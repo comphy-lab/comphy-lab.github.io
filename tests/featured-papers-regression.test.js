@@ -70,8 +70,19 @@ describe("featured papers homepage media handling", () => {
       expect(cards).toHaveLength(2);
       expect(firstIframe).not.toBeNull();
       expect(firstIframe.getAttribute("loading")).toBe("lazy");
+      expect(firstIframe.getAttribute("allow")).toBe(
+        [
+          "accelerometer",
+          "autoplay",
+          "clipboard-write",
+          "encrypted-media",
+          "gyroscope",
+          "picture-in-picture",
+          "web-share",
+        ].join("; ")
+      );
       expect(firstIframe.getAttribute("sandbox")).toBe(
-        "allow-scripts allow-same-origin allow-presentation"
+        "allow-scripts allow-presentation"
       );
       expect(firstIframe.getAttribute("referrerpolicy")).toBe(
         "strict-origin-when-cross-origin"
@@ -110,5 +121,48 @@ describe("featured papers homepage media handling", () => {
 
     const firstCard = document.querySelector(".featured-paper");
     expect(firstCard.querySelector("iframe")).toBeNull();
+  });
+
+  it("replaces inherited iframe permissions", async () => {
+    fetch.mockImplementation((url) => {
+      if (url === "/research/") {
+        return Promise.resolve({
+          ok: true,
+          text: () =>
+            Promise.resolve(`
+              <h3 id="1">[1] Featured paper with permissive iframe</h3>
+              <div class="tags"><span>Featured</span></div>
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/xyz789"
+                allow="camera; microphone; geolocation"
+              ></iframe>
+            `),
+        });
+      }
+
+      return Promise.resolve({
+        ok: true,
+        text: () => Promise.resolve(""),
+      });
+    });
+
+    require("../assets/js/main.js");
+
+    window.dispatchEvent(new Event("load"));
+    await Promise.resolve();
+    await Promise.resolve();
+
+    const firstIframe = document.querySelector(".featured-paper iframe");
+    expect(firstIframe.getAttribute("allow")).toBe(
+      [
+        "accelerometer",
+        "autoplay",
+        "clipboard-write",
+        "encrypted-media",
+        "gyroscope",
+        "picture-in-picture",
+        "web-share",
+      ].join("; ")
+    );
   });
 });

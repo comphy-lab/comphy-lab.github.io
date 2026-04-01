@@ -24,16 +24,11 @@ REQUIRED_BUNDLER_VERSION="$(awk '/^BUNDLED WITH$/{getline; gsub(/^[[:space:]]+/,
 # Check Ruby installation
 echo "📦 Checking Ruby installation..."
 
-# First check if Ruby is installed at all
-if ! command -v ruby &> /dev/null; then
-  echo "❌ Ruby not found."
-  echo "   Install Ruby ${REQUIRED_RUBY_VERSION} with a trusted"
-  echo "   package manager before running this script again."
-  exit 1
-
 # Check if rbenv is being used and handle version issues
-elif command -v rbenv &> /dev/null && [ -f ".ruby-version" ]; then
+if command -v rbenv &> /dev/null && [ -f ".ruby-version" ]; then
   echo "📌 Project requires Ruby ${REQUIRED_RUBY_VERSION} (via .ruby-version)"
+  RBENV_ROOT="$(rbenv root)"
+  export PATH="${RBENV_ROOT}/bin:${RBENV_ROOT}/shims:${PATH}"
 
   # Check if the required version is installed
   if ! rbenv versions --bare | grep -q "^${REQUIRED_RUBY_VERSION}$"; then
@@ -42,8 +37,16 @@ elif command -v rbenv &> /dev/null && [ -f ".ruby-version" ]; then
     rbenv install -s "${REQUIRED_RUBY_VERSION}"
   fi
 
-  rbenv local "${REQUIRED_RUBY_VERSION}"
+  export RBENV_VERSION="${REQUIRED_RUBY_VERSION}"
   rbenv rehash
+fi
+
+# First check if Ruby is installed at all
+if ! command -v ruby &> /dev/null; then
+  echo "❌ Ruby not found on PATH."
+  echo "   Install Ruby ${REQUIRED_RUBY_VERSION} with a trusted"
+  echo "   package manager or rbenv before running this script again."
+  exit 1
 fi
 
 # Now check Ruby again
