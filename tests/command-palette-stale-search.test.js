@@ -123,4 +123,24 @@ describe("command palette stale-search guard", () => {
     expect(resultsContainer.innerHTML).toBe(snapshotAfterCurrent);
     expect(resultsContainer.textContent).not.toContain("Late Stale Result");
   });
+
+  it("renders title and excerpt as text for search results", async () => {
+    window.renderCommandResults("abc");
+
+    resolveFirst([
+      {
+        title: "<img src=x onerror=alert(1)>Unsafe",
+        excerpt: "<script>alert(1)</script>Excerpt",
+        icon: "",
+        section: "Search Results",
+      },
+    ]);
+    await Promise.resolve();
+    await Promise.resolve();
+
+    expect(resultsContainer.querySelector("img")).toBeNull();
+    expect(resultsContainer.querySelector("script")).toBeNull();
+    expect(resultsContainer.textContent).toContain("Unsafe");
+    expect(resultsContainer.textContent).toContain("Excerpt");
+  });
 });
