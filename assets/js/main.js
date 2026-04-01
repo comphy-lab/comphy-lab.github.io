@@ -178,13 +178,25 @@
           }
 
           const iframeClone = document.createElement("iframe");
-          ["width", "height", "title", "allow"].forEach((attribute) => {
+          ["width", "height", "title"].forEach((attribute) => {
             const value = iframe.getAttribute(attribute);
             if (value) {
               iframeClone.setAttribute(attribute, value);
             }
           });
           iframeClone.src = parsedUrl.toString();
+          iframeClone.setAttribute(
+            "allow",
+            [
+              "accelerometer",
+              "autoplay",
+              "clipboard-write",
+              "encrypted-media",
+              "gyroscope",
+              "picture-in-picture",
+              "web-share",
+            ].join("; ")
+          );
           iframeClone.setAttribute("loading", "lazy");
           iframeClone.setAttribute(
             "referrerpolicy",
@@ -192,7 +204,7 @@
           );
           iframeClone.setAttribute(
             "sandbox",
-            "allow-scripts allow-same-origin allow-presentation"
+            "allow-scripts allow-presentation"
           );
           if (iframe.hasAttribute("allowfullscreen")) {
             iframeClone.setAttribute("allowfullscreen", "");
