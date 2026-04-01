@@ -327,14 +327,14 @@ See: [Join Us](https://github.com/VatsalSy/Project-ideas-for-prospective-student
 
 ## Our Alumni
 
-### Floris Hoek B.Sc.
+### Floris Hoek M.Sc.
 
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/Floris-Hoek)
 
 - **2026:** Graduated with M.Sc., Univ. Twente
 - <a href="https://bit.ly/thesisFloris" class="pdf-link" style="display: inline-flex; align-items: center;"><i class="fa-solid fa-file-pdf pdf-link-icon"></i>Colloidal shell formation inside an evaporating droplet</a>
 
-### Mark Boulogne B.Sc.
+### Mark Boulogne M.Sc.
 
 [<i class="fa-brands fa-github" style="font-size: 2.5em; color: black;"></i>](https://github.com/mcboulogne)
 
