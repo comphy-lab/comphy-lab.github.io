@@ -5,6 +5,8 @@ require 'nokogiri'
 require 'set'
 require 'yaml'
 require 'cgi'
+require 'pathname'
+require 'uri'
 
 # Get the project root directory (one level up from scripts)
 ROOT_DIR = File.expand_path('..', __dir__)
@@ -13,11 +15,26 @@ ROOT_DIR = File.expand_path('..', __dir__)
 config_path = File.join(ROOT_DIR, '_config.yml')
 site_config = {}
 if File.exist?(config_path)
-  site_config = YAML.load_file(config_path)
+  site_config = YAML.safe_load(
+    File.read(config_path),
+    permitted_classes: [],
+    permitted_symbols: [],
+    aliases: false
+  ) || {}
 end
 
 # Site domain configuration
-SITE_DOMAIN = ENV['SITE_DOMAIN'] || site_config['url']&.gsub(/^https?:\/\//, '') || 'comphy-lab.org'
+site_domain_source = ENV['SITE_DOMAIN'] || site_config['url'] || 'https://comphy-lab.org'
+SITE_DOMAIN = begin
+  parsed_site_url = URI.parse(
+    site_domain_source.match?(/\Ahttps?:\/\//) ?
+      site_domain_source :
+      "https://#{site_domain_source}"
+  )
+  parsed_site_url.host || 'comphy-lab.org'
+rescue URI::InvalidURIError
+  'comphy-lab.org'
+end
 
 # Load search database
 search_db_path = File.join(ROOT_DIR, 'assets', 'js', 'search_db.json')
@@ -51,11 +68,12 @@ normalized_urls = {}
 #   normalize_url("/contact#team")   #=> "contact/index.html"
 #   normalize_url("/index.html")   #=> "index.html"
 def normalize_url(url)
-  # Add debugging
-  original_url = url.dup
-  
+  original_url = url.to_s.dup
+
   # Remove anchor
-  url = url.split('#').first
+  url = original_url.split('#').first.to_s
+
+  return nil if url.empty?
 
   # Ensure URL starts with a slash
   url = "/#{url}" unless url.start_with?('/')
@@ -64,12 +82,15 @@ def normalize_url(url)
   url = "/index.html" if url == "/"
 
   # Add .html extension to URLs without extension
-  unless url.include?('.')
+  if File.extname(url).empty?
     url = "#{url.chomp('/')}/index.html"
   end
 
+  normalized = Pathname.new(url).cleanpath.to_s
+  return nil unless normalized.start_with?('/')
+
   # Remove leading slash for file operations
-  result = url.sub(/^\//, '')
+  result = normalized.sub(/^\//, '')
   
   # Debug output
   puts "URL Normalization: #{original_url} -> #{result}" if ENV['DEBUG']
@@ -84,15 +105,20 @@ search_db.each do |entry|
 
   # Convert URL with domain to relative URL
   if url.start_with?('http')
-    # Skip truly external URLs (not on our domain)
-    site_domain_pattern = Regexp.new("https?://#{Regexp.escape(SITE_DOMAIN)}")
-    unless url.match?(site_domain_pattern)
+    begin
+      parsed_url = URI.parse(url)
+    rescue URI::InvalidURIError
+      puts "Skipping invalid URL: #{url}" if ENV['DEBUG']
+      next
+    end
+
+    unless parsed_url.is_a?(URI::HTTP) && parsed_url.host == SITE_DOMAIN
       puts "Skipping external URL: #{url}" if ENV['DEBUG']
       next
     end
-    
-    # Remove domain part for our own domain
-    url = url.sub(site_domain_pattern, '')
+
+    url = parsed_url.path.to_s
+    url = '/' if url.empty?
     puts "Converted URL to relative: #{url}" if ENV['DEBUG']
   end
 
@@ -105,6 +131,8 @@ search_db.each do |entry|
     # Normalize URL for internal files
     normalized_url = normalize_url(url)
   end
+
+  next unless normalized_url
   
   normalized_urls[url] = normalized_url
 
@@ -257,7 +285,13 @@ keywords_by_url.each do |url, keywords|
   descriptions = descriptions_by_url[url] || Set.new
   
   # Get file path
-  file_path = File.join(site_dir, url)
+  file_path = File.expand_path(url, site_dir)
+  site_root = File.expand_path(site_dir)
+
+  unless file_path.start_with?("#{site_root}#{File::SEPARATOR}")
+    puts "Skipping unsafe output path for #{url}" if ENV['DEBUG']
+    next
+  end
   
   # Update HTML file if it exists
   if update_html_with_metadata(file_path, keywords, descriptions)

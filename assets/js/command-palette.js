@@ -5,8 +5,7 @@
 
 // Store mutable state on window so duplicate script inclusion does not throw
 // on redeclaration before layout issues are fixed.
-window.__commandPaletteSearchToken =
-  window.__commandPaletteSearchToken || 0;
+window.__commandPaletteSearchToken = window.__commandPaletteSearchToken || 0;
 
 function nextSearchToken() {
   window.__commandPaletteSearchToken += 1;
@@ -137,20 +136,25 @@ function renderSections(sections, container) {
       const cmdEl = document.createElement("div");
       cmdEl.className = "command-palette-command";
 
-      let cmdContent = `
-        <div class="command-palette-icon">${cmd.icon || ""}</div>
-        <div class="command-palette-title">${cmd.title}</div>
-      `;
+      const iconEl = document.createElement("div");
+      iconEl.className = "command-palette-icon";
+      iconEl.innerHTML = cmd.icon || "";
+      cmdEl.appendChild(iconEl);
+
+      const titleEl = document.createElement("div");
+      titleEl.className = "command-palette-title";
+      titleEl.textContent = cmd.title || "";
+      cmdEl.appendChild(titleEl);
 
       // Add excerpt for search results if available
       if (cmd.excerpt) {
-        cmdContent += `<div class="command-palette-excerpt">${cmd.excerpt.substring(
-          0,
-          120
-        )}${cmd.excerpt.length > 120 ? "..." : ""}</div>`;
+        const excerptEl = document.createElement("div");
+        excerptEl.className = "command-palette-excerpt";
+        const excerpt = cmd.excerpt.substring(0, 120);
+        excerptEl.textContent =
+          excerpt + (cmd.excerpt.length > 120 ? "..." : "");
+        cmdEl.appendChild(excerptEl);
       }
-
-      cmdEl.innerHTML = cmdContent;
 
       cmdEl.addEventListener("click", function () {
         if (typeof cmd.handler === "function") {

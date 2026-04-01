@@ -1,8 +1,9 @@
 #!/bin/bash
 
 # CoMPhy Lab Website Setup Script
-# Complete setup for both clean machines and existing development environments
-# This script will install Ruby, Node.js, and all dependencies if not present
+# Setup for existing development environments
+# Install Ruby and Node.js with a trusted package manager before running this
+# If rbenv is already installed, it can still install the repo-pinned Ruby
 # Usage: ./scripts/setup.sh
 
 set -e  # Exit on error
@@ -23,39 +24,11 @@ REQUIRED_BUNDLER_VERSION="$(awk '/^BUNDLED WITH$/{getline; gsub(/^[[:space:]]+/,
 # Check Ruby installation
 echo "📦 Checking Ruby installation..."
 
-# First check if Ruby is installed at all
-if ! command -v ruby &> /dev/null; then
-  echo "❌ Ruby not found. Installing Ruby via rbenv..."
-
-  # Install rbenv
-  if [ ! -d "$HOME/.rbenv" ]; then
-    git clone https://github.com/rbenv/rbenv.git ~/.rbenv
-    echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
-    echo 'eval "$(rbenv init -)"' >> ~/.bashrc
-
-    # Also add to ~/.bash_profile for macOS compatibility
-    echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
-    echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
-
-    # Install ruby-build plugin
-    git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
-  fi
-
-  # Set PATH for current session
-  export PATH="$HOME/.rbenv/bin:$PATH"
-  eval "$(rbenv init -)"
-
-  # Install repo-pinned Ruby
-  echo "Installing Ruby ${REQUIRED_RUBY_VERSION}..."
-  rbenv install -s "${REQUIRED_RUBY_VERSION}"
-  rbenv local "${REQUIRED_RUBY_VERSION}"
-  rbenv rehash
-
-  echo "✅ Ruby installed successfully: $(ruby --version)"
-
 # Check if rbenv is being used and handle version issues
-elif command -v rbenv &> /dev/null && [ -f ".ruby-version" ]; then
+if command -v rbenv &> /dev/null && [ -f ".ruby-version" ]; then
   echo "📌 Project requires Ruby ${REQUIRED_RUBY_VERSION} (via .ruby-version)"
+  RBENV_ROOT="$(rbenv root)"
+  export PATH="${RBENV_ROOT}/bin:${RBENV_ROOT}/shims:${PATH}"
 
   # Check if the required version is installed
   if ! rbenv versions --bare | grep -q "^${REQUIRED_RUBY_VERSION}$"; then
@@ -64,8 +37,16 @@ elif command -v rbenv &> /dev/null && [ -f ".ruby-version" ]; then
     rbenv install -s "${REQUIRED_RUBY_VERSION}"
   fi
 
-  rbenv local "${REQUIRED_RUBY_VERSION}"
+  export RBENV_VERSION="${REQUIRED_RUBY_VERSION}"
   rbenv rehash
+fi
+
+# First check if Ruby is installed at all
+if ! command -v ruby &> /dev/null; then
+  echo "❌ Ruby not found on PATH."
+  echo "   Install Ruby ${REQUIRED_RUBY_VERSION} with a trusted"
+  echo "   package manager or rbenv before running this script again."
+  exit 1
 fi
 
 # Now check Ruby again
@@ -108,24 +89,10 @@ if command -v node &> /dev/null; then
   NODE_VERSION=$(node --version)
   echo "✅ Node.js installed: $NODE_VERSION"
 else
-  echo "❌ Node.js not found. Installing Node.js via nvm..."
-
-  # Install nvm
-  if [ ! -d "$HOME/.nvm" ]; then
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-  fi
-
-  # Source nvm for current session
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
-  # Install latest Node.js
-  echo "Installing latest Node.js..."
-  nvm install node
-  nvm use node
-
-  echo "✅ Node.js installed successfully: $(node --version)"
+  echo "❌ Node.js not found."
+  echo "   Install a current LTS Node.js release with a trusted"
+  echo "   package manager before running this script again."
+  exit 1
 fi
 
 # Check npm installation
