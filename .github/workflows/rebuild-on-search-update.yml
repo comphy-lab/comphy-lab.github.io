@@ -2,9 +2,9 @@ name: Rebuild Site on Search Database Update
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
     paths:
-      - 'assets/js/search_db.json'
+      - "assets/js/search_db.json"
 
 permissions:
   contents: read
@@ -15,21 +15,21 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: '3.2'
-        bundler-cache: true
-    
-    - name: Build site and search database
-      run: |
-        chmod +x scripts/build.sh
-        ./scripts/build.sh
-    
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3
+      - uses: actions/checkout@v5
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2"
+          bundler-cache: true
+
+      - name: Build site and search database
+        run: |
+          chmod +x scripts/build.sh
+          ./scripts/build.sh
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v4
 
   deploy:
     needs: build

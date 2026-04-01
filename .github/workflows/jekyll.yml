@@ -2,9 +2,9 @@ name: Jekyll site CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 permissions:
   contents: read
@@ -15,25 +15,25 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: '3.2.2'
-        bundler: '2.5.23'
-        bundler-cache: true
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2.2"
+          bundler: "2.5.23"
+          bundler-cache: true
 
-    - name: Check Ruby/Bundler toolchain
-      run: bash scripts/check-ruby-toolchain.sh
+      - name: Check Ruby/Bundler toolchain
+        run: bash scripts/check-ruby-toolchain.sh
 
-    - name: Build site and search database
-      run: |
-        chmod +x scripts/build.sh
-        ./scripts/build.sh
+      - name: Build site and search database
+        run: |
+          chmod +x scripts/build.sh
+          ./scripts/build.sh
 
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v4
 
   deploy:
     # Only run deploy job on push to main, not on PRs
