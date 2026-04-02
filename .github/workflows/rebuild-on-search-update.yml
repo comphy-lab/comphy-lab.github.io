@@ -6,9 +6,6 @@ on:
     paths:
       - "assets/js/search_db.json"
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
-
 permissions:
   contents: read
   pages: write
@@ -31,8 +28,18 @@ jobs:
           chmod +x scripts/build.sh
           ./scripts/build.sh
 
+      - name: Package Pages artifact
+        run: |
+          tar --dereference --hard-dereference -cvf github-pages.tar _site
+          gzip -f github-pages.tar
+
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-artifact@v6
+        with:
+          name: github-pages
+          path: github-pages.tar.gz
+          retention-days: 1
+          compression-level: 0
 
   deploy:
     needs: build
