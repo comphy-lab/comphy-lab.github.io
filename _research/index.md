@@ -29,14 +29,6 @@ title: Research
 
 ## Work in Progress
 
-### Appleford, T., <strong>Sanjay, V.</strong>, Jalaal, M. On the Rheology of Two-Dimensional Dilute Emulsions. arXiv preprint arXiv:2508.13022 (2025).
-
-<div class="tags"><span>Emulsions</span><span>Rheology</span></div>
-
-[![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2508.13022&color=green)](https://arxiv.org/abs/2508.13022)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/tappleford/droplet_under_shear_newtonian_2D)
-[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
-
 ### Verschuur, C. I., Oratis, A. T., <strong>Sanjay, V.</strong>, & Snoeijer, J. H. How elasticity affects bubble pinch-off. arXiv preprint arXiv:2511.20075 (2025).
 
 <div class="tags"><span>Bubbles</span><span>Soft-matter-singularities</span><span>Elastic beads</span></div>
@@ -54,6 +46,15 @@ title: Research
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
 
 ## 2026
+
+<h3 id="24">[24] Appleford, T., <strong>Sanjay, V.</strong>, & Jalaal, M. Rheology of Two-Dimensional Dilute Emulsions. Phys. Rev. Fluids, 11, 033607 (2026).</h3>
+
+<div class="tags"><span>Emulsions</span><span>Rheology</span></div>
+
+[![PRF](https://img.shields.io/static/v1.svg?style=flat-square&label=PRF&message=DOI:%2010.1103%2F9dgt-rkp5&color=orange)](https://doi.org/10.1103/9dgt-rkp5)
+[![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2508.13022&color=green)](https://arxiv.org/abs/2508.13022)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/tappleford/droplet_under_shear_newtonian_2D)
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
 
 <h3 id="23">[23] <strong>Jana, S.</strong>, Kolinski, J., Lohse, D., & <strong>Sanjay, V.</strong> Impacting spheres: from liquid drops to elastic beads. Soft Matter, 22, 2226-2236 (2026).</h3>
 
