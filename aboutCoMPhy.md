@@ -18,7 +18,7 @@ We investigate various viscous free-surface flows including inertial contact lin
 
 ## Commitment to Open Science
 
-Open exchange of ideas drives our progress. We share our codes from the earliest stages of development, embracing transparent research practices to foster collaboration and reproducibility. We welcome inquiries and partnerships from the broader scientific community. Watchout for [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab) and [<i class="fa-brands fa-github" style="font-size: 1.5em; color: black;"></i>](https://github.com/comphy-lab "Visit our GitHub organization") on this website to interact with our codes.
+Open exchange of ideas drives our progress. We share our codes from the earliest stages of development, embracing transparent research practices to foster collaboration and reproducibility. We welcome inquiries and partnerships from the broader scientific community. Watch out for [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab) and [<i class="fa-brands fa-github" style="font-size: 1.5em; color: black;"></i>](https://github.com/comphy-lab "Visit our GitHub organization") on this website to interact with our codes.
 
 Feel free to contact us for discussions about our work or anything else related to fluid physics. Nothing is more exhilarating than a healthy scientific discussion.
 
