@@ -349,6 +349,11 @@ body.home-v2 #featured-wrapper { display: none; }
   font-variation-settings: "opsz" 14;
 }
 
+/* Dark-mode --fg-2 (#9a8e7d) is too washed on dark paper-tint for
+   an italic 14 px citation. Lift to --fg-1 for readable contrast
+   without losing the "muted sub-line" hierarchy. */
+[data-theme="dark"] .hero__caption-sub { color: var(--fg-1); }
+
 .hero__caption-link {
   font-family: var(--t-sans);
   font-size: var(--t-small);
