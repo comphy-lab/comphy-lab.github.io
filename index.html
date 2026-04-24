@@ -64,30 +64,35 @@ description: >-
         {% for img in hero.images %}
           <figure data-active="{% if forloop.first %}true{% else %}false{% endif %}"
                   aria-hidden="{% if forloop.first %}false{% else %}true{% endif %}">
-            {% if img.video %}
-              <video autoplay muted loop playsinline preload="metadata"
-                     aria-label="{{ img.alt }}">
-                <source src="{{ img.video }}" type="{{ img.type | default: 'video/mp4' }}" />
-              </video>
-            {% elsif img.youtube %}
-              <iframe
-                src="https://www.youtube-nocookie.com/embed/{{ img.youtube }}?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist={{ img.youtube }}&amp;controls=0&amp;modestbranding=1&amp;rel=0&amp;playsinline=1&amp;iv_load_policy=3"
-                title="{{ img.alt }}"
-                frameborder="0"
-                allow="autoplay; encrypted-media; picture-in-picture"
-                allowfullscreen
-                loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"></iframe>
-            {% else %}
-              <img src="{{ img.src }}" alt="{{ img.alt }}"
-                   loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
-                   decoding="async"
-                   {% if forloop.first %}fetchpriority="high"{% endif %} />
-            {% endif %}
-            <figcaption class="hero__caption">
-              {% if img.href %}<a href="{{ img.href }}" style="color:inherit; text-decoration:none; border-bottom:0">{% endif %}
-              <b>{{ img.caption_title }}</b>
-              <span>{{ img.caption_sub }}</span>
-              {% if img.href %}</a>{% endif %}
+            <div class="hero__image-well">
+              {% if img.video %}
+                <video autoplay muted loop playsinline preload="metadata"
+                       aria-label="{{ img.alt }}">
+                  <source src="{{ img.video }}" type="{{ img.type | default: 'video/mp4' }}" />
+                </video>
+              {% elsif img.youtube %}
+                <iframe
+                  src="https://www.youtube-nocookie.com/embed/{{ img.youtube }}?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist={{ img.youtube }}&amp;controls=0&amp;modestbranding=1&amp;rel=0&amp;playsinline=1&amp;iv_load_policy=3"
+                  title="{{ img.alt }}"
+                  frameborder="0"
+                  allow="autoplay; encrypted-media; picture-in-picture"
+                  allowfullscreen
+                  loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"></iframe>
+              {% else %}
+                <img src="{{ img.src }}" alt="{{ img.alt }}"
+                     loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
+                     decoding="async"
+                     {% if forloop.first %}fetchpriority="high"{% endif %} />
+              {% endif %}
+            </div>
+
+            <figcaption class="hero__caption-panel">
+              <span class="hero__caption-eyebrow">Featured work</span>
+              <b class="hero__caption-title">{{ img.caption_title }}</b>
+              <span class="hero__caption-sub">{{ img.caption_sub }}</span>
+              {% if img.href %}
+                <a class="hero__caption-link" href="{{ img.href }}">Read the paper ↗</a>
+              {% endif %}
             </figcaption>
           </figure>
         {% endfor %}

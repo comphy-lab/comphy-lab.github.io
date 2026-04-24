@@ -196,45 +196,138 @@ body.home-v2 #featured-wrapper { display: none; }
   flex-wrap: wrap;
 }
 
-/* 4:3 rotating hero panel. Matches Keynote's default export size,
-   fits the m4v DNS video natively (4:3 960×720), and lets journal
-   covers sit as framed posters via object-fit: contain below. */
+/* Hero rotator card — each slide has image/video on the left and
+   a paper-tinted caption panel on the right. Caption reads in high
+   contrast (dark ink on paper tint) instead of overlaid on busy
+   cover art. */
 .hero__media {
-  position: relative;
-  aspect-ratio: 4 / 3;
+  display: grid;
+  grid-template-areas: "stack";
   border-radius: var(--r-lg);
   overflow: hidden;
-  background: var(--c-paper-tint);
   box-shadow: var(--shadow-soft);
+  background: var(--c-paper-tint);
+  position: relative;
 }
 
 .hero__media figure {
-  position: absolute;
-  inset: 0;
+  grid-area: stack;
   margin: 0;
+  display: grid;
+  grid-template-columns: 5fr 3fr;
   opacity: 0;
   transition: opacity 900ms var(--ease);
 }
 
 .hero__media figure[data-active="true"] { opacity: 1; }
 
-/* Covers are portrait (~3:4); the 4:3 panel is landscape. Use
-   object-fit: contain so the full cover reads as a framed poster
-   on the paper-tinted panel bg. Videos are already 4:3 — cover
-   fills edge-to-edge without cropping. */
-.hero__media img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-  padding: var(--s-4);
+/* Image well — 4:3 aspect, fully fills its column, covers or
+   contains based on medium type. */
+.hero__image-well {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  position: relative;
+  background: var(--fg-strong);
 }
 
-.hero__media video {
+.hero__image-well img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.hero__image-well video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero__image-well iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 225%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  border: 0;
+  pointer-events: none;
+}
+
+/* Caption panel on the right — paper-tint bg, full contrast. */
+.hero__caption-panel {
+  background: var(--c-paper-tint);
+  padding: var(--s-5) var(--s-5) var(--s-5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--s-3);
+  border-left: 1px solid var(--c-border);
+}
+
+.hero__caption-eyebrow {
+  font-family: var(--t-sans);
+  font-size: var(--t-eyebrow);
+  font-weight: 700;
+  letter-spacing: var(--t-track-wide);
+  text-transform: uppercase;
+  color: var(--c-brand-purple);
+}
+[data-theme="dark"] .hero__caption-eyebrow { color: #d99adc; }
+
+.hero__caption-title {
+  font-family: var(--t-serif);
+  font-weight: 600;
+  font-size: clamp(18px, 1.7vw, 22px);
+  line-height: 1.25;
+  color: var(--fg-strong);
+  letter-spacing: -0.01em;
+  font-variation-settings: "opsz" 48;
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.hero__caption-sub {
+  font-family: var(--t-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: var(--t-small);
+  line-height: 1.45;
+  color: var(--fg-2);
+  font-variation-settings: "opsz" 14;
+}
+
+.hero__caption-link {
+  font-family: var(--t-sans);
+  font-size: var(--t-small);
+  font-weight: 600;
+  color: var(--c-accent-teal);
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--c-accent-teal) 35%, transparent);
+  align-self: flex-start;
+  padding-bottom: 1px;
+  margin-top: var(--s-3);
+  transition: color var(--dur-fast) var(--ease), border-bottom-color var(--dur-fast) var(--ease);
+}
+
+.hero__caption-link:hover {
+  color: var(--c-accent-teal-hover);
+  border-bottom-color: var(--c-accent-teal);
+}
+
+/* On narrow viewports the split cramps the text — stack image on
+   top and caption panel below. */
+@media (max-width: 820px) {
+  .hero__media figure {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .hero__caption-panel {
+    border-left: 0;
+    border-top: 1px solid var(--c-border);
+  }
 }
 
 /* YouTube hero embeds: the player is 16:9, the panel is 4:5.
@@ -258,41 +351,6 @@ body.home-v2 #featured-wrapper { display: none; }
 /* Inactive figures keep playing silently in the background (muted)
    while faded out — small CPU/GPU cost, but keeps fade transitions
    smooth and avoids a restart flash when they rotate back. */
-
-.hero__media:after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 50%, rgba(0, 0, 0, 0.55) 100%);
-  pointer-events: none;
-  z-index: 1;
-}
-
-.hero__caption {
-  position: absolute;
-  left: var(--s-5);
-  right: var(--s-5);
-  bottom: var(--s-5);
-  color: #fff;
-  font-size: var(--t-small);
-  line-height: 1.5;
-  z-index: 2;
-}
-
-.hero__caption b {
-  display: block;
-  font-family: var(--t-serif);
-  font-weight: 500;
-  font-size: var(--t-body-lg);
-  margin-bottom: 4px;
-  letter-spacing: -0.005em;
-}
-
-.hero__caption span {
-  color: rgba(255, 255, 255, 0.75);
-  font-family: var(--t-mono);
-  font-size: 12px;
-}
 
 .hero__figures {
   display: grid;
