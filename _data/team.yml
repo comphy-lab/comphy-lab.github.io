@@ -137,6 +137,128 @@ collaborators:
     links:
       orcid: https://orcid.org/0000-0001-9599-5589
 
+  - name: Dr. Uddalok (Udo) Sen
+    role: PhySM · Wageningen Univ. & Research
+    bio: >-
+      Drop impact and sheet retraction experiments.
+    links:
+      scholar: https://scholar.google.com/citations?user=a6h2uMQAAAAJ
+
+  - name: Adj. Prof. Alvaro Marin
+    role: Physics of Fluids · Univ. Twente
+    bio: >-
+      Colloidal systems, evaporation, and shell formation inside
+      evaporating droplets.
+    links:
+      scholar: https://scholar.google.com/citations?user=0_jOqqkAAAAJ
+
+  - name: Dr. Christian Diddens
+    role: Physics of Fluids · Univ. Twente
+    bio: >-
+      Surfactant dynamics in free-surface flows, dissipative anomaly,
+      sliding drops. Developer of pyoomph.
+    links:
+      scholar: https://scholar.google.com/citations?user=3QSyucwAAAAJ
+
+  - name: Dr. C. Ricardo Constante-Amores
+    role: Univ. Illinois Urbana-Champaign
+    bio: >-
+      Non-Newtonian flows, bubble bursting, Herschel–Bulkley fluids,
+      elastic coating.
+    links:
+      scholar: https://scholar.google.com/citations?user=ncqnphMAAAAJ
+
+  - name: Dr. Radu Cimpeanu
+    role: Univ. Warwick
+    bio: >-
+      Open-source code development and non-coalescence impacts.
+    links:
+      scholar: https://scholar.google.com/citations?user=6grZnhQAAAAJ
+
+  - name: Dr. Jie Feng
+    role: Univ. Illinois Urbana-Champaign
+    bio: >-
+      Elastic coating and bursting-bubble experiments.
+    links:
+      scholar: https://scholar.google.com/citations?user=226dDBAAAAAJ
+
+  - name: Prof. Omar Matar
+    role: Imperial College London
+    bio: >-
+      Surfactant dynamics and viscoelastic drop impact.
+    links:
+      scholar: https://scholar.google.com/citations?user=mLXz_NAAAAAJ
+
+  - name: Dr. Ratul Dasgupta
+    role: IIT Bombay
+    bio: >-
+      Waves and dissipative anomaly in two-phase flow.
+    links:
+      scholar: https://scholar.google.com/citations?user=I1jFG_oAAAAJ
+
+  - name: Prof. Eric Lauga
+    role: DAMTP · Univ. Cambridge
+    bio: >-
+      Mycofluidic transport — fluid dynamics inside fungal networks.
+    links:
+      scholar: https://scholar.google.com/citations?user=5ObY7hsAAAAJ
+
+  - name: Dr. Saikat Datta
+    role: Swansea University
+    bio: >-
+      Multiscale simulation, ice nucleation and removal, hydrogen
+      storage.
+    links:
+      scholar: https://scholar.google.com/citations?user=o4mXtIgAAAAJ
+
+  - name: Dr. Pierre Chantelot
+    role: Institut Langevin, ESPCI Paris
+    bio: >-
+      Drop-impact experiments; co-author on the bouncing-drop and
+      viscous-film impact papers.
+    links:
+      scholar: https://scholar.google.nl/citations?user=BQWXUKYAAAAJ
+
+  - name: Dr. Aleksandr Bashkatov
+    role: RWTH Aachen University
+    bio: >-
+      Electrolysis, bubble coalescence, swimming bubbles — co-author
+      on the Nat. Commun. H₂-bubble spraying paper.
+    links:
+      scholar: https://scholar.google.com/citations?user=9_vPSFsAAAAJ
+
+  - name: Dr. Vincent Bertin
+    role: Univ. Aix-Marseille
+    bio: >-
+      Elastic sheets and spinning-pizza dynamics.
+    links:
+      scholar: https://scholar.google.com/citations?user=jO_RTLR2xBYC
+
+  - name: Dr. Alexandros Oratis
+    role: TU Delft
+    bio: >-
+      Electrolysis, bubble coalescence, swimming bubbles. Recent
+      co-author on the Worthington-jet viscoelasticity paper.
+    links:
+      scholar: https://scholar.google.com/citations?user=2lOr8WQAAAAJ
+
+  - name: Arivazhagan (Ari) Balasubramanian M.Sc.
+    role: KTH Sweden · Ph.D. student
+    bio: >-
+      Elastoviscoplastic flows and bursting bubbles. First author of
+      the JFM 2024 bursting-bubble cover article.
+    links:
+      scholar: https://scholar.google.com/citations?user=xyheRZ8AAAAJ
+      github: https://github.com/GbArivazhagan
+
+  - name: Dr. Konstantinos (Costis) Zinelis
+    role: MIT · QI Group
+    bio: >-
+      Viscoelastic flows and drop impact; co-author on the
+      Worthington-jet JFM paper.
+    links:
+      scholar: https://scholar.google.com/citations?user=dZrR_z8AAAAJ
+
 alumni:
   - name: Peter Croxford
     role: "MPhys project · Durham 2026"
