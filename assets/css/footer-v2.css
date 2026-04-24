@@ -1,0 +1,178 @@
+/* =============================================================
+   CoMPhy Lab · Footer v2
+   Paper-tinted, NOT a dark slab. Four-column layout: brand blurb,
+   Explore, Work with us, Code & data. Partner marks on paper tint
+   with .invert-on-light for white-PNG assets. Silent legal strip.
+   Red Team Audit A2.
+   ============================================================= */
+
+.c-footer {
+  background: var(--c-paper-tint);
+  border-top: 1px solid var(--c-border);
+  padding: var(--s-8) 0 var(--s-6);
+  margin-top: var(--s-9);
+  color: var(--fg-1);
+  position: relative;
+  z-index: 1;
+}
+
+.c-footer__wrap {
+  width: min(100% - 2rem, var(--maxw-page));
+  margin: 0 auto;
+}
+
+.c-footer__top {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: var(--s-6);
+  padding-bottom: var(--s-6);
+  border-bottom: 1px solid var(--c-border);
+}
+
+.c-footer__brand { display: grid; gap: var(--s-3); align-content: start; }
+
+.c-footer__mark {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-3);
+  font-family: var(--t-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 22px;
+  color: var(--fg-strong);
+  text-decoration: none;
+  border-bottom: 0;
+}
+
+.c-footer__mark:hover { color: var(--c-accent-teal); }
+
+.c-footer__mark img { height: 32px; width: auto; }
+
+.c-footer__tag {
+  font-family: var(--t-serif);
+  font-size: 14px;
+  color: var(--fg-2);
+  line-height: 1.5;
+  max-width: 36ch;
+  font-variation-settings: "opsz" 14;
+  margin: 0;
+}
+
+.c-footer__col h4 {
+  font-family: var(--t-sans);
+  font-size: var(--t-eyebrow);
+  font-weight: 600;
+  letter-spacing: var(--t-track-wide);
+  text-transform: uppercase;
+  color: var(--fg-2);
+  margin: 0 0 var(--s-3);
+}
+
+.c-footer__col a {
+  display: block;
+  font-size: 13px;
+  padding: 3px 0;
+  color: var(--fg-1);
+  border-bottom: 0;
+  text-decoration: none;
+}
+
+.c-footer__col a:hover { color: var(--c-accent-teal); }
+
+/* --- Partner strip ----------------------------------------- */
+.c-footer__partners {
+  padding-top: var(--s-5);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--s-5);
+}
+
+.c-footer__partners-label {
+  font-family: var(--t-sans);
+  font-size: var(--t-eyebrow);
+  font-weight: 600;
+  letter-spacing: var(--t-track-wide);
+  text-transform: uppercase;
+  color: var(--fg-2);
+}
+
+.c-footer__partners-logos {
+  display: flex;
+  align-items: center;
+  gap: var(--s-7);
+  flex-wrap: wrap;
+}
+
+.c-footer__partners-logos a {
+  display: inline-flex;
+  align-items: center;
+  border-bottom: 0;
+  opacity: 0.75;
+  transition: opacity var(--dur-fast) var(--ease);
+}
+
+.c-footer__partners-logos a:hover { opacity: 1; }
+
+.c-footer__partners-logos img {
+  height: 32px;
+  width: auto;
+  display: block;
+}
+
+/* Basilisk ships as full-colour photo on transparent white; on a
+   dark paper-tint in dark mode give it a small white card so the
+   logo doesn't clip the paper surface. */
+.c-footer__partners-logos .basilisk-bed {
+  padding: 4px 10px;
+  border-radius: var(--r-xs);
+}
+
+[data-theme="dark"] .c-footer__partners-logos .basilisk-bed { background: #f4efe7; }
+
+/* --- Legal strip ------------------------------------------- */
+.c-footer__legal {
+  margin-top: var(--s-6);
+  padding-top: var(--s-5);
+  border-top: 1px solid var(--c-border);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--s-4);
+  font-size: 12px;
+  color: var(--fg-2);
+}
+
+.c-footer__legal a {
+  color: var(--fg-2);
+  border-bottom: 1px solid var(--c-border-strong);
+  text-decoration: none;
+}
+
+.c-footer__legal a:hover {
+  color: var(--c-accent-teal);
+  border-bottom-color: var(--c-accent-teal);
+}
+
+/* --- Responsive -------------------------------------------- */
+@media (max-width: 820px) {
+  .c-footer__top { grid-template-columns: 1fr 1fr; }
+
+  .c-footer__partners { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 520px) {
+  .c-footer__top { grid-template-columns: 1fr; }
+
+  .c-footer__partners-logos { gap: var(--s-5); }
+}
+
+/* --- Neutralise legacy .site-footer positional rules ------- */
+/* styles.css still has rules for .site-footer that position the
+   three-column layout. Our v2 footer uses grid via .c-footer__top,
+   so undo the flex/positional bits that would otherwise leak. */
+footer.site-footer .footer-left,
+footer.site-footer .footer-right,
+footer.site-footer .footer-center,
+footer.site-footer .ss-go-top { display: none; }
