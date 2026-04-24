@@ -31,23 +31,37 @@ cta_secondary:
   label: Join the lab
   href: /join
 
-# Images rotate on the 4:5 hero panel. First is the visible default;
-# others fade in every 6 seconds unless prefers-reduced-motion is set.
-# Source paths are all already under /assets/images/ and produced
-# by the lab.
+# Hero rotator — three recent publications that sell the lab visually.
+# First is the visible default; others fade in every 6.5 s unless
+# prefers-reduced-motion is set.
+#
+# Each entry is EITHER:
+#   src: <image-path>       → rendered as an <img>
+#   youtube: <video-id>     → rendered as an embedded player, muted
+#                              autoplay loop, no controls
+#
+# caption_title + caption_sub float over a dark gradient at the
+# bottom of the panel.
 images:
-  - src: /assets/images/research/NatComm-jet-drop.png
-    alt: Electrolyte jet-drop from DNS of H2 bubble coalescence.
-    caption_title: Electrolyte spraying during H2 generation
-    caption_sub: DNS · Basilisk C · Nat. Commun. 16, 4580 (2025)
   - src: /assets/images/covers/2026-03-SoftMatter_Issue11_cover.jpeg
     alt: Soft Matter March 2026 cover — impacting spheres.
     caption_title: Impacting spheres — from drops to elastic beads
-    caption_sub: Soft Matter · Cover · March 2026
-  - src: /assets/images/research/drop-impact-prl.png
-    alt: Drop-impact force diagram from the PRL unifying-theory paper.
-    caption_title: Unifying theory of scaling in drop impact
-    caption_sub: Phys. Rev. Lett. 134, 104003 (2025)
+    caption_sub: Jana et al. · Soft Matter 22, 2226 (2026) · cover
+    href: /research#23
+
+  - youtube: HYkqepZIakc
+    alt: >-
+      Basilisk DNS of a draining liquid film rupturing through two
+      distinct mechanisms separated by a critical Ohnesorge number.
+    caption_title: Holes in sheets — double-threshold rupture
+    caption_sub: Dixit et al. · Phys. Rev. Lett. 136, 084001 (2026)
+    href: /research#22
+
+  - src: /assets/images/covers/2025-02-JFM_Vol1004.jpeg
+    alt: JFM Vol 1004 cover — viscosity on drop-impact forces.
+    caption_title: Viscosity &amp; drop-impact forces
+    caption_sub: Sanjay et al. · J. Fluid Mech. 1004, A6 (2025) · cover
+    href: /research#14
 
 # Below-the-fold stats strip
 figures:

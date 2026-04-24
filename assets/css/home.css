@@ -224,6 +224,28 @@ body.home-v2 #featured-wrapper { display: none; }
   display: block;
 }
 
+/* YouTube hero embeds: the player is 16:9, the panel is 4:5.
+   Make the iframe wider than the panel so its 16:9 video fills
+   the 4:5 window edge-to-edge; the overflow:hidden on the parent
+   crops the horizontal excess. Math: width = height × 16/9 × 1.25
+   ≈ 222% to fully cover. */
+.hero__media { overflow: hidden; }
+.hero__media iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 225%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  border: 0;
+  display: block;
+  pointer-events: none;
+}
+
+/* Inactive figures keep playing silently in the background (muted)
+   while faded out — small CPU/GPU cost, but keeps fade transitions
+   smooth and avoids a restart flash when they rotate back. */
+
 .hero__media:after {
   content: "";
   position: absolute;
