@@ -1,0 +1,118 @@
+# Structured news feed. Homepage shows the 5 most recent entries
+# (strict recency, no pin). /news/ (when the archive page lands)
+# renders the full list.
+#
+# Fields per item:
+#   date        ISO 8601 (YYYY-MM-DD). Day + month shown on the card.
+#   kind        paper | talk | people | move | award
+#   title       1-line human title of the event.
+#   meta        html-safe sentence. <strong> renders as coral.
+#   thumb       optional — image path for kind: paper.
+#   avatar      optional initials for kind: people when no photo.
+#   action_label + action_href — the right-side button.
+#
+# Ordered newest → oldest. Update News.md in parallel until the
+# markdown archive is deprecated; data here is the homepage
+# source of truth.
+
+items:
+  - date: "2026-03-12"
+    kind: paper
+    title: >-
+      Impacting spheres: from liquid drops to elastic beads
+    meta: >-
+      <strong>Jana, S.</strong>, Kolinski, J., Lohse, D. &amp;
+      <strong>Sanjay, V.</strong> — <em>Soft Matter</em>, 22, 2226–2236
+      (2026). Selected as the March cover article.
+    thumb: /assets/images/covers/2026-03-SoftMatter_Issue11_cover.jpeg
+    action_label: "DOI ↗"
+    action_href: "https://doi.org/10.1039/D5SM01078K"
+
+  - date: "2026-02-28"
+    kind: talk
+    title: >-
+      Simulating respiratory droplet formation: non-Newtonian
+      fluid dynamics
+    meta: >-
+      <strong>Ayush Dixit</strong> shows that viscoelastic
+      respiratory-fluid rheology is essential for accurate
+      droplet-size predictions in airborne-transmission models.
+    venue: "Online seminar"
+    action_label: "Video"
+    action_href: "https://www.youtube.com/watch?v=uFP5K9i8ah8"
+
+  - date: "2026-02-10"
+    kind: paper
+    title: >-
+      Holes in sheets: double-threshold rupture of draining
+      liquid films
+    meta: >-
+      <strong>Dixit, A. K.</strong>, Zhao, C., Zaleski, S., Lohse, D.
+      &amp; <strong>Sanjay, V.</strong> — <em>Phys. Rev. Lett.</em>,
+      136, 084001 (2026). Two distinct rupture mechanisms separated
+      by a critical Ohnesorge.
+    thumb: /assets/images/research/drop-impact-prl.png
+    action_label: "Read"
+    action_href: "/research#22"
+
+  - date: "2026-01-15"
+    kind: paper
+    title: >-
+      Stood-up Drop to Determine Receding Contact Angles
+    meta: >-
+      Díaz, D., <strong>Bhargava, A. S.</strong>, et&nbsp;al., &amp;
+      <strong>Sanjay, V.</strong> — <em>Soft Matter</em>, 22, 657–667
+      (2026). A new experimental protocol for receding contact angles
+      on superhydrophobic surfaces.
+    thumb: /assets/images/research/S002211202500237X_figAb.png
+    action_label: "Read"
+    action_href: "/research#21"
+
+  - date: "2025-11-15"
+    kind: award
+    title: >-
+      Jnandeep Talukdar wins the KHMW Young Talent Award
+    meta: >-
+      <strong>Jnandeep Talukdar</strong> received the KHMW Young
+      Talent Graduation Award for Mechanical Engineering and
+      Materials Science 2025 for his master's thesis on droplet
+      formation.
+    avatar: "JT"
+    action_label: "Thesis"
+    action_href: "https://bit.ly/thesisJnan"
+
+  # --- older items retained for /news/ archive rendering ---
+
+  - date: "2025-09-01"
+    kind: paper
+    title: >-
+      Integral surface-tension formulations in VOF for Marangoni flows
+    meta: >-
+      Saini, M., <strong>Sanjay, V.</strong>, Saade, Y., Lohse, D. &amp;
+      Popinet, S. — <em>J. Comput. Phys.</em>, 542, 114348 (2025).
+    action_label: "Read"
+    action_href: "/research#18"
+
+  - date: "2025-07-01"
+    kind: move
+    title: >-
+      CoMPhy Lab moves to Durham University
+    meta: >-
+      The group is now based in the Condensed Matter Physics section
+      of the Department of Physics at Durham University. Open house
+      through autumn; Twente collaborations continue.
+    avatar: "DU"
+    action_label: "Join us"
+    action_href: "/join"
+
+  - date: "2025-12-01"
+    kind: paper
+    title: >-
+      To jump or not to jump: Adhesion and viscous dissipation dictate
+      the detachment of coalescing wall-attached bubbles
+    meta: >-
+      Demirkır, Ç., Yang, R., Bashkatov, A., <strong>Sanjay, V.</strong>,
+      Lohse, D. &amp; Krug, D. — <em>Phys. Rev. Fluids</em>, 10, 123602
+      (2025).
+    action_label: "Read"
+    action_href: "/research#20"
