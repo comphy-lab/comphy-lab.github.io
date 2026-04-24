@@ -109,6 +109,12 @@ description: >-
             <div class="t-member__role">{{ m.role }}</div>
           </div>
           <p class="t-member__bio">{{ m.bio }}</p>
+          {% if m.thesis.href %}
+          <a class="t-member__thesis" href="{{ m.thesis.href }}" target="_blank" rel="noopener noreferrer" title="{{ m.thesis.title }}">
+            <i class="fa-solid fa-file-pdf"></i>
+            <span>Thesis — <em>{{ m.thesis.title }}</em></span>
+          </a>
+          {% endif %}
           <div class="t-member__links">
             {% if m.links.github %}<a href="{{ m.links.github }}" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fa-brands fa-github"></i></a>{% endif %}
             {% if m.links.linkedin %}<a href="{{ m.links.linkedin }}" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>{% endif %}
