@@ -64,7 +64,12 @@ description: >-
         {% for img in hero.images %}
           <figure data-active="{% if forloop.first %}true{% else %}false{% endif %}"
                   aria-hidden="{% if forloop.first %}false{% else %}true{% endif %}">
-            {% if img.youtube %}
+            {% if img.video %}
+              <video autoplay muted loop playsinline preload="metadata"
+                     aria-label="{{ img.alt }}">
+                <source src="{{ img.video }}" type="{{ img.type | default: 'video/mp4' }}" />
+              </video>
+            {% elsif img.youtube %}
               <iframe
                 src="https://www.youtube-nocookie.com/embed/{{ img.youtube }}?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist={{ img.youtube }}&amp;controls=0&amp;modestbranding=1&amp;rel=0&amp;playsinline=1&amp;iv_load_policy=3"
                 title="{{ img.alt }}"
