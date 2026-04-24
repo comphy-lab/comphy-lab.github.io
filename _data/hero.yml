@@ -1,0 +1,59 @@
+# Homepage hero — rotating above-the-fold visual + PI metadata.
+# Fields are read by index.html.
+
+tagline: >-
+  We study <em>non-Newtonian free-surface flows</em> and
+  <em>soft-matter singularities</em> — bubbles, drops, sheets,
+  and jets that break or bounce.
+
+lede: >-
+  A small group at the intersection of applied mathematics, fluid
+  mechanics, and direct numerical simulation. We develop open-source
+  code, train students, and publish with collaborators across Europe
+  and North America.
+
+pi:
+  name: Vatsal Sanjay
+  role: Assistant Professor
+
+department:
+  name: Physics
+  note: Condensed Matter section
+
+location:
+  name: Durham, UK
+  note: Since July 2025
+
+cta_primary:
+  label: See the research →
+  href: /research
+cta_secondary:
+  label: Join the lab
+  href: /join
+
+# Images rotate on the 4:5 hero panel. First is the visible default;
+# others fade in every 6 seconds unless prefers-reduced-motion is set.
+# Source paths are all already under /assets/images/ and produced
+# by the lab.
+images:
+  - src: /assets/images/research/NatComm-jet-drop.png
+    alt: Electrolyte jet-drop from DNS of H2 bubble coalescence.
+    caption_title: Electrolyte spraying during H2 generation
+    caption_sub: DNS · Basilisk C · Nat. Commun. 16, 4580 (2025)
+  - src: /assets/images/covers/2026-03-SoftMatter_Issue11_cover.jpeg
+    alt: Soft Matter March 2026 cover — impacting spheres.
+    caption_title: Impacting spheres — from drops to elastic beads
+    caption_sub: Soft Matter · Cover · March 2026
+  - src: /assets/images/research/drop-impact-prl.png
+    alt: Drop-impact force diagram from the PRL unifying-theory paper.
+    caption_title: Unifying theory of scaling in drop impact
+    caption_sub: Phys. Rev. Lett. 134, 104003 (2025)
+
+# Below-the-fold stats strip
+figures:
+  - value: "24"
+    label: Peer-reviewed papers since 2017 — PRL, JFM, Soft Matter, Nat. Commun.
+  - value: "20+"
+    label: Active collaborators across Europe and North America
+  - value: Open
+    label: Always recruiting PhDs, MScs, and visitors — see Join Us
