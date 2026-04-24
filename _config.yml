@@ -45,3 +45,6 @@ exclude:
   - .claude
   - .claude/**
   - CLAUDE.md
+  # Design-system handoff bundle — reference only, not built
+  - comphy-lab-design-system
+  - comphy-lab-design-system/**

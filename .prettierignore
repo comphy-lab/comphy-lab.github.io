@@ -1,0 +1,8 @@
+assets/css/tokens.css
+assets/css/fontello/
+assets/css/academicons-1.7.0/
+assets/js/search_db.json
+_site/
+.jekyll-cache/
+node_modules/
+vendor/
