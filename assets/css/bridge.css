@@ -54,8 +54,35 @@
   --icon-color-footer-social: var(--fg-2);
 }
 
-/* --- 2. Legacy variable bridge (dark theme) ----------------- */
-[data-theme="dark"] {
+/* --- 2. Legacy variable bridge (dark theme) -----------------
+   Also runs a palette audit pass:
+   - Paper lifted off near-black to a softer charcoal so the UI
+     doesn't feel like a terminal. Warm hue preserved.
+   - Surfaces get more separation (paper → tint → strong) so
+     cards and panels visibly sit above the background.
+   - Borders bumped from 0.08 → 0.14 alpha for visibility.
+   - Hero gradient stops lifted for readability on dark (the
+     light-mode stops go invisible against warm-black paper). */
+:root[data-theme="dark"] {
+  /* Softer dark surfaces — tracks closer to GitHub/Notion dark
+     (~#181818) than near-black, while keeping the warm tint. */
+  --c-paper:          #1b1814;
+  --c-paper-tint:     #241f18;
+  --c-surface-strong: #2b251d;
+  --c-surface-glass:  rgba(43, 37, 29, 0.78);
+
+  /* More visible separation lines. */
+  --c-border:         rgba(248, 244, 236, 0.14);
+  --c-border-strong:  rgba(248, 244, 236, 0.22);
+
+  /* Hero wordmark gradient — brighter stops that don't disappear
+     against the warm dark paper. */
+  --hero-grad-1: #ff9388;
+  --hero-grad-2: #cf75d3;
+  --hero-grad-3: #8eaaff;
+  --hero-grad-4: #7864cc;
+
+  /* Legacy aliases */
   --color-primary: #8fb8ff;
   --color-background: var(--c-paper);
   --color-text: var(--fg-1);
@@ -119,7 +146,7 @@ body { font-family: var(--t-sans); color: var(--fg-1); }
   color: var(--c-brand-purple);
 }
 
-[data-theme="dark"] .eyebrow { color: #c09bc4; }
+:root[data-theme="dark"] .eyebrow { color: #c09bc4; }
 
 .lede {
   font-size: var(--t-body-lg);
@@ -162,11 +189,11 @@ body { font-family: var(--t-sans); color: var(--fg-1); }
   border-color: color-mix(in srgb, var(--c-accent-coral) 22%, transparent);
 }
 
-[data-theme="dark"] .chip--brand { color: #d99adc; }
+:root[data-theme="dark"] .chip--brand { color: #d99adc; }
 
-[data-theme="dark"] .chip--blue  { color: #8fb8ff; }
+:root[data-theme="dark"] .chip--blue  { color: #8fb8ff; }
 
-[data-theme="dark"] .chip--coral { color: #f96; }
+:root[data-theme="dark"] .chip--coral { color: #f96; }
 
 /* Buttons — tokens.css ships .btn, .btn-ghost, .btn-pill. We also
    neutralise the underline that styles.css would otherwise add. */
@@ -191,7 +218,7 @@ body { font-family: var(--t-sans); color: var(--fg-1); }
 /* --- 6. Logo tile + partner-mark helper ---------------------- */
 .invert-on-light { filter: invert(1) brightness(0.4); }
 
-[data-theme="dark"] .invert-on-light { filter: none; }
+:root[data-theme="dark"] .invert-on-light { filter: none; }
 
 /* --- 7. Neutralise legacy site-footer dark slab ------------- */
 /* styles.css gives .site-footer a near-black background + white
@@ -239,7 +266,7 @@ body { font-family: var(--t-sans); color: var(--fg-1); }
   line-height: 1;
 }
 
-[data-theme="dark"] .news-row__day { color: #d99adc; }
+:root[data-theme="dark"] .news-row__day { color: #d99adc; }
 
 .news-row__mo {
   font-size: 11px;
