@@ -379,12 +379,29 @@
 
 .research-content p { color: var(--fg-1); line-height: 1.65; max-width: 68ch; }
 
-/* Tag filter chip row — research.js reads .tags span elements
-   and toggles a .filtered class; keep the selector names intact. */
+/* Tag filter chip row — consecutive `<div class="tags">` siblings
+   flow horizontally and wrap. The `_research/index.md` sort-by-topic
+   block uses one `.tags` div per tag; inline-flex lets them queue up
+   on a single line instead of stacking. Per-paper `.tags` rows still
+   look right because each contains its own spans in one div. */
 .research-content .tags {
-  display: flex;
+  display: inline-flex;
   flex-wrap: wrap;
   gap: 6px;
+  margin: 0 6px 6px 0;
+  vertical-align: top;
+}
+
+/* Add a trailing break between the last sort-by-topic tag row and
+   the blockquote that follows. Blockquote is block-level so already
+   starts a new line — just give some breathing room. */
+.research-content .tags + blockquote { margin-top: var(--s-4); }
+
+/* Inside a paper card, the tags sit on their own line — the parent
+   `.paper-container` gives them block context so this selector wins
+   over the inline-flex default without overriding it. */
+.research-content .paper-container .tags {
+  display: flex;
   margin: var(--s-2) 0 var(--s-3);
 }
 
