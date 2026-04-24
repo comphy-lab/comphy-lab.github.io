@@ -302,10 +302,10 @@ body.home-v2 #featured-wrapper { display: none; }
   pointer-events: none;
 }
 
-/* Motion caption: frosted paper-tint pane at the bottom — keeps
-   the site's warm aesthetic, reads as editorial rather than "YouTube
-   overlay". Text is normal dark ink against the pane so contrast
-   stays identical to still slides. */
+/* Motion caption: translucent frosted-glass pane — lets the DNS
+   show through behind the text while a strong backdrop blur keeps
+   the caption readable. Warm paper tint matches the site palette,
+   not a hard black gradient. */
 .hero__slide--motion .hero__caption-panel {
   position: absolute;
   left: var(--s-4);
@@ -315,14 +315,22 @@ body.home-v2 #featured-wrapper { display: none; }
   display: flex;
   flex-direction: column;
   gap: var(--s-2);
-  background: color-mix(in srgb, var(--c-paper-tint) 88%, transparent);
-  backdrop-filter: blur(18px) saturate(1.1);
-  -webkit-backdrop-filter: blur(18px) saturate(1.1);
-  border: 1px solid var(--c-border);
+  background: color-mix(in srgb, var(--c-paper-tint) 55%, transparent);
+  backdrop-filter: blur(24px) saturate(1.3);
+  -webkit-backdrop-filter: blur(24px) saturate(1.3);
+  border: 1px solid color-mix(in srgb, var(--c-border-strong) 70%, transparent);
   border-radius: var(--r-md);
-  box-shadow: 0 8px 24px rgba(15, 12, 8, 0.18);
+  box-shadow: 0 6px 20px rgba(15, 12, 8, 0.18);
   color: var(--fg-strong);
   z-index: 2;
+}
+
+/* Fallback for browsers without backdrop-filter (older Safari/Firefox):
+   bump to 82 % so the caption stays legible even without the blur. */
+@supports not (backdrop-filter: blur(1px)) {
+  .hero__slide--motion .hero__caption-panel {
+    background: color-mix(in srgb, var(--c-paper-tint) 82%, transparent);
+  }
 }
 
 .hero__caption-eyebrow {
