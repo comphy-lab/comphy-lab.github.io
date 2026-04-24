@@ -118,6 +118,16 @@ body.no-grid:before { display: none; }
    neutralised where they would clash with the new look. */
 body { font-family: var(--t-sans); color: var(--fg-1); }
 
+/* styles.css applies Cormorant Garamond (the display font) to every
+   h1–h6 sitewide. Cormorant is a calligraphic serif and reads as
+   italicky even when upright — fine for the homepage wordmark, wrong
+   for every other heading. Override back to Fraunces (tokens default)
+   everywhere except the hero wordmark which carries its own class. */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--t-serif);
+  font-style: normal;
+}
+
 /* --- 5. Design-system primitives (lifted from the style guide) --- */
 .panel {
   background: var(--c-surface-glass);
