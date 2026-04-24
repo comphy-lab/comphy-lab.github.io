@@ -168,6 +168,278 @@
       section: "Help",
       icon: '<i class="fa-brands fa-github"></i>',
     },
+
+    // ==========================================================
+    // Quick actions — paired with v2 palette behaviour
+    // ==========================================================
+    {
+      id: "action-email-pi",
+      title: "Email the PI (vatsal.sanjay@durham.ac.uk)",
+      handler: () => {
+        window.location.href = "mailto:vatsal.sanjay@durham.ac.uk";
+      },
+      section: "Actions",
+      icon: '<i class="fa-solid fa-envelope"></i>',
+    },
+    {
+      id: "action-toggle-theme",
+      title: "Toggle light / dark theme",
+      handler: () => {
+        const toggle = document.getElementById("theme-toggle");
+        if (toggle) toggle.click();
+      },
+      section: "Actions",
+      icon: '<i class="fa-solid fa-circle-half-stroke"></i>',
+    },
+    {
+      id: "action-open-scholar",
+      title: "Open Google Scholar · Sanjay",
+      handler: () => {
+        openExternalUrl(
+          "https://scholar.google.com/citations?user=tHb_qZoAAAAJ&hl=en"
+        );
+      },
+      section: "Actions",
+      icon: '<i class="ai ai-google-scholar"></i>',
+    },
+    {
+      id: "action-open-github",
+      title: "Open GitHub · CoMPhy Lab",
+      handler: () => {
+        openExternalUrl("https://github.com/comphy-lab");
+      },
+      section: "Actions",
+      icon: '<i class="fa-brands fa-github"></i>',
+    },
+    {
+      id: "action-durham-staff",
+      title: "Open Durham staff page · Vatsal Sanjay",
+      handler: () => {
+        openExternalUrl("https://www.durham.ac.uk/staff/vatsal-sanjay/");
+      },
+      section: "Actions",
+      icon: '<i class="fa-solid fa-university"></i>',
+    },
+
+    // ==========================================================
+    // Papers — deep-links into /research#N anchors, curated from
+    // the real paper list. Ordered by recency + impact.
+    // ==========================================================
+    {
+      id: "paper-impacting-spheres",
+      title: "Impacting spheres: from liquid drops to elastic beads (Soft Matter 2026, cover)",
+      handler: () => {
+        window.location.href = "/research#23";
+      },
+      section: "Papers",
+      icon: '<i class="fa-solid fa-file-lines"></i>',
+    },
+    {
+      id: "paper-holes-sheets",
+      title: "Holes in Sheets: double-threshold rupture of draining films (PRL 2026)",
+      handler: () => {
+        window.location.href = "/research#22";
+      },
+      section: "Papers",
+      icon: '<i class="fa-solid fa-file-lines"></i>',
+    },
+    {
+      id: "paper-stood-up-drop",
+      title: "Stood-up Drop to Determine Receding Contact Angles (Soft Matter 2026)",
+      handler: () => {
+        window.location.href = "/research#21";
+      },
+      section: "Papers",
+      icon: '<i class="fa-solid fa-file-lines"></i>',
+    },
+    {
+      id: "paper-viscoelastic-worthington",
+      title: "Viscoelastic Worthington Jets and Droplets (JFM 2025)",
+      handler: () => {
+        window.location.href = "/research#16";
+      },
+      section: "Papers",
+      icon: '<i class="fa-solid fa-file-lines"></i>',
+    },
+    {
+      id: "paper-unifying-scaling",
+      title: "Unifying theory of scaling in drop impact (PRL 2025)",
+      handler: () => {
+        window.location.href = "/research#15";
+      },
+      section: "Papers",
+      icon: '<i class="fa-solid fa-file-lines"></i>',
+    },
+    {
+      id: "paper-viscosity-impact",
+      title: "Role of viscosity on drop impact forces on non-wetting surfaces (JFM 2025)",
+      handler: () => {
+        window.location.href = "/research#14";
+      },
+      section: "Papers",
+      icon: '<i class="fa-solid fa-file-lines"></i>',
+    },
+    {
+      id: "paper-evp-bubble",
+      title: "Bursting bubble in an elastoviscoplastic medium (JFM 2024)",
+      handler: () => {
+        window.location.href = "/research#12";
+      },
+      section: "Papers",
+      icon: '<i class="fa-solid fa-file-lines"></i>',
+    },
+    {
+      id: "paper-bouncing-drop",
+      title: "When does an impacting drop stop bouncing? (JFM 2023)",
+      handler: () => {
+        window.location.href = "/research#11";
+      },
+      section: "Papers",
+      icon: '<i class="fa-solid fa-file-lines"></i>',
+    },
+    {
+      id: "paper-taylor-culick",
+      title: "Taylor–Culick retractions and the influence of the surroundings (JFM 2022)",
+      handler: () => {
+        window.location.href = "/research#9";
+      },
+      section: "Papers",
+      icon: '<i class="fa-solid fa-file-lines"></i>',
+    },
+    {
+      id: "paper-viscoplastic-bubble",
+      title: "Bursting bubble in a viscoplastic medium (JFM 2021)",
+      handler: () => {
+        window.location.href = "/research#7";
+      },
+      section: "Papers",
+      icon: '<i class="fa-solid fa-file-lines"></i>',
+    },
+
+    // ==========================================================
+    // People — deep-links into /team#slug anchors.
+    // ==========================================================
+    {
+      id: "person-vatsal-sanjay",
+      title: "Vatsal Sanjay — PI · Assistant Professor, Durham",
+      handler: () => {
+        window.location.href = "/team/#vatsal-sanjay";
+      },
+      section: "People",
+      icon: '<i class="fa-solid fa-user"></i>',
+    },
+    {
+      id: "person-ayush-dixit",
+      title: "Ayush Dixit — PhD student · Univ. Twente",
+      handler: () => {
+        window.location.href = "/team/#ayush-dixit";
+      },
+      section: "People",
+      icon: '<i class="fa-solid fa-user"></i>',
+    },
+    {
+      id: "person-aman-bhargava",
+      title: "Aman Bhargava — PhD student · Univ. Twente",
+      handler: () => {
+        window.location.href = "/team/#aman-bhargava";
+      },
+      section: "People",
+      icon: '<i class="fa-solid fa-user"></i>',
+    },
+    {
+      id: "person-jnandeep-talukdar",
+      title: "Jnandeep Talukdar — PhD student · Univ. Twente",
+      handler: () => {
+        window.location.href = "/team/#jnandeep-talukdar";
+      },
+      section: "People",
+      icon: '<i class="fa-solid fa-user"></i>',
+    },
+    {
+      id: "person-saumili-jana",
+      title: "Saumili Jana — PhD student · Univ. Twente",
+      handler: () => {
+        window.location.href = "/team/#saumili-jana";
+      },
+      section: "People",
+      icon: '<i class="fa-solid fa-user"></i>',
+    },
+    {
+      id: "person-peter-croxford",
+      title: "Peter Croxford — Student · Durham",
+      handler: () => {
+        window.location.href = "/team/#peter-croxford";
+      },
+      section: "People",
+      icon: '<i class="fa-solid fa-user"></i>',
+    },
+    {
+      id: "person-detlef-lohse",
+      title: "Detlef Lohse — Collaborator · Univ. Twente",
+      handler: () => {
+        window.location.href = "/team/#prof-detlef-lohse";
+      },
+      section: "People",
+      icon: '<i class="fa-solid fa-user-group"></i>',
+    },
+    {
+      id: "person-jacco-snoeijer",
+      title: "Jacco Snoeijer — Collaborator · Univ. Twente",
+      handler: () => {
+        window.location.href = "/team/#prof-jacco-snoeijer";
+      },
+      section: "People",
+      icon: '<i class="fa-solid fa-user-group"></i>',
+    },
+    {
+      id: "person-john-kolinski",
+      title: "John Kolinski — Collaborator · EPFL",
+      handler: () => {
+        window.location.href = "/team/#dr-john-kolinski";
+      },
+      section: "People",
+      icon: '<i class="fa-solid fa-user-group"></i>',
+    },
+
+    // ==========================================================
+    // Recent news
+    // ==========================================================
+    {
+      id: "news-durham-move",
+      title: "Lab moved to Durham University (July 2025)",
+      handler: () => {
+        window.location.href = "/news/";
+      },
+      section: "News",
+      icon: '<i class="fa-solid fa-graduation-cap"></i>',
+    },
+    {
+      id: "news-khmw-award",
+      title: "Jnandeep Talukdar wins KHMW Young Talent Award (Nov 2025)",
+      handler: () => {
+        window.location.href = "/news/";
+      },
+      section: "News",
+      icon: '<i class="fa-solid fa-award"></i>',
+    },
+    {
+      id: "news-aps-talk",
+      title: "APS talk — Respiratory droplets (Feb 2026)",
+      handler: () => {
+        openExternalUrl("https://www.youtube.com/watch?v=uFP5K9i8ah8");
+      },
+      section: "News",
+      icon: '<i class="fa-solid fa-microphone"></i>',
+    },
+    {
+      id: "news-archive",
+      title: "Browse the full news archive",
+      handler: () => {
+        window.location.href = "/news/";
+      },
+      section: "News",
+      icon: '<i class="fa-solid fa-rss"></i>',
+    },
   ];
 
   // Command data loaded successfully

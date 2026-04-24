@@ -19,10 +19,14 @@
   /* Load About Content - Only on main page
    * -------------------------------------------------- */
   const loadAboutContent = async () => {
-    // Only load aboutCoMPhy.md if we're on the main page
+    // Only load aboutCoMPhy.md if we're on the main page AND the
+    // legacy #about-content container is still in the DOM. The v2
+    // homepage renders about from _data/hero.yml directly and drops
+    // this container — skip the fetch entirely in that case.
     if (
-      window.location.pathname === "/" ||
-      window.location.pathname === "/index.html"
+      (window.location.pathname === "/" ||
+        window.location.pathname === "/index.html") &&
+      document.getElementById("about-content")
     ) {
       try {
         const response = await fetch("/aboutCoMPhy.md");
@@ -72,10 +76,13 @@
   /* Load News Content - Only on main page
    * -------------------------------------------------- */
   const loadNewsContent = async () => {
-    // Only load News.md if we're on the main page
+    // Only load News.md if we're on the main page AND the legacy
+    // #news-content container is still rendered. v2 homepage uses
+    // _data/news.yml via Liquid; skip the fetch in that case.
     if (
-      window.location.pathname === "/" ||
-      window.location.pathname === "/index.html"
+      (window.location.pathname === "/" ||
+        window.location.pathname === "/index.html") &&
+      document.getElementById("news-content")
     ) {
       try {
         const response = await fetch("/News.md");
@@ -137,10 +144,14 @@
   /* Load Featured Papers - Only on main page
    * -------------------------------------------------- */
   const loadFeaturedPapers = async () => {
-    // Only load featured papers if we're on the main page
+    // Only scrape /research for featured papers when the legacy
+    // .featured-item__image container is actually on the page. The
+    // v2 homepage has no featured-wrapper — research theme cards
+    // are rendered from _data/research_themes.yml instead.
     if (
-      window.location.pathname === "/" ||
-      window.location.pathname === "/index.html"
+      (window.location.pathname === "/" ||
+        window.location.pathname === "/index.html") &&
+      document.querySelector(".featured-item__image")
     ) {
       try {
         const sanitizeElement = (element) => {
