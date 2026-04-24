@@ -72,16 +72,6 @@ present:
     links:
       github: https://github.com/SaumiliJana
 
-  - slug: peter-croxford
-    name: Peter Croxford
-    role: Student · Durham University
-    bio: >-
-      Bretherton drops and bubbles. Joined the Durham cohort in
-      2025; first undergraduate researcher at the new location.
-    photo: /assets/images/team/anonymous.svg
-    links:
-      github: https://github.com/PCrox
-
 collaborators:
   - name: Prof. Detlef Lohse
     role: Physics of Fluids · Univ. Twente
@@ -148,6 +138,15 @@ collaborators:
       orcid: https://orcid.org/0000-0001-9599-5589
 
 alumni:
+  - name: Peter Croxford
+    role: "MPhys project · Durham 2026"
+    bio: >-
+      Finished his MPhys project on Bretherton drops and bubbles in
+      April 2026 — the first undergraduate researcher at the Durham
+      location.
+    links:
+      github: https://github.com/PCrox
+
   - name: Floris Hoek M.Sc.
     role: "M.Sc. 2026 · Univ. Twente"
     bio: >-
