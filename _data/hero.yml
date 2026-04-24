@@ -46,7 +46,7 @@ images:
   - src: /assets/images/covers/2026-03-SoftMatter_Issue11_cover.jpeg
     alt: Soft Matter March 2026 cover — impacting spheres.
     caption_title: Impacting spheres — from drops to elastic beads
-    caption_sub: Jana et al. · Soft Matter 22, 2226 (2026) · cover
+    caption_sub: Jana et al. · <em>Soft Matter</em> 22, 2226 (2026) · cover
     href: /research#23
 
   - video: /assets/videos/hero-holeySheets.m4v
@@ -55,11 +55,11 @@ images:
       Basilisk DNS of a draining liquid film rupturing through two
       distinct mechanisms separated by a critical Ohnesorge number.
     caption_title: Holes in sheets — double-threshold rupture
-    caption_sub: Dixit et al. · Phys. Rev. Lett. 136, 084001 (2026)
+    caption_sub: Dixit et al. · <em>Phys. Rev. Lett.</em> 136, 084001 (2026)
     href: /research#22
 
   - src: /assets/images/covers/2025-02-JFM_Vol1004.jpeg
     alt: JFM Vol 1004 cover — viscosity on drop-impact forces.
     caption_title: Viscosity &amp; drop-impact forces
-    caption_sub: Sanjay et al. · J. Fluid Mech. 1004, A6 (2025) · cover
+    caption_sub: Sanjay et al. · <em>J. Fluid Mech.</em> 1004, A6 (2025) · cover
     href: /research#14

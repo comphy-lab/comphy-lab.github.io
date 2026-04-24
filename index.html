@@ -92,7 +92,7 @@ description: >-
             <figcaption class="hero__caption-panel">
               <span class="hero__caption-eyebrow">Featured work</span>
               <b class="hero__caption-title">{{ img.caption_title }}</b>
-              <span class="hero__caption-sub">{{ img.caption_sub }}</span>
+              <span class="hero__caption-sub">{{ img.caption_sub }}</span>{%- comment -%} caption_sub may contain <em> for journal names; it's author-curated content, safe to render as HTML. {%- endcomment -%}
               {% if img.href %}
                 <a class="hero__caption-link" href="{{ img.href }}">Read the paper ↗</a>
               {% endif %}
