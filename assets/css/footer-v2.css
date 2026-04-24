@@ -46,7 +46,7 @@
 
 .c-footer__mark:hover { color: var(--c-accent-teal); }
 
-.c-footer__mark img { height: 32px; width: auto; }
+.c-footer__mark img { height: 56px; width: auto; }
 
 .c-footer__tag {
   font-family: var(--t-serif);
@@ -116,7 +116,7 @@
 .c-footer__partners-logos a:hover { opacity: 1; }
 
 .c-footer__partners-logos img {
-  height: 48px;
+  height: 72px;
   width: auto;
   display: block;
 }
