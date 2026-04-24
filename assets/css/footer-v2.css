@@ -121,15 +121,12 @@
   display: block;
 }
 
-/* Basilisk ships as full-colour photo on transparent white; on a
-   dark paper-tint in dark mode give it a small white card so the
-   logo doesn't clip the paper surface. */
-.c-footer__partners-logos .basilisk-bed {
-  padding: 4px 10px;
-  border-radius: var(--r-xs);
-}
+/* Durham: two discrete assets swap by theme. */
+.c-footer__partners-logos .logo-dark-only { display: none; }
 
-[data-theme="dark"] .c-footer__partners-logos .basilisk-bed { background: #f4efe7; }
+:root[data-theme="dark"] .c-footer__partners-logos .logo-light-only { display: none; }
+
+:root[data-theme="dark"] .c-footer__partners-logos .logo-dark-only { display: block; }
 
 /* --- Legal strip ------------------------------------------- */
 .c-footer__legal {
