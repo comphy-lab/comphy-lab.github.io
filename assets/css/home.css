@@ -45,11 +45,11 @@ body.home-v2 #featured-wrapper { display: none; }
    1. HERO
    ========================================================= */
 .hero {
-  /* Legacy .s-header is position:fixed height:80px — clear it plus
-     breathing room so the kicker is never clipped. Bottom spacing
-     is tight on purpose — the next .home-section adds its own top
-     padding, so doubling breathe here just creates a dead zone. */
-  padding: calc(var(--s-8) + 80px) 0 var(--s-4);
+  /* Legacy .s-header is position:fixed at 80 px tall — we clear
+     it plus a small tasteful gap (--s-5 = 24 px) so the kicker
+     breathes without feeling detached. Bottom is tight on purpose
+     — next .home-section adds its own top padding. */
+  padding: calc(var(--s-5) + 80px) 0 var(--s-4);
   position: relative;
 }
 
