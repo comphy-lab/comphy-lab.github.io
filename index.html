@@ -62,7 +62,10 @@ description: >-
 
       <div class="hero__media" aria-label="Rotating figures from recent lab work">
         {% for img in hero.images %}
-          <figure data-active="{% if forloop.first %}true{% else %}false{% endif %}"
+          {% assign is_motion = false %}
+          {% if img.video or img.youtube %}{% assign is_motion = true %}{% endif %}
+          <figure class="hero__slide hero__slide--{% if is_motion %}motion{% else %}still{% endif %}"
+                  data-active="{% if forloop.first %}true{% else %}false{% endif %}"
                   aria-hidden="{% if forloop.first %}false{% else %}true{% endif %}">
             <div class="hero__image-well">
               {% if img.video %}
