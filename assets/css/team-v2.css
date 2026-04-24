@@ -237,3 +237,30 @@
    inherits new tokens through bridge.css; we just silence the
    overriding background-colors so paper shows through. */
 .team-section, .team-grid, .team-member { background: transparent; }
+
+/* --- Photo-free compact tiles for collaborators + alumni.
+   Collaborators and alumni lists are long and the photo slot
+   adds noise without signal — we don't typically have consistent
+   headshots for collaborators, and alumni are defined by their
+   project rather than their face. Drop the photo bed, tighten
+   the bio clamp, let the grid pack more per row. */
+#collaborators .t-member__photo,
+#alumni .t-member__photo { display: none; }
+
+#collaborators .t-member,
+#alumni .t-member {
+  gap: var(--s-2);
+  padding: var(--s-4);
+  background: var(--c-surface-strong);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-md);
+}
+
+#collaborators .t-member__bio,
+#alumni .t-member__bio { -webkit-line-clamp: 4; }
+
+/* Denser grid for the photo-less lists */
+#collaborators .roster-grid,
+#alumni .roster-grid {
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
