@@ -18,6 +18,10 @@ We are always looking for enthusiastic researchers to join our group. We welcome
   </div>
 </div>
 
+## How we work
+
+Open exchange of ideas drives our progress. We share our codes from the earliest stages of development, embracing transparent research practices to foster collaboration and reproducibility. Every paper ships with a reproducible simulation repository on [GitHub](https://github.com/comphy-lab) — and we welcome inquiries and partnerships from the broader scientific community. Nothing is more exhilarating than a healthy scientific discussion.
+
 <div class="projects-showcase" markdown="1">
 
 ## Current Research Projects
