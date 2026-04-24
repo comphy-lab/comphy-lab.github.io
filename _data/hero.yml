@@ -63,12 +63,3 @@ images:
     caption_title: Viscosity &amp; drop-impact forces
     caption_sub: Sanjay et al. · J. Fluid Mech. 1004, A6 (2025) · cover
     href: /research#14
-
-# Below-the-fold stats strip
-figures:
-  - value: "24"
-    label: Peer-reviewed papers since 2017 — PRL, JFM, Soft Matter, Nat. Commun.
-  - value: "20+"
-    label: Active collaborators across Europe and North America
-  - value: Open
-    label: Always recruiting PhDs, MScs, and visitors — see Join Us

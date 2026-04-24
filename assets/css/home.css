@@ -408,34 +408,6 @@ body.home-v2 #featured-wrapper { display: none; }
    while faded out — small CPU/GPU cost, but keeps fade transitions
    smooth and avoids a restart flash when they rotate back. */
 
-.hero__figures {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--s-4);
-  margin-top: var(--s-6);
-  padding-top: var(--s-5);
-  border-top: 1px solid var(--c-border);
-}
-
-.hero__figures > div b {
-  display: block;
-  font-family: var(--t-serif);
-  font-weight: 600;
-  font-size: clamp(24px, 2.4vw, 34px);
-  color: var(--fg-strong);
-  line-height: 1;
-  letter-spacing: -0.02em;
-  font-variation-settings: "opsz" 72;
-}
-
-.hero__figures > div span {
-  font-size: var(--t-small);
-  color: var(--fg-2);
-  display: block;
-  margin-top: 6px;
-  max-width: 22ch;
-}
-
 /* Respect prefers-reduced-motion — hero cycles stop. */
 @media (prefers-reduced-motion: reduce) {
   .hero__media figure { transition: none; }
