@@ -214,8 +214,6 @@ body.home-v2 #featured-wrapper { display: none; }
    (3fr of 5 total) of a 4:3 container, which resolves to a ~4:5
    portrait cell — the old poster feel is back. */
 .hero__media {
-  display: grid;
-  grid-template-areas: "stack";
   aspect-ratio: 4 / 3;
   border-radius: var(--r-lg);
   overflow: hidden;
@@ -224,14 +222,22 @@ body.home-v2 #featured-wrapper { display: none; }
   position: relative;
 }
 
+/* Figures stack via absolute positioning — forces each to match
+   the aspect-ratio-constrained container exactly, so a tall caption
+   on one slide can't push the whole rotator height up. */
 .hero__media figure {
-  grid-area: stack;
+  position: absolute;
+  inset: 0;
   margin: 0;
   opacity: 0;
+  pointer-events: none;
   transition: opacity 900ms var(--ease);
 }
 
-.hero__media figure[data-active="true"] { opacity: 1; }
+.hero__media figure[data-active="true"] {
+  opacity: 1;
+  pointer-events: auto;
+}
 
 /* --- Still slide: portrait image left + paper caption right --- */
 .hero__slide--still {
@@ -267,6 +273,8 @@ body.home-v2 #featured-wrapper { display: none; }
 .hero__slide--motion {
   position: relative;
   display: block;
+  height: 100%;
+  min-height: 0;
 }
 
 .hero__slide--motion .hero__image-well {
@@ -294,37 +302,27 @@ body.home-v2 #featured-wrapper { display: none; }
   pointer-events: none;
 }
 
+/* Motion caption: frosted paper-tint pane at the bottom — keeps
+   the site's warm aesthetic, reads as editorial rather than "YouTube
+   overlay". Text is normal dark ink against the pane so contrast
+   stays identical to still slides. */
 .hero__slide--motion .hero__caption-panel {
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: var(--s-7) var(--s-6) var(--s-5);
+  left: var(--s-4);
+  right: var(--s-4);
+  bottom: var(--s-4);
+  padding: var(--s-4) var(--s-5);
   display: flex;
   flex-direction: column;
   gap: var(--s-2);
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    rgba(15, 12, 8, 0.55) 55%,
-    rgba(15, 12, 8, 0.88) 100%
-  );
-  color: #fff;
+  background: color-mix(in srgb, var(--c-paper-tint) 88%, transparent);
+  backdrop-filter: blur(18px) saturate(1.1);
+  -webkit-backdrop-filter: blur(18px) saturate(1.1);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-md);
+  box-shadow: 0 8px 24px rgba(15, 12, 8, 0.18);
+  color: var(--fg-strong);
   z-index: 2;
-}
-
-.hero__slide--motion .hero__caption-eyebrow { color: #f0c8f2; }
-.hero__slide--motion .hero__caption-title { color: #fff; }
-.hero__slide--motion .hero__caption-sub {
-  color: rgba(255, 255, 255, 0.82);
-}
-.hero__slide--motion .hero__caption-link {
-  color: #a7e3df;
-  border-bottom-color: rgba(167, 227, 223, 0.45);
-}
-.hero__slide--motion .hero__caption-link:hover {
-  color: #c8f2ef;
-  border-bottom-color: #c8f2ef;
 }
 
 .hero__caption-eyebrow {
