@@ -27,6 +27,11 @@
 
 .home-section + .home-section { border-top: 1px solid var(--c-border); }
 
+/* First home-section sits under the hero — its 96 px top padding
+   compounds with the hero bottom breathing room and leaves a
+   dead zone between the CTAs and the Currently strip. Tighten it. */
+.hero + .home-section { padding-top: var(--s-6); }
+
 /* On the homepage, neutralise the legacy .s-intro / .s-about baked
    into styles.css — homepage markup no longer uses them. */
 body.home-v2 .s-intro,
@@ -41,8 +46,10 @@ body.home-v2 #featured-wrapper { display: none; }
    ========================================================= */
 .hero {
   /* Legacy .s-header is position:fixed height:80px — clear it plus
-     breathing room so the kicker is never clipped. */
-  padding: calc(var(--s-8) + 80px) 0 var(--s-9);
+     breathing room so the kicker is never clipped. Bottom spacing
+     is tight on purpose — the next .home-section adds its own top
+     padding, so doubling breathe here just creates a dead zone. */
+  padding: calc(var(--s-8) + 80px) 0 var(--s-4);
   position: relative;
 }
 
