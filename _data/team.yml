@@ -273,6 +273,9 @@ alumni:
     role: "M.Sc. 2026 · Univ. Twente"
     bio: >-
       Colloidal shell formation inside an evaporating droplet.
+    thesis:
+      title: Colloidal shell formation inside an evaporating droplet
+      href: https://bit.ly/thesisFloris
     links:
       github: https://github.com/Floris-Hoek
 
@@ -280,6 +283,9 @@ alumni:
     role: "M.Sc. 2026 · Univ. Twente"
     bio: >-
       Droplets and bubbles spreading on liquid-infused surfaces.
+    thesis:
+      title: Droplets and bubbles spreading on liquid-infused surfaces
+      href: https://bit.ly/thesisMark
     links:
       github: https://github.com/mcboulogne
 
@@ -288,36 +294,117 @@ alumni:
     bio: >-
       Spinning pizza — instabilities on a rotating disk of complex
       fluid.
+    thesis:
+      title: Spinning Pizza
+      href: https://tinyurl.com/2ycunjcr
+    links:
+      github: https://github.com/mdjsent
 
   - name: Valentin Rosario M.Sc.
     role: "M.Sc. 2024 → Ph.D. Leiden"
     bio: >-
       Modelling the Ward–Hunt ice-shelf as a viscoelastic solid.
+    thesis:
+      title: Modelling the Ward–Hunt ice-shelf as a viscoelastic solid
+      href: https://tinyurl.com/2cjsjvr4
+    links:
+      github: https://github.com/ValeRos9
+      linkedin: https://www.linkedin.com/in/valentin-rosario-6377602b2/
 
   - name: Swen van den Heuvel M.Sc.
     role: "M.Sc. 2023 → Ph.D. Phys. Fluids Univ. Twente"
     bio: >-
       Hydrodynamic forces acting on vertically rising bubbles.
+    thesis:
+      title: Hydrodynamic forces acting on vertically rising bubbles
+      href: https://bit.ly/4er5VaH
+    links:
+      linkedin: https://www.linkedin.com/in/swen-van-den-heuvel-33a1901aa/
+
+  - name: Niels Kuipers B.Sc.
+    role: "B.Sc. 2023 → M.Sc. Adv. Technology, Univ. Twente"
+    bio: >-
+      Partial coalescence of drops on viscous films.
+    thesis:
+      title: Partial coalescence of drops on viscous films
+      href: https://tinyurl.com/258jvdyv
+    links:
+      linkedin: https://www.linkedin.com/in/nielskuipers1/
 
   - name: C. H. (Luuk) Maurits M.Sc.
     role: "M.Sc. 2023 · Univ. Twente"
     bio: >-
       When Laplace meets Marangoni — surface-tension gradients in
       evaporating liquid pools.
+    thesis:
+      title: When Laplace meets Marangoni
+      href: https://bit.ly/ThesisLuuk
 
   - name: Tom Appleford M.Sc.
     role: "M.Sc. 2022 → Ph.D. Fluid Lab, Univ. Amsterdam"
     bio: >-
       The deformation of a droplet in a viscoplastic simple shear
       flow. Now a co-author on the dilute-emulsions paper.
+    thesis:
+      title: The deformation of a droplet in a viscoplastic simple shear flow
+      href: https://bit.ly/ThesisTom
+
+  - name: Twan Heijink B.Sc.
+    role: "B.Sc. 2021 · Saxion Univ. → Software IVQA Engineer, Thales"
+    bio: >-
+      Standing waves at a fluid-fluid interface with plastocapillarity.
+    thesis:
+      title: Standing waves at a fluid-fluid interface with plastocapillarity
+      href: https://bit.ly/ThesisTwanHeijink
+    links:
+      linkedin: https://www.linkedin.com/in/twanheijink/
+
+  - name: Steven Meuleman M.Sc.
+    role: "B.Sc. 2020 · Univ. Twente → Mechanical Engineer, VIRO"
+    bio: >-
+      Simulations of foam generation for a custom axisymmetric
+      core-shell nozzle.
+    thesis:
+      title: Simulations of foam generation for a custom axisymmetric core-shell nozzle
+      href: https://bit.ly/ThesisStevenM
+    links:
+      linkedin: https://www.linkedin.com/in/steven-meuleman/
 
   - name: Thijmen Kroeze M.Sc.
-    role: "B.Sc. 2020 · Univ. Twente → CFD Engineer"
+    role: "B.Sc. 2020 · Univ. Twente → CFD Engineer, Brink Climate Systems"
     bio: >-
       Singular jet dynamics of drop impacts at high Bond numbers.
+    thesis:
+      title: Singular jet dynamics of drop impacts at high Bond numbers
+      href: https://bit.ly/ThesisThijmenKroeze
+    links:
+      linkedin: https://www.linkedin.com/in/thijmen-kroeze-535aa3207/
+
+  - name: Coen Verschuur M.Sc.
+    role: "B.Sc. 2020 → Ph.D. Phys. Fluids Univ. Twente"
+    bio: >-
+      Early time dynamics in immiscible drop impacts.
+    thesis:
+      title: Early time dynamics in immiscible drop impacts
+      href: https://bit.ly/ThesisCoenVerschuur
+
+  - name: Dr. Pim J. Dekker
+    role: "B.Sc. 2019 · Univ. Twente → Researcher, Applied Physics Univ. Twente"
+    bio: >-
+      Spreading of a drop on a water-air interface.
+    thesis:
+      title: Spreading of a drop on a water-air interface
+      href: https://bit.ly/ThesisPimDekker
+    links:
+      linkedin: https://www.linkedin.com/in/pim-dekker/
 
   - name: Laurence Bruggink M.Sc.
     role: "B.Sc. 2019 · Univ. Twente → Research Engineer, Alfen"
     bio: >-
       Bursting bubble in a Herschel–Bulkley fluid — an early pillar
       of the viscoplastic bubble-bursting programme.
+    thesis:
+      title: Bursting bubble in a Herschel–Bulkley fluid
+      href: https://bit.ly/ThesisLaurenceBruggink
+    links:
+      linkedin: https://www.linkedin.com/in/laurence-bruggink-b733b222a/
