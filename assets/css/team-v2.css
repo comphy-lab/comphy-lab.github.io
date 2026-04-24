@@ -1,0 +1,239 @@
+/* =============================================================
+   CoMPhy Lab · Team page (v2)
+   Three sections — Present / Collaborators / Alumni — hard-
+   separated, with identical photo crop (1:1, --r-md) and
+   2-sentence bio clamp. Driven by _data/team.yml.
+   ============================================================= */
+
+.team-page {
+  width: min(100% - 2rem, var(--maxw-page));
+  margin: 0 auto;
+  padding: var(--s-9) 0 var(--s-8);
+  position: relative;
+  z-index: 1;
+}
+
+.team-page__head {
+  max-width: 68ch;
+  margin: 0 auto var(--s-8);
+  text-align: center;
+}
+
+.team-page__kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--t-sans);
+  font-size: var(--t-eyebrow);
+  font-weight: 600;
+  letter-spacing: var(--t-track-wide);
+  text-transform: uppercase;
+  color: var(--fg-2);
+  margin-bottom: var(--s-4);
+}
+
+.team-page__kicker .rule {
+  width: 32px;
+  height: 1px;
+  background: var(--c-border-strong);
+}
+
+.team-page__title {
+  font-family: var(--t-serif);
+  font-weight: 600;
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--fg-strong);
+  font-variation-settings: "opsz" 96;
+  margin: 0 0 var(--s-4);
+  text-wrap: balance;
+}
+
+.team-page__lede {
+  font-family: var(--t-serif);
+  font-weight: 400;
+  font-size: var(--t-body-lg);
+  line-height: 1.55;
+  color: var(--fg-1);
+  margin: 0;
+  max-width: 60ch;
+  margin-left: auto;
+  margin-right: auto;
+  font-variation-settings: "opsz" 18;
+}
+
+/* -- Roster group head -------------------------------------- */
+.roster { display: grid; gap: var(--s-8); }
+
+.roster__group { scroll-margin-top: var(--s-7); }
+
+.roster__group-head {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-3);
+  margin-bottom: var(--s-5);
+  padding-bottom: var(--s-3);
+  border-bottom: 1px solid var(--c-border);
+}
+
+.roster__group-head h2 {
+  font-family: var(--t-serif);
+  font-weight: 600;
+  font-size: 22px;
+  color: var(--fg-strong);
+  margin: 0;
+  font-variation-settings: "opsz" 48;
+  letter-spacing: -0.01em;
+}
+
+.roster__group-head span {
+  font-family: var(--t-mono);
+  font-size: 12px;
+  color: var(--fg-2);
+  font-variant-numeric: tabular-nums;
+}
+
+.roster-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--s-5);
+}
+
+.t-member {
+  display: grid;
+  gap: var(--s-3);
+  scroll-margin-top: var(--s-7);
+}
+
+.t-member__photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--r-md);
+  background: color-mix(in srgb, var(--c-brand-purple) 8%, var(--c-paper-tint));
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--t-serif);
+  font-weight: 600;
+  font-size: 48px;
+  color: var(--c-brand-purple);
+  letter-spacing: -0.02em;
+  border: 1px solid var(--c-border);
+  position: relative;
+}
+
+[data-theme="dark"] .t-member__photo {
+  color: #d99adc;
+  background: color-mix(in srgb, var(--c-brand-purple) 18%, var(--c-paper-tint));
+}
+
+.t-member__photo img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Missing-asset stripe */
+.t-member__photo--ph:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(15, 12, 8, 0.025) 0 8px,
+    transparent 8px 16px
+  );
+  pointer-events: none;
+}
+
+[data-theme="dark"] .t-member__photo--ph:after {
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.025) 0 8px,
+    transparent 8px 16px
+  );
+}
+
+.t-member__name {
+  font-family: var(--t-serif);
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--fg-strong);
+  letter-spacing: -0.005em;
+  font-variation-settings: "opsz" 24;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.t-member__role {
+  font-size: 13px;
+  color: var(--fg-2);
+  line-height: 1.4;
+}
+
+.t-member__bio {
+  font-size: 13px;
+  color: var(--fg-1);
+  line-height: 1.55;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-wrap: pretty;
+  max-width: 42ch;
+  margin: 0;
+}
+
+.t-member__links {
+  display: flex;
+  gap: var(--s-2);
+  margin-top: 2px;
+}
+
+.t-member__links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--fg-strong) 5%, transparent);
+  color: var(--fg-2);
+  border-bottom: 0;
+}
+
+.t-member__links a:hover {
+  background: color-mix(in srgb, var(--c-accent-teal) 12%, transparent);
+  color: var(--c-accent-teal);
+}
+
+.t-member__links i { font-size: 13px; }
+
+/* The PI tile gets teal framing to stand out */
+.t-member--pi .t-member__photo {
+  background: color-mix(in srgb, var(--c-accent-teal) 12%, var(--c-paper-tint));
+  color: var(--c-accent-teal);
+  border-color: color-mix(in srgb, var(--c-accent-teal) 30%, transparent);
+}
+
+/* Link used on the name to deep-link to /team#slug */
+.t-member__name-link {
+  color: inherit;
+  border-bottom: 0;
+  text-decoration: none;
+}
+
+.t-member__name-link:hover { color: var(--c-accent-teal); }
+
+@media (max-width: 520px) {
+  .roster-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+
+  .t-member__photo { aspect-ratio: 1 / 1; }
+
+  .t-member__photo { font-size: 36px; }
+}
+
+/* --- Neutralise legacy .team-section / .team-grid layout ---
+   The old team.html layout rendered heading-driven sections with
+   styles in team.css. If a page still carries that markup it
+   inherits new tokens through bridge.css; we just silence the
+   overriding background-colors so paper shows through. */
+.team-section, .team-grid, .team-member { background: transparent; }
