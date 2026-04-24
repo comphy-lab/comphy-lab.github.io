@@ -196,13 +196,27 @@ body.home-v2 #featured-wrapper { display: none; }
   flex-wrap: wrap;
 }
 
-/* Hero rotator card — each slide has image/video on the left and
-   a paper-tinted caption panel on the right. Caption reads in high
-   contrast (dark ink on paper tint) instead of overlaid on busy
-   cover art. */
+/* Hero rotator card.
+   Two slide variants share the same container + caption panel
+   markup but lay out differently:
+
+     .hero__slide--still  — a portrait cover/figure on the left,
+                            caption on a paper-tinted panel right.
+                            Maximises editorial poster feel.
+
+     .hero__slide--motion — video fills the full 4:3 card edge-to-
+                            edge, caption overlays the bottom with
+                            a dark gradient. Gives the DNS room to
+                            breathe.
+
+   The container has a fixed 4:3 aspect so rotations don't shift
+   layout. For still slides the image well is the left column
+   (3fr of 5 total) of a 4:3 container, which resolves to a ~4:5
+   portrait cell — the old poster feel is back. */
 .hero__media {
   display: grid;
   grid-template-areas: "stack";
+  aspect-ratio: 4 / 3;
   border-radius: var(--r-lg);
   overflow: hidden;
   box-shadow: var(--shadow-soft);
@@ -213,38 +227,63 @@ body.home-v2 #featured-wrapper { display: none; }
 .hero__media figure {
   grid-area: stack;
   margin: 0;
-  display: grid;
-  grid-template-columns: 5fr 3fr;
   opacity: 0;
   transition: opacity 900ms var(--ease);
 }
 
 .hero__media figure[data-active="true"] { opacity: 1; }
 
-/* Image well — 4:3 aspect, fully fills its column, covers or
-   contains based on medium type. */
-.hero__image-well {
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
+/* --- Still slide: portrait image left + paper caption right --- */
+.hero__slide--still {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+}
+
+.hero__slide--still .hero__image-well {
   position: relative;
+  overflow: hidden;
+  background: var(--c-paper-tint);
+  border-right: 1px solid var(--c-border);
+}
+
+.hero__slide--still .hero__image-well img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.hero__slide--still .hero__caption-panel {
+  background: var(--c-paper-tint);
+  padding: var(--s-5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--s-3);
+}
+
+/* --- Motion slide: full-bleed video + overlay caption --- */
+.hero__slide--motion {
+  position: relative;
+  display: block;
+}
+
+.hero__slide--motion .hero__image-well {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
   background: var(--fg-strong);
 }
 
-.hero__image-well img {
+.hero__slide--motion .hero__image-well video {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-.hero__image-well video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.hero__image-well iframe {
+.hero__slide--motion .hero__image-well iframe {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -255,15 +294,37 @@ body.home-v2 #featured-wrapper { display: none; }
   pointer-events: none;
 }
 
-/* Caption panel on the right — paper-tint bg, full contrast. */
-.hero__caption-panel {
-  background: var(--c-paper-tint);
-  padding: var(--s-5) var(--s-5) var(--s-5);
+.hero__slide--motion .hero__caption-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: var(--s-7) var(--s-6) var(--s-5);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: var(--s-3);
-  border-left: 1px solid var(--c-border);
+  gap: var(--s-2);
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(15, 12, 8, 0.55) 55%,
+    rgba(15, 12, 8, 0.88) 100%
+  );
+  color: #fff;
+  z-index: 2;
+}
+
+.hero__slide--motion .hero__caption-eyebrow { color: #f0c8f2; }
+.hero__slide--motion .hero__caption-title { color: #fff; }
+.hero__slide--motion .hero__caption-sub {
+  color: rgba(255, 255, 255, 0.82);
+}
+.hero__slide--motion .hero__caption-link {
+  color: #a7e3df;
+  border-bottom-color: rgba(167, 227, 223, 0.45);
+}
+.hero__slide--motion .hero__caption-link:hover {
+  color: #c8f2ef;
+  border-bottom-color: #c8f2ef;
 }
 
 .hero__caption-eyebrow {
