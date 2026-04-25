@@ -390,6 +390,27 @@
 
 .research-content p { color: var(--fg-1); line-height: 1.65; max-width: 68ch; }
 
+/* Highlights subhead (`#### Highlights`) and its bullet list. The
+   legacy chain in styles.css points the list text at `--color-secondary`,
+   which bridge.css remaps to `--c-paper-tint` — invisible on dark paper.
+   `--c-brand-blue` also lacks a dark-mode override, so the heading reads
+   too dim. Pin both to theme-aware values. */
+.research-content h4 {
+  color: var(--c-brand-blue);
+}
+
+[data-theme="dark"] .research-content h4 {
+  color: #8fb8ff;
+}
+
+.research-content h4 + ul {
+  border-left-color: var(--c-border-strong);
+}
+
+.research-content h4 + ul li {
+  color: var(--fg-1);
+}
+
 /* Tag filter chip row — consecutive `<div class="tags">` siblings
    flow horizontally and wrap. The `_research/index.md` sort-by-topic
    block uses one `.tags` div per tag; inline-flex lets them queue up
