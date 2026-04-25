@@ -67,9 +67,13 @@ permalink: /teaching/2025-Basilisk101-Madrid
 
 ## Course Description
 
-This intensive 4-day course provides a comprehensive introduction to high-fidelity simulations using Basilisk C, a powerful computational framework for fluid dynamics. Participants will learn to implement and solve complex fluid mechanics problems with an emphasis on multiphase flows, interface dynamics, and non-Newtonian rheology.
+This four-day course teaches Basilisk C through the equations and
+numerics used in multiphase-flow DNS: conservation laws, transport,
+interface tracking, and non-Newtonian rheology.
 
-The course combines theoretical lectures with extensive hands-on sessions, allowing participants to immediately apply concepts through guided coding exercises. By the end of the course, you'll be able to develop your own simulations for a variety of fluid dynamics applications.
+Lectures stay close to implementation. Participants write and modify
+working Basilisk cases during the course, then use those cases as
+templates for their own simulations.
 
 ## Course Schedule
 

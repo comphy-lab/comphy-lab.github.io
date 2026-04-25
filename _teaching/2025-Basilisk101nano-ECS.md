@@ -67,9 +67,14 @@ permalink: /teaching/2025-Basilisk101nano-ECS
 
 ## Course Description
 
-This intensive 3-hour pre-conference training provides a focused introduction to high-fidelity multiphase flow simulation using Basilisk C, a powerful open-source framework. Designed for ECS 2025 participants with intermediate CFD background, the course emphasizes practical applications to coating processes while building foundational skills in adaptive mesh refinement and interface dynamics.
+This three-hour ECS 2025 session introduces Basilisk C for multiphase
+flow problems in coating applications. It assumes an intermediate CFD
+background and focuses on adaptive mesh refinement, interface tracking,
+and contact-line dynamics.
 
-The hands-on format combines theoretical insights with live coding demonstrations, enabling participants to immediately apply concepts. Through three carefully selected examples—basic heat conduction, drop impact dynamics, and Landau-Levich dip coating—attendees will gain practical experience with Basilisk's approach to conservation equations, interface tracking, and complex physics modeling relevant to coating applications.
+The examples are deliberately small: heat conduction, drop impact, and
+Landau-Levich dip coating. Each one introduces a numerical ingredient
+that appears again in coating-flow simulations.
 
 ## Course Schedule
 
@@ -175,7 +180,7 @@ Registration for this pre-conference session is handled through [ECS 2025](https
 
 ## Expected Outcomes
 
-By the end of this intensive 3-hour session, participants will:
+By the end of the session, participants will be able to:
 
 - **Execute Basilisk simulations** confidently on their own systems
 - **Modify key parameters** to explore different physical scenarios
@@ -183,4 +188,5 @@ By the end of this intensive 3-hour session, participants will:
 - **Apply to coating processes** through the Landau-Levich example
 - **Connect theory to practice** by relating simulation results to physical phenomena
 
-This training provides the foundation for applying high-fidelity simulation techniques to coating research, with immediate practical skills and clear pathways for advanced applications.
+The point is practical: leave with a working Basilisk setup and a few
+small cases that can be modified after the workshop.

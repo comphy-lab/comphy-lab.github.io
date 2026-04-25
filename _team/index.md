@@ -19,11 +19,6 @@ description: >-
       <span class="rule" aria-hidden="true"></span>
     </p>
     <h1 class="team-page__title">The people in the room</h1>
-    <p class="team-page__lede">
-      Three groups, hard-separated. Present team and collaborators work
-      weekly; alumni are welcome back for coffee. Two-sentence bios
-      on every card — the long version lives on each person's page.
-    </p>
   </header>
 
   <div class="roster">

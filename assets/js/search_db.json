@@ -537,7 +537,7 @@
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - Course Description",
-    "content": "This intensive 4-day course provides a comprehensive introduction to high-fidelity simulations using Basilisk C, a powerful computational framework for fluid dynamics. Participants will learn to implement and solve complex fluid mechanics problems with an emphasis on multiphase flows, interface dynamics, and non-Newtonian rheology. The course combines theoretical lectures with extensive hands-on sessions, allowing participants to immediately apply concepts through guided coding exercises. By the end of the course, you'll be able to develop your own simulations for a variety of fluid dynamics applications.",
+    "content": "This four-day course teaches Basilisk C through the equations and numerics used in multiphase-flow DNS: conservation laws, transport, interface tracking, and non-Newtonian rheology. Lectures stay close to implementation. Participants write and modify working Basilisk cases during the course, then use those cases as templates for their own simulations.",
     "url": "https://comphy-lab.org/teaching/2025-Basilisk101-Madrid#course-description",
     "type": "website_section",
     "priority": 3
@@ -607,22 +607,22 @@
   },
   {
     "title": "Teaching - Teaching: Methods",
-    "content": "Welcome to the CoMPhy Lab's educational resources. Apart from the university courses, we aim to develop and offer a range of workshops and tutorials on modern computational methods for multiphase flows and high-fidelity simulations. High-Fidelity Simulations Using Basilisk C Universidad Carlos III de Madrid March 10-13, 2025 A comprehensive course on using Basilisk C for simulating multiphase flows, interface tracking, and solving conservation equations. Learn to tackle complex fluid dynamics problems with high-fidelity numerical methods. View Course Basilisk for Multiphase Flow Simulations European Coating Symposium 2025 September 15, 2025 Intensive 3-hour pre-conference training focused on coating applications. Learn Basilisk fundamentals through hands-on examples: heat conduction, drop impact dynamics, and Landau-Levich dip coating.",
+    "content": "Courses and workshops on Basilisk C, multiphase-flow numerics, and soft-matter simulation. High-Fidelity Simulations Using Basilisk C Universidad Carlos III de Madrid March 10-13, 2025 Four-day Basilisk C course on conservation laws, interface tracking, and non-Newtonian flow exercises. View Course Basilisk for Multiphase Flow Simulations European Coating Symposium 2025 September 15, 2025 Three-hour ECS session on heat conduction, drop impact, and Landau-Levich dip coating.",
     "url": "https://comphy-lab.org/teaching/#teaching",
     "type": "website_section",
     "priority": 3
   },
   {
     "title": "Teaching - Teaching: Introduction",
-    "content": "View Course Introduction to Soft Matter Durham University Fall 2025 Comprehensive lecture notes covering fundamental concepts in soft matter physics and their applications. View Lecture Notes",
+    "content": "View Course Introduction to Soft Matter Durham University Fall 2025 Lecture notes for the Durham soft-matter course. View Lecture Notes",
     "url": "https://comphy-lab.org/teaching/#teaching",
     "type": "website_section",
     "priority": 3
   },
   {
-    "title": "Teaching - About Our Teaching Philosophy",
-    "content": "At CoMPhy Lab, we believe in hands-on learning and deep understanding of computational methods. Our courses combine theoretical foundations with practical implementation, allowing students to develop both conceptual understanding and technical skills. Our teaching approach emphasizes: - **Think before you compute**: Understanding the underlying physics before implementation - **Modular code structure**: Building maintainable and extensible computational tools - **Advanced numerical methods**: Mastering state-of-the-art techniques for complex problems - **Open science**: Sharing knowledge and tools with the scientific community. Checkout If you're interested in hosting a course or workshop with CoMPhy Lab, please [contact us](/join) for collaboration opportunities.",
-    "url": "https://comphy-lab.org/teaching/#about-our-teaching-philosophy",
+    "title": "Teaching - How we teach",
+    "content": "We start from the physics, then write the code. Students derive or read the governing equations, implement a minimal case, and compare the output with scaling arguments, benchmarks, or experiments. Our teaching approach emphasizes: - **Think before you compute**: Understanding the underlying physics before implementation - **Modular code structure**: Building maintainable and extensible computational tools - **Numerical methods**: Using the right discretisation for the problem - **Open science**: Sharing knowledge and tools with the scientific community. Checkout If you're interested in hosting a course or workshop with CoMPhy Lab, please [contact us](/join) for collaboration opportunities.",
+    "url": "https://comphy-lab.org/teaching/#how-we-teach",
     "type": "website_section",
     "priority": 3
   },
@@ -6690,14 +6690,14 @@
   },
   {
     "title": "\"Join Us\"",
-    "content": "We are always looking for enthusiastic researchers to join our group. We welcome applicants with strong backgrounds in physics, applied mathematics, or engineering, especially in continuum mechanics, numerics, and scientific computing. vatsal.sanjay@durham.ac.uk",
+    "content": "The lab takes PhD, MPhys/MSc, visiting, and postdoctoral researchers when the project and funding fit. Strong preparation in physics, applied mathematics, or engineering helps, especially in continuum mechanics, numerics, and scientific computing. vatsal.sanjay@durham.ac.uk",
     "url": "https://comphy-lab.org/join/",
     "type": "website_content",
     "priority": 4
   },
   {
     "title": "\"Join Us\" - Current Research Projects",
-    "content": "To get an idea of the kind of projects we are interested in, please have a look at our current research topics (see [Research](/research)). Also, below are some of the ongoing research projects:",
+    "content": "These examples show the current scope. Details change with funding, timing, and the person joining the project.",
     "url": "https://comphy-lab.org/join/#current-research-projects",
     "type": "website_section",
     "priority": 4
@@ -6766,8 +6766,8 @@
     "priority": 4
   },
   {
-    "title": "\"Join Us\" - <span class=\"section-icon\"><i class=\"fa-solid fa-user-tie\"></i></span> Postdoctoral Positions: We occasionally have...",
-    "content": "We occasionally have openings for postdoctoral researchers to lead independent research projects within our computational multiphase physics framework. Postdoc positions offer excellent opportunities for career development and research leadership. **What we're looking for:** - PhD in Physics, Applied Mathematics, Mechanical Engineering, or related field - Strong background in computational fluid dynamics - Experience with numerical methods and high-performance computing - Independent research capabilities and leadership potential **Opportunities include:** - Leading research projects with PhD students - Developing new computational methods and tools - International collaborations and research visits - Grant writing and proposal development - Mentoring junior researchers When positions are available, they will be advertised here.",
+    "title": "\"Join Us\" - <span class=\"section-icon\"><i class=\"fa-solid fa-user-tie\"></i></span> Postdoctoral Positions",
+    "content": "When funding is available, postdocs lead projects in DNS of free-surface or non-Newtonian flows, maintain the accompanying code, and work with PhD and MPhys/MSc students. **What we're looking for:** - PhD in Physics, Applied Mathematics, Mechanical Engineering, or related field - Strong background in computational fluid dynamics - Experience with numerical methods and high-performance computing - Independent research capabilities and leadership potential **Opportunities include:** - Leading research projects with PhD students - Developing new computational methods and tools - International collaborations and research visits - Grant writing and proposal development - Mentoring junior researchers When positions are available, they will be advertised here.",
     "url": "https://comphy-lab.org/join/#span-classsection-iconi-classfa-solid-fa-user-tieispan-postdoctoral-positions",
     "type": "website_section",
     "priority": 4
@@ -6788,7 +6788,7 @@
   },
   {
     "title": "\"Join Us\" - <span class=\"section-icon\"><i class=\"fa-solid fa-graduation-cap\"></i></span> PhD Positions: We are always...",
-    "content": "We are always looking for enthusiastic PhD students to join our research group and contribute to cutting-edge computational multiphase physics research. We offer fully funded positions with opportunities for international collaboration and conference participation. **Research Areas:** - High-performance Computing and Numerical Methods - Multiphase flows and Interface Dynamics - Physics-based Modeling and Simulation - Soft Singularities in Fluid Systems - Droplet Dynamics and Respiratory Physics **What we offer:** - Access to high-performance computing resources - Collaboration with leading international research groups - Conference attendance and networking opportunities - Mentorship in both research and career development **Admissions and studentships:** - Entry: First-class BSc or at least a 2:1 MPhys/MSc (or international equivalent).",
+    "content": "PhD projects are usually computational and sit in free-surface flow, soft singularities, or non-Newtonian rheology. Funded studentships are advertised here when available; strong candidates should make contact before the Durham ranking cycle. **Research Areas:** - High-performance Computing and Numerical Methods - Multiphase flows and Interface Dynamics - Physics-based Modeling and Simulation - Soft Singularities in Fluid Systems - Droplet Dynamics and Respiratory Physics **Lab support:** - Access to high-performance computing resources - Collaboration with leading international research groups - Conference attendance - Mentorship in both research and career development **Admissions and studentships:** - Entry: First-class BSc or at least a 2:1 MPhys/MSc (or international equivalent).",
     "url": "https://comphy-lab.org/join/#span-classsection-iconi-classfa-solid-fa-graduation-capispan-phd-positions",
     "type": "website_section",
     "priority": 4
@@ -6809,14 +6809,14 @@
   },
   {
     "title": "\"Join Us\" - <span class=\"section-icon\"><i class=\"fa-solid fa-book\"></i></span> Bachelor's/Master's/Level-4 Projects",
-    "content": "We offer exciting research projects for Bachelor's and Master's students interested in computational physics and fluid dynamics. These projects provide hands-on experience with cutting-edge simulation tools and real-world physics problems. **Project Types:** - Computational fluid dynamics simulations using state-of-the-art [numerical techniques](https://www.github.com/comphy-lab). - Data analysis and visualization of complex flow phenomena. - Development of numerical methods and algorithms. - Experimental-computational comparison studies. **What you'll gain:** - Experience with high-performance computing - Skills in scientific programming (C, Python, Julia, MATLAB) - Understanding of advanced numerical methods - Opportunity to contribute to published research Contact us to discuss project fit and scope for your specific interests and timeline. > See the projects above.",
+    "content": "Bachelor's, MPhys, and MSc projects usually involve a small DNS problem, a scaling argument, or data analysis tied to an active paper. **Project Types:** - Computational fluid dynamics simulations using [open-source numerical methods](https://www.github.com/comphy-lab). - Data analysis and visualization of complex flow phenomena. - Development of numerical methods and algorithms. - Experimental-computational comparison studies. **What you'll gain:** - Experience with high-performance computing - Skills in scientific programming (C, Python, Julia, MATLAB) - Understanding of advanced numerical methods - Opportunity to contribute to published research Contact us to discuss project fit and scope for your specific interests and timeline.",
     "url": "https://comphy-lab.org/join/#span-classsection-iconi-classfa-solid-fa-bookispan-bachelorsmasterslevel-4-projects",
     "type": "website_section",
     "priority": 4
   },
   {
-    "title": "\"Join Us\" - <span class=\"section-icon\"><i class=\"fa-solid fa-flask\"></i></span> Internships: We welcome motivated...",
-    "content": "We welcome motivated students for summer internships and short-term research projects. Our internship program provides intensive research experience in a collaborative environment. **Internship Details:** - Duration: 2-6 months (flexible based on academic calendar). - Focus on specific research questions within ongoing projects. - Close mentorship and regular progress meetings. - Opportunity to present results at group seminars. **Ideal candidates have:** - Background in physics, mathematics, or engineering. - Basic programming experience (any language). - Curiosity about soft matter, fluid mechanics and computational methods. - Strong motivation for hands-on research. **Application process:** Send a short note describing your interests and any prior experience, along with your transcript, to the email addresses above.",
+    "title": "\"Join Us\" - <span class=\"section-icon\"><i class=\"fa-solid fa-flask\"></i></span> Internships",
+    "content": "Summer internships and short research visits are possible when there is a well-scoped project and enough supervision time. **Internship Details:** - Duration: 2-6 months (flexible based on academic calendar). - Focus on specific research questions within ongoing projects. - Close mentorship and regular progress meetings. - Opportunity to present results at group seminars. **Ideal candidates have:** - Background in physics, mathematics, or engineering. - Basic programming experience (any language). - Curiosity about soft matter, fluid mechanics and computational methods. - Interest in hands-on research. **Application process:** Send a short note describing your interests and any prior experience, along with your transcript, to the email addresses above.",
     "url": "https://comphy-lab.org/join/#span-classsection-iconi-classfa-solid-fa-flaskispan-internships",
     "type": "website_section",
     "priority": 4
@@ -19296,8 +19296,8 @@
     "priority": 8
   },
   {
-    "title": "News - <i class=\"fa-solid fa-graduation-cap gradcap-icon\"></i> CoMPhy Lab is Moving to Durham University!",
-    "content": "Join Us Starting July 1st, 2025 , the CoMPhy Lab will be relocating to Durham University, UK. We are excited to join the [Condensed Matter Physics section](https://www.durham.ac.uk/research/institutes-and-centres/condensed-matter-physics/) in the [Department of Physics](https://www.durham.ac.uk/departments/academic/physics/) and continue our research in computational physics and fluid dynamics in our new home.",
+    "title": "News - <i class=\"fa-solid fa-graduation-cap gradcap-icon\"></i> CoMPhy Lab at Durham University",
+    "content": "Join Us Since July 1st, 2025, the CoMPhy Lab has been based at Durham University, UK, in the [Condensed Matter Physics section](https://www.durham.ac.uk/research/institutes-and-centres/condensed-matter-physics/) of the [Department of Physics](https://www.durham.ac.uk/departments/academic/physics/).",
     "url": "https://comphy-lab.org#news",
     "type": "website_section",
     "priority": 8
@@ -19548,8 +19548,8 @@
     "priority": 8
   },
   {
-    "title": "History - <i class=\"fa-solid fa-graduation-cap gradcap-icon\"></i> CoMPhy Lab is Moving to Durham University!",
-    "content": "Join Us Starting July 1st, 2025 , the CoMPhy Lab will be relocating to Durham University, UK. We are excited to join the [Condensed Matter Physics section](https://www.durham.ac.uk/research/institutes-and-centres/condensed-matter-physics/) in the [Department of Physics](https://www.durham.ac.uk/departments/academic/physics/) and continue our research in computational physics and fluid dynamics in our new home.",
+    "title": "History - <i class=\"fa-solid fa-graduation-cap gradcap-icon\"></i> CoMPhy Lab at Durham University",
+    "content": "Join Us Since July 1st, 2025, the CoMPhy Lab has been based at Durham University, UK, in the [Condensed Matter Physics section](https://www.durham.ac.uk/research/institutes-and-centres/condensed-matter-physics/) of the [Department of Physics](https://www.durham.ac.uk/departments/academic/physics/).",
     "url": "https://comphy-lab.org#history",
     "type": "website_section",
     "priority": 8
@@ -19612,7 +19612,7 @@
   },
   {
     "title": "History - March",
-    "content": "- Prof. Detlef Lohse shares his scientific journey in The Living Histories Series . His inspiring discussion on curiosity, mentorship, and the \"puzzle solving\" joy of science offers valuable insights for researchers at all career stages. Watch on YouTube - [ Sanjay, V. , & Lohse, D. Unifying theory of scaling in drop impact: Forces & maximum spreading diameter. Published in Physical Review Letters.](/research#15) View Paper - Join us for a hybrid online+offline course: [High-Fidelity Simulations Using Basilisk C](/teaching/2025-Basilisk101-Madrid) in Madrid, Spain (March 10-13). Learn some computational (colorful) fluid dynamics with hands-on coding sessions.",
+    "content": "- Prof. Detlef Lohse discusses the people, questions, and experiments that shaped his work in fluid dynamics in The Living Histories Series. Watch on YouTube - [ Sanjay, V. , & Lohse, D. Unifying theory of scaling in drop impact: Forces & maximum spreading diameter. Published in Physical Review Letters.](/research#15) View Paper - Hybrid online/offline course: [High-Fidelity Simulations Using Basilisk C](/teaching/2025-Basilisk101-Madrid) in Madrid, Spain (March 10-13). Computational fluid dynamics with hands-on coding sessions.",
     "url": "https://comphy-lab.org#history",
     "type": "website_section",
     "priority": 8
@@ -19660,8 +19660,8 @@
     "priority": 8
   },
   {
-    "title": "Special announcement block - <i class=\"fa-solid fa-graduation-cap gradcap-icon\"></i> CoMPhy Lab is Moving to Durham University!",
-    "content": "Join Us Starting July 1st, 2025 , the CoMPhy Lab will be relocating.",
+    "title": "Special announcement block - <i class=\"fa-solid fa-graduation-cap gradcap-icon\"></i> CoMPhy Lab at Durham University",
+    "content": "Join Us Since July 1st, 2025, the CoMPhy Lab has been based at Durham University.",
     "url": "https://comphy-lab.org/tests/fixtures/news-bullets/special-announcement-block/#i-classfa-solid-fa-graduation-cap-gradcap-iconi-comphy-lab-is-moving-to-durham-university",
     "type": "website_section",
     "priority": 10
