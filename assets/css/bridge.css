@@ -207,9 +207,9 @@ h1, h2, h3, h4, h5, h6 {
 
 :root[data-theme="dark"] .chip--coral { color: #f96; }
 
-/* Buttons — tokens.css ships .btn, .btn-ghost, .btn-pill. We also
-   neutralise the underline that styles.css would otherwise add. */
-.btn, .btn-ghost, .btn-pill { border-bottom: 0; }
+/* Buttons — tokens.css ships .btn, .btn-ghost, .btn-pill. Keep the
+   full button border while suppressing legacy link underlines. */
+.btn, .btn-ghost, .btn-pill { text-decoration: none; }
 
 /* Copyable helper */
 .copyable { font-family: var(--t-mono); cursor: copy; }
