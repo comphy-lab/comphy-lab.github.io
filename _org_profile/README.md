@@ -139,7 +139,7 @@ We are a computational physics research group based at the **Department of Physi
 <div align="center">
 
 | Project | Description | Technologies | Status |
-|---------|-------------|--------------|--------|
+| --- | --- | --- | --- |
 | 🌊 [**Bubble Dynamics**](https://github.com/comphy-lab) | Worthington jet formation from bursting bubbles | Basilisk C, MPI | ![Active](https://img.shields.io/badge/Active-green?style=flat-square) |
 | 💧 [**Droplet Physics**](https://github.com/comphy-lab) | Non-Newtonian droplet impact phenomena | OpenFOAM, Python | ![Active](https://img.shields.io/badge/Active-green?style=flat-square) |
 | 🔄 [**Viscoelastic Flows**](https://github.com/comphy-lab) | Complex fluid behavior in confined geometries | Basilisk C, Julia | ![Development](https://img.shields.io/badge/Development-yellow?style=flat-square) |
