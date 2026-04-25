@@ -93,7 +93,7 @@ to `tests/deploy-script-regression.sh`:
 ## Test Results
 
 | Suite | Result |
-|---|---|
+| --- | --- |
 | `jest` (all 9 suites, 51 tests) | **PASS** |
 | `tests/deploy-script-regression.sh` (9 scenarios) | **PASS** |
 | `scripts/validate-content-rules.sh` | **PASS** |
