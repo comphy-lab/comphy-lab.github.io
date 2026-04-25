@@ -68,7 +68,6 @@ description: >-
     <section class="roster__group" id="collaborators">
       <header class="roster__group-head">
         <h2>Collaborators</h2>
-        <span>· {{ team.collaborators | size }} principal</span>
       </header>
       <div class="roster-grid">
         {% for m in team.collaborators %}
