@@ -1,0 +1,109 @@
+# Four research themes derived from the real _research/index.md tag
+# distribution. Each theme carries an image and the 3 most
+# impactful papers introducing it. Used by:
+#  - index.html (the .s-themes grid on the homepage)
+#  - _layouts/research.html (prepended above the full paper list)
+
+currently:
+  label: Currently
+  text: >-
+    Current interests include <b>mycofluidic transport</b>, the
+    influence of non-Newtonian rheology on hydrodynamic singularities,
+    and <b>respiratory-droplet formation</b> driven by viscoelastic
+    mucus rheology.
+
+themes:
+  - slug: drop-impact
+    tag: "Drops"
+    num: "01"
+    title: "Drop impact & impact forces"
+    description: >-
+      Inertia, viscosity, surface tension, wettability, and rheology
+      set the force history during impact. We connect liquid drops and
+      soft elastic beads through a shared impact-regime diagram.
+    figure: /assets/images/research/drop-impact-prl.png
+    papers:
+      - year: "2026"
+        title: "Impacting spheres: from liquid drops to elastic beads"
+        venue: "Soft Matter · Cover"
+        href: "/research#23"
+      - year: "2025"
+        title: "Unifying theory of scaling in drop impact"
+        venue: "Phys. Rev. Lett."
+        href: "/research#15"
+      - year: "2023"
+        title: "When does an impacting drop stop bouncing?"
+        venue: "J. Fluid Mech."
+        href: "/research#11"
+
+  - slug: bubble-bursting
+    tag: "Bubbles"
+    num: "02"
+    title: "Soft matter singularities"
+    description: >-
+      Capillary-wave focusing after bubble-cap rupture launches
+      Worthington jets. Viscosity and elasticity decide whether those
+      jets eject droplets, thicken, or fail to pinch off across
+      Newtonian, viscoplastic, and elastoviscoplastic media.
+    figure: /assets/images/research/NatComm-jet-drop.png
+    papers:
+      - year: "2025"
+        title: "Viscoelastic Worthington Jets and Droplets Produced by Bursting Bubbles"
+        venue: "J. Fluid Mech."
+        href: "/research#16"
+      - year: "2024"
+        title: "Bursting bubble in an elastoviscoplastic medium"
+        venue: "J. Fluid Mech."
+        href: "/research#12"
+      - year: "2021"
+        title: "Bursting bubble in a viscoplastic medium"
+        venue: "J. Fluid Mech."
+        href: "/research#7"
+
+  - slug: sheet-dynamics
+    tag: "Sheets"
+    num: "03"
+    title: "Holes & Taylor–Culick retractions"
+    description: >-
+      Surface tension retracts holes in thin sheets; viscosity,
+      inertia, surrounding fluid, and surfactant set rim growth and
+      droplet breakup. We study double-threshold rupture in draining
+      films.
+    figure: /assets/images/research/taylor-culick.jpg
+    papers:
+      - year: "2026"
+        title: "Holes in sheets: double-threshold rupture of draining liquid films"
+        venue: "Phys. Rev. Lett."
+        href: "/research#22"
+      - year: "2022"
+        title: "Taylor–Culick retractions and the influence of the surroundings"
+        venue: "J. Fluid Mech."
+        href: "/research#9"
+      - year: "2025"
+        title: "Focusing of concentric free-surface waves"
+        venue: "J. Fluid Mech."
+        href: "/research#13"
+
+  - slug: non-newtonian-dns
+    tag: "Non-Newtonian"
+    num: "04"
+    title: "Open-source DNS for complex fluids"
+    description: >-
+      We extend Basilisk C with non-Newtonian, viscoelastic, and
+      elastoviscoplastic solvers, and contribute integral
+      surface-tension formulations. Every paper ships with a
+      reproducible simulation repository.
+    figure: /assets/images/research/S002211202500237X_figAb.png
+    papers:
+      - year: "2025"
+        title: "Integral surface tension formulations in a VOF framework · Marangoni flows"
+        venue: "J. Comput. Phys."
+        href: "/research#18"
+      - year: "2025"
+        title: "Electrolyte droplet spraying in H₂ bubbles during water electrolysis"
+        venue: "Nat. Commun."
+        href: "/research#17"
+      - year: "2026"
+        title: "Rheology of Two-Dimensional Dilute Emulsions"
+        venue: "Phys. Rev. Fluids"
+        href: "/research#24"

@@ -1,69 +1,132 @@
 # AGENTS.md
 
-This file provides guidance to Codex (Codex.ai/code) when working with code in this repository.
+Operating notes for AI coding assistants (Claude Code, Codex, etc.) working
+in this repository. Treated as canonical; `CLAUDE.md` defers here.
 
-## Repository Overview
+## Repository overview
 
-This repository contains the CoMPhy Lab website, a static site built with Jekyll for the Computational Multiphase Physics Laboratory. The site features research publications, team member information, teaching materials, and lab news.
+Static Jekyll site for the CoMPhy (Computational Multiphase Physics) Lab —
+research publications, team profiles, teaching materials, lab news. Hosted
+on GitHub Pages at <https://comphy-lab.org>.
 
-## Key Architecture Patterns
+## Architecture at a glance
 
-### Command Palette and Search System
+### v2 design system
 
-The website implements a sophisticated command palette system that requires coordination between multiple files:
+The site is mid-migration to a "v2" design language:
 
-- **`command-palette.js`** must load before **`command-data.js`** (dependency order)
-- **Fuse.js** powers fuzzy search functionality
-- Search database (`search_db.json`) is maintained in a separate repository and updated via GitHub Actions
-- Context-aware commands based on current page location
-- Keyboard shortcut: ⌘K (Mac) / Ctrl+K (Windows)
+- **`assets/css/tokens.css`** — design tokens (`--c-*` brand colours,
+  `--t-*` typography, `--s-*` spacing, `--r-*` radii). Single source of
+  truth.
+- **`assets/css/bridge.css`** — loaded **after** `tokens.css` and
+  `styles.css` so its `:root` declarations win. Maps legacy
+  `--color-*`/`--font-*`/`--shadow-*` names onto v2 tokens, declares
+  shared component primitives (panel, eyebrow, lede, chip, btn-ghost,
+  paper-card, news-row, team-tile).
+- **v2 page stylesheets** — `home.css`, `team-v2.css`, `research-v2.css`,
+  `footer-v2.css`, `about-layout.css`, `shared-news-history.css`,
+  `join-us.css`. Coexist with legacy `styles.css`, `research.css`,
+  `team.css`, `teaching.css`.
 
-### Theme System Architecture
+When adding a new v2 page, prefer composing from bridge primitives over
+duplicating styles. Page-specific files only for genuinely page-specific
+rules.
 
-- CSS variables defined in `:root` for light theme, overridden in `[data-theme="dark"]`
-- Theme state persisted in localStorage and synced across all pages
-- Page-specific theme variables in `research.css`, `teaching.css`, `team.css`
-- Smooth transitions between themes using CSS transitions
+### Data-driven pages
 
-### Research Tag Filtering
+Several pages render from YAML rather than handwritten HTML:
 
-- Client-side JavaScript filtering with SEO-friendly static pages
-- Pre-generated tag pages that redirect to filtered views
-- Multiple URL variations for better SEO coverage
-- Tags must be added to `_research/index.md` using `<div class="tags"><span>TagName</span></div>` format
+- **`_data/hero.yml`** — homepage hero section (slides, copy, eyebrow).
+- **`_data/news.yml`** — news items shown on the homepage and `/news/`
+  archive (date, kind, title, meta, action).
+- **`_data/team.yml`** — present members, collaborators, alumni for the
+  team page (name, role, photo, bio).
+- **`_data/research_themes.yml`** — research-themes block.
 
-## Essential Commands
+The Jekyll collections (`_research/`, `_team/`, `_teaching/`, `_join-us/`)
+still drive their own pages. Team is the one with both a YAML feed and a
+collection, and `_team/index.md` is the rendered surface — the YAML is the
+content.
+
+### Layouts and includes
+
+- `_layouts/default.html` — base layout, used by everything except the
+  collection-specific layouts below.
+- `_layouts/research.html`, `team.html`, `teaching.html`,
+  `teaching-course.html`, `join-us.html`, `history.html` — collection /
+  page layouts.
+- `_includes/footer-v2.html` — site footer (v2 footer is the only footer).
+- `_includes/theme-init.html`, `tokens-bridge.html`, `tokens-head.html` —
+  early-load fragments for theme persistence and token wiring.
+
+### Command palette and search
+
+- `command-palette.js` must load **before** `command-data.js` (dependency
+  order; `scripts/fix-script-order.sh` enforces this).
+- Fuse.js powers fuzzy search.
+- Search database (`search_db.json`) is generated and updated daily from
+  the [comphy-lab/comphy-search](https://github.com/comphy-lab/comphy-search)
+  repository via GitHub Actions; not edited by hand here.
+- Keyboard shortcut: ⌘K (Mac) / Ctrl+K (Windows).
+
+### Theme system
+
+- CSS variables in `:root` for light, overridden under `[data-theme="dark"]`.
+- Theme persisted in `localStorage`, applied early via `theme-init.html`
+  to avoid FOUC.
+
+### Research tag filtering
+
+- Client-side JS filtering plus pre-generated tag pages for SEO.
+- Tags must use `<div class="tags"><span>TagName</span></div>` in
+  `_research/index.md`.
+
+### Redirect pages
+
+- `about.html` — Jekyll permalink `/about/`, redirects to `/`. Plain JS
+  redirect with visible fallback link, mirrors the `contact.html` pattern.
+- `contact.html` — Jekyll permalink `/contact/`, redirects to `/join`.
+
+## Essential commands
 
 ```bash
-# Initial setup (installs Ruby/Node.js if needed)
+# Initial setup (installs Ruby/Node.js if needed, runs preflight,
+# installs Husky hooks, builds, validates)
 ./scripts/setup.sh
 
-# Build site with all assets
+# Local dev server (auto-finds free port 4001-4999, live reload)
+./scripts/deploy.sh
+
+# Full build (Jekyll + search + SEO + filtered research)
 ./scripts/build.sh
 
-# Local development server
+# Or plain Jekyll
 bundle exec jekyll serve
 
 # Run before committing
 ./scripts/lint-check.sh
 
-# Run a single test
+# Tests
+npm test
+npm test -- --coverage
 npm test -- command-data.test.js
 
-# Run tests with coverage
-npm test -- --coverage
+# Targeted fixers
+./scripts/fix-script-order.sh    # enforces command-palette.js first
+./scripts/fix-js-line-length.sh  # 80-char enforcement
+./scripts/fix-quotes.sh          # standardises to double quotes
 
-# Fix common issues
-./scripts/fix-script-order.sh    # Fix script loading order
-./scripts/fix-js-line-length.sh  # Enforce 80 char limit
-./scripts/fix-quotes.sh          # Standardize to double quotes
+# Lint teaching markdown locally (mirrors CI gate)
+npx markdownlint-cli2 --config .markdownlint-cli2.jsonc \
+  "_teaching/**/*.md" "assets/images/teaching/README.md"
+npx prettier --check "_teaching/**/*.md" "assets/images/teaching/README.md"
 ```
 
-## Content Management
+## Content management
 
-### Adding Research Papers
+### Adding research papers
 
-Add to `_research/index.md` with this exact format:
+Add to `_research/index.md` in this exact form:
 
 ```markdown
 <h3 id="NUMBER">[NUMBER] Author1, A., **Author2, B.**, & Author3, C. Title. _Journal_, Volume, Pages (Year).</h3>
@@ -73,189 +136,165 @@ Add to `_research/index.md` with this exact format:
 [![Badge](https://img.shields.io/static/v1.svg?style=flat-square&label=LABEL&message=MESSAGE&color=COLOR)](URL)
 ```
 
-- Use `**Name**` for lab members
-- Add `<span>Featured</span>` tag to display on homepage (max 2)
-- ID attribute enables direct linking: `/research/#NUMBER`
+- Use `**Name**` for lab members.
+- Add `<span>Featured</span>` to display on the homepage (max 2).
+- The `id` attribute enables direct linking: `/research/#NUMBER`.
 
-### Team Member Format
+### Team members
 
-In `_team/index.md`:
-
-```html
-<img
-  src="../assets/images/team/NUMBER.webp"
-  alt="Name"
-  width="250"
-  height="250"
-  class="member-image"
-/>
-```
+Edit `_data/team.yml`. The team page (`_team/index.md` + `team.html`
+layout) renders from this data. Photo files live under
+`assets/images/team/` (1:1 crop, used at `--r-md` radius). Bio lines
+are line-clamped per section (3 lines for present, 4 for collaborators,
+unset for alumni).
 
 ### News
 
-Managing news items across the site:
+- **Slash command**: `/add-news "Your news content here"` — see "Custom
+  slash commands" below.
+- **Manual**: edit `_data/news.yml` (the source of truth for the homepage
+  feed and `/news/` archive), then mirror to `News.md` and `history.md`.
+  `News.md` keeps only the 5 most recent legacy items plus the pinned
+  Durham announcement; older items live on in `history.md` and
+  `_data/news.yml`.
+- Format: `- News content` under `### Month Year` headers; pinned items
+  have no header. Months are reverse-chronological within each year.
 
-- **Using slash command**: `/add-news "Your news content here"` - automatically handles both News.md and history.md
-- **Manual editing**:
-  - Add to both `News.md` (main page) and `history.md` (archive)
-  - News.md maintains only 5 most recent items (plus pinned Durham announcement)
-  - Format: `- News content` under `### Month Year` headers
-- **Important notes**:
-  - Pinned items have no month/year header
-  - Maintain blank lines between sections
-  - Months appear in reverse chronological order within each year
-  - Older items removed from News.md remain in history.md
+### Teaching
 
-### Teaching Course Pages
+- Main page: `_teaching/index.md` (uses the `teaching` layout, sorts and
+  filters courses).
+- Course pages: `_teaching/YYYY-CourseName-Location.md` (uses
+  `teaching-course` layout).
+- Images: `/assets/images/teaching/` — 600x400 for cards, 1200x400 for
+  banners.
 
-- Main page: `_teaching/index.md` (uses `teaching` layout)
-- Course pages: `_teaching/YYYY-CourseName-Location.md` (uses `teaching-course` layout)
-- Images: Store in `/assets/images/teaching/` (600x400px for cards, 1200x400px for banners)
+## Critical implementation details
 
-## Critical Implementation Details
+### Script dependencies
 
-### Script Dependencies
+Enforced by `lint-check.sh`, but worth keeping in mind:
 
-The lint-check.sh script automatically fixes these, but be aware:
+- Fuse.js loads before any search code.
+- `command-palette.js` loads before `command-data.js`.
+- `theme-init.html` runs as early as possible to avoid theme flash.
 
-- Fuse.js must load before any search functionality
-- command-palette.js must load before command-data.js
-- Theme initialization must happen early in page load
+### Pre-commit hooks
 
-### Pre-commit Hooks
+Installed by `setup.sh` via Husky:
 
-Automatically installed via setup.sh using Husky:
+- ESLint with auto-fix for JS.
+- Prettier for JS/CSS/JSON/YAML formatting.
+- markdownlint-cli2 for Markdown.
+- Only staged files are checked.
+- Bypass with `git commit --no-verify` only in real emergencies.
 
-- ESLint with auto-fix for JavaScript
-- Prettier for formatting
-- markdownlint for Markdown files
-- Only staged files are checked
-- Bypass with `git commit --no-verify` in emergencies
+### Search database updates
 
-### Search Database Updates
+Maintained externally in
+[comphy-lab/comphy-search](https://github.com/comphy-lab/comphy-search).
+Updated daily via GitHub Actions and pulled into `assets/js/search_db.json`.
+Includes blog content from blogs.comphy-lab.org. Manual trigger available
+in the Actions tab.
 
-- Maintained in [comphy-lab/comphy-search](https://github.com/comphy-lab/comphy-search) repository
-- Updated daily via GitHub Actions
-- Includes blog content from blogs.comphy-lab.org
-- Manual trigger available in Actions tab
+### Content-rules CI
 
-### CSS Variable System
+The `content-rules` workflow validates `history.md` chronological
+ordering and `_research/index.md` tag markup. Trigger paths must match
+the validated-file set; `scripts/check-content-rules-trigger-parity.py`
+enforces this. If you add a new file to the validator, also add its path
+to `.github/workflows/content-rules-checks.yml`.
 
-Key variables for customization:
+## Testing
 
-```css
-/* Colors */
---primary-color, --secondary-color, --accent-color
---text-color, --bg-color, --card-bg
-/* Typography */
---font-family-serif, --font-family-sans
-/* Spacing */
---spacing-unit, --content-max-width
-/* Shadows & Transitions */
---shadow-sm, --shadow-md, --transition-speed
-```
+### Coverage areas
 
-## Testing Strategy
+- Command palette (navigation, search, keyboard shortcuts).
+- Line-breaking utilities (80-char enforcement).
+- Platform detection (Mac vs Windows shortcuts).
+- Teaching page sorting.
+- Featured-papers homepage media handling regression.
+- Browser API mocks in `tests/setup.js`.
 
-### Test Coverage Areas
-
-- Command palette functionality (navigation, search, keyboard shortcuts)
-- Line breaking utilities (80-character enforcement)
-- Platform detection (Mac vs Windows shortcuts)
-- Teaching page sorting algorithms
-- Browser API mocks in `setup.js`
-
-### Running Specific Tests
+### Running specific tests
 
 ```bash
-# Test command palette
 npm test -- command-data.test.js
-
-# Test with watch mode for development
 npm test -- --watch
-
-# Quick validation without Jest
-node scripts/simple-test.js
+node scripts/simple-test.js   # quick validation without Jest
 ```
 
-## Performance Considerations
+## Performance
 
-### Build Process
+### Build process
 
-The build.sh script performs these operations in sequence:
+`scripts/build.sh` runs (in order):
 
-1. Jekyll build with production environment
-2. Search database generation (if in GitHub Actions)
-3. SEO tag generation
-4. Filtered research page creation
+1. Jekyll build (production env).
+2. Search database fetch (in CI only).
+3. SEO tag generation.
+4. Filtered research tag pages.
 
-### Asset Optimization
+### Asset optimisation
 
-- Images should be optimized before adding
-- Use WebP format where possible
-- Lazy loading implemented for images
-- CSS consolidated by breakpoint for better caching
+- WebP where possible; optimise before adding.
+- Lazy loading on images.
+- CSS organised by breakpoint (1700, 1300, 900, 768, 500) for cache hits.
 
-## Important Conventions
+## Conventions
 
-### File Management
+### File management
 
-- ALWAYS prefer editing existing files over creating new ones
-- Developer documentation (README.md, CONTRIBUTING.md, etc.) should NEVER be created unless explicitly requested
-- Site content markdown files (research papers, news items, teaching pages) follow their specific workflows:
-  - Research: Add to `_research/index.md` following the documented format
-  - News: Use `/add-news` command or edit `News.md` and `history.md`
-  - Teaching: Create course pages in `_teaching/` directory when adding new courses
-- Follow existing patterns in the codebase
+- ALWAYS prefer editing existing files over creating new ones.
+- Developer docs (READMEs, CONTRIBUTING) are not created unless asked.
+- Site content follows its specific workflow (research / news / teaching
+  / team — see "Content management" above).
 
-### Code Style
+### Code style
 
-- 80-character line limit for JavaScript
-- Double quotes for strings
-- ES6+ features (arrow functions, const/let, async/await)
-- Mobile-first CSS with min-width media queries
-- BEM naming for CSS classes
+- 80-char line limit for JavaScript.
+- Double quotes for strings.
+- ES6+ (arrow functions, const/let, async/await).
+- Mobile-first CSS; min-width media queries.
+- BEM naming for CSS classes (`.s-header__nav-list`, `.news-item__body`).
+- Compose from `bridge.css` primitives where possible.
 
-### Git Workflow
+### Git workflow
 
-- Work on feature branches
-- Run `./scripts/lint-check.sh` before committing
-- Ensure tests pass with `npm test`
-- Reference issue numbers in commits
+- Work on feature branches.
+- Run `./scripts/lint-check.sh` and `npm test` before committing.
+- Reference issue numbers in commits where relevant.
+- Don't bypass hooks (`--no-verify`) unless explicitly authorised.
 
-## Custom Slash Commands
+## Custom slash commands
+
+The canonical definitions for `/add-news` and the other content skills
+live outside this repository (in the agent system that invoked them).
+The repo previously contained an `.agents/skills/` mirror, which was
+removed deliberately to avoid drift. The notes below describe the
+expected behaviour so non-agent contributors can follow the same recipe
+manually.
 
 ### /add-news
 
-Adds a news item to both News.md and history.md while maintaining the 5-item limit on the main page.
+Adds a news item to `_data/news.yml`, `News.md`, and `history.md` while
+maintaining the 5-item limit on `News.md`. `_data/news.yml` is the
+visible source for the homepage and `/news/`.
 
-**Workflow:**
+**Workflow**:
 
-1. Add the news item to the appropriate month/year section in both files
-2. If month/year doesn't exist, create it
-3. Keep only 5 most recent news items in News.md (excluding the pinned Durham announcement)
-4. Preserve the pinned item (recognized by not having ### Month header above it)
+1. Add a structured item to `_data/news.yml` in reverse-chronological
+   position with `date`, `kind`, `title`, `meta`, `action_label`,
+   `action_href`.
+2. Add the item to the matching `### Month Year` section in `history.md`.
+3. Add the item to `News.md` in the same section.
+4. If the count of non-pinned items in `News.md` exceeds 5, remove the
+   oldest from `News.md` only (`history.md` keeps everything).
+5. Save all three files.
 
-**Usage:**
+**Rules**:
 
-```bash
-/add-news "Your news content here"
-```
-
-**Implementation steps:**
-
-1. Read both News.md and history.md
-2. Ask for month/year if not provided or unclear
-3. Add to history.md in reverse chronological position (latest first)
-4. Add to News.md in reverse chronological position (latest first)
-5. Count non-pinned news items in News.md
-6. If count > 5, remove oldest items from News.md only
-7. Save both files
-
-**Important notes:**
-
-- The pinned Durham announcement has no month/year header
-- News items start with "- " (dash and space)
-- Maintain blank lines between sections for proper formatting
-- In history.md, years are sorted descending (newest first)
-- Within a year, months appear in reverse chronological order
+- The pinned Durham announcement has no month/year header — preserve it.
+- News items use the `- News content` bullet form (dash + space + text).
+- Maintain blank lines between sections.
+- Years descend in `history.md`; months descend within each year.

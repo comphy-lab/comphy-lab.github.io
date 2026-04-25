@@ -35,7 +35,7 @@ title: History
 
 ## 2025
 
-### <i class="fa-solid fa-graduation-cap gradcap-icon"></i> CoMPhy Lab is Moving to Durham University!
+### <i class="fa-solid fa-graduation-cap gradcap-icon"></i> CoMPhy Lab at Durham University
 
 <div class="news-flex-row">
   <div class="news-flex-row__image-container">
@@ -48,7 +48,7 @@ title: History
   </div>
 </div>
 
-Starting <strong>July 1st, 2025</strong>, the CoMPhy Lab will be relocating to Durham University, UK. We are excited to join the [Condensed Matter Physics section](https://www.durham.ac.uk/research/institutes-and-centres/condensed-matter-physics/) in the [Department of Physics](https://www.durham.ac.uk/departments/academic/physics/) and continue our research in computational physics and fluid dynamics in our new home.
+Since <strong>July 1st, 2025</strong>, the CoMPhy Lab has been based at Durham University, UK, in the [Condensed Matter Physics section](https://www.durham.ac.uk/research/institutes-and-centres/condensed-matter-physics/) of the [Department of Physics](https://www.durham.ac.uk/departments/academic/physics/).
 
 ### December
 
@@ -121,7 +121,7 @@ Starting <strong>July 1st, 2025</strong>, the CoMPhy Lab will be relocating to D
 
 ### March
 
-- <a href="https://en.wikipedia.org/wiki/Detlef_Lohse"><strong>Prof. Detlef Lohse</strong></a> shares his scientific journey in <a href="https://www.youtube.com/@TheLivingHistoriesSeries" class="blue-link">The Living Histories Series</a>. His inspiring discussion on curiosity, mentorship, and the "puzzle solving" joy of science offers valuable insights for researchers at all career stages.
+- <a href="https://en.wikipedia.org/wiki/Detlef_Lohse"><strong>Prof. Detlef Lohse</strong></a> discusses the people, questions, and experiments that shaped his work in fluid dynamics in <a href="https://www.youtube.com/@TheLivingHistoriesSeries" class="blue-link">The Living Histories Series</a>.
 
 <div class="news-flex-row">
   <div class="news-flex-row__links-container">
@@ -142,7 +142,7 @@ Starting <strong>July 1st, 2025</strong>, the CoMPhy Lab will be relocating to D
   </div>
 </div>
 
-- Join us for a hybrid online+offline course: [High-Fidelity Simulations Using Basilisk C](/teaching/2025-Basilisk101-Madrid) in Madrid, Spain (March 10-13). Learn some computational (colorful) fluid dynamics with hands-on coding sessions.
+- Hybrid online/offline course: [High-Fidelity Simulations Using Basilisk C](/teaching/2025-Basilisk101-Madrid) in Madrid, Spain (March 10-13). Computational fluid dynamics with hands-on coding sessions.
 
 ### February
 

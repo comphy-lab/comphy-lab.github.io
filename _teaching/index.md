@@ -2,11 +2,11 @@
 layout: teaching
 title: Teaching
 permalink: /teaching/
+body_class: teaching-v2
+description: >-
+  Courses and workshops on Basilisk C, multiphase-flow numerics, and
+  soft-matter simulation.
 ---
-
-# Teaching
-
-Welcome to the CoMPhy Lab's educational resources. Apart from the university courses, we aim to develop and offer a range of workshops and tutorials on modern computational methods for multiphase flows and high-fidelity simulations.
 
 <div class="teaching-grid">
   <div class="course-card">
@@ -20,7 +20,8 @@ Welcome to the CoMPhy Lab's educational resources. Apart from the university cou
         <i class="fa-solid fa-calendar-days"></i> March 10-13, 2025
       </div>
       <p class="course-card__desc">
-        A comprehensive course on using Basilisk C for simulating multiphase flows, interface tracking, and solving conservation equations. Learn to tackle complex fluid dynamics problems with high-fidelity numerical methods.
+        Four-day Basilisk C course on conservation laws, interface
+        tracking, and non-Newtonian flow exercises.
       </p>
       <a href="/teaching/2025-Basilisk101-Madrid" class="course-card__link">View Course</a>
     </div>
@@ -37,7 +38,8 @@ Welcome to the CoMPhy Lab's educational resources. Apart from the university cou
         <i class="fa-solid fa-calendar-days"></i> September 15, 2025
       </div>
       <p class="course-card__desc">
-        Intensive 3-hour pre-conference training focused on coating applications. Learn Basilisk fundamentals through hands-on examples: heat conduction, drop impact dynamics, and Landau-Levich dip coating.
+        Three-hour ECS session on heat conduction, drop impact, and
+        Landau-Levich dip coating.
       </p>
       <a href="/teaching/2025-Basilisk101nano-ECS" class="course-card__link">View Course</a>
     </div>
@@ -54,22 +56,24 @@ Welcome to the CoMPhy Lab's educational resources. Apart from the university cou
         <i class="fa-solid fa-calendar-days"></i> Fall 2025
       </div>
       <p class="course-card__desc">
-        Comprehensive lecture notes covering fundamental concepts in soft matter physics and their applications.
+        Lecture notes for the Durham soft-matter course.
       </p>
       <a href="https://blogs.comphy-lab.org/Lecture-Notes/Intro-Soft-Matter/0-README" class="course-card__link" target="_blank" rel="noopener noreferrer">View Lecture Notes</a>
     </div>
   </div>
 </div>
 
-## About Our Teaching Philosophy
+## How we teach
 
-At CoMPhy Lab, we believe in hands-on learning and deep understanding of computational methods. Our courses combine theoretical foundations with practical implementation, allowing students to develop both conceptual understanding and technical skills.
+We start from the physics, then write the code. Students derive or read
+the governing equations, implement a minimal case, and compare the
+output with scaling arguments, benchmarks, or experiments.
 
 Our teaching approach emphasizes:
 
 - **Think before you compute**: Understanding the underlying physics before implementation
 - **Modular code structure**: Building maintainable and extensible computational tools
-- **Advanced numerical methods**: Mastering state-of-the-art techniques for complex problems
+- **Numerical methods**: Using the right discretisation for the problem
 - **Open science**: Sharing knowledge and tools with the scientific community. Checkout <a href="https://github.com/comphy-lab"><i class="fa-brands fa-github" style="font-size: 1.5em; color: black; font-style: normal;"></i></a>
 
 If you're interested in hosting a course or workshop with CoMPhy Lab, please [contact us](/join) for collaboration opportunities.

@@ -516,7 +516,7 @@
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\"",
-    "content": "// Function to update image visibility based on theme function updateBannerImages() { const theme = document.documentElement.getAttribute('data-theme') || 'light'; const lightImages = document.querySelectorAll('.light-mode-img'); const darkImages = document.querySelectorAll('.dark-mode-img'); if (theme === 'dark') { lightImages.forEach(img => img.style.display = 'none'); darkImages.forEach(img => img.style.display = 'block'); } else { lightImages.forEach(img => img.style.display = 'block'); darkImages.forEach(img => img.style.display = 'none'); } } // Run on page load document.addEventListener('DOMContentLoaded', updateBannerImages); // Watch for theme changes const observer = new MutationObserver(function(mutations) { mutations.forEach(function(mutation) { if (mutation.attributeName === 'data-theme') { updateBannerImages(); } }); }); observer.observe(document.documentElement, { attributes: true });",
+    "content": "Four-day Basilisk C course on conservation laws, interface tracking, and non-Newtonian flow exercises. Dates March 10-13, 2025. Location Universidad Carlos III de Madrid, Spain. Duration 4 days, full-time.",
     "url": "https://comphy-lab.org/teaching/2025-Basilisk101-Madrid",
     "type": "website_content",
     "priority": 3
@@ -537,7 +537,7 @@
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - Course Description",
-    "content": "This intensive 4-day course provides a comprehensive introduction to high-fidelity simulations using Basilisk C, a powerful computational framework for fluid dynamics. Participants will learn to implement and solve complex fluid mechanics problems with an emphasis on multiphase flows, interface dynamics, and non-Newtonian rheology. The course combines theoretical lectures with extensive hands-on sessions, allowing participants to immediately apply concepts through guided coding exercises. By the end of the course, you'll be able to develop your own simulations for a variety of fluid dynamics applications.",
+    "content": "This four-day course teaches Basilisk C through the equations and numerics used in multiphase-flow DNS: conservation laws, transport, interface tracking, and non-Newtonian rheology. Lectures stay close to implementation. Participants write and modify working Basilisk cases during the course, then use those cases as templates for their own simulations.",
     "url": "https://comphy-lab.org/teaching/2025-Basilisk101-Madrid#course-description",
     "type": "website_section",
     "priority": 3
@@ -600,35 +600,35 @@
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - Registration",
-    "content": "For registration details, please contact bubbles@ing.uc3m.es vatsal.sanjay@durham.ac.uk function copyEmail(button) { const textToCopy = button.getAttribute('data-text'); // Create a temporary textarea element to copy from const textarea = document.createElement('textarea'); textarea.value = textToCopy; textarea.setAttribute('readonly', ''); textarea.style.position = 'absolute'; textarea.style.left = '-9999px'; document.body.appendChild(textarea); // Select and copy the text textarea.select(); document.execCommand('copy'); // Remove the temporary element document.body.removeChild(textarea); // Show feedback const originalIcon = button.innerHTML; button.innerHTML = ' '; button.classList.add('copied'); // Restore original state after a delay setTimeout(() => { button.innerHTML = originalIcon; button.classList.remove('copied'); }, 2000); } Course GitHub Repository",
+    "content": "For registration details, please contact bubbles@ing.uc3m.es or vatsal.sanjay@durham.ac.uk. Course GitHub Repository: https://github.com/comphy-lab/Basilisk-101.",
     "url": "https://comphy-lab.org/teaching/2025-Basilisk101-Madrid#registration",
     "type": "website_section",
     "priority": 3
   },
   {
-    "title": "Teaching - Teaching: Methods",
-    "content": "Welcome to the CoMPhy Lab's educational resources. Apart from the university courses, we aim to develop and offer a range of workshops and tutorials on modern computational methods for multiphase flows and high-fidelity simulations. High-Fidelity Simulations Using Basilisk C Universidad Carlos III de Madrid March 10-13, 2025 A comprehensive course on using Basilisk C for simulating multiphase flows, interface tracking, and solving conservation equations. Learn to tackle complex fluid dynamics problems with high-fidelity numerical methods. View Course Basilisk for Multiphase Flow Simulations European Coating Symposium 2025 September 15, 2025 Intensive 3-hour pre-conference training focused on coating applications. Learn Basilisk fundamentals through hands-on examples: heat conduction, drop impact dynamics, and Landau-Levich dip coating.",
+    "title": "Teaching",
+    "content": "Courses and workshops on Basilisk C, multiphase-flow numerics, and soft-matter simulation. Current offerings include Basilisk C courses in Madrid and at ECS 2025, plus Durham soft-matter lecture notes.",
     "url": "https://comphy-lab.org/teaching/#teaching",
     "type": "website_section",
     "priority": 3
   },
   {
-    "title": "Teaching - Teaching: Introduction",
-    "content": "View Course Introduction to Soft Matter Durham University Fall 2025 Comprehensive lecture notes covering fundamental concepts in soft matter physics and their applications. View Lecture Notes",
+    "title": "Teaching",
+    "content": "Courses and workshops on Basilisk C, multiphase-flow numerics, and soft-matter simulation. Current offerings include Basilisk C courses in Madrid and at ECS 2025, plus Durham soft-matter lecture notes.",
     "url": "https://comphy-lab.org/teaching/#teaching",
     "type": "website_section",
     "priority": 3
   },
   {
-    "title": "Teaching - About Our Teaching Philosophy",
-    "content": "At CoMPhy Lab, we believe in hands-on learning and deep understanding of computational methods. Our courses combine theoretical foundations with practical implementation, allowing students to develop both conceptual understanding and technical skills. Our teaching approach emphasizes: - **Think before you compute**: Understanding the underlying physics before implementation - **Modular code structure**: Building maintainable and extensible computational tools - **Advanced numerical methods**: Mastering state-of-the-art techniques for complex problems - **Open science**: Sharing knowledge and tools with the scientific community. Checkout If you're interested in hosting a course or workshop with CoMPhy Lab, please [contact us](/join) for collaboration opportunities.",
-    "url": "https://comphy-lab.org/teaching/#about-our-teaching-philosophy",
+    "title": "Teaching - How we teach",
+    "content": "We start from the physics, then write the code. Students derive or read the governing equations, implement a minimal case, and compare the output with scaling arguments, benchmarks, or experiments. Our teaching approach emphasizes: - **Think before you compute**: Understanding the underlying physics before implementation - **Modular code structure**: Building maintainable and extensible computational tools - **Numerical methods**: Using the right discretisation for the problem - **Open science**: Sharing knowledge and tools with the scientific community. Checkout If you're interested in hosting a course or workshop with CoMPhy Lab, please [contact us](/join) for collaboration opportunities.",
+    "url": "https://comphy-lab.org/teaching/#how-we-teach",
     "type": "website_section",
     "priority": 3
   },
   {
     "title": "\"Basilisk for Multiphase Flow Simulations\"",
-    "content": "// Function to update image visibility based on theme function updateBannerImages() { const theme = document.documentElement.getAttribute('data-theme') || 'light'; const lightImages = document.querySelectorAll('.light-mode-img'); const darkImages = document.querySelectorAll('.dark-mode-img'); if (theme === 'dark') { lightImages.forEach(img => img.style.display = 'none'); darkImages.forEach(img => img.style.display = 'block'); } else { lightImages.forEach(img => img.style.display = 'block'); darkImages.forEach(img => img.style.display = 'none'); } } // Run on page load document.addEventListener('DOMContentLoaded', updateBannerImages); // Watch for theme changes const observer = new MutationObserver(function(mutations) { mutations.forEach(function(mutation) { if (mutation.attributeName === 'data-theme') { updateBannerImages(); } }); }); observer.observe(document.documentElement, { attributes: true });",
+    "content": "Three-hour ECS 2025 session on heat conduction, drop impact, and Landau-Levich dip coating. Date September 15, 2025. Location European Coating Symposium 2025. Duration 3 hours.",
     "url": "https://comphy-lab.org/teaching/2025-Basilisk101nano-ECS",
     "type": "website_content",
     "priority": 3
@@ -649,7 +649,7 @@
   },
   {
     "title": "\"Basilisk for Multiphase Flow Simulations\" - Course Description",
-    "content": "This intensive 3-hour pre-conference training provides a focused introduction to high-fidelity multiphase flow simulation using Basilisk C, a powerful open-source framework. Designed for ECS 2025 participants with intermediate CFD background, the course emphasizes practical applications to coating processes while building foundational skills in adaptive mesh refinement and interface dynamics. The hands-on format combines theoretical insights with live coding demonstrations, enabling participants to immediately apply concepts. Through three carefully selected examples—basic heat conduction, drop impact dynamics, and Landau-Levich dip coating—attendees will gain practical experience with Basilisk's approach to conservation equations, interface tracking, and complex physics modeling relevant to coating applications.",
+    "content": "This three-hour ECS 2025 session introduces Basilisk C for multiphase flow problems in coating applications. It assumes an intermediate CFD background and focuses on adaptive mesh refinement, interface tracking, and contact-line dynamics. The examples are deliberately small: heat conduction, drop impact, and Landau-Levich dip coating. Each one introduces a numerical ingredient that appears again in coating-flow simulations.",
     "url": "https://comphy-lab.org/teaching/2025-Basilisk101nano-ECS#course-description",
     "type": "website_section",
     "priority": 3
@@ -705,7 +705,7 @@
   },
   {
     "title": "\"Basilisk for Multiphase Flow Simulations\" - Expected Outcomes",
-    "content": "By the end of this intensive 3-hour session, participants will: - **Execute Basilisk simulations** confidently on their own systems - **Modify key parameters** to explore different physical scenarios - **Understand VOF methodology** for interface tracking in multiphase flows - **Apply to coating processes** through the Landau-Levich example - **Connect theory to practice** by relating simulation results to physical phenomena This training provides the foundation for applying high-fidelity simulation techniques to coating research, with immediate practical skills and clear pathways for advanced applications.",
+    "content": "By the end of the session, participants will be able to execute Basilisk simulations, modify key parameters, understand VOF methodology, apply it to coating processes, and connect simulation results to physical phenomena.",
     "url": "https://comphy-lab.org/teaching/2025-Basilisk101nano-ECS#expected-outcomes",
     "type": "website_section",
     "priority": 3
@@ -6683,14 +6683,14 @@
   },
   {
     "title": "\"Join Us\"",
-    "content": "We are always looking for enthusiastic researchers to join our group. We welcome applicants with strong backgrounds in physics, applied mathematics, or engineering, especially in continuum mechanics, numerics, and scientific computing. vatsal.sanjay@durham.ac.uk",
+    "content": "The lab takes PhD, MPhys/MSc, visiting, and postdoctoral researchers when the project and funding fit. Strong preparation in physics, applied mathematics, or engineering helps, especially in continuum mechanics, numerics, and scientific computing. vatsal.sanjay@durham.ac.uk",
     "url": "https://comphy-lab.org/join/",
     "type": "website_content",
     "priority": 4
   },
   {
     "title": "\"Join Us\" - Current Research Projects",
-    "content": "To get an idea of the kind of projects we are interested in, please have a look at our current research topics (see [Research](/research)). Also, below are some of the ongoing research projects:",
+    "content": "These examples show the current scope. Details change with funding, timing, and the person joining the project.",
     "url": "https://comphy-lab.org/join/#current-research-projects",
     "type": "website_section",
     "priority": 4
@@ -6704,7 +6704,7 @@
   },
   {
     "title": "\"Join Us\" - From Champagne to Coughs: Modelling Droplet Formation",
-    "content": "Investigate how bubbles burst in complex fluids that behave like both liquids and elastic solids — from volcanic mudpots to respiratory mucus. Using Basilisk C simulations, discover how viscosity and elasticity control jet formation and droplet ejection when bubble cavities collapse. Map regimes where elastic stresses suppress or enhance jetting, with experimental validation from collaborators at Twente and Delft. [ View Project PDF](/assets/pdf-files/BubbleBursting.pdf){: .pdf-link }",
+    "content": "Model bubble bursting in complex fluids such as respiratory mucus and volcanic mudpots. Basilisk C simulations resolve capillary-wave focusing, viscoelastic stress buildup, jet formation, and droplet ejection; experiments at Twente and Delft validate the jetting regimes. [ View Project PDF](/assets/pdf-files/BubbleBursting.pdf){: .pdf-link }",
     "url": "https://comphy-lab.org/join/#from-champagne-to-coughs-modelling-droplet-formation",
     "type": "website_section",
     "priority": 4
@@ -6759,8 +6759,8 @@
     "priority": 4
   },
   {
-    "title": "\"Join Us\" - <span class=\"section-icon\"><i class=\"fa-solid fa-user-tie\"></i></span> Postdoctoral Positions: We occasionally have...",
-    "content": "We occasionally have openings for postdoctoral researchers to lead independent research projects within our computational multiphase physics framework. Postdoc positions offer excellent opportunities for career development and research leadership. **What we're looking for:** - PhD in Physics, Applied Mathematics, Mechanical Engineering, or related field - Strong background in computational fluid dynamics - Experience with numerical methods and high-performance computing - Independent research capabilities and leadership potential **Opportunities include:** - Leading research projects with PhD students - Developing new computational methods and tools - International collaborations and research visits - Grant writing and proposal development - Mentoring junior researchers When positions are available, they will be advertised here.",
+    "title": "\"Join Us\" - <span class=\"section-icon\"><i class=\"fa-solid fa-user-tie\"></i></span> Postdoctoral Positions",
+    "content": "When funding is available, postdocs lead projects in DNS of free-surface or non-Newtonian flows, maintain the accompanying code, and work with PhD and MPhys/MSc students. **What we're looking for:** - PhD in Physics, Applied Mathematics, Mechanical Engineering, or related field - Strong background in computational fluid dynamics - Experience with numerical methods and high-performance computing - Independent research capabilities and leadership potential **Opportunities include:** - Leading research projects with PhD students - Developing new computational methods and tools - International collaborations and research visits - Grant writing and proposal development - Mentoring junior researchers When positions are available, they will be advertised here.",
     "url": "https://comphy-lab.org/join/#span-classsection-iconi-classfa-solid-fa-user-tieispan-postdoctoral-positions",
     "type": "website_section",
     "priority": 4
@@ -6781,7 +6781,7 @@
   },
   {
     "title": "\"Join Us\" - <span class=\"section-icon\"><i class=\"fa-solid fa-graduation-cap\"></i></span> PhD Positions: We are always...",
-    "content": "We are always looking for enthusiastic PhD students to join our research group and contribute to cutting-edge computational multiphase physics research. We offer fully funded positions with opportunities for international collaboration and conference participation. **Research Areas:** - High-performance Computing and Numerical Methods - Multiphase flows and Interface Dynamics - Physics-based Modeling and Simulation - Soft Singularities in Fluid Systems - Droplet Dynamics and Respiratory Physics **What we offer:** - Access to high-performance computing resources - Collaboration with leading international research groups - Conference attendance and networking opportunities - Mentorship in both research and career development **Admissions and studentships:** - Entry: First-class BSc or at least a 2:1 MPhys/MSc (or international equivalent).",
+    "content": "PhD projects are usually computational and sit in free-surface flow, soft singularities, or non-Newtonian rheology. Funded studentships are advertised here when available; strong candidates should make contact before the Durham ranking cycle. **Research Areas:** - High-performance Computing and Numerical Methods - Multiphase flows and Interface Dynamics - Physics-based Modeling and Simulation - Soft Singularities in Fluid Systems - Droplet Dynamics and Respiratory Physics **Lab support:** - Access to high-performance computing resources - Collaboration with leading international research groups - Conference attendance - Mentorship in both research and career development **Admissions and studentships:** - Entry: First-class BSc or at least a 2:1 MPhys/MSc (or international equivalent).",
     "url": "https://comphy-lab.org/join/#span-classsection-iconi-classfa-solid-fa-graduation-capispan-phd-positions",
     "type": "website_section",
     "priority": 4
@@ -6802,14 +6802,14 @@
   },
   {
     "title": "\"Join Us\" - <span class=\"section-icon\"><i class=\"fa-solid fa-book\"></i></span> Bachelor's/Master's/Level-4 Projects",
-    "content": "We offer exciting research projects for Bachelor's and Master's students interested in computational physics and fluid dynamics. These projects provide hands-on experience with cutting-edge simulation tools and real-world physics problems. **Project Types:** - Computational fluid dynamics simulations using state-of-the-art [numerical techniques](https://www.github.com/comphy-lab). - Data analysis and visualization of complex flow phenomena. - Development of numerical methods and algorithms. - Experimental-computational comparison studies. **What you'll gain:** - Experience with high-performance computing - Skills in scientific programming (C, Python, Julia, MATLAB) - Understanding of advanced numerical methods - Opportunity to contribute to published research Contact us to discuss project fit and scope for your specific interests and timeline. > See the projects above.",
+    "content": "Bachelor's, MPhys, and MSc projects usually involve a small DNS problem, a scaling argument, or data analysis tied to an active paper. **Project Types:** - Computational fluid dynamics simulations using [open-source numerical methods](https://www.github.com/comphy-lab). - Data analysis and visualization of complex flow phenomena. - Development of numerical methods and algorithms. - Experimental-computational comparison studies. **What you'll gain:** - Experience with high-performance computing - Skills in scientific programming (C, Python, Julia, MATLAB) - Understanding of advanced numerical methods - Opportunity to contribute to published research Contact us to discuss project fit and scope for your specific interests and timeline.",
     "url": "https://comphy-lab.org/join/#span-classsection-iconi-classfa-solid-fa-bookispan-bachelorsmasterslevel-4-projects",
     "type": "website_section",
     "priority": 4
   },
   {
-    "title": "\"Join Us\" - <span class=\"section-icon\"><i class=\"fa-solid fa-flask\"></i></span> Internships: We welcome motivated...",
-    "content": "We welcome motivated students for summer internships and short-term research projects. Our internship program provides intensive research experience in a collaborative environment. **Internship Details:** - Duration: 2-6 months (flexible based on academic calendar). - Focus on specific research questions within ongoing projects. - Close mentorship and regular progress meetings. - Opportunity to present results at group seminars. **Ideal candidates have:** - Background in physics, mathematics, or engineering. - Basic programming experience (any language). - Curiosity about soft matter, fluid mechanics and computational methods. - Strong motivation for hands-on research. **Application process:** Send a short note describing your interests and any prior experience, along with your transcript, to the email addresses above.",
+    "title": "\"Join Us\" - <span class=\"section-icon\"><i class=\"fa-solid fa-flask\"></i></span> Internships",
+    "content": "Summer internships and short research visits are possible when there is a well-scoped project and enough supervision time. **Internship Details:** - Duration: 2-6 months (flexible based on academic calendar). - Focus on specific research questions within ongoing projects. - Close mentorship and regular progress meetings. - Opportunity to present results at group seminars. **Ideal candidates have:** - Background in physics, mathematics, or engineering. - Basic programming experience (any language). - Curiosity about soft matter, fluid mechanics and computational methods. - Interest in hands-on research. **Application process:** Send a short note describing your interests and any prior experience, along with your transcript, to the email addresses above.",
     "url": "https://comphy-lab.org/join/#span-classsection-iconi-classfa-solid-fa-flaskispan-internships",
     "type": "website_section",
     "priority": 4
@@ -19171,7 +19171,7 @@
   },
   {
     "title": "Agents - News",
-    "content": "Managing news items across the site: - **Using slash command**: `/add-news \"Your news content here\"` - automatically handles both News.md and history.md - **Manual editing**: - Add to both `News.md` (main page) and `history.md` (archive) - News.md maintains only 5 most recent items (plus pinned Durham announcement) - Format: `- News content` under `### Month Year` headers - **Important notes**: - Pinned items have no month/year header - Maintain blank lines between sections - Months appear in reverse chronological order within each year - Older items removed from News.md remain in history.md",
+    "content": "Managing news items across the site: - **Using slash command**: `/add-news \"Your news content here\"` - automatically handles `_data/news.yml`, `News.md`, and `history.md` - **Manual editing**: - Add a structured item to `_data/news.yml`; this is the visible source for the homepage and `/news/` - Add matching archive text to both `News.md` and `history.md` - News.md maintains only 5 most recent legacy items (plus pinned Durham announcement) - Format: `- News content` under `### Month Year` headers",
     "url": "https://comphy-lab.org#agents",
     "type": "website_section",
     "priority": 8
@@ -19234,7 +19234,7 @@
   },
   {
     "title": "Agents - File Management",
-    "content": "- ALWAYS prefer editing existing files over creating new ones - Developer documentation (README.md, CONTRIBUTING.md, etc.) should NEVER be created unless explicitly requested - Site content markdown files (research papers, news items, teaching pages) follow their specific workflows: - Research: Add to `_research/index.md` following the documented format - News: Use `/add-news` command or edit `News.md` and `history.md` - Teaching: Create course pages in `_teaching/` directory when adding new courses - Follow existing patterns in the codebase",
+    "content": "- ALWAYS prefer editing existing files over creating new ones - Developer documentation should NEVER be created unless explicitly requested - Site content markdown files follow their workflows: - Research: Add to `_research/index.md` following the documented format - News: Use `/add-news` command or edit `_data/news.yml`, `News.md`, and `history.md` - Teaching: Create course pages in `_teaching/` directory when adding new courses - Follow existing patterns in the codebase",
     "url": "https://comphy-lab.org#agents",
     "type": "website_section",
     "priority": 8
@@ -19255,71 +19255,15 @@
   },
   {
     "title": "Agents - /add-news: Adds a news...",
-    "content": "Adds a news item to both News.md and history.md while maintaining the 5-item limit on the main page. **Workflow:** 1. Add the news item to the appropriate month/year section in both files 2. If month/year doesn't exist, create it 3. Keep only 5 most recent news items in News.md (excluding the pinned Durham announcement) 4. Preserve the pinned item (recognized by not having ### Month header above it) **Usage:** ```bash /add-news \"Your news content here\" ``` **Implementation steps:** 1. Read both News.md and history.md 2. Ask for month/year if not provided or unclear 3. Add to history.md in reverse chronological position (latest first) 4. Add to News.md in reverse chronological position (latest first) 5. Count non-pinned news items in News.md 6. If count > 5, remove oldest items from News.md only 7.",
+    "content": "Adds a news item to `_data/news.yml`, `News.md`, and `history.md`. `_data/news.yml` is the visible source for the homepage and `/news/`. **Workflow:** 1. Add a structured item to `_data/news.yml` 2. Add the news item to the appropriate month/year section in both Markdown files 3. If month/year doesn't exist, create it 4. Keep only 5 most recent news items in News.md excluding the pinned Durham announcement **Implementation steps:** Read all three files, update YAML first, then update history.md and News.md.",
     "url": "https://comphy-lab.org#agents",
     "type": "website_section",
     "priority": 8
   },
   {
     "title": "Agents - /add-news: Save both files...",
-    "content": "Save both files **Important notes:** - The pinned Durham announcement has no month/year header - News items start with \"- \" (dash and space) - Maintain blank lines between sections for proper formatting - In history.md, years are sorted descending (newest first) - Within a year, months appear in reverse chronological order",
+    "content": "Save all three files. **Important notes:** `_data/news.yml` entries must stay valid YAML with `date`, `kind`, `title`, `meta`, `action_label`, and `action_href`. News items in the legacy Markdown files start with \"- \". Maintain blank lines between sections; history.md years are sorted descending and months are reverse chronological.",
     "url": "https://comphy-lab.org#agents",
-    "type": "website_section",
-    "priority": 8
-  },
-  {
-    "title": "Aboutcomphy - About Us",
-    "content": "We investigate [**non-Newtonian free-surface flows**](/research/?tag=Non-Newtonian) and [**soft matter singularities**](/research/?tag=Soft-matter-singularities). Our group employs a synergy of continuum simulations, experiments (through collaborations), and theoretical analysis to understand phenomena ranging involving drops, bubbles, jets, sheets, and more. We strive to connect fundamental findings with real-world applications, from industrial processes to everyday fluid dynamics.",
-    "url": "https://comphy-lab.org/#about",
-    "type": "website_section",
-    "priority": 8
-  },
-  {
-    "title": "Aboutcomphy - Soft Matter Singularities",
-    "content": "We examine topological transitions in fluid systems—such as [**droplet impact**](/research/?tag=Drops), [**bubble bursting**](/research/?tag=Bubbles), and [**sheet fragmentation**](/research/?tag=Sheets) — where local instabilities drive fast, often dramatic flow dynamics. Our goal is to expose the universal mechanisms governing these [**singular**](/research/?tag=Soft-matter-singularities) events in soft matter.",
-    "url": "https://comphy-lab.org/#about",
-    "type": "website_section",
-    "priority": 8
-  },
-  {
-    "title": "Aboutcomphy - Non-Newtonian Flows as the `Drosophila' of Continuum Mechanics",
-    "content": "From [**elastoviscoplastic**](/research/?tag=Non-Newtonian) bubble bursting and elastic sheet break-up to champagne [**bubble**](/research/?tag=Bubbles) bursting and classical Taylor–Culick retractions, non-Newtonian fluids serve as model systems to explore the fundamentals of continuum mechanics. By integrating high-fidelity simulations, analytical frameworks, and collaborative experiments, we reveal how microstructural stresses affect fluid and solid dynamics. This research provides key insights for industrial and environmental applications.",
-    "url": "https://comphy-lab.org/#about",
-    "type": "website_section",
-    "priority": 8
-  },
-  {
-    "title": "Aboutcomphy - Viscous Free-Surface Flows",
-    "content": "We investigate various viscous free-surface flows including inertial contact lines, [**bubble**](/research/?tag=Bubbles) removal, and focusing of [**waves**](/research/?tag=Waves). These phenomena are critical to energy transitions and manufacturing. For instance, a key challenge is optimizing bubble detachment in electrolysis to boost efficiency. This research involves advanced numerical methods and industry partnerships, with the broader aim of advancing technologies from chemical reactors to printing processes.",
-    "url": "https://comphy-lab.org/#about",
-    "type": "website_section",
-    "priority": 8
-  },
-  {
-    "title": "Aboutcomphy - Commitment to Open Science",
-    "content": "Open exchange of ideas drives our progress. We share our codes from the earliest stages of development, embracing transparent research practices to foster collaboration and reproducibility. We welcome inquiries and partnerships from the broader scientific community. Watchout for [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab) and [ ](https://github.com/comphy-lab \"Visit our GitHub organization\") on this website to interact with our codes. Feel free to contact us for discussions about our work or anything else related to fluid physics. Nothing is more exhilarating than a healthy scientific discussion.",
-    "url": "https://comphy-lab.org/#about",
-    "type": "website_section",
-    "priority": 8
-  },
-  {
-    "title": "Aboutcomphy - Location & Website",
-    "content": "[![Location](https://img.shields.io/badge/-Durham%20University-4285F4?style=flat&logo=googlemaps&logoColor=white)](https://maps.app.goo.gl/btdPViKxEoXFmVxM9) [![Website](https://img.shields.io/badge/-comphy--lab.org-4285F4?style=flat&logo=googlechrome&logoColor=white)](http://www.comphy-lab.org) vatsal.sanjay@durham.ac.uk",
-    "url": "https://comphy-lab.org/#about",
-    "type": "website_section",
-    "priority": 8
-  },
-  {
-    "title": "Aboutcomphy - Academic Profiles",
-    "content": "[![Google Scholar](https://img.shields.io/badge/-Google%20Scholar-4285F4?style=flat&logo=googlescholar&logoColor=white)](https://scholar.google.com/citations?user=tHb_qZoAAAAJ&hl=en) [![ORCID](https://img.shields.io/badge/-ORCID-A6CE39?style=flat&logo=orcid&logoColor=white)](https://orcid.org/0000-0002-4293-6099) [![arXiv](https://img.shields.io/badge/-arXiv-B31B1B?style=flat&logo=arxiv&logoColor=white)](https://arxiv.org/search/?query=vatsal+sanjay&searchtype=all&source=header) [![ResearchGate](https://img.shields.io/badge/-ResearchGate-00CCBB?style=flat&logo=researchgate&logoColor=white)](https://www.researchgate.net/profile/Vatsal-Sanjay-2)",
-    "url": "https://comphy-lab.org/#about",
-    "type": "website_section",
-    "priority": 8
-  },
-  {
-    "title": "Aboutcomphy - Social Media",
-    "content": "[![X](https://img.shields.io/badge/-@CoMPhyLab-000000?style=flat&logo=x&logoColor=white)](https://twitter.com/VatsalSanjay) [![Bluesky](https://img.shields.io/badge/-@comphy--lab.org-0285FF?style=flat&logo=bluesky&logoColor=white)](https://bsky.app/profile/comphy-lab.org) For supplementary videos and teaser of our upcoming work:",
-    "url": "https://comphy-lab.org/#about",
     "type": "website_section",
     "priority": 8
   },
@@ -19345,8 +19289,8 @@
     "priority": 8
   },
   {
-    "title": "News - <i class=\"fa-solid fa-graduation-cap gradcap-icon\"></i> CoMPhy Lab is Moving to Durham University!",
-    "content": "Join Us Starting July 1st, 2025 , the CoMPhy Lab will be relocating to Durham University, UK. We are excited to join the [Condensed Matter Physics section](https://www.durham.ac.uk/research/institutes-and-centres/condensed-matter-physics/) in the [Department of Physics](https://www.durham.ac.uk/departments/academic/physics/) and continue our research in computational physics and fluid dynamics in our new home.",
+    "title": "News - <i class=\"fa-solid fa-graduation-cap gradcap-icon\"></i> CoMPhy Lab at Durham University",
+    "content": "Join Us Since July 1st, 2025, the CoMPhy Lab has been based at Durham University, UK, in the [Condensed Matter Physics section](https://www.durham.ac.uk/research/institutes-and-centres/condensed-matter-physics/) of the [Department of Physics](https://www.durham.ac.uk/departments/academic/physics/).",
     "url": "https://comphy-lab.org#news",
     "type": "website_section",
     "priority": 8
@@ -19437,7 +19381,7 @@
   },
   {
     "title": "Claude - News",
-    "content": "Managing news items across the site: - **Using slash command**: `/add-news \"Your news content here\"` - automatically handles both News.md and history.md - **Manual editing**: - Add to both `News.md` (main page) and `history.md` (archive) - News.md maintains only 5 most recent items (plus pinned Durham announcement) - Format: `- News content` under `### Month Year` headers - **Important notes**: - Pinned items have no month/year header - Maintain blank lines between sections - Months appear in reverse chronological order within each year - Older items removed from News.md remain in history.md",
+    "content": "Managing news items across the site: - **Using slash command**: `/add-news \"Your news content here\"` - automatically handles `_data/news.yml`, `News.md`, and `history.md` - **Manual editing**: - Add a structured item to `_data/news.yml`; this is the visible source for the homepage and `/news/` - Add matching archive text to both `News.md` and `history.md` - News.md maintains only 5 most recent legacy items (plus pinned Durham announcement) - Format: `- News content` under `### Month Year` headers",
     "url": "https://comphy-lab.org#claude",
     "type": "website_section",
     "priority": 8
@@ -19500,7 +19444,7 @@
   },
   {
     "title": "Claude - File Management",
-    "content": "- ALWAYS prefer editing existing files over creating new ones - Developer documentation (README.md, CONTRIBUTING.md, etc.) should NEVER be created unless explicitly requested - Site content markdown files (research papers, news items, teaching pages) follow their specific workflows: - Research: Add to `_research/index.md` following the documented format - News: Use `/add-news` command or edit `News.md` and `history.md` - Teaching: Create course pages in `_teaching/` directory when adding new courses - Follow existing patterns in the codebase",
+    "content": "- ALWAYS prefer editing existing files over creating new ones - Developer documentation should NEVER be created unless explicitly requested - Site content markdown files follow their workflows: - Research: Add to `_research/index.md` following the documented format - News: Use `/add-news` command or edit `_data/news.yml`, `News.md`, and `history.md` - Teaching: Create course pages in `_teaching/` directory when adding new courses - Follow existing patterns in the codebase",
     "url": "https://comphy-lab.org#claude",
     "type": "website_section",
     "priority": 8
@@ -19521,14 +19465,14 @@
   },
   {
     "title": "Claude - /add-news: Adds a news...",
-    "content": "Adds a news item to both News.md and history.md while maintaining the 5-item limit on the main page. **Workflow:** 1. Add the news item to the appropriate month/year section in both files 2. If month/year doesn't exist, create it 3. Keep only 5 most recent news items in News.md (excluding the pinned Durham announcement) 4. Preserve the pinned item (recognized by not having ### Month header above it) **Usage:** ```bash /add-news \"Your news content here\" ``` **Implementation steps:** 1. Read both News.md and history.md 2. Ask for month/year if not provided or unclear 3. Add to history.md in reverse chronological position (latest first) 4. Add to News.md in reverse chronological position (latest first) 5. Count non-pinned news items in News.md 6. If count > 5, remove oldest items from News.md only 7.",
+    "content": "Adds a news item to `_data/news.yml`, `News.md`, and `history.md`. `_data/news.yml` is the visible source for the homepage and `/news/`. **Workflow:** 1. Add a structured item to `_data/news.yml` 2. Add the news item to the appropriate month/year section in both Markdown files 3. If month/year doesn't exist, create it 4. Keep only 5 most recent news items in News.md excluding the pinned Durham announcement **Implementation steps:** Read all three files, update YAML first, then update history.md and News.md.",
     "url": "https://comphy-lab.org#claude",
     "type": "website_section",
     "priority": 8
   },
   {
     "title": "Claude - /add-news: Save both files...",
-    "content": "Save both files **Important notes:** - The pinned Durham announcement has no month/year header - News items start with \"- \" (dash and space) - Maintain blank lines between sections for proper formatting - In history.md, years are sorted descending (newest first) - Within a year, months appear in reverse chronological order",
+    "content": "Save all three files. **Important notes:** `_data/news.yml` entries must stay valid YAML with `date`, `kind`, `title`, `meta`, `action_label`, and `action_href`. News items in the legacy Markdown files start with \"- \". Maintain blank lines between sections; history.md years are sorted descending and months are reverse chronological.",
     "url": "https://comphy-lab.org#claude",
     "type": "website_section",
     "priority": 8
@@ -19597,8 +19541,8 @@
     "priority": 8
   },
   {
-    "title": "History - <i class=\"fa-solid fa-graduation-cap gradcap-icon\"></i> CoMPhy Lab is Moving to Durham University!",
-    "content": "Join Us Starting July 1st, 2025 , the CoMPhy Lab will be relocating to Durham University, UK. We are excited to join the [Condensed Matter Physics section](https://www.durham.ac.uk/research/institutes-and-centres/condensed-matter-physics/) in the [Department of Physics](https://www.durham.ac.uk/departments/academic/physics/) and continue our research in computational physics and fluid dynamics in our new home.",
+    "title": "History - <i class=\"fa-solid fa-graduation-cap gradcap-icon\"></i> CoMPhy Lab at Durham University",
+    "content": "Join Us Since July 1st, 2025, the CoMPhy Lab has been based at Durham University, UK, in the [Condensed Matter Physics section](https://www.durham.ac.uk/research/institutes-and-centres/condensed-matter-physics/) of the [Department of Physics](https://www.durham.ac.uk/departments/academic/physics/).",
     "url": "https://comphy-lab.org#history",
     "type": "website_section",
     "priority": 8
@@ -19661,7 +19605,7 @@
   },
   {
     "title": "History - March",
-    "content": "- Prof. Detlef Lohse shares his scientific journey in The Living Histories Series . His inspiring discussion on curiosity, mentorship, and the \"puzzle solving\" joy of science offers valuable insights for researchers at all career stages. Watch on YouTube - [ Sanjay, V. , & Lohse, D. Unifying theory of scaling in drop impact: Forces & maximum spreading diameter. Published in Physical Review Letters.](/research#15) View Paper - Join us for a hybrid online+offline course: [High-Fidelity Simulations Using Basilisk C](/teaching/2025-Basilisk101-Madrid) in Madrid, Spain (March 10-13). Learn some computational (colorful) fluid dynamics with hands-on coding sessions.",
+    "content": "- Prof. Detlef Lohse discusses the people, questions, and experiments that shaped his work in fluid dynamics in The Living Histories Series. Watch on YouTube - [ Sanjay, V. , & Lohse, D. Unifying theory of scaling in drop impact: Forces & maximum spreading diameter. Published in Physical Review Letters.](/research#15) View Paper - Hybrid online/offline course: [High-Fidelity Simulations Using Basilisk C](/teaching/2025-Basilisk101-Madrid) in Madrid, Spain (March 10-13). Computational fluid dynamics with hands-on coding sessions.",
     "url": "https://comphy-lab.org#history",
     "type": "website_section",
     "priority": 8
@@ -19709,8 +19653,8 @@
     "priority": 8
   },
   {
-    "title": "Special announcement block - <i class=\"fa-solid fa-graduation-cap gradcap-icon\"></i> CoMPhy Lab is Moving to Durham University!",
-    "content": "Join Us Starting July 1st, 2025 , the CoMPhy Lab will be relocating.",
+    "title": "Special announcement block - <i class=\"fa-solid fa-graduation-cap gradcap-icon\"></i> CoMPhy Lab at Durham University",
+    "content": "Join Us Since July 1st, 2025, the CoMPhy Lab has been based at Durham University.",
     "url": "https://comphy-lab.org/tests/fixtures/news-bullets/special-announcement-block/#i-classfa-solid-fa-graduation-cap-gradcap-iconi-comphy-lab-is-moving-to-durham-university",
     "type": "website_section",
     "priority": 10

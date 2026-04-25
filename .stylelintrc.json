@@ -3,7 +3,8 @@
   "ignoreFiles": [
     "assets/css/fontello/**/*.css",
     "assets/css/academicons.min.css",
-    "assets/css/academicons-1.7.0/**/*.css"
+    "assets/css/academicons-1.7.0/**/*.css",
+    "assets/css/tokens.css"
   ],
   "rules": {
     "selector-class-pattern": null,

@@ -28,7 +28,7 @@
 
 ## 2025
 
-### <i class="fa-solid fa-graduation-cap gradcap-icon"></i> CoMPhy Lab is Moving to Durham University!
+### <i class="fa-solid fa-graduation-cap gradcap-icon"></i> CoMPhy Lab at Durham University
 
 <div class="news-flex-row">
   <div class="news-flex-row__image-container">
@@ -41,7 +41,7 @@
   </div>
 </div>
 
-Starting <strong>July 1st, 2025</strong>, the CoMPhy Lab will be relocating to Durham University, UK. We are excited to join the [Condensed Matter Physics section](https://www.durham.ac.uk/research/institutes-and-centres/condensed-matter-physics/) in the [Department of Physics](https://www.durham.ac.uk/departments/academic/physics/) and continue our research in computational physics and fluid dynamics in our new home.
+Since <strong>July 1st, 2025</strong>, the CoMPhy Lab has been based at Durham University, UK, in the [Condensed Matter Physics section](https://www.durham.ac.uk/research/institutes-and-centres/condensed-matter-physics/) of the [Department of Physics](https://www.durham.ac.uk/departments/academic/physics/).
 
 ### December
 

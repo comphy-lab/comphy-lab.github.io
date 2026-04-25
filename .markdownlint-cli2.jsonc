@@ -5,7 +5,8 @@
   ],
   "ignores": [
     "_teaching/**",
-    "assets/css/academicons-1.7.0/README.md"
+    "assets/css/academicons-1.7.0/README.md",
+    "comphy-lab-design-system/**"
   ],
   "config": {
     "default": true,

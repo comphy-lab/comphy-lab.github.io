@@ -15,56 +15,67 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 
 ```bash
 .
-├── _config.yml                # Site-wide configuration
-├── _includes                  # Reusable components
-├── _layouts                   # Page templates
-│   ├── default.html           # Base layout
-│   ├── research.html          # Research page layout
-│   ├── teaching.html          # Teaching page layout (for main teaching page with course listing)
-│   ├── teaching-course.html   # Individual course page layout (without sorting functionality)
-│   └── team.html              # Team page layout
-├── _research                  # Research project and publication entries
-├── _team                      # Team member profiles
-├── _teaching                  # Teaching course entries and pages
-│   ├── index.md               # Teaching landing page
-│   └── 2025-Basilisk101-Madrid.md # Course page
-├── assets                     # Static files (images, css, js, logos, favicon)
-│   ├── css                    # Stylesheets
-│   │   ├── main.css          # Main stylesheet
-│   │   ├── research.css      # Research page styles with dark mode support
-│   │   ├── teaching.css      # Teaching page styles with dark mode support
-│   │   ├── team.css          # Team page styles with dark mode support
-│   │   ├── styles.css        # Global styles with light/dark theme variables (optimized)
-│   │   └── command-palette.css # Command palette styles (⌘K)
-│   ├── js                    # JavaScript files
-│   │   ├── main.js          # Main JavaScript
-│   │   ├── command-data.js  # Command palette data and functionality
-│   │   ├── platform-utils.js # Platform detection and UI utilities
-│   │   ├── shortcut-key.js  # Keyboard shortcut handling
-│   │   └── search_db.json   # Generated search database (used by command palette)
-│   ├── favicon              # Favicon files
-│   └── img                  # Image assets
-│       └── teaching         # Teaching images
-├── scripts                    # Build and utility scripts
-│   ├── build.sh              # Main build script
-│   ├── deploy.sh             # Local dev server with smart port detection
-│   ├── generate_search_db.rb  # Search database generator
-│   └── setup.sh              # Complete setup script for fresh and existing environments
-├── tests                      # Unit tests
-│   ├── fix-line-length.test.js # Tests for fix-line-length.js
-│   ├── command-data.test.js   # Tests for command-data.js
-│   └── setup.js              # Test setup and mocks
-├── .github                    # GitHub specific files
-│   ├── ISSUE_TEMPLATE        # Issue templates
-│   └── PULL_REQUEST_TEMPLATE # PR templates
-├── aboutCoMPhy.md              # About page content (markdown)
-├── News.md                     # Lab news and announcements (markdown)
-├── contact.html               # Contact page that redirects to Join Us page
-├── join.html                  # Join Us page (opportunities)
-├── index.html                 # Homepage
-├── Gemfile                    # Ruby dependencies
-└── _site                      # Generated site (ignored by Git)
-    └── search_db.json        # Generated search database
+├── _config.yml                 # Site-wide configuration
+├── _data                       # YAML data sources for data-driven pages
+│   ├── hero.yml                #   homepage hero (slides, copy)
+│   ├── news.yml                #   news feed (homepage + /news/ archive)
+│   ├── team.yml                #   team page (present, collaborators, alumni)
+│   └── research_themes.yml     #   research themes block
+├── _includes                   # Reusable Jekyll fragments
+│   ├── footer-v2.html          #   site footer (v2)
+│   ├── theme-init.html         #   early theme persistence (avoids FOUC)
+│   ├── tokens-bridge.html      #   v2 token wiring
+│   └── tokens-head.html        #   <head> token primer
+├── _layouts                    # Page templates
+│   ├── default.html            #   base layout used by most pages
+│   ├── research.html           #   research collection layout
+│   ├── teaching.html           #   teaching landing layout (sortable)
+│   ├── teaching-course.html    #   individual course layout
+│   ├── team.html               #   team page layout
+│   ├── join-us.html            #   join page layout
+│   └── history.html            #   news history layout
+├── _research                   # Research project and publication entries
+├── _team                       # Team page (renders from _data/team.yml)
+├── _teaching                   # Teaching course entries and pages
+├── _join-us                    # Join Us page entries
+├── assets                      # Static files (images, css, js, logos, favicon)
+│   ├── css                     # Stylesheets
+│   │   ├── tokens.css          #   v2 design tokens (single source of truth)
+│   │   ├── bridge.css          #   maps legacy --color-* names to v2 tokens,
+│   │   │                       #   declares shared component primitives
+│   │   ├── styles.css          #   legacy global stylesheet
+│   │   ├── home.css            #   homepage v2 styles
+│   │   ├── team-v2.css         #   team page v2 styles
+│   │   ├── research-v2.css     #   research page v2 styles
+│   │   ├── footer-v2.css       #   footer v2 styles
+│   │   ├── about-layout.css    #   about-layout styles
+│   │   ├── join-us.css         #   join page styles
+│   │   ├── shared-news-history.css # news + history shared styles
+│   │   ├── research.css        #   legacy research page styles
+│   │   ├── team.css            #   legacy team page styles
+│   │   ├── teaching.css        #   teaching page styles
+│   │   ├── command-palette.css #   ⌘K command palette
+│   │   └── vendor.css          #   third-party CSS bundle
+│   ├── js                      # JavaScript files
+│   │   ├── main.js             #   main JS (preloader, news loader, etc.)
+│   │   ├── command-data.js     #   command palette data + behaviour
+│   │   ├── platform-utils.js   #   platform detection / UI utilities
+│   │   ├── shortcut-key.js     #   keyboard shortcut handling
+│   │   └── search_db.json      #   generated search index
+│   ├── favicon                 # Favicon files
+│   ├── images                  # Image assets (team, teaching, covers, …)
+│   └── logos                   # Brand logos
+├── scripts                     # Build and utility scripts (see "Scripts Documentation")
+├── tests                       # Jest unit tests
+├── .github                     # CI workflows, issue/PR templates
+├── about.html                  # /about/ — JS redirect to /
+├── contact.html                # /contact/ — JS redirect to /join
+├── join.html                   # /join/ — Join Us page
+├── index.html                  # /  — Homepage
+├── News.md                     # /news/ feed legacy bullet list
+├── history.md                  # /history/ — full news archive
+├── Gemfile                     # Ruby dependencies
+└── _site                       # Generated site (ignored by Git)
 ```
 
 ## Part A: Front-End Documentation
@@ -176,53 +187,54 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 
 ### Content Management
 
-#### About Page
+The homepage hero, news feed, team page, and research themes are
+**data-driven** from YAML files in `_data/`. Edit the data file rather
+than hand-writing HTML.
 
-- `aboutCoMPhy.md`: Contains the About section in markdown
-- Standard markdown elements (headers, lists, links) are supported
-- Edits automatically appear once the site is rebuilt
+#### Homepage hero
 
-#### News Page
+`_data/hero.yml` drives the hero section (slides, eyebrow, copy, video
+poster). Add or reorder slides there; layout adapts automatically.
 
-- `News.md`: Contains the lab's news and announcements in markdown
-- News items are displayed on the homepage in the right sidebar
-- Format each news item with a date and brief description
-- The news content is loaded dynamically using JavaScript
+#### News (`_data/news.yml`, News.md, history.md)
 
-#### Contact Page Redirect
+- `_data/news.yml`: source of truth for the homepage feed and `/news/`
+  archive. Each item has `date`, `kind` (`paper` | `talk` | `people` |
+  `move` | `award`), `title`, `meta`, `action_label`, `action_href`.
+- `News.md`: legacy short-form list, kept to **5 most recent** items
+  plus the pinned Durham announcement.
+- `history.md`: full archive, never trimmed.
+- Years descend in `history.md`; months descend within each year. Pinned
+  items have no month/year header.
+- Use the `/add-news` slash command (in agent-driven workflows) or
+  manually edit all three files together.
 
-- `contact.html`: Automatically redirects users to the Join Us page
-- Uses JavaScript's `window.location.replace()` for a seamless redirect
-- Includes fallback content in case JavaScript is disabled
-- URL structure: `/contact/` redirects to `/join`
+#### Redirect pages
+
+- `about.html` (Jekyll permalink `/about/`): redirects to `/` via JS
+  with a visible fallback link.
+- `contact.html` (Jekyll permalink `/contact/`): redirects to `/join`.
+- Both mirror the same redirect pattern; keep them aligned if you change
+  one.
 
 #### Adding or Editing Team Members
 
-1. Open the `_team/index.md` file
-2. Follow this basic format for each member:
+The team page renders from `_data/team.yml` — three sections (`present`,
+`collaborators`, `alumni`), each with `name`, `role`, `photo`, `bio`,
+optional links. Photo files go under `assets/images/team/` (1:1 crop,
+used at `--r-md` radius). Bio is line-clamped per section (3 lines
+present, 4 collaborators, unset alumni).
 
-   ```markdown
-   ## Member Name
-   ![Photo](/path/to/photo.jpg)
-   - Current Position, Institution / **status** year
-   - Previous Position, Institution / year-year
-   - Education Degree, Institution / year-year
-
-   Research Interest: Brief description
-   ```
-
-3. For social links:
-
-   ```markdown
-   [<i class="fab fa-github" style="font-size: 2.5em;"></i>](https://github.com/username)
-   [<i class="ai ai-google-scholar-square" style="font-size: 2.5em;"></i>](https://scholar.google.com/citations?user=USER_ID)
-   ```
-
-4. Member Photo:
-
-   ```html
-   <img src="../assets/images/team/8.webp" alt="Member Name" width="250" height="250" class="member-image">
-   ```
+```yaml
+present:
+  - name: Member Name
+    role: Current position, Institution
+    photo: /assets/images/team/N.webp
+    bio: Brief research interest summary.
+    links:
+      - { kind: github,  href: "https://github.com/username" }
+      - { kind: scholar, href: "https://scholar.google.com/citations?user=ID" }
+```
 
 #### Research Papers
 
@@ -462,14 +474,22 @@ The website supports both light and dark themes with an easy toggle switch in th
    - Maintains theme consistency across page navigation
 
 2. **Implementation Details**
-   - Theme toggle button in the header of all layouts (default, team, research, teaching, teaching-course)
-   - CSS variables for theme colors in `styles.css` and page-specific stylesheets
-   - JavaScript to handle theme switching and user preferences
+   - Theme toggle button in the header of all layouts (default, team,
+     research, teaching, teaching-course, join-us, history)
+   - Brand colours and theme variables live in `assets/css/tokens.css`
+     (single source of truth for the v2 design system)
+   - `bridge.css` maps legacy `--color-*` names onto the v2 tokens, so
+     legacy stylesheets continue to work
+   - Early theme persistence via `_includes/theme-init.html` to avoid FOUC
 
 3. **Customizing Theme Colors**
-   - Light and dark theme variables are defined in `assets/css/styles.css`
-   - Page-specific theme colors in respective CSS files (research.css, teaching.css, team.css)
-   - Theme is applied using the `data-theme` attribute on the HTML element
+   - Brand and theme tokens: `assets/css/tokens.css`
+   - Legacy variable bridge (kept for compatibility): `assets/css/bridge.css`
+   - Legacy globals: `assets/css/styles.css`; legacy page styles in
+     `research.css`, `teaching.css`, `team.css`
+   - v2 page styles: `home.css`, `team-v2.css`, `research-v2.css`,
+     `footer-v2.css`
+   - Theme is applied via the `data-theme` attribute on the HTML element
 
 ### Design Elements
 
@@ -502,54 +522,46 @@ The website supports both light and dark themes with an easy toggle switch in th
 
 ### GitHub Actions Workflows
 
-The website uses three GitHub Actions workflows for automation:
+| Workflow | Purpose |
+| --- | --- |
+| `jekyll.yml` | Builds and deploys the Jekyll site to GitHub Pages on push/PR to `main`. |
+| `pages-build-deployment` (GitHub-managed) | Final deploy to GitHub's edge. |
+| `update-search.yml` | Pulls the search index from [comphy-lab/comphy-search](https://github.com/comphy-lab/comphy-search) daily at 04:00 UTC and on content changes. |
+| `rebuild-on-search-update.yml` | Re-runs the build when the search index changes. |
+| `content-rules-checks.yml` | Runs `validate-content-rules.sh` and the trigger-parity check. |
+| `maintenance-regression-checks.yml` | Regression suite for housekeeping scripts (deploy, validators). |
+| `teaching-content-checks.yml` | markdownlint + Prettier gate for `_teaching/` pages. |
+| `pr-hygiene-check.yml` | PR hygiene — blocks mixed dependency/security PRs. |
+| `cloudflare-purge.yml` | Purges Cloudflare cache after deploy (needs `CLOUDFLARE_ZONE_ID` and `CLOUDFLARE_API_TOKEN` secrets). |
+| `sync-org-profile-publications.yml` | Syncs publications to the org profile README. |
+| `weekly-tests.yml` | Scheduled weekly smoke tests. |
 
-1. **Jekyll site CI** (`.github/workflows/jekyll.yml`)
-   - Builds and deploys the Jekyll website
-   - Triggers on push/PR to main branch
-   - Two-step process:
-     1. Builds site and generates artifacts
-     2. Deploys to GitHub Pages
-   - Uses latest Ruby and Jekyll versions
+Together these ensure the site builds, the search index stays fresh,
+and content invariants hold across PRs.
 
-2. **pages-build-deployment** (GitHub-managed)
-   - Built-in GitHub Pages deployment workflow
-   - Handles final deployment to GitHub's servers
-   - Works automatically with Jekyll CI workflow
-   - Provides deployment status and URLs
+#### Blog content indexing
 
-3. **Update Search Database** (`.github/workflows/update-search.yml`)
-   - Maintains site's search functionality
-   - Triggers:
-     - Daily at 4:00 UTC automatically
-     - On content file changes (MD/HTML)
-     - Manual trigger available
-   - Fetches the search database from [comphy-lab/comphy-search](https://github.com/comphy-lab/comphy-search)
-   - Updates `search_db.json` in the website repository
-   - Commits changes back to repository
+Blog content from [blogs.comphy-lab.org](https://blogs.comphy-lab.org) is
+indexed in the
+[comphy-search](https://github.com/comphy-lab/comphy-search) repository,
+sourced from
+[comphy-lab/CoMPhy-Lab-Blogs](https://github.com/comphy-lab/CoMPhy-Lab-Blogs).
 
-These workflows work together to ensure:
+Filtering rules:
 
-- Automated site builds and deployments
-- Up-to-date search functionality
-- Consistent deployment to GitHub Pages
+- Only indexes markdown files where `publish: false` is **not** set in
+  frontmatter.
+- Excludes any file with "todo" in the filename (case-insensitive).
 
-1. **Blog Content Indexing**
-   - Blog content from [blogs.comphy-lab.org](https://blogs.comphy-lab.org) is indexed in the [comphy-search](https://github.com/comphy-lab/comphy-search) repository
-   - Source: [comphy-lab/CoMPhy-Lab-Blogs](https://github.com/comphy-lab/CoMPhy-Lab-Blogs)
-   - Filtering criteria:
-     - Only indexes markdown files where `publish: false` is NOT set in frontmatter
-     - Automatically excludes any files with "todo" in the filename (case-insensitive)
-   - The search index is automatically updated:
-     - Daily via GitHub Actions
-     - When changes are pushed to markdown or HTML files
-     - Can be manually triggered from the Actions tab
-   - This approach improves search quality by:
-     - Centralizing search database generation
-     - Accessing the raw markdown directly from the source
-     - Respecting publish status in frontmatter
-     - Processing content in a more structured way
-     - Avoiding web scraping issues or rate limits
+Index refresh:
+
+- Daily via GitHub Actions.
+- On pushes that change markdown/HTML.
+- Manually via the Actions tab.
+
+The split-repo approach centralises search generation, reads raw
+markdown from source, respects `publish:` flags, and avoids web-scraping
+rate limits.
 
 ## Scripts Documentation
 
@@ -581,6 +593,24 @@ The `scripts/` directory contains various utility scripts for development, testi
   - Auto-fixes issues when possible
   - Ensures code consistency across the project
 
+- **`check-ruby-toolchain.sh`** - Ruby/Bundler preflight
+  - Verifies Ruby version matches `.ruby-version`
+  - Verifies the repo-pinned Bundler is available
+  - Used by `setup.sh`; also runnable on its own when chasing
+    "wrong Ruby" install errors
+
+- **`validate-content-rules.sh`** - Content invariants
+  - Checks `history.md` chronological ordering
+  - Checks `_research/index.md` tag-markup format
+  - Checks `CLAUDE.md` and `README.md` don't reintroduce the
+    deprecated bare `tags` element (replaced by `div.tags` blocks)
+  - Run by the `content-rules` CI workflow
+
+- **`check-content-rules-trigger-parity.py`** - Workflow guard
+  - Ensures the file paths that trigger the `content-rules` workflow
+    match the validated-file set, so the validator never silently
+    skips a file by mistake
+
 ### Utility Scripts
 
 - **`fix-js-line-length.sh`** - JavaScript line length fixer
@@ -609,6 +639,13 @@ The `scripts/` directory contains various utility scripts for development, testi
   - Creates tag-based filtered pages for research papers
   - Generates individual pages for each research tag
   - Updates navigation and search functionality
+
+### Python Scripts
+
+- **`sync_org_profile_publications.py`** - Org profile sync
+  - Pulls the publications block from `_research/index.md` into the
+    GitHub org profile README (kept in `_org_profile/`)
+  - Run periodically; not part of the regular build
 
 ### Test Scripts
 
@@ -850,27 +887,33 @@ git commit --no-verify
 
 ### CSS Architecture
 
-The website's CSS has been optimized for better performance and maintainability:
+The site is mid-migration to a "v2" design system. New work composes from
+the v2 layer; legacy styles remain so older pages keep rendering.
 
-1. **Variable System**
-   - Color variables for both light and dark themes
-   - Typography variables for consistent font sizing
-   - Spacing variables for layout consistency
-   - Shadow and transition presets for unified effects
+1. **Design tokens (`assets/css/tokens.css`)**
+   - Single source of truth for the v2 layer
+   - Brand colours (`--c-brand-*`, `--c-accent-*`)
+   - Typography (`--t-*`), spacing (`--s-*`), radii (`--r-*`)
+   - Light theme by default; dark overrides under `[data-theme="dark"]`
 
-2. **Consolidated Media Queries**
-   - Queries organized by breakpoint rather than by component
-   - Shared breakpoints at 1700px, 1300px, 1200px, 900px, 768px, and 500px
-   - Mobile-first approach throughout
+2. **Bridge layer (`assets/css/bridge.css`)**
+   - Loaded **after** `tokens.css` and `styles.css` so its `:root`
+     declarations win the cascade
+   - Maps legacy `--color-*` / `--font-*` / `--shadow-*` names onto v2
+     tokens — legacy pages pick up the new palette without rewrites
+   - Declares shared component primitives reused across v2 pages
+     (panel, eyebrow, lede, chip, btn-ghost, paper-card, news-row,
+     team-tile, `.visually-hidden`)
 
-3. **Optimized Dark Theme Support**
-   - CSS variables for seamless theme switching
-   - Fallback values for older browsers
-   - Theme-specific accent colors and contrasts
-   - Consistent text and background colors across components
+3. **v2 page stylesheets**
+   - `home.css`, `team-v2.css`, `research-v2.css`, `footer-v2.css`,
+     `about-layout.css`, `shared-news-history.css`, `join-us.css`
+   - Compose from bridge primitives; only add page-specific rules
 
-4. **Performance Improvements**
-   - Reduced redundant selectors
-   - Consolidated duplicate styles
-   - Optimized transitions and animations
-   - Simplified box shadows for better rendering
+4. **Legacy stylesheets**
+   - `styles.css`, `research.css`, `team.css`, `teaching.css`
+   - Kept for pages not yet migrated; bridged into the v2 token system
+
+5. **Consolidated media queries**
+   - Breakpoints: 1700, 1300, 1200, 900, 768, 500 (mobile-first)
+   - Organised by breakpoint for cache-friendly delivery

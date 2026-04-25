@@ -4,7 +4,10 @@ title: "Join Us"
 permalink: /join/
 ---
 
-We are always looking for enthusiastic researchers to join our group. We welcome applicants with strong backgrounds in physics, applied mathematics, or engineering, especially in continuum mechanics, numerics, and scientific computing.
+The lab takes PhD, MPhys/MSc, visiting, and postdoctoral researchers
+when the project and funding fit. Strong preparation in physics, applied
+mathematics, or engineering helps, especially in continuum mechanics,
+numerics, and scientific computing.
 
 <div class="email-container">
   <span class="email-text">vatsal.sanjay@durham.ac.uk</span>
@@ -18,12 +21,20 @@ We are always looking for enthusiastic researchers to join our group. We welcome
   </div>
 </div>
 
+## How we work
+
+We share code early and keep simulation repositories public whenever the
+paper allows it. Most projects use [GitHub](https://github.com/comphy-lab)
+from the start, so discussion happens around equations, runs, figures,
+and commits rather than around polished final files.
+
 <div class="projects-showcase" markdown="1">
 
 ## Current Research Projects
 
 <div class="projects-intro" markdown="1">
-To get an idea of the kind of projects we are interested in, please have a look at our current research topics (see [Research](/research)). Also, below are some of the ongoing research projects:
+These examples show the current scope. Details change with funding,
+timing, and the person joining the project.
 </div>
 
 <div class="project-category soft-matter-category" markdown="1">
@@ -36,7 +47,10 @@ To get an idea of the kind of projects we are interested in, please have a look 
 
 ### From Champagne to Coughs: Modelling Droplet Formation
 
-Investigate how bubbles burst in complex fluids that behave like both liquids and elastic solids — from volcanic mudpots to respiratory mucus. Using Basilisk C simulations, discover how viscosity and elasticity control jet formation and droplet ejection when bubble cavities collapse. Map regimes where elastic stresses suppress or enhance jetting, with experimental validation from collaborators at Twente and Delft.
+Model bubble bursting in complex fluids such as respiratory mucus and
+volcanic mudpots. Basilisk C simulations resolve capillary-wave
+focusing, viscoelastic stress buildup, jet formation, and droplet
+ejection; experiments at Twente and Delft validate the jetting regimes.
 
 [<i class="fa-solid fa-file-pdf"></i> View Project PDF](/assets/pdf-files/BubbleBursting.pdf){: .pdf-link }
 
@@ -124,7 +138,9 @@ Study hot droplet impacts on cold substrates in gels transitioning from Newtonia
 
 ## <span class="section-icon"><i class="fa-solid fa-user-tie"></i></span> Postdoctoral Positions
 
-We occasionally have openings for postdoctoral researchers to lead independent research projects within our computational multiphase physics framework. Postdoc positions offer excellent opportunities for career development and research leadership.
+When funding is available, postdocs lead projects in DNS of free-surface
+or non-Newtonian flows, maintain the accompanying code, and work with
+PhD and MPhys/MSc students.
 
 **What we're looking for:**
 
@@ -163,7 +179,10 @@ application together.
 
 ## <span class="section-icon"><i class="fa-solid fa-graduation-cap"></i></span> PhD Positions
 
-We are always looking for enthusiastic PhD students to join our research group and contribute to cutting-edge computational multiphase physics research. We offer fully funded positions with opportunities for international collaboration and conference participation.
+PhD projects are usually computational and sit in free-surface flow,
+soft singularities, or non-Newtonian rheology. Funded studentships are
+advertised here when available; strong candidates should make contact
+before the Durham ranking cycle.
 
 **Research Areas:**
 
@@ -173,11 +192,11 @@ We are always looking for enthusiastic PhD students to join our research group a
 - Soft Singularities in Fluid Systems
 - Droplet Dynamics and Respiratory Physics
 
-**What we offer:**
+**Lab support:**
 
 - Access to high-performance computing resources
 - Collaboration with leading international research groups
-- Conference attendance and networking opportunities
+- Conference attendance
 - Mentorship in both research and career development
 
 **Admissions and studentships:**
@@ -200,11 +219,13 @@ See: [Fees & Funding](https://www.durham.ac.uk/study/postgraduate/research-degre
 
 ## <span class="section-icon"><i class="fa-solid fa-book"></i></span> Bachelor's/Master's/Level-4 Projects
 
-We offer exciting research projects for Bachelor's and Master's students interested in computational physics and fluid dynamics. These projects provide hands-on experience with cutting-edge simulation tools and real-world physics problems.
+Bachelor's, MPhys, and MSc projects usually involve a small DNS problem,
+a scaling argument, or data analysis tied to an active paper.
 
 **Project Types:**
 
-- Computational fluid dynamics simulations using state-of-the-art [numerical techniques](https://www.github.com/comphy-lab).
+- Computational fluid dynamics simulations using [open-source numerical
+  methods](https://www.github.com/comphy-lab).
 - Data analysis and visualization of complex flow phenomena.
 - Development of numerical methods and algorithms.
 - Experimental-computational comparison studies.
@@ -218,15 +239,14 @@ We offer exciting research projects for Bachelor's and Master's students interes
 
 Contact us to discuss project fit and scope for your specific interests and timeline.
 
-> See the projects above.
-
 </div>
 
 <div class="position-section internship-section" markdown="1">
 
 ## <span class="section-icon"><i class="fa-solid fa-flask"></i></span> Internships
 
-We welcome motivated students for summer internships and short-term research projects. Our internship program provides intensive research experience in a collaborative environment.
+Summer internships and short research visits are possible when there is
+a well-scoped project and enough supervision time.
 
 **Internship Details:**
 
@@ -240,7 +260,7 @@ We welcome motivated students for summer internships and short-term research pro
 - Background in physics, mathematics, or engineering.
 - Basic programming experience (any language).
 - Curiosity about soft matter, fluid mechanics and computational methods.
-- Strong motivation for hands-on research.
+- Interest in hands-on research.
 
 **Application process:**
 

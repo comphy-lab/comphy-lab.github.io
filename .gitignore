@@ -9,9 +9,14 @@ vendor/
 # Ignore ai rules
 .windsurfrules
 .cursorrules
-.claude
+# .claude/ is tracked (shared launch.json etc.) — only ignore user-local bits
+.claude/settings.local.json
+.claude/plans/
 **/copilot-instructions.md
 .DS_Store
+
+# Design-system handoff bundle (template from Claude Design — not source)
+comphy-lab-design-system/
 
 # Node.js dependencies
 node_modules/
