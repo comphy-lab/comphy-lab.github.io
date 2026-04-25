@@ -1,8 +1,9 @@
 /* =============================================================
    CoMPhy Lab · Team page (v2)
    Three sections — Present / Collaborators / Alumni — hard-
-   separated, with identical photo crop (1:1, --r-md) and
-   2-sentence bio clamp. Driven by _data/team.yml.
+   separated, with identical photo crop (1:1, --r-md) and a
+   line-clamped bio (3 lines for present, 4 for collaborators,
+   unclamped for alumni). Driven by _data/team.yml.
    ============================================================= */
 
 .team-page {
