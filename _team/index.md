@@ -124,5 +124,68 @@ description: >-
       </div>
     </section>
 
+    {% comment %} ---------------- World map ---------------- {% endcomment %}
+    <section class="t-map" id="map" aria-labelledby="t-map-title">
+      <header class="t-map__head">
+        <span class="t-map__num">04 · Around the world</span>
+        <h2 id="t-map-title" class="t-map__title">Team, collaborators, and conference visits</h2>
+        <p class="t-map__sub">
+          Locations meet one of four criteria, in this order of
+          preference:
+        </p>
+        <ul class="t-map__legend" role="list">
+          <li><span class="t-map__dot t-map__dot--hometown" aria-hidden="true"></span>
+            <strong>Hometown</strong> of a team member or alum
+          </li>
+          <li><span class="t-map__dot t-map__dot--collab" aria-hidden="true"></span>
+            <strong>Base</strong> of an active collaborator
+          </li>
+          <li><span class="t-map__dot t-map__dot--talk" aria-hidden="true"></span>
+            <strong>Talks</strong> we've given
+          </li>
+          <li><span class="t-map__dot t-map__dot--visit" aria-hidden="true"></span>
+            <strong>Conferences</strong> we've attended (no talk)
+          </li>
+        </ul>
+      </header>
+
+      <div class="t-map__frame" id="team-map">
+        {% comment %} Lightweight placeholder until the iframe is lazy-loaded. {% endcomment %}
+        <div class="t-map__placeholder">
+          <span>Loading the world map…</span>
+        </div>
+      </div>
+    </section>
+
   </div>
 </main>
+
+<script>
+  /* Lazy-load the Google Map iframe only when it's about to enter
+     the viewport — saves a heavy iframe + Google scripts on initial
+     team-page load. Falls back to immediate load when
+     IntersectionObserver isn't available. */
+  (function () {
+    var frame = document.getElementById('team-map');
+    if (!frame) return;
+    var loaded = false;
+    function load() {
+      if (loaded) return; loaded = true;
+      frame.innerHTML =
+        '<iframe ' +
+        'src="https://www.google.com/maps/d/u/0/embed?mid=1hOfYTnnie_7Bx45e9uA4gLXaaKreTXc&ehbc=2E312F&noprof=1&z=3&ll=42,-10" ' +
+        'title="CoMPhy Lab — team, collaborators, and conference visits" ' +
+        'loading="lazy" allowfullscreen ' +
+        'referrerpolicy="no-referrer-when-downgrade" ' +
+        'sandbox="allow-scripts allow-same-origin allow-popups"></iframe>';
+    }
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { load(); io.disconnect(); } });
+      }, { rootMargin: '300px' });
+      io.observe(frame);
+    } else {
+      load();
+    }
+  })();
+</script>
