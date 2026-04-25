@@ -57,7 +57,6 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 ├── .github                    # GitHub specific files
 │   ├── ISSUE_TEMPLATE        # Issue templates
 │   └── PULL_REQUEST_TEMPLATE # PR templates
-├── aboutCoMPhy.md              # About page content (markdown)
 ├── News.md                     # Lab news and announcements (markdown)
 ├── contact.html               # Contact page that redirects to Join Us page
 ├── join.html                  # Join Us page (opportunities)
@@ -175,12 +174,6 @@ A static website for the Computational Multiphase Physics Laboratory, built with
      - Requires `CLOUDFLARE_ZONE_ID` and `CLOUDFLARE_API_TOKEN` secrets in repository settings
 
 ### Content Management
-
-#### About Page
-
-- `aboutCoMPhy.md`: Contains the About section in markdown
-- Standard markdown elements (headers, lists, links) are supported
-- Edits automatically appear once the site is rebuilt
 
 #### News Page
 

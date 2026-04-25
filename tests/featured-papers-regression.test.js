@@ -20,7 +20,6 @@ describe("featured papers homepage media handling", () => {
     document.body.innerHTML = `
       <div id="preloader"></div>
       <div class="featured-item__image"></div>
-      <div id="about-content"></div>
       <div id="news-content"></div>
     `;
     window.history.pushState({}, "", "/");
