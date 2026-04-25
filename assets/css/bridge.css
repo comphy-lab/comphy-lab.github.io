@@ -1,6 +1,8 @@
 /* =============================================================
    CoMPhy Lab · Bridge Layer
-   Loaded after tokens.css and before styles.css.
+   Loaded after tokens.css AND after styles.css, so its :root
+   declarations win the cascade over the legacy --color-* names
+   defined in styles.css.
 
    Purpose:
    1. Map legacy --color-*, --font-*, --shadow-* names declared in
