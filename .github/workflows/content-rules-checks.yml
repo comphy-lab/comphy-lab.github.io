@@ -4,8 +4,6 @@ on:
   pull_request:
     branches: ["main"]
     paths:
-      - ".agents/skills/add-news/SKILL.md"
-      - ".agents/skills/add-paper/SKILL.md"
       - ".github/workflows/content-rules-checks.yml"
       - "CLAUDE.md"
       - "README.md"
@@ -16,8 +14,6 @@ on:
   push:
     branches: ["main"]
     paths:
-      - ".agents/skills/add-news/SKILL.md"
-      - ".agents/skills/add-paper/SKILL.md"
       - ".github/workflows/content-rules-checks.yml"
       - "CLAUDE.md"
       - "README.md"
