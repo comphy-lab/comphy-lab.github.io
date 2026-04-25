@@ -144,7 +144,7 @@ description: >-
             <strong>Talks</strong> we've given
           </li>
           <li><span class="t-map__dot t-map__dot--visit" aria-hidden="true"></span>
-            <strong>Conferences</strong> we've attended (no talk)
+            <strong>Places</strong> we've visited (no talk)
           </li>
         </ul>
       </header>
