@@ -95,16 +95,17 @@ In `_team/index.md`:
 
 Managing news items across the site:
 
-- **Using slash command**: `/add-news "Your news content here"` - automatically handles both News.md and history.md
+- **Using slash command**: `/add-news "Your news content here"` - automatically handles `_data/news.yml`, `News.md`, and `history.md`
 - **Manual editing**:
-  - Add to both `News.md` (main page) and `history.md` (archive)
-  - News.md maintains only 5 most recent items (plus pinned Durham announcement)
+  - Add a structured item to `_data/news.yml`; this is the visible source for the homepage and `/news/`
+  - Add matching archive text to both `News.md` and `history.md`
+  - News.md maintains only 5 most recent legacy items (plus pinned Durham announcement)
   - Format: `- News content` under `### Month Year` headers
 - **Important notes**:
   - Pinned items have no month/year header
   - Maintain blank lines between sections
   - Months appear in reverse chronological order within each year
-  - Older items removed from News.md remain in history.md
+  - Older items removed from News.md remain in history.md and `_data/news.yml`
 
 ### Teaching Course Pages
 
@@ -204,7 +205,7 @@ The build.sh script performs these operations in sequence:
 - Developer documentation (README.md, CONTRIBUTING.md, etc.) should NEVER be created unless explicitly requested
 - Site content markdown files (research papers, news items, teaching pages) follow their specific workflows:
   - Research: Add to `_research/index.md` following the documented format
-  - News: Use `/add-news` command or edit `News.md` and `history.md`
+  - News: Use `/add-news` command or edit `_data/news.yml`, `News.md`, and `history.md`
   - Teaching: Create course pages in `_teaching/` directory when adding new courses
 - Follow existing patterns in the codebase
 
@@ -227,14 +228,17 @@ The build.sh script performs these operations in sequence:
 
 ### /add-news
 
-Adds a news item to both News.md and history.md while maintaining the 5-item limit on the main page.
+Adds a news item to `_data/news.yml`, `News.md`, and `history.md`
+while maintaining the 5-item limit on the legacy News.md page.
+`_data/news.yml` is the visible source for the homepage and `/news/`.
 
 **Workflow:**
 
-1. Add the news item to the appropriate month/year section in both files
-2. If month/year doesn't exist, create it
-3. Keep only 5 most recent news items in News.md (excluding the pinned Durham announcement)
-4. Preserve the pinned item (recognized by not having ### Month header above it)
+1. Add a structured item to `_data/news.yml`
+2. Add the news item to the appropriate month/year section in both Markdown files
+3. If month/year doesn't exist, create it
+4. Keep only 5 most recent news items in News.md (excluding the pinned Durham announcement)
+5. Preserve the pinned item (recognized by not having ### Month header above it)
 
 **Usage:**
 
@@ -244,13 +248,14 @@ Adds a news item to both News.md and history.md while maintaining the 5-item lim
 
 **Implementation steps:**
 
-1. Read both News.md and history.md
+1. Read `_data/news.yml`, News.md, and history.md
 2. Ask for month/year if not provided or unclear
-3. Add to history.md in reverse chronological position (latest first)
-4. Add to News.md in reverse chronological position (latest first)
-5. Count non-pinned news items in News.md
-6. If count > 5, remove oldest items from News.md only
-7. Save both files
+3. Add to `_data/news.yml` in reverse chronological position with `date`, `kind`, `title`, `meta`, `action_label`, and `action_href`
+4. Add to history.md in reverse chronological position (latest first)
+5. Add to News.md in reverse chronological position (latest first)
+6. Count non-pinned news items in News.md
+7. If count > 5, remove oldest items from News.md only
+8. Save all three files
 
 **Important notes:**
 

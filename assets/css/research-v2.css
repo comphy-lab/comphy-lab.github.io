@@ -190,13 +190,24 @@
 .r-theme__body { padding: var(--s-5) var(--s-6) var(--s-6); }
 
 .r-theme__tag {
+  appearance: none;
+  border: 0;
+  background: transparent;
   font-family: var(--t-mono);
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: var(--t-track-wide);
   color: var(--fg-2);
   margin-bottom: var(--s-2);
-  display: block;
+  display: inline-block;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.r-theme__tag:hover,
+.r-theme__tag:focus-visible {
+  color: var(--c-accent-teal);
 }
 
 .r-theme__title {
