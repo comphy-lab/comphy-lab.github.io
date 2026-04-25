@@ -16,63 +16,6 @@
     });
   }
 
-  /* Load About Content - Only on main page
-   * -------------------------------------------------- */
-  const loadAboutContent = async () => {
-    // Only load aboutCoMPhy.md if we're on the main page AND the
-    // legacy #about-content container is still in the DOM. The v2
-    // homepage renders about from _data/hero.yml directly and drops
-    // this container — skip the fetch entirely in that case.
-    if (
-      (window.location.pathname === "/" ||
-        window.location.pathname === "/index.html") &&
-      document.getElementById("about-content")
-    ) {
-      try {
-        const response = await fetch("/aboutCoMPhy.md");
-        const text = await response.text();
-        const aboutContent = document.getElementById("about-content");
-        if (aboutContent) {
-          // Sanitize HTML output from marked.parse() with DOMPurify before inserting into DOM
-          const parsedHtml = marked.parse(text);
-          const sanitizedHtml = DOMPurify.sanitize(parsedHtml);
-          aboutContent.innerHTML = sanitizedHtml;
-
-          // Re-bind copy email handlers for dynamically injected content
-          const aboutCopyButtons = aboutContent.querySelectorAll(".copy-btn");
-          aboutCopyButtons.forEach((button) => {
-            if (
-              typeof Utils !== "undefined" &&
-              Utils.copyToClipboard &&
-              Utils.initAccessibleButton
-            ) {
-              // Attach click to use the shared utility
-              button.addEventListener("click", function () {
-                Utils.copyToClipboard(this);
-              });
-
-              // Ensure accessible name is present using utility
-              const emailText =
-                button.getAttribute("data-text") ||
-                button.getAttribute("data-clipboard-text");
-              Utils.initAccessibleButton(
-                button,
-                `Copy email address ${emailText}`
-              );
-            } else {
-              console.warn(
-                "Utils.js or its functions are not available. Copy buttons in about section are disabled."
-              );
-              button.disabled = true;
-            }
-          });
-        }
-      } catch (error) {
-        console.error("Error loading about content:", error);
-      }
-    }
-  };
-
   /* Load News Content - Only on main page
    * -------------------------------------------------- */
   const loadNewsContent = async () => {
@@ -136,8 +79,6 @@
 
   // No need for a resize event handler as the CSS will handle everything
 
-  // Load about content when page loads
-  window.addEventListener("load", loadAboutContent);
   // Load news content when page loads
   window.addEventListener("load", loadNewsContent);
 
