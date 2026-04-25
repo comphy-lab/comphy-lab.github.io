@@ -2,12 +2,11 @@
 layout: teaching
 title: Teaching
 permalink: /teaching/
+body_class: teaching-v2
+description: >-
+  Courses and workshops on Basilisk C, multiphase-flow numerics, and
+  soft-matter simulation.
 ---
-
-# Teaching
-
-Courses and workshops on Basilisk C, multiphase-flow numerics, and
-soft-matter simulation.
 
 <div class="teaching-grid">
   <div class="course-card">

@@ -90,6 +90,9 @@
   {% if page.layout == "team" or page.body_class contains "team-v2" %}
   <link rel="stylesheet" href="/assets/css/team-v2.css">
   {% endif %}
+  {% if page.layout == "teaching" or page.layout == "teaching-course" or page.body_class contains "teaching-v2" %}
+  <link rel="stylesheet" href="/assets/css/teaching.css">
+  {% endif %}
   
   <!-- Structured Data for SEO -->
   <script type="application/ld+json">
@@ -128,6 +131,9 @@
   <script defer src="https://cdn.jsdelivr.net/npm/dompurify@3.0.5/dist/purify.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
   <script defer src="/assets/js/main.js"></script>
+  {% if page.layout == "teaching" %}
+  <script defer src="/assets/js/teaching.js"></script>
+  {% endif %}
   <script defer src="/assets/js/command-data.js"></script>
   <script defer src="/assets/js/platform-utils.js"></script>
 

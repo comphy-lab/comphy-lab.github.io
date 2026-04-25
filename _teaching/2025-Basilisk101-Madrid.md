@@ -2,45 +2,16 @@
 layout: teaching-course
 title: "High-Fidelity Simulations Using Basilisk C"
 permalink: /teaching/2025-Basilisk101-Madrid
+body_class: teaching-v2
+description: >-
+  Four-day Basilisk C course on conservation laws, interface tracking,
+  and non-Newtonian flow exercises.
 ---
 
 <div class="course-image">
   <img src="/assets/images/teaching/basilisk-madrid-banner.jpg" alt="High-Fidelity Simulations Using Basilisk C" loading="lazy" class="light-mode-img">
   <img src="/assets/images/teaching/courseBanner-dark.jpg" alt="High-Fidelity Simulations Using Basilisk C" loading="lazy" class="dark-mode-img">
 </div>
-
-<script>
-  // Function to update image visibility based on theme
-  function updateBannerImages() {
-    const theme = document.documentElement.getAttribute('data-theme') || 'light';
-    const lightImages = document.querySelectorAll('.light-mode-img');
-    const darkImages = document.querySelectorAll('.dark-mode-img');
-    
-    if (theme === 'dark') {
-      lightImages.forEach(img => img.style.display = 'none');
-      darkImages.forEach(img => img.style.display = 'block');
-    } else {
-      lightImages.forEach(img => img.style.display = 'block');
-      darkImages.forEach(img => img.style.display = 'none');
-    }
-  }
-  
-  // Run on page load
-  document.addEventListener('DOMContentLoaded', updateBannerImages);
-  
-  // Watch for theme changes
-  const observer = new MutationObserver(function(mutations) {
-    mutations.forEach(function(mutation) {
-      if (mutation.attributeName === 'data-theme') {
-        updateBannerImages();
-      }
-    });
-  });
-  
-  observer.observe(document.documentElement, { attributes: true });
-</script>
-
-# High-Fidelity Simulations Using Basilisk C
 
 <div class="course-details">
   <div class="course-details__item">
@@ -165,38 +136,6 @@ For registration details, please contact
         <i class="fas fa-copy"></i>
     </button>
 </div>
-
-<script>
-function copyEmail(button) {
-  const textToCopy = button.getAttribute('data-text');
-  
-  // Create a temporary textarea element to copy from
-  const textarea = document.createElement('textarea');
-  textarea.value = textToCopy;
-  textarea.setAttribute('readonly', '');
-  textarea.style.position = 'absolute';
-  textarea.style.left = '-9999px';
-  document.body.appendChild(textarea);
-  
-  // Select and copy the text
-  textarea.select();
-  document.execCommand('copy');
-  
-  // Remove the temporary element
-  document.body.removeChild(textarea);
-  
-  // Show feedback
-  const originalIcon = button.innerHTML;
-  button.innerHTML = '<i class="fas fa-check"></i>';
-  button.classList.add('copied');
-  
-  // Restore original state after a delay
-  setTimeout(() => {
-    button.innerHTML = originalIcon;
-    button.classList.remove('copied');
-  }, 2000);
-}
-</script>
 
 <div style="margin-top: 2rem; text-align: center;">
   <a href="https://github.com/comphy-lab/Basilisk-101" class="course-card__link" target="_blank" rel="noopener noreferrer" aria-label="Course GitHub Repository">
