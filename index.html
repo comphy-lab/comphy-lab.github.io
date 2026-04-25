@@ -240,7 +240,11 @@ description: >-
           {% if m.photo %}
             <img src="{{ m.photo }}" alt="Portrait of {{ m.name }}" loading="lazy" decoding="async" />
           {% else %}
-            {{ m.name | split: " " | map: "first" | join: "" | upcase | slice: 0, 2 }}
+            {%- comment -%}Strip the longest title prefix first so "Adj. Prof. X" doesn't lose the "Prof. " inside it before "Adj. Prof. " matches.{%- endcomment -%}
+            {%- assign clean = m.name | replace: "Adj. Prof. ", "" | replace: "Prof. ", "" | replace: "Dr. ", "" -%}
+            {%- assign words = clean | split: " " -%}
+            {%- capture initials -%}{%- for w in words limit: 2 -%}{{ w | slice: 0, 1 -}}{%- endfor -%}{%- endcapture -%}
+            {{ initials | upcase }}
           {% endif %}
         </div>
         <div>
@@ -278,15 +282,30 @@ description: >-
 
 </main>
 
-<!-- Homepage JS: fade-rotate hero images if prefers-reduced-motion
-     is not set. -->
+<!-- Homepage JS: rotate hero figures + respect prefers-reduced-motion. -->
 <script>
   (function () {
     var media = document.querySelector('.hero__media');
     if (!media) return;
     var figures = media.querySelectorAll('figure');
+    if (figures.length < 1) return;
+
+    var reduced = window.matchMedia &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* Reduced-motion: pause every <video> on its first frame, freeze
+       the iframe parameters, skip the rotator. The image-only fallback
+       on the active figure stays visible — that's the user's poster. */
+    if (reduced) {
+      media.querySelectorAll('video').forEach(function (v) {
+        v.removeAttribute('autoplay');
+        v.removeAttribute('loop');
+        try { v.pause(); v.currentTime = 0; } catch (e) {}
+      });
+      return;
+    }
+
     if (figures.length < 2) return;
-    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     var idx = 0;
     setInterval(function () {
       figures[idx].setAttribute('data-active', 'false');

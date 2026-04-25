@@ -302,11 +302,16 @@ body.home-v2 #featured-wrapper { display: none; }
 .hero__slide--motion .hero__image-well iframe {
   position: absolute;
   top: 0;
+  right: auto;
+  bottom: auto;
   left: 0;
   width: 100%;
   height: 100%;
   border: 0;
   pointer-events: none;
+  /* Reset transform so an over-broad legacy rule on .hero__media
+     iframe (or anything inherited) can't shift the embed. */
+  transform: none;
 }
 
 .hero__slide--motion .hero__caption-panel {
@@ -400,24 +405,7 @@ body.home-v2 #featured-wrapper { display: none; }
   }
 }
 
-/* YouTube hero embeds: the player is 16:9, the panel is 4:5.
-   Make the iframe wider than the panel so its 16:9 video fills
-   the 4:5 window edge-to-edge; the overflow:hidden on the parent
-   crops the horizontal excess. Math: width = height × 16/9 × 1.25
-   ≈ 222% to fully cover. */
 .hero__media { overflow: hidden; }
-
-.hero__media iframe {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 225%;
-  height: 100%;
-  transform: translate(-50%, -50%);
-  border: 0;
-  display: block;
-  pointer-events: none;
-}
 
 /* Inactive figures keep playing silently in the background (muted)
    while faded out — small CPU/GPU cost, but keeps fade transitions
