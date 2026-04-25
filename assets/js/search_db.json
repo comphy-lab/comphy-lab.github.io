@@ -649,7 +649,7 @@
   },
   {
     "title": "\"Basilisk for Multiphase Flow Simulations\" - Course Description",
-    "content": "This intensive 3-hour pre-conference training provides a focused introduction to high-fidelity multiphase flow simulation using Basilisk C, a powerful open-source framework. Designed for ECS 2025 participants with intermediate CFD background, the course emphasizes practical applications to coating processes while building foundational skills in adaptive mesh refinement and interface dynamics. The hands-on format combines theoretical insights with live coding demonstrations, enabling participants to immediately apply concepts. Through three carefully selected examples\u2014basic heat conduction, drop impact dynamics, and Landau-Levich dip coating\u2014attendees will gain practical experience with Basilisk's approach to conservation equations, interface tracking, and complex physics modeling relevant to coating applications.",
+    "content": "This three-hour ECS 2025 session introduces Basilisk C for multiphase flow problems in coating applications. It assumes an intermediate CFD background and focuses on adaptive mesh refinement, interface tracking, and contact-line dynamics. The examples are deliberately small: heat conduction, drop impact, and Landau-Levich dip coating. Each one introduces a numerical ingredient that appears again in coating-flow simulations.",
     "url": "https://comphy-lab.org/teaching/2025-Basilisk101nano-ECS#course-description",
     "type": "website_section",
     "priority": 3
@@ -6711,7 +6711,7 @@
   },
   {
     "title": "\"Join Us\" - From Champagne to Coughs: Modelling Droplet Formation",
-    "content": "Investigate how bubbles burst in complex fluids that behave like both liquids and elastic solids \u2014 from volcanic mudpots to respiratory mucus. Using Basilisk C simulations, discover how viscosity and elasticity control jet formation and droplet ejection when bubble cavities collapse. Map regimes where elastic stresses suppress or enhance jetting, with experimental validation from collaborators at Twente and Delft. [ View Project PDF](/assets/pdf-files/BubbleBursting.pdf){: .pdf-link }",
+    "content": "Model bubble bursting in complex fluids such as respiratory mucus and volcanic mudpots. Basilisk C simulations resolve capillary-wave focusing, viscoelastic stress buildup, jet formation, and droplet ejection; experiments at Twente and Delft validate the jetting regimes. [ View Project PDF](/assets/pdf-files/BubbleBursting.pdf){: .pdf-link }",
     "url": "https://comphy-lab.org/join/#from-champagne-to-coughs-modelling-droplet-formation",
     "type": "website_section",
     "priority": 4

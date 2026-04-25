@@ -47,7 +47,10 @@ timing, and the person joining the project.
 
 ### From Champagne to Coughs: Modelling Droplet Formation
 
-Investigate how bubbles burst in complex fluids that behave like both liquids and elastic solids — from volcanic mudpots to respiratory mucus. Using Basilisk C simulations, discover how viscosity and elasticity control jet formation and droplet ejection when bubble cavities collapse. Map regimes where elastic stresses suppress or enhance jetting, with experimental validation from collaborators at Twente and Delft.
+Model bubble bursting in complex fluids such as respiratory mucus and
+volcanic mudpots. Basilisk C simulations resolve capillary-wave
+focusing, viscoelastic stress buildup, jet formation, and droplet
+ejection; experiments at Twente and Delft validate the jetting regimes.
 
 [<i class="fa-solid fa-file-pdf"></i> View Project PDF](/assets/pdf-files/BubbleBursting.pdf){: .pdf-link }
 

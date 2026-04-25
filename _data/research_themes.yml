@@ -18,10 +18,9 @@ themes:
     num: "01"
     title: "Drop impact & impact forces"
     description: >-
-      How drops hit surfaces and what force they leave behind —
-      viscosity, rheology, and surface wettability set the regime.
-      We unify liquid drops and soft elastic beads into a single
-      impact-regime diagram.
+      Inertia, viscosity, surface tension, wettability, and rheology
+      set the force history during impact. We connect liquid drops and
+      soft elastic beads through a shared impact-regime diagram.
     figure: /assets/images/research/drop-impact-prl.png
     papers:
       - year: "2026"
@@ -42,10 +41,10 @@ themes:
     num: "02"
     title: "Soft matter singularities"
     description: >-
-      A surface bubble collapses; the cavity throws a fast, thin jet
-      that sometimes breaks into droplets. We map the transition
-      across viscosity and elasticity, from Newtonian to viscoplastic
-      to elastoviscoplastic media.
+      Capillary-wave focusing after bubble-cap rupture launches
+      Worthington jets. Viscosity and elasticity decide whether those
+      jets eject droplets, thicken, or fail to pinch off across
+      Newtonian, viscoplastic, and elastoviscoplastic media.
     figure: /assets/images/research/NatComm-jet-drop.png
     papers:
       - year: "2025"
@@ -66,10 +65,10 @@ themes:
     num: "03"
     title: "Holes & Taylor–Culick retractions"
     description: >-
-      A hole in a thin sheet is an interface that runs: rims
-      accelerate, then break into droplets. We study the
-      double-threshold rupture of draining films, with and without
-      surfactant.
+      Surface tension retracts holes in thin sheets; viscosity,
+      inertia, surrounding fluid, and surfactant set rim growth and
+      droplet breakup. We study double-threshold rupture in draining
+      films.
     figure: /assets/images/research/taylor-culick.jpg
     papers:
       - year: "2026"
