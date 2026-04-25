@@ -295,6 +295,6 @@ visible source for the homepage and `/news/`.
 **Rules**:
 
 - The pinned Durham announcement has no month/year header — preserve it.
-- News items start with `- ` (dash and space).
+- News items use the `- News content` bullet form (dash + space + text).
 - Maintain blank lines between sections.
 - Years descend in `history.md`; months descend within each year.
