@@ -2,45 +2,16 @@
 layout: teaching-course
 title: "Basilisk for Multiphase Flow Simulations"
 permalink: /teaching/2025-Basilisk101nano-ECS
+body_class: teaching-v2
+description: >-
+  Three-hour ECS 2025 session on heat conduction, drop impact, and
+  Landau-Levich dip coating.
 ---
 
 <div class="course-image">
   <img src="/assets/images/teaching/basilisk-madrid-banner.jpg" alt="Basilisk for Multiphase Flow Simulations" loading="lazy" class="light-mode-img">
   <img src="/assets/images/teaching/courseBanner-dark.jpg" alt="Basilisk for Multiphase Flow Simulations" loading="lazy" class="dark-mode-img">
 </div>
-
-<script>
-  // Function to update image visibility based on theme
-  function updateBannerImages() {
-    const theme = document.documentElement.getAttribute('data-theme') || 'light';
-    const lightImages = document.querySelectorAll('.light-mode-img');
-    const darkImages = document.querySelectorAll('.dark-mode-img');
-
-    if (theme === 'dark') {
-      lightImages.forEach(img => img.style.display = 'none');
-      darkImages.forEach(img => img.style.display = 'block');
-    } else {
-      lightImages.forEach(img => img.style.display = 'block');
-      darkImages.forEach(img => img.style.display = 'none');
-    }
-  }
-  
-  // Run on page load
-  document.addEventListener('DOMContentLoaded', updateBannerImages);
-  
-  // Watch for theme changes
-  const observer = new MutationObserver(function(mutations) {
-    mutations.forEach(function(mutation) {
-      if (mutation.attributeName === 'data-theme') {
-        updateBannerImages();
-      }
-    });
-  });
-  
-  observer.observe(document.documentElement, { attributes: true });
-</script>
-
-# Basilisk for Multiphase Flow Simulations
 
 <div class="course-details">
   <div class="course-details__item">

@@ -516,7 +516,7 @@
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\"",
-    "content": "// Function to update image visibility based on theme function updateBannerImages() { const theme = document.documentElement.getAttribute('data-theme') || 'light'; const lightImages = document.querySelectorAll('.light-mode-img'); const darkImages = document.querySelectorAll('.dark-mode-img'); if (theme === 'dark') { lightImages.forEach(img => img.style.display = 'none'); darkImages.forEach(img => img.style.display = 'block'); } else { lightImages.forEach(img => img.style.display = 'block'); darkImages.forEach(img => img.style.display = 'none'); } } // Run on page load document.addEventListener('DOMContentLoaded', updateBannerImages); // Watch for theme changes const observer = new MutationObserver(function(mutations) { mutations.forEach(function(mutation) { if (mutation.attributeName === 'data-theme') { updateBannerImages(); } }); }); observer.observe(document.documentElement, { attributes: true });",
+    "content": "Four-day Basilisk C course on conservation laws, interface tracking, and non-Newtonian flow exercises. Dates March 10-13, 2025. Location Universidad Carlos III de Madrid, Spain. Duration 4 days, full-time.",
     "url": "https://comphy-lab.org/teaching/2025-Basilisk101-Madrid",
     "type": "website_content",
     "priority": 3
@@ -600,21 +600,21 @@
   },
   {
     "title": "\"High-Fidelity Simulations Using Basilisk C\" - Registration",
-    "content": "For registration details, please contact bubbles@ing.uc3m.es vatsal.sanjay@durham.ac.uk function copyEmail(button) { const textToCopy = button.getAttribute('data-text'); // Create a temporary textarea element to copy from const textarea = document.createElement('textarea'); textarea.value = textToCopy; textarea.setAttribute('readonly', ''); textarea.style.position = 'absolute'; textarea.style.left = '-9999px'; document.body.appendChild(textarea); // Select and copy the text textarea.select(); document.execCommand('copy'); // Remove the temporary element document.body.removeChild(textarea); // Show feedback const originalIcon = button.innerHTML; button.innerHTML = ' '; button.classList.add('copied'); // Restore original state after a delay setTimeout(() => { button.innerHTML = originalIcon; button.classList.remove('copied'); }, 2000); } Course GitHub Repository",
+    "content": "For registration details, please contact bubbles@ing.uc3m.es or vatsal.sanjay@durham.ac.uk. Course GitHub Repository: https://github.com/comphy-lab/Basilisk-101.",
     "url": "https://comphy-lab.org/teaching/2025-Basilisk101-Madrid#registration",
     "type": "website_section",
     "priority": 3
   },
   {
-    "title": "Teaching - Teaching: Methods",
-    "content": "Courses and workshops on Basilisk C, multiphase-flow numerics, and soft-matter simulation. High-Fidelity Simulations Using Basilisk C Universidad Carlos III de Madrid March 10-13, 2025 Four-day Basilisk C course on conservation laws, interface tracking, and non-Newtonian flow exercises. View Course Basilisk for Multiphase Flow Simulations European Coating Symposium 2025 September 15, 2025 Three-hour ECS session on heat conduction, drop impact, and Landau-Levich dip coating.",
+    "title": "Teaching",
+    "content": "Courses and workshops on Basilisk C, multiphase-flow numerics, and soft-matter simulation. Current offerings include Basilisk C courses in Madrid and at ECS 2025, plus Durham soft-matter lecture notes.",
     "url": "https://comphy-lab.org/teaching/#teaching",
     "type": "website_section",
     "priority": 3
   },
   {
-    "title": "Teaching - Teaching: Introduction",
-    "content": "View Course Introduction to Soft Matter Durham University Fall 2025 Lecture notes for the Durham soft-matter course. View Lecture Notes",
+    "title": "Teaching",
+    "content": "Courses and workshops on Basilisk C, multiphase-flow numerics, and soft-matter simulation. Current offerings include Basilisk C courses in Madrid and at ECS 2025, plus Durham soft-matter lecture notes.",
     "url": "https://comphy-lab.org/teaching/#teaching",
     "type": "website_section",
     "priority": 3
@@ -628,7 +628,7 @@
   },
   {
     "title": "\"Basilisk for Multiphase Flow Simulations\"",
-    "content": "// Function to update image visibility based on theme function updateBannerImages() { const theme = document.documentElement.getAttribute('data-theme') || 'light'; const lightImages = document.querySelectorAll('.light-mode-img'); const darkImages = document.querySelectorAll('.dark-mode-img'); if (theme === 'dark') { lightImages.forEach(img => img.style.display = 'none'); darkImages.forEach(img => img.style.display = 'block'); } else { lightImages.forEach(img => img.style.display = 'block'); darkImages.forEach(img => img.style.display = 'none'); } } // Run on page load document.addEventListener('DOMContentLoaded', updateBannerImages); // Watch for theme changes const observer = new MutationObserver(function(mutations) { mutations.forEach(function(mutation) { if (mutation.attributeName === 'data-theme') { updateBannerImages(); } }); }); observer.observe(document.documentElement, { attributes: true });",
+    "content": "Three-hour ECS 2025 session on heat conduction, drop impact, and Landau-Levich dip coating. Date September 15, 2025. Location European Coating Symposium 2025. Duration 3 hours.",
     "url": "https://comphy-lab.org/teaching/2025-Basilisk101nano-ECS",
     "type": "website_content",
     "priority": 3
@@ -705,7 +705,7 @@
   },
   {
     "title": "\"Basilisk for Multiphase Flow Simulations\" - Expected Outcomes",
-    "content": "By the end of this intensive 3-hour session, participants will: - **Execute Basilisk simulations** confidently on their own systems - **Modify key parameters** to explore different physical scenarios - **Understand VOF methodology** for interface tracking in multiphase flows - **Apply to coating processes** through the Landau-Levich example - **Connect theory to practice** by relating simulation results to physical phenomena This training provides the foundation for applying high-fidelity simulation techniques to coating research, with immediate practical skills and clear pathways for advanced applications.",
+    "content": "By the end of the session, participants will be able to execute Basilisk simulations, modify key parameters, understand VOF methodology, apply it to coating processes, and connect simulation results to physical phenomena.",
     "url": "https://comphy-lab.org/teaching/2025-Basilisk101nano-ECS#expected-outcomes",
     "type": "website_section",
     "priority": 3

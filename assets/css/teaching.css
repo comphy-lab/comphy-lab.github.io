@@ -1,340 +1,330 @@
-/* Teaching Section Styles
------------------------------------ */
+/* =============================================================
+   CoMPhy Lab teaching pages
+   Uses the shared v2 shell, tokens, header, and footer.
+   ============================================================= */
 
-/* Dark theme variables for teaching page */
-:root {
-  --teaching-bg-color: #fff;
-  --teaching-text-color: #333;
-  --teaching-heading-color: #68236d;
-  --teaching-subheading-color: #4169e1;
-  --teaching-card-bg: #fff;
-  --teaching-border-color: #eaeaea;
-  --teaching-shadow: rgba(0, 0, 0, 0.08);
-  --teaching-course-border: #4169e1;
-}
-
-[data-theme="dark"] {
-  --teaching-bg-color: #121212;
-  --teaching-text-color: #e0e0e0;
-  --teaching-heading-color: #9a349f;
-  --teaching-subheading-color: #6fa1ff;
-  --teaching-card-bg: #1e1e1e;
-  --teaching-border-color: #333;
-  --teaching-shadow: rgba(0, 0, 0, 0.3);
-  --teaching-course-border: #6fa1ff;
-}
-
-/* Teaching page styles with dark mode support */
 .s-teaching {
-  background-color: var(--teaching-bg-color);
-  padding: 8rem 0;
+  background: var(--c-paper);
+  color: var(--fg-1);
+  padding: var(--s-9) 0 var(--s-8);
   position: relative;
-  color: var(--teaching-text-color);
 }
 
-.s-teaching__desc {
-  margin-bottom: 3rem;
+.s-teaching .row {
+  width: min(100% - 2rem, var(--maxw-page));
+  margin: 0 auto;
+}
+
+.teaching-page {
+  width: min(100% - 2rem, var(--maxw-page));
+  margin: 0 auto;
+  padding: calc(var(--s-9) + var(--s-5)) 0 var(--s-8);
+  position: relative;
+  z-index: 1;
+}
+
+.teaching-page__head {
+  max-width: var(--maxw-read);
+  margin: 0 auto var(--s-8);
   text-align: center;
 }
 
-.s-teaching__desc h1 {
-  font-size: 3.6rem;
-  margin-bottom: 1.2rem;
-  color: var(--color-heading-h1);
-  display: inline-block;
+.teaching-page__kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--t-sans);
+  font-size: var(--t-eyebrow);
+  font-weight: var(--t-weight-semi);
+  letter-spacing: var(--t-track-wide);
+  text-transform: uppercase;
+  color: var(--fg-2);
+  margin: 0 0 var(--s-4);
+}
+
+.teaching-page__kicker .rule {
+  width: 32px;
+  height: 1px;
+  background: var(--c-border-strong);
+}
+
+.teaching-page__title {
+  font-family: var(--t-serif);
+  font-size: 44px;
+  font-weight: var(--t-weight-semi);
+  line-height: 1.1;
+  color: var(--fg-strong);
+  font-variation-settings: "opsz" 96;
+  margin: 0 0 var(--s-4);
+  text-wrap: balance;
+}
+
+.teaching-page__lede {
+  font-family: var(--t-serif);
+  font-size: var(--t-body-lg);
+  line-height: 1.55;
+  color: var(--fg-1);
+  margin: 0 auto;
+  max-width: 60ch;
+  font-variation-settings: "opsz" 18;
+}
+
+.teaching-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  color: var(--fg-2);
+  font-family: var(--t-mono);
+  font-size: var(--t-small);
+  margin-bottom: var(--s-5);
+}
+
+.teaching-breadcrumb a {
+  color: var(--fg-2);
+  border-bottom-color: transparent;
+}
+
+.teaching-breadcrumb a:hover {
+  color: var(--c-accent-teal);
+  border-bottom-color: var(--c-accent-teal);
 }
 
 .teaching-content {
-  max-width: 1000px;
+  max-width: var(--maxw-page);
   margin: 0 auto;
-  padding: 0 2rem;
+  color: var(--fg-1);
 }
 
-.teaching-content h1 {
-  font-size: 3.6rem;
-  margin-bottom: 1.5rem;
-  color: var(--color-heading-h1);
+.teaching-page--course .teaching-content {
+  max-width: 880px;
+}
+
+.teaching-page .teaching-content > h1:first-child {
+  display: none;
 }
 
 .teaching-content h2 {
-  font-size: 2.2rem;
-  margin: 2rem 0 1rem;
-  color: var(--color-heading-h2, #0156b3);
-  border-bottom: 1px solid var(--teaching-border-color);
-  padding-bottom: 0.5rem;
+  font-family: var(--t-serif);
+  font-size: 28px;
+  font-weight: var(--t-weight-semi);
+  line-height: 1.2;
+  color: var(--fg-strong);
+  margin: var(--s-8) 0 var(--s-4);
+  padding-bottom: var(--s-3);
+  border-bottom: 1px solid var(--c-border);
+  font-variation-settings: "opsz" 48;
 }
 
-/* Ensure horizontal rules are visible in both light and dark modes */
-.teaching-content hr {
-  border: 0;
-  height: 1px;
-  background: var(--teaching-border-color);
-  margin: 2rem 0;
-}
-
-[data-theme="dark"] .teaching-content hr {
-  background: #444;
-  height: 1px;
-  opacity: 1;
+.teaching-content h2:first-child {
+  margin-top: 0;
 }
 
 .teaching-content h3 {
-  font-size: 1.8rem;
-  margin: 1.5rem 0 1rem;
-  color: var(--color-heading-h3, #333);
+  font-family: var(--t-serif);
+  font-size: 22px;
+  font-weight: var(--t-weight-semi);
+  line-height: 1.25;
+  color: var(--fg-strong);
+  margin: var(--s-6) 0 var(--s-3);
+  font-variation-settings: "opsz" 32;
+}
+
+.teaching-page .teaching-content h3 {
+  display: block !important;
+  font-size: 22px !important;
+  line-height: 1.25 !important;
+  margin: var(--s-6) 0 var(--s-3) !important;
+  padding-bottom: 0 !important;
+  border-bottom: 0 !important;
+  color: var(--fg-strong) !important;
+  background: transparent !important;
+  text-shadow: none !important;
 }
 
 .teaching-content h4 {
-  font-size: 1.5rem;
-  margin: 1.2rem 0 0.8rem;
-  color: var(--teaching-subheading-color);
+  font-family: var(--t-sans);
+  font-size: 16px;
+  font-weight: var(--t-weight-semi);
+  color: var(--c-accent-teal);
+  margin: var(--s-5) 0 var(--s-2);
+}
+
+.teaching-content p,
+.teaching-content li {
+  font-size: var(--t-body);
+  line-height: 1.65;
 }
 
 .teaching-content p {
-  margin-bottom: 1.2rem;
-  line-height: 1.6;
+  margin: 0 0 var(--s-4);
 }
 
 .teaching-content ul,
 .teaching-content ol {
-  margin-bottom: 1.5rem;
-  padding-left: 2rem;
+  margin: 0 0 var(--s-5);
+  padding-left: 1.35rem;
 }
 
-.teaching-content ul li,
-.teaching-content ol li {
-  margin-bottom: 0.5rem;
-  line-height: 1.6;
+.teaching-content li + li {
+  margin-top: var(--s-2);
 }
 
-.teaching-content strong {
-  font-weight: 600;
+.teaching-content strong,
+.teaching-content b {
+  color: var(--fg-strong);
+  font-weight: var(--t-weight-semi);
 }
 
-/* Ensure bold text is white in dark mode */
-[data-theme="dark"] .teaching-content strong,
-[data-theme="dark"] .teaching-content b {
-  color: #fff;
-  font-weight: 700;
+.teaching-content hr {
+  border: 0;
+  height: 1px;
+  background: var(--c-border);
+  margin: var(--s-7) 0;
 }
 
-.markdown-content ul {
-  list-style-type: disc;
-  margin-left: 1.5rem;
-  margin-bottom: 1.5rem;
+.teaching-content pre {
+  margin: var(--s-5) 0;
+  padding: var(--s-4);
+  overflow-x: auto;
+  border: 1px solid var(--c-border);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--fg-strong) 4%, var(--c-surface-strong));
 }
 
-.markdown-content ul li {
-  margin-bottom: 0.5rem;
+.teaching-content code {
+  font-family: var(--t-mono);
 }
 
 .teaching-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-bottom: 3rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--s-5);
+  margin: 0 0 var(--s-8);
 }
 
 .course-card {
-  background-color: var(--teaching-card-bg);
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px var(--teaching-shadow);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-  position: relative;
   display: flex;
   flex-direction: column;
+  background: var(--c-surface-strong);
+  border: 1px solid var(--c-border);
+  border-radius: 8px;
+  overflow: hidden;
+  min-width: 0;
+  transition:
+    transform var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease),
+    border-color var(--dur) var(--ease);
 }
 
 .course-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--c-accent-teal) 24%, transparent);
+  box-shadow: var(--shadow-soft);
 }
 
 .course-card img {
   width: 100%;
-  height: 180px;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
+  background: var(--c-paper-tint);
 }
 
 .course-card__content {
-  padding: 1.5rem;
-  flex-grow: 1;
   display: flex;
+  flex: 1;
   flex-direction: column;
+  gap: var(--s-3);
+  padding: var(--s-5);
 }
 
 .course-card__title {
-  font-size: 1.8rem;
-  margin-bottom: 0.8rem;
-  font-weight: 600;
+  font-family: var(--t-serif);
+  font-size: 21px;
+  font-weight: var(--t-weight-semi);
+  line-height: 1.25;
+  color: var(--fg-strong);
+  margin: 0;
+  font-variation-settings: "opsz" 32;
+}
+
+.teaching-page .course-card__title {
+  display: block !important;
+  font-size: 21px !important;
+  line-height: 1.25 !important;
+  margin: 0 !important;
+  padding-bottom: 0 !important;
+  border-bottom: 0 !important;
+  color: var(--fg-strong) !important;
 }
 
 .course-card__meta {
-  font-size: 0.9rem;
-  color: #666;
-  margin-bottom: 1rem;
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  align-items: baseline;
+  gap: var(--s-2);
+  color: var(--fg-2);
+  font-size: var(--t-small);
+  line-height: 1.4;
 }
 
 .course-card__meta i {
-  color: #e63946;
+  color: var(--c-accent-teal);
+  min-width: 1em;
 }
 
 .course-card__desc {
-  margin-bottom: 1.5rem;
-  flex-grow: 1;
-  font-size: 0.95rem;
-  line-height: 1.5;
+  color: var(--fg-1);
+  font-size: var(--t-small);
+  line-height: 1.55;
+  margin: 0;
 }
 
 .course-card__link {
   align-self: flex-start;
-  display: inline-block;
-  padding: 0.5rem 1.2rem;
-  background-color: #68246d;
-  color: #fff !important;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  margin-top: auto;
+  padding: 8px 14px;
+  background: var(--c-accent-teal);
+  color: var(--c-accent-teal-fg) !important;
+  border: 1px solid var(--c-accent-teal);
+  border-radius: var(--r-pill);
+  font-family: var(--t-sans);
+  font-size: var(--t-small);
+  font-weight: var(--t-weight-semi);
   text-decoration: none;
-  border-radius: 4px;
-  font-weight: 500;
-  transition: background-color 0.3s ease;
 }
 
-.course-card__link:link,
-.course-card__link:visited,
 .course-card__link:hover,
-.course-card__link:active {
-  color: #fff !important;
-  text-decoration: none;
-}
-
-[data-theme="dark"] .course-card__link,
-[data-theme="dark"] .course-card__link:link,
-[data-theme="dark"] .course-card__link:visited,
-[data-theme="dark"] .course-card__link:hover,
-[data-theme="dark"] .course-card__link:active {
-  color: #fff !important;
-}
-
-.course-card__link:hover {
-  background-color: #5a1e5e;
-}
-
-.course-schedule {
-  margin-top: 2rem;
-  background-color: #f8f9fa;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.course-schedule h2 {
-  font-size: 2.4rem;
-  margin-bottom: 1.5rem;
-  color: #333;
-  border-bottom: none;
-}
-
-.course-schedule h3 {
-  font-size: 2rem;
-  margin: 1.5rem 0 1rem;
-  color: #4169e1;
-  border-bottom: 1px solid #e0e0e0;
-  padding-bottom: 0.5rem;
-}
-
-.course-schedule h4 {
-  font-size: 1.6rem;
-  margin: 1.2rem 0 0.8rem;
-  color: #e63946;
-}
-
-.course-schedule ul {
-  list-style-type: none;
-  margin-left: 1.5rem;
-}
-
-.course-schedule ul li {
-  position: relative;
-  padding-left: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.course-schedule ul li:before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: #e63946;
-  font-weight: bold;
-}
-
-.course-schedule p {
-  margin-bottom: 1rem;
-}
-
-.course-details {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  margin: 2rem 0;
-  padding: 1.5rem;
-  background-color: #f8f9fa;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-/* Dark mode styling for course details banner */
-[data-theme="dark"] .course-details {
-  background-color: #2a2a2a;
-  border: 1px solid #3a3a3a;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-
-.course-details__item {
-  flex: 1 1 200px;
-}
-
-.course-details__item h4 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  color: #4169e1;
-}
-
-[data-theme="dark"] .course-details__item h4 {
-  color: #6fa1ff;
-}
-
-.course-details__item p {
-  margin: 0;
-}
-
-[data-theme="dark"] .course-details__item p {
-  color: #fff;
-  font-weight: 500;
+.course-card__link:focus-visible {
+  background: var(--c-accent-teal-hover);
+  border-color: var(--c-accent-teal-hover);
+  color: var(--c-accent-teal-fg) !important;
 }
 
 .course-image {
-  margin: 2rem 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
+  margin: 0 0 var(--s-6);
+  border: 1px solid var(--c-border);
   border-radius: 8px;
+  overflow: hidden;
+  background: var(--c-surface-strong);
 }
 
-/* Light/dark mode image toggle styling */
+.course-image img {
+  display: block;
+  width: 100%;
+  max-height: 380px;
+  object-fit: cover;
+}
+
 .light-mode-img {
-  display: block; /* Default to visible */
+  display: block;
 }
 
 .dark-mode-img {
-  display: none; /* Hidden by default */
+  display: none;
 }
 
-/* These styles will be overridden by JavaScript, but provide a fallback */
 [data-theme="dark"] .light-mode-img {
   display: none;
 }
@@ -343,329 +333,106 @@
   display: block;
 }
 
-.course-image img {
-  max-width: 100%;
+.course-details {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0 0 var(--s-7);
+  border: 1px solid var(--c-border);
+  border-left: 3px solid var(--c-accent-teal);
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  display: block;
+  overflow: hidden;
+  background: var(--c-border);
 }
 
-/* Add a hazy overlay to the course image */
-.course-image:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(2px);
-  z-index: 1;
-  pointer-events: none;
+.course-details__item {
+  min-width: 0;
+  padding: var(--s-5);
+  background: var(--c-surface-strong);
 }
 
-/* Enhanced Course Schedule Container */
-/* Use .course-schedule-heading on the h2 preceding a .schedule-container */
-.course-schedule-heading {
-  margin-top: 3rem;
+.course-details__item h4 {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  margin: 0 0 var(--s-2);
+  font-family: var(--t-mono);
+  font-size: 12px;
+  letter-spacing: var(--t-track-wide);
+  text-transform: uppercase;
+  color: var(--fg-2);
 }
 
-.schedule-container h3,
-.schedule-container h4,
-.schedule-container ul {
-  position: relative;
-  z-index: 1;
+.course-details__item h4 i {
+  color: var(--c-accent-teal);
 }
 
-/* Create a schedule container that wraps all schedule content */
-.schedule-container {
-  background-color: #f8f9fa;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  padding: 2rem;
-  margin: 2.5rem 0;
-  border: 1px solid #e9ecef;
-  position: relative;
-  font-size: 1.1rem;
-  line-height: 1.6;
+.course-details__item p {
+  margin: 0;
+  color: var(--fg-strong);
+  font-weight: var(--t-weight-med);
 }
 
-/* Main Schedule Heading */
-.schedule-container h2 {
-  font-size: 2.6rem;
-  color: #333;
-  margin-bottom: 1.8rem;
-  text-align: center;
-  border-bottom: none !important;
+.teaching-page .email-container {
+  max-width: 520px;
+  margin: var(--s-3) 0;
 }
 
-/* Day headings (h3) within schedule */
-.schedule-container h3 {
-  color: #4169e1;
-  font-size: 2rem;
-  margin-top: 2rem;
-  margin-bottom: 1.2rem;
-  padding: 0.5rem 1.2rem;
-  border-bottom: none;
-  font-weight: 600;
-  background-color: rgba(65, 105, 225, 0.1);
-  border-radius: 6px;
-  display: inline-block;
+.teaching-page .pdf-link,
+.teaching-page .doi-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
 }
 
-.schedule-container h3:first-of-type {
-  margin-top: 0.5rem;
+.sort-indicator {
+  padding: var(--s-3) var(--s-4);
+  margin: 0 0 var(--s-5);
+  border: 1px solid color-mix(in srgb, var(--c-accent-teal) 24%, transparent);
+  border-left: 3px solid var(--c-accent-teal);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--c-accent-teal) 6%, var(--c-surface-strong));
+  color: var(--fg-1);
 }
 
-/* Session titles (h4) within schedule */
-.schedule-container h4 {
-  color: #e63946;
-  font-size: 1.7rem;
-  margin: 1.5rem 0 1rem;
-  font-weight: 500;
-  border-left: 3px solid #e63946;
-  padding-left: 0.8rem;
-}
-
-/* Time slots styling */
-.schedule-container ul li {
-  font-size: 1.4rem;
-  margin-bottom: 0.7rem;
-  line-height: 1.7;
-}
-
-.schedule-container ul li strong {
-  display: inline-block;
-  color: #333;
-  font-family: "Courier New", monospace;
-  background-color: rgba(65, 105, 225, 0.1);
-  padding: 0.3rem 0.5rem;
-  border-radius: 4px;
-  margin-right: 0.4rem;
-  font-size: 1.4rem;
-}
-
-/* Session type styling */
-.schedule-container ul li strong:last-of-type:not(:first-of-type) {
-  background-color: rgba(230, 57, 70, 0.1);
-  font-family: inherit;
-  font-size: 1.4rem;
-}
-
-/* Bold italic text styling */
-.schedule-container em strong,
-.schedule-container strong em {
-  color: #4169e1;
-}
-
-/* Main list items */
-.schedule-container > ul > li {
-  position: relative;
-  padding-left: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-/* Nested list items */
-.schedule-container ul li ul {
-  list-style-type: none;
-  margin-top: 0.7rem;
-  margin-bottom: 1.2rem;
-  margin-left: 0.5rem;
-}
-
-.schedule-container ul li ul li {
-  font-size: 1.4rem;
-  position: relative;
-  padding-left: 1.8rem;
-  margin-bottom: 0.6rem;
-  line-height: 1.6;
-}
-
-.schedule-container ul li ul li:before {
-  content: "→";
-  position: absolute;
-  left: 0;
-  top: 0.3rem;
-  color: #e63946;
-  font-size: 1.4rem;
-  font-weight: 600;
-}
-
-/* Add a decorative element to the schedule container */
-.schedule-container:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 8px;
-  background: linear-gradient(to right, #e63946, #4169e1);
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-}
-
-/* Main list markers */
-.schedule-container > ul {
-  list-style-type: none;
-  padding-left: 0.5rem;
-}
-
-.schedule-container > ul > li:before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  top: 0.3rem;
-  color: #e63946;
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
-/* Nested list items */
-.schedule-container ul li ul {
-  list-style-type: none;
-  margin-top: 0.7rem;
-  margin-bottom: 1.2rem;
-  margin-left: 0.5rem;
-}
-
-.schedule-container ul li ul li {
-  font-size: 1.4rem;
-  position: relative;
-  padding-left: 1.8rem;
-  margin-bottom: 0.6rem;
-  line-height: 1.6;
-}
-
-.schedule-container ul li ul li:before {
-  content: "→";
-  position: absolute;
-  left: 0;
-  top: 0.3rem;
-  color: #e63946;
-  font-size: 1.4rem;
-  font-weight: 600;
-}
-
-.schedule-container ul li ul li em {
-  color: #666;
-  font-style: italic;
-  font-size: 1.4rem;
-}
-
-/* Emphasized text styling */
-.schedule-container em {
-  color: #4169e1;
-  font-style: italic;
-  font-size: 1.4rem;
-}
-
-.schedule-container strong {
-  font-weight: 600;
-}
-
-/* Email containers inherit global styles from assets/css/styles.css */
-
-@media screen and (max-width: 800px) {
-  .s-teaching {
-    padding: 5rem 0;
-  }
-
-  .s-teaching__desc h1 {
-    font-size: 3rem;
-  }
-
+@media (max-width: 940px) {
   .teaching-grid {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .schedule-container {
-    padding: 1.8rem;
-  }
-
-  .schedule-container h2 {
-    font-size: 2.3rem;
-  }
-
-  .schedule-container ul li {
-    font-size: 1.3rem;
-  }
-
-  .schedule-container ul li strong {
-    font-size: 1.3rem;
-  }
-
-  .schedule-container ul li ul li {
-    font-size: 1.3rem;
-  }
-
-  .schedule-container ul li ul li em,
-  .schedule-container em {
-    font-size: 1.3rem;
+  .course-details {
+    grid-template-columns: 1fr;
   }
 }
 
-@media screen and (max-width: 600px) {
-  .s-teaching {
-    padding: 4rem 0;
+@media (max-width: 680px) {
+  .teaching-page {
+    width: min(100% - 1rem, var(--maxw-page));
+    padding: calc(var(--s-8) + var(--s-5)) 0 var(--s-7);
   }
 
-  .s-teaching__desc h1 {
-    font-size: 2.4rem;
+  .teaching-page__head {
+    margin-bottom: var(--s-6);
+    text-align: left;
+  }
+
+  .teaching-page__kicker .rule {
+    display: none;
+  }
+
+  .teaching-page__title {
+    font-size: 34px;
+  }
+
+  .teaching-page__lede {
+    font-size: var(--t-body);
   }
 
   .teaching-grid {
     grid-template-columns: 1fr;
   }
 
-  .schedule-container {
-    padding: 1.5rem 1rem;
-    font-size: 1.1rem;
-  }
-
-  .schedule-container h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .schedule-container h3 {
-    font-size: 1.7rem;
-    padding: 0.4rem 1rem;
-  }
-
-  .schedule-container h4 {
-    font-size: 1.5rem;
-  }
-
-  .schedule-container ul li {
-    font-size: 1.2rem;
-    line-height: 1.6;
-  }
-
-  .schedule-container ul li strong {
-    font-size: 1.2rem;
-  }
-
-  .schedule-container ul li ul li {
-    font-size: 1.2rem;
-    line-height: 1.5;
-  }
-
-  .schedule-container ul li ul li:before {
-    font-size: 1.2rem;
-    top: 0.2rem;
-  }
-
-  .schedule-container ul li ul li em,
-  .schedule-container em {
-    font-size: 1.2rem;
-  }
-
-  /* Maintain responsive adjustments without changing visuals */
-  .email-container {
-    max-width: 100%;
-  }
-
-  .email-text {
-    word-break: break-all;
+  .course-card__content,
+  .course-details__item {
+    padding: var(--s-4);
   }
 }
