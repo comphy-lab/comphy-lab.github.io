@@ -41,7 +41,15 @@ description: >-
             {% if m.photo %}
               <img src="{{ m.photo }}" alt="Portrait of {{ m.name }}" loading="lazy" decoding="async" />
             {% else %}
-              {{ m.name | replace: "Dr. ", "" | replace: "Prof. ", "" | split: " " | map: "first" | join: "" | upcase | slice: 0, 2 }}
+              {%- assign clean_name = m.name | replace: "Dr. ", "" | replace: "Prof. ", "" | replace: "Adj. Prof. ", "" -%}
+              {%- assign name_words = clean_name | split: " " -%}
+              {%- capture initials -%}
+                {%- for word in name_words -%}
+                  {%- assign first_char = word | slice: 0, 1 -%}
+                  {%- unless first_char == "(" -%}{{ first_char }}{%- endunless -%}
+                {%- endfor -%}
+              {%- endcapture -%}
+              {{ initials | strip | upcase | slice: 0, 2 }}
             {% endif %}
           </div>
           <div>
@@ -73,7 +81,15 @@ description: >-
         {% for m in team.collaborators %}
         <article class="t-member" id="{{ m.slug | default: m.name | slugify }}">
           <div class="t-member__photo t-member__photo--ph">
-            {{ m.name | replace: "Dr. ", "" | replace: "Prof. ", "" | replace: "Adj. Prof. ", "" | split: " " | map: "first" | join: "" | upcase | slice: 0, 2 }}
+            {%- assign clean_name = m.name | replace: "Dr. ", "" | replace: "Prof. ", "" | replace: "Adj. Prof. ", "" -%}
+            {%- assign name_words = clean_name | split: " " -%}
+            {%- capture initials -%}
+              {%- for word in name_words -%}
+                {%- assign first_char = word | slice: 0, 1 -%}
+                {%- unless first_char == "(" -%}{{ first_char }}{%- endunless -%}
+              {%- endfor -%}
+            {%- endcapture -%}
+            {{ initials | strip | upcase | slice: 0, 2 }}
           </div>
           <div>
             <p class="t-member__name">{{ m.name }}</p>
@@ -101,7 +117,15 @@ description: >-
         {% for m in team.alumni %}
         <article class="t-member" id="{{ m.slug | default: m.name | slugify }}">
           <div class="t-member__photo t-member__photo--ph">
-            {{ m.name | replace: "Dr. ", "" | replace: "Prof. ", "" | split: " " | map: "first" | join: "" | upcase | slice: 0, 2 }}
+            {%- assign clean_name = m.name | replace: "Dr. ", "" | replace: "Prof. ", "" | replace: "Adj. Prof. ", "" -%}
+            {%- assign name_words = clean_name | split: " " -%}
+            {%- capture initials -%}
+              {%- for word in name_words -%}
+                {%- assign first_char = word | slice: 0, 1 -%}
+                {%- unless first_char == "(" -%}{{ first_char }}{%- endunless -%}
+              {%- endfor -%}
+            {%- endcapture -%}
+            {{ initials | strip | upcase | slice: 0, 2 }}
           </div>
           <div>
             <p class="t-member__name">{{ m.name }}</p>

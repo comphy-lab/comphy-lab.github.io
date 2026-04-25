@@ -333,8 +333,11 @@
 /* Match the four Google-Maps marker colours so the legend reads
    together with the iframe content. */
 .t-map__dot--hometown { background: #f29900; }
+
 .t-map__dot--collab   { background: #3aa757; }
+
 .t-map__dot--talk     { background: var(--c-brand-purple); }
+
 .t-map__dot--visit    { background: var(--fg-3); }
 
 /* Map frame — paper-tint card with the iframe filling it. */
@@ -394,9 +397,11 @@
 }
 
 .t-member__thesis i { font-size: 11px; flex-shrink: 0; }
+
 .t-member__thesis em { font-style: italic; }
 
 :root[data-theme="dark"] .t-member__thesis { color: #f96; }
+
 :root[data-theme="dark"] .t-member__thesis:hover { color: var(--c-accent-teal); }
 
 /* Denser grid for the photo-less lists */

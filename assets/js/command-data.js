@@ -20,7 +20,7 @@
         window.location.href = "/";
       },
       section: "Navigation",
-      icon: '<i class="fa-solid fa-home"></i>',
+      icon: "<i class=\"fa-solid fa-home\"></i>",
     },
     {
       id: "team",
@@ -29,7 +29,7 @@
         window.location.href = "/team/";
       },
       section: "Navigation",
-      icon: '<i class="fa-solid fa-users"></i>',
+      icon: "<i class=\"fa-solid fa-users\"></i>",
     },
     {
       id: "research",
@@ -38,7 +38,7 @@
         window.location.href = "/research";
       },
       section: "Navigation",
-      icon: '<i class="fa-solid fa-flask"></i>',
+      icon: "<i class=\"fa-solid fa-flask\"></i>",
     },
     {
       id: "teaching",
@@ -47,7 +47,7 @@
         window.location.href = "/teaching";
       },
       section: "Navigation",
-      icon: '<i class="fa-solid fa-chalkboard-teacher"></i>',
+      icon: "<i class=\"fa-solid fa-chalkboard-teacher\"></i>",
     },
     {
       id: "join",
@@ -56,7 +56,7 @@
         window.location.href = "/join";
       },
       section: "Navigation",
-      icon: '<i class="fa-solid fa-handshake"></i>',
+      icon: "<i class=\"fa-solid fa-handshake\"></i>",
     },
     {
       id: "blog",
@@ -66,7 +66,7 @@
       },
 
       section: "Navigation",
-      icon: '<i class="fa-solid fa-rss"></i>',
+      icon: "<i class=\"fa-solid fa-rss\"></i>",
     },
     {
       id: "back",
@@ -75,7 +75,7 @@
         window.history.back();
       },
       section: "Navigation",
-      icon: '<i class="fa-solid fa-arrow-left"></i>',
+      icon: "<i class=\"fa-solid fa-arrow-left\"></i>",
     },
     {
       id: "forward",
@@ -84,7 +84,7 @@
         window.history.forward();
       },
       section: "Navigation",
-      icon: '<i class="fa-solid fa-arrow-right"></i>',
+      icon: "<i class=\"fa-solid fa-arrow-right\"></i>",
     },
 
     // External links
@@ -96,7 +96,7 @@
       },
 
       section: "External Links",
-      icon: '<i class="fa-brands fa-github"></i>',
+      icon: "<i class=\"fa-brands fa-github\"></i>",
     },
     {
       id: "scholar",
@@ -108,7 +108,7 @@
       },
 
       section: "External Links",
-      icon: '<i class="ai ai-google-scholar"></i>',
+      icon: "<i class=\"ai ai-google-scholar\"></i>",
     },
     {
       id: "youtube",
@@ -118,7 +118,7 @@
       },
 
       section: "External Links",
-      icon: '<i class="fa-brands fa-youtube"></i>',
+      icon: "<i class=\"fa-brands fa-youtube\"></i>",
     },
     {
       id: "bluesky",
@@ -128,7 +128,7 @@
       },
 
       section: "External Links",
-      icon: '<i class="fa-brands fa-bluesky"></i>',
+      icon: "<i class=\"fa-brands fa-bluesky\"></i>",
     },
 
     // Tools
@@ -139,7 +139,7 @@
         window.scrollTo({ top: 0, behavior: "smooth" });
       },
       section: "Tools",
-      icon: '<i class="fa-solid fa-arrow-up"></i>',
+      icon: "<i class=\"fa-solid fa-arrow-up\"></i>",
     },
     {
       id: "bottom",
@@ -152,7 +152,7 @@
       },
 
       section: "Tools",
-      icon: '<i class="fa-solid fa-arrow-down"></i>',
+      icon: "<i class=\"fa-solid fa-arrow-down\"></i>",
     },
 
     // Help commands
@@ -166,7 +166,7 @@
       },
 
       section: "Help",
-      icon: '<i class="fa-brands fa-github"></i>',
+      icon: "<i class=\"fa-brands fa-github\"></i>",
     },
 
     // ==========================================================
@@ -179,7 +179,7 @@
         window.location.href = "mailto:vatsal.sanjay@durham.ac.uk";
       },
       section: "Actions",
-      icon: '<i class="fa-solid fa-envelope"></i>',
+      icon: "<i class=\"fa-solid fa-envelope\"></i>",
     },
     {
       id: "action-toggle-theme",
@@ -189,7 +189,7 @@
         if (toggle) toggle.click();
       },
       section: "Actions",
-      icon: '<i class="fa-solid fa-circle-half-stroke"></i>',
+      icon: "<i class=\"fa-solid fa-circle-half-stroke\"></i>",
     },
     {
       id: "action-open-scholar",
@@ -200,7 +200,7 @@
         );
       },
       section: "Actions",
-      icon: '<i class="ai ai-google-scholar"></i>',
+      icon: "<i class=\"ai ai-google-scholar\"></i>",
     },
     {
       id: "action-open-github",
@@ -209,7 +209,7 @@
         openExternalUrl("https://github.com/comphy-lab");
       },
       section: "Actions",
-      icon: '<i class="fa-brands fa-github"></i>',
+      icon: "<i class=\"fa-brands fa-github\"></i>",
     },
     {
       id: "action-durham-staff",
@@ -218,7 +218,7 @@
         openExternalUrl("https://www.durham.ac.uk/staff/vatsal-sanjay/");
       },
       section: "Actions",
-      icon: '<i class="fa-solid fa-university"></i>',
+      icon: "<i class=\"fa-solid fa-university\"></i>",
     },
 
     // ==========================================================
@@ -232,7 +232,7 @@
         window.location.href = "/research#23";
       },
       section: "Papers",
-      icon: '<i class="fa-solid fa-file-lines"></i>',
+      icon: "<i class=\"fa-solid fa-file-lines\"></i>",
     },
     {
       id: "paper-holes-sheets",
@@ -241,7 +241,7 @@
         window.location.href = "/research#22";
       },
       section: "Papers",
-      icon: '<i class="fa-solid fa-file-lines"></i>',
+      icon: "<i class=\"fa-solid fa-file-lines\"></i>",
     },
     {
       id: "paper-stood-up-drop",
@@ -250,7 +250,7 @@
         window.location.href = "/research#21";
       },
       section: "Papers",
-      icon: '<i class="fa-solid fa-file-lines"></i>',
+      icon: "<i class=\"fa-solid fa-file-lines\"></i>",
     },
     {
       id: "paper-viscoelastic-worthington",
@@ -259,7 +259,7 @@
         window.location.href = "/research#16";
       },
       section: "Papers",
-      icon: '<i class="fa-solid fa-file-lines"></i>',
+      icon: "<i class=\"fa-solid fa-file-lines\"></i>",
     },
     {
       id: "paper-unifying-scaling",
@@ -268,7 +268,7 @@
         window.location.href = "/research#15";
       },
       section: "Papers",
-      icon: '<i class="fa-solid fa-file-lines"></i>',
+      icon: "<i class=\"fa-solid fa-file-lines\"></i>",
     },
     {
       id: "paper-viscosity-impact",
@@ -277,7 +277,7 @@
         window.location.href = "/research#14";
       },
       section: "Papers",
-      icon: '<i class="fa-solid fa-file-lines"></i>',
+      icon: "<i class=\"fa-solid fa-file-lines\"></i>",
     },
     {
       id: "paper-evp-bubble",
@@ -286,7 +286,7 @@
         window.location.href = "/research#12";
       },
       section: "Papers",
-      icon: '<i class="fa-solid fa-file-lines"></i>',
+      icon: "<i class=\"fa-solid fa-file-lines\"></i>",
     },
     {
       id: "paper-bouncing-drop",
@@ -295,7 +295,7 @@
         window.location.href = "/research#11";
       },
       section: "Papers",
-      icon: '<i class="fa-solid fa-file-lines"></i>',
+      icon: "<i class=\"fa-solid fa-file-lines\"></i>",
     },
     {
       id: "paper-taylor-culick",
@@ -304,7 +304,7 @@
         window.location.href = "/research#9";
       },
       section: "Papers",
-      icon: '<i class="fa-solid fa-file-lines"></i>',
+      icon: "<i class=\"fa-solid fa-file-lines\"></i>",
     },
     {
       id: "paper-viscoplastic-bubble",
@@ -313,7 +313,7 @@
         window.location.href = "/research#7";
       },
       section: "Papers",
-      icon: '<i class="fa-solid fa-file-lines"></i>',
+      icon: "<i class=\"fa-solid fa-file-lines\"></i>",
     },
 
     // ==========================================================
@@ -326,7 +326,7 @@
         window.location.href = "/team/#vatsal-sanjay";
       },
       section: "People",
-      icon: '<i class="fa-solid fa-user"></i>',
+      icon: "<i class=\"fa-solid fa-user\"></i>",
     },
     {
       id: "person-ayush-dixit",
@@ -335,7 +335,7 @@
         window.location.href = "/team/#ayush-dixit";
       },
       section: "People",
-      icon: '<i class="fa-solid fa-user"></i>',
+      icon: "<i class=\"fa-solid fa-user\"></i>",
     },
     {
       id: "person-aman-bhargava",
@@ -344,7 +344,7 @@
         window.location.href = "/team/#aman-bhargava";
       },
       section: "People",
-      icon: '<i class="fa-solid fa-user"></i>',
+      icon: "<i class=\"fa-solid fa-user\"></i>",
     },
     {
       id: "person-jnandeep-talukdar",
@@ -353,7 +353,7 @@
         window.location.href = "/team/#jnandeep-talukdar";
       },
       section: "People",
-      icon: '<i class="fa-solid fa-user"></i>',
+      icon: "<i class=\"fa-solid fa-user\"></i>",
     },
     {
       id: "person-saumili-jana",
@@ -362,7 +362,7 @@
         window.location.href = "/team/#saumili-jana";
       },
       section: "People",
-      icon: '<i class="fa-solid fa-user"></i>',
+      icon: "<i class=\"fa-solid fa-user\"></i>",
     },
     {
       id: "person-peter-croxford",
@@ -371,7 +371,7 @@
         window.location.href = "/team/#peter-croxford";
       },
       section: "People",
-      icon: '<i class="fa-solid fa-user"></i>',
+      icon: "<i class=\"fa-solid fa-user\"></i>",
     },
     {
       id: "person-detlef-lohse",
@@ -380,7 +380,7 @@
         window.location.href = "/team/#prof-detlef-lohse";
       },
       section: "People",
-      icon: '<i class="fa-solid fa-user-group"></i>',
+      icon: "<i class=\"fa-solid fa-user-group\"></i>",
     },
     {
       id: "person-jacco-snoeijer",
@@ -389,7 +389,7 @@
         window.location.href = "/team/#prof-jacco-snoeijer";
       },
       section: "People",
-      icon: '<i class="fa-solid fa-user-group"></i>',
+      icon: "<i class=\"fa-solid fa-user-group\"></i>",
     },
     {
       id: "person-john-kolinski",
@@ -398,7 +398,7 @@
         window.location.href = "/team/#dr-john-kolinski";
       },
       section: "People",
-      icon: '<i class="fa-solid fa-user-group"></i>',
+      icon: "<i class=\"fa-solid fa-user-group\"></i>",
     },
 
     // ==========================================================
@@ -411,7 +411,7 @@
         window.location.href = "/news/";
       },
       section: "News",
-      icon: '<i class="fa-solid fa-graduation-cap"></i>',
+      icon: "<i class=\"fa-solid fa-graduation-cap\"></i>",
     },
     {
       id: "news-khmw-award",
@@ -420,7 +420,7 @@
         window.location.href = "/news/";
       },
       section: "News",
-      icon: '<i class="fa-solid fa-award"></i>',
+      icon: "<i class=\"fa-solid fa-award\"></i>",
     },
     {
       id: "news-aps-talk",
@@ -429,7 +429,7 @@
         openExternalUrl("https://www.youtube.com/watch?v=uFP5K9i8ah8");
       },
       section: "News",
-      icon: '<i class="fa-solid fa-microphone"></i>',
+      icon: "<i class=\"fa-solid fa-microphone\"></i>",
     },
     {
       id: "news-archive",
@@ -438,7 +438,7 @@
         window.location.href = "/news/";
       },
       section: "News",
-      icon: '<i class="fa-solid fa-rss"></i>',
+      icon: "<i class=\"fa-solid fa-rss\"></i>",
     },
   ];
 
@@ -460,16 +460,16 @@
       sections[command.section].push(command);
     });
 
-    let html = '<h2 style="margin-top: 0;">Commands</h2>';
+    let html = "<h2 style=\"margin-top: 0;\">Commands</h2>";
     const shortcutKey = Utils.isMacPlatform() ? "⌘K" : "Ctrl+K";
     html += `<p>Press ${shortcutKey} to open the command palette</p>`;
 
     // Add each section and its commands
     Object.keys(sections).forEach((section) => {
       html += `<h3>${section}</h3>`;
-      html += '<table style="width: 100%; border-collapse: collapse;">';
+      html += "<table style=\"width: 100%; border-collapse: collapse;\">";
       html +=
-        '<tr><th style="text-align: left; padding: 8px; border-bottom: 1px solid #ddd;">Command</th></tr>';
+        "<tr><th style=\"text-align: left; padding: 8px; border-bottom: 1px solid #ddd;\">Command</th></tr>";
 
       sections[section].forEach((command) => {
         html += `<tr>
@@ -482,7 +482,7 @@
 
     // Add close button
     html +=
-      '<div style="text-align: center; margin-top: 20px;"><button id="close-shortcuts-help" style="padding: 8px 16px; background-color: #5b79a8; color: white; border: none; border-radius: 4px; cursor: pointer;">Close</button></div>';
+      "<div style=\"text-align: center; margin-top: 20px;\"><button id=\"close-shortcuts-help\" style=\"padding: 8px 16px; background-color: #5b79a8; color: white; border: none; border-radius: 4px; cursor: pointer;\">Close</button></div>";
 
     // Create modal using shared utility
     const modal = Utils.createModal({
@@ -593,7 +593,7 @@
             document.body.appendChild(modal);
 
             // Get content element for focus and event handling
-            const content = modal.querySelector('div[tabindex="-1"]');
+            const content = modal.querySelector("div[tabindex=\"-1\"]");
 
             // Get all tag buttons
             const tagButtons = content.querySelectorAll(".tag-filter-btn");
@@ -702,7 +702,7 @@
             content.focus();
           },
           section: "Page Actions",
-          icon: '<i class="fa-solid fa-filter"></i>',
+          icon: "<i class=\"fa-solid fa-filter\"></i>",
         },
       ];
     }
@@ -716,7 +716,7 @@
             window.location.href = "/join";
           },
           section: "Page Actions",
-          icon: '<i class="fa-solid fa-envelope"></i>',
+          icon: "<i class=\"fa-solid fa-envelope\"></i>",
         },
       ];
     }
@@ -733,7 +733,7 @@
             }
           },
           section: "Page Actions",
-          icon: '<i class="fa-solid fa-sort"></i>',
+          icon: "<i class=\"fa-solid fa-sort\"></i>",
         },
       ];
     }

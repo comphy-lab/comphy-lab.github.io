@@ -322,6 +322,7 @@ body.home-v2 #featured-wrapper { display: none; }
 
 /* Motion caption is tight — shrink subtitle and link spacing */
 .hero__slide--motion .hero__caption-sub { margin-top: 0; }
+
 .hero__slide--motion .hero__caption-link { margin-top: 4px; }
 
 .hero__caption-eyebrow {
@@ -332,6 +333,7 @@ body.home-v2 #featured-wrapper { display: none; }
   text-transform: uppercase;
   color: var(--c-brand-purple);
 }
+
 [data-theme="dark"] .hero__caption-eyebrow { color: #d99adc; }
 
 .hero__caption-title {
@@ -404,6 +406,7 @@ body.home-v2 #featured-wrapper { display: none; }
    crops the horizontal excess. Math: width = height × 16/9 × 1.25
    ≈ 222% to fully cover. */
 .hero__media { overflow: hidden; }
+
 .hero__media iframe {
   position: absolute;
   top: 50%;

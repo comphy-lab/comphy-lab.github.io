@@ -49,7 +49,9 @@ body_class: research-v2
           {% endif %}
         </div>
         <div class="r-theme__body">
-          <span class="r-theme__tag">{{ t.num }} · {{ t.tag }}</span>
+          <button class="r-theme__tag" type="button" data-filter-tag="{{ t.tag }}">
+            {{ t.num }} · {{ t.tag }}
+          </button>
           <h3 class="r-theme__title">{{ t.title }}</h3>
           <p class="r-theme__desc">{{ t.description }}</p>
           <div class="r-theme__papers">
@@ -110,7 +112,7 @@ body_class: research-v2
        1. TOC sidebar + IntersectionObserver active-link.
        2. Wrap each h3 + its siblings in a .paper-container so
           tags can show/hide individual papers.
-       3. Tag-filter click handler + ?tag= URL sync.
+       3. Tag-filter click/keyboard handlers + ?tag= URL sync.
      All three scoped to .research-content inside .r-full.
      ========================================================= */
   document.addEventListener('DOMContentLoaded', function () {
@@ -170,23 +172,38 @@ body_class: research-v2
 
     /* --- 3. Tag filter ------------------------------------- */
     var allTags = researchContent.querySelectorAll('.tags span');
+    var themeTags = document.querySelectorAll('.r-theme__tag[data-filter-tag]');
+    var tagControls = Array.from(allTags).concat(Array.from(themeTags));
     var papers = researchContent.querySelectorAll('.paper-container');
     var activeTag = null;
 
+    function getTagText(control) {
+      return control.getAttribute('data-filter-tag') || control.textContent;
+    }
+
     function setActive(tagText) {
-      allTags.forEach(function (t) {
-        t.classList.toggle('active', t.textContent === tagText);
+      tagControls.forEach(function (t) {
+        t.classList.toggle('active', getTagText(t) === tagText);
       });
     }
 
-    function clearFilter() {
-      activeTag = null;
-      allTags.forEach(function (t) { t.classList.remove('active'); });
-      papers.forEach(function (p) { p.classList.remove('hidden'); });
-      if (history.replaceState) history.replaceState({}, '', window.location.pathname);
+    function updateUrl(tagText, replace) {
+      if (!history.pushState || !history.replaceState) return;
+      var url = window.location.pathname;
+      if (tagText) url += '?tag=' + encodeURIComponent(tagText);
+      history[replace ? 'replaceState' : 'pushState']({}, '', url);
     }
 
-    function applyFilter(tagText) {
+    function clearFilter(options) {
+      options = options || {};
+      activeTag = null;
+      tagControls.forEach(function (t) { t.classList.remove('active'); });
+      papers.forEach(function (p) { p.classList.remove('hidden'); });
+      if (!options.skipUrl) updateUrl(null, options.replace);
+    }
+
+    function applyFilter(tagText, options) {
+      options = options || {};
       activeTag = tagText;
       setActive(tagText);
       papers.forEach(function (p) {
@@ -195,34 +212,61 @@ body_class: research-v2
           .some(function (s) { return s.textContent === tagText; });
         p.classList.toggle('hidden', !match);
       });
-      if (history.pushState) history.pushState({}, '', '?tag=' + encodeURIComponent(tagText));
+      if (!options.skipUrl) updateUrl(tagText, options.replace);
     }
 
-    allTags.forEach(function (span) {
-      span.style.cursor = 'pointer';
-      span.addEventListener('click', function () {
-        var text = span.textContent;
-        if (activeTag === text) clearFilter();
-        else applyFilter(text);
+    function activateTag(control, options) {
+      var text = getTagText(control);
+      if (activeTag === text) clearFilter(options);
+      else applyFilter(text, options);
+    }
+
+    function bindTagControl(control) {
+      control.addEventListener('click', function () {
+        activateTag(control);
       });
+      if (control.tagName !== 'BUTTON') {
+        control.setAttribute('role', 'button');
+        control.setAttribute('tabindex', '0');
+        control.addEventListener('keydown', function (event) {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            activateTag(control);
+          }
+        });
+      }
+    }
+
+    tagControls.forEach(bindTagControl);
+
+    function syncFilterFromUrl(options) {
+      options = options || {};
+      var params = new URLSearchParams(window.location.search);
+      var tagFromUrl = params.get('tag');
+      if (!tagFromUrl) {
+        clearFilter({ skipUrl: true });
+        return;
+      }
+      var match = tagControls.find(function (control) {
+        return getTagText(control) === tagFromUrl;
+      });
+      if (match) applyFilter(tagFromUrl, options);
+      else clearFilter(options);
+    }
+
+    /* --- 4. Apply ?tag= from URL on load / history nav ------ */
+    syncFilterFromUrl({ replace: true });
+    window.addEventListener('popstate', function () {
+      syncFilterFromUrl({ skipUrl: true });
     });
-
-    /* --- 4. Apply ?tag= from URL on load ------------------- */
-    var params = new URLSearchParams(window.location.search);
-    var tagFromUrl = params.get('tag');
-    if (tagFromUrl) {
-      var match = Array.from(allTags).find(function (s) {
-        return s.textContent === tagFromUrl;
-      });
-      if (match) applyFilter(tagFromUrl);
-    }
   });
 </script>
 <style>
   /* Hidden paper (filtered out) */
   .research-content .paper-container.hidden { display: none; }
   /* Active tag (clicked) gets a teal solid treatment */
-  .research-content .tags span.active {
+  .research-content .tags span.active,
+  .r-theme__tag.active {
     background: var(--c-accent-teal);
     color: var(--c-accent-teal-fg);
     border-color: var(--c-accent-teal);
