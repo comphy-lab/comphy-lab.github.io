@@ -16,66 +16,16 @@
     });
   }
 
-  /* Load About Content - Only on main page
-   * -------------------------------------------------- */
-  const loadAboutContent = async () => {
-    // Only load aboutCoMPhy.md if we're on the main page
-    if (
-      window.location.pathname === "/" ||
-      window.location.pathname === "/index.html"
-    ) {
-      try {
-        const response = await fetch("/aboutCoMPhy.md");
-        const text = await response.text();
-        const aboutContent = document.getElementById("about-content");
-        if (aboutContent) {
-          // Sanitize HTML output from marked.parse() with DOMPurify before inserting into DOM
-          const parsedHtml = marked.parse(text);
-          const sanitizedHtml = DOMPurify.sanitize(parsedHtml);
-          aboutContent.innerHTML = sanitizedHtml;
-
-          // Re-bind copy email handlers for dynamically injected content
-          const aboutCopyButtons = aboutContent.querySelectorAll(".copy-btn");
-          aboutCopyButtons.forEach((button) => {
-            if (
-              typeof Utils !== "undefined" &&
-              Utils.copyToClipboard &&
-              Utils.initAccessibleButton
-            ) {
-              // Attach click to use the shared utility
-              button.addEventListener("click", function () {
-                Utils.copyToClipboard(this);
-              });
-
-              // Ensure accessible name is present using utility
-              const emailText =
-                button.getAttribute("data-text") ||
-                button.getAttribute("data-clipboard-text");
-              Utils.initAccessibleButton(
-                button,
-                `Copy email address ${emailText}`
-              );
-            } else {
-              console.warn(
-                "Utils.js or its functions are not available. Copy buttons in about section are disabled."
-              );
-              button.disabled = true;
-            }
-          });
-        }
-      } catch (error) {
-        console.error("Error loading about content:", error);
-      }
-    }
-  };
-
   /* Load News Content - Only on main page
    * -------------------------------------------------- */
   const loadNewsContent = async () => {
-    // Only load News.md if we're on the main page
+    // Only load News.md if we're on the main page AND the legacy
+    // #news-content container is still rendered. v2 homepage uses
+    // _data/news.yml via Liquid; skip the fetch in that case.
     if (
-      window.location.pathname === "/" ||
-      window.location.pathname === "/index.html"
+      (window.location.pathname === "/" ||
+        window.location.pathname === "/index.html") &&
+      document.getElementById("news-content")
     ) {
       try {
         const response = await fetch("/News.md");
@@ -99,7 +49,7 @@
         historyBtn.href = "/history";
         historyBtn.className = "s-news__history-btn";
         historyBtn.innerHTML =
-          '<i class="fa-solid fa-arrow-right" style="margin-right: 8px; font-size: 1.2em;"></i>Archive';
+          "<i class=\"fa-solid fa-arrow-right\" style=\"margin-right: 8px; font-size: 1.2em;\"></i>Archive";
         historyBtn.setAttribute("role", "button");
         historyBtn.setAttribute("tabindex", "0");
         historyBtn.setAttribute("aria-label", "View archive of all news items");
@@ -129,18 +79,20 @@
 
   // No need for a resize event handler as the CSS will handle everything
 
-  // Load about content when page loads
-  window.addEventListener("load", loadAboutContent);
   // Load news content when page loads
   window.addEventListener("load", loadNewsContent);
 
   /* Load Featured Papers - Only on main page
    * -------------------------------------------------- */
   const loadFeaturedPapers = async () => {
-    // Only load featured papers if we're on the main page
+    // Only scrape /research for featured papers when the legacy
+    // .featured-item__image container is actually on the page. The
+    // v2 homepage has no featured-wrapper — research theme cards
+    // are rendered from _data/research_themes.yml instead.
     if (
-      window.location.pathname === "/" ||
-      window.location.pathname === "/index.html"
+      (window.location.pathname === "/" ||
+        window.location.pathname === "/index.html") &&
+      document.querySelector(".featured-item__image")
     ) {
       try {
         const sanitizeElement = (element) => {
@@ -469,7 +421,7 @@
 
   /* Smooth Scrolling
    * -------------------------------------------------- */
-  document.querySelectorAll('a[href^="#"], a[href^="/#"]').forEach((anchor) => {
+  document.querySelectorAll("a[href^=\"#\"], a[href^=\"/#\"]").forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       const href = this.getAttribute("href");
 
@@ -520,7 +472,7 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     const images = document.querySelectorAll(
-      '.member-image img[loading="lazy"]'
+      ".member-image img[loading=\"lazy\"]"
     );
 
     images.forEach((img) => {

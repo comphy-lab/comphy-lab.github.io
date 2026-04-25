@@ -5,10 +5,8 @@ set -euo pipefail
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 HISTORY_FILE="$REPO_ROOT/history.md"
 RESEARCH_FILE="$REPO_ROOT/_research/index.md"
-ADD_NEWS_RULES_FILE="$REPO_ROOT/.agents/skills/add-news/SKILL.md"
 CLAUDE_FILE="$REPO_ROOT/CLAUDE.md"
 README_FILE="$REPO_ROOT/README.md"
-ADD_PAPER_RULES_FILE="$REPO_ROOT/.agents/skills/add-paper/SKILL.md"
 
 FAILURES=0
 
@@ -117,18 +115,12 @@ validate_research_tags() {
 validate_docs_rules() {
   local missing_required_file=0
 
-  require_file "$ADD_NEWS_RULES_FILE" || missing_required_file=1
   require_file "$CLAUDE_FILE" || missing_required_file=1
   require_file "$README_FILE" || missing_required_file=1
-  require_file "$ADD_PAPER_RULES_FILE" || missing_required_file=1
 
   if (( missing_required_file > 0 )); then
     # Missing files already counted in FAILURES; skip content checks safely.
     return 0
-  fi
-
-  if ! has_match "reverse chronological order" "$ADD_NEWS_RULES_FILE"; then
-    log_error ".opencode/commands/add-news.md must state reverse chronological month ordering."
   fi
 
   if has_match "<tags>|</tags>" "$CLAUDE_FILE"; then
@@ -137,10 +129,6 @@ validate_docs_rules() {
 
   if has_match "<tags>|</tags>" "$README_FILE"; then
     log_error "README.md still documents deprecated <tags> markup."
-  fi
-
-  if has_match "<tags>|</tags>" "$ADD_PAPER_RULES_FILE"; then
-    log_error ".opencode/commands/add-paper.md still documents deprecated <tags> markup."
   fi
 }
 

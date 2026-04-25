@@ -1,500 +1,262 @@
-<!DOCTYPE html>
-<html lang="en" class="no-js">
-<head>
-  {% include theme-init.html %}
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="base-url" content="{{ site.baseurl }}">
-  <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+---
+layout: default
+body_class: research-v2
+---
 
-  <!-- Preload critical resources -->
-  <link rel="preload" href="/assets/css/styles.css" as="style">
-  <link rel="preload" href="/assets/js/main.js" as="script">
-  <link rel="preload" href="/assets/css/fontello/css/fontello.css" as="style">
-  <link rel="preload" href="/assets/css/academicons-1.7.0/css/academicons.min.css" as="style">
+{% assign themes_data = site.data.research_themes %}
 
-  <!-- Favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
-  <link rel="manifest" href="/assets/favicon/site.webmanifest">
-  <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
-  <meta name="apple-mobile-web-app-title" content="CoMPhy Lab">
-  <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
-  
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Research projects and publications from the Computational Multiphase Physics Laboratory">
-  <meta name="author" content="CoMPhy Lab">
-  <meta name="robots" content="index, follow">
-  <meta name="keywords" content="computational physics, multiphase physics, fluid dynamics, research papers, scientific publications">
+<main class="research-page" id="research-top">
 
-  <!-- Font dependencies with font-display: swap -->
-  <style>
-    @font-face {
-      font-display: swap;
-      font-family: 'System Font';
-      src: local('system-ui');
-    }
-  </style>
-  <link rel="stylesheet" href="/assets/css/fontello/css/fontello.css" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="/assets/css/academicons-1.7.0/css/academicons.min.css" media="print" onload="this.media='all'">
-  <noscript>
-    <link rel="stylesheet" href="/assets/css/fontello/css/fontello.css">
-    <link rel="stylesheet" href="/assets/css/academicons-1.7.0/css/academicons.min.css">
-  </noscript>
+  <header class="research-page__head">
+    <p class="research-page__kicker">
+      <span class="rule" aria-hidden="true"></span>
+      <span>CoMPhy Lab · Research</span>
+      <span class="rule" aria-hidden="true"></span>
+    </p>
+    <h1 class="research-page__title">{{ page.title | default: "Research" }}</h1>
+  </header>
 
-  <!-- Site styles -->
-  <link rel="stylesheet" href="/assets/css/vendor.css" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="/assets/css/styles.css">
-  <link rel="stylesheet" href="/assets/css/research.css" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="/assets/css/command-palette.css" media="print" onload="this.media='all'">
-  
-  <!-- Structured Data for Research -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ResearchProject",
-    "name": "Computational Multiphase Physics Research",
-    "description": "Research in computational multiphase physics applications and methods.",
-    "url": "{{ site.url }}/research"
-  }
-  </script>
+  {% if themes_data.currently %}
+  <section class="r-now" id="currently" role="note">
+    <span class="r-now__label">{{ themes_data.currently.label }}</span>
+    <p class="r-now__text">{{ themes_data.currently.text }}</p>
+  </section>
+  {% endif %}
 
-  <!-- Core utilities (must load first) -->
-  <script defer src="/assets/js/utils.js"></script>
-
-  <!-- Command palette (implementation in assets/js/command-palette.js) -->
-  <script defer src="/assets/js/command-palette.js"></script>
-
-  <!-- JavaScript dependencies -->
-  <script defer src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
-  <script defer src="/assets/js/main.js"></script>
-  <script defer src="/assets/js/platform-utils.js"></script>
-  <script defer src="/assets/js/command-data.js"></script>  
-  <script>
-    document.documentElement.classList.remove('no-js');
-    document.documentElement.classList.add('js');
-    
-    // Theme toggle functionality
-    (function() {
-      // Check for saved theme preference or use OS preference
-      const getThemePreference = () => {
-        // Check if user has already selected a theme
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-          return savedTheme;
-        }
-        // If not, check OS preference
-        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      };
-      
-      // Set theme on document
-      const setTheme = (theme) => {
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
-      };
-      
-      // Apply theme when page loads
-      document.addEventListener('DOMContentLoaded', () => {
-        setTheme(getThemePreference());
-        
-        // Add click event listener to theme toggle
-        const themeToggle = document.getElementById('theme-toggle');
-        if (themeToggle) {
-          themeToggle.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            setTheme(newTheme);
-          });
-        }
-      });
-    })();
-  </script>
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  >
-</head>
-<body id="top">
-
-  <div id="preloader">
-    <div id="loader"></div>
-  </div>
-
-  <!-- Command palette button and keyboard shortcuts are now handled in command-palette.js -->
-
-  <div id="page" class="s-pagewrap">
-    <header class="s-header">
-      <div class="s-header__logo">
-        <a class="logo" href="/">
-          <img src="/assets/logos/CoMPhy-Lab-no-name.png" alt="CoMPhy Lab">
-        </a>
-      </div>
-      <a class="s-header__menu-toggle" href="#0">
-        <span class="s-header__menu-text">Menu</span>
-        <span class="s-header__menu-icon"></span>
-      </a>
-      <nav class="s-header__nav">
-        <a href="#0" class="s-header__nav-close-btn"><span>Close</span></a>
-        <ul class="s-header__nav-list">
-          <li style="background: none;">
-            <div class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme">
-              <svg class="theme-toggle-icon moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-              </svg>
-              <svg class="theme-toggle-icon sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="5"></circle>
-                <line x1="12" y1="1" x2="12" y2="3"></line>
-                <line x1="12" y1="21" x2="12" y2="23"></line>
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                <line x1="1" y1="12" x2="3" y2="12"></line>
-                <line x1="21" y1="12" x2="23" y2="12"></line>
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-              </svg>
-            </div>
-          </li>
-          <li style="background: none;"><a href="https://scholar.google.com/citations?user=tHb_qZoAAAAJ&hl=en" style="background: none; padding: 0;"><i class="ai ai-google-scholar" style="font-size: 1.75em;"></i></a></li>
-          <li style="background: none;"><a href="https://github.com/comphy-lab" style="background: none; padding: 0;"><i class="fa-brands fa-github" style="font-size: 1.75em"></i></a></li>
-          <li><a href="/#about" class="smoothscroll">About</a></li>
-          <li><a href="/team/">Team</a></li>
-          <li><a href="/research">Research</a></li>
-          <li><a href="/teaching">Teaching</a></li>
-          <li><a href="/join">Join Us</a></li>
-          <li><a href="https://blogs.comphy-lab.org/">Blog</a></li>
-          <li style="background: none;"><a href="https://bsky.app/profile/comphy-lab.org" style="background: none; padding: 0;"><i class="fa-brands fa-bluesky" style="font-size: 1.75em; color: #0085ff;"></i></a></li>
-          <!-- Command Palette Button (Styled like search) -->
-          <li class="command-palette-button">
-            <div class="command-wrapper">
-              <button class="command-k-style-btn" id="command-palette-btn" aria-label="Open command palette">
-                <span class="default-theme-text">ctrl K</span>
-                <span class="mac-theme-text">⌘ K</span>
-                <i class="fa-solid fa-magnifying-glass search-icon"></i>
-              </button>
-            </div>
-          </li>
-        </ul>
-      </nav>
+  <section class="r-themes-wrap" id="themes" aria-label="Research themes">
+    <header class="r-themes-head">
+      <p class="r-themes-head__num">01 · Themes</p>
+      <h2 class="r-themes-head__title">How does soft matter break?</h2>
     </header>
 
-    <!-- Research Section -->
-    <section class="s-research">
-      <div class="row">
-        <div class="research-layout">
-          <div class="toc-sidebar">
-            <nav class="toc-nav">
-              <h3>Contents</h3>
-              <ul class="toc-list">
-                <!-- Will be populated by JavaScript -->
-              </ul>
-            </nav>
-          </div>
-          <div class="research-content markdown-content">
-            {% capture lazy_img %}<img loading="lazy" decoding="async" onload="this.classList.add('loaded')"{% endcapture %}
-            {% assign content_with_lazy = content | replace: '<img', lazy_img %}
-            {% capture lazy_iframe %}<div class="video-container"><iframe loading="lazy"{% endcapture %}
-            {% assign content_with_video = content_with_lazy | replace: '<iframe', lazy_iframe | replace: '</iframe>', '</iframe></div>' %}
-            {{ content_with_video }}
+    <div class="r-themes">
+      {% for t in themes_data.themes %}
+      <article class="r-theme" id="theme-{{ t.slug }}">
+        <div class="r-theme__figure">
+          {% if t.figure %}
+            <img src="{{ t.figure }}" alt="{{ t.title }} — signature figure" loading="lazy" decoding="async" />
+          {% else %}
+            <div class="r-theme__figure-ph">Figure · {{ t.tag }}</div>
+          {% endif %}
+        </div>
+        <div class="r-theme__body">
+          <button class="r-theme__tag" type="button" data-filter-tag="{{ t.tag }}">
+            {{ t.num }} · {{ t.tag }}
+          </button>
+          <h3 class="r-theme__title">{{ t.title }}</h3>
+          <p class="r-theme__desc">{{ t.description }}</p>
+          <div class="r-theme__papers">
+            {% for p in t.papers %}
+            <div class="r-theme__paper">
+              <span class="r-theme__paper-year">{{ p.year }}</span>
+              <a class="r-theme__paper-title" href="{{ p.href }}">{{ p.title }}</a>
+              <span class="r-theme__paper-venue">{{ p.venue }}</span>
+            </div>
+            {% endfor %}
           </div>
         </div>
-      </div>
-    </section>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
 
-    <footer class="site-footer">
-      <div class="footer-left">
-        <a href="http://basilisk.fr/sandbox/vatsal/" target="_blank" rel="noopener noreferrer">
-          <img src="/assets/logos/logoBasilisk_TransparentBackground.png" alt="Basilisk C" class="footer-logo" loading="lazy" decoding="async" fetchpriority="low">
-        </a>
-        <a href="https://pof.tnw.utwente.nl/" target="_blank" rel="noopener noreferrer">
-          <img src="/assets/logos/LogoPof_transparent_white.png" alt="Physics of Fluids" class="footer-logo pof-logo" loading="lazy" decoding="async" fetchpriority="low">
-        </a>
-        <a href="https://www.vatsalsanjay.com/" target="_blank" rel="noopener noreferrer">
-          <img src="/assets/logos/Logo_Vatsal_v3_OutLine.png" alt="Vatsal Sanjay" class="footer-logo" loading="lazy" decoding="async" fetchpriority="low">
-        </a>
-        <a href="https://www.durham.ac.uk/staff/vatsal-sanjay/" target="_blank" rel="noopener noreferrer">
-          <img src="/assets/logos/Durham-University-white.png" alt="Durham University" class="footer-logo" loading="lazy" decoding="async" fetchpriority="low">
-        </a>
-      </div>
-      <div class="footer-center">
-        <p class="copyright-text">
-          &copy; Copyright<br>
-          CoMPhy Lab 2025
-        </p>
-      </div>
-      <div class="footer-right">
-        <a href="https://scholar.google.com/citations?user=tHb_qZoAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar Profile">
-          <i class="ai ai-google-scholar" style="font-size: 2.5em; color: white;"></i>
-        </a>
-        <a href="https://github.com/comphy-lab" target="_blank" rel="noopener noreferrer" aria-label="GitHub Organization">
-          <i class="fa-brands fa-github" style="font-size: 2.5em; color: white;"></i>
-        </a>
-        <a href="https://www.youtube.com/@CoMPhyLab" target="_blank" rel="noopener noreferrer" aria-label="YouTube Channel">
-          <i class="fa-brands fa-youtube" style="font-size: 2.5em; color: white;"></i>
-        </a>
-        <a href="https://x.com/VatsalSanjay" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter) Profile">
-          <i class="fa-brands fa-x-twitter" style="font-size: 2.5em; color: white;"></i>
-        </a>
-        <a href="https://bsky.app/profile/comphy-lab.org" target="_blank" rel="noopener noreferrer" aria-label="Bluesky Profile">
-          <i class="fa-brands fa-bluesky" style="font-size: 2.5em; color: white;"></i>
-        </a>
-        <a href="https://github.com/comphy-lab/comphy-lab.github.io" class="edit-link" aria-label="Edit this page on GitHub">
-          <i class="fa-brands fa-github"></i> Edit this page
-        </a>
-      </div>
-      <div class="ss-go-top">
-        <a class="smoothscroll" title="Back to Top" href="#top" aria-label="Back to top of page">
-            <i class="fa-solid fa-arrow-up"></i>
-         </a>
-      </div> <!-- end ss-go-top -->
-    </footer>
-  </div>
+  <!-- =========================================================
+       Flat paper list. _research/index.md body (tag filter row,
+       chronological h3 list with badges, iframes etc.) is
+       preserved unchanged — only the surrounding chrome is new.
+       ========================================================= -->
+  <section class="r-full" id="all-papers">
+    <div class="r-full__head">
+      <p class="r-full__num">02 · Full list</p>
+      <h2 class="r-full__title">All publications</h2>
+      <p class="r-full__sub">Most recent first. Tags filter the list.</p>
+    </div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Generate table of contents
-      const tocList = document.querySelector('.toc-list');
-      const headings = document.querySelectorAll('.research-content h2');
-      const tocEntries = [];
+    <div class="research-layout">
+      <aside class="toc-sidebar">
+        <nav class="toc-nav" aria-label="Years">
+          <h3>Contents</h3>
+          <ul class="toc-list">
+            <!-- populated by JS below -->
+          </ul>
+        </nav>
+      </aside>
 
-      // Create TOC entries
-      headings.forEach((heading, index) => {
-        if (!heading.id) {
-          heading.id = `section-${index}`;
-        }
+      <div class="research-content markdown-content">
+        {% capture lazy_img %}<img loading="lazy" decoding="async" onload="this.classList.add('loaded')"{% endcapture %}
+        {% assign content_with_lazy = content | replace: '<img', lazy_img %}
+        {% capture lazy_iframe %}<div class="video-container"><iframe loading="lazy"{% endcapture %}
+        {% assign content_with_video = content_with_lazy | replace: '<iframe', lazy_iframe | replace: '</iframe>', '</iframe></div>' %}
+        {{ content_with_video }}
+      </div>
+    </div>
+  </section>
 
-        const li = document.createElement('li');
-        const a = document.createElement('a');
-        a.href = `#${heading.id}`;
+</main>
+
+<script>
+  /* =========================================================
+     Research page runtime:
+       1. TOC sidebar + IntersectionObserver active-link.
+       2. Wrap each h3 + its siblings in a .paper-container so
+          tags can show/hide individual papers.
+       3. Tag-filter click/keyboard handlers + ?tag= URL sync.
+     All three scoped to .research-content inside .r-full.
+     ========================================================= */
+  document.addEventListener('DOMContentLoaded', function () {
+    var researchContent = document.querySelector('.research-content');
+    if (!researchContent) return;
+
+    /* --- 1. TOC ------------------------------------------- */
+    var tocList = document.querySelector('.toc-list');
+    var h2s = researchContent.querySelectorAll('h2');
+    if (tocList && h2s.length) {
+      var tocEntries = [];
+      h2s.forEach(function (heading, idx) {
+        if (!heading.id) heading.id = 'section-' + idx;
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = '#' + heading.id;
         a.textContent = heading.textContent;
         li.appendChild(a);
         tocList.appendChild(li);
-        tocEntries.push({ element: heading, link: a });
+        tocEntries.push({ el: heading, link: a });
       });
-
-      // Optimize intersection observer for headings
-      const observerCallback = (entries) => {
-        entries.forEach(entry => {
-          const index = Array.from(headings).indexOf(entry.target);
-          if (index >= 0 && tocEntries[index]) {
-            const link = tocEntries[index].link;
-            if (entry.isIntersecting) {
-              tocEntries.forEach(item => item.link.classList.remove('active'));
-              link.classList.add('active');
-            }
-          }
-        });
-      };
-
-      const observerOptions = {
-        root: null,
-        rootMargin: '-100px 0px -66%',
-        threshold: [0, 0.25, 0.5, 0.75, 1]
-      };
-
-      const headingObserver = new IntersectionObserver(observerCallback, observerOptions);
-      headings.forEach(heading => headingObserver.observe(heading));
-
-      // Optimize smooth scroll behavior
-      tocList.addEventListener('click', (e) => {
-        if (e.target.tagName === 'A') {
-          e.preventDefault();
-          const targetId = e.target.getAttribute('href').slice(1);
-          const targetElement = document.getElementById(targetId);
-          
-          if (targetElement) {
-            const header = document.querySelector('.s-header');
-            const headerHeight = header ? header.offsetHeight : 0;
-            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
-            
-            window.scrollTo({
-              top: targetPosition,
-              behavior: 'smooth'
-            });
-          }
-        }
-      });
-
-      // Optimize paper containers
-      const researchContent = document.querySelector('.research-content');
-      if (researchContent) {
-        const h3Elements = researchContent.querySelectorAll('h3');
-        
-        h3Elements.forEach((h3) => {
-          const container = document.createElement('div');
-          container.className = 'paper-container';
-          
-          if (h3.id) {
-            container.id = h3.id;
-            h3.removeAttribute('id');
-          }
-          
-          h3.parentNode.insertBefore(container, h3);
-          container.appendChild(h3);
-          
-          let currentElement = container.nextSibling;
-          while (currentElement && 
-                 !(currentElement.tagName === 'H3' || currentElement.tagName === 'H2')) {
-            const nextElement = currentElement.nextSibling;
-            container.appendChild(currentElement);
-            currentElement = nextElement;
-          }
-        });
-
-        // Handle inline badges
-        const paragraphs = researchContent.getElementsByTagName('p');
-        for (let p of paragraphs) {
-          const badges = p.querySelectorAll('a[href*="arxiv.org"], a[href*="github.com"], a[href*="blogs.comphy-lab.org"]');
-          if (badges.length > 0) {
-            const badgeContainer = document.createElement('span');
-            badgeContainer.className = 'badge-container';
-            
-            // Preserve non-badge content without reparsing it as HTML
-            const nonBadgeNodes = [];
-            let hasNonBadgeContent = false;
-            
-            // First pass: collect all non-badge content
-            for (let node of p.childNodes) {
-              if (node.nodeType === 3) { // Text node
-                if (node.textContent.trim()) {
-                  nonBadgeNodes.push(document.createTextNode(node.textContent));
-                  hasNonBadgeContent = true;
-                }
-              } else if (node.nodeType === 1) { // Element node
-                const href = node.getAttribute('href');
-                if (!href || (!href.includes('arxiv.org') && !href.includes('github.com') && !href.includes('blogs.comphy-lab.org'))) {
-                  nonBadgeNodes.push(node.cloneNode(true));
-                  hasNonBadgeContent = true;
-                }
-              }
-            }
-            
-            // Clear the paragraph
-            p.replaceChildren();
-            
-            // Add back the text content if it exists
-            if (hasNonBadgeContent) {
-              const textSpan = document.createElement('span');
-              nonBadgeNodes.forEach((node) => {
-                textSpan.appendChild(node);
-              });
-              p.appendChild(textSpan);
-            }
-            
-            // Add the badges
-            badges.forEach(badge => {
-              badgeContainer.appendChild(badge.cloneNode(true));
-            });
-            
-            p.appendChild(badgeContainer);
-          }
-        }
-
-        // Handle tag filtering
-        const allTags = document.querySelectorAll('.tags span');
-        const paperContainers = document.querySelectorAll('.paper-container');
-        let activeTag = null;
-
-        // Check URL for tag parameter
-        const urlParams = new URLSearchParams(window.location.search);
-        const tagFromUrl = urlParams.get('tag');
-
-        // Function to highlight matching tags
-        const updateMatchingTags = (tagText, shouldHighlight) => {
-          document.querySelectorAll('.tags span').forEach(tag => {
-            if (tag.textContent === tagText) {
-              // First remove any active class
-              tag.classList.remove('active');
-              // Then add it back if needed
-              if (shouldHighlight) {
-                tag.classList.add('active');
-              }
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (items) {
+          items.forEach(function (item) {
+            var idx = Array.from(h2s).indexOf(item.target);
+            if (idx < 0) return;
+            if (item.isIntersecting) {
+              tocEntries.forEach(function (e) { e.link.classList.remove('active'); });
+              tocEntries[idx].link.classList.add('active');
             }
           });
-        };
+        }, { root: null, rootMargin: '-100px 0px -66%', threshold: [0, 0.5, 1] });
+        h2s.forEach(function (h) { io.observe(h); });
+      }
+    }
 
-        // Restore click handlers for client-side filtering
-        allTags.forEach(tag => {
-          tag.addEventListener('click', () => {
-            const tagText = tag.textContent;
-            
-            // If clicking the active tag, deactivate it
-            if (activeTag === tagText) {
-              activeTag = null;
-              // Remove active class from all tags
-              allTags.forEach(t => t.classList.remove('active'));
-              paperContainers.forEach(container => {
-                container.classList.remove('hidden');
-              });
-              history.pushState({}, '', window.location.pathname);
-              return;
-            }
-
-            // Update active tag
-            activeTag = tagText;
-            // Remove active class from all tags
-            allTags.forEach(t => t.classList.remove('active'));
-            // Add active class to matching tags
-            updateMatchingTags(tagText, true);
-
-            // Update URL
-            history.pushState({}, '', `?tag=${encodeURIComponent(tagText)}`);
-
-            // Filter papers
-            paperContainers.forEach(container => {
-              const containerTags = container.querySelector('.tags');
-              if (containerTags && containerTags.textContent.includes(tagText)) {
-                container.classList.remove('hidden');
-              } else {
-                container.classList.add('hidden');
-              }
-            });
-          });
-        });
-
-        // Handle filter note if present (for pre-built pages)
-        const filterNote = document.querySelector('.filter-note');
-        if (filterNote) {
-          const clearFilterLink = filterNote.querySelector('a');
-          if (clearFilterLink) {
-            clearFilterLink.addEventListener('click', (e) => {
-              e.preventDefault();
-              window.location.href = '/research/';
-            });
-          }
-        }
-        
-        // Apply filter from URL if present
-        if (tagFromUrl) {
-          const matchingTag = Array.from(allTags).find(tag => tag.textContent === tagFromUrl);
-          if (matchingTag) {
-            matchingTag.click();
-          }
-        }
+    /* --- 2. Wrap each paper (h3 + siblings) in a
+           .paper-container div so we can hide/show them as a
+           unit during filtering. ------------------------------ */
+    var h3s = researchContent.querySelectorAll('h3');
+    h3s.forEach(function (h3) {
+      var container = document.createElement('div');
+      container.className = 'paper-container';
+      if (h3.id) {
+        container.id = h3.id;
+        h3.removeAttribute('id');
+      }
+      h3.parentNode.insertBefore(container, h3);
+      container.appendChild(h3);
+      var cursor = container.nextSibling;
+      while (cursor && !(cursor.tagName === 'H3' || cursor.tagName === 'H2')) {
+        var next = cursor.nextSibling;
+        container.appendChild(cursor);
+        cursor = next;
       }
     });
-  </script>
-  
-  <!-- Command Palette -->
-  <div id="simple-command-palette" class="simple-command-palette" style="display: none;">
-    <div class="simple-command-palette-backdrop"></div>
-    <div class="simple-command-palette-modal">
-      <input type="text" id="command-palette-input" placeholder="Type a command..." autocomplete="off">
-      <div id="command-palette-results" class="command-palette-results"></div>
-      <div class="command-palette-footer">
-        <span class="command-palette-footer-item"><kbd>↑</kbd> <kbd>↓</kbd> to navigate</span>
-        <span class="command-palette-footer-item"><kbd>enter</kbd> to select</span>
-        <span class="command-palette-footer-item"><kbd>esc</kbd> to close</span>
-      </div>
-    </div>
-  </div>
 
-  <!-- Command palette functionality is now implemented in command-palette.js -->
-</body>
-</html>
+    /* --- 3. Tag filter ------------------------------------- */
+    var allTags = researchContent.querySelectorAll('.tags span');
+    var themeTags = document.querySelectorAll('.r-theme__tag[data-filter-tag]');
+    var tagControls = Array.from(allTags).concat(Array.from(themeTags));
+    var papers = researchContent.querySelectorAll('.paper-container');
+    var activeTag = null;
+
+    function getTagText(control) {
+      return control.getAttribute('data-filter-tag') || control.textContent;
+    }
+
+    function setActive(tagText) {
+      tagControls.forEach(function (t) {
+        t.classList.toggle('active', getTagText(t) === tagText);
+      });
+    }
+
+    function updateUrl(tagText, replace) {
+      if (!history.pushState || !history.replaceState) return;
+      var url = window.location.pathname;
+      if (tagText) url += '?tag=' + encodeURIComponent(tagText);
+      history[replace ? 'replaceState' : 'pushState']({}, '', url);
+    }
+
+    function clearFilter(options) {
+      options = options || {};
+      activeTag = null;
+      tagControls.forEach(function (t) { t.classList.remove('active'); });
+      papers.forEach(function (p) { p.classList.remove('hidden'); });
+      if (!options.skipUrl) updateUrl(null, options.replace);
+    }
+
+    function applyFilter(tagText, options) {
+      options = options || {};
+      activeTag = tagText;
+      setActive(tagText);
+      papers.forEach(function (p) {
+        var tagsEl = p.querySelector('.tags');
+        var match = tagsEl && Array.from(tagsEl.querySelectorAll('span'))
+          .some(function (s) { return s.textContent === tagText; });
+        p.classList.toggle('hidden', !match);
+      });
+      if (!options.skipUrl) updateUrl(tagText, options.replace);
+    }
+
+    function activateTag(control, options) {
+      var text = getTagText(control);
+      if (activeTag === text) clearFilter(options);
+      else applyFilter(text, options);
+    }
+
+    function bindTagControl(control) {
+      control.addEventListener('click', function () {
+        activateTag(control);
+      });
+      if (control.tagName !== 'BUTTON') {
+        control.setAttribute('role', 'button');
+        control.setAttribute('tabindex', '0');
+        control.addEventListener('keydown', function (event) {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            activateTag(control);
+          }
+        });
+      }
+    }
+
+    tagControls.forEach(bindTagControl);
+
+    function syncFilterFromUrl(options) {
+      options = options || {};
+      var params = new URLSearchParams(window.location.search);
+      var tagFromUrl = params.get('tag');
+      if (!tagFromUrl) {
+        clearFilter({ skipUrl: true });
+        return;
+      }
+      var match = tagControls.find(function (control) {
+        return getTagText(control) === tagFromUrl;
+      });
+      if (match) applyFilter(tagFromUrl, options);
+      else clearFilter(options);
+    }
+
+    /* --- 4. Apply ?tag= from URL on load / history nav ------ */
+    syncFilterFromUrl({ replace: true });
+    window.addEventListener('popstate', function () {
+      syncFilterFromUrl({ skipUrl: true });
+    });
+  });
+</script>
+<style>
+  /* Hidden paper (filtered out) */
+  .research-content .paper-container.hidden { display: none; }
+  /* Active tag (clicked) gets a teal solid treatment */
+  .research-content .tags span.active,
+  .r-theme__tag.active {
+    background: var(--c-accent-teal);
+    color: var(--c-accent-teal-fg);
+    border-color: var(--c-accent-teal);
+  }
+</style>

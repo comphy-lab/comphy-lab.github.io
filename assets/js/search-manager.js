@@ -205,7 +205,7 @@
           }
         },
         section: "Search Results",
-        icon: '<i class="fa-solid fa-file-lines"></i>',
+        icon: "<i class=\"fa-solid fa-file-lines\"></i>",
         excerpt:
           result.item.excerpt ||
           (result.item.content &&

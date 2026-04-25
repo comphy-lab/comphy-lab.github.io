@@ -1,0 +1,64 @@
+# Homepage hero — rotating above-the-fold visual + PI metadata.
+# Fields are read by index.html.
+
+tagline: >-
+  We study <em>non-Newtonian free-surface flows</em> and
+  <em>soft-matter singularities</em>.
+
+lede: >-
+  A group working at the intersection of applied mathematics, fluid
+  mechanics, and direct numerical simulation. We develop open-source
+  codes and theoretical frameworks for soft-matter phenomena across
+  multiple length and time scales.
+
+pi:
+  name: Vatsal Sanjay
+  role: Assistant Professor
+
+department:
+  name: Physics
+  note: Condensed Matter section
+
+location:
+  name: Durham, UK
+  note: Since July 2025
+
+cta_primary:
+  label: See the research →
+  href: /research
+cta_secondary:
+  label: Join the lab
+  href: /join
+
+# Hero rotator — three recent publications that sell the lab visually.
+# First is the visible default; others fade in every 6.5 s unless
+# prefers-reduced-motion is set.
+#
+# Each entry is EITHER:
+#   src: <image-path>       → rendered as an <img>
+#   youtube: <video-id>     → rendered as an embedded player, muted
+#                              autoplay loop, no controls
+#
+# caption_title + caption_sub float over a dark gradient at the
+# bottom of the panel.
+images:
+  - src: /assets/images/covers/2026-03-SoftMatter_Issue11_cover.jpeg
+    alt: Soft Matter March 2026 cover — impacting spheres.
+    caption_title: Impacting spheres — from drops to elastic beads
+    caption_sub: Jana et al. · <em>Soft Matter</em> 22, 2226 (2026) · cover
+    href: /research#23
+
+  - video: /assets/videos/hero-holeySheets.m4v
+    type: video/mp4
+    alt: >-
+      Basilisk DNS of a draining liquid film rupturing through two
+      distinct mechanisms separated by a critical Ohnesorge number.
+    caption_title: Holes in sheets — double-threshold rupture
+    caption_sub: Dixit et al. · <em>Phys. Rev. Lett.</em> 136, 084001 (2026)
+    href: /research#22
+
+  - src: /assets/images/covers/2025-02-JFM_Vol1004.jpeg
+    alt: JFM Vol 1004 cover — viscosity on drop-impact forces.
+    caption_title: Viscosity &amp; drop-impact forces
+    caption_sub: Sanjay et al. · <em>J. Fluid Mech.</em> 1004, A6 (2025) · cover
+    href: /research#14

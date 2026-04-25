@@ -1,0 +1,426 @@
+# Team roster: Present / Collaborators / Alumni.
+# Consumed by:
+#  - _layouts/team.html (full page)
+#  - index.html (homepage preview — first 6 present entries)
+#
+# Each member:
+#   name, role, affiliation (optional), photo (public URL),
+#   bio (clamped 2 sentences), links (email|scholar|github|site|
+#   bluesky|orcid|wikipedia|linkedin|x).
+#
+# The full prose from _team/index.md stays authoritative in the
+# markdown file; this data file drives the v2 tile layout.
+
+present:
+  - slug: vatsal-sanjay
+    name: Dr. Vatsal Sanjay
+    role: Principal investigator · Assistant Professor
+    affiliation: Durham University
+    photo: /assets/images/team/0.jpg
+    is_pi: true
+    bio: >-
+      DNS of non-Newtonian free-surface flows; PI since 2025.
+      Previously Phys. Fluids, Univ. Twente (2018–25) and IIT Roorkee.
+    links:
+      site: https://vatsalsanjay.com
+      scholar: https://scholar.google.com/citations?user=tHb_qZoAAAAJ&hl=en
+      github: https://github.com/VatsalSy
+      bluesky: https://bsky.app/profile/comphy-lab.org
+      email: mailto:vatsal.sanjay@durham.ac.uk
+
+  - slug: ayush-dixit
+    name: Ayush Dixit M.Sc.
+    role: Ph.D. student · Univ. Twente
+    bio: >-
+      Viscoelastic flows, bursting bubbles, and respiratory drops.
+      Co-advised with Detlef Lohse.
+    photo: /assets/images/team/1.jpg
+    links:
+      scholar: https://scholar.google.com/citations?hl=en&user=ws43SmkAAAAJ
+      github: https://github.com/ayushkumardixit
+
+  - slug: aman-bhargava
+    name: Aman Bhargava M.Sc.
+    role: Ph.D. student · Univ. Twente
+    bio: >-
+      Inertial contact lines and drop retraction on complex surfaces.
+      Co-advised with Detlef Lohse.
+    photo: /assets/images/team/2.jpg
+    links:
+      scholar: https://scholar.google.com/citations?hl=en&user=AmGOP8gAAAAJ
+      github: https://github.com/amanb1901
+
+  - slug: jnandeep-talukdar
+    name: Jnandeep Talukdar M.Sc.
+    role: Ph.D. student · Univ. Twente
+    bio: >-
+      Surfactant dynamics, dissipative anomaly, soft wetting.
+      KHMW Young Talent Award 2025.
+    photo: /assets/images/team/3.jpg
+    links:
+      scholar: https://scholar.google.com/citations?hl=en&user=Coxj4VQAAAAJ
+      github: https://github.com/spilltheT
+      bluesky: https://bsky.app/profile/jnandeep.bsky.social
+
+  - slug: saumili-jana
+    name: Saumili Jana M.Sc.
+    role: Ph.D. student · Univ. Twente
+    bio: >-
+      Soft impact — liquid drops and elastic beads. First author on
+      the March 2026 Soft Matter cover article.
+    photo: /assets/images/team/4.jpg
+    links:
+      github: https://github.com/SaumiliJana
+
+collaborators:
+  - name: Prof. Detlef Lohse
+    role: Physics of Fluids · Univ. Twente
+    bio: >-
+      Long-running collaboration on drop impact, viscoelastic flows,
+      dissipative anomaly, and electrolysis — co-author on 10+ papers.
+    links:
+      scholar: https://scholar.google.com/citations?user=WvP_pIUAAAAJ
+
+  - name: Prof. Jacco Snoeijer
+    role: Physics of Fluids · Univ. Twente
+    bio: >-
+      Elastic sheets, viscoelasticity vs. elasticity, surfactant
+      dynamics, spinning pizza.
+    links:
+      scholar: https://scholar.google.com/citations?user=7qdux_4AAAAJ&hl=nl
+
+  - name: Prof. Dominik Krug
+    role: RWTH Aachen University
+    bio: >-
+      Electrolysis, bubble coalescence, swimming bubbles. Joint
+      Nat. Commun. paper (2025) on H₂-bubble electrolyte spraying.
+    links:
+      scholar: https://scholar.google.com/citations?user=qGEpq7IAAAAJ&hl=en
+
+  - name: Dr. Maziyar (Mazi) Jalaal
+    role: Fluid Lab · Univ. Amsterdam
+    bio: >-
+      Plastocapillarity and viscoplastic flows. Co-author on the
+      viscoplastic bubble-bursting and EVP-medium papers.
+    links:
+      scholar: https://scholar.google.com/citations?user=FE8TQeUAAAAJ
+
+  - name: Dr. John Kolinski
+    role: EPFL · Engineering Mechanics
+    bio: >-
+      Experimental validation of impact regimes; soft impact of
+      elastic beads. Hosts regular Lausanne visits.
+    links:
+      scholar: https://scholar.google.com/citations?user=BDzF8kMAAAAJ
+
+  - name: Prof. Stéphane Zaleski
+    role: Sorbonne · d'Alembert
+    bio: >-
+      Holey sheets and numerical methods for non-Newtonian fluids in
+      Basilisk. Co-supervises Ayush Dixit.
+    links:
+      scholar: https://scholar.google.com/citations?hl=en&user=no1GX_QAAAAJ
+
+  - name: Prof. Gareth McKinley
+    role: MIT · NNF Group
+    bio: >-
+      Die-swelling and viscoelastic flows; long-running collaboration
+      on non-Newtonian rheology.
+    links:
+      scholar: https://scholar.google.com/citations?user=uLxFfGkAAAAJ
+
+  - name: Dr. Doris Vollmer
+    role: MPI-P · Mainz
+    bio: >-
+      Contact line, drop impact, superhydrophobic surfaces — the
+      experimental counterpart to our DNS of receding contact angles.
+    links:
+      orcid: https://orcid.org/0000-0001-9599-5589
+
+  - name: Dr. Uddalok (Udo) Sen
+    role: PhySM · Wageningen Univ. & Research
+    bio: >-
+      Drop impact and sheet retraction experiments.
+    links:
+      scholar: https://scholar.google.com/citations?user=a6h2uMQAAAAJ
+
+  - name: Adj. Prof. Alvaro Marin
+    role: Physics of Fluids · Univ. Twente
+    bio: >-
+      Colloidal systems, evaporation, and shell formation inside
+      evaporating droplets.
+    links:
+      scholar: https://scholar.google.com/citations?user=0_jOqqkAAAAJ
+
+  - name: Dr. Christian Diddens
+    role: Physics of Fluids · Univ. Twente
+    bio: >-
+      Surfactant dynamics in free-surface flows, dissipative anomaly,
+      sliding drops. Developer of pyoomph.
+    links:
+      scholar: https://scholar.google.com/citations?user=3QSyucwAAAAJ
+
+  - name: Dr. C. Ricardo Constante-Amores
+    role: Univ. Illinois Urbana-Champaign
+    bio: >-
+      Non-Newtonian flows, bubble bursting, Herschel–Bulkley fluids,
+      elastic coating.
+    links:
+      scholar: https://scholar.google.com/citations?user=ncqnphMAAAAJ
+
+  - name: Dr. Radu Cimpeanu
+    role: Univ. Warwick
+    bio: >-
+      Open-source code development and non-coalescence impacts.
+    links:
+      scholar: https://scholar.google.com/citations?user=6grZnhQAAAAJ
+
+  - name: Dr. Jie Feng
+    role: Univ. Illinois Urbana-Champaign
+    bio: >-
+      Elastic coating and bursting-bubble experiments.
+    links:
+      scholar: https://scholar.google.com/citations?user=226dDBAAAAAJ
+
+  - name: Prof. Omar Matar
+    role: Imperial College London
+    bio: >-
+      Surfactant dynamics and viscoelastic drop impact.
+    links:
+      scholar: https://scholar.google.com/citations?user=mLXz_NAAAAAJ
+
+  - name: Dr. Ratul Dasgupta
+    role: IIT Bombay
+    bio: >-
+      Waves and dissipative anomaly in two-phase flow.
+    links:
+      scholar: https://scholar.google.com/citations?user=I1jFG_oAAAAJ
+
+  - name: Prof. Eric Lauga
+    role: DAMTP · Univ. Cambridge
+    bio: >-
+      Mycofluidic transport — fluid dynamics inside fungal networks.
+    links:
+      scholar: https://scholar.google.com/citations?user=5ObY7hsAAAAJ
+
+  - name: Dr. Saikat Datta
+    role: Swansea University
+    bio: >-
+      Multiscale simulation, ice nucleation and removal, hydrogen
+      storage.
+    links:
+      scholar: https://scholar.google.com/citations?user=o4mXtIgAAAAJ
+
+  - name: Dr. Pierre Chantelot
+    role: Institut Langevin, ESPCI Paris
+    bio: >-
+      Drop-impact experiments; co-author on the bouncing-drop and
+      viscous-film impact papers.
+    links:
+      scholar: https://scholar.google.nl/citations?user=BQWXUKYAAAAJ
+
+  - name: Dr. Aleksandr Bashkatov
+    role: RWTH Aachen University
+    bio: >-
+      Electrolysis, bubble coalescence, swimming bubbles — co-author
+      on the Nat. Commun. H₂-bubble spraying paper.
+    links:
+      scholar: https://scholar.google.com/citations?user=9_vPSFsAAAAJ
+
+  - name: Dr. Vincent Bertin
+    role: Univ. Aix-Marseille
+    bio: >-
+      Elastic sheets and spinning-pizza dynamics.
+    links:
+      scholar: https://scholar.google.com/citations?user=jO_RTLR2xBYC
+
+  - name: Dr. Alexandros Oratis
+    role: TU Delft
+    bio: >-
+      Electrolysis, bubble coalescence, swimming bubbles. Recent
+      co-author on the Worthington-jet viscoelasticity paper.
+    links:
+      scholar: https://scholar.google.com/citations?user=2lOr8WQAAAAJ
+
+  - name: Arivazhagan (Ari) Balasubramanian M.Sc.
+    role: KTH Sweden · Ph.D. student
+    bio: >-
+      Elastoviscoplastic flows and bursting bubbles. First author of
+      the JFM 2024 bursting-bubble cover article.
+    links:
+      scholar: https://scholar.google.com/citations?user=xyheRZ8AAAAJ
+      github: https://github.com/GbArivazhagan
+
+  - name: Dr. Konstantinos (Costis) Zinelis
+    role: MIT · QI Group
+    bio: >-
+      Viscoelastic flows and drop impact; co-author on the
+      Worthington-jet JFM paper.
+    links:
+      scholar: https://scholar.google.com/citations?user=dZrR_z8AAAAJ
+
+  - name: Prof. Kislon Voïtchovsky
+    role: Durham University · Physics
+    bio: >-
+      Interfacial soft matter and wafer bonding — local Durham
+      collaboration on solid–liquid interfaces.
+    links:
+      scholar: https://scholar.google.com/citations?user=fvDnDZIAAAAJ&hl=en
+
+  - name: Prof. Elizabeth (Beth) Bromley
+    role: Durham University · Physics
+    bio: >-
+      Where Langmuir–Blodgett meets Landau–Levich plate
+      withdrawal — biomolecular thin-film interfaces.
+    links:
+      scholar: https://scholar.google.com/citations?user=7RdlkQMAAAAJ&hl=en
+
+alumni:
+  - name: Peter Croxford
+    role: "MPhys project · Durham 2026"
+    bio: >-
+      Finished his MPhys project on Bretherton drops and bubbles in
+      April 2026 — the first undergraduate researcher at the Durham
+      location.
+    links:
+      github: https://github.com/PCrox
+
+  - name: Floris Hoek M.Sc.
+    role: "M.Sc. 2026 · Univ. Twente"
+    bio: >-
+      Colloidal shell formation inside an evaporating droplet.
+    thesis:
+      title: Colloidal shell formation inside an evaporating droplet
+      href: https://bit.ly/thesisFloris
+    links:
+      github: https://github.com/Floris-Hoek
+
+  - name: Mark Boulogne M.Sc.
+    role: "M.Sc. 2026 · Univ. Twente"
+    bio: >-
+      Droplets and bubbles spreading on liquid-infused surfaces.
+    thesis:
+      title: Droplets and bubbles spreading on liquid-infused surfaces
+      href: https://bit.ly/thesisMark
+    links:
+      github: https://github.com/mcboulogne
+
+  - name: Milan Sent B.Sc.
+    role: "B.Sc. 2025 → M.Sc. Applied Physics, Univ. Twente"
+    bio: >-
+      Spinning pizza — instabilities on a rotating disk of complex
+      fluid.
+    thesis:
+      title: Spinning Pizza
+      href: https://tinyurl.com/2ycunjcr
+    links:
+      github: https://github.com/mdjsent
+
+  - name: Valentin Rosario M.Sc.
+    role: "M.Sc. 2024 → Ph.D. Leiden"
+    bio: >-
+      Modelling the Ward–Hunt ice-shelf as a viscoelastic solid.
+    thesis:
+      title: Modelling the Ward–Hunt ice-shelf as a viscoelastic solid
+      href: https://tinyurl.com/2cjsjvr4
+    links:
+      github: https://github.com/ValeRos9
+      linkedin: https://www.linkedin.com/in/valentin-rosario-6377602b2/
+
+  - name: Swen van den Heuvel M.Sc.
+    role: "M.Sc. 2023 → Ph.D. Phys. Fluids Univ. Twente"
+    bio: >-
+      Hydrodynamic forces acting on vertically rising bubbles.
+    thesis:
+      title: Hydrodynamic forces acting on vertically rising bubbles
+      href: https://bit.ly/4er5VaH
+    links:
+      linkedin: https://www.linkedin.com/in/swen-van-den-heuvel-33a1901aa/
+
+  - name: Niels Kuipers B.Sc.
+    role: "B.Sc. 2023 → M.Sc. Adv. Technology, Univ. Twente"
+    bio: >-
+      Partial coalescence of drops on viscous films.
+    thesis:
+      title: Partial coalescence of drops on viscous films
+      href: https://tinyurl.com/258jvdyv
+    links:
+      linkedin: https://www.linkedin.com/in/nielskuipers1/
+
+  - name: C. H. (Luuk) Maurits M.Sc.
+    role: "M.Sc. 2023 · Univ. Twente"
+    bio: >-
+      When Laplace meets Marangoni — surface-tension gradients in
+      evaporating liquid pools.
+    thesis:
+      title: When Laplace meets Marangoni
+      href: https://bit.ly/ThesisLuuk
+
+  - name: Tom Appleford M.Sc.
+    role: "M.Sc. 2022 → Ph.D. Fluid Lab, Univ. Amsterdam"
+    bio: >-
+      The deformation of a droplet in a viscoplastic simple shear
+      flow. Now a co-author on the dilute-emulsions paper.
+    thesis:
+      title: The deformation of a droplet in a viscoplastic simple shear flow
+      href: https://bit.ly/ThesisTom
+
+  - name: Twan Heijink B.Sc.
+    role: "B.Sc. 2021 · Saxion Univ. → Software IVQA Engineer, Thales"
+    bio: >-
+      Standing waves at a fluid-fluid interface with plastocapillarity.
+    thesis:
+      title: Standing waves at a fluid-fluid interface with plastocapillarity
+      href: https://bit.ly/ThesisTwanHeijink
+    links:
+      linkedin: https://www.linkedin.com/in/twanheijink/
+
+  - name: Steven Meuleman M.Sc.
+    role: "B.Sc. 2020 · Univ. Twente → Mechanical Engineer, VIRO"
+    bio: >-
+      Simulations of foam generation for a custom axisymmetric
+      core-shell nozzle.
+    thesis:
+      title: Simulations of foam generation for a custom axisymmetric core-shell nozzle
+      href: https://bit.ly/ThesisStevenM
+    links:
+      linkedin: https://www.linkedin.com/in/steven-meuleman/
+
+  - name: Thijmen Kroeze M.Sc.
+    role: "B.Sc. 2020 · Univ. Twente → CFD Engineer, Brink Climate Systems"
+    bio: >-
+      Singular jet dynamics of drop impacts at high Bond numbers.
+    thesis:
+      title: Singular jet dynamics of drop impacts at high Bond numbers
+      href: https://bit.ly/ThesisThijmenKroeze
+    links:
+      linkedin: https://www.linkedin.com/in/thijmen-kroeze-535aa3207/
+
+  - name: Coen Verschuur M.Sc.
+    role: "B.Sc. 2020 → Ph.D. Phys. Fluids Univ. Twente"
+    bio: >-
+      Early time dynamics in immiscible drop impacts.
+    thesis:
+      title: Early time dynamics in immiscible drop impacts
+      href: https://bit.ly/ThesisCoenVerschuur
+
+  - name: Dr. Pim J. Dekker
+    role: "B.Sc. 2019 · Univ. Twente → Researcher, Applied Physics Univ. Twente"
+    bio: >-
+      Spreading of a drop on a water-air interface.
+    thesis:
+      title: Spreading of a drop on a water-air interface
+      href: https://bit.ly/ThesisPimDekker
+    links:
+      linkedin: https://www.linkedin.com/in/pim-dekker/
+
+  - name: Laurence Bruggink M.Sc.
+    role: "B.Sc. 2019 · Univ. Twente → Research Engineer, Alfen"
+    bio: >-
+      Bursting bubble in a Herschel–Bulkley fluid — an early pillar
+      of the viscoplastic bubble-bursting programme.
+    thesis:
+      title: Bursting bubble in a Herschel–Bulkley fluid
+      href: https://bit.ly/ThesisLaurenceBruggink
+    links:
+      linkedin: https://www.linkedin.com/in/laurence-bruggink-b733b222a/

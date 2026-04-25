@@ -2,74 +2,311 @@
 layout: default
 title: "Home"
 permalink: /
+body_class: home-v2
+description: >-
+  Computational Multiphase Physics Lab — DNS of non-Newtonian
+  free-surface flows and soft-matter singularities at Durham University.
 ---
 
-<section id="intro" class="s-intro target-section">
-  <div class="s-intro__bg"></div>
-  <div class="row s-intro__content">
-    <div class="column">
-      <div class="s-intro__content-top">
-        <div class="s-intro__social-icons">
-          <a href="https://orcid.org/0000-0002-4293-6099" aria-label="ORCID profile">
-            <i class="ai ai-orcid s-intro__icon s-intro__icon--orcid"></i>
-          </a>
-          <a href="https://github.com/comphy-lab" aria-label="GitHub organisation">
-            <i class="fa-brands fa-github s-intro__icon s-intro__icon--github"></i>
-          </a>
-          <a href="https://scholar.google.com/citations?user=tHb_qZoAAAAJ&hl=en" aria-label="Google Scholar profile">
-            <i class="ai ai-google-scholar s-intro__icon s-intro__icon--scholar"></i>
-          </a>
-        </div>
-        <h1 class="s-intro__title">
-          Computational Multiphase <br>
-          Physics (CoMPhy) Lab
-        </h1>
-        <div class="s-intro__caption">
-          <p>Picture: <a href="/research/#7">Worthington jet</a> formed due to bursting bubble.</p>
-        </div>
-        <div class="s-intro__subtitle">
-          <a href="#featured-wrapper" class="smoothscroll s-intro__cta-btn">
-            Featured Research
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+{% assign hero = site.data.hero %}
+{% assign themes_data = site.data.research_themes %}
+{% assign news_items = site.data.news.items %}
+{% assign team = site.data.team %}
 
-<section id="about" class="s-about target-section">
-  <div class="row s-about__content" data-animate-block>
-    <div class="s-about__grid">
-      <div class="s-about__left">
-        <div id="about-content" class="s-about__desc" data-animate-el>
-          <!-- Markdown content will be loaded here -->
-        </div>
-      </div>
-      <div class="s-about__right">
-        <div class="s-about__social" data-animate-el>
-          <div class="s-about__social-header">
-            <i class="fa-solid fa-newspaper s-about__news-icon"></i>
-            <h3 class="news-header">News</h3>
-          </div>
-          <div id="news-content" class="s-about__desc" data-animate-el>
-            <!-- News content will be loaded here -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- Visually-hidden SEO anchor: legacy lab name string preserved. -->
+<h1 class="visually-hidden">Computational Multiphase Physics Laboratory</h1>
 
-<div id="featured-wrapper" class="s-featured-wrapper">
-  <div class="s-featured-wrapper__inner">
-    <div class="s-featured-wrapper__header">
-      <h2 class="s-featured-wrapper__title">Featured Research</h2>
-      <div class="s-featured-wrapper__rule"></div>
-    </div>
-    <div class="featured-item" data-animate-el>
-      <div class="featured-item__image">
-        <!-- Featured papers will be loaded here by JavaScript -->
+<main class="home-wrap" id="home">
+
+  <!-- =========================================================
+       1. HERO
+       ========================================================= -->
+  <section class="hero" aria-labelledby="hero-sentence">
+    <div class="hero__grid">
+      <div class="hero__left">
+        <p class="hero__kicker">
+          <span class="dot" aria-hidden="true"></span>
+          <span>A research group · Durham University · Department of Physics</span>
+          <span class="rule" aria-hidden="true"></span>
+        </p>
+
+        <div class="hero__wordmark-line">
+          <span class="hero__wordmark">CoMPhy Lab</span>
+          <span class="hero__wordmark-rest">Computational Multiphase Physics</span>
+        </div>
+
+        <p id="hero-sentence" class="hero__sentence">{{ hero.tagline }}</p>
+
+        <p class="hero__lede">{{ hero.lede }}</p>
+
+        <dl class="hero__meta">
+          <div>
+            <dt>Principal investigator</dt>
+            <dd>{{ hero.pi.name }} <small>{{ hero.pi.role }}</small></dd>
+          </div>
+          <div>
+            <dt>Department</dt>
+            <dd>{{ hero.department.name }} <small>{{ hero.department.note }}</small></dd>
+          </div>
+          <div>
+            <dt>Location</dt>
+            <dd>{{ hero.location.name }} <small>{{ hero.location.note }}</small></dd>
+          </div>
+        </dl>
+
+        <div class="hero__ctas">
+          <a class="btn" href="{{ hero.cta_primary.href }}">{{ hero.cta_primary.label }}</a>
+          <a class="btn-ghost" href="{{ hero.cta_secondary.href }}">{{ hero.cta_secondary.label }}</a>
+        </div>
+      </div>
+
+      <div class="hero__media" aria-label="Rotating figures from recent lab work">
+        {% for img in hero.images %}
+          {% assign is_motion = false %}
+          {% if img.video or img.youtube %}{% assign is_motion = true %}{% endif %}
+          <figure class="hero__slide hero__slide--{% if is_motion %}motion{% else %}still{% endif %}"
+                  data-active="{% if forloop.first %}true{% else %}false{% endif %}"
+                  aria-hidden="{% if forloop.first %}false{% else %}true{% endif %}"
+                  {% unless forloop.first %}inert{% endunless %}>
+            <div class="hero__image-well">
+              {% if img.video %}
+                <video autoplay muted loop playsinline preload="metadata"
+                       aria-label="{{ img.alt }}">
+                  <source src="{{ img.video }}" type="{{ img.type | default: 'video/mp4' }}" />
+                </video>
+              {% elsif img.youtube %}
+                <iframe
+                  src="https://www.youtube-nocookie.com/embed/{{ img.youtube }}?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist={{ img.youtube }}&amp;controls=0&amp;modestbranding=1&amp;rel=0&amp;playsinline=1&amp;iv_load_policy=3"
+                  title="{{ img.alt }}"
+                  frameborder="0"
+                  allow="autoplay; encrypted-media; picture-in-picture"
+                  allowfullscreen
+                  loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"></iframe>
+              {% else %}
+                <img src="{{ img.src }}" alt="{{ img.alt }}"
+                     loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
+                     decoding="async"
+                     {% if forloop.first %}fetchpriority="high"{% endif %} />
+              {% endif %}
+            </div>
+
+            <figcaption class="hero__caption-panel">
+              <span class="hero__caption-eyebrow">Featured work</span>
+              <b class="hero__caption-title">{{ img.caption_title }}</b>
+              <span class="hero__caption-sub">{{ img.caption_sub }}</span>{%- comment -%} caption_sub may contain <em> for journal names; it's author-curated content, safe to render as HTML. {%- endcomment -%}
+              {% if img.href %}
+                <a class="hero__caption-link" href="{{ img.href }}">Read the paper ↗</a>
+              {% endif %}
+            </figcaption>
+          </figure>
+        {% endfor %}
       </div>
     </div>
-  </div>
-</div>
+
+  </section>
+
+  <!-- =========================================================
+       2. RESEARCH THEMES (incl. "Currently" strip above)
+       ========================================================= -->
+  <section class="home-section" id="research-preview">
+    <div class="c-now" role="note">
+      <span class="c-now__label">{{ themes_data.currently.label }}</span>
+      <p class="c-now__text">{{ themes_data.currently.text }}</p>
+    </div>
+
+    <header class="home-head">
+      <div class="home-head__left">
+        <span class="home-head__num">01 · Research</span>
+        <h2 class="home-head__title">How does soft matter break?</h2>
+        <p class="home-head__sub">
+          Capillary, inertial, viscous, and elastic stresses dictate
+          how drops impact, films rupture, bubbles burst, and jets
+          pinch off.
+        </p>
+      </div>
+      <a class="btn-ghost" href="/research">All 24 papers ↗</a>
+    </header>
+
+    <div class="themes">
+      {% for t in themes_data.themes %}
+      <article class="theme" id="theme-{{ t.slug }}">
+        <div class="theme__figure">
+          {% if t.figure %}
+            <img src="{{ t.figure }}" alt="{{ t.title }} — signature figure" loading="lazy" decoding="async" />
+          {% else %}
+            <div class="theme__figure-placeholder">Figure · {{ t.tag }}</div>
+          {% endif %}
+        </div>
+        <div class="theme__body">
+          <span class="theme__tag">{{ t.num }} · {{ t.tag }}</span>
+          <h3 class="theme__title">{{ t.title }}</h3>
+          <p class="theme__desc">{{ t.description }}</p>
+          <div class="theme__papers">
+            {% for p in t.papers %}
+            <div class="theme__paper">
+              <span class="theme__paper-year">{{ p.year }}</span>
+              <a class="theme__paper-title" href="{{ p.href }}">{{ p.title }}</a>
+              <span class="theme__paper-venue">{{ p.venue }}</span>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- =========================================================
+       3. NEWS (5 most recent items, strict recency)
+       ========================================================= -->
+  <section class="home-section" id="news">
+    <header class="home-head">
+      <div class="home-head__left">
+        <span class="home-head__num">02 · Recent News</span>
+        <h2 class="home-head__title">What's happening in the lab</h2>
+      </div>
+      <a class="btn-ghost" href="/news/">All news ↗</a>
+    </header>
+
+    {% assign sorted_news = news_items | sort: "date" | reverse %}
+
+    <div class="newsfeed">
+      {% for n in sorted_news limit:5 %}
+      {% assign d = n.date | date: "%-d" %}
+      {% assign mo = n.date | date: "%b %y" %}
+      <article class="news-item news-item--{{ n.kind }}" data-kind="{{ n.kind }}">
+        <div class="news-item__date">
+          <span class="news-item__day">{{ d }}</span>
+          <span class="news-item__mo">{{ mo }}</span>
+        </div>
+
+        <div class="news-item__body">
+          {% if n.kind == "paper" %}
+          <div class="news-item__thumb">
+            {% if n.thumb %}<img src="{{ n.thumb }}" alt="" loading="lazy" decoding="async" onerror="this.style.display='none'" />{% endif %}
+          </div>
+          {% else %}
+          <div class="news-item__avatar">{{ n.avatar | default: "·" }}</div>
+          {% endif %}
+          <div>
+            <div class="news-item__kicker">
+              <span class="swatch" aria-hidden="true"></span>
+              {% case n.kind %}
+                {% when "paper" %}Paper
+                {% when "talk" %}Talk
+                {% when "people" %}People
+                {% when "move" %}Announcement
+                {% when "award" %}Award
+              {% endcase %}
+            </div>
+            <h3 class="news-item__title">{{ n.title }}</h3>
+            <p class="news-item__meta">{{ n.meta }}</p>
+          </div>
+        </div>
+
+        <a class="btn-ghost news-item__action" href="{{ n.action_href }}"
+           {% if n.action_href contains "://" %}target="_blank" rel="noopener noreferrer"{% endif %}>
+          {{ n.action_label }}
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- =========================================================
+       4. TEAM preview (first 6 present members)
+       ========================================================= -->
+  <section class="home-section" id="team-preview">
+    <header class="home-head">
+      <div class="home-head__left">
+        <span class="home-head__num">03 · People</span>
+        <h2 class="home-head__title">The people in the room</h2>
+      </div>
+      <a class="btn-ghost" href="/team/">Full roster ↗</a>
+    </header>
+
+    <div class="team-preview">
+      {% for m in team.present limit:6 %}
+      <article class="member {% if m.is_pi %}member--pi{% endif %}">
+        <div class="member__photo">
+          {% if m.photo %}
+            <img src="{{ m.photo }}" alt="Portrait of {{ m.name }}" loading="lazy" decoding="async" />
+          {% else %}
+            {%- comment -%}Strip the longest title prefix first so "Adj. Prof. X" doesn't lose the "Prof. " inside it before "Adj. Prof. " matches.{%- endcomment -%}
+            {%- assign clean = m.name | replace: "Adj. Prof. ", "" | replace: "Prof. ", "" | replace: "Dr. ", "" -%}
+            {%- assign words = clean | split: " " -%}
+            {%- capture initials -%}{%- for w in words limit: 2 -%}{{ w | slice: 0, 1 -}}{%- endfor -%}{%- endcapture -%}
+            {{ initials | upcase }}
+          {% endif %}
+        </div>
+        <div>
+          <p class="member__name">{{ m.name }}</p>
+          <div class="member__role">{{ m.role }}</div>
+        </div>
+        <p class="member__bio">{{ m.bio }}</p>
+        <div class="member__links">
+          {% if m.links.email %}<a href="{{ m.links.email }}" title="Email" aria-label="Email {{ m.name }}"><i class="fa-solid fa-envelope"></i></a>{% endif %}
+          {% if m.links.scholar %}<a href="{{ m.links.scholar }}" target="_blank" rel="noopener noreferrer" title="Google Scholar" aria-label="Google Scholar profile"><i class="ai ai-google-scholar"></i></a>{% endif %}
+          {% if m.links.github %}<a href="{{ m.links.github }}" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub profile"><i class="fa-brands fa-github"></i></a>{% endif %}
+          {% if m.links.bluesky %}<a href="{{ m.links.bluesky }}" target="_blank" rel="noopener noreferrer" title="Bluesky" aria-label="Bluesky profile"><i class="fa-brands fa-bluesky"></i></a>{% endif %}
+          {% if m.links.site %}<a href="{{ m.links.site }}" target="_blank" rel="noopener noreferrer" title="Personal site" aria-label="Personal website"><i class="fa-solid fa-globe"></i></a>{% endif %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- =========================================================
+       5. Closing CTA — link into /research and /join.
+       ========================================================= -->
+  <aside class="closing-cta" aria-label="Call to action">
+    <div>
+      <h3>Looking for a postdoc, PhD, MSc, or visiting position?</h3>
+      <p>
+        The lab is always recruiting — postdoc fellowships, funded
+        doctoral positions, MSc projects, and visiting researcher
+        spots in Durham. Open projects and how to apply are on the
+        <a href="/join">Join&nbsp;Us</a> page.
+      </p>
+    </div>
+    <a class="btn" href="/join">Current opportunities →</a>
+  </aside>
+
+</main>
+
+<!-- Homepage JS: rotate visual slides + respect prefers-reduced-motion. -->
+<script>
+  (function () {
+    var media = document.querySelector('.hero__media');
+    if (!media) return;
+    var figures = media.querySelectorAll('figure');
+    if (figures.length < 1) return;
+
+    var reduced = window.matchMedia &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* Reduced-motion: pause every <video> on its first frame, freeze
+       the iframe parameters, skip the rotator. The image-only fallback
+       on the active figure stays visible — that's the user's poster. */
+    if (reduced) {
+      media.querySelectorAll('video').forEach(function (v) {
+        v.removeAttribute('autoplay');
+        v.removeAttribute('loop');
+        try { v.pause(); v.currentTime = 0; } catch (e) {}
+      });
+      return;
+    }
+
+    if (figures.length < 2) return;
+    var idx = 0;
+    setInterval(function () {
+      figures[idx].setAttribute('data-active', 'false');
+      figures[idx].setAttribute('aria-hidden', 'true');
+      figures[idx].setAttribute('inert', '');
+      idx = (idx + 1) % figures.length;
+      figures[idx].setAttribute('data-active', 'true');
+      figures[idx].setAttribute('aria-hidden', 'false');
+      figures[idx].removeAttribute('inert');
+    }, 6500);
+  })();
+</script>
