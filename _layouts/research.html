@@ -14,11 +14,6 @@ body_class: research-v2
       <span class="rule" aria-hidden="true"></span>
     </p>
     <h1 class="research-page__title">{{ page.title | default: "Research" }}</h1>
-    <p class="research-page__lede">
-      A complete record of the work coming out of the lab — organised
-      by four themes, with the full paper list below. DNS figures and
-      reproducible code are linked next to each publication.
-    </p>
   </header>
 
   {% if themes_data.currently %}
@@ -31,11 +26,7 @@ body_class: research-v2
   <section class="r-themes-wrap" id="themes" aria-label="Research themes">
     <header class="r-themes-head">
       <p class="r-themes-head__num">01 · Themes</p>
-      <h2 class="r-themes-head__title">Four threads, one question</h2>
-      <p class="r-themes-head__sub">
-        Each theme links to the three papers that introduce it best.
-        Click a theme tag to filter the full paper list below.
-      </p>
+      <h2 class="r-themes-head__title">How does soft matter break?</h2>
     </header>
 
     <div class="r-themes">
@@ -78,10 +69,7 @@ body_class: research-v2
     <div class="r-full__head">
       <p class="r-full__num">02 · Full list</p>
       <h2 class="r-full__title">All publications</h2>
-      <p class="r-full__sub">
-        Chronological, most recent first. Tags act as client-side
-        filters — click one to narrow the list.
-      </p>
+      <p class="r-full__sub">Most recent first. Tags filter the list.</p>
     </div>
 
     <div class="research-layout">

@@ -18,11 +18,7 @@ description: >-
       <span class="rule" aria-hidden="true"></span>
     </p>
     <h1 class="news-page__title">News &amp; announcements</h1>
-    <p class="news-page__lede">
-      Papers, talks, new arrivals, and institutional moves — the full
-      archive. Recent items live on the <a href="/">homepage</a>;
-      everything is here, newest first.
-    </p>
+    <p class="news-page__lede">Papers, talks, arrivals, and awards.</p>
   </header>
 
   <div class="newsfeed newsfeed--archive">

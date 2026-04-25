@@ -25,8 +25,6 @@ title: Research
 <div class="tags"><span>Numerical methods</span></div>
 <div class="tags"><span>Featured</span></div>
 
-> Click on any tag to filter papers by topic. Each paper can have multiple tags.
-
 ## Work in Progress
 
 ### Verschuur, C. I., Oratis, A. T., <strong>Sanjay, V.</strong>, & Snoeijer, J. H. How elasticity affects bubble pinch-off. arXiv preprint arXiv:2511.20075 (2025).
