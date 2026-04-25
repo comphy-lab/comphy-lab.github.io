@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "News &amp; announcements"
+title: "News & announcements"
 permalink: /news/
 body_class: news-v2
 description: >-
@@ -201,6 +201,7 @@ description: >-
     flex-shrink: 0;
   }
   .news-page .news-item__thumb img { width: 100%; height: 100%; object-fit: cover; }
+  .news-page .news-item--talk .news-item__body,
   .news-page .news-item--people .news-item__body,
   .news-page .news-item--move .news-item__body,
   .news-page .news-item--award .news-item__body {
