@@ -16,6 +16,18 @@ items:
 
   # ===================== 2026 =====================
 
+  - date: "2026-05-12"
+    kind: paper
+    title: >-
+      SoftComp features our viscoelastic-sphere impact study
+    meta: >-
+      <strong>EU SoftComp</strong> highlights how our Soft Matter cover
+      article bridges Wagner's liquid-impact theory and Hertzian contact
+      theory for materials between fluids and solids.
+    thumb: /assets/images/covers/2026-03-SoftMatter_Issue11_cover.jpeg
+    action_label: "Read feature"
+    action_href: "https://eu-softcomp.net/impact-of-a-viscoelastic-sphere/"
+
   - date: "2026-03-12"
     kind: paper
     title: >-
