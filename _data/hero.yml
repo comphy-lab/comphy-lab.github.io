@@ -44,6 +44,7 @@ cta_secondary:
 images:
   - video: https://www.dropbox.com/scl/fi/g82ozolz1ncub2s9my5oo/JMBC_Video.mp4?rlkey=6eooxf1rimh5e1r94mjpldp4w&dl=0
     type: video/mp4
+    poster: /assets/images/news/jmbc-2026-best-video.jpg
     alt: >-
       Best Video Award at JMBC Burgers Symposium 2026 — Ayush Dixit's
       work on respiratory droplet formation and viscoelastic fluid dynamics.

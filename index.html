@@ -71,7 +71,8 @@ description: >-
             <div class="hero__image-well">
               {% if img.video %}
                 <video autoplay muted loop playsinline preload="metadata"
-                       aria-label="{{ img.alt }}">
+                       aria-label="{{ img.alt }}"
+                       {% if img.poster %}poster="{{ img.poster }}"{% endif %}>
                   <source src="{{ img.video }}" type="{{ img.type | default: 'video/mp4' }}" />
                 </video>
               {% elsif img.youtube %}
