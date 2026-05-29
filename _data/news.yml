@@ -16,6 +16,18 @@ items:
 
   # ===================== 2026 =====================
 
+  - date: "2026-05-28"
+    kind: award
+    title: >-
+      Ayush Dixit wins Best Video at JMBC Burgers Symposium 2026
+    meta: >-
+      <strong>Ayush Dixit</strong> received the Best Video Award at the
+      JMBC Burgers Symposium for his work on respiratory droplet
+      formation and viscoelastic fluid dynamics.
+    avatar: "AD"
+    action_label: "Watch video"
+    action_href: "https://www.dropbox.com/scl/fi/g82ozolz1ncub2s9my5oo/JMBC_Video.mp4?rlkey=6eooxf1rimh5e1r94mjpldp4w&dl=0"
+
   - date: "2026-05-24"
     kind: paper
     title: >-
