@@ -42,6 +42,14 @@ cta_secondary:
 # caption_title + caption_sub float over a dark gradient at the
 # bottom of the panel.
 images:
+  - video: https://www.dropbox.com/scl/fi/g82ozolz1ncub2s9my5oo/JMBC_Video.mp4?rlkey=6eooxf1rimh5e1r94mjpldp4w&dl=0
+    type: video/mp4
+    alt: >-
+      Best Video Award at JMBC Burgers Symposium 2026 — Ayush Dixit's
+      work on respiratory droplet formation and viscoelastic fluid dynamics.
+    caption_title: Best Video Award — JMBC Burgers Symposium 2026
+    caption_sub: Dixit et al. · Best Video · JMBC Burgers Symposium
+
   - src: /assets/images/covers/2026-03-SoftMatter_Issue11_cover.jpeg
     alt: Soft Matter March 2026 cover — impacting spheres.
     caption_title: Impacting spheres — from drops to elastic beads
