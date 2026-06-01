@@ -2,7 +2,7 @@
 
 ### May
 
-- [<strong>Dixit, A. K.</strong>, Zhao, C., Zaleski, S., Lohse, D., & <strong>Sanjay, V.</strong> Holes in Sheets: Double-Threshold Rupture of Draining Liquid Films.</strong> Featured on <a href="https://eu-softcomp.net/tiniy-defects-big-consequences/">SoftComp Network News</a>: "Tiny Defects, Big Consequences: Why Micron-thick Films Tear Before Molecular Forces Matter." Phys. Rev. Lett., 136, 084001 (2026).](/research#22)
+- [<strong>Dixit, A. K.</strong>, Zhao, C., Zaleski, S., Lohse, D., & <strong>Sanjay, V.</strong> Holes in Sheets: Double-Threshold Rupture of Draining Liquid Films.</strong> Featured on <a href="https://eu-softcomp.net/tiny-defects-big-consequences/">SoftComp Network News</a>: "Tiny Defects, Big Consequences: Why Micron-thick Films Tear Before Molecular Forces Matter." Phys. Rev. Lett., 136, 084001 (2026).](/research#22)
 
 ### March
 

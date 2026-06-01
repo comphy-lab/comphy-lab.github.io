@@ -13,7 +13,6 @@
 #   action_label + action_href — the right-side button.
 
 items:
-
   # ===================== 2026 =====================
 
   - date: "2026-05-28"
@@ -38,7 +37,7 @@ items:
       films—imperfections trigger rupture long before molecular forces matter.
     thumb: /assets/images/research/holey-sheets.png
     action_label: "Read feature"
-    action_href: "https://eu-softcomp.net/tiniy-defects-big-consequences/"
+    action_href: "https://eu-softcomp.net/tiny-defects-big-consequences/"
 
   - date: "2026-05-12"
     kind: paper
