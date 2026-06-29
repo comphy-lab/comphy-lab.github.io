@@ -33,6 +33,7 @@ jobs:
         with:
           fetch-depth: 0 # Fetch all history for proper git operations
           token: ${{ steps.app-token.outputs.token }}
+          persist-credentials: false
 
       - name: Clone comphy-search repository
         run: |
@@ -41,7 +42,10 @@ jobs:
 
       - name: Copy search database
         run: |
-          cp comphy-search/search_db.json assets/js/search_db.json
+          test -f comphy-search/search_db.json
+          test ! -L comphy-search/search_db.json
+          jq empty comphy-search/search_db.json
+          cp --no-dereference comphy-search/search_db.json assets/js/search_db.json
 
       - name: Commit and push changes with app token
         env:
@@ -59,5 +63,7 @@ jobs:
           else
             git commit -m "Update search database from comphy-search repository"
             git log -1 --pretty=fuller
-            git push origin HEAD:main
+            git push \
+              "https://x-access-token:${APP_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" \
+              HEAD:main
           fi
