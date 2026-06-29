@@ -82,6 +82,8 @@ description: >-
                   frameborder="0"
                   allow="autoplay; encrypted-media; picture-in-picture"
                   allowfullscreen
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  sandbox="allow-scripts allow-same-origin allow-presentation"
                   loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"></iframe>
               {% else %}
                 <img src="{{ img.src }}" alt="{{ img.alt }}"
