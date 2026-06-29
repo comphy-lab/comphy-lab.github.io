@@ -31,7 +31,8 @@ description: >-
       </header>
       <div class="roster-grid">
         {% for m in team.present %}
-        <article class="t-member {% if m.is_pi %}t-member--pi{% endif %}" id="{{ m.slug | default: m.name | slugify }}">
+        {%- assign member_id = m.slug | default: m.name | slugify -%}
+        <article class="t-member {% if m.is_pi %}t-member--pi{% endif %}" id="{{ member_id }}">
           <div class="t-member__photo {% unless m.photo %}t-member__photo--ph{% endunless %}">
             {% if m.photo %}
               <img src="{{ m.photo }}" alt="Portrait of {{ m.name }}" loading="lazy" decoding="async" />
@@ -49,7 +50,7 @@ description: >-
           </div>
           <div>
             <p class="t-member__name">
-              {% if m.slug %}<a class="t-member__name-link" href="#{{ m.slug }}">{{ m.name }}</a>{% else %}{{ m.name }}{% endif %}
+              {% if m.slug %}<a class="t-member__name-link" href="#{{ member_id }}">{{ m.name }}</a>{% else %}{{ m.name }}{% endif %}
             </p>
             <div class="t-member__role">{{ m.role }}{% if m.affiliation %} · {{ m.affiliation }}{% endif %}</div>
           </div>
