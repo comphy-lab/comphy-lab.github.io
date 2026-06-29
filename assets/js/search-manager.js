@@ -27,10 +27,9 @@
   };
 
   const INTERNAL_SEARCH_PATTERNS = [
-    /https:\/\/blogs\.comphy-lab\.org\/Private-ToDo/i,
-    /https:\/\/blogs\.comphy-lab\.org\/0_ToDo/i,
-    /^Private todo blog public/i,
-    /^0_todo blog public/i,
+    /https:\/\/blogs\.comphy-lab\.org\/(?:Private|0_ToDo|Admin|Medical|Personal)(?:\/|[-_]|$)/i,
+    /https:\/\/blogs\.comphy-lab\.org\/[^#?]*(?:Registration|NHS|Medical|Clinic|Appointment|Prescription)/i,
+    /^(?:Private|0_todo|Admin|Medical|Personal)\b/i,
   ];
 
   function isInternalSearchEntry(entry) {

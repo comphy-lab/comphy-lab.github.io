@@ -13,17 +13,21 @@ describe("search-manager sanitization", () => {
       json: () =>
         Promise.resolve([
           {
-            title: "Private todo blog public - Elasticity and viscoelasticity",
-            url:
-              "https://blogs.comphy-lab.org/[removed-private-search-entry]/" +
-              "#elasticity-and-viscoelasticity",
+            title: "Private internal backlog - Elasticity and viscoelasticity",
+            url: "https://blogs.comphy-lab.org/Private/Internal-Backlog/",
             content: "internal planning item",
             priority: 3,
           },
           {
-            title: "0_todo blog public",
-            url: "https://blogs.comphy-lab.org/[removed-private-search-entry]/",
+            title: "0_todo blog backlog",
+            url: "https://blogs.comphy-lab.org/0_ToDo/Internal-Backlog/",
             content: "internal backlog page",
+            priority: 3,
+          },
+          {
+            title: "Admin internal note",
+            url: "https://blogs.comphy-lab.org/Admin/Internal-Note/",
+            content: "internal admin page",
             priority: 3,
           },
           {
@@ -53,14 +57,12 @@ describe("search-manager sanitization", () => {
             title: "Skill - Badge Shapes",
             url: "https://comphy-lab.org/.agents/skills/add-paper/SKILL/#badge-shapes",
             content:
-              "Example badge config referencing https://blogs.comphy-lab.org/[removed-private-search-entry]/ for documentation only.",
+              "Example badge config referencing https://blogs.comphy-lab.org/0_ToDo/Internal-Backlog/ for documentation only.",
             priority: 3,
           },
           {
-            title: "Private todo blog public - Elasticity and viscoelasticity",
-            url:
-              "https://blogs.comphy-lab.org/[removed-private-search-entry]/" +
-              "#elasticity-and-viscoelasticity",
+            title: "Private internal backlog - Elasticity and viscoelasticity",
+            url: "https://blogs.comphy-lab.org/Private/Internal-Backlog/",
             content: "internal planning item",
             priority: 3,
           },

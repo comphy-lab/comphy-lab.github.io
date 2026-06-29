@@ -33,7 +33,7 @@ title: Research
 
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2511.20075&color=green)](https://arxiv.org/abs/2511.20075)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/ElasticPinchOff/)
-[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/[removed-private-search-entry])
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/)
 
 ### Ghaemi, A. H., Yang, Z., Huang, A., <strong>Sanjay, V.</strong>, Feng, J., & Constante-Amores, C. R. Bursting bubbles in Herschel-Bulkley fluids: dynamics and jetting transitions. arXiv preprint arXiv:2511.23345 (2025).
 
@@ -41,7 +41,7 @@ title: Research
 
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2511.23345&color=green)](https://arxiv.org/abs/2511.23345)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/BurstingBubble_Herschel-Bulkley/)
-[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/[removed-private-search-entry])
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/)
 
 ## 2026
 
@@ -52,7 +52,7 @@ title: Research
 [![PRF](https://img.shields.io/static/v1.svg?style=flat-square&label=PRF&message=DOI:%2010.1103%2F9dgt-rkp5&color=orange)](https://doi.org/10.1103/9dgt-rkp5)
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2508.13022&color=green)](https://arxiv.org/abs/2508.13022)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/tappleford/droplet_under_shear_newtonian_2D)
-[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/[removed-private-search-entry])
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/)
 
 <h3 id="23">[23] <strong>Jana, S.</strong>, Kolinski, J., Lohse, D., & <strong>Sanjay, V.</strong> Impacting spheres: from liquid drops to elastic beads. Soft Matter, 22, 2226-2236 (2026).</h3>
 
@@ -61,7 +61,7 @@ title: Research
 [![Soft Matter](https://img.shields.io/static/v1.svg?style=flat-square&label=Soft%20Matter&message=DOI:%2010.1039%2FD5SM01078K&color=orange)](https://doi.org/10.1039/D5SM01078K)
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2510.24855&color=green)](https://arxiv.org/abs/2510.24855)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/Soft-Sphere-Impacts)
-[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/[removed-private-search-entry])
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/)
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Udc9Vqw5l_I?si=XKm7fPvd_aoD5xrw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -82,7 +82,7 @@ title: Research
 [![Phys. Rev. Lett.](https://img.shields.io/static/v1.svg?style=flat-square&label=Phys.%20Rev.%20Lett.&message=DOI:%2010.1103%2Fbdpw-7mr5&color=orange)](https://doi.org/10.1103/bdpw-7mr5)
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2509.12789&color=green)](https://arxiv.org/abs/2509.12789)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/HoleySheet)
-[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/[removed-private-search-entry])
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/)
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/HYkqepZIakc?si=e6Cklx7dPvdicILj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -93,7 +93,7 @@ title: Research
 [![Soft Matter](https://img.shields.io/static/v1.svg?style=flat-square&label=Soft%20Matter&message=DOI:%2010.1039%2FD5SM00985E&color=orange)](https://doi.org/10.1039/D5SM00985E)
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2511.20259&color=green)](https://arxiv.org/abs/2511.20259)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/Retracting-Droplet)
-[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/[removed-private-search-entry])
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/)
 
 ## 2025
 
@@ -104,7 +104,7 @@ title: Research
 [![PRF](https://img.shields.io/static/v1.svg?style=flat-square&label=PRF&message=OA&color=orange)](https://doi.org/10.1103/nq3w-57gg)
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2501.05532&color=green)](https://arxiv.org/abs/2501.05532)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/VatsalSy/jumping-bubbles)
-[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/[removed-private-search-entry])
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/)
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/49KoJwXiDl4?si=uxdpYyKFFd8E6jvN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -114,7 +114,7 @@ title: Research
 
 [![PNAS](https://img.shields.io/static/v1.svg?style=flat-square&label=PNAS&message=OA&color=orange)](https://doi.org/10.1073/pnas.2507309122)
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2503.22527&color=green)](https://arxiv.org/abs/2503.22527)
-[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/[removed-private-search-entry])
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/)
 
 <h3 id="18">[18] Saini, M., <strong>Sanjay, V.</strong>, Saade, Y., Lohse, D., & Popinet, S. Implementation of integral surface tension formulations in a volume of fluid framework and their applications to Marangoni flows. J. Comput. Phys., 542, 114348 (2025).</h3>
 
@@ -122,7 +122,7 @@ title: Research
 
 [![J. Comput. Phys.](https://img.shields.io/static/v1.svg?style=flat-square&label=J.%20Comput.%20Phys.&message=OA&color=orange)](https://doi.org/10.1016/j.jcp.2025.114348)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/marangoniSheet)
-[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/[removed-private-search-entry])
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/)
 
 <h3 id="17">[17] Bashkatov, A., Bürkle, F., Demirkır, Ç., Ding, W., <strong>Sanjay, V.</strong>, Babich, A., Yang, X., Mutschke, G., Czarske, J., Lohse, D., Krug, D., Lars, B., & Eckert, E. Electrolyte droplet spraying in H2 bubbles during water electrolysis under normal and microgravity conditions. Nat. Commun., 16, 4580 (2025).</h3>
 
@@ -131,7 +131,7 @@ title: Research
 [![Nat. Commun.](https://img.shields.io/static/v1.svg?style=flat-square&label=Nat.%20Commun.&message=OA&color=orange)](https://doi.org/10.1038/s41467-025-59762-7)
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2409.00515&color=green)](https://arxiv.org/abs/2409.00515)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/VatsalSy/Asymmetries-in-coalescence)
-[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/[removed-private-search-entry])
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/)
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/QbQ4wrTjTks?si=SZsmKgXX28Fxcgru" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -142,7 +142,7 @@ title: Research
 [![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=OA&color=orange)](https://doi.org/10.1017/jfm.2025.237)
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2408.05089&color=green)](https://arxiv.org/abs/2408.05089)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/Viscoelastic-Worthington-jets-and-droplets-produced-by-bursting-bubbles)
-[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/[removed-private-search-entry])
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/)
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=SEePOSC_hY5SLxac&amp;list=PLiHEqeURsoWqT3CaVfp0Z2MswHfc7MQxE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -153,7 +153,7 @@ title: Research
 [![PRL](https://img.shields.io/static/v1.svg?style=flat-square&label=PRL&message=OA&color=orange)](https://doi.org/10.1103/PhysRevLett.134.104003)
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2408.12714&color=green)](https://arxiv.org/abs/2408.12714)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/VatsalSy/Impact-forces-of-water-drops-falling-on-superhydrophobic-surfaces.git)
-[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/[removed-private-search-entry])
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/)
 
 ![Parameter space of drop impact](/assets/images/research/drop-impact-prl.png){: width="75%" .center-block style="display: block; margin-left: auto; margin-right: auto;"}
 
@@ -185,7 +185,7 @@ title: Research
 [![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=OA&color=orange)](https://doi.org/10.1017/jfm.2024.1089)
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2406.05416&color=green)](https://arxiv.org/abs/2406.05416)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/concentricWave)
-[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/[removed-private-search-entry])
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/)
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/eLRhVG9Yc84?si=a83clz0Ufwncs98F" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -197,7 +197,7 @@ title: Research
 
 [![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=OA&color=orange)](https://doi.org/10.1017/jfm.2024.1073)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/2023_Bubble-bursting-in-an-elasto-viscoplastic-medium)
-[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/[removed-private-search-entry])
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/)
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=KXlRYHJvqW3zel4B&amp;list=PLf5C5HCrvhLHDfTeG_mk3Ul5NRDxCIOee" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -219,7 +219,7 @@ title: Research
 
 [![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=OA&color=orange)](https://doi.org/10.1017/jfm.2023.55)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/Drop-Impact)
-[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/[removed-private-search-entry])
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/)
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=EskoUUszojk07SjU&amp;list=PLf5C5HCrvhLHG5t3iPscUuEp_gbD4XHyU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -229,7 +229,7 @@ title: Research
 
 [![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=OA&color=orange)](https://doi.org/10.1017/jfm.2023.13)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/VatsalSy/Drop-impact-on-viscous-liquid-films)
-[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/[removed-private-search-entry])
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/)
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=o-jd-NqOMsXtj8HG&amp;list=PLf5C5HCrvhLHJXLqwpylEwYc2rVtTsCUX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -243,7 +243,7 @@ title: Research
 [![DOI](https://img.shields.io/static/v1.svg?style=flat-square&label=UT&message=link&color=orange)](https://doi.org/10.3990/1.9789036554077)
 [![LaTeX](https://img.shields.io/static/v1.svg?style=flat-square&logo=github&label=LaTeX&message=source%20code)](https://github.com/VatsalSy/VatsalPhDThesis)
 [![Defense](https://img.shields.io/static/v1.svg?style=flat-square&logo=vimeo&label=Defense&message=Watch%20online&color=green)](https://vimeo.com/730545548)
-[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/[removed-private-search-entry])
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/)
 
 <h3 id="9">[9] <strong>Sanjay, V.</strong>, Sen, U., Kant, P., and Lohse, D. Taylor–Culick retractions and the influence of the surroundings. J. Fluid Mech., 948, A14 (2022).</h3>
 
@@ -251,7 +251,7 @@ title: Research
 
 [![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=OA&color=orange)](https://doi.org/10.1017/jfm.2022.671)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/VatsalSy/Taylor-Culick-retractions)
-[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/[removed-private-search-entry])
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/)
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=tDjjLeag-69MkjG3&amp;list=PLf5C5HCrvhLHsSDmgLAql-hcAEZrejs2V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -263,7 +263,7 @@ title: Research
 [![PDF](https://img.shields.io/static/v1.svg?logo=adobeacrobatreader&style=flat-square&label=PDF&message=Download&color=green)](https://qrco.de/bd9aV3)
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2202.02437&color=green)](https://arxiv.org/abs/2202.02437)
 [![DOI](https://img.shields.io/static/v1.svg?style=flat-square&label=Phys.%20Rev.%20Lett.&message=DOI:%2010.1103/PhysRevLett.129.104501&color=orange)](https://doi.org/10.1103/PhysRevLett.129.104501)
-[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/[removed-private-search-entry])
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/)
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=CBVTgXd3QiYucPOG&amp;list=PLf5C5HCrvhLGmlYTF1Gg2WviZ-Bkmy2qr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -282,7 +282,7 @@ title: Research
 [![JFM](https://img.shields.io/static/v1.svg?style=flat-square&label=JFM&message=OA&color=orange)](https://doi.org/10.1017/jfm.2021.489)
 [![arXiv](https://img.shields.io/badge/arXiv-2101.07744-green?style=flat-square)](https://arxiv.org/abs/2101.07744)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/VatsalSy/Bursting-Bubble-In-a-Viscoplastic-Medium)
-[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/[removed-private-search-entry])
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/)
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=lx4Xp2PpVV5YcKuI&amp;list=PLf5C5HCrvhLFETl6iaRr21pzr5Xab1OCM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -295,7 +295,7 @@ title: Research
 [![Sci. Adv.](https://img.shields.io/static/v1.svg?style=flat-square&label=Sci.%20Adv.&message=OA&color=orange)](https://doi.org/10.1126/sciadv.aba4330)
 [![arXiv](https://img.shields.io/badge/arXiv-1912.02667-green?style=flat-square)](https://arxiv.org/abs/1912.02667)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/VatsalSy/Lifting-a-sessile-drop)
-[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/[removed-private-search-entry])
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/)
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=RaxNyGlQJiVsRvuk&amp;list=PLf5C5HCrvhLEX9_VlqlK99mdtxtu1l-HQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -307,7 +307,7 @@ title: Research
 
 [![PDF](https://img.shields.io/static/v1.svg?style=flat-square&label=PDF&message=Available&color=green)](https://www.dropbox.com/scl/fi/ug7njhulcy9zq8lib911j/2019-Vatsal-_Consequences-of-Inclined-and-Dual-Jet-Impingement-in-Stagnant-Liquid-and-Stratified-Layers.pdf?rlkey=l00thknv7wt55sb0bcuiy8isw&dl=0)
 [![DOI](https://img.shields.io/static/v1.svg?style=flat-square&label=DOI&message=10.1002/aic.16373&color=orange)](https://doi.org/10.1002/aic.16373)
-[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/[removed-private-search-entry])
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/)
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=MpAj4REMZUt2rCvu&amp;list=PLf5C5HCrvhLFExMDxQ9Kgl-Y0DiNvqUd8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -319,7 +319,7 @@ title: Research
 
 [![PDF](https://img.shields.io/static/v1.svg?style=flat-square&label=PDF&message=Available&color=green)](https://www.dropbox.com/scl/fi/zbs17s77qlu2l2i4c6sak/2018-Vatsal-preprint-_Formation-of-fluid-structures-due-to-jet-jet-and-jet-sheet-interactions.pdf?rlkey=beya847mr9hf8bbdabwyanrmf&dl=0)
 [![DOI](https://img.shields.io/static/v1.svg?style=flat-square&label=DOI&message=10.1016/j.ces.2018.06.055&color=orange)](https://doi.org/10.1016/j.ces.2018.06.055)
-[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/[removed-private-search-entry])
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/)
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=mC4w9clMEhE2-dZk&amp;list=PLf5C5HCrvhLGi0-WLqlhRbUQXEJsv5GHF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -329,7 +329,7 @@ title: Research
 
 [![PDF](https://img.shields.io/static/v1.svg?style=flat-square&label=PDF&message=Available&color=green)](https://www.dropbox.com/scl/fi/c9vob7a6kso4ai4mygpj2/2018-Vatsal-_Numerical-assessment-of-hazard-in-compartmental-fire-having-steady-heat-release-rate-from-the-source.pdf?rlkey=e8rjz2d3e8nt0xof863i3xb3p&dl=0)
 [![DOI](https://img.shields.io/static/v1.svg?style=flat-square&label=DOI&message=10.1007/s12273-017-0411-y&color=orange)](https://doi.org/10.1007/s12273-017-0411-y)
-[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/[removed-private-search-entry])
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/)
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=w56YOERWB3txiLmQ&amp;list=PLf5C5HCrvhLEFuWesek9r4gT4eweOAx1y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -342,7 +342,7 @@ title: Research
 [![PDF](https://img.shields.io/static/v1.svg?style=flat-square&label=PDF&message=Available&color=green)](https://www.dropbox.com/scl/fi/fmk08c3z9twdat138v8b3/2017-Vatsal-preprint-_Formation-of-liquid-chain-by-collision-of-two-laminar-jets.pdf?rlkey=imwh2a606aecpbvjq3ctdq168&dl=0)
 [![DOI](https://img.shields.io/static/v1.svg?style=flat-square&label=DOI&message=10.1063/1.4998288&color=orange)](https://doi.org/10.1063/1.4998288)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/VatsalSy/FluidChains)
-[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/[removed-private-search-entry])
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/)
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=n7uhBt_Q1UIA5_2C&amp;list=PLf5C5HCrvhLE6jNYonsmX3l3Ab0Y3lNZ5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -352,6 +352,6 @@ title: Research
 
 [![PDF](https://img.shields.io/static/v1.svg?style=flat-square&label=PDF&message=Available&color=green)](https://www.dropbox.com/scl/fi/37ek49y5ae1t1lr18q95n/2017-Vatsal-preprint-_On-Air-Entrainment-in-a-Water-pool-by-Impingement-of-a-Jet.pdf?rlkey=iqb3ejms8t990owpiuqmpy0k6&dl=0)
 [![DOI](https://img.shields.io/static/v1.svg?style=flat-square&label=DOI&message=10.1002/aic.15828&color=orange)](https://doi.org/10.1002/aic.15828)
-[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/[removed-private-search-entry])
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/)
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=PJQxZK5Cd6D2y9eN&amp;list=PLf5C5HCrvhLEc8TUdAPz3FLbUWW3OFLTv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
