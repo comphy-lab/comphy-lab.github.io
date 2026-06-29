@@ -1,0 +1,16 @@
+{%- comment -%}
+Escapes data-file text before selectively restoring the small set of
+inline tags/entities that homepage copy is allowed to use.
+{%- endcomment -%}
+{{- include.text
+  | default: ""
+  | escape
+  | replace: "&lt;em&gt;", "<em>"
+  | replace: "&lt;/em&gt;", "</em>"
+  | replace: "&lt;strong&gt;", "<strong>"
+  | replace: "&lt;/strong&gt;", "</strong>"
+  | replace: "&lt;b&gt;", "<b>"
+  | replace: "&lt;/b&gt;", "</b>"
+  | replace: "&amp;nbsp;", "&nbsp;"
+  | replace: "&amp;amp;", "&amp;"
+-}}

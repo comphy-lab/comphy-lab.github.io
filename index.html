@@ -35,28 +35,28 @@ description: >-
           <span class="hero__wordmark-rest">Computational Multiphase Physics</span>
         </div>
 
-        <p id="hero-sentence" class="hero__sentence">{{ hero.tagline }}</p>
+        <p id="hero-sentence" class="hero__sentence">{% include safe-inline.html text=hero.tagline %}</p>
 
-        <p class="hero__lede">{{ hero.lede }}</p>
+        <p class="hero__lede">{% include safe-inline.html text=hero.lede %}</p>
 
         <dl class="hero__meta">
           <div>
             <dt>Principal investigator</dt>
-            <dd>{{ hero.pi.name }} <small>{{ hero.pi.role }}</small></dd>
+            <dd>{{ hero.pi.name | escape }} <small>{{ hero.pi.role | escape }}</small></dd>
           </div>
           <div>
             <dt>Department</dt>
-            <dd>{{ hero.department.name }} <small>{{ hero.department.note }}</small></dd>
+            <dd>{{ hero.department.name | escape }} <small>{{ hero.department.note | escape }}</small></dd>
           </div>
           <div>
             <dt>Location</dt>
-            <dd>{{ hero.location.name }} <small>{{ hero.location.note }}</small></dd>
+            <dd>{{ hero.location.name | escape }} <small>{{ hero.location.note | escape }}</small></dd>
           </div>
         </dl>
 
         <div class="hero__ctas">
-          <a class="btn" href="{{ hero.cta_primary.href }}">{{ hero.cta_primary.label }}</a>
-          <a class="btn-ghost" href="{{ hero.cta_secondary.href }}">{{ hero.cta_secondary.label }}</a>
+          <a class="btn" href="{% include safe-href.html href=hero.cta_primary.href %}">{{ hero.cta_primary.label | escape }}</a>
+          <a class="btn-ghost" href="{% include safe-href.html href=hero.cta_secondary.href %}">{{ hero.cta_secondary.label | escape }}</a>
         </div>
       </div>
 
@@ -71,20 +71,20 @@ description: >-
             <div class="hero__image-well">
               {% if img.video %}
                 <video autoplay muted loop playsinline preload="metadata"
-                       aria-label="{{ img.alt }}"
-                       {% if img.poster %}poster="{{ img.poster }}"{% endif %}>
-                  <source src="{{ img.video }}" type="{{ img.type | default: 'video/mp4' }}" />
+                       aria-label="{{ img.alt | escape }}"
+                       {% if img.poster %}poster="{{ img.poster | escape }}"{% endif %}>
+                  <source src="{{ img.video | escape }}" type="{{ img.type | default: 'video/mp4' | escape }}" />
                 </video>
               {% elsif img.youtube %}
                 <iframe
                   src="https://www.youtube-nocookie.com/embed/{{ img.youtube }}?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist={{ img.youtube }}&amp;controls=0&amp;modestbranding=1&amp;rel=0&amp;playsinline=1&amp;iv_load_policy=3"
-                  title="{{ img.alt }}"
+                  title="{{ img.alt | escape }}"
                   frameborder="0"
                   allow="autoplay; encrypted-media; picture-in-picture"
                   allowfullscreen
                   loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"></iframe>
               {% else %}
-                <img src="{{ img.src }}" alt="{{ img.alt }}"
+                <img src="{{ img.src | escape }}" alt="{{ img.alt | escape }}"
                      loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
                      decoding="async"
                      {% if forloop.first %}fetchpriority="high"{% endif %} />
@@ -93,10 +93,10 @@ description: >-
 
             <figcaption class="hero__caption-panel">
               <span class="hero__caption-eyebrow">Featured work</span>
-              <b class="hero__caption-title">{{ img.caption_title }}</b>
-              <span class="hero__caption-sub">{{ img.caption_sub }}</span>{%- comment -%} caption_sub may contain <em> for journal names; it's author-curated content, safe to render as HTML. {%- endcomment -%}
+              <b class="hero__caption-title">{{ img.caption_title | escape }}</b>
+              <span class="hero__caption-sub">{% include safe-inline.html text=img.caption_sub %}</span>
               {% if img.href %}
-                <a class="hero__caption-link" href="{{ img.href }}">Read the paper ↗</a>
+                <a class="hero__caption-link" href="{% include safe-href.html href=img.href %}">Read the paper ↗</a>
               {% endif %}
             </figcaption>
           </figure>
@@ -111,8 +111,8 @@ description: >-
        ========================================================= -->
   <section class="home-section" id="research-preview">
     <div class="c-now" role="note">
-      <span class="c-now__label">{{ themes_data.currently.label }}</span>
-      <p class="c-now__text">{{ themes_data.currently.text }}</p>
+      <span class="c-now__label">{{ themes_data.currently.label | escape }}</span>
+      <p class="c-now__text">{% include safe-inline.html text=themes_data.currently.text %}</p>
     </div>
 
     <header class="home-head">
@@ -130,24 +130,24 @@ description: >-
 
     <div class="themes">
       {% for t in themes_data.themes %}
-      <article class="theme" id="theme-{{ t.slug }}">
+      <article class="theme" id="theme-{{ t.slug | slugify }}">
         <div class="theme__figure">
           {% if t.figure %}
-            <img src="{{ t.figure }}" alt="{{ t.title }} — signature figure" loading="lazy" decoding="async" />
+            <img src="{{ t.figure | escape }}" alt="{{ t.title | escape }} — signature figure" loading="lazy" decoding="async" />
           {% else %}
-            <div class="theme__figure-placeholder">Figure · {{ t.tag }}</div>
+            <div class="theme__figure-placeholder">Figure · {{ t.tag | escape }}</div>
           {% endif %}
         </div>
         <div class="theme__body">
-          <span class="theme__tag">{{ t.num }} · {{ t.tag }}</span>
-          <h3 class="theme__title">{{ t.title }}</h3>
-          <p class="theme__desc">{{ t.description }}</p>
+          <span class="theme__tag">{{ t.num | escape }} · {{ t.tag | escape }}</span>
+          <h3 class="theme__title">{{ t.title | escape }}</h3>
+          <p class="theme__desc">{% include safe-inline.html text=t.description %}</p>
           <div class="theme__papers">
             {% for p in t.papers %}
             <div class="theme__paper">
-              <span class="theme__paper-year">{{ p.year }}</span>
-              <a class="theme__paper-title" href="{{ p.href }}">{{ p.title }}</a>
-              <span class="theme__paper-venue">{{ p.venue }}</span>
+              <span class="theme__paper-year">{{ p.year | escape }}</span>
+              <a class="theme__paper-title" href="{% include safe-href.html href=p.href %}">{{ p.title | escape }}</a>
+              <span class="theme__paper-venue">{{ p.venue | escape }}</span>
             </div>
             {% endfor %}
           </div>
@@ -175,7 +175,7 @@ description: >-
       {% for n in sorted_news limit:5 %}
       {% assign d = n.date | date: "%-d" %}
       {% assign mo = n.date | date: "%b %y" %}
-      <article class="news-item news-item--{{ n.kind }}" data-kind="{{ n.kind }}">
+      <article class="news-item news-item--{{ n.kind | slugify }}" data-kind="{{ n.kind | slugify }}">
         <div class="news-item__date">
           <span class="news-item__day">{{ d }}</span>
           <span class="news-item__mo">{{ mo }}</span>
@@ -184,10 +184,10 @@ description: >-
         <div class="news-item__body">
           {% if n.kind == "paper" %}
           <div class="news-item__thumb">
-            {% if n.thumb %}<img src="{{ n.thumb }}" alt="" loading="lazy" decoding="async" onerror="this.style.display='none'" />{% endif %}
+            {% if n.thumb %}<img src="{{ n.thumb | escape }}" alt="" loading="lazy" decoding="async" onerror="this.style.display='none'" />{% endif %}
           </div>
           {% else %}
-          <div class="news-item__avatar">{{ n.avatar | default: "·" }}</div>
+          <div class="news-item__avatar">{{ n.avatar | default: "·" | escape }}</div>
           {% endif %}
           <div>
             <div class="news-item__kicker">
@@ -200,14 +200,14 @@ description: >-
                 {% when "award" %}Award
               {% endcase %}
             </div>
-            <h3 class="news-item__title">{{ n.title }}</h3>
-            <p class="news-item__meta">{{ n.meta }}</p>
+            <h3 class="news-item__title">{{ n.title | escape }}</h3>
+            <p class="news-item__meta">{% include safe-inline.html text=n.meta %}</p>
           </div>
         </div>
 
-        <a class="btn-ghost news-item__action" href="{{ n.action_href }}"
+        <a class="btn-ghost news-item__action" href="{% include safe-href.html href=n.action_href %}"
            {% if n.action_href contains "://" %}target="_blank" rel="noopener noreferrer"{% endif %}>
-          {{ n.action_label }}
+          {{ n.action_label | escape }}
         </a>
       </article>
       {% endfor %}
@@ -231,7 +231,7 @@ description: >-
       <article class="member {% if m.is_pi %}member--pi{% endif %}">
         <div class="member__photo">
           {% if m.photo %}
-            <img src="{{ m.photo }}" alt="Portrait of {{ m.name }}" loading="lazy" decoding="async" />
+            <img src="{{ m.photo | escape }}" alt="Portrait of {{ m.name | escape }}" loading="lazy" decoding="async" />
           {% else %}
             {%- comment -%}Strip the longest title prefix first so "Adj. Prof. X" doesn't lose the "Prof. " inside it before "Adj. Prof. " matches.{%- endcomment -%}
             {%- assign clean = m.name | replace: "Adj. Prof. ", "" | replace: "Prof. ", "" | replace: "Dr. ", "" -%}
@@ -241,16 +241,16 @@ description: >-
           {% endif %}
         </div>
         <div>
-          <p class="member__name">{{ m.name }}</p>
-          <div class="member__role">{{ m.role }}</div>
+          <p class="member__name">{{ m.name | escape }}</p>
+          <div class="member__role">{{ m.role | escape }}</div>
         </div>
-        <p class="member__bio">{{ m.bio }}</p>
+        <p class="member__bio">{{ m.bio | escape }}</p>
         <div class="member__links">
-          {% if m.links.email %}<a href="{{ m.links.email }}" title="Email" aria-label="Email {{ m.name }}"><i class="fa-solid fa-envelope"></i></a>{% endif %}
-          {% if m.links.scholar %}<a href="{{ m.links.scholar }}" target="_blank" rel="noopener noreferrer" title="Google Scholar" aria-label="Google Scholar profile"><i class="ai ai-google-scholar"></i></a>{% endif %}
-          {% if m.links.github %}<a href="{{ m.links.github }}" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub profile"><i class="fa-brands fa-github"></i></a>{% endif %}
-          {% if m.links.bluesky %}<a href="{{ m.links.bluesky }}" target="_blank" rel="noopener noreferrer" title="Bluesky" aria-label="Bluesky profile"><i class="fa-brands fa-bluesky"></i></a>{% endif %}
-          {% if m.links.site %}<a href="{{ m.links.site }}" target="_blank" rel="noopener noreferrer" title="Personal site" aria-label="Personal website"><i class="fa-solid fa-globe"></i></a>{% endif %}
+          {% if m.links.email %}<a href="{% include safe-href.html href=m.links.email %}" title="Email" aria-label="Email {{ m.name | escape }}"><i class="fa-solid fa-envelope"></i></a>{% endif %}
+          {% if m.links.scholar %}<a href="{% include safe-href.html href=m.links.scholar %}" target="_blank" rel="noopener noreferrer" title="Google Scholar" aria-label="Google Scholar profile"><i class="ai ai-google-scholar"></i></a>{% endif %}
+          {% if m.links.github %}<a href="{% include safe-href.html href=m.links.github %}" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub profile"><i class="fa-brands fa-github"></i></a>{% endif %}
+          {% if m.links.bluesky %}<a href="{% include safe-href.html href=m.links.bluesky %}" target="_blank" rel="noopener noreferrer" title="Bluesky" aria-label="Bluesky profile"><i class="fa-brands fa-bluesky"></i></a>{% endif %}
+          {% if m.links.site %}<a href="{% include safe-href.html href=m.links.site %}" target="_blank" rel="noopener noreferrer" title="Personal site" aria-label="Personal website"><i class="fa-solid fa-globe"></i></a>{% endif %}
         </div>
       </article>
       {% endfor %}

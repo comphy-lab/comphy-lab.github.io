@@ -1,0 +1,14 @@
+{%- comment -%}
+Allow only site-relative anchors/paths, http(s), and mailto URLs from data
+files before placing them in href attributes. Unsafe values fall back to #.
+{%- endcomment -%}
+{%- assign href = include.href | default: "" | strip -%}
+{%- assign first = href | slice: 0, 1 -%}
+{%- assign https = href | slice: 0, 8 -%}
+{%- assign http = href | slice: 0, 7 -%}
+{%- assign mailto = href | slice: 0, 7 -%}
+{%- if first == "/" or first == "#" or https == "https://" or http == "http://" or mailto == "mailto:" -%}
+{{- href | escape -}}
+{%- else -%}
+#
+{%- endif -%}
