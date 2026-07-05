@@ -32,6 +32,7 @@ jobs:
         uses: actions/checkout@v5
         with:
           token: ${{ steps.app-token.outputs.token }}
+          persist-credentials: false
 
       - name: Generate updated org profile section
         run: python3 scripts/sync_org_profile_publications.py
@@ -42,6 +43,7 @@ jobs:
           repository: comphy-lab/.github
           path: org-profile
           token: ${{ steps.app-token.outputs.token }}
+          persist-credentials: false
 
       - name: Update profile README
         run: cp _org_profile/README.md org-profile/profile/README.md
@@ -49,6 +51,7 @@ jobs:
       - name: Commit and push if changed
         working-directory: org-profile
         env:
+          APP_TOKEN: ${{ steps.app-token.outputs.token }}
           GIT_AUTHOR_NAME: comphy-search-updater[bot]
           GIT_AUTHOR_EMAIL: ${{ env.APP_BOT_USER_ID }}+comphy-search-updater[bot]@users.noreply.github.com
           GIT_COMMITTER_NAME: comphy-search-updater[bot]
@@ -60,4 +63,6 @@ jobs:
             exit 0
           fi
           git commit -m "chore(profile): sync recent publications from comphy-lab.github.io"
-          git push origin HEAD:main
+          git push \
+            "https://x-access-token:${APP_TOKEN}@github.com/comphy-lab/.github.git" \
+            HEAD:main
