@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img">
+  <title>CoMPhy Python 101 reasoning loop</title>
+  <rect width="600" height="400" fill="#f5f1e8"/>
+  <path d="M-30 315C88 238 132 356 245 278s180-33 385-174" fill="none" stroke="#0b5d5b" stroke-width="22" opacity=".12"/>
+  <path d="M-25 335C95 258 142 374 253 296s181-34 380-174" fill="none" stroke="#2f6f9f" stroke-width="2.5"/>
+  <g fill="#13201f" font-family="IBM Plex Mono, monospace">
+    <text x="44" y="66" font-size="18" letter-spacing="3">COMPHY LAB · OPEN COURSE</text>
+    <text x="44" y="132" font-family="Georgia, serif" font-size="50" font-weight="700">Python 101</text>
+    <text x="46" y="171" font-size="20">reason with code</text>
+  </g>
+  <g font-family="IBM Plex Sans, sans-serif" font-size="15" text-anchor="middle">
+    <circle cx="86" cy="272" r="30" fill="#0b5d5b"/>
+    <circle cx="192" cy="241" r="30" fill="#2f6f9f"/>
+    <circle cx="304" cy="276" r="30" fill="#0b5d5b"/>
+    <circle cx="415" cy="230" r="30" fill="#e45d3f"/>
+    <circle cx="523" cy="193" r="30" fill="#0b5d5b"/>
+    <g fill="#fff">
+      <text x="86" y="277">ask</text>
+      <text x="192" y="246">model</text>
+      <text x="304" y="281">build</text>
+      <text x="415" y="235">verify</text>
+      <text x="523" y="198">show</text>
+    </g>
+  </g>
+  <path d="M116 263l42-13M222 250l48 17M334 263l47-20M445 220l44-16" fill="none" stroke="#13201f" stroke-width="2" stroke-dasharray="5 7"/>
+  <text x="44" y="364" fill="#5d6966" font-family="IBM Plex Mono, monospace" font-size="16">question → evidence</text>
+</svg>
