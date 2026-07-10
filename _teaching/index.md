@@ -14,16 +14,16 @@ description: >-
     <div class="course-card__content">
       <h3 class="course-card__title">CoMPhy Python 101</h3>
       <div class="course-card__meta">
-        <i class="fa-solid fa-globe"></i> Open online course
+        <i class="fa-solid fa-globe" aria-hidden="true"></i> Open online course
       </div>
       <div class="course-card__meta">
-        <i class="fa-solid fa-route"></i> Self-paced · quick and full routes
+        <i class="fa-solid fa-route" aria-hidden="true"></i> Self-paced · quick and full routes
       </div>
       <p class="course-card__desc">
         Mechanism-first Python onboarding: turn a physical question into
         trustworthy computation and reproducible evidence.
       </p>
-      <a href="/comphy-python101/" class="course-card__link">Start Course</a>
+      <a href="https://comphy-lab.org/comphy-python101/" class="course-card__link">Start Course</a>
     </div>
   </div>
 
