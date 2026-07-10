@@ -4,11 +4,29 @@ title: Teaching
 permalink: /teaching/
 body_class: teaching-v2
 description: >-
-  Courses and workshops on Basilisk C, multiphase-flow numerics, and
-  soft-matter simulation.
+  Open courses and workshops on scientific Python, Basilisk C,
+  multiphase-flow numerics, and soft-matter simulation.
 ---
 
 <div class="teaching-grid">
+  <div class="course-card">
+    <img src="/assets/images/teaching/comphy-python101.svg" alt="CoMPhy Python 101 reasoning loop" loading="lazy">
+    <div class="course-card__content">
+      <h3 class="course-card__title">CoMPhy Python 101</h3>
+      <div class="course-card__meta">
+        <i class="fa-solid fa-globe"></i> Open online course
+      </div>
+      <div class="course-card__meta">
+        <i class="fa-solid fa-route"></i> Self-paced · quick and full routes
+      </div>
+      <p class="course-card__desc">
+        Mechanism-first Python onboarding: turn a physical question into
+        trustworthy computation and reproducible evidence.
+      </p>
+      <a href="/comphy-python101/" class="course-card__link">Start Course</a>
+    </div>
+  </div>
+
   <div class="course-card">
     <img src="/assets/images/teaching/basilisk-madrid.jpg" alt="Basilisk C Course" loading="lazy">
     <div class="course-card__content">
