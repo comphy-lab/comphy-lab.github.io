@@ -150,9 +150,9 @@ We are a computational physics research group based at the **Department of Physi
 ### 📚 Recent Publications
 
 <!-- RECENT_PUBLICATIONS_START -->
-1. Dixit, A. K., Zhao, C., Zaleski, S., Lohse, D., & Sanjay, V. Holes in Sheets: Double-Threshold Rupture of Draining Liquid Films. Phys. Rev. Lett., 136, 084001 (2026).
-2. Díaz, D., Bhargava, A. S., Walz, F., Sharifi, A., Summaly, S., Berger, R., Kappl, M., Butt, H.-J., Lohse, D., Willers, T., Sanjay, V., & Vollmer, D. Stood-up Drop to Determine Receding Contact Angles. Soft Matter, 22, 657-667 (2026).
-3. Demirkır, Ç., Yang, R., Bashkatov, A., Sanjay, V., Lohse, D., & Krug, D. To jump or not to jump: Adhesion and viscous dissipation dictate the detachment of coalescing wall-attached bubbles. Phys. Rev. Fluids, 10, 123602 (2025).
+1. Verschuur, C. I., Oratis, A. T., Sanjay, V., & Snoeijer, J. H. How elasticity affects bubble pinch-off. Phys. Rev. Fluids (2026).
+2. Appleford, T., Sanjay, V., & Jalaal, M. Rheology of Two-Dimensional Dilute Emulsions. Phys. Rev. Fluids, 11, 033607 (2026).
+3. Jana, S., Kolinski, J., Lohse, D., & Sanjay, V. Impacting spheres: from liquid drops to elastic beads. Soft Matter, 22, 2226-2236 (2026).
 
 [View all publications →](https://comphy-lab.org/research)
 <!-- RECENT_PUBLICATIONS_END -->
