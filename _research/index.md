@@ -27,6 +27,16 @@ title: Research
 
 ## Work in Progress
 
+### Gordillo, J. M., Rodríguez-Rodríguez, J., & <strong>Sanjay, V.</strong> Self-similar Worthington jets. arXiv preprint arXiv:2607.08972 (2026).
+
+<div class="tags"><span>Bubbles</span><span>Jets</span><span>Soft-matter-singularities</span><span>Featured</span></div>
+
+[![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2607.08972&color=green)](https://arxiv.org/abs/2607.08972)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/self-similar-jet-fullAccess)
+[![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
+
+![Self-similar collapse of a Worthington jet over more than two decades in dimensionless time](/assets/images/research/self-similar-worthington-jet-collapse.png){: width="75%" .center-block style="display: block; margin-left: auto; margin-right: auto;"}
+
 ### Ghaemi, A. H., Yang, Z., Huang, A., <strong>Sanjay, V.</strong>, Feng, J., & Constante-Amores, C. R. Bursting bubbles in Herschel-Bulkley fluids: dynamics and jetting transitions. arXiv preprint arXiv:2511.23345 (2025).
 
 <div class="tags"><span>Bubbles</span><span>Non-Newtonian</span><span>Jets</span></div>
