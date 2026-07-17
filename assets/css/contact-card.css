@@ -247,15 +247,32 @@
 .contact-card__socials {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--s-2) var(--s-4);
+  gap: var(--s-2);
   margin-top: var(--s-3);
 }
 
+/* Social profiles as btn-ghost pills, not bare text links. */
 .contact-card__detail .contact-card__socials a {
-  color: var(--c-accent-teal);
-  font-family: var(--t-mono);
-  font-size: 0.74rem;
+  display: inline-flex;
+  align-items: center;
+  padding: var(--s-2) var(--s-4);
+  border: 1px solid var(--c-border-strong);
+  border-radius: var(--r-pill);
+  color: var(--fg-1);
+  font-family: var(--t-sans);
+  font-size: var(--t-small);
   font-weight: var(--t-weight-med);
+  transition:
+    color var(--dur-fast) var(--ease),
+    border-color var(--dur-fast) var(--ease),
+    background var(--dur-fast) var(--ease);
+}
+
+.contact-card__detail .contact-card__socials a:hover,
+.contact-card__detail .contact-card__socials a:focus-visible {
+  border-color: var(--c-accent-teal);
+  color: var(--c-accent-teal);
+  background: color-mix(in srgb, var(--c-accent-teal) 8%, transparent);
 }
 
 .contact-card__footer {
@@ -338,8 +355,19 @@
 :root[data-theme="dark"] .contact-card__quick-actions a:hover,
 :root[data-theme="dark"] .contact-card__quick-actions a:focus-visible,
 :root[data-theme="dark"] .contact-card__detail a:hover,
-:root[data-theme="dark"] .contact-card__text-link,
+:root[data-theme="dark"] .contact-card__text-link {
+  color: var(--c-accent-teal);
+}
+
 :root[data-theme="dark"] .contact-card__detail .contact-card__socials a {
+  color: var(--fg-1);
+}
+
+:root[data-theme="dark"] .contact-card__detail .contact-card__socials a:hover,
+:root[data-theme="dark"]
+  .contact-card__detail
+  .contact-card__socials
+  a:focus-visible {
   color: var(--c-accent-teal);
 }
 
