@@ -238,6 +238,7 @@ function createModal(options) {
  *
  * @param {HTMLElement} button - The button element that triggered the copy
  * @param {string} [text] - Text to copy (if not provided, uses button's data attributes)
+ * @returns {Promise<boolean>} Whether the text was copied successfully
  */
 function copyToClipboard(button, text) {
   const textToCopy =
@@ -247,25 +248,26 @@ function copyToClipboard(button, text) {
 
   if (!textToCopy) {
     console.warn("No text to copy");
-    return;
+    return Promise.resolve(false);
   }
 
   // Modern clipboard API
   if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard
+    return navigator.clipboard
       .writeText(textToCopy)
       .then(() => {
         showCopyFeedback(button);
+        return true;
       })
       .catch((err) => {
         console.error("Copy failed:", err);
         // Fallback to older method
-        fallbackCopy(textToCopy, button);
+        return fallbackCopy(textToCopy, button);
       });
-  } else {
-    // Fallback for older browsers
-    fallbackCopy(textToCopy, button);
   }
+
+  // Fallback for older browsers
+  return Promise.resolve(fallbackCopy(textToCopy, button));
 }
 
 /**
@@ -274,6 +276,7 @@ function copyToClipboard(button, text) {
  * @private
  * @param {string} text - Text to copy
  * @param {HTMLElement} button - Button element for feedback
+ * @returns {boolean} Whether the text was copied successfully
  */
 function fallbackCopy(text, button) {
   const textarea = document.createElement("textarea");
@@ -285,10 +288,12 @@ function fallbackCopy(text, button) {
 
   try {
     textarea.select();
-    document.execCommand("copy");
-    showCopyFeedback(button);
+    const copied = document.execCommand("copy") === true;
+    if (copied) showCopyFeedback(button);
+    return copied;
   } catch (err) {
     console.error("Fallback copy failed:", err);
+    return false;
   } finally {
     document.body.removeChild(textarea);
   }
