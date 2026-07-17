@@ -27,7 +27,7 @@ title: Research
 
 ## Work in Progress
 
-### Gordillo, J. M., Rodríguez-Rodríguez, J., & <strong>Sanjay, V.</strong> Self-similar Worthington jets. arXiv preprint arXiv:2607.08972 (2026).
+### Gordillo, J. M., Rodríguez-Rodríguez, J., & <strong>Sanjay, V.</strong> Self-similar Worthington jets. arXiv preprint arXiv:2607.08972 (2026). {#self-similar-worthington-jets}
 
 <div class="tags"><span>Bubbles</span><span>Jets</span><span>Soft-matter-singularities</span><span>Featured</span></div>
 
@@ -36,6 +36,8 @@ title: Research
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
 
 ![Self-similar collapse of a Worthington jet over more than two decades in dimensionless time](/assets/images/research/self-similar-worthington-jet-collapse.png){: width="75%" .center-block style="display: block; margin-left: auto; margin-right: auto;"}
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/cCzpLutubF4?rel=0" title="Self-similar Worthington jets — full video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Ghaemi, A. H., Yang, Z., Huang, A., <strong>Sanjay, V.</strong>, Feng, J., & Constante-Amores, C. R. Bursting bubbles in Herschel-Bulkley fluids: dynamics and jetting transitions. arXiv preprint arXiv:2511.23345 (2025).
 
