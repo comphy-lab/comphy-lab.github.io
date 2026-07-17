@@ -18,7 +18,7 @@
   };
 
   const copyText = async (button, text) => {
-    const copied = await window.Utils?.copyToClipboard(button, text);
+    const copied = await window.Utils?.copyToClipboard?.(button, text);
     if (!copied) throw new Error("Copy command unavailable");
   };
 
