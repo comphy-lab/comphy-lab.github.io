@@ -1,121 +1,51 @@
-/* Contact card: a focused, mobile-first v2 page. */
-
-.contact-card-page {
-  --contact-card-light: #fffdf9;
-  --contact-card-hero: #254c4a;
-}
-
-.contact-card-page .s-header {
-  position: absolute;
-}
-
-.contact-card-page .s-header__logo,
-.contact-card-page .s-header__menu-toggle {
-  filter: drop-shadow(
-    0 2px 8px color-mix(in srgb, var(--fg-strong) 12%, transparent)
-  );
-}
+/* Contact card: a focused, mobile-first v2 page.
+   Sits on bare paper + grid like every v2 surface; all colour
+   lives inside the card (design-system rule: no page washes). */
 
 .contact-card-page .c-footer {
   margin-top: 0;
 }
 
 .contact-card {
-  isolation: isolate;
   min-height: 100svh;
   padding: clamp(7rem, 12vw, 9rem) var(--s-4) var(--s-8);
-  position: relative;
   display: grid;
   place-items: start center;
-  overflow: hidden;
 }
 
-.contact-card:before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  background:
-    linear-gradient(
-      135deg,
-      color-mix(in srgb, var(--c-accent-red) 10%, transparent),
-      transparent 34%
-    ),
-    linear-gradient(
-      315deg,
-      color-mix(in srgb, var(--c-accent-violet) 9%, transparent),
-      transparent 38%
-    );
-}
-
-.contact-card__glow {
-  position: absolute;
-  z-index: -1;
-  width: 22rem;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.14;
-  pointer-events: none;
-}
-
-.contact-card__glow--one {
-  top: 4rem;
-  left: -11rem;
-  background: var(--c-accent-red);
-}
-
-.contact-card__glow--two {
-  right: -12rem;
-  bottom: 12rem;
-  background: var(--c-accent-violet);
-}
-
+/* Panel recipe: translucent glass over paper, 28-px radius. */
 .contact-card__sheet {
   width: min(100%, 43rem);
   overflow: hidden;
-  border: 1px solid var(--c-border-strong);
+  border: 1px solid var(--c-border);
   border-radius: var(--r-lg);
-  background: color-mix(in srgb, var(--c-surface-strong) 94%, transparent);
-  box-shadow: var(--shadow-lg);
-  backdrop-filter: blur(18px);
+  background: var(--c-surface-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-soft);
 }
 
+/* Identity bed: teal-tinted paper, same mix as the PI member
+   card in the design system (.member--pi). */
 .contact-card__identity {
-  position: relative;
   min-height: 23rem;
   display: grid;
   grid-template-columns: minmax(9rem, 0.8fr) minmax(13rem, 1.2fr);
   grid-template-rows: auto 1fr;
   gap: var(--s-5);
   padding: var(--s-5);
-  color: var(--contact-card-light);
-  background: var(--contact-card-hero);
-}
-
-.contact-card__identity:after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(
-      circle at 68% 18%,
-      rgba(255, 255, 255, 0.14),
-      transparent 30%
-    ),
-    linear-gradient(145deg, transparent 54%, rgba(0, 0, 0, 0.17));
+  border-bottom: 1px solid var(--c-border);
+  background: color-mix(in srgb, var(--c-accent-teal) 12%, var(--c-paper-tint));
 }
 
 .contact-card__brand {
-  z-index: 1;
   grid-column: 1 / -1;
   justify-self: start;
   display: inline-flex;
   align-items: center;
   gap: var(--s-2);
   border: 0;
-  color: inherit;
+  color: var(--fg-2);
   font-family: var(--t-mono);
   font-size: var(--t-eyebrow);
   font-weight: var(--t-weight-semi);
@@ -123,35 +53,33 @@
   text-transform: uppercase;
 }
 
-.contact-card__brand:hover {
-  color: var(--contact-card-light);
+.contact-card__brand:hover,
+.contact-card__brand:focus-visible {
+  color: var(--c-accent-teal);
 }
 
 .contact-card__brand img {
   width: 2.25rem;
   height: 2.25rem;
   object-fit: contain;
-  filter: brightness(0) invert(1);
 }
 
 .contact-card__portrait-wrap {
-  z-index: 1;
   align-self: end;
   margin: 0;
   aspect-ratio: 4 / 5;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.28);
+  border: 1px solid var(--c-border-strong);
   border-radius: 8rem 8rem var(--r-md) var(--r-md);
-  box-shadow: 0 1.5rem 3.5rem rgba(0, 0, 0, 0.24);
-  transform: rotate(-1.5deg);
+  box-shadow: var(--shadow-md);
   transition:
     transform 480ms var(--ease),
     box-shadow 480ms var(--ease);
 }
 
 .contact-card__portrait-wrap:hover {
-  transform: rotate(0deg) translateY(-0.25rem);
-  box-shadow: 0 1.8rem 4rem rgba(0, 0, 0, 0.29);
+  transform: translateY(-0.25rem);
+  box-shadow: var(--shadow-soft);
 }
 
 .contact-card__portrait {
@@ -162,28 +90,27 @@
 }
 
 .contact-card__heading {
-  z-index: 1;
   align-self: end;
   padding-bottom: var(--s-3);
 }
 
+/* .eyebrow keeps its bridge colours: brand purple, #c09bc4 dark. */
 .contact-card__heading .eyebrow {
   margin: 0 0 var(--s-2);
-  color: rgba(255, 255, 255, 0.72);
 }
 
 .contact-card__heading h1 {
   margin: 0;
-  color: var(--contact-card-light);
-  font-size: clamp(2.45rem, 8vw, 4.8rem);
-  line-height: 0.94;
-  letter-spacing: -0.045em;
+  color: var(--fg-strong);
+  font-size: clamp(2.45rem, 8vw, 4.25rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
 }
 
 .contact-card__role {
   max-width: 24ch;
   margin: var(--s-4) 0 0;
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--fg-2);
   font-size: var(--t-small);
   line-height: 1.45;
 }
@@ -294,6 +221,7 @@
   font-weight: var(--t-weight-semi);
 }
 
+/* Copy button: btn-ghost recipe, mono label. */
 .contact-card__copy {
   align-self: center;
   padding: var(--s-2) var(--s-3);
@@ -356,17 +284,34 @@
     background var(--dur) var(--ease);
 }
 
+/* Primary action: .btn recipe — solid teal pill. */
 .contact-card__save {
   border: 1px solid var(--c-accent-teal);
   color: var(--c-accent-teal-fg);
   background: var(--c-accent-teal);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
 }
 
+.contact-card__save:hover,
+.contact-card__save:focus-visible {
+  border-color: var(--c-accent-teal-hover);
+  border-bottom-color: var(--c-accent-teal-hover);
+  color: var(--c-accent-teal-fg);
+  background: var(--c-accent-teal-hover);
+}
+
+/* Secondary action: .btn-ghost recipe. */
 .contact-card__share {
   border: 1px solid var(--c-border-strong);
-  color: var(--fg-strong);
-  background: var(--c-surface-strong);
+  color: var(--fg-1);
+  background: transparent;
+}
+
+.contact-card__share:hover,
+.contact-card__share:focus-visible {
+  border-color: var(--c-accent-teal);
+  color: var(--c-accent-teal);
+  background: color-mix(in srgb, var(--c-accent-teal) 8%, transparent);
 }
 
 .contact-card__save:hover,
@@ -374,14 +319,44 @@
 .contact-card__share:hover,
 .contact-card__share:focus-visible {
   transform: translateY(-2px);
-  box-shadow: var(--shadow-soft);
 }
 
-.contact-card__save:hover,
-.contact-card__save:focus-visible {
-  border-bottom-color: var(--c-accent-teal);
-  color: var(--c-accent-teal-fg);
-  background: var(--c-accent-teal-hover);
+/* The global dark link rule (:root[data-theme="dark"] a, #8fb8ff)
+   out-specifies single-class selectors; restate card link colours
+   under the dark scope so nothing leaks blue. */
+:root[data-theme="dark"] .contact-card__brand {
+  color: var(--fg-2);
+}
+
+:root[data-theme="dark"] .contact-card__quick-actions a,
+:root[data-theme="dark"] .contact-card__detail a:not(.contact-card__text-link) {
+  color: var(--fg-strong);
+}
+
+:root[data-theme="dark"] .contact-card__brand:hover,
+:root[data-theme="dark"] .contact-card__brand:focus-visible,
+:root[data-theme="dark"] .contact-card__quick-actions a:hover,
+:root[data-theme="dark"] .contact-card__quick-actions a:focus-visible,
+:root[data-theme="dark"] .contact-card__detail a:hover,
+:root[data-theme="dark"] .contact-card__text-link,
+:root[data-theme="dark"] .contact-card__detail .contact-card__socials a {
+  color: var(--c-accent-teal);
+}
+
+/* Dark teal is light (#6ac2bd): dark ink on it, as tokens' .btn. */
+:root[data-theme="dark"] .contact-card__save,
+:root[data-theme="dark"] .contact-card__save:hover,
+:root[data-theme="dark"] .contact-card__save:focus-visible {
+  color: #0c1a19;
+}
+
+:root[data-theme="dark"] .contact-card__share {
+  color: var(--fg-1);
+}
+
+:root[data-theme="dark"] .contact-card__share:hover,
+:root[data-theme="dark"] .contact-card__share:focus-visible {
+  color: var(--c-accent-teal);
 }
 
 .contact-card__status {
@@ -442,7 +417,6 @@
     justify-self: center;
     border-radius: 8rem;
     aspect-ratio: 1;
-    transform: rotate(-1deg);
   }
 
   .contact-card__heading {
