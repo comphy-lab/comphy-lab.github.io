@@ -1,0 +1,491 @@
+/* Contact card: a focused, mobile-first v2 page.
+   Sits on bare paper + grid like every v2 surface; all colour
+   lives inside the card (design-system rule: no page washes). */
+
+.contact-card-page .c-footer {
+  margin-top: 0;
+}
+
+.contact-card {
+  min-height: 100svh;
+  padding: clamp(7rem, 12vw, 9rem) var(--s-4) var(--s-8);
+  display: grid;
+  place-items: start center;
+}
+
+/* Panel recipe: translucent glass over paper, 28-px radius. */
+.contact-card__sheet {
+  width: min(100%, 43rem);
+  overflow: hidden;
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-lg);
+  background: var(--c-surface-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-soft);
+}
+
+/* Identity bed: teal-tinted paper, same mix as the PI member
+   card in the design system (.member--pi). */
+.contact-card__identity {
+  min-height: 23rem;
+  display: grid;
+  grid-template-columns: minmax(9rem, 0.8fr) minmax(13rem, 1.2fr);
+  grid-template-rows: auto 1fr;
+  gap: var(--s-5);
+  padding: var(--s-5);
+  border-bottom: 1px solid var(--c-border);
+  background: color-mix(in srgb, var(--c-accent-teal) 12%, var(--c-paper-tint));
+}
+
+.contact-card__brand {
+  grid-column: 1 / -1;
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  border: 0;
+  color: var(--fg-2);
+  font-family: var(--t-mono);
+  font-size: var(--t-eyebrow);
+  font-weight: var(--t-weight-semi);
+  letter-spacing: var(--t-track-wide);
+  text-transform: uppercase;
+}
+
+.contact-card__brand:hover,
+.contact-card__brand:focus-visible {
+  color: var(--c-accent-teal);
+}
+
+.contact-card__brand img {
+  width: 2.25rem;
+  height: 2.25rem;
+  object-fit: contain;
+}
+
+.contact-card__portrait-wrap {
+  align-self: end;
+  margin: 0;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border: 1px solid var(--c-border-strong);
+  border-radius: 8rem 8rem var(--r-md) var(--r-md);
+  box-shadow: var(--shadow-md);
+  transition:
+    transform 480ms var(--ease),
+    box-shadow 480ms var(--ease);
+}
+
+.contact-card__portrait-wrap:hover {
+  transform: translateY(-0.25rem);
+  box-shadow: var(--shadow-soft);
+}
+
+.contact-card__portrait {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.contact-card__heading {
+  align-self: end;
+  padding-bottom: var(--s-3);
+}
+
+/* .eyebrow keeps its bridge colours: brand purple, #c09bc4 dark. */
+.contact-card__heading .eyebrow {
+  margin: 0 0 var(--s-2);
+}
+
+.contact-card__heading h1 {
+  margin: 0;
+  color: var(--fg-strong);
+  font-size: clamp(2.45rem, 8vw, 4.25rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+}
+
+.contact-card__role {
+  max-width: 24ch;
+  margin: var(--s-4) 0 0;
+  color: var(--fg-2);
+  font-size: var(--t-small);
+  line-height: 1.45;
+}
+
+.contact-card__quick-actions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-bottom: 1px solid var(--c-border);
+}
+
+.contact-card__quick-actions a {
+  min-height: 4.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-3);
+  border: 0;
+  color: var(--fg-strong);
+  font-size: var(--t-small);
+  font-weight: var(--t-weight-semi);
+  letter-spacing: 0.02em;
+  transition:
+    color var(--dur) var(--ease),
+    background var(--dur) var(--ease);
+}
+
+.contact-card__quick-actions a + a {
+  border-left: 1px solid var(--c-border);
+}
+
+.contact-card__quick-actions a:hover,
+.contact-card__quick-actions a:focus-visible {
+  color: var(--c-accent-teal);
+  background: color-mix(in srgb, var(--c-accent-teal) 7%, transparent);
+}
+
+.contact-card__quick-actions svg,
+.contact-card__detail-icon svg,
+.contact-card__footer svg {
+  width: 1.35rem;
+  height: 1.35rem;
+  fill: currentcolor;
+}
+
+.contact-card__details {
+  padding: var(--s-2) var(--s-5);
+}
+
+.contact-card__detail {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2.5rem minmax(0, 1fr) auto;
+  gap: var(--s-3);
+  align-items: start;
+  padding: var(--s-5) 0;
+}
+
+.contact-card__detail + .contact-card__detail {
+  border-top: 1px solid var(--c-border);
+}
+
+.contact-card__detail-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--c-accent-teal);
+  background: color-mix(in srgb, var(--c-accent-teal) 9%, transparent);
+}
+
+.contact-card__label {
+  margin: 0 0 var(--s-1);
+  color: var(--fg-2);
+  font-family: var(--t-mono);
+  font-size: 0.7rem;
+  font-weight: var(--t-weight-semi);
+  letter-spacing: var(--t-track-wide);
+  text-transform: uppercase;
+}
+
+.contact-card__detail p {
+  margin: 0;
+}
+
+.contact-card__detail a:not(.contact-card__text-link) {
+  overflow-wrap: anywhere;
+  border-bottom-color: transparent;
+  color: var(--fg-strong);
+  font-weight: var(--t-weight-med);
+}
+
+.contact-card__detail a:hover {
+  color: var(--c-accent-teal);
+}
+
+.contact-card__secondary {
+  color: var(--fg-2);
+  font-size: var(--t-small);
+}
+
+.contact-card__text-link {
+  display: inline-block;
+  margin-top: var(--s-2);
+  border: 0;
+  color: var(--c-accent-teal);
+  font-size: var(--t-small);
+  font-weight: var(--t-weight-semi);
+}
+
+/* Copy button: btn-ghost recipe, mono label. */
+.contact-card__copy {
+  align-self: center;
+  padding: var(--s-2) var(--s-3);
+  border: 1px solid var(--c-border-strong);
+  border-radius: var(--r-pill);
+  color: var(--fg-2);
+  background: transparent;
+  font: 500 0.72rem/1 var(--t-mono);
+  cursor: pointer;
+  transition:
+    color var(--dur-fast) var(--ease),
+    border-color var(--dur-fast) var(--ease),
+    transform var(--dur-fast) var(--ease);
+}
+
+.contact-card__copy:hover,
+.contact-card__copy:focus-visible {
+  color: var(--c-accent-teal);
+  border-color: var(--c-accent-teal);
+  transform: translateY(-1px);
+}
+
+.contact-card__socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  margin-top: var(--s-3);
+}
+
+/* Social profiles as btn-ghost pills, not bare text links. */
+.contact-card__detail .contact-card__socials a {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--s-2) var(--s-4);
+  border: 1px solid var(--c-border-strong);
+  border-radius: var(--r-pill);
+  color: var(--fg-1);
+  font-family: var(--t-sans);
+  font-size: var(--t-small);
+  font-weight: var(--t-weight-med);
+  transition:
+    color var(--dur-fast) var(--ease),
+    border-color var(--dur-fast) var(--ease),
+    background var(--dur-fast) var(--ease);
+}
+
+.contact-card__detail .contact-card__socials a:hover,
+.contact-card__detail .contact-card__socials a:focus-visible {
+  border-color: var(--c-accent-teal);
+  color: var(--c-accent-teal);
+  background: color-mix(in srgb, var(--c-accent-teal) 8%, transparent);
+}
+
+.contact-card__footer {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: var(--s-3);
+  padding: var(--s-5);
+  border-top: 1px solid var(--c-border);
+  background: var(--c-paper-tint);
+}
+
+.contact-card__save,
+.contact-card__share {
+  min-height: 3.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-2);
+  padding: 0 var(--s-4);
+  border-radius: var(--r-pill);
+  font: 600 var(--t-small) / 1 var(--t-sans);
+  cursor: pointer;
+  transition:
+    transform var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease),
+    background var(--dur) var(--ease);
+}
+
+/* Primary action: .btn recipe — solid teal pill. */
+.contact-card__save {
+  border: 1px solid var(--c-accent-teal);
+  color: var(--c-accent-teal-fg);
+  background: var(--c-accent-teal);
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-card__save:hover,
+.contact-card__save:focus-visible {
+  border-color: var(--c-accent-teal-hover);
+  border-bottom-color: var(--c-accent-teal-hover);
+  color: var(--c-accent-teal-fg);
+  background: var(--c-accent-teal-hover);
+}
+
+/* Secondary action: .btn-ghost recipe. */
+.contact-card__share {
+  border: 1px solid var(--c-border-strong);
+  color: var(--fg-1);
+  background: transparent;
+}
+
+.contact-card__share:hover,
+.contact-card__share:focus-visible {
+  border-color: var(--c-accent-teal);
+  color: var(--c-accent-teal);
+  background: color-mix(in srgb, var(--c-accent-teal) 8%, transparent);
+}
+
+.contact-card__save:hover,
+.contact-card__save:focus-visible,
+.contact-card__share:hover,
+.contact-card__share:focus-visible {
+  transform: translateY(-2px);
+}
+
+/* The global dark link rule (:root[data-theme="dark"] a, #8fb8ff)
+   out-specifies single-class selectors; restate card link colours
+   under the dark scope so nothing leaks blue. */
+:root[data-theme="dark"] .contact-card__brand {
+  color: var(--fg-2);
+}
+
+:root[data-theme="dark"] .contact-card__quick-actions a,
+:root[data-theme="dark"] .contact-card__detail a:not(.contact-card__text-link) {
+  color: var(--fg-strong);
+}
+
+:root[data-theme="dark"] .contact-card__brand:hover,
+:root[data-theme="dark"] .contact-card__brand:focus-visible,
+:root[data-theme="dark"] .contact-card__quick-actions a:hover,
+:root[data-theme="dark"] .contact-card__quick-actions a:focus-visible,
+:root[data-theme="dark"] .contact-card__detail a:hover,
+:root[data-theme="dark"] .contact-card__text-link {
+  color: var(--c-accent-teal);
+}
+
+:root[data-theme="dark"] .contact-card__detail .contact-card__socials a {
+  color: var(--fg-1);
+}
+
+:root[data-theme="dark"] .contact-card__detail .contact-card__socials a:hover,
+:root[data-theme="dark"]
+  .contact-card__detail
+  .contact-card__socials
+  a:focus-visible {
+  color: var(--c-accent-teal);
+}
+
+/* Dark teal is light (#6ac2bd): dark ink on it, as tokens' .btn. */
+:root[data-theme="dark"] .contact-card__save,
+:root[data-theme="dark"] .contact-card__save:hover,
+:root[data-theme="dark"] .contact-card__save:focus-visible {
+  color: #0c1a19;
+}
+
+:root[data-theme="dark"] .contact-card__share {
+  color: var(--fg-1);
+}
+
+:root[data-theme="dark"] .contact-card__share:hover,
+:root[data-theme="dark"] .contact-card__share:focus-visible {
+  color: var(--c-accent-teal);
+}
+
+.contact-card__status {
+  grid-column: 1 / -1;
+  min-height: 1rem;
+  margin: 0;
+  color: var(--fg-2);
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.contact-card__sheet > * {
+  animation: contact-card-reveal 600ms var(--ease) both;
+}
+
+.contact-card__sheet > :nth-child(2) {
+  animation-delay: 80ms;
+}
+
+.contact-card__sheet > :nth-child(3) {
+  animation-delay: 150ms;
+}
+
+.contact-card__sheet > :nth-child(4) {
+  animation-delay: 220ms;
+}
+
+@keyframes contact-card-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(1.2rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 35rem) {
+  .contact-card {
+    padding-inline: var(--s-2);
+  }
+
+  .contact-card__sheet {
+    border-radius: var(--r-md);
+  }
+
+  .contact-card__identity {
+    min-height: 28rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(12rem, 1fr) auto;
+    gap: var(--s-4);
+  }
+
+  .contact-card__portrait-wrap {
+    width: min(64%, 12rem);
+    justify-self: center;
+    border-radius: 8rem;
+    aspect-ratio: 1;
+  }
+
+  .contact-card__heading {
+    padding-bottom: 0;
+    text-align: center;
+  }
+
+  .contact-card__heading .eyebrow,
+  .contact-card__role {
+    margin-inline: auto;
+  }
+
+  .contact-card__heading h1 {
+    font-size: clamp(2.75rem, 15vw, 4.25rem);
+  }
+
+  .contact-card__details {
+    padding-inline: var(--s-4);
+  }
+
+  .contact-card__detail {
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+  }
+
+  .contact-card__copy {
+    grid-column: 2;
+    justify-self: start;
+    margin-top: var(--s-2);
+  }
+
+  .contact-card__footer {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-card__sheet > *,
+  .contact-card__portrait-wrap,
+  .contact-card__save,
+  .contact-card__share {
+    animation: none;
+    transition: none;
+  }
+}

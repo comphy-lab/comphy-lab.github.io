@@ -149,13 +149,13 @@ describe("utils.js", () => {
         writable: true,
       });
 
-      window.Utils.copyToClipboard(button);
-      await Promise.resolve(); // flush microtasks
+      const copied = await window.Utils.copyToClipboard(button);
 
       expect(writeText).toHaveBeenCalledWith("hello world");
+      expect(copied).toBe(true);
     });
 
-    it("falls back to execCommand when navigator.clipboard is unavailable", () => {
+    it("falls back to execCommand when clipboard is unavailable", async () => {
       Object.defineProperty(navigator, "clipboard", {
         value: undefined,
         configurable: true,
@@ -170,9 +170,10 @@ describe("utils.js", () => {
         .spyOn(document, "execCommand")
         .mockReturnValue(true);
 
-      window.Utils.copyToClipboard(button);
+      const copied = await window.Utils.copyToClipboard(button);
 
       expect(execCommand).toHaveBeenCalledWith("copy");
+      expect(copied).toBe(true);
       execCommand.mockRestore();
     });
 
@@ -191,19 +192,19 @@ describe("utils.js", () => {
         .spyOn(document, "execCommand")
         .mockReturnValue(true);
 
-      window.Utils.copyToClipboard(button);
-      await Promise.resolve(); // let writeText reject
-      await Promise.resolve(); // let catch handler run
+      const copied = await window.Utils.copyToClipboard(button);
 
       expect(execCommand).toHaveBeenCalledWith("copy");
+      expect(copied).toBe(true);
       execCommand.mockRestore();
     });
 
-    it("does nothing if no text is available", () => {
+    it("reports failure if no text is available", async () => {
       const noTextBtn = document.createElement("button");
       document.body.appendChild(noTextBtn);
-      // Should not throw
-      expect(() => window.Utils.copyToClipboard(noTextBtn)).not.toThrow();
+      await expect(window.Utils.copyToClipboard(noTextBtn)).resolves.toBe(
+        false
+      );
     });
 
     it("reads text from data-clipboard-text attribute", () => {

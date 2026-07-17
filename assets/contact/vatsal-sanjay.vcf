@@ -1,0 +1,15 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Sanjay;Vatsal;;Dr.;
+FN:Dr. Vatsal Sanjay
+ORG:Durham University;Department of Physics;CoMPhy Lab
+TITLE:Assistant Professor
+EMAIL;TYPE=INTERNET,WORK:vatsal.sanjay@durham.ac.uk
+ADR;TYPE=WORK:;;Ph255\, Wolfendale Wing\, Rochester Building\, South Road;Durham;;DH1 3LE;United Kingdom
+URL:https://comphy-lab.org
+URL;TYPE=WORK:https://www.durham.ac.uk/staff/vatsal-sanjay/
+X-SOCIALPROFILE;TYPE=github:https://github.com/comphy-lab
+X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/vatsalsanjay/
+X-SOCIALPROFILE;TYPE=youtube:https://www.youtube.com/c/VatsalSanjay
+NOTE:Principal Investigator\, Computational Multiphase Physics Lab
+END:VCARD
