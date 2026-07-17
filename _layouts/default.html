@@ -93,6 +93,9 @@
   {% if page.layout == "teaching" or page.layout == "teaching-course" or page.body_class contains "teaching-v2" %}
   <link rel="stylesheet" href="/assets/css/teaching.css">
   {% endif %}
+  {% if page.body_class contains "contact-card-page" %}
+  <link rel="stylesheet" href="/assets/css/contact-card.css">
+  {% endif %}
   
   <!-- Structured Data for SEO -->
   <script type="application/ld+json">
@@ -131,6 +134,9 @@
   <script defer src="https://cdn.jsdelivr.net/npm/dompurify@3.0.5/dist/purify.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
   <script defer src="/assets/js/main.js"></script>
+  {% if page.body_class contains "contact-card-page" %}
+  <script defer src="/assets/js/contact-card.js"></script>
+  {% endif %}
   {% if page.layout == "teaching" %}
   <script defer src="/assets/js/teaching.js"></script>
   {% endif %}
