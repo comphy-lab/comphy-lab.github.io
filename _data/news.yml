@@ -16,6 +16,17 @@ items:
 
   # ===================== 2026 =====================
 
+  - date: "2026-07-13"
+    kind: paper
+    title: >-
+      How elasticity affects bubble pinch-off selected as an Editors' Suggestion
+    meta: >-
+      Verschuur, C. I., Oratis, A. T., <strong>Sanjay, V.</strong> &amp;
+      Snoeijer, J. H. — <em>Phys. Rev. Fluids</em>, 11, 073302 (2026).
+      Selected as an Editors' Suggestion.
+    action_label: "DOI ↗"
+    action_href: "https://doi.org/10.1103/5sp3-k5l2"
+
   - date: "2026-05-28"
     kind: award
     title: >-
