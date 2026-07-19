@@ -66,6 +66,7 @@ description: >-
           {% if img.video or img.youtube %}{% assign is_motion = true %}{% endif %}
           <figure class="hero__slide hero__slide--{% if is_motion %}motion{% else %}still{% endif %}"
                   data-active="{% if forloop.first %}true{% else %}false{% endif %}"
+                  data-duration="{{ img.duration | default: 6500 }}"
                   aria-hidden="{% if forloop.first %}false{% else %}true{% endif %}"
                   {% unless forloop.first %}inert{% endunless %}>
             <div class="hero__image-well">
@@ -77,7 +78,7 @@ description: >-
                 </video>
               {% elsif img.youtube %}
                 <iframe
-                  src="https://www.youtube-nocookie.com/embed/{{ img.youtube }}?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist={{ img.youtube }}&amp;controls=0&amp;modestbranding=1&amp;rel=0&amp;playsinline=1&amp;iv_load_policy=3"
+                  src="https://www.youtube-nocookie.com/embed/{{ img.youtube }}?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist={{ img.youtube }}&amp;controls=0&amp;modestbranding=1&amp;rel=0&amp;playsinline=1&amp;iv_load_policy=3{% if img.youtube_end %}&amp;end={{ img.youtube_end }}{% endif %}"
                   title="{{ img.alt }}"
                   frameborder="0"
                   allow="autoplay; encrypted-media; picture-in-picture"
@@ -295,12 +296,40 @@ description: >-
         v.removeAttribute('loop');
         try { v.pause(); v.currentTime = 0; } catch (e) {}
       });
+      media.querySelectorAll('iframe').forEach(function (frame) {
+        var src = frame.getAttribute('src') || '';
+        frame.setAttribute('src', src
+          .replace('autoplay=1', 'autoplay=0')
+          .replace('&loop=1', '&loop=0'));
+      });
       return;
     }
 
     if (figures.length < 2) return;
+    function resetMedia(figure) {
+      var video = figure.querySelector('video');
+      if (video) {
+        try {
+          video.currentTime = 0;
+          var playPromise = video.play();
+          if (playPromise) playPromise.catch(function () {});
+        } catch (e) {}
+      }
+
+      var frame = figure.querySelector('iframe');
+      if (frame) {
+        var src = frame.getAttribute('src');
+        frame.setAttribute('src', src);
+      }
+    }
+
+    function slideDuration(figure) {
+      var duration = parseInt(figure.getAttribute('data-duration'), 10);
+      return duration > 0 ? duration : 6500;
+    }
+
     var idx = 0;
-    setInterval(function () {
+    function advance() {
       figures[idx].setAttribute('data-active', 'false');
       figures[idx].setAttribute('aria-hidden', 'true');
       figures[idx].setAttribute('inert', '');
@@ -308,6 +337,10 @@ description: >-
       figures[idx].setAttribute('data-active', 'true');
       figures[idx].setAttribute('aria-hidden', 'false');
       figures[idx].removeAttribute('inert');
-    }, 6500);
+      resetMedia(figures[idx]);
+      setTimeout(advance, slideDuration(figures[idx]));
+    }
+
+    setTimeout(advance, slideDuration(figures[idx]));
   })();
 </script>

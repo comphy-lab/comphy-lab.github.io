@@ -30,18 +30,30 @@ cta_secondary:
   label: Join the lab
   href: /join
 
-# Hero rotator — three recent publications that sell the lab visually.
-# First is the visible default; others fade in every 6.5 s unless
-# prefers-reduced-motion is set.
+# Hero rotator — recent publications that sell the lab visually.
+# First is the visible default; slides fade every 6.5 s unless a
+# duration is set or prefers-reduced-motion is enabled.
 #
 # Each entry is EITHER:
 #   src: <image-path>       → rendered as an <img>
 #   youtube: <video-id>     → rendered as an embedded player, muted
 #                              autoplay loop, no controls
+#   youtube_end: <seconds>  → optionally stop/loop at this timestamp
+#   duration: <milliseconds> → optionally override the 6.5 s dwell
 #
 # caption_title + caption_sub float over a dark gradient at the
 # bottom of the panel.
 images:
+  - youtube: cCzpLutubF4
+    youtube_end: 20
+    duration: 20000
+    alt: >-
+      Self-similar Worthington jet emerging after the collapse of a
+      bubble cavity.
+    caption_title: Self-similar Worthington jets
+    caption_sub: Gordillo et al. · arXiv:2607.08972 (2026)
+    href: /research#self-similar-worthington-jets
+
   - video: https://www.dropbox.com/scl/fi/g82ozolz1ncub2s9my5oo/JMBC_Video.mp4?rlkey=6eooxf1rimh5e1r94mjpldp4w&dl=0
     type: video/mp4
     poster: /assets/images/news/jmbc-2026-best-video.jpg
