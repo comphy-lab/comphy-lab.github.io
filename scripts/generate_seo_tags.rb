@@ -87,10 +87,9 @@ def normalize_url(url)
   end
 
   normalized = Pathname.new(url).cleanpath.to_s
-  return nil unless normalized.start_with?('/')
-
   # Remove leading slash for file operations
   result = normalized.sub(/^\//, '')
+  return nil if result.start_with?('~')
   
   # Debug output
   puts "URL Normalization: #{original_url} -> #{result}" if ENV['DEBUG']
@@ -285,8 +284,8 @@ keywords_by_url.each do |url, keywords|
   descriptions = descriptions_by_url[url] || Set.new
   
   # Get file path
-  file_path = File.expand_path(url, site_dir)
   site_root = File.expand_path(site_dir)
+  file_path = File.expand_path(File.join(site_root, url))
 
   unless file_path.start_with?("#{site_root}#{File::SEPARATOR}")
     puts "Skipping unsafe output path for #{url}" if ENV['DEBUG']

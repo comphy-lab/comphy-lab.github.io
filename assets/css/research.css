@@ -700,7 +700,7 @@
 }
 
 .research-content .tags span:nth-of-type(3) {
-  background: var(--color-primary-alpha-5);
+  background: var(--color-primary-alpha-05);
 }
 
 [data-theme="dark"] .research-content .tags span:nth-of-type(3) {
@@ -708,7 +708,7 @@
 }
 
 .research-content .tags span:nth-of-type(n + 4) {
-  background: var(--color-primary-alpha-5);
+  background: var(--color-primary-alpha-05);
 }
 
 [data-theme="dark"] .research-content .tags span:nth-of-type(n + 4) {

@@ -20,6 +20,9 @@ on:
       - "package.json"
       - "package-lock.json"
 
+permissions:
+  contents: read
+
 jobs:
   markdown-quality:
     runs-on: ubuntu-latest
@@ -35,16 +38,16 @@ jobs:
           cache: "npm"
 
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --ignore-scripts
 
       - name: Run markdownlint for teaching content
         run: |
-          npx markdownlint-cli2 --config .markdownlint-cli2.jsonc \
+          ./node_modules/.bin/markdownlint-cli2 --config .markdownlint-cli2.jsonc \
             "_teaching/**/*.md" \
             "assets/images/teaching/README.md"
 
       - name: Check prettier formatting for teaching content
         run: |
-          npx prettier --check \
+          ./node_modules/.bin/prettier --check \
             "_teaching/**/*.md" \
             "assets/images/teaching/README.md"

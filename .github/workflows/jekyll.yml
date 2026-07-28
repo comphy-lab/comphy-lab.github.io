@@ -8,8 +8,6 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: jekyll-site-${{ github.ref }}
@@ -24,7 +22,7 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.2.2"
+          ruby-version: "3.4.10"
           bundler: "2.5.23"
           bundler-cache: true
 
@@ -38,7 +36,7 @@ jobs:
 
       - name: Package Pages artifact
         run: |
-          tar --dereference --hard-dereference -cvf github-pages.tar _site
+          tar --dereference --hard-dereference --directory _site -cvf ../github-pages.tar .
           gzip -f github-pages.tar
 
       - name: Upload artifact
@@ -54,6 +52,9 @@ jobs:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     environment:

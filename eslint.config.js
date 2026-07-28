@@ -1,13 +1,18 @@
+const js = require("@eslint/js");
+const globals = require("globals");
+
 module.exports = [
+  js.configs.recommended,
   {
     languageOptions: {
-      ecmaVersion: 12,
-      sourceType: "module",
+      ecmaVersion: 2021,
+      sourceType: "script",
       globals: {
-        browser: true,
-        es2021: true,
+        ...globals.browser,
+        ...globals.es2021,
         marked: "readonly",
-        DOMPurify: "readonly"
+        DOMPurify: "readonly",
+        Utils: "readonly"
       }
     },
     rules: {

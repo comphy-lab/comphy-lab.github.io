@@ -76,6 +76,7 @@
 
   /* Color System - Transparent Colors */
   --color-black-alpha-05: rgba(0, 0, 0, 0.05);
+  --color-black-alpha-08: rgba(0, 0, 0, 0.08);
   --color-black-alpha-10: rgba(0, 0, 0, 0.1);
   --color-black-alpha-15: rgba(0, 0, 0, 0.15);
   --color-black-alpha-20: rgba(0, 0, 0, 0.2);
@@ -89,6 +90,7 @@
   --color-white-alpha-30: rgba(255, 255, 255, 0.3);
   --color-white-alpha-35: rgba(255, 255, 255, 0.35);
   --color-white-alpha-40: rgba(255, 255, 255, 0.4);
+  --color-white-alpha-50: rgba(255, 255, 255, 0.5);
   --color-white-alpha-70: rgba(255, 255, 255, 0.7);
   --color-white-alpha-85: rgba(255, 255, 255, 0.85);
   --color-white-alpha-95: rgba(255, 255, 255, 0.95);
@@ -105,7 +107,9 @@
   --color-blue-bright-alpha-20: rgba(76, 110, 245, 0.2);
   --color-blue-bright-alpha-25: rgba(76, 110, 245, 0.25);
   --color-blue-bright-alpha-30: rgba(76, 110, 245, 0.3);
+  --color-blue-bright-alpha-40: rgba(76, 110, 245, 0.4);
   --color-blue-bright-alpha-50: rgba(76, 110, 245, 0.5);
+  --color-blue-bright-alpha-80: rgba(76, 110, 245, 0.8);
   --color-red-darker-alpha-20: rgba(250, 82, 82, 0.2);
   --color-header-base-alpha-15: rgba(104, 35, 109, 0.15);
   --color-header-base-alpha-20: rgba(104, 35, 109, 0.2);
@@ -129,6 +133,7 @@
   /* Transitions */
   --transition-fast: all 0.2s ease;
   --transition-medium: all 0.3s ease;
+  --loader-border-color: var(--color-black-alpha-10);
 
   /* Spacing System */
   --space-xs: 0.5rem;
@@ -2323,7 +2328,7 @@ section#featured:after,
 }
 
 /* Join page markdown refinements */
-.join-content .markdown-content h2 {
+.join-content.markdown-content h2 {
   font-size: 2.4rem;
   color: var(--color-primary);
   margin: 2.4rem 0 1.2rem;
@@ -2331,17 +2336,17 @@ section#featured:after,
   border-bottom: 2px solid var(--position-h2-border);
 }
 
-.join-content .markdown-content p {
+.join-content.markdown-content p {
   margin: 0 0 1.2rem;
 }
 
-.join-content .markdown-content ul,
-.join-content .markdown-content ol {
+.join-content.markdown-content ul,
+.join-content.markdown-content ol {
   margin: 0 0 1.2rem 2rem;
   padding: 0;
 }
 
-.join-content .markdown-content li {
+.join-content.markdown-content li {
   margin: 0.4rem 0;
 }
 

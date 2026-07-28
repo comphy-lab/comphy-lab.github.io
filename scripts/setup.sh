@@ -151,7 +151,7 @@ echo "🔨 Building site and generating search database..."
 # Install husky hooks
 echo ""
 echo "🪝 Installing Git hooks (husky)..."
-npx husky install
+./node_modules/.bin/husky install
 
 # Run simple validation tests
 echo ""

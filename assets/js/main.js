@@ -445,7 +445,7 @@
         // If not on home page, let the browser handle the navigation
       } else if (href.startsWith("#")) {
         e.preventDefault();
-        const target = document.querySelector(href);
+        const target = document.getElementById(href.substring(1));
         if (target) {
           target.scrollIntoView({
             behavior: "smooth",

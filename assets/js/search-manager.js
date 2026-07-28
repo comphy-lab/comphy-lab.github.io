@@ -32,6 +32,29 @@
     /^(?:Private|0_todo|Admin|Medical|Personal)\b/i,
   ];
 
+  const PUBLIC_SEARCH_HOSTS = new Set([
+    "comphy-lab.org",
+    "blogs.comphy-lab.org",
+  ]);
+
+  function isSafeSearchUrl(value) {
+    if (typeof value !== "string" || value.length === 0) {
+      return false;
+    }
+
+    try {
+      const parsed = new URL(value, window.location.origin);
+      return (
+        (parsed.protocol === "https:" || parsed.protocol === "http:") &&
+        PUBLIC_SEARCH_HOSTS.has(parsed.hostname) &&
+        parsed.username === "" &&
+        parsed.password === ""
+      );
+    } catch (_error) {
+      return false;
+    }
+  }
+
   function isInternalSearchEntry(entry) {
     const entryIdentityText = [entry?.title, entry?.url]
       .filter(Boolean)
@@ -43,7 +66,10 @@
   }
 
   function sanitizeSearchData(data) {
-    return data.filter((entry) => !isInternalSearchEntry(entry));
+    return data.filter(
+      (entry) =>
+        !isInternalSearchEntry(entry) && isSafeSearchUrl(entry?.url)
+    );
   }
 
   /**
@@ -199,7 +225,7 @@
         id: `search-result-${result.refIndex}`,
         title: result.item.title || "Untitled",
         handler: () => {
-          if (result.item.url) {
+          if (isSafeSearchUrl(result.item.url)) {
             window.location.href = result.item.url;
           }
         },

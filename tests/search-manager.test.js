@@ -79,4 +79,40 @@ describe("search-manager sanitization", () => {
       "https://comphy-lab.org/.agents/skills/add-paper/SKILL/#badge-shapes"
     );
   });
+
+  it("rejects unsafe and unapproved search result URLs", async () => {
+    global.fetch = jest.fn().mockResolvedValue({
+      ok: true,
+      json: () =>
+        Promise.resolve([
+          {
+            title: "Script URL",
+            url: "javascript:alert(document.domain)",
+            content: "malicious search entry",
+          },
+          {
+            title: "Credentialed URL",
+            url: "https://attacker@comphy-lab.org/",
+            content: "misleading search entry",
+          },
+          {
+            title: "External redirect",
+            url: "https://example.net/phishing",
+            content: "unapproved search entry",
+          },
+          {
+            title: "Public blog post",
+            url: "https://blogs.comphy-lab.org/public-post/",
+            content: "approved search entry",
+          },
+        ]),
+    });
+
+    require("../assets/js/search-manager.js");
+
+    const data = await window.SearchManager.loadSearchDatabase();
+
+    expect(data).toHaveLength(1);
+    expect(data[0].title).toBe("Public blog post");
+  });
 });
