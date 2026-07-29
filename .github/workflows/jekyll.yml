@@ -36,8 +36,10 @@ jobs:
 
       - name: Package Pages artifact
         run: |
-          tar --dereference --hard-dereference --directory _site -cvf ../github-pages.tar .
-          gzip -f github-pages.tar
+          tar --dereference \
+            --directory "${GITHUB_WORKSPACE}/_site" \
+            --create --file "${GITHUB_WORKSPACE}/github-pages.tar" .
+          gzip -f "${GITHUB_WORKSPACE}/github-pages.tar"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v6
