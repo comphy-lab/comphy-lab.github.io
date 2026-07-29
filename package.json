@@ -9,7 +9,7 @@
     "lint:md": "markdownlint-cli2 --config .markdownlint-cli2.jsonc",
     "lint": "npm run lint:js && npm run lint:css && npm run lint:md",
     "format": "prettier --write assets/js/**/*.js assets/css/**/*.css",
-    "prepare": "npx husky install",
+    "prepare": "husky install",
     "test": "jest --coverage"
   },
   "repository": {
@@ -29,7 +29,9 @@
   },
   "homepage": "https://comphy-lab.org",
   "devDependencies": {
+    "@eslint/js": "8.57.1",
     "eslint": "^8.56.0",
+    "globals": "13.24.0",
     "husky": "^8.0.3",
     "jest": "^30.3.0",
     "jest-environment-jsdom": "^30.3.0",

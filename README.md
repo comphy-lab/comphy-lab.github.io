@@ -102,7 +102,7 @@ A static website for the Computational Multiphase Physics Laboratory, built with
 2. **Manual Setup (Alternative)**
 
    Prerequisites:
-   - Ruby `3.2.2` (matches `.ruby-version`)
+   - Ruby `3.4.10` (matches `.ruby-version`)
    - Bundler `2.5.23` (`gem install bundler -v 2.5.23`)
    - Node.js and npm (for linting and testing)
 
@@ -839,7 +839,7 @@ The repository uses automated tools to ensure code quality and consistency:
 
    ```bash
    npm install
-   npx husky install
+   ./node_modules/.bin/husky install
    ```
 
 #### Pre-commit Hooks

@@ -110,9 +110,15 @@ fi
 
 # Run ESLint on JavaScript files with quotes rule
 JS_DIR="$REPO_ROOT/assets/js"
+ESLINT_BIN="$REPO_ROOT/node_modules/.bin/eslint"
+
+if [[ ! -x "$ESLINT_BIN" ]]; then
+  echo "Local ESLint is unavailable. Run npm ci first." >&2
+  exit 1
+fi
 if [[ "$FIX_MODE" == "true" ]]; then
   # Fix mode: run ESLint with --fix flag
-  npx eslint "$JS_DIR" --rule 'quotes: ["error", "double"]' --fix
+  "$ESLINT_BIN" "$JS_DIR" --rule 'quotes: ["error", "double"]' --fix
   if [ $? -eq 0 ]; then
     echo "Fixed quote style in JavaScript files."
   else
@@ -120,7 +126,7 @@ if [[ "$FIX_MODE" == "true" ]]; then
   fi
 else
   # Check-only mode: run ESLint without --fix
-  npx eslint "$JS_DIR" --rule 'quotes: ["error", "double"]'
+  "$ESLINT_BIN" "$JS_DIR" --rule 'quotes: ["error", "double"]'
   ESLINT_EXIT_CODE=$?
   if [ $ESLINT_EXIT_CODE -eq 0 ]; then
     echo "No quote style issues found in JavaScript files."

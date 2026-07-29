@@ -217,6 +217,7 @@ function processJsFiles() {
           fixedFiles++;
         } catch (error) {
           console.error(`Error writing to file ${file}:`, error.message);
+          throw error;
         }
       }
     }

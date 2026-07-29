@@ -118,6 +118,20 @@ describe('fix-line-length.js actual implementation', () => {
     expect(mockFs.writeFileSync).toHaveBeenCalledTimes(0);
   });
 
+  it('should fail when a rewritten file cannot be written', () => {
+    mockFs.readdirSync.mockReturnValue(['long-lines.js']);
+    mockFs.readFileSync.mockReturnValue(
+      'const value = {first: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", second: "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"};'
+    );
+    mockFs.writeFileSync.mockImplementation(() => {
+      throw new Error('Permission denied');
+    });
+
+    expect(() => {
+      require('../scripts/fix-line-length.js');
+    }).toThrow('Permission denied');
+  });
+
   it('should log summary of processed files', () => {
     mockFs.readdirSync.mockReturnValue(['test1.js', 'test2.js']);
     mockFs.readFileSync.mockReturnValue('short line');
