@@ -44,7 +44,7 @@ description: >-
       <a href="/teaching/2025-Basilisk101-Madrid" class="course-card__link">View Course</a>
     </div>
   </div>
-  
+
   <div class="course-card">
     <img src="/assets/images/teaching/basilisk-madrid.jpg" alt="Basilisk for Multiphase Flow Simulations" loading="lazy">
     <div class="course-card__content">
