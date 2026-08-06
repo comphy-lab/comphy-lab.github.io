@@ -23,7 +23,8 @@ module.exports = [
       "no-unused-vars": "warn",
       "no-console": ["warn", { "allow": ["error", "warn"] }],
       "camelcase": "warn",
-      "max-len": ["warn", { "code": 80 }]
+      "max-len": ["warn", { "code": 80 }],
+      "no-useless-assignment": "off" // eslint 10 new default; intentionally relaxed (initial-then-overwrite pattern is common in this codebase)
     }
   },
   {
