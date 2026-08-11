@@ -39,6 +39,12 @@ title: Research
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/cCzpLutubF4?rel=0" title="Self-similar Worthington jets — full video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+### Yang, Z., <strong>Sanjay, V.</strong>, Constante-Amores, C. R., & Feng, J. Confinement-Induced Suppression of Jet Drop Size by Bubble Bursting in Shallow Liquids. arXiv preprint arXiv:2606.28609 (2026).
+
+<div class="tags"><span>Bubbles</span><span>Jets</span><span>Drops</span><span>Soft-matter-singularities</span></div>
+
+[![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2606.28609&color=green)](https://arxiv.org/abs/2606.28609)
+
 ### Ghaemi, A. H., Yang, Z., Huang, A., <strong>Sanjay, V.</strong>, Feng, J., & Constante-Amores, C. R. Bursting bubbles in Herschel-Bulkley fluids: dynamics and jetting transitions. arXiv preprint arXiv:2511.23345 (2025).
 
 <div class="tags"><span>Bubbles</span><span>Non-Newtonian</span><span>Jets</span></div>
