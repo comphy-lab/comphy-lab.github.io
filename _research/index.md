@@ -27,6 +27,13 @@ title: Research
 
 ## Work in Progress
 
+### <strong>Sanjay, V.</strong> Singularities in Soft Matter Systems. *Contemporary Physics* (accepted for publication, 2026).
+
+<div class="tags"><span>Soft-matter-singularities</span></div>
+
+[![Contemporary Physics](https://img.shields.io/static/v1.svg?style=flat-square&label=Contemporary%20Physics&message=Accepted&color=orange)](https://arxiv.org/abs/2608.11060)
+[![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2608.11060&color=green)](https://arxiv.org/abs/2608.11060)
+
 ### Gordillo, J. M., Rodríguez-Rodríguez, J., & <strong>Sanjay, V.</strong> Self-similar Worthington jets. arXiv preprint arXiv:2607.08972 (2026). {#self-similar-worthington-jets}
 
 <div class="tags"><span>Bubbles</span><span>Jets</span><span>Soft-matter-singularities</span><span>Featured</span></div>
