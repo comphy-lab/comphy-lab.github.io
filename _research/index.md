@@ -297,7 +297,7 @@ title: Research
 
 * As of March/April 2024, this highly cited paper received enough citations to place it in the top 1% of the academic field of Physics based on a highly cited threshold for the field and publication year. Source: Web of Science.
 * Editor's Suggestion of that issue of Phys. Rev. Lett.
-* Research Highlight: Castelvecchi, D. The physics of a bouncing droplet's impact. _Nature_, 609, 225 (2022). [![DOI](https://img.shields.io/static/v1.svg?style=flat-square&label=DOI:&message=10.1038/d41586-022-02302-w&color=green)](https://doi.org/10.1038/d41586-022-02302-w)
+* Research Highlight: Castelvecchi, D. The physics of a bouncing droplet's impact. *Nature*, 609, 225 (2022). [![DOI](https://img.shields.io/static/v1.svg?style=flat-square&label=DOI:&message=10.1038/d41586-022-02302-w&color=green)](https://doi.org/10.1038/d41586-022-02302-w)
 
 ## 2021
 
