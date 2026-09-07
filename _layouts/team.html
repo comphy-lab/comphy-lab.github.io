@@ -49,18 +49,18 @@
       src: local('system-ui');
     }
   </style>
-  <link rel="stylesheet" href="/assets/css/fontello/css/fontello.css" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="/assets/css/academicons-1.7.0/css/academicons.min.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/assets/css/fontello/css/fontello.css">
+  <link rel="stylesheet" href="/assets/css/academicons-1.7.0/css/academicons.min.css">
   <noscript>
     <link rel="stylesheet" href="/assets/css/fontello/css/fontello.css">
     <link rel="stylesheet" href="/assets/css/academicons-1.7.0/css/academicons.min.css">
   </noscript>
 
   <!-- Site styles -->
-  <link rel="stylesheet" href="/assets/css/vendor.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/assets/css/vendor.css">
   <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="stylesheet" href="/assets/css/team.css">
-  <link rel="stylesheet" href="/assets/css/command-palette.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/assets/css/command-palette.css">
 
   <!-- Structured Data for Team -->
   <script type="application/ld+json">
@@ -73,58 +73,16 @@
   }
   </script>
 
-  <!-- JavaScript dependencies - Core utilities first -->
+  <!-- Load pinned libraries before utilities and search code. -->
+  {% include browser-dependencies.html %}
   <script defer src="/assets/js/utils.js"></script>
   <script defer src="/assets/js/search-manager.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/marked@18.0.7/lib/marked.umd.js"
-    integrity="sha384-7njNzKcJUBdezPGfqUrIFizi2QkXJH0M6wF3o1h9GE/nce6X4YdecMwh31B19yTi"
-    crossorigin="anonymous"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
   <script defer src="/assets/js/main.js"></script>
   <script defer src="/assets/js/platform-utils.js"></script>
   <!-- Command palette script before command data -->
   <script defer src="/assets/js/command-palette.js"></script>
   <script defer src="/assets/js/command-data.js"></script>
 
-  <script>
-    document.documentElement.classList.remove('no-js');
-    document.documentElement.classList.add('js');
-
-    // Theme toggle functionality
-    (function() {
-      // Check for saved theme preference or use OS preference
-      const getThemePreference = () => {
-        // Check if user has already selected a theme
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-          return savedTheme;
-        }
-        // If not, check OS preference
-        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      };
-
-      // Set theme on document
-      const setTheme = (theme) => {
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
-      };
-
-      // Apply theme when page loads
-      document.addEventListener('DOMContentLoaded', () => {
-        setTheme(getThemePreference());
-
-        // Add click event listener to theme toggle
-        const themeToggle = document.getElementById('theme-toggle');
-        if (themeToggle) {
-          themeToggle.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            setTheme(newTheme);
-          });
-        }
-      });
-    })();
-  </script>
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -138,17 +96,6 @@
   <div id="preloader">
     <div id="loader"></div>
   </div>
-
-  <!-- Command Palette Button Handler -->
-  <script>
-    window.addEventListener('load', function() {
-      const commandPaletteButton = document.getElementById('command-palette-button');
-      if (commandPaletteButton) {
-        // Platform detection is now handled by platform-utils.js
-        // Update the displayed shortcut text is now handled by platform-utils.js
-      }
-    });
-  </script>
 
   <div id="page" class="s-pagewrap">
     <header class="s-header">
@@ -241,8 +188,7 @@
                          loading="{% if forloop_index <= 3 %}eager{% else %}lazy{% endif %}"
                          fetchpriority="{% if forloop_index <= 3 %}high{% else %}auto{% endif %}"
                          decoding="{% if forloop_index <= 3 %}sync{% else %}async{% endif %}"
-                         onload="this.classList.add('loaded'); this.parentElement.classList.add('loaded')"
-                         onerror="this.parentElement.classList.add('error')"
+                         data-image-state="team-photo"
                          class="team-photo">
                   </div>
                   {% assign member_details = member_details | replace_first: image_tag, '' | replace: '<img>', '' | replace: '<img', '' %}
@@ -280,52 +226,7 @@
             </div>
           </div>
 
-          <!-- Google Maps async loading script -->
-          <script>
-            // Create a more reliable approach to load the map
-            document.addEventListener('DOMContentLoaded', function() {
-              const mapContainer = document.querySelector('.map-container');
-              const teamMap = document.getElementById('team-map');
-
-              if (!mapContainer || !teamMap) return;
-
-              // Function to load the map iframe directly
-              function loadMapIframe() {
-                teamMap.innerHTML = `
-                  <iframe
-                    src="https://www.google.com/maps/d/u/0/embed?mid=1hOfYTnnie_7Bx45e9uA4gLXaaKreTXc&ehbc=2E312F&noprof=1&z=3&ll=42,-10"
-                    width="100%"
-                    height="100%"
-                    style="border:0;"
-                    allowfullscreen=""
-                    loading="lazy"
-                    title="CoMPhy Lab - Team, Collaborators and Conference Visits"
-                    referrerpolicy="no-referrer-when-downgrade"
-                    sandbox="allow-scripts allow-same-origin allow-popups">
-                  </iframe>
-                `;
-              }
-
-              // Only load the map when it's about to come into view
-              if ('IntersectionObserver' in window) {
-                const observer = new IntersectionObserver((entries) => {
-                  entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                      // Load iframe directly without Google Maps API
-                      loadMapIframe();
-                      observer.disconnect();
-                    }
-                  });
-                }, { rootMargin: '200px' });
-
-                observer.observe(mapContainer);
-              } else {
-                // Fallback for browsers without IntersectionObserver
-                // Add a slight delay to not block page rendering
-                setTimeout(loadMapIframe, 1000);
-              }
-            });
-          </script>
+          <script src="/assets/js/page-team-legacy.js"></script>
         </div>
       </div>
     </section>
@@ -377,119 +278,6 @@
          </a>
       </div> <!-- end ss-go-top -->
     </footer>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Add IDs to all h2 headings that don't have them
-      document.querySelectorAll('h2').forEach(heading => {
-        if (!heading.id) {
-          // Create ID from heading text
-          const id = heading.textContent
-            .toLowerCase()
-            .trim()
-            .replace(/[^a-z0-9]+/g, '-');
-          heading.id = id;
-        }
-      });
-
-      // If there's a hash in the URL, scroll to it after a brief delay
-      if (window.location.hash) {
-        setTimeout(() => {
-          const element = document.querySelector(window.location.hash);
-          if (element) {
-            // Get the header height
-            const header = document.querySelector('.s-header');
-            const headerHeight = header ? header.offsetHeight : 0;
-
-            // Get the element's position
-            const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-
-            // Scroll to element with offset for header
-            window.scrollTo({
-              top: elementPosition - headerHeight - 20, // 20px extra padding
-              behavior: 'smooth'
-            });
-          }
-        }, 100);
-      }
-    });
-  </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Handle image loading
-      const images = document.querySelectorAll('.team-photo');
-      const maxRetries = 3;
-
-      images.forEach(img => {
-        let retries = 0;
-
-        function tryLoadImage() {
-          if (retries < maxRetries && !img.classList.contains('loaded')) {
-            retries++;
-            img.src = img.src + '?' + new Date().getTime(); // Cache bust
-          }
-        }
-
-        // Retry on error
-        img.addEventListener('error', () => {
-          setTimeout(tryLoadImage, 1000 * retries); // Exponential backoff
-        });
-
-        // Force load if image is in viewport
-        if ('IntersectionObserver' in window) {
-          const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting && !img.classList.contains('loaded')) {
-                tryLoadImage();
-              }
-            });
-          });
-          observer.observe(img);
-        }
-      });
-
-      // Rest of your existing DOMContentLoaded code...
-    });
-  </script>
-
-  <!-- Schedule Container Script -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Handle image loading
-      const images = document.querySelectorAll('.team-photo');
-      const maxRetries = 3;
-
-      images.forEach(img => {
-        let retries = 0;
-
-        function tryLoadImage() {
-          if (retries < maxRetries && !img.classList.contains('loaded')) {
-            retries++;
-            img.src = img.src + '?' + new Date().getTime(); // Cache bust
-          }
-        }
-
-        // Retry on error
-        img.addEventListener('error', () => {
-          setTimeout(tryLoadImage, 1000 * retries); // Exponential backoff
-        });
-
-        // Force load if image is in viewport
-        if ('IntersectionObserver' in window) {
-          const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting && !img.classList.contains('loaded')) {
-                tryLoadImage();
-              }
-            });
-          });
-          observer.observe(img);
-        }
-      });
-
-      // Rest of your existing DOMContentLoaded code...
-    });
-  </script>
 
   <!-- Simple Command Palette -->
   <div id="simple-command-palette" class="simple-command-palette" style="display: none;">

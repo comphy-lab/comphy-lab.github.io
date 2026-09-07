@@ -185,7 +185,7 @@ description: >-
         <div class="news-item__body">
           {% if n.kind == "paper" %}
           <div class="news-item__thumb">
-            {% if n.thumb %}<img src="{{ n.thumb }}" alt="" loading="lazy" decoding="async" onerror="this.style.display='none'" />{% endif %}
+            {% if n.thumb %}<img src="{{ n.thumb }}" alt="" loading="lazy" decoding="async" data-image-state="hide-on-error" />{% endif %}
           </div>
           {% else %}
           <div class="news-item__avatar">{{ n.avatar | default: "·" }}</div>
@@ -276,71 +276,5 @@ description: >-
 
 </main>
 
-<!-- Homepage JS: rotate visual slides + respect prefers-reduced-motion. -->
-<script>
-  (function () {
-    var media = document.querySelector('.hero__media');
-    if (!media) return;
-    var figures = media.querySelectorAll('figure');
-    if (figures.length < 1) return;
-
-    var reduced = window.matchMedia &&
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    /* Reduced-motion: pause every <video> on its first frame, freeze
-       the iframe parameters, skip the rotator. The image-only fallback
-       on the active figure stays visible — that's the user's poster. */
-    if (reduced) {
-      media.querySelectorAll('video').forEach(function (v) {
-        v.removeAttribute('autoplay');
-        v.removeAttribute('loop');
-        try { v.pause(); v.currentTime = 0; } catch (e) {}
-      });
-      media.querySelectorAll('iframe').forEach(function (frame) {
-        var src = frame.getAttribute('src') || '';
-        frame.setAttribute('src', src
-          .replace('autoplay=1', 'autoplay=0')
-          .replace('&loop=1', '&loop=0'));
-      });
-      return;
-    }
-
-    if (figures.length < 2) return;
-    function resetMedia(figure) {
-      var video = figure.querySelector('video');
-      if (video) {
-        try {
-          video.currentTime = 0;
-          var playPromise = video.play();
-          if (playPromise) playPromise.catch(function () {});
-        } catch (e) {}
-      }
-
-      var frame = figure.querySelector('iframe');
-      if (frame) {
-        var src = frame.getAttribute('src');
-        frame.setAttribute('src', src);
-      }
-    }
-
-    function slideDuration(figure) {
-      var duration = parseInt(figure.getAttribute('data-duration'), 10);
-      return duration > 0 ? duration : 6500;
-    }
-
-    var idx = 0;
-    function advance() {
-      figures[idx].setAttribute('data-active', 'false');
-      figures[idx].setAttribute('aria-hidden', 'true');
-      figures[idx].setAttribute('inert', '');
-      idx = (idx + 1) % figures.length;
-      figures[idx].setAttribute('data-active', 'true');
-      figures[idx].setAttribute('aria-hidden', 'false');
-      figures[idx].removeAttribute('inert');
-      resetMedia(figures[idx]);
-      setTimeout(advance, slideDuration(figures[idx]));
-    }
-
-    setTimeout(advance, slideDuration(figures[idx]));
-  })();
-</script>
+<!-- Homepage JS: rotate visual slides + respect reduced motion. -->
+<script src="/assets/js/page-home.js"></script>

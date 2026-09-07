@@ -13,6 +13,10 @@ plugins:
 # Site settings
 permalink: /:title/
 
+# Jekyll excludes dot directories unless explicitly included.
+include:
+  - .well-known
+
 # Collections
 collections:
   team:
@@ -29,6 +33,8 @@ collections:
 
 # Exclude from processing
 exclude:
+  - security
+  - scripts
   - scripts/node_modules
   - scripts/temp_blog_repo
   - node_modules

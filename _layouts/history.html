@@ -50,19 +50,19 @@
       src: local('system-ui');
     }
   </style>
-  <link rel="stylesheet" href="/assets/css/fontello/css/fontello.css" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="/assets/css/academicons-1.7.0/css/academicons.min.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/assets/css/fontello/css/fontello.css">
+  <link rel="stylesheet" href="/assets/css/academicons-1.7.0/css/academicons.min.css">
   <noscript>
     <link rel="stylesheet" href="/assets/css/fontello/css/fontello.css">
     <link rel="stylesheet" href="/assets/css/academicons-1.7.0/css/academicons.min.css">
   </noscript>
 
   <!-- Site styles -->
-  <link rel="stylesheet" href="/assets/css/vendor.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/assets/css/vendor.css">
   <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="stylesheet" href="/assets/css/shared-news-history.css">
   <link rel="stylesheet" href="/assets/css/teaching.css">
-  <link rel="stylesheet" href="/assets/css/command-palette.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/assets/css/command-palette.css">
   
   <!-- Structured Data for Teaching -->
   <script type="application/ld+json">
@@ -81,57 +81,14 @@
   </script>
 
   <!-- JavaScript dependencies -->
+  {% include browser-dependencies.html %}
   <script defer src="/assets/js/utils.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/marked@18.0.7/lib/marked.umd.js"
-    integrity="sha384-7njNzKcJUBdezPGfqUrIFizi2QkXJH0M6wF3o1h9GE/nce6X4YdecMwh31B19yTi"
-    crossorigin="anonymous"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
   <script defer src="/assets/js/main.js"></script>
   <script defer src="/assets/js/platform-utils.js"></script>
   <!-- Command palette script before command data -->
   <script defer src="/assets/js/command-palette.js"></script>
   <script defer src="/assets/js/command-data.js"></script>
 
-  <!-- Theme toggle functionality -->
-  <script>
-    document.documentElement.classList.remove('no-js');
-    document.documentElement.classList.add('js');
-    
-    // Theme toggle functionality
-    (function() {
-      // Check for saved theme preference or use OS preference
-      const getThemePreference = () => {
-        // Check if user has already selected a theme
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-          return savedTheme;
-        }
-        // If not, check OS preference
-        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      };
-      
-      // Set theme on document
-      const setTheme = (theme) => {
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
-      };
-      
-      // Apply theme when page loads
-      document.addEventListener('DOMContentLoaded', () => {
-        setTheme(getThemePreference());
-        
-        // Add click event listener to theme toggle
-        const themeToggle = document.getElementById('theme-toggle');
-        if (themeToggle) {
-          themeToggle.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            setTheme(newTheme);
-          });
-        }
-      });
-    })();
-  </script>
 
   <link
     rel="stylesheet"
@@ -147,14 +104,6 @@
   <div id="preloader">
     <div id="loader"></div>
   </div>
-
-  <!-- Command Palette Button Handler -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Platform detection is now handled by platform-utils.js
-      // Update the displayed shortcut text is now handled by platform-utils.js
-    });
-  </script>
 
   <div id="page" class="s-pagewrap">
     <header class="s-header">
@@ -214,7 +163,7 @@
     <section class="s-teaching">
       <div class="row">
         <div class="history-news-box teaching-content markdown-content">
-          {% capture lazy_img %}<img loading="lazy" decoding="async" onload="this.classList.add('loaded')"{% endcapture %}
+          {% capture lazy_img %}<img loading="lazy" decoding="async" data-image-state="self-loaded"{% endcapture %}
           {% assign content_with_lazy = content | replace: '<img', lazy_img %}
           {% capture lazy_iframe %}<div class="video-container"><iframe loading="lazy"{% endcapture %}
           {% assign content_with_video = content_with_lazy | replace: '<iframe', lazy_iframe | replace: '</iframe>', '</iframe></div>' %}
@@ -239,15 +188,7 @@
     </div>
   </div>
 
-  <!-- Register command palette keyboard shortcut -->
-  <script>
-    document.addEventListener('keydown', function(e) {
-      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
-        e.preventDefault();
-        window.openCommandPalette();
-      }
-    });
-  </script>
+  <script src="/assets/js/page-history.js"></script>
 
 </body>
 </html>

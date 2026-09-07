@@ -126,13 +126,13 @@ For registration details, please contact
 
 <div class="email-container">
     <span class="email-text">bubbles@ing.uc3m.es</span>
-    <button class="copy-btn" onclick="copyEmail(this)" data-text="bubbles@ing.uc3m.es" aria-label="Copy email address bubbles@ing.uc3m.es">
+    <button class="copy-btn" data-text="bubbles@ing.uc3m.es" aria-label="Copy email address bubbles@ing.uc3m.es">
         <i class="fas fa-copy"></i>
     </button>
 </div>
 <div class="email-container">
     <span class="email-text">vatsal.sanjay@durham.ac.uk</span>
-    <button class="copy-btn" onclick="copyEmail(this)" data-text="vatsal.sanjay@durham.ac.uk" aria-label="Copy email address vatsal.sanjay@durham.ac.uk">
+    <button class="copy-btn" data-text="vatsal.sanjay@durham.ac.uk" aria-label="Copy email address vatsal.sanjay@durham.ac.uk">
         <i class="fas fa-copy"></i>
     </button>
 </div>

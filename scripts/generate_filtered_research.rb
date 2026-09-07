@@ -20,7 +20,22 @@ doc.css('.tags span').each do |tag|
   all_tags << tag.text unless all_tags.include?(tag.text)
 end
 
+def safe_path_segment(value)
+  segment = value.gsub(/\s+/, '-').gsub(/[^A-Za-z0-9_-]+/, '-')
+                 .gsub(/-+/, '-').sub(/\A-/, '').sub(/-\z/, '')
+  raise ArgumentError, 'Tag does not contain a safe path segment' if segment.empty?
+
+  segment
+end
+
 puts "Found #{all_tags.length} unique tags: #{all_tags.join(', ')}"
+
+# Validate the complete mapping before changing any generated pages or sitemap.
+collisions = all_tags.group_by { |tag| safe_path_segment(tag).downcase }
+                     .select { |_slug, tags| tags.length > 1 }
+unless collisions.empty?
+  raise ArgumentError, "Distinct tags share a generated filename: #{collisions.keys.join(', ')}"
+end
 
 # Create a sitemap entry for each tag filter
 sitemap_path = File.join(Dir.pwd, '_site', 'sitemap.xml')
@@ -31,7 +46,7 @@ if File.exist?(sitemap_path)
   # Add entries for each tag filter
   all_tags.each do |tag|
     # Create file-safe slug (lowercase, hyphenated) for the static file paths
-    file_slug = tag.downcase.gsub(/\s+/, '-')
+    file_slug = safe_path_segment(tag).downcase
     # Use the original tag for the URL parameter (URL-encoded)
     url_param = CGI.escape(tag)
     
@@ -82,10 +97,11 @@ puts "Updated research page with SEO metadata"
 # Create SEO-friendly static HTML pages that redirect to the URL parameter version
 all_tags.each do |tag|
   # Create file-safe slug for the static file path
-  file_slug = tag.downcase.gsub(/\s+/, '-')
-  hyphenated_tag = tag.gsub(/\s+/, '-')
+  file_slug = safe_path_segment(tag).downcase
+  hyphenated_tag = safe_path_segment(tag)
   # Use the original tag for the URL parameter (URL-encoded)
   url_param = CGI.escape(tag)
+  safe_tag = CGI.escapeHTML(tag)
   
   # Create HTML for a page that redirects to the URL parameter version
   redirect_html = <<~HTML
@@ -94,17 +110,14 @@ all_tags.each do |tag|
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>#{tag} Research - CoMPhy Lab</title>
-    <meta name="description" content="Research publications on #{tag} from the CoMPhy Lab, covering topics in fluid dynamics, soft matter, and complex systems.">
-    <meta name="keywords" content="#{tag}, research, publications, fluid dynamics, CoMPhy Lab">
+    <title>#{safe_tag} Research - CoMPhy Lab</title>
+    <meta name="description" content="Research publications on #{safe_tag} from the CoMPhy Lab, covering topics in fluid dynamics, soft matter, and complex systems.">
+    <meta name="keywords" content="#{safe_tag}, research, publications, fluid dynamics, CoMPhy Lab">
     <link rel="canonical" href="https://comphy-lab.org/research/?tag=#{url_param}">
     <meta http-equiv="refresh" content="0;url=/research/?tag=#{url_param}">
-    <script>
-      window.location.href = "/research/?tag=#{url_param}";
-    </script>
   </head>
   <body>
-    <p>Redirecting to <a href="/research/?tag=#{url_param}">#{tag} research papers</a>...</p>
+    <p>Redirecting to <a href="/research/?tag=#{url_param}">#{safe_tag} research papers</a>...</p>
   </body>
   </html>
   HTML
@@ -116,9 +129,9 @@ all_tags.each do |tag|
   
   # Generate capitalized versions
   [
-    tag.capitalize.gsub(/\s+/, '-'), # First letter capitalized: "Bubbles"
+    safe_path_segment(tag.capitalize), # First letter capitalized: "Bubbles"
     hyphenated_tag, # Original case with hyphens: "Soft-matter-singularities"
-    tag.split.map(&:capitalize).join('-') # Title case: "Soft-Matter-Singularities"
+    safe_path_segment(tag.split.map(&:capitalize).join('-')) # Title case
   ].uniq.each do |variant|
     next if variant.downcase == file_slug # Skip if it's the same as the canonical lowercase version
     
@@ -137,17 +150,14 @@ index_html = <<~HTML
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Research Tags - CoMPhy Lab</title>
   <meta name="description" content="Browse research publications by topic from the CoMPhy Lab.">
-  <meta name="keywords" content="#{all_tags.join(', ')}, research tags, publications, fluid dynamics, CoMPhy Lab">
+  <meta name="keywords" content="#{CGI.escapeHTML(all_tags.join(', '))}, research tags, publications, fluid dynamics, CoMPhy Lab">
   <link rel="canonical" href="https://comphy-lab.org/research/">
   <meta http-equiv="refresh" content="0;url=/research/">
-  <script>
-    window.location.href = "/research/";
-  </script>
 </head>
 <body>
   <p>Redirecting to <a href="/research/">research page</a>...</p>
   <ul>
-    #{all_tags.map { |tag| "<li><a href=\"/research/?tag=#{CGI.escape(tag)}\">#{tag}</a></li>" }.join("\n    ")}
+    #{all_tags.map { |tag| "<li><a href=\"/research/?tag=#{CGI.escape(tag)}\">#{CGI.escapeHTML(tag)}</a></li>" }.join("\n    ")}
   </ul>
 </body>
 </html>
@@ -168,15 +178,12 @@ catchall_html = <<~HTML
   <meta name="description" content="Browse research publications by topic from the CoMPhy Lab.">
   <link rel="canonical" href="https://comphy-lab.org/research/">
   <meta http-equiv="refresh" content="0;url=/research/">
-  <script>
-    window.location.href = "/research/";
-  </script>
 </head>
 <body>
   <p>Tag not found. Redirecting to <a href="/research/">research page</a>...</p>
   <p>Available tags:</p>
   <ul>
-    #{all_tags.map { |tag| "<li><a href=\"/research/?tag=#{CGI.escape(tag)}\">#{tag}</a></li>" }.join("\n    ")}
+    #{all_tags.map { |tag| "<li><a href=\"/research/?tag=#{CGI.escape(tag)}\">#{CGI.escapeHTML(tag)}</a></li>" }.join("\n    ")}
   </ul>
 </body>
 </html>

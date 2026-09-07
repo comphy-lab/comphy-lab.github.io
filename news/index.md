@@ -34,7 +34,7 @@ description: >-
       <div class="news-item__body">
         {% if n.kind == "paper" %}
         <div class="news-item__thumb">
-          {% if n.thumb %}<img src="{{ n.thumb }}" alt="" loading="lazy" decoding="async" onerror="this.style.display='none'" />{% endif %}
+          {% if n.thumb %}<img src="{{ n.thumb }}" alt="" loading="lazy" decoding="async" data-image-state="hide-on-error" />{% endif %}
         </div>
         {% else %}
         <div class="news-item__avatar">{{ n.avatar | default: "·" }}</div>
