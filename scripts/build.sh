@@ -115,7 +115,7 @@ if [ -n "${GITHUB_ACTIONS:-}" ]; then
         fi
 
         if [ -f "./package.json" ]; then
-            npm install --no-fund --no-audit --ignore-scripts
+            npm ci --no-fund --no-audit --ignore-scripts
         fi
     else
         echo "Skipping dependency installation (--skip-deps flag)"
@@ -267,7 +267,7 @@ else
 
         # Also install root npm dependencies if package.json exists
         if [ -f "./package.json" ]; then
-            npm install --no-fund --no-audit --ignore-scripts
+            npm ci --no-fund --no-audit --ignore-scripts
         fi
     else
         echo "Skipping dependency installation (--skip-deps flag)"

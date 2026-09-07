@@ -60,5 +60,21 @@ module.exports = [
     rules: {
       "no-console": ["warn", { "allow": ["error", "warn", "log"] }]
     }
+  },
+  {
+    files: [
+      "tests/browser-dependencies.test.js",
+      "tests/page-scripts-csp.test.js"
+    ],
+    languageOptions: {
+      sourceType: "commonjs",
+      globals: {
+        ...globals.node,
+        ...globals.jest,
+        crypto: "off",
+        DOMPurify: "off",
+        marked: "off"
+      }
+    }
   }
 ];

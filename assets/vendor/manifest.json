@@ -1,0 +1,29 @@
+[
+  {
+    "name": "dompurify",
+    "version": "3.4.15",
+    "source": "https://registry.npmjs.org/dompurify/-/dompurify-3.4.15.tgz",
+    "archive_integrity": "sha512-EUBjM+B+lkDE41iE82DDSCfkoPGfXx8IxFxPMjNzm/Uk4xDet77rTN9wqlxlVg71kK7XGuUMv6wUxJUwwv+Xyw==",
+    "path": "/assets/vendor/dompurify-3.4.15/purify.min.js",
+    "integrity": "sha384-uUMu9JDY09vBzRf9SPcK2VgUj+W/70J6Soc+Dded5P474ElQ63iv9j5N3DE7Kp3N",
+    "license": "/assets/vendor/dompurify-3.4.15/LICENSE"
+  },
+  {
+    "name": "fuse.js",
+    "version": "6.6.2",
+    "source": "https://registry.npmjs.org/fuse.js/-/fuse.js-6.6.2.tgz",
+    "archive_integrity": "sha512-cJaJkxCCxC8qIIcPBF9yGxY0W/tVZS3uEISDxhYIdtk8OL93pe+6Zj7LjCqVV4dzbqcriOZ+kQ/NE4RXZHsIGA==",
+    "path": "/assets/vendor/fuse.js-6.6.2/fuse.min.js",
+    "integrity": "sha384-zPE55eyESN+FxCWGEnlNxGyAPJud6IZ6TtJmXb56OFRGhxZPN4akj9rjA3gw5Qqa",
+    "license": "/assets/vendor/fuse.js-6.6.2/LICENSE"
+  },
+  {
+    "name": "marked",
+    "version": "18.0.7",
+    "source": "https://registry.npmjs.org/marked/-/marked-18.0.7.tgz",
+    "archive_integrity": "sha512-iDVQ5ldaiKXn6b2JroX5kgRfmwgqolW7NpaEzTl1k/2Zh1njIEN9yniyLV/mOvWwtsE8OGgkjsCYvijuPk1dtA==",
+    "path": "/assets/vendor/marked-18.0.7/marked.umd.js",
+    "integrity": "sha384-7njNzKcJUBdezPGfqUrIFizi2QkXJH0M6wF3o1h9GE/nce6X4YdecMwh31B19yTi",
+    "license": "/assets/vendor/marked-18.0.7/LICENSE"
+  }
+]

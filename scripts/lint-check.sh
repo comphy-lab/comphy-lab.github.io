@@ -10,73 +10,18 @@ set -e
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 echo "Running checks on repository at: $REPO_ROOT"
 
-# Detect OS for sed compatibility
-OS=$(uname)
-if [ "$OS" = "Darwin" ]; then
-  # macOS requires an extension argument (empty string is fine)
-  SED_INPLACE="sed -i ''"
-else
-  # Linux version (no extension needed, but will create .bak files)
-  SED_INPLACE="sed -i.bak"
-fi
-
-# Function to clean up backup files on Linux
-cleanup_bak_files() {
-  if [ "$OS" != "Darwin" ]; then
-    find "$1" -name "*.bak" -type f -delete
+# Check dependencies without rewriting templates or reintroducing CDN scripts.
+echo "Checking pinned browser dependencies..."
+for layout in default history join-us team; do
+  if ! grep -q 'include browser-dependencies.html' \
+    "$REPO_ROOT/_layouts/$layout.html"; then
+    echo "Missing browser-dependencies.html in $layout layout" >&2
+    exit 1
   fi
-}
-
-# Check for Fuse dependency
-echo "Checking for proper Fuse.js loading..."
-# Look for specific Fuse.js usage - not just mentions of the word "Fuse"
-FILES_WITH_FUSE=$(grep -l -E "new Fuse|window.searchFuse|Fuse\.js" "$REPO_ROOT/_layouts/"*.html "$REPO_ROOT/_includes/"*.html "$REPO_ROOT/assets/js/"*.js 2>/dev/null || echo "")
-
-if [ -n "$FILES_WITH_FUSE" ]; then
-  echo "Found files using Fuse.js:"
-  echo "$FILES_WITH_FUSE" | sed 's/^/- /'
-  
-  # JavaScript files don't need the CDN, only check HTML files
-  HTML_WITH_FUSE=$(grep -l -E "new Fuse|window.searchFuse|Fuse\.js" "$REPO_ROOT/_layouts/"*.html "$REPO_ROOT/_includes/"*.html 2>/dev/null || echo "")
-  
-  if [ -n "$HTML_WITH_FUSE" ]; then
-    # Use while read loop to safely handle filenames with spaces
-    echo "$HTML_WITH_FUSE" | while IFS= read -r file; do
-      [ -z "$file" ] && continue  # Skip empty lines
-      if ! grep -q "cdn.jsdelivr.net/npm/fuse.js" "$file"; then
-        echo "WARNING: $file uses Fuse but doesn't include the CDN. Adding it..."
-        # Find the closing </head> tag and insert the Fuse CDN script before it
-        $SED_INPLACE '/<\/head>/i\
-  <script defer src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
-' "$file"
-        echo "Fixed: Added Fuse.js CDN to $file"
-      else
-        echo "OK: $file properly includes Fuse.js CDN"
-      fi
-    done
-  else
-    echo "No HTML files directly using Fuse.js found."
-  fi
-  
-  # Check if default.html includes the Fuse CDN, since it's the base template
-  if ! grep -q "cdn.jsdelivr.net/npm/fuse.js" "$REPO_ROOT/_layouts/default.html" 2>/dev/null; then
-    echo "Adding Fuse.js to default layout template as a fallback..."
-    $SED_INPLACE '/<\/head>/i\
-  <!-- Fuse.js dependency for search functionality -->\\
-  <script defer src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
-' "$REPO_ROOT/_layouts/default.html"
-    echo "Fixed: Added Fuse.js CDN to default layout"
-  fi
-  
-  # Optimized cleanup: Clean up .bak files from both directories in one operation
-  if [ "$OS" != "Darwin" ]; then
-    echo "Cleaning up backup files..."
-    for dir in "$REPO_ROOT/_layouts" "$REPO_ROOT/_includes"; do
-      cleanup_bak_files "$dir"
-    done
-  fi
-else
-  echo "No files using Fuse.js found."
+done
+if grep -Eq 'https?://' "$REPO_ROOT/_includes/browser-dependencies.html"; then
+  echo "Browser dependencies must be served from the local vendor directory" >&2
+  exit 1
 fi
 
 # Check for proper script loading order in HTML files

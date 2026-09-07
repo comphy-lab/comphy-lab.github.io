@@ -180,10 +180,93 @@ A static website for the Computational Multiphase Physics Laboratory, built with
    ```
 
 6. **Deployment**
-   - Typically managed via GitHub Pages when merged/pushed to the main branch
-   - Local testing is recommended before committing changes
-   - Cloudflare cache is automatically purged on deployment via GitHub Actions
-     - Requires `CLOUDFLARE_ZONE_ID` and `CLOUDFLARE_API_TOKEN` secrets in repository settings
+   - Set this repository's Pages source to **GitHub Actions**. The sole publisher
+     is `jekyll.yml`; pull requests build and test without publishing.
+   - Main pushes (including search-index updates) build, validate and deploy one
+     artifact. Production runs are serialized without interrupting a deployment.
+   - After deployment, the workflow verifies the live release manifest's Git SHA
+     and purges only changed or removed website URLs. The first release purges
+     its current URL inventory. Every purge requires HTTP and JSON API success.
+   - Repository secrets `CLOUDFLARE_ZONE_ID` and `CLOUDFLARE_API_TOKEN` supply the
+     existing zone-scoped cache-purge identity. Tokens never enter the artifact.
+   - If purge fails after publication, rerun the failed deployment job in that
+     same Actions run, while its predecessor-manifest artifact is retained. This
+     preserves the URL delta needed to finish a partial purge. Starting a new
+     workflow captures the already-published manifest and is not a substitute
+     for completing the failed purge.
+
+### Browser security and release activation
+
+The repository defines the response policy in `security/response-headers.json`.
+GitHub Pages does not apply that file itself: deliver it using a Cloudflare
+**Response Header Transform Rule** in the `http_response_headers_transform`
+phase. Generate the exact rule with:
+
+```bash
+python3 scripts/browser-security.py cloudflare-rule
+```
+
+The rule matches `comphy-lab.org` and the website's explicit owned paths from
+`scripts/purge-website-cache.py`. It does not match other hosts, documentation
+project paths, SL25 or the legacy calculation APIs. Add only this named rule
+(`public_website_browser_security`), preserving existing rules, proxy state,
+HTTPS enforcement and certificates. Re-read the ruleset immediately before
+appending or updating it; do not replace the whole ruleset with this one rule.
+
+The CSP allows local scripts and Cloudflare's integrity-protected analytics
+beacon, denies inline script handlers and `eval`, and denies framing and plugin
+objects. Google Fonts, Font Awesome, YouTube and the team map have explicit
+source allowances. Inline **styles** and HTTPS **images** remain supported for
+existing layout and publication badges. Permissions-Policy disables camera,
+microphone, geolocation, payment and USB while retaining video playback controls.
+The stylesheet and image allowances do not permit executable scripts.
+
+Marked, DOMPurify and Fuse are served locally. Their exact versions, package
+integrity, file integrity and licenses are recorded in `assets/vendor/manifest.json`;
+the shared include enforces file integrity in the browser. To update a dependency,
+verify the package archive against its recorded registry integrity, replace only
+the intended upstream files and license, update the manifest/include hashes, and
+run the dependency and browser checks. Renew the `Expires` date in
+`.well-known/security.txt` before it becomes stale.
+
+Before activating a release:
+
+1. Build and run the checks below. Test the loopback preview in both themes at
+   desktop and mobile sizes, including search, tags, redirects, copy buttons,
+   teaching pages, maps and video. The preview serves the exact proposed headers.
+2. Coordinate the Pages source change from legacy `main:/` to **GitHub Actions**
+   with merging this workflow. Wait for previous publishing runs to finish;
+   retain the previous commit/artifact and provider settings for rollback.
+3. Require the new deployment ID, live manifest SHA and successful purge receipt.
+   A green build or a successful `curl` exit alone is insufficient.
+4. Apply the named header rule. Use `--report-only` when generating a temporary
+   CSP observation rule if production compatibility needs checking, then replace
+   that same rule with the enforced policy. Verify real document responses and
+   browser console/network behavior. Do not retain both policy variants.
+5. Confirm `/.well-known/security.txt` returns UTF-8 `text/plain` over HTTPS,
+   and recheck representative documentation and SL25 paths for unchanged behavior.
+
+```bash
+./scripts/build.sh
+python3 scripts/browser-security.py check --site-dir _site
+python3 tests/browser-security.test.py
+python3 tests/purge-website-cache.test.py
+npm test -- --runInBand
+python3 scripts/serve-security-preview.py --port 4173
+```
+
+The preview also provides `/about/__security-probe__.html` to check that a local
+script runs while inline scripts, handlers and an unapproved script are blocked;
+`/__frame-probe__.html` attempts to frame it. These fixtures exist only in the
+loopback server and are never included in the published artifact.
+
+Rollback restores only the named header rule's saved version (or removes that
+rule if newly added), redeploys the previous known-good website release, and
+purges its affected URL inventory. If reverting the workflow migration as well,
+restore the saved Pages source after disabling the competing custom publisher.
+Preserve DNS, HTTPS enforcement, certificates, documentation base paths and
+unrelated edge rules throughout. Until activation and live readback are complete,
+the repository checks establish readiness, not deployed protection.
 
 ### Content Management
 
@@ -524,15 +607,12 @@ The website supports both light and dark themes with an easy toggle switch in th
 
 | Workflow | Purpose |
 | --- | --- |
-| `jekyll.yml` | Builds and deploys the Jekyll site to GitHub Pages on push/PR to `main`. |
-| `pages-build-deployment` (GitHub-managed) | Final deploy to GitHub's edge. |
+| `jekyll.yml` | Builds and tests PRs; publishes main through Pages, verifies the live release, then purges changed website URLs. |
 | `update-search.yml` | Pulls the search index from [comphy-lab/comphy-search](https://github.com/comphy-lab/comphy-search) daily at 04:00 UTC and on content changes. |
-| `rebuild-on-search-update.yml` | Re-runs the build when the search index changes. |
 | `content-rules-checks.yml` | Runs `validate-content-rules.sh` and the trigger-parity check. |
 | `maintenance-regression-checks.yml` | Regression suite for housekeeping scripts (deploy, validators). |
 | `teaching-content-checks.yml` | markdownlint + Prettier gate for `_teaching/` pages. |
 | `pr-hygiene-check.yml` | PR hygiene — blocks mixed dependency/security PRs. |
-| `cloudflare-purge.yml` | Purges Cloudflare cache after deploy (needs `CLOUDFLARE_ZONE_ID` and `CLOUDFLARE_API_TOKEN` secrets). |
 | `sync-org-profile-publications.yml` | Syncs publications to the org profile README. |
 | `weekly-tests.yml` | Scheduled weekly smoke tests. |
 

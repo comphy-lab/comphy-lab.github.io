@@ -1,0 +1,4 @@
+Contact: mailto:vatsal.sanjay@durham.ac.uk
+Expires: 2027-09-01T00:00:00Z
+Canonical: https://comphy-lab.org/.well-known/security.txt
+Preferred-Languages: en

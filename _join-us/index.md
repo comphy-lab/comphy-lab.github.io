@@ -15,7 +15,7 @@ numerics, and scientific computing.
     <a class="email-link" href="mailto:vatsal.sanjay@durham.ac.uk" aria-label="Email vatsal.sanjay@durham.ac.uk">
       <i class="fa-regular fa-envelope"></i>
     </a>
-    <button class="copy-btn" data-clipboard-text="vatsal.sanjay@durham.ac.uk" onclick="copyEmail(this)" aria-label="Copy email address vatsal.sanjay@durham.ac.uk">
+    <button class="copy-btn" data-clipboard-text="vatsal.sanjay@durham.ac.uk" aria-label="Copy email address vatsal.sanjay@durham.ac.uk">
       <i class="fa-regular fa-copy"></i>
     </button>
   </div>

@@ -179,32 +179,4 @@ description: >-
   </div>
 </main>
 
-<script>
-  /* Lazy-load the Google Map iframe only when it's about to enter
-     the viewport — saves a heavy iframe + Google scripts on initial
-     team-page load. Falls back to immediate load when
-     IntersectionObserver isn't available. */
-  (function () {
-    var frame = document.getElementById('team-map');
-    if (!frame) return;
-    var loaded = false;
-    function load() {
-      if (loaded) return; loaded = true;
-      frame.innerHTML =
-        '<iframe ' +
-        'src="https://www.google.com/maps/d/u/0/embed?mid=1hOfYTnnie_7Bx45e9uA4gLXaaKreTXc&ehbc=2E312F&noprof=1&z=3&ll=42,-10" ' +
-        'title="CoMPhy Lab — team, collaborators, and conference visits" ' +
-        'loading="lazy" allowfullscreen ' +
-        'referrerpolicy="no-referrer-when-downgrade" ' +
-        'sandbox="allow-scripts allow-same-origin allow-popups"></iframe>';
-    }
-    if ('IntersectionObserver' in window) {
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) { if (e.isIntersecting) { load(); io.disconnect(); } });
-      }, { rootMargin: '300px' });
-      io.observe(frame);
-    } else {
-      load();
-    }
-  })();
-</script>
+<script src="/assets/js/page-team-map.js"></script>

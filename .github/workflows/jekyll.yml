@@ -1,26 +1,28 @@
-name: Jekyll site CI
+name: Build and deploy website
 
 on:
   push:
     branches: ["main"]
   pull_request:
     branches: ["main"]
+  workflow_dispatch:
 
 permissions:
   contents: read
 
 concurrency:
-  group: jekyll-site-${{ github.ref }}
-  cancel-in-progress: true
+  group: pages-${{ github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && 'production' || github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' || github.event_name == 'pull_request' }}
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - name: Check out source
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
 
       - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
+        uses: ruby/setup-ruby@95ef2b042f9d7a56d8268cba8559e2842e2ad01b # v1.321.0
         with:
           ruby-version: "3.4.10"
           bundler: "2.5.23"
@@ -29,40 +31,87 @@ jobs:
       - name: Check Ruby/Bundler toolchain
         run: bash scripts/check-ruby-toolchain.sh
 
-      - name: Build site and search database
-        run: |
-          chmod +x scripts/build.sh
-          ./scripts/build.sh
-
-      - name: Package Pages artifact
-        run: |
-          tar --dereference \
-            --directory "${GITHUB_WORKSPACE}/_site" \
-            --create --file "${GITHUB_WORKSPACE}/github-pages.tar" .
-          gzip -f "${GITHUB_WORKSPACE}/github-pages.tar"
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@v6
+      - name: Set up Node.js
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
-          name: github-pages
-          path: github-pages.tar.gz
+          node-version: "24"
+          cache: npm
+
+      - name: Install locked Node.js dependencies
+        run: npm ci --no-fund --no-audit --ignore-scripts
+
+      - name: Run JavaScript tests
+        run: npm test -- --runInBand
+
+      - name: Run publishing and browser-security tests
+        run: |
+          python3 tests/purge-website-cache.test.py
+          python3 tests/browser-security.test.py
+
+      - name: Build site
+        run: bash scripts/build.sh --skip-deps
+
+      - name: Validate browser security policy
+        run: python3 scripts/browser-security.py check --site-dir _site
+
+      - name: Build release manifest
+        run: |
+          python3 scripts/build-release-manifest.py \
+            --site-dir _site \
+            --git-sha "${GITHUB_SHA}" \
+            --output _site/release-manifest.json
+
+      - name: Capture the currently deployed release manifest
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        run: |
+          python3 scripts/purge-website-cache.py capture \
+            --cache-key "${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" \
+            --output previous-release-manifest.json
+
+      - name: Upload previous release metadata
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: previous-release-manifest
+          path: previous-release-manifest.json
           retention-days: 1
-          compression-level: 0
+          if-no-files-found: error
+
+      - name: Upload GitHub Pages artifact
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4
+        with:
+          path: _site
 
   deploy:
-    # Only run deploy job on push to main, not on PRs
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     needs: build
     runs-on: ubuntu-latest
     permissions:
+      contents: read
       pages: write
       id-token: write
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
+
+      - name: Check out release scripts
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+
+      - name: Download previous release metadata
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7
+        with:
+          name: previous-release-manifest
+
+      - name: Verify release provenance and purge changed website URLs
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+        run: |
+          python3 scripts/purge-website-cache.py purge \
+            --expected-sha "${GITHUB_SHA}" \
+            --previous-manifest previous-release-manifest.json
