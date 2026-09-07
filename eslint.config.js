@@ -64,6 +64,7 @@ module.exports = [
   {
     files: [
       "tests/browser-dependencies.test.js",
+      "tests/fast-uri-security.test.js",
       "tests/page-scripts-csp.test.js"
     ],
     languageOptions: {
