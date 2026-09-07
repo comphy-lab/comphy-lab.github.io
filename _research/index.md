@@ -39,7 +39,7 @@ title: Research
 <div class="tags"><span>Bubbles</span><span>Jets</span><span>Soft-matter-singularities</span><span>Featured</span></div>
 
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2607.08972&color=green)](https://arxiv.org/abs/2607.08972)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/self-similar-jet-fullAccess)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/self-similar-worthington-jets-arxiv)
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/0_ToDo-Blog-public)
 
 ![Self-similar collapse of a Worthington jet over more than two decades in dimensionless time](/assets/images/research/self-similar-worthington-jet-collapse.png){: width="75%" .center-block style="display: block; margin-left: auto; margin-right: auto;"}
@@ -267,8 +267,8 @@ title: Research
 
 [![PhD thesis](https://img.shields.io/static/v1.svg?logo=adobeacrobatreader&style=flat-square&label=Thesis&message=Download&color=green)](https://qrco.de/bd9SHU)
 [![DOI](https://img.shields.io/static/v1.svg?style=flat-square&label=UT&message=link&color=orange)](https://doi.org/10.3990/1.9789036554077)
-[![LaTeX](https://img.shields.io/static/v1.svg?style=flat-square&logo=github&label=LaTeX&message=source%20code)](https://github.com/VatsalSy/VatsalPhDThesis)
-[![Defense](https://img.shields.io/static/v1.svg?style=flat-square&logo=vimeo&label=Defense&message=Watch%20online&color=green)](https://vimeo.com/730545548)
+[![LaTeX](https://img.shields.io/static/v1.svg?style=flat-square&logo=github&label=LaTeX&message=source%20code)](https://github.com/VatsalSy/Vatsal-Thesis)
+[![Defense](https://img.shields.io/static/v1.svg?style=flat-square&logo=youtube&label=Defense&message=Watch%20online&color=green)](https://youtu.be/X1vrRSHLlWI)
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/)
 
 <h3 id="9">[9] <strong>Sanjay, V.</strong>, Sen, U., Kant, P., and Lohse, D. Taylor–Culick retractions and the influence of the surroundings. J. Fluid Mech., 948, A14 (2022).</h3>

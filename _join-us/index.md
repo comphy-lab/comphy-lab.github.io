@@ -267,7 +267,7 @@ a well-scoped project and enough supervision time.
 Send a short note describing your interests and any prior experience, along with your transcript, to the email addresses above. Include your preferred internship timeline and any specific research areas of interest.
 
 > Eligible PhD candidates from Commonwealth countries may also consider the
-[Commonwealth Split-site PhD Scholarships](https://cscuk.fcdo.gov.uk/scholarships/commonwealth-split-site-scholarships-for-low-and-middle-income-countries/)
+[Commonwealth Split-site PhD Scholarships](https://cscuk.fcdo.gov.uk/about-us/scholarships/)
 to undertake a 1‑year research period at CoMPhy Lab as part of their PhD.
 
 </div>
