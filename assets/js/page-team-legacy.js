@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     iframe.allowFullscreen = true;
     iframe.loading = "lazy";
     iframe.title = "CoMPhy Lab - Team, Collaborators and Conference Visits";
-    iframe.referrerPolicy = "no-referrer-when-downgrade";
+    iframe.referrerPolicy = "strict-origin-when-cross-origin";
     iframe.setAttribute(
       "sandbox",
       "allow-scripts allow-same-origin allow-popups"
@@ -83,16 +83,5 @@ document.addEventListener("DOMContentLoaded", function () {
     image.addEventListener("error", function () {
       setTimeout(tryLoadImage, 1000 * retries);
     });
-
-    if ("IntersectionObserver" in window) {
-      var imageObserver = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting && !image.classList.contains("loaded")) {
-            tryLoadImage();
-          }
-        });
-      });
-      imageObserver.observe(image);
-    }
   });
 });

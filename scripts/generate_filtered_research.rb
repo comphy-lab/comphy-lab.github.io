@@ -30,6 +30,13 @@ end
 
 puts "Found #{all_tags.length} unique tags: #{all_tags.join(', ')}"
 
+# Validate the complete mapping before changing any generated pages or sitemap.
+collisions = all_tags.group_by { |tag| safe_path_segment(tag).downcase }
+                     .select { |_slug, tags| tags.length > 1 }
+unless collisions.empty?
+  raise ArgumentError, "Distinct tags share a generated filename: #{collisions.keys.join(', ')}"
+end
+
 # Create a sitemap entry for each tag filter
 sitemap_path = File.join(Dir.pwd, '_site', 'sitemap.xml')
 if File.exist?(sitemap_path)

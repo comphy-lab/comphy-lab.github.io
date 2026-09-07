@@ -12,20 +12,20 @@ module.exports = [
         ...globals.es2021,
         marked: "readonly",
         DOMPurify: "readonly",
-        Utils: "readonly"
-      }
+        Utils: "readonly",
+      },
     },
     rules: {
-      "indent": "off", // Disabled - handled by Prettier
+      indent: "off", // Disabled - handled by Prettier
       "linebreak-style": ["error", "unix"],
-      "quotes": ["error", "double", { "avoidEscape": true }],
-      "semi": ["error", "always"],
+      quotes: ["error", "double", { avoidEscape: true }],
+      semi: ["error", "always"],
       "no-unused-vars": "warn",
-      "no-console": ["warn", { "allow": ["error", "warn"] }],
-      "camelcase": "warn",
-      "max-len": ["warn", { "code": 80 }],
-      "no-useless-assignment": "off" // eslint 10 new default; intentionally relaxed (initial-then-overwrite pattern is common in this codebase)
-    }
+      "no-console": ["warn", { allow: ["error", "warn"] }],
+      camelcase: "warn",
+      "max-len": ["warn", { code: 80 }],
+      "no-useless-assignment": "off", // eslint 10 new default; intentionally relaxed (initial-then-overwrite pattern is common in this codebase)
+    },
   },
   {
     files: [
@@ -35,37 +35,38 @@ module.exports = [
       "assets/js/platform-utils.js",
       "assets/js/search-manager.js",
       "assets/js/teaching.js",
-      "assets/js/utils.js"
+      "assets/js/utils.js",
     ],
     rules: {
       "max-len": [
         "warn",
         {
-          "code": 120,
-          "ignoreUrls": true,
-          "ignoreStrings": true,
-          "ignoreTemplateLiterals": true,
-          "ignoreComments": true,
-          "ignoreRegExpLiterals": true
-        }
-      ]
-    }
+          code: 120,
+          ignoreUrls: true,
+          ignoreStrings: true,
+          ignoreTemplateLiterals: true,
+          ignoreComments: true,
+          ignoreRegExpLiterals: true,
+        },
+      ],
+    },
   },
   {
     files: [
       "assets/js/main.js",
       "assets/js/search-manager.js",
-      "assets/js/teaching.js"
+      "assets/js/teaching.js",
     ],
     rules: {
-      "no-console": ["warn", { "allow": ["error", "warn", "log"] }]
-    }
+      "no-console": ["warn", { allow: ["error", "warn", "log"] }],
+    },
   },
   {
     files: [
       "tests/browser-dependencies.test.js",
       "tests/fast-uri-security.test.js",
-      "tests/page-scripts-csp.test.js"
+      "tests/page-scripts-csp.test.js",
+      "tests/page-script-behavior.test.js",
     ],
     languageOptions: {
       sourceType: "commonjs",
@@ -74,8 +75,8 @@ module.exports = [
         ...globals.jest,
         crypto: "off",
         DOMPurify: "off",
-        marked: "off"
-      }
-    }
-  }
+        marked: "off",
+      },
+    },
+  },
 ];

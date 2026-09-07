@@ -20,6 +20,8 @@ jobs:
     steps:
       - name: Check out source
         uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@95ef2b042f9d7a56d8268cba8559e2842e2ad01b # v1.321.0
@@ -47,6 +49,7 @@ jobs:
         run: |
           python3 tests/purge-website-cache.test.py
           python3 tests/browser-security.test.py
+          bundle exec ruby tests/research-tag-collision.test.rb
 
       - name: Build site
         run: bash scripts/build.sh --skip-deps
@@ -101,6 +104,8 @@ jobs:
 
       - name: Check out release scripts
         uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
 
       - name: Download previous release metadata
         uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7

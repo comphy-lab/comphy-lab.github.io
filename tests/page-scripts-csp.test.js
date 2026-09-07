@@ -21,7 +21,7 @@ const templates = [
   "contact.html",
   "index.html",
   "news/index.md",
-  "scripts/generate_filtered_research.rb"
+  "scripts/generate_filtered_research.rb",
 ];
 
 describe("CSP-compatible page scripts", () => {
@@ -47,17 +47,21 @@ describe("CSP-compatible page scripts", () => {
     document.documentElement.className = "no-js";
     document.body.innerHTML = [
       '<button id="theme-toggle"></button>',
-      '<img id="portrait" data-image-state="team-photo">'
+      '<img id="portrait" data-image-state="team-photo">',
     ].join("");
-    localStorage.setItem("theme", "dark");
+    localStorage.clear();
+    window.matchMedia.mockImplementation((query) => ({
+      matches: query === "(prefers-color-scheme: dark)",
+      media: query,
+    }));
 
     Object.defineProperty(document.getElementById("portrait"), "complete", {
       configurable: true,
-      value: true
+      value: true,
     });
     Object.defineProperty(document.getElementById("portrait"), "naturalWidth", {
       configurable: true,
-      value: 100
+      value: 100,
     });
 
     jest.isolateModules(() => {
@@ -66,10 +70,12 @@ describe("CSP-compatible page scripts", () => {
     document.dispatchEvent(new Event("DOMContentLoaded"));
 
     expect(document.documentElement.dataset.theme).toBe("dark");
+    expect(localStorage.getItem("theme")).toBeNull();
     expect(document.documentElement.classList.contains("js")).toBe(true);
     expect(document.getElementById("portrait").classList).toContain("loaded");
 
     document.getElementById("theme-toggle").click();
     expect(document.documentElement.dataset.theme).toBe("light");
+    expect(localStorage.getItem("theme")).toBe("light");
   });
 });

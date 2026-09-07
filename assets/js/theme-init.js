@@ -24,12 +24,14 @@
       : "light";
   }
 
-  function setTheme(theme) {
+  function setTheme(theme, persist) {
     document.documentElement.setAttribute("data-theme", theme);
-    try {
-      localStorage.setItem("theme", theme);
-    } catch (error) {
-      console.warn("Theme init: cannot persist theme", error);
+    if (persist) {
+      try {
+        localStorage.setItem("theme", theme);
+      } catch (error) {
+        console.warn("Theme init: cannot persist theme", error);
+      }
     }
 
     if (dispatchThemeChange) {
@@ -73,14 +75,14 @@
   document.addEventListener("error", handleImageEvent, true);
 
   document.addEventListener("DOMContentLoaded", function () {
-    setTheme(preferredTheme());
+    setTheme(preferredTheme(), false);
 
     var themeToggle = document.getElementById("theme-toggle");
     if (themeToggle) {
       themeToggle.addEventListener("click", function () {
         var current =
           document.documentElement.getAttribute("data-theme") || "light";
-        setTheme(current === "light" ? "dark" : "light");
+        setTheme(current === "light" ? "dark" : "light", true);
       });
     }
 

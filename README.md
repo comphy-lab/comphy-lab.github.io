@@ -231,6 +231,11 @@ run the dependency and browser checks. Renew the `Expires` date in
 
 Before activating a release:
 
+Capture the current Pages API record and the named Cloudflare header rule (or its
+absence), including its ruleset/rule IDs and version, in a private release
+receipt before changing either provider. Record the current deployed commit and
+artifact alongside them. Use these saved records for the rollback below.
+
 1. Build and run the checks below. Test the loopback preview in both themes at
    desktop and mobile sizes, including search, tags, redirects, copy buttons,
    teaching pages, maps and video. The preview serves the exact proposed headers.

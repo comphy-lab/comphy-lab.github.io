@@ -59,6 +59,14 @@
 
   var index = 0;
   function advance() {
+    var outgoingVideo = figures[index].querySelector("video");
+    if (outgoingVideo) {
+      try {
+        outgoingVideo.pause();
+      } catch {
+        // Some browsers reject media control before metadata is available.
+      }
+    }
     figures[index].setAttribute("data-active", "false");
     figures[index].setAttribute("aria-hidden", "true");
     figures[index].setAttribute("inert", "");

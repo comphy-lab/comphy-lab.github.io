@@ -17,7 +17,7 @@
     iframe.title = "CoMPhy Lab — team, collaborators, and conference visits";
     iframe.loading = "lazy";
     iframe.allowFullscreen = true;
-    iframe.referrerPolicy = "no-referrer-when-downgrade";
+    iframe.referrerPolicy = "strict-origin-when-cross-origin";
     iframe.setAttribute(
       "sandbox",
       "allow-scripts allow-same-origin allow-popups"
