@@ -89,18 +89,19 @@ jobs:
           # Pages' standard packager drops dot-directories. Include only the
           # intended public contact file, not arbitrary hidden build content.
           tar --directory _site --append \
-            --file "${RUNNER_TEMP}/artifact.tar" .well-known/security.txt
+            --file "${RUNNER_TEMP}/artifact.tar" --no-recursion \
+            ./.well-known ./.well-known/security.txt
           tar --extract --to-stdout --file "${RUNNER_TEMP}/artifact.tar" \
-            .well-known/security.txt | cmp - .well-known/security.txt
+            ./.well-known/security.txt | cmp - .well-known/security.txt
 
       - name: Upload GitHub Pages artifact
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
-        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        # Match the uploader used by the pinned official Pages packager.
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: github-pages
           path: ${{ runner.temp }}/artifact.tar
           retention-days: 1
-          compression-level: 0
           if-no-files-found: error
 
   deploy:
