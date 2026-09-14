@@ -64,6 +64,7 @@
     },
     "jest-util": {
       "picomatch": "^4.0.4"
-    }
+    },
+    "smol-toml": "~1.7.1"
   }
 }
