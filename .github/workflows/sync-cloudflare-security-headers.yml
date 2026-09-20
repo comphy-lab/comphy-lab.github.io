@@ -10,6 +10,13 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
+      - name: Require main branch
+        run: |
+          if [ "${GITHUB_REF}" != "refs/heads/main" ]; then
+            echo "Refusing Cloudflare header sync from ${GITHUB_REF}; use main."
+            exit 1
+          fi
+
       - name: Check out source
         uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:

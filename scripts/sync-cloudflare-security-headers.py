@@ -21,7 +21,8 @@ from urllib.request import Request
 ROOT = Path(__file__).resolve().parent.parent
 PHASE = "http_response_headers_transform"
 RULE_REF = "public_website_browser_security"
-RULE_DESCRIPTION_PREFIX = "Public website browser security"
+# Must match scripts/browser-security.py cloudflare_rule()["description"].
+RULE_DESCRIPTION = "Public website browser security (owned routes only)"
 API_BASE = "https://api.cloudflare.com/client/v4"
 
 
@@ -96,10 +97,9 @@ def is_browser_security_rule(rule: dict[str, Any]) -> bool:
         return False
     if rule.get("ref") == RULE_REF:
         return True
-    description = rule.get("description")
-    return isinstance(description, str) and description.startswith(
-        RULE_DESCRIPTION_PREFIX
-    )
+    # Exact description only when ref is absent — prefix match can hit
+    # unrelated rules (e.g. "... audit") and overwrite them.
+    return rule.get("description") == RULE_DESCRIPTION
 
 
 def writable_rule(rule: dict[str, Any]) -> dict[str, Any]:

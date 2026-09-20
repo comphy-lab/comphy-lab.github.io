@@ -103,12 +103,21 @@ class MergeTests(unittest.TestCase):
         self.assertEqual(rules[1]["expression"], sample_desired()["expression"])
         self.assertEqual(updated["id"], "rule-security")
 
-    def test_match_by_description_prefix_when_ref_missing(self):
+    def test_match_by_exact_description_when_ref_missing(self):
         existing = sample_ruleset()["rules"]
         del existing[1]["ref"]
-        existing[1]["description"] = "Public website browser security (owned routes only)"
+        existing[1]["description"] = sync.RULE_DESCRIPTION
         rules, _updated = sync.merge_rules(existing, sample_desired())
         self.assertEqual(rules[1]["id"], "rule-security")
+
+    def test_description_prefix_alone_does_not_match(self):
+        existing = sample_ruleset()["rules"]
+        del existing[1]["ref"]
+        existing[1]["description"] = (
+            "Public website browser security audit"
+        )
+        with self.assertRaisesRegex(sync.SyncError, "exactly one"):
+            sync.merge_rules(existing, sample_desired())
 
     def test_missing_or_duplicate_target_fails(self):
         with self.assertRaisesRegex(sync.SyncError, "exactly one"):
