@@ -54,10 +54,6 @@ items:
     title: "PinchOff: Plateau-Rayleigh Pinch-Off in Basilisk"
   - repo: soapy
     title: "SOAPY — Simulation Of Axisymmetric Phenomena in bubblY films"
-  - repo: documentationWeb
-    title: "Test documentation: Lid-driven cavity"
-  - repo: VatsalSy
-    title: Vatsal Sanjay profile
   - repo: VE-DropImpact-ContactLine
     title: VE Drop Impact — Contact Line
   - repo: Viscoelastic-Worthington-jets-and-droplets-produced-by-bursting-bubbles
