@@ -35,6 +35,7 @@ class BrowserSecurityTests(unittest.TestCase):
         expression = rule["expression"]
         self.assertIn('http.host eq "comphy-lab.org"', expression)
         self.assertIn('starts_with(http.request.uri.path, "/teaching/")', expression)
+        self.assertIn('starts_with(http.request.uri.path, "/projects/")', expression)
         self.assertNotIn('starts_with(http.request.uri.path, "/")', expression)
         for path in ["/sl25", "/sl2", "/add", "/documentationWeb/"]:
             self.assertFalse(security.route_policy().is_owned_path(path))

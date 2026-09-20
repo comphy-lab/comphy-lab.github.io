@@ -68,6 +68,8 @@ class PurgePolicyTests(unittest.TestCase):
             "/",
             "/assets/site.css",
             "/research/",
+            "/projects/",
+            "/projects/index.html",
             "/history/index.html",
             "/contact-card/",
             "/featured/Bubbles.jpg",

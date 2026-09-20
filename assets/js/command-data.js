@@ -41,6 +41,15 @@
       icon: "<i class=\"fa-solid fa-flask\"></i>",
     },
     {
+      id: "projects",
+      title: "Go to Project Docs",
+      handler: () => {
+        window.location.href = "/projects/";
+      },
+      section: "Navigation",
+      icon: "<i class=\"fa-solid fa-book\"></i>",
+    },
+    {
       id: "teaching",
       title: "Go to Teaching Page",
       handler: () => {
