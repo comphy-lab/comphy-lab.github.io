@@ -10,6 +10,9 @@ describe("command-palette.js Priority 1 paths", () => {
   let input;
   let resultsContainer;
   let handlerSpy;
+  let domContentLoadedHandlers;
+  let documentListeners;
+  let addEventListenerSpy;
 
   function mountPaletteDom() {
     document.body.innerHTML = `
@@ -69,16 +72,41 @@ describe("command-palette.js Priority 1 paths", () => {
     window.__commandPaletteSearchToken = 0;
 
     require("../assets/js/command-palette.js");
-    document.dispatchEvent(new Event("DOMContentLoaded"));
+    // Invoke only listeners registered by this load. Avoid
+    // document.dispatchEvent(DOMContentLoaded), which would also
+    // re-run handlers accumulated from earlier requires/tests.
+    const handlers = domContentLoadedHandlers.slice();
+    domContentLoadedHandlers.length = 0;
+    handlers.forEach((handler) => handler());
   }
 
   beforeEach(() => {
     jest.resetModules();
     jest.clearAllMocks();
+    domContentLoadedHandlers = [];
+    documentListeners = [];
+    const originalAdd = document.addEventListener.bind(document);
+    addEventListenerSpy = jest
+      .spyOn(document, "addEventListener")
+      .mockImplementation((type, handler, options) => {
+        if (type === "DOMContentLoaded") {
+          domContentLoadedHandlers.push(handler);
+          return undefined;
+        }
+        documentListeners.push({ type, handler, options });
+        return originalAdd(type, handler, options);
+      });
     loadPalette();
   });
 
   afterEach(() => {
+    documentListeners.forEach(({ type, handler, options }) => {
+      document.removeEventListener(type, handler, options);
+    });
+    documentListeners = [];
+    if (addEventListenerSpy) {
+      addEventListenerSpy.mockRestore();
+    }
     document.body.innerHTML = "";
     delete window.SearchManager;
     delete window.Utils;
@@ -177,7 +205,7 @@ describe("command-palette.js Priority 1 paths", () => {
       expect(resultsContainer.textContent).toContain("No commands found");
     });
 
-    it("asks SearchManager for queries of three or more characters", async () => {
+    it("asks SearchManager for queries of 3+ characters", async () => {
       window.SearchManager.searchForCommandPalette.mockResolvedValue([
         {
           title: "Blog Post",
@@ -222,23 +250,22 @@ describe("command-palette.js Priority 1 paths", () => {
       expect(commands[1].classList.contains("selected")).toBe(false);
     });
 
-    it("moves selection with ArrowDown and wraps with ArrowUp", () => {
+    it("wraps selection from the first command with ArrowUp", () => {
       window.openCommandPalette();
       const commands = commandEls();
 
       input.dispatchEvent(
         new KeyboardEvent("keydown", { key: "ArrowDown", bubbles: true })
       );
-      input.dispatchEvent(
-        new KeyboardEvent("keydown", { key: "ArrowDown", bubbles: true })
-      );
-      expect(commands[1].classList.contains("selected")).toBe(true);
+      expect(commands[0].classList.contains("selected")).toBe(true);
 
       input.dispatchEvent(
         new KeyboardEvent("keydown", { key: "ArrowUp", bubbles: true })
       );
-      expect(commands[0].classList.contains("selected")).toBe(true);
-      expect(commands[1].classList.contains("selected")).toBe(false);
+      expect(commands[commands.length - 1].classList.contains("selected")).toBe(
+        true
+      );
+      expect(commands[0].classList.contains("selected")).toBe(false);
     });
 
     it("runs the selected command on Enter", () => {

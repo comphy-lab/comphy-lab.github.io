@@ -2,8 +2,9 @@
  * Priority 1 theme switching and persistence tests for theme-init.js
  *
  * Complements the CSP smoke coverage in page-scripts-csp.test.js by
- * exercising localStorage preference, toggle persistence, and the
- * optional themeChange custom event.
+ * exercising localStorage preference and toggle persistence.
+ * (data-dispatch-theme-change / themeChange requires a real script
+ * element as document.currentScript; not covered via require().)
  */
 
 describe("theme-init.js Priority 1 paths", () => {
@@ -114,11 +115,11 @@ describe("theme-init.js Priority 1 paths", () => {
 
   it("ignores invalid saved theme values", () => {
     localStorage.setItem("theme", "neon");
-    mockMatchMedia(false);
+    mockMatchMedia(true);
 
     loadThemeInit();
 
-    expect(document.documentElement.getAttribute("data-theme")).toBe("light");
+    expect(document.documentElement.getAttribute("data-theme")).toBe("dark");
   });
 
   it("marks the document as js-capable", () => {

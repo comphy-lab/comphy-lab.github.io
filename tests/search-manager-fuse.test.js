@@ -131,7 +131,7 @@ describe("search-manager Fuse.js search paths", () => {
     ).resolves.toEqual([]);
   });
 
-  it("builds palette handlers only for safe public result URLs", async () => {
+  it("formats public search hits with a callable palette handler", async () => {
     require("../assets/js/search-manager.js");
 
     const results =
@@ -143,8 +143,8 @@ describe("search-manager Fuse.js search paths", () => {
     expect(teaching).toBeDefined();
     expect(teaching.title).toBe("Teaching Basilisk");
     expect(typeof teaching.handler).toBe("function");
-    // Sanitization tests cover rejecting unsafe URLs before Fuse runs;
-    // here we only assert the palette transform wired a callable handler.
+    // Unsafe URL rejection at load time is covered in search-manager.test.js.
+    // Handler navigation uses window.location.href; jsdom blocks stubbing it.
   });
 
   it("exposes search stats after a successful load", async () => {
