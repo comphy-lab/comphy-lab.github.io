@@ -8,7 +8,7 @@ description: >-
   comphy-lab.org/{Repo-Name}/.
 ---
 
-{% assign project_items = site.data.project-docs.items | sort: "title" %}
+{% assign project_items = site.data.project-docs.items | sort_natural: "title" %}
 
 <main class="projects-page">
   <header class="projects-page__head">
