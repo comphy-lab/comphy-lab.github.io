@@ -213,6 +213,20 @@ project paths, SL25 or the legacy calculation APIs. Add only this named rule
 HTTPS enforcement and certificates. Re-read the ruleset immediately before
 appending or updating it; do not replace the whole ruleset with this one rule.
 
+After changing `security/response-headers.json`, apply the named rule with the
+manual **Sync Cloudflare security headers** workflow (`workflow_dispatch` only).
+It runs `scripts/sync-cloudflare-security-headers.py` with repository secrets
+`CLOUDFLARE_ZONE_ID` and `CLOUDFLARE_API_TOKEN`, updates the existing
+`public_website_browser_security` rule in place, and prints the rule id plus
+whether the applied CSP still mentions `fonts.googleapis` (should be `false`
+after the self-hosted fonts cutover). Local equivalent:
+
+```bash
+export CLOUDFLARE_ZONE_ID=...
+export CLOUDFLARE_API_TOKEN=...
+python3 scripts/sync-cloudflare-security-headers.py
+```
+
 The CSP allows local scripts and Cloudflare's integrity-protected analytics
 beacon, denies inline script handlers and `eval`, and denies framing and plugin
 objects. Self-hosted brand webfonts load from `'self'`. Font Awesome (cdnjs),
