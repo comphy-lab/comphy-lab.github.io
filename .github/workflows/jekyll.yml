@@ -45,6 +45,11 @@ jobs:
       - name: Run JavaScript tests
         run: npm test -- --runInBand
 
+      - name: Check layout script includes and dependency order
+        run: |
+          bash scripts/check-script-includes.sh
+          bash tests/check-script-includes-regression.sh
+
       - name: Run publishing and browser-security tests
         run: |
           python3 tests/purge-website-cache.test.py

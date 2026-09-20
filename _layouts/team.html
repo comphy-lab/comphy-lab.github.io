@@ -74,15 +74,7 @@
   }
   </script>
 
-  <!-- Load pinned libraries before utilities and search code. -->
-  {% include browser-dependencies.html %}
-  <script defer src="/assets/js/utils.js"></script>
-  <script defer src="/assets/js/search-manager.js"></script>
-  <script defer src="/assets/js/main.js"></script>
-  <script defer src="/assets/js/platform-utils.js"></script>
-  <!-- Command palette script before command data -->
-  <script defer src="/assets/js/command-palette.js"></script>
-  <script defer src="/assets/js/command-data.js"></script>
+  {% include site-scripts.html %}
 
   <link
     rel="stylesheet"

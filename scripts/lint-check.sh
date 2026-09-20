@@ -13,33 +13,25 @@ echo "Running checks on repository at: $REPO_ROOT"
 # Check dependencies without rewriting templates or reintroducing CDN scripts.
 echo "Checking pinned browser dependencies..."
 for layout in default history join-us team; do
-  if ! grep -q 'include browser-dependencies.html' \
+  if ! grep -q 'include site-scripts.html' \
     "$REPO_ROOT/_layouts/$layout.html"; then
-    echo "Missing browser-dependencies.html in $layout layout" >&2
+    echo "Missing site-scripts.html in $layout layout" >&2
     exit 1
   fi
 done
+if ! grep -q 'include browser-dependencies.html' \
+  "$REPO_ROOT/_includes/site-scripts.html"; then
+  echo "site-scripts.html must include browser-dependencies.html" >&2
+  exit 1
+fi
 if grep -Eq 'https?://' "$REPO_ROOT/_includes/browser-dependencies.html"; then
   echo "Browser dependencies must be served from the local vendor directory" >&2
   exit 1
 fi
 
-# Check for proper script loading order in HTML files
-echo "Checking script loading order..."
-
-# Use find with null delimiters and while read loop to safely handle filenames with spaces
-find "$REPO_ROOT/_layouts" "$REPO_ROOT/_includes" -name "*.html" -print0 2>/dev/null | while IFS= read -r -d '' file; do
-  # Check if command-data.js loads after command-palette.js
-  if grep -q "command-data.js" "$file" && grep -q "command-palette.js" "$file"; then
-    # Get first line number for each file (multiple occurrences may exist)
-    DATA_LINE=$(grep -n "command-data.js" "$file" | head -1 | cut -d ":" -f 1)
-    PALETTE_LINE=$(grep -n "command-palette.js" "$file" | head -1 | cut -d ":" -f 1)
-    
-    if [ "$PALETTE_LINE" -gt "$DATA_LINE" ]; then
-      echo "WARNING: In $file, command-palette.js (line $PALETTE_LINE) loads after command-data.js (line $DATA_LINE). Check for potential dependency issues."
-    fi
-  fi
-done
+# Fail on duplicate core script tags or invalid dependency order.
+echo "Checking script includes and dependency order..."
+bash "$REPO_ROOT/scripts/check-script-includes.sh"
 
 # Fix quote style in JavaScript files (single quotes to double quotes)
 echo "Checking and fixing quote style in JavaScript files..."
