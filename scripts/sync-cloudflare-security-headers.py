@@ -97,9 +97,9 @@ def is_browser_security_rule(rule: dict[str, Any]) -> bool:
         return False
     if rule.get("ref") == RULE_REF:
         return True
-    # Exact description only when ref is absent — prefix match can hit
-    # unrelated rules (e.g. "... audit") and overwrite them.
-    return rule.get("description") == RULE_DESCRIPTION
+    # Description fallback only when ref is absent — a different ref with
+    # the same description must not be selected for overwrite.
+    return "ref" not in rule and rule.get("description") == RULE_DESCRIPTION
 
 
 def writable_rule(rule: dict[str, Any]) -> dict[str, Any]:

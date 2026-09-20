@@ -6,6 +6,12 @@ on:
 permissions:
   contents: read
 
+# Serialize dispatch runs so concurrent workflows cannot PUT stale sibling
+# snapshots over each other.
+concurrency:
+  group: sync-cloudflare-security-headers
+  cancel-in-progress: false
+
 jobs:
   sync:
     runs-on: ubuntu-latest

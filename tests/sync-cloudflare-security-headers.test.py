@@ -119,6 +119,13 @@ class MergeTests(unittest.TestCase):
         with self.assertRaisesRegex(sync.SyncError, "exactly one"):
             sync.merge_rules(existing, sample_desired())
 
+    def test_conflicting_ref_with_same_description_does_not_match(self):
+        existing = sample_ruleset()["rules"]
+        existing[1]["ref"] = "other_browser_security"
+        existing[1]["description"] = sync.RULE_DESCRIPTION
+        with self.assertRaisesRegex(sync.SyncError, "exactly one"):
+            sync.merge_rules(existing, sample_desired())
+
     def test_missing_or_duplicate_target_fails(self):
         with self.assertRaisesRegex(sync.SyncError, "exactly one"):
             sync.merge_rules([sample_ruleset()["rules"][0]], sample_desired())
