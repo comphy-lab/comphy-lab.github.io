@@ -1,0 +1,66 @@
+# Catalogue of live CoMPhy Lab project documentation sites hosted at
+# https://comphy-lab.org/{repo}/ (GitHub Pages for comphy-lab/* repos).
+#
+# How to add an entry:
+#   1. Confirm the Pages site returns HTTP 200 at
+#      https://comphy-lab.org/{repo}/
+#   2. Append an item below with repo, title, and optional note.
+#   3. Keep the list sorted alphabetically by title (case-insensitive),
+#      or rely on the page template which sorts by title at build time.
+#   4. Do not list comphy-lab.github.io (this site) or known 404s.
+#
+# Fields:
+#   repo   GitHub repo slug under comphy-lab/ (also the URL path).
+#   title  Human-readable label shown on /projects/.
+#   note   Optional one-line context (shown muted under the title).
+
+items:
+  - repo: ActiveDrops
+    title: ActiveDrops
+  - repo: Asymmetries-in-coalescence
+    title: Asymmetries in coalescence
+  - repo: bretherton-drops-bubbles
+    title: Bretherton drops and bubbles
+  - repo: Bursting-Bubble
+    title: Bursting Bubble Simulations
+  - repo: qr-codes
+    title: CoMPhy Lab logos, links, and QR codes
+  - repo: comphy-python101
+    title: CoMPhy Python 101
+  - repo: Drop-Impact
+    title: Drop Impact Simulations
+  - repo: ElasticPinchOff
+    title: ElasticPinchOff
+  - repo: Viscoelastic3D
+    title: "ElastoFlow: 2D/3D Viscoelastic Fluid Simulation Framework"
+  - repo: fiber
+    title: "FIBER: Flow-Induced Breakup of Elastic Rheology"
+  - repo: BurstingBubble_Herschel-Bulkley
+    title: Herschel-Bulkley Worthington Jets & Droplets
+  - repo: HoleySheet
+    title: HoleySheet
+    note: Double-threshold rupture of draining liquid films
+  - repo: hyphal-flow
+    title: Hyphal Flow
+  - repo: JumpingBubbles
+    title: Jumping Bubbles
+  - repo: Jumping-Drops
+    title: Jumping Drops
+  - repo: Keller-Segel-chemotaxis
+    title: Keller-Segel chemotaxis
+  - repo: MultiRheoFlow
+    title: MultiRheoFlow
+  - repo: PinchOff
+    title: "PinchOff: Plateau-Rayleigh Pinch-Off in Basilisk"
+  - repo: soapy
+    title: "SOAPY — Simulation Of Axisymmetric Phenomena in bubblY films"
+  - repo: documentationWeb
+    title: "Test documentation: Lid-driven cavity"
+  - repo: VatsalSy
+    title: Vatsal Sanjay profile
+  - repo: VE-DropImpact-ContactLine
+    title: VE Drop Impact — Contact Line
+  - repo: Viscoelastic-Worthington-jets-and-droplets-produced-by-bursting-bubbles
+    title: Viscoelastic Worthington Jets & Droplets
+  - repo: comphy-bot
+    title: "Worthington — The CoMPhy Bot"
