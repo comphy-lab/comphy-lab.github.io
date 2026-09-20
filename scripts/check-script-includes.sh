@@ -16,13 +16,39 @@ log_error() {
   FAILURES=$((FAILURES + 1))
 }
 
+# Escape ERE metacharacters so script basenames match literally.
+ere_escape() {
+  # Dot is the metachar we care about for *.js / *.html basenames.
+  printf '%s' "$1" | sed 's/\./\\./g'
+}
+
+# True when file has a real Liquid {% include name %} tag (not a comment).
+has_liquid_include() {
+  local file="$1"
+  local name
+  name="$(ere_escape "$2")"
+  grep -qE "\\{%[[:space:]]*include[[:space:]]+${name}[[:space:]]*%\\}" \
+    "$file"
+}
+
+# First 1-based line of a Liquid include tag, or empty if absent.
+liquid_include_line() {
+  local file="$1"
+  local name
+  name="$(ere_escape "$2")"
+  grep -nE "\\{%[[:space:]]*include[[:space:]]+${name}[[:space:]]*%\\}" \
+    "$file" 2>/dev/null | head -1 | cut -d: -f1 || true
+}
+
 # First 1-based line index of a script basename, or 0 if absent.
+# Matches src with either single or double quotes.
 script_line() {
   local file="$1"
-  local name="$2"
+  local name
   local line
-  line="$(grep -nE "src=\"[^\"]*/assets/js/${name}\"" "$file" 2>/dev/null \
-    | head -1 | cut -d: -f1 || true)"
+  name="$(ere_escape "$2")"
+  line="$(grep -nE "src=[\"'][^\"']*/assets/js/${name}[\"']" "$file" \
+    2>/dev/null | head -1 | cut -d: -f1 || true)"
   if [[ -z "$line" ]]; then
     echo 0
   else
@@ -32,10 +58,11 @@ script_line() {
 
 script_count() {
   local file="$1"
-  local name="$2"
+  local name
   local count
-  count="$(grep -cE "src=\"[^\"]*/assets/js/${name}\"" "$file" 2>/dev/null \
-    || true)"
+  name="$(ere_escape "$2")"
+  count="$(grep -cE "src=[\"'][^\"']*/assets/js/${name}[\"']" "$file" \
+    2>/dev/null || true)"
   echo "${count:-0}"
 }
 
@@ -63,7 +90,7 @@ check_no_duplicates() {
   local file="$1"
   local name count
   for name in main.js command-palette.js utils.js search-manager.js \
-    command-data.js; do
+    command-data.js platform-utils.js contact-card.js teaching.js; do
     count="$(script_count "$file" "$name" | tr -d '[:space:]')"
     if (( count > 1 )); then
       log_error "$file: duplicate include of $name (${count} times)."
@@ -102,6 +129,48 @@ CORE_SCRIPTS=(
   platform-utils.js
 )
 
+# Front-matter layout parent of a layout file, or empty.
+layout_parent() {
+  local file="$1"
+  awk '
+    BEGIN { in_fm=0 }
+    /^---[[:space:]]*$/ {
+      if (in_fm == 0) { in_fm=1; next }
+      else { exit }
+    }
+    in_fm && /^layout:[[:space:]]*/ {
+      sub(/^layout:[[:space:]]*/, "")
+      gsub(/[[:space:]]/, "")
+      print
+      exit
+    }
+  ' "$file"
+}
+
+# True when layout name or an ancestor emits {% include site-scripts.html %}.
+layout_provides_site_scripts() {
+  local layout="$1"
+  local seen=" "
+  local file parent
+
+  while [[ -n "$layout" ]]; do
+    case "$seen" in
+      *" $layout "*) return 1 ;;
+    esac
+    seen="${seen}${layout} "
+    file="$LAYOUTS_DIR/${layout}.html"
+    if [[ ! -f "$file" ]]; then
+      return 1
+    fi
+    if has_liquid_include "$file" "site-scripts.html"; then
+      return 0
+    fi
+    parent="$(layout_parent "$file")"
+    layout="$parent"
+  done
+  return 1
+}
+
 echo "Checking layout script includes..."
 
 if [[ ! -f "$SITE_SCRIPTS" ]]; then
@@ -109,13 +178,14 @@ if [[ ! -f "$SITE_SCRIPTS" ]]; then
 else
   check_no_duplicates "$SITE_SCRIPTS"
   check_dependency_order "$SITE_SCRIPTS"
-  if ! grep -q 'include browser-dependencies.html' "$SITE_SCRIPTS"; then
+  if ! has_liquid_include "$SITE_SCRIPTS" "browser-dependencies.html"; then
     log_error "_includes/site-scripts.html must include browser-dependencies.html"
   else
-    deps_line="$(grep -n 'include browser-dependencies.html' "$SITE_SCRIPTS" \
-      | head -1 | cut -d: -f1)"
+    deps_line="$(liquid_include_line "$SITE_SCRIPTS" \
+      "browser-dependencies.html")"
     search_line="$(script_line "$SITE_SCRIPTS" "search-manager.js")"
-    if (( search_line > 0 && deps_line > search_line )); then
+    if [[ -n "$deps_line" ]] \
+      && (( search_line > 0 && deps_line > search_line )); then
       log_error \
         "_includes/site-scripts.html: browser-dependencies.html must load before search-manager.js."
     fi
@@ -128,7 +198,7 @@ for layout in "${STANDALONE_LAYOUTS[@]}"; do
     log_error "Missing standalone layout: _layouts/$layout.html"
     continue
   fi
-  if ! grep -q 'include site-scripts.html' "$file"; then
+  if ! has_liquid_include "$file" "site-scripts.html"; then
     log_error "_layouts/$layout.html must {% include site-scripts.html %}"
   fi
   # Standalone layouts must not also hard-code the core stack.
@@ -161,27 +231,18 @@ for file in "$LAYOUTS_DIR"/*.html; do
   check_no_duplicates "$file"
   check_dependency_order "$file"
 
-  parent="$(awk '
-    BEGIN { in_fm=0 }
-    /^---[[:space:]]*$/ {
-      if (in_fm == 0) { in_fm=1; next }
-      else { exit }
-    }
-    in_fm && /^layout:[[:space:]]*/ {
-      sub(/^layout:[[:space:]]*/, "")
-      gsub(/[[:space:]]/, "")
-      print
-      exit
-    }
-  ' "$file")"
+  parent="$(layout_parent "$file")"
 
-  if [[ "$parent" == "default" || "$parent" == "history" \
-     || "$parent" == "join-us" || "$parent" == "team" ]]; then
+  if layout_provides_site_scripts "$parent"; then
+    if has_liquid_include "$file" "site-scripts.html"; then
+      log_error \
+        "_layouts/$base re-includes site-scripts.html but ancestor already provides the canonical stack."
+    fi
     for name in "${CORE_SCRIPTS[@]}" contact-card.js teaching.js; do
       count="$(script_count "$file" "$name" | tr -d '[:space:]')"
       if (( count > 0 )); then
         log_error \
-          "_layouts/$base inherits $parent but also includes $name (duplicate)."
+          "_layouts/$base inherits a site-scripts provider but also includes $name (duplicate)."
       fi
     done
   fi

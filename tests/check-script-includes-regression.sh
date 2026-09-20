@@ -78,7 +78,47 @@ if bash "$CHECK" >"$WORKDIR/nested.out" 2>&1; then
   cat "$WORKDIR/nested.out" >&2
   exit 1
 fi
-grep -q "inherits default" "$WORKDIR/nested.out"
+grep -q "inherits a site-scripts provider" "$WORKDIR/nested.out"
+rm -f "$TMP_LAYOUT"
+TMP_LAYOUT=""
+
+echo "5) Nested layout re-including site-scripts.html must fail"
+TMP_LAYOUT="$REPO_ROOT/_layouts/_tmp-script-check-nested-include.html"
+cat > "$TMP_LAYOUT" <<'EOF'
+---
+layout: default
+---
+{% include site-scripts.html %}
+EOF
+
+if bash "$CHECK" >"$WORKDIR/nested-inc.out" 2>&1; then
+  echo "Expected failure for nested site-scripts include" >&2
+  cat "$WORKDIR/nested-inc.out" >&2
+  exit 1
+fi
+grep -q "re-includes site-scripts.html" "$WORKDIR/nested-inc.out"
+rm -f "$TMP_LAYOUT"
+TMP_LAYOUT=""
+
+echo "6) Single-quoted script src must count as a duplicate"
+TMP_LAYOUT="$REPO_ROOT/_layouts/_tmp-script-check-sq.html"
+cat > "$TMP_LAYOUT" <<'EOF'
+<!DOCTYPE html>
+<html>
+<head>
+  <script defer src='/assets/js/main.js'></script>
+  <script defer src="/assets/js/main.js"></script>
+</head>
+<body></body>
+</html>
+EOF
+
+if bash "$CHECK" >"$WORKDIR/sq.out" 2>&1; then
+  echo "Expected failure for single-quoted duplicate main.js" >&2
+  cat "$WORKDIR/sq.out" >&2
+  exit 1
+fi
+grep -q "duplicate include of main.js" "$WORKDIR/sq.out"
 rm -f "$TMP_LAYOUT"
 TMP_LAYOUT=""
 
