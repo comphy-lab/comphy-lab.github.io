@@ -215,8 +215,8 @@ appending or updating it; do not replace the whole ruleset with this one rule.
 
 The CSP allows local scripts and Cloudflare's integrity-protected analytics
 beacon, denies inline script handlers and `eval`, and denies framing and plugin
-objects. Google Fonts, Font Awesome, YouTube and the team map have explicit
-source allowances. Inline **styles** and HTTPS **images** remain supported for
+objects. Self-hosted brand webfonts load from `'self'`. Font Awesome (cdnjs),
+YouTube and the team map have explicit source allowances. Inline **styles** and HTTPS **images** remain supported for
 existing layout and publication badges. Permissions-Policy disables camera,
 microphone, geolocation, payment and USB while retaining video playback controls.
 The stylesheet and image allowances do not permit executable scripts.
