@@ -62,7 +62,8 @@ require_before() {
 check_no_duplicates() {
   local file="$1"
   local name count
-  for name in main.js command-palette.js; do
+  for name in main.js command-palette.js utils.js search-manager.js \
+    command-data.js; do
     count="$(script_count "$file" "$name" | tr -d '[:space:]')"
     if (( count > 1 )); then
       log_error "$file: duplicate include of $name (${count} times)."
@@ -110,6 +111,14 @@ else
   check_dependency_order "$SITE_SCRIPTS"
   if ! grep -q 'include browser-dependencies.html' "$SITE_SCRIPTS"; then
     log_error "_includes/site-scripts.html must include browser-dependencies.html"
+  else
+    deps_line="$(grep -n 'include browser-dependencies.html' "$SITE_SCRIPTS" \
+      | head -1 | cut -d: -f1)"
+    search_line="$(script_line "$SITE_SCRIPTS" "search-manager.js")"
+    if (( search_line > 0 && deps_line > search_line )); then
+      log_error \
+        "_includes/site-scripts.html: browser-dependencies.html must load before search-manager.js."
+    fi
   fi
 fi
 
