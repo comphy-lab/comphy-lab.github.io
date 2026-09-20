@@ -142,6 +142,51 @@ describe("search-manager sanitization", () => {
     expect(results[1].item.url).toContain("/Viscoelastic3D/index.html");
   });
 
+  it("ranks docs hubs ahead of deeper docs_content peers", async () => {
+    global.fetch = jest.fn().mockResolvedValue({
+      ok: true,
+      json: () =>
+        Promise.resolve([
+          {
+            title: "Viscoelastic3D nested page",
+            url:
+              "https://comphy-lab.org/Viscoelastic3D/" +
+              "guides/setup.html",
+            content: "viscoelastic nested documentation",
+            type: "docs_content",
+            priority: 4,
+          },
+          {
+            title: "Viscoelastic3D docs hub",
+            url: "https://comphy-lab.org/Viscoelastic3D/index.html",
+            content: "viscoelastic fluid simulation framework",
+            type: "docs_content",
+            priority: 4,
+          },
+        ]),
+    });
+
+    global.Fuse = jest.fn().mockImplementation((data) => ({
+      search: () =>
+        data.map((item, refIndex) => ({
+          item,
+          score: 0.1,
+          refIndex,
+        })),
+    }));
+
+    require("../assets/js/search-manager.js");
+
+    const results = await window.SearchManager.search("viscoelastic", {
+      maxResults: 5,
+    });
+
+    expect(results.map((r) => r.item.url)).toEqual([
+      "https://comphy-lab.org/Viscoelastic3D/index.html",
+      "https://comphy-lab.org/Viscoelastic3D/guides/setup.html",
+    ]);
+  });
+
   it("rejects unsafe and unapproved search result URLs", async () => {
     global.fetch = jest.fn().mockResolvedValue({
       ok: true,
