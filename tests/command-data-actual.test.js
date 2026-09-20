@@ -67,6 +67,14 @@ describe("command-data.js actual implementation", () => {
     const homeCommand = window.commandData.find((cmd) => cmd.id === "home");
     expect(homeCommand).toBeDefined();
     expect(homeCommand.title).toBe("Go to Home");
+
+    const projectsCommand = window.commandData.find(
+      (cmd) => cmd.id === "projects"
+    );
+    expect(projectsCommand).toBeDefined();
+    expect(projectsCommand.title).toBe("Go to Project Docs");
+    expect(typeof projectsCommand.handler).toBe("function");
+    expect(projectsCommand.handler.toString()).toContain("/projects/");
   });
 
   it("should add event listener on DOMContentLoaded", () => {
