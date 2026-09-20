@@ -119,23 +119,7 @@
   {% endif %}
   <link rel="stylesheet" href="/assets/css/command-palette.css">
 
-  <!-- Load pinned libraries before utilities and search code. -->
-  {% include browser-dependencies.html %}
-  <script defer src="/assets/js/utils.js"></script>
-  <script defer src="/assets/js/search-manager.js"></script>
-  
-  <!-- Command palette (implementation in assets/js/command-palette.js) -->
-  <script defer src="/assets/js/command-palette.js"></script>
-
-  <script defer src="/assets/js/main.js"></script>
-  {% if page.body_class contains "contact-card-page" %}
-  <script defer src="/assets/js/contact-card.js"></script>
-  {% endif %}
-  {% if page.layout == "teaching" %}
-  <script defer src="/assets/js/teaching.js"></script>
-  {% endif %}
-  <script defer src="/assets/js/command-data.js"></script>
-  <script defer src="/assets/js/platform-utils.js"></script>
+  {% include site-scripts.html %}
 
   <link
     rel="stylesheet"
