@@ -63,7 +63,7 @@ if [[ ! -x "$ESLINT_BIN" ]]; then
 fi
 if [[ "$FIX_MODE" == "true" ]]; then
   # Fix mode: run ESLint with --fix flag
-  "$ESLINT_BIN" "$JS_DIR" --rule 'quotes: ["error", "double"]' --fix
+  "$ESLINT_BIN" "$JS_DIR" --rule 'quotes: ["error", "double", {"avoidEscape": true}]' --fix
   if [ $? -eq 0 ]; then
     echo "Fixed quote style in JavaScript files."
   else
@@ -71,7 +71,7 @@ if [[ "$FIX_MODE" == "true" ]]; then
   fi
 else
   # Check-only mode: run ESLint without --fix
-  "$ESLINT_BIN" "$JS_DIR" --rule 'quotes: ["error", "double"]'
+  "$ESLINT_BIN" "$JS_DIR" --rule 'quotes: ["error", "double", {"avoidEscape": true}]'
   ESLINT_EXIT_CODE=$?
   if [ $ESLINT_EXIT_CODE -eq 0 ]; then
     echo "No quote style issues found in JavaScript files."
