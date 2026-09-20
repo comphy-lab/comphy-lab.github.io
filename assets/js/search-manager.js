@@ -67,9 +67,72 @@
 
   function sanitizeSearchData(data) {
     return data.filter(
-      (entry) =>
-        !isInternalSearchEntry(entry) && isSafeSearchUrl(entry?.url)
+      (entry) => !isInternalSearchEntry(entry) && isSafeSearchUrl(entry?.url)
     );
+  }
+
+  /**
+   * Effective sort priority for a search hit.
+   * Project docs from comphy-search ship as priority 4, which loses to every
+   * blog_section (priority 3) under a strict priority-first sort. Lift
+   * docs_* entries so they compete with blog on Fuse score (#41).
+   * @param {Object} item - search_db entry
+   * @returns {number} lower = higher priority
+   */
+  function effectivePriority(item) {
+    const raw = typeof item?.priority === "number" ? item.priority : 5;
+    const type = item?.type || "";
+    if ((type === "docs_content" || type === "docs_code") && raw > 3) {
+      return 3;
+    }
+    return raw;
+  }
+
+  /**
+   * Prefer project-doc landing pages over deep/code chunks.
+   * Only meaningful when comparing two docs_* entries.
+   * @param {Object} item - search_db entry
+   * @returns {number} lower = preferred
+   */
+  function docsHubRank(item) {
+    const type = item?.type || "";
+    if (type === "docs_code") {
+      return 2;
+    }
+    try {
+      const path = new URL(item.url, window.location.origin).pathname;
+      if (/\/index\.html?$/i.test(path) || /\/$/i.test(path)) {
+        return 0;
+      }
+    } catch (_error) {
+      // fall through
+    }
+    return 1;
+  }
+
+  function isDocsEntry(item) {
+    const type = item?.type || "";
+    return type === "docs_content" || type === "docs_code";
+  }
+
+  /**
+   * Tie-break among equal priority + equal Fuse score.
+   * Prefer project docs over blog so /Viscoelastic3D/ is not buried (#41).
+   * @param {Object} item - search_db entry
+   * @returns {number} lower = preferred
+   */
+  function typeTieBreak(item) {
+    const type = item?.type || "";
+    if (type === "docs_content") {
+      return 0;
+    }
+    if (type === "docs_code") {
+      return 1;
+    }
+    if (type === "blog_section" || type === "blog_content") {
+      return 2;
+    }
+    return 1;
   }
 
   /**
@@ -181,18 +244,31 @@
 
       const results = fuse.search(query.trim());
 
-      // Sort results by priority first, then by Fuse.js score
+      // Sort: effective priority, then docs hub preference, then Fuse score.
+      // See effectivePriority(): docs_* are lifted so project sites like
+      // /Viscoelastic3D/ are not buried under all blog_section hits (#41).
       const sortedResults = results.sort((a, b) => {
-        // First compare by priority (lower number = higher priority)
-        const priorityA = a.item.priority || 5;
-        const priorityB = b.item.priority || 5;
+        const priorityA = effectivePriority(a.item);
+        const priorityB = effectivePriority(b.item);
 
         if (priorityA !== priorityB) {
           return priorityA - priorityB;
         }
 
-        // If priorities are equal, use Fuse.js score (lower score = better match)
-        return a.score - b.score;
+        if (isDocsEntry(a.item) && isDocsEntry(b.item)) {
+          const hubA = docsHubRank(a.item);
+          const hubB = docsHubRank(b.item);
+          if (hubA !== hubB) {
+            return hubA - hubB;
+          }
+        }
+
+        // Lower Fuse.js score = better match
+        if (a.score !== b.score) {
+          return a.score - b.score;
+        }
+
+        return typeTieBreak(a.item) - typeTieBreak(b.item);
       });
 
       // Limit results and apply transformation if provided
@@ -230,7 +306,7 @@
           }
         },
         section: "Search Results",
-        icon: "<i class=\"fa-solid fa-file-lines\"></i>",
+        icon: '<i class="fa-solid fa-file-lines"></i>',
         excerpt:
           result.item.excerpt ||
           (result.item.content &&
