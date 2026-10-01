@@ -744,6 +744,10 @@ The `scripts/` directory contains various utility scripts for development, testi
 - **`sync_org_profile_publications.py`** - Org profile sync
   - Pulls the publications block from `_research/index.md` into the
     GitHub org profile README (kept in `_org_profile/`)
+  - `_org_profile/README.md` is the source of truth for the public
+    org profile and must stay dense scholarly (no badge/widget
+    walls); the sync workflow copies that file wholesale to
+    `comphy-lab/.github/profile/README.md`
   - Run periodically; not part of the regular build
 
 ### Test Scripts
