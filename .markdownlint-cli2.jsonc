@@ -5,6 +5,7 @@
   ],
   "ignores": [
     "_teaching/**",
+    "_org_profile/**",
     "assets/css/academicons-1.7.0/README.md",
     "comphy-lab-design-system/**"
   ],
