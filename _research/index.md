@@ -1,1 +1,1 @@
-LOAD_FROM:/workspace/.mcp_coa_args.json
+file:///home/ubuntu/.cursor/projects/workspace/agent-tools/research-index-content.txt
