@@ -1,1 +1,1 @@
-file:///home/ubuntu/.cursor/projects/workspace/agent-tools/research-index-content.txt
+$file:/workspace/.tmp-research-index.md
