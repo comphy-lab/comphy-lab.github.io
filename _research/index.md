@@ -27,13 +27,6 @@ title: Research
 
 ## Work in Progress
 
-### <strong>Sanjay, V.</strong> Singularities in Soft Matter Systems. *Contemporary Physics* (accepted for publication, 2026).
-
-<div class="tags"><span>Soft-matter-singularities</span></div>
-
-[![Contemporary Physics](https://img.shields.io/static/v1.svg?style=flat-square&label=Contemporary%20Physics&message=Accepted&color=orange)](https://arxiv.org/abs/2608.11060)
-[![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2608.11060&color=green)](https://arxiv.org/abs/2608.11060)
-
 ### Gordillo, J. M., Rodríguez-Rodríguez, J., & <strong>Sanjay, V.</strong> Self-similar Worthington jets. arXiv preprint arXiv:2607.08972 (2026). {#self-similar-worthington-jets}
 
 <div class="tags"><span>Bubbles</span><span>Jets</span><span>Soft-matter-singularities</span><span>Featured</span></div>
@@ -61,6 +54,16 @@ title: Research
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/)
 
 ## 2026
+
+<h3 id="26">[26] <strong>Sanjay, V.</strong> Singularities in Soft Matter Systems. Contemporary Physics (2026).</h3>
+
+<div class="tags"><span>Soft-matter-singularities</span><span>Featured</span></div>
+
+[![Contemporary Physics](https://img.shields.io/static/v1.svg?style=flat-square&label=Contemporary%20Physics&message=DOI:%2010.1080%2F00107514.2026.2721118&color=orange)](https://doi.org/10.1080/00107514.2026.2721118)
+[![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2608.11060&color=green)](https://arxiv.org/abs/2608.11060)
+
+![Visual dictionary for singularities in soft matter: pinch-off, contact line, interfacial cusp, and beyond-interface cutoffs](/assets/images/research/singularities-soft-matter-visual-dictionary.png){: width="75%" .center-block style="display: block; margin-left: auto; margin-right: auto;"}
+
 
 <h3 id="25">[25] Verschuur, C. I., Oratis, A. T., <strong>Sanjay, V.</strong>, & Snoeijer, J. H. How elasticity affects bubble pinch-off. Phys. Rev. Fluids (2026).</h3>
 
