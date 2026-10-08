@@ -2,9 +2,9 @@
    CoMPhy Lab · Footer v2
    Paper-tinted, NOT a dark slab. Four-column layout: brand blurb,
    Explore, Work with us, Code & data. Partner marks are white or
-   monochrome: white PNGs use .invert-on-light, and the Basilisk
-   photo is greyscaled into the same invert treatment. Silent legal
-   strip.
+   monochrome: white PNGs use .invert-on-light; the Basilisk photo
+   uses .partner-photo (greyscale plus invert in both themes). Silent
+   legal strip.
    Red Team Audit A2.
    ============================================================= */
 
@@ -124,12 +124,17 @@
 }
 
 /* Partner marks: monochrome/white only. */
-.c-footer__partners-logos .invert-on-light {
+.c-footer__partners-logos .invert-on-light,
+.c-footer__partners-logos .partner-photo {
   filter: grayscale(1) invert(1) brightness(0.4);
 }
 
 :root[data-theme="dark"] .c-footer__partners-logos .invert-on-light {
   filter: grayscale(1);
+}
+
+:root[data-theme="dark"] .c-footer__partners-logos .partner-photo {
+  filter: grayscale(1) invert(1);
 }
 
 /* --- Legal strip ------------------------------------------- */
