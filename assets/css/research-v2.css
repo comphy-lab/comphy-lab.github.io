@@ -533,7 +533,7 @@
 .research-content img[src*="img.shields.io"] {
   display: inline-block;
   vertical-align: middle;
-  margin: 2px 4px 2px 0;
+  margin: 2px 0;
   max-width: 100%;
   height: auto;
 }
