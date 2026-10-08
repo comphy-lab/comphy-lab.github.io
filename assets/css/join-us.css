@@ -367,3 +367,19 @@
     border-color 0.15s linear,
     color 0.15s linear;
 }
+
+/* Internships scholarship callout.
+   `.markdown-content blockquote` uses `--markdown-blockquote-text`,
+   which in dark aliases `--color-secondary`. Bridge remaps that to
+   `--c-paper-tint` (#241f18), a surface, so the text sits at ~1.14:1
+   on the internships card. Pin this callout to theme ink only.
+   Position/project cards are rebuilt in a separate PR.
+   Light `--fg-2` on the white card is AA. Dark `--fg-2` on the
+   legacy `#2a2a2a` card is ~4.44:1, so lift to `--fg-1`. */
+.join-content .internship-section blockquote {
+  color: var(--fg-2);
+}
+
+[data-theme="dark"] .join-content .internship-section blockquote {
+  color: var(--fg-1);
+}
