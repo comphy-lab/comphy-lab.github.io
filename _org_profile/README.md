@@ -32,7 +32,7 @@ Current interests include mycofluidic transport, non-Newtonian effects on hydrod
 
 <!-- RECENT_PUBLICATIONS_START -->
 1. Sanjay, V. Singularities in Soft Matter Systems. Contemporary Physics (2026).
-2. Verschuur, C. I., Oratis, A. T., Sanjay, V., & Snoeijer, J. H. How elasticity affects bubble pinch-off. Phys. Rev. Fluids (2026).
+2. Verschuur, C. I., Oratis, A. T., Sanjay, V., & Snoeijer, J. H. How elasticity affects bubble pinch-off. Phys. Rev. Fluids, 11, 073302 (2026).
 3. Appleford, T., Sanjay, V., & Jalaal, M. Rheology of Two-Dimensional Dilute Emulsions. Phys. Rev. Fluids, 11, 033607 (2026).
 
 [View all publications →](https://comphy-lab.org/research)

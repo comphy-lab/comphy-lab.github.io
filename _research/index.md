@@ -64,15 +64,23 @@ title: Research
 
 ![Visual dictionary for singularities in soft matter: pinch-off, contact line, interfacial cusp, and beyond-interface cutoffs](/assets/images/research/singularities-soft-matter-visual-dictionary.png){: width="75%" .center-block style="display: block; margin-left: auto; margin-right: auto;"}
 
-
-<h3 id="25">[25] Verschuur, C. I., Oratis, A. T., <strong>Sanjay, V.</strong>, & Snoeijer, J. H. How elasticity affects bubble pinch-off. Phys. Rev. Fluids (2026).</h3>
+<h3 id="25">[25] Verschuur, C. I., Oratis, A. T., <strong>Sanjay, V.</strong>, & Snoeijer, J. H. How elasticity affects bubble pinch-off. Phys. Rev. Fluids, 11, 073302 (2026).</h3>
 
 <div class="tags"><span>Bubbles</span><span>Soft-matter-singularities</span><span>Elastic beads</span></div>
 
 [![PRF](https://img.shields.io/static/v1.svg?style=flat-square&label=PRF&message=DOI:%2010.1103%2F5sp3-k5l2&color=orange)](https://doi.org/10.1103/5sp3-k5l2)
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2511.20075&color=green)](https://arxiv.org/abs/2511.20075)
+[![Video](https://img.shields.io/static/v1.svg?style=flat-square&label=Video&message=mp4&color=blue)](/assets/videos/elasticity-bubble-pinch-off.mp4)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/ElasticPinchOff/)
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/)
+
+![Drop vs bubble pinch-off: Newtonian and elastic sequences with stress scaling](/assets/images/research/elasticity-bubble-pinch-off.png){: width="75%" .center-block style="display: block; margin-left: auto; margin-right: auto;"}
+
+<video autoplay muted loop playsinline preload="metadata"
+  poster="/assets/images/research/elasticity-bubble-pinch-off-poster.png"
+  title="Viscoelastic bubble pinch-off (Ec=0.1, Oh=0.01)">
+  <source src="/assets/videos/elasticity-bubble-pinch-off.mp4" type="video/mp4" />
+</video>
 
 <h3 id="24">[24] Appleford, T., <strong>Sanjay, V.</strong>, & Jalaal, M. Rheology of Two-Dimensional Dilute Emulsions. Phys. Rev. Fluids, 11, 033607 (2026).</h3>
 
