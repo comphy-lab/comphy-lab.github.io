@@ -418,9 +418,10 @@ body.home-v2 #featured-wrapper {
 }
 
 /* On narrow viewports the split cramps the text — stack image on
-   top and caption panel below. Still slides use minmax(0, Nfr) so
-   the image well keeps a share of the absolute figure; plain
-   auto/auto lets caption content collapse the image to a sliver.
+   top and caption panel below. Still slides size the image well
+   with an aspect ratio and let the caption row be content-height
+   (no overflow clipping). When a still is active, the media card
+   grows with that content via :has() so larger text stays readable.
    Specificity must beat `.hero__media figure` above. */
 @media (max-width: 820px) {
   .hero__media figure {
@@ -429,16 +430,15 @@ body.home-v2 #featured-wrapper {
   }
 
   .hero__media figure.hero__slide--still {
-    grid-template-rows: minmax(0, 2fr) minmax(0, 3fr);
+    grid-template-rows: auto auto;
   }
 
   .hero__slide--still .hero__image-well {
+    aspect-ratio: 16 / 9;
     min-height: 0;
   }
 
   .hero__slide--still .hero__caption-panel {
-    min-height: 0;
-    overflow: hidden;
     padding: 8px 12px;
     gap: 4px;
     justify-content: flex-start;
@@ -457,6 +457,17 @@ body.home-v2 #featured-wrapper {
   .hero__caption-panel {
     border-left: 0;
     border-top: 1px solid var(--c-border);
+  }
+
+  .hero__media:has(> .hero__slide--still[data-active="true"]) {
+    aspect-ratio: auto;
+    height: auto;
+  }
+
+  .hero__media:has(> .hero__slide--still[data-active="true"])
+    > .hero__slide--still[data-active="true"] {
+    position: relative;
+    inset: auto;
   }
 }
 
