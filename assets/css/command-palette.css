@@ -222,8 +222,9 @@
   display: none;
 }
 
-/* Mobile styling for command palette button */
-@media screen and (max-width: 768px) {
+/* Command palette button inside the header's Menu drawer (same breakpoint
+   as the drawer in styles.css) */
+@media screen and (max-width: 1119px) {
   .command-palette-button {
     margin: 0.8rem 0;
     width: 100%;
@@ -234,7 +235,10 @@
     justify-content: center;
     padding: 0.8rem;
   }
+}
 
+/* Mobile styling for the command palette */
+@media screen and (max-width: 768px) {
   .simple-command-palette-modal {
     width: 95vw;
     max-width: 95vw;

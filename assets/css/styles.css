@@ -917,6 +917,10 @@ a:hover {
   display: flex;
   align-items: center;
   height: 40px;
+
+  /* A label never wraps inside its 40 px pill; below the width the full
+     bar needs, the Menu drawer takes over (see the 1119px media query). */
+  white-space: nowrap;
 }
 
 .s-header__nav-list a:hover {
@@ -2463,8 +2467,12 @@ img.youtube-stats-dark {
   }
 }
 
-/* Large Mobile to Small Tablet (768px and below) */
-@media screen and (max-width: 768px) {
+/* Header Menu drawer (1119px and below).
+   The full bar needs about 1099 px (logo, eleven nav items and the
+   command-palette button, measured in Chromium and WebKit); a classic
+   scrollbar takes up to 17 px more of the viewport. Below that the links
+   would wrap or run off-screen, so the bar becomes the Menu drawer. */
+@media screen and (max-width: 1119px) {
   .s-header__menu-toggle {
     display: flex;
     z-index: 90;
@@ -2476,18 +2484,32 @@ img.youtube-stats-dark {
     right: -300px;
     width: 300px;
     height: 100vh;
+    height: 100dvh;
     background: var(--mobile-nav-bg);
     backdrop-filter: blur(8px);
     padding: 2rem;
     flex-direction: column;
     align-items: flex-start;
-    transition: right 0.3s ease;
     box-shadow: -2px 0 10px var(--mobile-nav-shadow);
     z-index: 100;
+
+    /* Scrolls when the screen is shorter than the menu, so the last item
+       stays reachable; hidden once it has slid out, so its links leave
+       the tab order instead of taking focus off-screen. */
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    visibility: hidden;
+    transition:
+      right 0.3s ease,
+      visibility 0s linear 0.3s;
   }
 
   .s-header__nav.is-active {
     right: 0;
+    visibility: visible;
+    transition:
+      right 0.3s ease,
+      visibility 0s linear 0s;
   }
 
   .s-header__nav-close-btn {
@@ -2544,6 +2566,10 @@ img.youtube-stats-dark {
     justify-content: center;
   }
 
+  .s-header__nav-list li:first-child {
+    margin-right: 0;
+  }
+
   .command-palette-button {
     width: 100%;
     margin: 1rem 0;
@@ -2554,7 +2580,10 @@ img.youtube-stats-dark {
     height: auto;
     padding: 1rem 0;
   }
+}
 
+/* Large Mobile to Small Tablet (768px and below) */
+@media screen and (max-width: 768px) {
   .s-about__grid {
     padding: 0 1rem;
   }
@@ -2582,10 +2611,6 @@ img.youtube-stats-dark {
   }
 
   .footer-right a:last-child {
-    margin-right: 0;
-  }
-
-  .s-header__nav-list li:first-child {
     margin-right: 0;
   }
 
