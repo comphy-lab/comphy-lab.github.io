@@ -11,6 +11,12 @@ on:
       - "**/*.html"
       - ".github/workflows/update-search.yml"
 
+# Queue concurrent runs instead of cancelling; avoids lost updates when
+# several merges land close together and each triggers this workflow.
+concurrency:
+  group: update-search-database
+  cancel-in-progress: false
+
 # Add permissions needed for the workflow
 permissions:
   contents: write # This allows the action to commit and push changes
@@ -29,8 +35,13 @@ jobs:
           app-id: ${{ secrets.APP_ID }}
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
 
+      # Always check out the current tip of main, not github.sha from the
+      # triggering push. Concurrent merges can advance main before this job
+      # starts; pinning to the trigger SHA then makes the later push a
+      # non-fast-forward reject.
       - uses: actions/checkout@v5
         with:
+          ref: main
           fetch-depth: 0 # Fetch all history for proper git operations
           token: ${{ steps.app-token.outputs.token }}
           persist-credentials: false
@@ -63,7 +74,31 @@ jobs:
           else
             git commit -m "Update search database from comphy-search repository"
             git log -1 --pretty=fuller
-            git push \
-              "https://x-access-token:${APP_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" \
-              HEAD:main
+
+            remote_url="https://x-access-token:${APP_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+            max_attempts=3
+            attempt=1
+            while [ "${attempt}" -le "${max_attempts}" ]; do
+              if git push "${remote_url}" HEAD:main; then
+                echo "Push succeeded on attempt ${attempt}"
+                exit 0
+              fi
+
+              if [ "${attempt}" -eq "${max_attempts}" ]; then
+                break
+              fi
+
+              echo "Push rejected (attempt ${attempt}/${max_attempts}); rebasing onto origin/main"
+              git fetch origin main
+              if ! git rebase origin/main; then
+                echo "Rebase onto origin/main failed"
+                git rebase --abort || true
+                exit 1
+              fi
+
+              attempt=$((attempt + 1))
+            done
+
+            echo "Push failed after ${max_attempts} attempts"
+            exit 1
           fi

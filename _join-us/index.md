@@ -43,7 +43,7 @@ timing, and the person joining the project.
 
 <div class="projects-grid" markdown="1">
 
-<div class="project-card" markdown="1">
+<div class="card project-card" markdown="1">
 
 ### From Champagne to Coughs: Modelling Droplet Formation
 
@@ -52,37 +52,37 @@ volcanic mudpots. Basilisk C simulations resolve capillary-wave
 focusing, viscoelastic stress buildup, jet formation, and droplet
 ejection; experiments at Twente and Delft validate the jetting regimes.
 
-[<i class="fa-solid fa-file-pdf"></i> View Project PDF](/assets/pdf-files/BubbleBursting.pdf){: .pdf-link }
+[<i class="fa-solid fa-file-pdf"></i> View Project PDF](/assets/pdf-files/BubbleBursting.pdf){: .btn }
 
 </div>
 
-<div class="project-card" markdown="1">
+<div class="card project-card" markdown="1">
 
 ### Instability Dynamics of Flowing Liquid Films: Plates and Fibers
 
 Thin films transition between instability regimes as inclination varies. Use Basilisk CFD to map stability boundaries, characterize wave dynamics via spectral analysis, and study coupling between Kapitza, Rayleigh–Taylor, and Rayleigh–Plateau instabilities.
 
-[<i class="fa-solid fa-file-pdf"></i> View Project PDF](/assets/pdf-files/DropsOnFibers.pdf){: .pdf-link }
+[<i class="fa-solid fa-file-pdf"></i> View Project PDF](/assets/pdf-files/DropsOnFibers.pdf){: .btn }
 
 </div>
 
-<div class="project-card" markdown="1">
+<div class="card project-card" markdown="1">
 
 ### Sneezing Droplets: Modelling Respiratory Droplet Formation
 
 Numerically investigate how viscoelasticity affects filament breakup — the second stage of droplet formation. Simulate viscoelastic filaments, compare with Newtonian benchmarks, and improve predictions of droplet size distributions in respiratory events.
 
-[<i class="fa-solid fa-file-pdf"></i> View Project PDF](/assets/pdf-files/FilamentRetraction.pdf){: .pdf-link }
+[<i class="fa-solid fa-file-pdf"></i> View Project PDF](/assets/pdf-files/FilamentRetraction.pdf){: .btn }
 
 </div>
 
-<div class="project-card" markdown="1">
+<div class="card project-card" markdown="1">
 
 ### Holey Sheets: Bursting of Liquid Films
 
 Test how submicron impurities trigger hole nucleation in micron‑thick sheets. Using CLSVOF in Basilisk C, simulate radial drainage flows to reveal a double threshold for breakup and develop scaling laws for hole formation relevant to aerosols and sprays.
 
-[<i class="fa-solid fa-file-pdf"></i> View Project PDF](/assets/pdf-files/HoleySheets.pdf){: .pdf-link }
+[<i class="fa-solid fa-file-pdf"></i> View Project PDF](/assets/pdf-files/HoleySheets.pdf){: .btn }
 
 </div>
 
@@ -96,33 +96,33 @@ Test how submicron impurities trigger hole nucleation in micron‑thick sheets. 
 
 <div class="projects-grid" markdown="1">
 
-<div class="project-card" markdown="1">
+<div class="card project-card" markdown="1">
 
 ### Drops and Bubbles Spreading on Lubricant-Infused Surfaces
 
 Liquid-infused surfaces enable control over fluid spreading. Use Basilisk's adaptive VOF solver to capture capillary-wave cascades when fluids contact LIS, map spreading regimes, and reveal how wave convergence entrains secondary droplets. Develop scaling laws with experimental partners at TU Delft and Univ. Twente.
 
-[<i class="fa-solid fa-file-pdf"></i> View Project PDF](/assets/pdf-files/BubbleSpreadingLIS.pdf){: .pdf-link }
+[<i class="fa-solid fa-file-pdf"></i> View Project PDF](/assets/pdf-files/BubbleSpreadingLIS.pdf){: .btn }
 
 </div>
 
-<div class="project-card" markdown="1">
+<div class="card project-card" markdown="1">
 
 ### Playing Ping-Pong with Liquid Droplets
 
 Simulate droplet bouncing on superhydrophobic surfaces — from Scott Kelly's space ping‑pong to hydrodynamic singularities. Map bouncing regimes, quantify force profiles and dissipation, and study Worthington jet formation with high-fidelity CFD.
 
-[<i class="fa-solid fa-file-pdf"></i> View Project PDF](/assets/pdf-files/BouncingDrops.pdf){: .pdf-link }
+[<i class="fa-solid fa-file-pdf"></i> View Project PDF](/assets/pdf-files/BouncingDrops.pdf){: .btn }
 
 </div>
 
-<div class="project-card" markdown="1">
+<div class="card project-card" markdown="1">
 
 ### Gravity‑Defying Liquids: Thermoresponsive Viscoplastic Gels
 
 Study hot droplet impacts on cold substrates in gels transitioning from Newtonian to yield‑stress behavior. Implement temperature‑dependent rheology in DNS and correlate with experimental data for printing applications.
 
-[<i class="fa-solid fa-file-pdf"></i> View Project PDF](/assets/pdf-files/VP_Numerics.pdf){: .pdf-link }
+[<i class="fa-solid fa-file-pdf"></i> View Project PDF](/assets/pdf-files/VP_Numerics.pdf){: .btn }
 
 </div>
 
@@ -134,7 +134,7 @@ Study hot droplet impacts on cold substrates in gels transitioning from Newtonia
 
 <!-- Removed standalone PhD block; integrated into PhD Positions section below -->
 
-<div class="position-section postdoc-section" markdown="1">
+<div class="panel position-section postdoc-section" markdown="1">
 
 ## <span class="section-icon"><i class="fa-solid fa-user-tie"></i></span> Postdoctoral Positions
 
@@ -175,7 +175,7 @@ application together.
 
 </div>
 
-<div class="position-section phd-section" markdown="1">
+<div class="panel position-section phd-section" markdown="1">
 
 ## <span class="section-icon"><i class="fa-solid fa-graduation-cap"></i></span> PhD Positions
 
@@ -215,7 +215,7 @@ See: [Fees & Funding](https://www.durham.ac.uk/study/postgraduate/research-degre
 
 </div>
 
-<div class="position-section masters-section" markdown="1">
+<div class="panel position-section masters-section" markdown="1">
 
 ## <span class="section-icon"><i class="fa-solid fa-book"></i></span> Bachelor's/Master's/Level-4 Projects
 
@@ -241,7 +241,7 @@ Contact us to discuss project fit and scope for your specific interests and time
 
 </div>
 
-<div class="position-section internship-section" markdown="1">
+<div class="panel position-section internship-section" markdown="1">
 
 ## <span class="section-icon"><i class="fa-solid fa-flask"></i></span> Internships
 
