@@ -4,6 +4,22 @@ document.addEventListener("DOMContentLoaded", function () {
   var researchContent = document.querySelector(".research-content");
   if (!researchContent) return;
 
+  var reduced =
+    window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduced) {
+    researchContent.querySelectorAll("video").forEach(function (video) {
+      video.removeAttribute("autoplay");
+      video.removeAttribute("loop");
+      try {
+        video.pause();
+        video.currentTime = 0;
+      } catch {
+        // Some browsers reject media control before metadata is available.
+      }
+    });
+  }
+
   var tocList = document.querySelector(".toc-list");
   var headings = researchContent.querySelectorAll("h2");
   if (tocList && headings.length) {
