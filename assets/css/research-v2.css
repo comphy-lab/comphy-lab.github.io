@@ -577,6 +577,23 @@
   margin: var(--s-3) 0;
 }
 
+/* Native research clips (autoplay/muted/loop) beside paper figures */
+.research-content video {
+  display: block;
+  max-width: min(220px, 55%);
+  width: 100%;
+  height: auto;
+  margin: var(--s-3) auto;
+  border-radius: var(--r-sm);
+  background: var(--fg-strong);
+}
+
+@media (min-width: 901px) {
+  .research-content video {
+    max-width: min(280px, 40%);
+  }
+}
+
 @media (max-width: 900px) {
   .research-layout {
     grid-template-columns: minmax(0, 1fr);

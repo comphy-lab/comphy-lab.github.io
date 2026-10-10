@@ -13,7 +13,6 @@
 #   action_label + action_href — the right-side button.
 
 items:
-
   # ===================== 2026 =====================
 
   - date: "2026-07-13"
@@ -24,6 +23,7 @@ items:
       Verschuur, C. I., Oratis, A. T., <strong>Sanjay, V.</strong> &amp;
       Snoeijer, J. H. — <em>Phys. Rev. Fluids</em>, 11, 073302 (2026).
       Selected as an Editors' Suggestion.
+    thumb: /assets/images/research/elasticity-bubble-pinch-off.png
     action_label: "DOI ↗"
     action_href: "https://doi.org/10.1103/5sp3-k5l2"
 
