@@ -76,7 +76,7 @@ title: Research
 
 ![Drop vs bubble pinch-off: Newtonian and elastic sequences with stress scaling](/assets/images/research/elasticity-bubble-pinch-off.png){: width="75%" .center-block style="display: block; margin-left: auto; margin-right: auto;"}
 
-<video autoplay muted loop playsinline preload="metadata"
+<video autoplay muted loop playsinline controls preload="metadata"
   poster="/assets/images/research/elasticity-bubble-pinch-off-poster.png"
   title="Viscoelastic bubble pinch-off (Ec=0.1, Oh=0.01)">
   <source src="/assets/videos/elasticity-bubble-pinch-off.mp4" type="video/mp4" />
