@@ -27,7 +27,8 @@ class BrowserSecurityTests(unittest.TestCase):
         self.assertEqual(csp["object-src"], "'none'")
         self.assertEqual(values["X-Frame-Options"], "DENY")
         self.assertEqual(values["X-Content-Type-Options"], "nosniff")
-        self.assertIn("https://*.dl.dropboxusercontent.com", csp["media-src"])
+        self.assertEqual(csp["media-src"], "'self'")
+        self.assertNotIn("dropbox", csp["media-src"])
         self.assertNotIn("dropbox", csp["script-src"])
 
     def test_scoped_rule_has_host_and_owned_paths_without_wildcard_host(self):
