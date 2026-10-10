@@ -50,6 +50,15 @@
       icon: "<i class=\"fa-solid fa-book\"></i>",
     },
     {
+      id: "talks",
+      title: "Go to Talks",
+      handler: () => {
+        window.location.href = "/talks/";
+      },
+      section: "Navigation",
+      icon: "<i class=\"fa-solid fa-person-chalkboard\"></i>",
+    },
+    {
       id: "teaching",
       title: "Go to Teaching Page",
       handler: () => {
