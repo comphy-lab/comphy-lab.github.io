@@ -19,8 +19,8 @@
 [data-theme="dark"] {
   --research-bg-color: var(--color-background);
   --research-text-color: var(--color-text);
-  --research-heading-color: var(--color-heading-h1, #9a349f);
-  --research-subheading-color: var(--color-blue-bright);
+  --research-heading-color: var(--hero-grad-2);
+  --research-subheading-color: var(--hero-grad-3);
   --research-border-color: var(--color-gray-xdark);
   --research-section-bg: linear-gradient(
     to right,
@@ -142,19 +142,24 @@
 /* Main title */
 .research-content h1 {
   font-size: 3em;
-  color: var(--research-heading-color);
+  color: var(--research-heading-color); /* solid fallback; clip+fill when supported */
   margin-bottom: 2rem;
   text-align: center;
-  background: linear-gradient(
-    45deg,
-    var(--research-subheading-color),
-    var(--research-heading-color)
-  );
-  -webkit-background-clip: text;
-  background-clip: text; /* Standard property for compatibility */
-  -webkit-text-fill-color: transparent;
   animation: fadeIn 0.8s ease-out;
   transition: none;
+}
+
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .research-content h1 {
+    background: linear-gradient(
+      45deg,
+      var(--research-subheading-color),
+      var(--research-heading-color)
+    );
+    -webkit-background-clip: text;
+    background-clip: text; /* Standard property for compatibility */
+    -webkit-text-fill-color: transparent;
+  }
 }
 
 @media screen and (max-width: 600px) {
