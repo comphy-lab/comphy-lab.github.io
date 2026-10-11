@@ -15,9 +15,10 @@ describe("page script behavior", () => {
       "</div>",
     ].join("");
     var outgoing = document.querySelector("figure");
-    var stateWhenPaused = null;
+    var statesWhenPaused = [];
+    jest.spyOn(HTMLMediaElement.prototype, "play").mockResolvedValue();
     jest.spyOn(HTMLMediaElement.prototype, "pause").mockImplementation(() => {
-      stateWhenPaused = outgoing.getAttribute("data-active");
+      statesWhenPaused.push(outgoing.getAttribute("data-active"));
     });
 
     jest.isolateModules(() => {
@@ -25,7 +26,7 @@ describe("page script behavior", () => {
     });
     jest.advanceTimersByTime(10);
 
-    expect(stateWhenPaused).toBe("true");
+    expect(statesWhenPaused[0]).toBe("true");
     expect(outgoing.getAttribute("data-active")).toBe("false");
   });
 

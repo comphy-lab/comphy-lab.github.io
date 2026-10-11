@@ -26,6 +26,10 @@
 
   function setTheme(theme, persist) {
     document.documentElement.setAttribute("data-theme", theme);
+    var themeToggle = document.getElementById("theme-toggle");
+    if (themeToggle) {
+      themeToggle.setAttribute("aria-pressed", String(theme === "dark"));
+    }
     if (persist) {
       try {
         localStorage.setItem("theme", theme);

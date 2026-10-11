@@ -6,77 +6,86 @@
   var figures = media.querySelectorAll("figure");
   if (figures.length < 1) return;
 
-  var reduced =
-    window.matchMedia &&
-    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  if (reduced) {
-    media.querySelectorAll("video").forEach(function (video) {
-      video.removeAttribute("autoplay");
-      video.removeAttribute("loop");
-      try {
-        video.pause();
-        video.currentTime = 0;
-      } catch {
-        // Some browsers reject media control before metadata is available.
-      }
-    });
-    media.querySelectorAll("iframe").forEach(function (frame) {
-      var src = frame.getAttribute("src") || "";
-      frame.setAttribute(
-        "src",
-        src.replace("autoplay=1", "autoplay=0").replace("&loop=1", "&loop=0")
-      );
-    });
-    return;
-  }
-
-  if (figures.length < 2) return;
-
-  function resetMedia(figure) {
-    var video = figure.querySelector("video");
-    if (video) {
-      try {
-        video.currentTime = 0;
-        var playPromise = video.play();
-        if (playPromise) playPromise.catch(function () {});
-      } catch {
-        // Some browsers reject media control before metadata is available.
-      }
-    }
-
-    var frame = figure.querySelector("iframe");
-    if (frame) {
-      var src = frame.getAttribute("src");
-      frame.setAttribute("src", src);
-    }
-  }
-
-  function slideDuration(figure) {
-    var duration = parseInt(figure.getAttribute("data-duration"), 10);
-    return duration > 0 ? duration : 6500;
-  }
-
+  var motion =
+    window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)");
+  var reduced = motion && motion.matches;
   var index = 0;
-  function advance() {
-    var outgoingVideo = figures[index].querySelector("video");
-    if (outgoingVideo) {
-      try {
-        outgoingVideo.pause();
-      } catch {
-        // Some browsers reject media control before metadata is available.
-      }
+  var timer;
+
+  function pauseVideo(video, reset) {
+    try {
+      video.pause();
+      if (reset) video.currentTime = 0;
+    } catch {
+      // Media control can fail before metadata is available.
     }
-    figures[index].setAttribute("data-active", "false");
-    figures[index].setAttribute("aria-hidden", "true");
-    figures[index].setAttribute("inert", "");
+  }
+
+  function syncMedia(reset) {
+    figures.forEach(function (figure, figureIndex) {
+      var video = figure.querySelector("video");
+      if (!video) return;
+      video.removeAttribute("autoplay");
+      video.loop = !reduced;
+      if (reduced || document.hidden || figureIndex !== index) {
+        pauseVideo(video, reduced);
+        return;
+      }
+      try {
+        if (reset) video.currentTime = 0;
+        video.muted = true;
+        var playing = video.play();
+        if (playing) playing.catch(function () {});
+      } catch {
+        // A poster remains visible if autoplay is unavailable.
+      }
+    });
+  }
+
+  function schedule() {
+    clearTimeout(timer);
+    if (reduced || document.hidden || figures.length < 2) return;
+    var duration = parseInt(figures[index].getAttribute("data-duration"), 10);
+    timer = setTimeout(advance, duration > 0 ? duration : 6500);
+  }
+
+  function advance() {
+    var outgoing = figures[index];
+    var video = outgoing.querySelector("video");
+    if (video) pauseVideo(video, false);
+    outgoing.setAttribute("data-active", "false");
+    outgoing.setAttribute("aria-hidden", "true");
+    outgoing.setAttribute("inert", "");
     index = (index + 1) % figures.length;
     figures[index].setAttribute("data-active", "true");
     figures[index].setAttribute("aria-hidden", "false");
     figures[index].removeAttribute("inert");
-    resetMedia(figures[index]);
-    setTimeout(advance, slideDuration(figures[index]));
+    syncMedia(true);
+    schedule();
   }
 
-  setTimeout(advance, slideDuration(figures[index]));
+  document.addEventListener("visibilitychange", function () {
+    syncMedia(false);
+    schedule();
+  });
+  window.addEventListener("pagehide", function () {
+    clearTimeout(timer);
+    media.querySelectorAll("video").forEach(function (video) {
+      pauseVideo(video, false);
+    });
+  });
+  window.addEventListener("pageshow", function () {
+    syncMedia(false);
+    schedule();
+  });
+  if (motion && motion.addEventListener) {
+    motion.addEventListener("change", function () {
+      reduced = motion.matches;
+      syncMedia(false);
+      schedule();
+    });
+  }
+
+  syncMedia(false);
+  schedule();
 })();

@@ -87,6 +87,9 @@ describe("theme-init.js Priority 1 paths", () => {
     loadThemeInit();
 
     expect(document.documentElement.getAttribute("data-theme")).toBe("dark");
+    expect(
+      document.getElementById("theme-toggle").getAttribute("aria-pressed")
+    ).toBe("true");
   });
 
   it("falls back to system preference when nothing is saved", () => {
@@ -103,14 +106,23 @@ describe("theme-init.js Priority 1 paths", () => {
     loadThemeInit();
 
     expect(document.documentElement.getAttribute("data-theme")).toBe("light");
+    expect(
+      document.getElementById("theme-toggle").getAttribute("aria-pressed")
+    ).toBe("false");
 
     document.getElementById("theme-toggle").click();
     expect(document.documentElement.getAttribute("data-theme")).toBe("dark");
     expect(localStorage.getItem("theme")).toBe("dark");
+    expect(
+      document.getElementById("theme-toggle").getAttribute("aria-pressed")
+    ).toBe("true");
 
     document.getElementById("theme-toggle").click();
     expect(document.documentElement.getAttribute("data-theme")).toBe("light");
     expect(localStorage.getItem("theme")).toBe("light");
+    expect(
+      document.getElementById("theme-toggle").getAttribute("aria-pressed")
+    ).toBe("false");
   });
 
   it("ignores invalid saved theme values", () => {

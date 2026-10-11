@@ -36,16 +36,18 @@ cta_secondary:
 #
 # Each entry is EITHER:
 #   src: <image-path>       → rendered as an <img>
-#   youtube: <video-id>     → rendered as an embedded player, muted
-#                              autoplay loop, no controls
-#   youtube_end: <seconds>  → optionally stop/loop at this timestamp
+#   video: <owned-clip>     → self-hosted muted loop
+#   poster: <image-path>    → still shown before playback/reduced motion
+#   youtube_href: <url>     → optional deliberate link to the full video
 #   duration: <milliseconds> → optionally override the 6.5 s dwell
 #
 # caption_title + caption_sub float over a dark gradient at the
 # bottom of the panel.
 images:
-  - youtube: cCzpLutubF4
-    youtube_end: 20
+  - video: /assets/videos/hero-worthington-jets.mp4
+    type: video/mp4
+    poster: /assets/images/research/hero-worthington-jets.jpg
+    youtube_href: https://www.youtube.com/watch?v=cCzpLutubF4
     duration: 20000
     alt: >-
       Self-similar Worthington jet emerging after the collapse of a

@@ -56,6 +56,8 @@ content.
   `teaching-course.html`, `join-us.html`, `history.html` — collection /
   page layouts.
 - `_includes/footer-v2.html` — site footer (v2 footer is the only footer).
+- `_includes/header.html` and the footer are ported to `comphy-lab/talks`;
+  coordinate shell changes with its `site/vendor/comphy-lab/SOURCE.md`.
 - `_includes/theme-init.html`, `tokens-bridge.html`, `tokens-head.html` —
   early-load fragments for theme persistence and token wiring.
 

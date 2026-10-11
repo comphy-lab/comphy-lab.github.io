@@ -27,7 +27,7 @@ description: >-
     </div>
   </div>
 
-  <div class="course-card">
+  <div class="course-card" data-date="2025-03-10">
     <img src="/assets/images/teaching/basilisk-madrid.jpg" alt="Basilisk C Course" loading="lazy">
     <div class="course-card__content">
       <h3 class="course-card__title">High-Fidelity Simulations Using Basilisk C</h3>
@@ -45,7 +45,7 @@ description: >-
     </div>
   </div>
 
-  <div class="course-card">
+  <div class="course-card" data-date="2025-09-15">
     <img src="/assets/images/teaching/basilisk-madrid.jpg" alt="Basilisk for Multiphase Flow Simulations" loading="lazy">
     <div class="course-card__content">
       <h3 class="course-card__title">Basilisk for Multiphase Flow Simulations</h3>

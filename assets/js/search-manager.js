@@ -21,6 +21,7 @@
       { name: "content", weight: 0.2 },
       { name: "tags", weight: 0.1 },
       { name: "categories", weight: 0.1 },
+      { name: "projectSlug", weight: 0.4 },
     ],
     includeScore: true,
     threshold: 0.4,
@@ -66,9 +67,18 @@
   }
 
   function sanitizeSearchData(data) {
-    return data.filter(
-      (entry) => !isInternalSearchEntry(entry) && isSafeSearchUrl(entry?.url)
-    );
+    return data
+      .filter(
+        (entry) => !isInternalSearchEntry(entry) && isSafeSearchUrl(entry?.url)
+      )
+      .map((entry) => {
+        if (!isDocsEntry(entry)) return entry;
+        // Generated titles can use a project name different from its URL.
+        // Index the public project slug so visitors can find either name.
+        const path = new URL(entry.url, window.location.origin).pathname;
+        const projectSlug = path.split("/").filter(Boolean)[0] || "";
+        return { ...entry, projectSlug };
+      });
   }
 
   /**
@@ -271,8 +281,15 @@
         return typeTieBreak(a.item) - typeTieBreak(b.item);
       });
 
-      // Limit results and apply transformation if provided
-      const limitedResults = sortedResults.slice(0, maxResults);
+      // The generated index can contain several sections at the same URL.
+      // Keep separate fragment links, but show each destination only once.
+      const seenUrls = new Set();
+      const uniqueResults = sortedResults.filter((result) => {
+        if (seenUrls.has(result.item.url)) return false;
+        seenUrls.add(result.item.url);
+        return true;
+      });
+      const limitedResults = uniqueResults.slice(0, maxResults);
 
       if (transform && typeof transform === "function") {
         return limitedResults.map(transform);

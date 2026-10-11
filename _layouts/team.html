@@ -91,60 +91,7 @@
   </div>
 
   <div id="page" class="s-pagewrap">
-    <header class="s-header">
-      <div class="s-header__logo">
-        <a class="logo" href="/">
-          <img src="/assets/logos/CoMPhy-Lab-no-name.png" alt="CoMPhy Lab">
-        </a>
-      </div>
-      <a class="s-header__menu-toggle" href="#0">
-        <span class="s-header__menu-text">Menu</span>
-        <span class="s-header__menu-icon"></span>
-      </a>
-      <nav class="s-header__nav">
-        <a href="#0" class="s-header__nav-close-btn"><span>Close</span></a>
-        <ul class="s-header__nav-list">
-          <li style="background: none;">
-            <div class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme">
-              <svg class="theme-toggle-icon moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-              </svg>
-              <svg class="theme-toggle-icon sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="5"></circle>
-                <line x1="12" y1="1" x2="12" y2="3"></line>
-                <line x1="12" y1="21" x2="12" y2="23"></line>
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                <line x1="1" y1="12" x2="3" y2="12"></line>
-                <line x1="21" y1="12" x2="23" y2="12"></line>
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-              </svg>
-            </div>
-          </li>
-          <li style="background: none;"><a href="https://scholar.google.com/citations?user=tHb_qZoAAAAJ&hl=en" style="background: none; padding: 0;" aria-label="Google Scholar Profile"><i class="ai ai-google-scholar" style="font-size: 1.75em;"></i></a></li>
-          <li style="background: none;"><a href="https://github.com/comphy-lab" style="background: none; padding: 0;" aria-label="GitHub Organization"><i class="fa-brands fa-github" style="font-size: 1.75em"></i></a></li>
-          <li><a href="/team/">Team</a></li>
-          <li><a href="/research">Research</a></li>
-          <li><a href="/projects/">Project docs</a></li>
-          <li><a href="/talks/">Talks</a></li>
-          <li><a href="/teaching">Teaching</a></li>
-          <li><a href="/join">Join Us</a></li>
-          <li><a href="https://blogs.comphy-lab.org/">Blog</a></li>
-          <li style="background: none;"><a href="https://bsky.app/profile/comphy-lab.org" style="background: none; padding: 0;" aria-label="Bluesky Profile"><i class="fa-brands fa-bluesky" style="font-size: 1.75em; color: #0085ff;"></i></a></li>
-          <!-- Command Palette Button (Styled like search) -->
-          <li class="command-palette-button">
-            <div class="command-wrapper">
-              <button class="command-k-style-btn" id="command-palette-btn" aria-label="Open command palette">
-                <span class="default-theme-text">ctrl K</span>
-                <span class="mac-theme-text">⌘ K</span>
-                <i class="fa-solid fa-magnifying-glass search-icon"></i>
-              </button>
-            </div>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    {% include header.html %}
 
     <!-- Team Section -->
     <section class="s-team">

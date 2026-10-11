@@ -49,7 +49,7 @@
         historyBtn.href = "/history";
         historyBtn.className = "s-news__history-btn";
         historyBtn.innerHTML =
-          "<i class=\"fa-solid fa-arrow-right\" style=\"margin-right: 8px; font-size: 1.2em;\"></i>Archive";
+          '<i class="fa-solid fa-arrow-right" style="margin-right: 8px; font-size: 1.2em;"></i>Archive';
         historyBtn.setAttribute("role", "button");
         historyBtn.setAttribute("tabindex", "0");
         historyBtn.setAttribute("aria-label", "View archive of all news items");
@@ -388,40 +388,107 @@
   const closeBtn = document.querySelector(".s-header__nav-close-btn");
   const menuLinks = document.querySelectorAll(".s-header__nav-list a");
 
-  // Handle click outside
-  document.addEventListener("click", function (e) {
-    if (nav && nav.classList.contains("is-active")) {
-      // Check if click is outside nav and not on menu toggle
-      if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
-        nav.classList.remove("is-active");
+  function drawerMode() {
+    return menuToggle && getComputedStyle(menuToggle).display !== "none";
+  }
+
+  function drawerOpen() {
+    return nav && nav.classList.contains("is-active");
+  }
+
+  function drawerItems() {
+    return Array.from(
+      nav.querySelectorAll("a[href], button:not([disabled])")
+    ).filter((item) => getComputedStyle(item).display !== "none");
+  }
+
+  function closeDrawer(restoreFocus) {
+    if (!drawerOpen()) return;
+    const focused = document.activeElement;
+    const hadFocus = nav.contains(focused) || focused === document.body;
+    nav.classList.remove("is-active");
+    menuToggle.setAttribute("aria-expanded", "false");
+    if (restoreFocus && hadFocus && drawerMode()) {
+      menuToggle.focus({ preventScroll: true });
+    }
+  }
+
+  function openDrawer() {
+    if (!drawerMode() || drawerOpen()) return;
+    nav.classList.add("is-active");
+    menuToggle.setAttribute("aria-expanded", "true");
+    const first = nav.querySelector("a[href]") || drawerItems()[0];
+    let attempts = 0;
+    function enterDrawer() {
+      if (!drawerOpen() || nav.contains(document.activeElement)) return;
+      first?.focus({ preventScroll: true });
+      attempts += 1;
+      // Allow the newly visible drawer to render before retrying focus.
+      if (first && document.activeElement !== first && attempts < 4) {
+        requestAnimationFrame(enterDrawer);
       }
     }
-  });
-
-  if (menuToggle) {
-    menuToggle.addEventListener("click", function (e) {
-      e.preventDefault();
-      e.stopPropagation(); // Prevent document click from immediately closing
-      nav.classList.add("is-active");
-    });
+    enterDrawer();
   }
 
-  if (closeBtn) {
-    closeBtn.addEventListener("click", function (e) {
-      e.preventDefault();
-      nav.classList.remove("is-active");
+  if (menuToggle && nav) {
+    menuToggle.addEventListener("click", function () {
+      if (drawerOpen()) closeDrawer(true);
+      else openDrawer();
+    });
+    closeBtn?.addEventListener("click", () => closeDrawer(true));
+    menuLinks.forEach((link) => {
+      link.addEventListener("click", () => closeDrawer(true));
+    });
+
+    document.addEventListener("click", function (event) {
+      if (!drawerOpen()) return;
+      if (!nav.contains(event.target) && !menuToggle.contains(event.target)) {
+        closeDrawer(true);
+      }
+    });
+
+    window.addEventListener(
+      "keydown",
+      function (event) {
+        if (!drawerOpen()) return;
+        if (event.key === "Escape" || event.key === "Esc") {
+          event.preventDefault();
+          closeDrawer(true);
+        } else if (event.key === "Tab" && drawerMode()) {
+          const items = drawerItems();
+          if (!items.length) return;
+          const index = items.indexOf(document.activeElement);
+          const next = event.shiftKey
+            ? index <= 0
+              ? items.length - 1
+              : index - 1
+            : index < 0 || index === items.length - 1
+              ? 0
+              : index + 1;
+          event.preventDefault();
+          items[next].focus();
+        }
+      },
+      true
+    );
+
+    // The palette takes focus outside the nav; release the drawer's trap.
+    document.addEventListener("commandPaletteOpen", () => closeDrawer(false));
+    window.addEventListener("resize", function () {
+      if (!drawerMode()) {
+        const focused = document.activeElement;
+        closeDrawer(false);
+        if (focused === closeBtn || focused === menuToggle) {
+          nav.querySelector("a[href]")?.focus({ preventScroll: true });
+        }
+      }
     });
   }
-
-  menuLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      nav.classList.remove("is-active");
-    });
-  });
 
   /* Smooth Scrolling
    * -------------------------------------------------- */
-  document.querySelectorAll("a[href^=\"#\"], a[href^=\"/#\"]").forEach((anchor) => {
+  document.querySelectorAll('a[href^="#"], a[href^="/#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       const href = this.getAttribute("href");
 
@@ -472,7 +539,7 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     const images = document.querySelectorAll(
-      ".member-image img[loading=\"lazy\"]"
+      '.member-image img[loading="lazy"]'
     );
 
     images.forEach((img) => {

@@ -41,11 +41,12 @@ function sortCoursesByDate() {
 
   // Target various potential course container structures, including the current structure
   const courseContainers = document.querySelectorAll(
-    ".s-teaching .course-item, .teaching-content .course-item, " +
+    ".teaching-content .course-card, " +
+      ".s-teaching .course-item, .teaching-content .course-item, " +
       ".course, .course-container, article.course, .teaching-course, " +
-      ".teaching-content > div[class*=\"course\"], " +
-      ".teaching-content > div > a[href*=\"Course\"], " +
-      ".teaching-content a[href*=\"Course\"]"
+      '.teaching-content > div[class*="course"], ' +
+      '.teaching-content > div > a[href*="Course"], ' +
+      '.teaching-content a[href*="Course"]'
   );
 
   // If no direct matches found, try to find the specific course structure on the page
@@ -73,7 +74,11 @@ function sortCoursesByDate() {
       }
     }
   } else {
-    coursesArray = Array.from(courseContainers);
+    const candidates = Array.from(courseContainers);
+    coursesArray = candidates.filter(
+      (course) =>
+        !candidates.some((other) => other !== course && other.contains(course))
+    );
   }
 
   if (coursesArray.length === 0) {
@@ -83,7 +88,7 @@ function sortCoursesByDate() {
     const contentContainer = document.querySelector(".teaching-content");
     if (contentContainer) {
       const feedbackMsg = createFeedbackMessage(
-        "No courses found to sort. Add course items with class \"course-item\" or \"course\" for automatic sorting."
+        'No courses found to sort. Add course items with class "course-item" or "course" for automatic sorting.'
       );
 
       // Remove any existing messages
@@ -143,7 +148,7 @@ function sortCoursesByDate() {
     return (
       element.getAttribute("data-date") ||
       element.getAttribute("date") ||
-      element.querySelector(".course-date, .date, time, [class*=\"date\"]")
+      element.querySelector('.course-date, .date, time, [class*="date"]')
         ?.textContent ||
       element.querySelector("[datetime]")?.getAttribute("datetime") ||
       // Regex matches: YYYY-MM-DD, MM-DD-YYYY, or "Month DD, YYYY" formats
@@ -176,6 +181,10 @@ function sortCoursesByDate() {
     if (!isNaN(timeA) && !isNaN(timeB)) {
       return timeB - timeA; // Most recent first
     }
+
+    // Undated/self-paced courses follow the dated courses.
+    if (!isNaN(timeA)) return -1;
+    if (!isNaN(timeB)) return 1;
 
     // If dates are invalid, try to get titles for alphabetical sorting
     const titleA =

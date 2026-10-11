@@ -848,6 +848,16 @@ a:hover {
 /* Menu Toggle Button */
 .s-header__menu-toggle {
   display: none;
+  border: 0;
+  background: none;
+  padding: 0;
+  margin: 0;
+  height: auto;
+  font: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  text-transform: none;
+  cursor: pointer;
   color: var(--color-text);
   text-decoration: none;
   align-items: center;
@@ -940,6 +950,14 @@ a:hover {
 
 .s-header__nav-close-btn {
   display: none;
+  border: 0;
+  margin: 0;
+  height: auto;
+  line-height: inherit;
+  letter-spacing: inherit;
+  text-transform: none;
+  font-family: inherit;
+  cursor: pointer;
   position: absolute;
   top: 2rem;
   right: 2rem;
@@ -969,11 +987,21 @@ a:hover {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  color: var(--nav-item-color);
   border-radius: 50%;
   background: var(--nav-item-bg);
   box-shadow: var(--nav-item-shadow);
   transition: var(--transition-medium);
   position: relative;
+}
+
+.s-header button:focus-visible,
+.s-header a:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 4px;
 }
 
 .theme-toggle:hover {

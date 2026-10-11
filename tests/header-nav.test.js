@@ -1,5 +1,5 @@
 /**
- * Site header: the four copies of its markup agree, and the stylesheets keep
+ * Site header: the layouts share one include, and the stylesheets keep
  * the bar from wrapping and the Menu drawer usable.
  *
  * Layout itself cannot be measured in jsdom; these checks pin the rules that
@@ -21,9 +21,7 @@ const LAYOUTS = [
 
 /* Hrefs and accessible names in the header nav list, in order. */
 function navItems(html) {
-  const list = html.match(
-    /<ul class="s-header__nav-list">([\s\S]*?)<\/ul>/
-  );
+  const list = html.match(/<ul class="s-header__nav-list">([\s\S]*?)<\/ul>/);
   expect(list).not.toBeNull();
   const items = [];
   const anchor = /<a\s([^>]*)>([\s\S]*?)<\/a>/g;
@@ -77,15 +75,41 @@ describe("site header", () => {
   const styles = read("assets/css/styles.css");
   const palette = read("assets/css/command-palette.css");
 
-  test("every layout carries the same nav items, Talks after Project docs",
-    () => {
-      const reference = navItems(read(LAYOUTS[0]));
-      const hrefs = reference.map(([href]) => href);
-      expect(hrefs.indexOf("/talks/")).toBe(hrefs.indexOf("/projects/") + 1);
-      for (const layout of LAYOUTS.slice(1)) {
-        expect([layout, navItems(read(layout))]).toEqual([layout, reference]);
-      }
+  test("every layout uses the canonical header, Talks after Project docs", () => {
+    const reference = navItems(read("_includes/header.html"));
+    const hrefs = reference.map(([href]) => href);
+    expect(hrefs.indexOf("/talks/")).toBe(hrefs.indexOf("/projects/") + 1);
+    for (const layout of LAYOUTS) {
+      expect(read(layout)).toContain("{% include header.html %}");
+      expect(read(layout)).not.toContain('<header class="s-header">');
+    }
+  });
+
+  test("header actions are native named buttons and links avoid prose rules", () => {
+    const header = document.createElement("div");
+    header.innerHTML = read("_includes/header.html");
+    [
+      "#theme-toggle",
+      ".s-header__menu-toggle",
+      ".s-header__nav-close-btn",
+    ].forEach((selector) => {
+      const button = header.querySelector(selector);
+      expect(button.tagName).toBe("BUTTON");
+      expect(button.type).toBe("button");
     });
+    expect(
+      header.querySelector("#theme-toggle").getAttribute("aria-label")
+    ).toBe("Dark theme");
+    expect(
+      header
+        .querySelector(".s-header__menu-toggle")
+        .getAttribute("aria-controls")
+    ).toBe("site-nav");
+    expect(header.querySelector("#site-nav")).not.toBeNull();
+    expect(
+      header.querySelectorAll(".s-header__nav-list a:not([class])")
+    ).toHaveLength(0);
+  });
 
   test("nav labels never wrap inside their pills", () => {
     expect(rule(styles, ".s-header__nav-list a")).toMatch(
@@ -93,31 +117,31 @@ describe("site header", () => {
     );
   });
 
-  test("the drawer and its command-palette button share one breakpoint",
-    () => {
-      const drawer = breakpointOf(
-        styles, ".s-header__menu-toggle", "display: flex"
-      );
-      const button = breakpointOf(
-        palette, ".command-k-style-btn", "width: 100%"
-      );
-      expect(button).toBe(drawer);
-      // The full bar needs about 1099 px (measured in Chromium and WebKit).
-      expect(drawer).toBeGreaterThanOrEqual(1099);
-    });
+  test("the drawer and its command-palette button share one breakpoint", () => {
+    const drawer = breakpointOf(
+      styles,
+      ".s-header__menu-toggle",
+      "display: flex"
+    );
+    const button = breakpointOf(palette, ".command-k-style-btn", "width: 100%");
+    expect(button).toBe(drawer);
+    // The full bar needs about 1099 px (measured in Chromium and WebKit).
+    expect(drawer).toBeGreaterThanOrEqual(1099);
+  });
 
-  test("the open drawer scrolls and the closed one leaves the tab order",
-    () => {
-      const blocks = mediaBlocks(styles);
-      const drawer = breakpointOf(
-        styles, ".s-header__menu-toggle", "display: flex"
-      );
-      const nav = rule(blocks[drawer], ".s-header__nav");
-      expect(nav).toMatch(/overflow-y:\s*auto/);
-      expect(nav).toMatch(/overscroll-behavior:\s*contain/);
-      expect(nav).toMatch(/visibility:\s*hidden/);
-      expect(rule(blocks[drawer], ".s-header__nav.is-active")).toMatch(
-        /visibility:\s*visible/
-      );
-    });
+  test("the open drawer scrolls and the closed one leaves the tab order", () => {
+    const blocks = mediaBlocks(styles);
+    const drawer = breakpointOf(
+      styles,
+      ".s-header__menu-toggle",
+      "display: flex"
+    );
+    const nav = rule(blocks[drawer], ".s-header__nav");
+    expect(nav).toMatch(/overflow-y:\s*auto/);
+    expect(nav).toMatch(/overscroll-behavior:\s*contain/);
+    expect(nav).toMatch(/visibility:\s*hidden/);
+    expect(rule(blocks[drawer], ".s-header__nav.is-active")).toMatch(
+      /visibility:\s*visible/
+    );
+  });
 });

@@ -21,6 +21,7 @@ window.openCommandPalette = function () {
   const palette = document.getElementById("simple-command-palette");
   if (palette) {
     palette.style.display = "block";
+    document.dispatchEvent(new Event("commandPaletteOpen"));
     const input = document.getElementById("command-palette-input");
     if (input) {
       input.value = "";
