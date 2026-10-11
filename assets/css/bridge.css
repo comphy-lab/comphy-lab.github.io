@@ -63,8 +63,10 @@
    - Surfaces get more separation (paper → tint → strong) so
      cards and panels visibly sit above the background.
    - Borders bumped from 0.08 → 0.14 alpha for visibility.
-   - Hero gradient stops lifted for readability on dark (the
-     light-mode stops go invisible against warm-black paper). */
+   - Hero gradient stops come from tokens.css (DS #3 lifts). Do
+     not re-declare --hero-grad-* here. The previous overrides
+     (#ff9388 / #cf75d3 / #8eaaff / #7864cc) still failed on
+     this paper. */
 :root[data-theme="dark"] {
   /* Softer dark surfaces — tracks closer to GitHub/Notion dark
      (~#181818) than near-black, while keeping the warm tint. */
@@ -76,13 +78,6 @@
   /* More visible separation lines. */
   --c-border:         rgba(248, 244, 236, 0.14);
   --c-border-strong:  rgba(248, 244, 236, 0.22);
-
-  /* Hero wordmark gradient — brighter stops that don't disappear
-     against the warm dark paper. */
-  --hero-grad-1: #ff9388;
-  --hero-grad-2: #cf75d3;
-  --hero-grad-3: #8eaaff;
-  --hero-grad-4: #7864cc;
 
   /* Legacy aliases */
   --color-primary: #8fb8ff;

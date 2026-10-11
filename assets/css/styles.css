@@ -362,10 +362,10 @@
   --intro-content-bg-end: var(--color-darker-gray-alpha-85);
   --intro-content-border: var(--color-white-alpha-10);
   --intro-content-shadow: var(--color-black-alpha-30);
-  --intro-title-gradient-1: #f88;
-  --intro-title-gradient-2: var(--color-heading-h1);
-  --intro-title-gradient-3: #8897ff;
-  --intro-title-gradient-4: #514880;
+  --intro-title-gradient-1: var(--hero-grad-1);
+  --intro-title-gradient-2: var(--hero-grad-2);
+  --intro-title-gradient-3: var(--hero-grad-3);
+  --intro-title-gradient-4: var(--hero-grad-4);
   --intro-title-shadow: none;
   --intro-title-text-stroke: var(--color-white-alpha-15);
   --intro-subtitle-text: var(--color-text);
@@ -1128,17 +1128,7 @@ a:hover {
   opacity: 0;
   animation: fadeInUp 1s ease forwards;
   animation-delay: 0.2s;
-  background: linear-gradient(
-    90deg,
-    var(--intro-title-gradient-1) 0%,
-    var(--intro-title-gradient-2) 45%,
-    var(--intro-title-gradient-3) 55%,
-    var(--intro-title-gradient-4) 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: var(--intro-title-text-color);
-  -webkit-text-fill-color: transparent;
+  color: var(--hero-grad-2); /* solid fallback; clip+fill applied only when supported */
   text-shadow: 2px 2px 3px var(--intro-title-shadow);
   letter-spacing: 0.02em;
   font-weight: 600;
@@ -1147,18 +1137,33 @@ a:hover {
   text-rendering: optimizelegibility;
 }
 
-[data-theme="dark"] .s-intro__title {
-  background: linear-gradient(
-    90deg,
-    var(--intro-title-gradient-1) 0%,
-    var(--intro-title-gradient-2) 35%,
-    var(--intro-title-gradient-3) 65%,
-    var(--intro-title-gradient-4) 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-stroke: 0.5px var(--intro-title-text-stroke);
-  text-shadow: var(--intro-title-shadow);
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .s-intro__title {
+    background: linear-gradient(
+      90deg,
+      var(--intro-title-gradient-1) 0%,
+      var(--intro-title-gradient-2) 45%,
+      var(--intro-title-gradient-3) 55%,
+      var(--intro-title-gradient-4) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  [data-theme="dark"] .s-intro__title {
+    background: linear-gradient(
+      90deg,
+      var(--intro-title-gradient-1) 0%,
+      var(--intro-title-gradient-2) 35%,
+      var(--intro-title-gradient-3) 65%,
+      var(--intro-title-gradient-4) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-stroke: 0.5px var(--intro-title-text-stroke);
+    text-shadow: var(--intro-title-shadow);
+  }
 }
 
 .s-intro__subtitle {
