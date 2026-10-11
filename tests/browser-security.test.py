@@ -67,11 +67,35 @@ class BrowserSecurityTests(unittest.TestCase):
             parser = security.ScriptInventory(site / "index.html", site)
             parser.feed(
                 '<script type="application/ld+json">{"name":"Lab"}</script>'
-                '<script src="/good.js"></script>'
+                '<script data-cfasync="false" src="/good.js"></script>'
             )
             self.assertEqual(parser.errors, [])
-            parser.feed('<script src="/missing.js"></script>')
+            parser.feed('<script data-cfasync="false" src="/missing.js"></script>')
             self.assertTrue(any("missing" in error for error in parser.errors))
+
+    def test_inventory_keeps_early_and_deferred_scripts_native(self):
+        with tempfile.TemporaryDirectory() as directory:
+            site = Path(directory)
+            (site / "early.js").write_text("/* early theme */")
+            (site / "deferred.js").write_text("/* native deferred stack */")
+            parser = security.ScriptInventory(site / "index.html", site)
+            parser.feed(
+                '<script data-cfasync="false" src="/early.js"></script>'
+                '<script defer data-cfasync="false" src="/deferred.js"></script>'
+            )
+            self.assertEqual(parser.errors, [])
+            parser.feed('<script defer src="/deferred.js"></script>')
+            self.assertTrue(any("bypass Rocket Loader" in error for error in parser.errors))
+
+    def test_inventory_requires_opt_out_before_src(self):
+        with tempfile.TemporaryDirectory() as directory:
+            site = Path(directory)
+            (site / "deferred.js").write_text("/* native deferred stack */")
+            parser = security.ScriptInventory(site / "index.html", site)
+            parser.feed(
+                '<script defer src="/deferred.js" data-cfasync="false"></script>'
+            )
+            self.assertTrue(any("before src" in error for error in parser.errors))
 
     def test_inventory_rejects_unterminated_inline_script(self):
         with tempfile.TemporaryDirectory() as directory:

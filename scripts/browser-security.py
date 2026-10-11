@@ -90,6 +90,14 @@ class ScriptInventory(HTMLParser):
             # unterminated script's raw text even when close() is called.
             self.errors.append("executable inline script")
             return
+        # Rocket Loader delays this stack and replays readiness events after
+        # the browser's load event. Keep dependency order and early theme native.
+        names = [name for name, _ in attrs]
+        if (
+            attr.get("data-cfasync") != "false"
+            or names.index("data-cfasync") > names.index("src")
+        ):
+            self.errors.append(f"script must bypass Rocket Loader before src: {source}")
         parsed = urlsplit(source)
         if parsed.scheme or parsed.netloc or not source.startswith("/"):
             self.errors.append(f"nonlocal executable dependency: {source}")

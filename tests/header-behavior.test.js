@@ -41,6 +41,11 @@ describe("site drawer keyboard and focus paths", () => {
     close = document.querySelector(".s-header__nav-close-btn");
     first = nav.querySelector("a[href]");
     toggle.style.display = "flex";
+    jest
+      .spyOn(HTMLElement.prototype, "getClientRects")
+      .mockImplementation(function () {
+        return this.style.display === "none" ? [] : [{}];
+      });
     require("../assets/js/main.js");
   });
 
@@ -100,6 +105,37 @@ describe("site drawer keyboard and focus paths", () => {
     expect(document.activeElement).toBe(first);
     expect(key("Tab").defaultPrevented).toBe(false);
   });
+
+  test.each(["Close", "Menu"])(
+    "desktop handover restores %s after the browser blurs it first",
+    (control) => {
+      toggle.click();
+      if (control === "Menu") key("Escape");
+      const focused = control === "Close" ? close : toggle;
+      focused.focus();
+      toggle.style.display = "none";
+      close.style.display = "none";
+      focused.blur();
+      expect(document.activeElement).toBe(document.body);
+      window.dispatchEvent(new Event("resize"));
+      expect(document.activeElement).toBe(first);
+      expect(toggle.getAttribute("aria-expanded")).toBe("false");
+    }
+  );
+
+  test.each([".s-header__nav-link[href='/team/']", "#theme-toggle"])(
+    "desktop handover preserves a visible %s control",
+    (selector) => {
+      toggle.click();
+      const focused = nav.querySelector(selector);
+      focused.focus();
+      toggle.style.display = "none";
+      close.style.display = "none";
+      window.dispatchEvent(new Event("resize"));
+      expect(document.activeElement).toBe(focused);
+      expect(toggle.getAttribute("aria-expanded")).toBe("false");
+    }
+  );
 
   test("opening the palette releases the drawer before focus moves", () => {
     toggle.click();

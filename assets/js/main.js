@@ -432,6 +432,18 @@
   }
 
   if (menuToggle && nav) {
+    const header = menuToggle.closest(".s-header");
+    let disappearingControl = null;
+    header?.addEventListener("focusout", function (event) {
+      if (
+        !event.relatedTarget &&
+        (event.target === closeBtn || event.target === menuToggle) &&
+        !event.target.getClientRects().length
+      ) {
+        // Chromium can blur a newly hidden control before resize is delivered.
+        disappearingControl = event.target;
+      }
+    });
     menuToggle.addEventListener("click", function () {
       if (drawerOpen()) closeDrawer(true);
       else openDrawer();
@@ -476,12 +488,22 @@
     // The palette takes focus outside the nav; release the drawer's trap.
     document.addEventListener("commandPaletteOpen", () => closeDrawer(false));
     window.addEventListener("resize", function () {
-      if (!drawerMode()) {
-        const focused = document.activeElement;
-        closeDrawer(false);
-        if (focused === closeBtn || focused === menuToggle) {
-          nav.querySelector("a[href]")?.focus({ preventScroll: true });
-        }
+      // Read focus before a style probe can flush the responsive layout.
+      let focused = document.activeElement;
+      if (drawerMode()) return;
+      if (focused === document.body && disappearingControl) {
+        focused = disappearingControl;
+      }
+      disappearingControl = null;
+      closeDrawer(false);
+      const first = nav.querySelector("a[href]");
+      if (
+        (focused === closeBtn || focused === menuToggle) &&
+        first?.getClientRects().length &&
+        !header?.inert &&
+        !header?.hasAttribute("inert")
+      ) {
+        first.focus({ preventScroll: true });
       }
     });
   }
