@@ -4,6 +4,12 @@ module.exports = {
   moduleFileExtensions: ['js', 'json'],
   testMatch: ['**/tests/**/*.test.js'],
   collectCoverage: true,
+  coverageThreshold: {
+    global: {
+      statements: 80,
+      lines: 80,
+    },
+  },
   coverageDirectory: 'coverage',
   collectCoverageFrom: [
     'assets/js/**/*.js',

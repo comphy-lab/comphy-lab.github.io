@@ -142,14 +142,17 @@ function createModal(options) {
 
   // Focus management
   const previouslyFocusedElement = document.activeElement;
+  let closed = false;
+  let focusFrame;
   const focusWhenAttached = () => {
+    if (closed) return;
     if (document.body && document.body.contains(modal)) {
       contentEl.focus();
     } else {
-      requestAnimationFrame(focusWhenAttached);
+      focusFrame = requestAnimationFrame(focusWhenAttached);
     }
   };
-  requestAnimationFrame(focusWhenAttached);
+  focusFrame = requestAnimationFrame(focusWhenAttached);
 
   // Focus trap helpers
   const getFocusableElements = () => {
@@ -210,6 +213,9 @@ function createModal(options) {
 
   // Close function
   const closeModal = () => {
+    if (closed) return;
+    closed = true;
+    cancelAnimationFrame(focusFrame);
     // Remove listeners first
     modal.removeEventListener("keydown", onKeyDown);
     modal.removeEventListener("click", onBackdropClick);

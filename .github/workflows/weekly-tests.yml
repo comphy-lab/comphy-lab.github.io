@@ -45,7 +45,9 @@ jobs:
         run: bash tests/deploy-script-regression.sh
 
       - name: Run news-bullet and stale-search regression tests
-        run: npm test -- --runInBand tests/news-bullet-regression.test.js tests/command-palette-stale-search.test.js
+        # The complete Run tests step above enforces global coverage.
+        # This focused rerun must not replace it with partial coverage data.
+        run: npm test -- --coverage=false --runInBand tests/news-bullet-regression.test.js tests/command-palette-stale-search.test.js
 
       - name: Check markdown quality for teaching content
         run: |
