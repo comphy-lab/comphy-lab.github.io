@@ -117,6 +117,23 @@ describe("site header", () => {
     );
   });
 
+  test("the command-palette header button uses theme tokens, not #000", () => {
+    const btn = rule(palette, ".command-k-style-btn");
+    expect(btn).toMatch(/color:\s*var\(--fg-1\)/);
+    expect(btn).toMatch(/border-radius:\s*var\(--r-xs\)/);
+    expect(btn).toMatch(/background:\s*color-mix\(in srgb, var\(--fg-strong\)/);
+    expect(btn).toMatch(/border:\s*1px solid var\(--c-border\)/);
+    expect(btn).not.toMatch(/#000/);
+    const hover = rule(palette, ".command-k-style-btn:hover");
+    expect(hover).toMatch(/var\(--c-accent-teal\)/);
+    expect(palette).toMatch(
+      /\.command-k-style-btn:focus-visible,[\s\S]*?var\(--c-accent-teal\)/
+    );
+    expect(rule(palette, ".command-k-style-btn .search-icon")).toMatch(
+      /color:\s*inherit/
+    );
+  });
+
   test("the drawer and its command-palette button share one breakpoint", () => {
     const drawer = breakpointOf(
       styles,
