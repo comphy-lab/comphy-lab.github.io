@@ -103,6 +103,16 @@
   color: var(--c-accent-teal);
 }
 
+/* Beat :root[data-theme="dark"] a:where(:not([class])) (0,2,1). */
+:root[data-theme="dark"] .projects-list__title a {
+  color: inherit;
+}
+
+:root[data-theme="dark"] .projects-list__title a:hover,
+:root[data-theme="dark"] .projects-list__title a:focus-visible {
+  color: var(--c-accent-teal);
+}
+
 .projects-list__note {
   font-size: var(--t-small);
   color: var(--fg-2);

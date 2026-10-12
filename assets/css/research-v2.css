@@ -400,6 +400,16 @@
   background: color-mix(in srgb, var(--c-accent-teal) 8%, transparent);
 }
 
+/* Beat :root[data-theme="dark"] a:where(:not([class])) (0,2,1). */
+:root[data-theme="dark"] .toc-list a {
+  color: var(--fg-2);
+}
+
+:root[data-theme="dark"] .toc-list a:hover,
+:root[data-theme="dark"] .toc-list a.active {
+  color: var(--c-accent-teal);
+}
+
 /* Drop the leftover styles.css glass box. The publication list already
    sits on --c-paper beside a TOC and year rules; a second surface
    (10px radius, legacy shadow, cool white / #1e1e1e fill) is a frame

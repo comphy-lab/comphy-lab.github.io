@@ -208,6 +208,21 @@
 
 .t-member__links i { font-size: 13px; }
 
+/* Beat :root[data-theme="dark"] a:where(:not([class])) (0,2,1). */
+:root[data-theme="dark"] .t-member__links a {
+  color: var(--fg-2);
+}
+
+:root[data-theme="dark"] .t-member__links a:hover {
+  color: var(--c-accent-teal);
+}
+
+/* styles.css paints GitHub/Bluesky/LinkedIn white in dark with
+   !important; inherit so every icon in the row is --fg-2. */
+:root[data-theme="dark"] .t-member__links i {
+  color: inherit !important;
+}
+
 /* The PI tile gets teal framing to stand out */
 .t-member--pi .t-member__photo {
   background: color-mix(in srgb, var(--c-accent-teal) 12%, var(--c-paper-tint));
