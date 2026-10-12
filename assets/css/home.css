@@ -1022,6 +1022,19 @@ body.home-v2 #featured-wrapper {
   font-size: 13px;
 }
 
+/* Beat :root[data-theme="dark"] a:where(:not([class])) (0,2,1). */
+:root[data-theme="dark"] .member__links a {
+  color: var(--fg-2);
+}
+
+:root[data-theme="dark"] .member__links a:hover {
+  color: var(--c-accent-teal);
+}
+
+:root[data-theme="dark"] .member__links i {
+  color: inherit !important;
+}
+
 .member--pi .member__photo {
   background: color-mix(in srgb, var(--c-accent-teal) 12%, var(--c-paper-tint));
   color: var(--c-accent-teal);

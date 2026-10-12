@@ -89,6 +89,17 @@
   border-bottom-color: var(--c-accent-teal);
 }
 
+/* Beat :root[data-theme="dark"] a:where(:not([class])) (0,2,1). */
+:root[data-theme="dark"] .teaching-breadcrumb a {
+  color: var(--fg-2);
+  border-bottom-color: transparent;
+}
+
+:root[data-theme="dark"] .teaching-breadcrumb a:hover {
+  color: var(--c-accent-teal);
+  border-bottom-color: var(--c-accent-teal);
+}
+
 .teaching-content {
   max-width: var(--maxw-page);
   margin: 0 auto;

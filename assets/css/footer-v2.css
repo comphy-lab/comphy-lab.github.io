@@ -79,6 +79,15 @@
 
 .c-footer__col a:hover { color: var(--c-accent-teal); }
 
+/* Beat :root[data-theme="dark"] a:where(:not([class])) (0,2,1). */
+:root[data-theme="dark"] .c-footer__col a {
+  color: var(--fg-1);
+}
+
+:root[data-theme="dark"] .c-footer__col a:hover {
+  color: var(--c-accent-teal);
+}
+
 /* --- Partner strip ----------------------------------------- */
 .c-footer__partners {
   padding-top: var(--s-5);
@@ -148,6 +157,16 @@
 }
 
 .c-footer__legal a:hover {
+  color: var(--c-accent-teal);
+  border-bottom-color: var(--c-accent-teal);
+}
+
+:root[data-theme="dark"] .c-footer__legal a {
+  color: var(--fg-2);
+  border-bottom-color: var(--c-border-strong);
+}
+
+:root[data-theme="dark"] .c-footer__legal a:hover {
   color: var(--c-accent-teal);
   border-bottom-color: var(--c-accent-teal);
 }
