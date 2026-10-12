@@ -75,6 +75,26 @@ describe("site header", () => {
   const styles = read("assets/css/styles.css");
   const palette = read("assets/css/command-palette.css");
 
+  test("layouts that load command-palette.css also load design tokens", () => {
+    const layoutDir = path.join(root, "_layouts");
+    const layouts = fs
+      .readdirSync(layoutDir)
+      .filter((name) => name.endsWith(".html"))
+      .map((name) => `_layouts/${name}`);
+    const loaders = layouts.filter((file) =>
+      read(file).includes("command-palette.css")
+    );
+    expect(loaders.length).toBeGreaterThan(0);
+    for (const file of loaders) {
+      const html = read(file);
+      const hasTokens =
+        html.includes("tokens.css") ||
+        html.includes("tokens-head.html") ||
+        /layout:\s*default/.test(html);
+      expect(hasTokens).toBe(true);
+    }
+  });
+
   test("every layout uses the canonical header, Talks after Project docs", () => {
     const reference = navItems(read("_includes/header.html"));
     const hrefs = reference.map(([href]) => href);
@@ -127,7 +147,7 @@ describe("site header", () => {
     const hover = rule(palette, ".command-k-style-btn:hover");
     expect(hover).toMatch(/var\(--c-accent-teal\)/);
     expect(palette).toMatch(
-      /\.command-k-style-btn:focus-visible,[\s\S]*?var\(--c-accent-teal\)/
+      /\.s-header \.command-k-style-btn:focus-visible,[\s\S]*?var\(--c-accent-teal\)/
     );
     expect(rule(palette, ".command-k-style-btn .search-icon")).toMatch(
       /color:\s*inherit/

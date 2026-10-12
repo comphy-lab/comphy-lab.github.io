@@ -196,8 +196,8 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
-.command-k-style-btn:focus-visible,
-.command-k-style-btn.focused {
+.s-header .command-k-style-btn:focus-visible,
+.s-header .command-k-style-btn.focused {
   outline: 2px solid var(--c-accent-teal);
   outline-offset: 2px;
   border-color: var(--c-accent-teal);
