@@ -169,16 +169,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #000;
+  color: var(--fg-1);
   text-decoration: none;
   font-size: 1.6rem;
   transition: all 0.3s ease;
   padding: 0.8rem 1.6rem;
-  border-radius: 5px;
-  background: rgba(255, 255, 255, 0.25);
+  /* Header pills are 5px; --r-xs (6px) is the nearest DS step. */
+  border-radius: var(--r-xs);
+  background: color-mix(in srgb, var(--fg-strong) 8%, transparent);
   backdrop-filter: blur(8px);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  border: none;
+  border: 1px solid var(--c-border);
   white-space: nowrap;
   gap: 6px;
   font-weight: 500;
@@ -188,27 +189,32 @@
 }
 
 .command-k-style-btn:hover {
-  background: rgba(255, 255, 255, 0.35);
+  background: color-mix(in srgb, var(--c-accent-teal) 12%, transparent);
+  border-color: var(--c-accent-teal);
+  color: var(--c-accent-teal);
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
-.command-k-style-btn:focus,
-.command-k-style-btn.focused {
-  outline: 2px solid rgba(104, 35, 109, 0.5);
-  outline-offset: 1px;
+.s-header .command-k-style-btn:focus-visible,
+.s-header .command-k-style-btn.focused {
+  outline: 2px solid var(--c-accent-teal);
+  outline-offset: 2px;
+  border-color: var(--c-accent-teal);
+  color: var(--c-accent-teal);
+  background: color-mix(in srgb, var(--c-accent-teal) 12%, transparent);
 }
 
 .command-k-style-btn .search-icon {
   margin-left: 4px;
   font-size: 1em;
-  color: #000;
+  color: inherit;
 }
 
 .command-k-style-btn .default-theme-text,
 .command-k-style-btn .mac-theme-text {
   font-weight: 500;
-  color: #000;
+  color: inherit;
 }
 
 /* Hide previous button styling */
