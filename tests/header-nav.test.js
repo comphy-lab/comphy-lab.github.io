@@ -147,7 +147,10 @@ describe("site header", () => {
     const hover = rule(palette, ".command-k-style-btn:hover");
     expect(hover).toMatch(/var\(--c-accent-teal\)/);
     expect(palette).toMatch(
-      /\.s-header \.command-k-style-btn:focus-visible,[\s\S]*?var\(--c-accent-teal\)/
+      new RegExp(
+        "\\.s-header \\.command-k-style-btn:focus-visible," +
+          "[\\s\\S]*?var\\(--c-accent-teal\\)"
+      )
     );
     expect(rule(palette, ".command-k-style-btn .search-icon")).toMatch(
       /color:\s*inherit/
