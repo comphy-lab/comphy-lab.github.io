@@ -57,29 +57,16 @@
 }
 
 /* --- 2. Legacy variable bridge (dark theme) -----------------
-   Also runs a palette audit pass:
-   - Paper lifted off near-black to a softer charcoal so the UI
-     doesn't feel like a terminal. Warm hue preserved.
-   - Surfaces get more separation (paper → tint → strong) so
-     cards and panels visibly sit above the background.
-   - Borders bumped from 0.08 → 0.14 alpha for visibility.
-   - Hero gradient stops come from tokens.css (DS #3 lifts). Do
-     not re-declare --hero-grad-* here. The previous overrides
-     (#ff9388 / #cf75d3 / #8eaaff / #7864cc) still failed on
-     this paper. */
+   Do not re-declare design-system surface tokens here.
+   tokens.css is the single source for --c-paper, --c-paper-tint,
+   --c-surface-strong, --c-surface-glass, and --c-border*. The
+   previous charcoal lifts (#1b1814 / #241f18 / #2b251d plus
+   thicker borders) drifted from the vendored dark paper
+   (#12100d) used on blogs.comphy-lab.org. Hero-gradient stops
+   also come from tokens.css (DS #3). Do not re-declare
+   --hero-grad-* here. */
 :root[data-theme="dark"] {
-  /* Softer dark surfaces — tracks closer to GitHub/Notion dark
-     (~#181818) than near-black, while keeping the warm tint. */
-  --c-paper:          #1b1814;
-  --c-paper-tint:     #241f18;
-  --c-surface-strong: #2b251d;
-  --c-surface-glass:  rgba(43, 37, 29, 0.78);
-
-  /* More visible separation lines. */
-  --c-border:         rgba(248, 244, 236, 0.14);
-  --c-border-strong:  rgba(248, 244, 236, 0.22);
-
-  /* Legacy aliases */
+  /* Legacy aliases only — no DS token redefinitions. */
   --color-primary: #8fb8ff;
   --color-background: var(--c-paper);
   --color-text: var(--fg-1);
