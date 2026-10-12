@@ -5,19 +5,15 @@
    tokens.css + bridge.css (.card, .panel, .btn). Do not
    reintroduce white fills, per-section accent hues, or
    sub-token radii. Internships blockquote colour is owned
-   by a separate PR — leave it alone. */
+   by #125 — leave it alone. */
 :root {
   --join-bg-color: var(--color-background);
   --join-text-color: var(--color-text);
-  --join-heading-color: var(--color-heading-h1, #68236d);
-  --join-subheading-color: var(--color-primary);
 }
 
 [data-theme="dark"] {
   --join-bg-color: var(--color-background);
   --join-text-color: var(--color-text);
-  --join-heading-color: var(--color-heading-h1, #9a349f);
-  --join-subheading-color: var(--color-primary);
 }
 
 /* Join page main container */
@@ -31,13 +27,37 @@
 
 .join-content {
   color: var(--join-text-color);
+  background: var(--c-surface-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-soft);
 }
 
 /* Main heading styles */
 .join-content h1 {
-  color: var(--join-heading-color);
+  color: var(--fg-strong);
+  font-weight: var(--t-weight-semi);
   text-align: center;
   margin-bottom: 3rem;
+}
+
+.join-content h1,
+.join-content h2,
+.join-content h3,
+.join-content.markdown-content h1,
+.join-content.markdown-content h2,
+.s-join .position-section h2,
+.projects-showcase h2,
+.project-category > h3,
+.s-join .project-card h3 {
+  color: var(--fg-strong);
+  font-weight: var(--t-weight-semi);
+}
+
+.join-content.markdown-content h2 {
+  border-bottom-color: var(--c-border);
 }
 
 /* Position sections compose .panel; keep layout spacing only. */
@@ -46,7 +66,6 @@
 }
 
 .s-join .position-section h2 {
-  color: var(--join-subheading-color);
   margin-bottom: var(--s-5);
   font-size: 2.4rem;
   display: flex;
@@ -95,7 +114,6 @@
 }
 
 .projects-showcase h2 {
-  color: var(--join-heading-color);
   text-align: center;
   margin-bottom: 2rem;
   font-size: 2.8rem;
@@ -118,7 +136,6 @@
 }
 
 .project-category > h3 {
-  color: var(--join-subheading-color);
   font-size: 2.2rem;
   margin-bottom: 2rem;
   text-align: center;
@@ -146,7 +163,6 @@
 }
 
 .s-join .project-card h3 {
-  color: var(--join-subheading-color);
   margin-bottom: var(--s-4);
   font-size: 1.8rem;
   line-height: 1.3;
