@@ -35,7 +35,12 @@
   --color-blue-darker: var(--hero-grad-4);
   --color-red-bright: var(--c-accent-red);
 
-  /* Typography — legacy names point at new stacks */
+  /* Typography — legacy names point at new stacks.
+     Fraunces Fallback matches Fraunces advance width so the
+     swap does not rewrap headings. Loaded Fraunces stays first. */
+  --t-serif:
+    "Fraunces", "Fraunces Fallback", "Source Serif 4", "Iowan Old Style",
+    georgia, serif;
   --font-primary: var(--t-sans);
   --font-display: var(--t-display);
 

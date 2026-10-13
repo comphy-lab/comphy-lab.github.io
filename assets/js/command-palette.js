@@ -20,6 +20,13 @@ function getSearchToken() {
 window.openCommandPalette = function () {
   const palette = document.getElementById("simple-command-palette");
   if (palette) {
+    const searchManager = window.SearchManager;
+    if (
+      searchManager &&
+      typeof searchManager.prefetchSearchData === "function"
+    ) {
+      searchManager.prefetchSearchData();
+    }
     palette.style.display = "block";
     document.dispatchEvent(new Event("commandPaletteOpen"));
     const input = document.getElementById("command-palette-input");

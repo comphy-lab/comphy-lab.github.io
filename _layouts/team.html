@@ -17,13 +17,8 @@
       visibility: visible;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     }
+    #preloader { display: none !important; }
   </style>
-
-  <!-- Preload critical resources -->
-  <link rel="preload" href="/assets/css/styles.css" as="style">
-  <link rel="preload" href="/assets/js/main.js" as="script">
-  <link rel="preload" href="/assets/css/fontello/css/fontello.css" as="style">
-  <link rel="preload" href="/assets/css/academicons-1.7.0/css/academicons.min.css" as="style">
 
   <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
@@ -51,18 +46,13 @@
       src: local('system-ui');
     }
   </style>
-  <link rel="stylesheet" href="/assets/css/fontello/css/fontello.css">
-  <link rel="stylesheet" href="/assets/css/academicons-1.7.0/css/academicons.min.css">
-  <noscript>
-    <link rel="stylesheet" href="/assets/css/fontello/css/fontello.css">
-    <link rel="stylesheet" href="/assets/css/academicons-1.7.0/css/academicons.min.css">
-  </noscript>
+  {% include deferred-icons.html %}
 
   <!-- Site styles -->
   <link rel="stylesheet" href="/assets/css/vendor.css">
   <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="stylesheet" href="/assets/css/team.css">
-  <link rel="stylesheet" href="/assets/css/command-palette.css">
+  {% include deferred-stylesheet.html href="/assets/css/command-palette.css" %}
   {% include tokens-bridge.html %}
 
   <!-- Structured Data for Team -->
@@ -78,13 +68,6 @@
 
   {% include site-scripts.html %}
 
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  >
 </head>
 <body id="top" class="team-page-body">
 

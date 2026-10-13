@@ -222,4 +222,11 @@ describe("search-manager sanitization", () => {
     expect(data).toHaveLength(1);
     expect(data[0].title).toBe("Public blog post");
   });
+
+  it("does not fetch the search database until a search is requested", () => {
+    global.fetch = jest.fn();
+    require("../assets/js/search-manager.js");
+    expect(global.fetch).not.toHaveBeenCalled();
+    expect(typeof window.SearchManager.prefetchSearchData).toBe("function");
+  });
 });

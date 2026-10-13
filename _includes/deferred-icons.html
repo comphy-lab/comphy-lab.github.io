@@ -1,0 +1,8 @@
+{% comment %}
+  Icon fonts are used in the header drawer and the command palette.
+  On a phone the drawer is closed, so these stylesheets must not sit
+  on the render-blocking path. font-display: swap is set in the files.
+{% endcomment %}
+{% include deferred-stylesheet.html href="/assets/css/fontello/css/fontello.css" %}
+{% include deferred-stylesheet.html href="/assets/css/academicons-1.7.0/css/academicons.min.css" %}
+{% include deferred-stylesheet.html href="/assets/vendor/fontawesome-6.7.2/css/all.min.css" %}

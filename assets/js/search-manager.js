@@ -336,8 +336,8 @@
   }
 
   /**
-   * Prefetches the search database to improve performance
-   * This should be called early in page load
+   * Prefetches the search database when the command palette opens.
+   * It is not called during page load.
    */
   async function prefetchSearchData() {
     try {
@@ -396,12 +396,4 @@
 
   // Backwards compatibility - maintain existing API
   window.searchDatabaseForCommandPalette = searchForCommandPalette;
-
-  // Auto-prefetch on DOM load for better performance
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", prefetchSearchData);
-  } else {
-    // Document already loaded, prefetch immediately
-    prefetchSearchData();
-  }
 })();
