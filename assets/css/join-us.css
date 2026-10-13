@@ -35,6 +35,12 @@
   box-shadow: var(--shadow-soft);
 }
 
+.join-content :is(p, li, blockquote) a:not(.btn, .email-link),
+.join-content :is(p, li, blockquote) a:not(.btn, .email-link):hover {
+  text-decoration-line: underline;
+  text-underline-offset: 0.12em;
+}
+
 /* Main heading styles */
 .join-content h1 {
   color: var(--fg-strong);

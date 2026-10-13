@@ -140,10 +140,13 @@
   font-variation-settings: "opsz" 32;
 }
 
-.teaching-page .teaching-content h3 {
+.teaching-page .teaching-content h3,
+.teaching-page .teaching-content h2.course-card__title {
   display: block !important;
   font-size: 22px !important;
   line-height: 1.25 !important;
+  letter-spacing: -0.015em !important;
+  font-variation-settings: "opsz" 32 !important;
   margin: var(--s-6) 0 var(--s-3) !important;
   padding-bottom: 0 !important;
   border-bottom: 0 !important;
@@ -168,6 +171,14 @@
 
 .teaching-content p {
   margin: 0 0 var(--s-4);
+}
+
+/* Prose links: underline, not colour alone. Icon-only and card
+   buttons stay as they are. */
+.teaching-page:not(.teaching-page--course) .teaching-content :is(p, li) a:not(.btn, .course-card__link, :has(> i:only-child)),
+.teaching-page:not(.teaching-page--course) .teaching-content :is(p, li) a:not(.btn, .course-card__link, :has(> i:only-child)):hover {
+  text-decoration-line: underline;
+  text-underline-offset: 0.12em;
 }
 
 .teaching-content ul,

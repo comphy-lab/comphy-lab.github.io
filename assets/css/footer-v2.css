@@ -58,10 +58,11 @@
   margin: 0;
 }
 
-.c-footer__col h4 {
+.c-footer__col .c-footer__heading {
   font-family: var(--t-sans);
   font-size: var(--t-eyebrow);
   font-weight: 600;
+  line-height: 1.6;
   letter-spacing: var(--t-track-wide);
   text-transform: uppercase;
   color: var(--fg-2);
