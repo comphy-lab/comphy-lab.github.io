@@ -1,5 +1,6 @@
 <!-- Canonical site JS stack. Keep native defer order: Rocket Loader must
      not delay or replay it. scripts/check-script-includes.sh enforces order. -->
+<script defer data-cfasync="false" src="/assets/js/defer-styles.js"></script>
 {% include browser-dependencies.html %}
 <script defer data-cfasync="false" src="/assets/js/utils.js"></script>
 <script defer data-cfasync="false" src="/assets/js/search-manager.js"></script>
