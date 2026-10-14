@@ -34,7 +34,7 @@ body_class: research-v2
       <article class="r-theme" id="theme-{{ t.slug }}">
         <div class="r-theme__figure">
           {% if t.figure %}
-            <img src="{{ t.figure }}" alt="{{ t.title }} — signature figure" loading="lazy" decoding="async" />
+            <img src="{{ t.figure }}" alt="{{ t.title }} — signature figure" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}" {% if forloop.first %}fetchpriority="high"{% endif %} decoding="async" />
           {% else %}
             <div class="r-theme__figure-ph">Figure · {{ t.tag }}</div>
           {% endif %}

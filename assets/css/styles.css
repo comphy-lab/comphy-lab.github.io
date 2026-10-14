@@ -741,18 +741,10 @@ a:hover {
  * 5. PRELOADER AND ANIMATIONS
  *-------------------------------------------------------------- */
 
-/* Preloader */
+/* Preloader — kept in the DOM for main.js, but it must not cover
+   first paint. Hiding it does not change the settled page. */
 #preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: var(--color-background);
-  z-index: 9999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: none;
 }
 
 #loader {

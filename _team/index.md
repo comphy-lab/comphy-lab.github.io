@@ -34,7 +34,7 @@ description: >-
         <article class="t-member {% if m.is_pi %}t-member--pi{% endif %}" id="{{ m.slug | default: m.name | slugify }}">
           <div class="t-member__photo {% unless m.photo %}t-member__photo--ph{% endunless %}">
             {% if m.photo %}
-              <img src="{{ m.photo }}" alt="Portrait of {{ m.name }}" loading="lazy" decoding="async" />
+              <img src="{{ m.photo }}" alt="Portrait of {{ m.name }}" loading="{% if forloop.index <= 4 %}eager{% else %}lazy{% endif %}" {% if forloop.first %}fetchpriority="high"{% endif %} decoding="async" />
             {% else %}
               {%- assign clean_name = m.name | replace: "Dr. ", "" | replace: "Prof. ", "" | replace: "Adj. Prof. ", "" -%}
               {%- assign name_words = clean_name | split: " " -%}

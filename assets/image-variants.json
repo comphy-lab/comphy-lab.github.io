@@ -1,0 +1,760 @@
+{
+  "/assets/images/covers/2024-12-JFM_Vol1001.jpeg": {
+    "width": 1027,
+    "height": 1458,
+    "sources": [
+      {
+        "src": "/assets/images/covers/2024-12-JFM_Vol1001-200.webp",
+        "width": 200
+      },
+      {
+        "src": "/assets/images/covers/2024-12-JFM_Vol1001-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/images/covers/2024-12-JFM_Vol1001-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/assets/images/covers/2024-12-JFM_Vol1001.webp",
+        "width": 1027
+      }
+    ]
+  },
+  "/assets/images/covers/2025-02-JFM_Vol1004.jpeg": {
+    "width": 1027,
+    "height": 1458,
+    "sources": [
+      {
+        "src": "/assets/images/covers/2025-02-JFM_Vol1004-200.webp",
+        "width": 200
+      },
+      {
+        "src": "/assets/images/covers/2025-02-JFM_Vol1004-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/images/covers/2025-02-JFM_Vol1004-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/assets/images/covers/2025-02-JFM_Vol1004.webp",
+        "width": 1027
+      }
+    ]
+  },
+  "/assets/images/covers/2026-03-SoftMatter_Issue11_cover.jpeg": {
+    "width": 1191,
+    "height": 1560,
+    "sources": [
+      {
+        "src": "/assets/images/covers/2026-03-SoftMatter_Issue11_cover-200.webp",
+        "width": 200
+      },
+      {
+        "src": "/assets/images/covers/2026-03-SoftMatter_Issue11_cover-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/images/covers/2026-03-SoftMatter_Issue11_cover-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/assets/images/covers/2026-03-SoftMatter_Issue11_cover.webp",
+        "width": 1191
+      }
+    ]
+  },
+  "/assets/images/news/jmbc-2026-best-video.jpg": {
+    "width": 1280,
+    "height": 960,
+    "sources": [
+      {
+        "src": "/assets/images/news/jmbc-2026-best-video-200.webp",
+        "width": 200
+      },
+      {
+        "src": "/assets/images/news/jmbc-2026-best-video-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/images/news/jmbc-2026-best-video.webp",
+        "width": 800
+      }
+    ]
+  },
+  "/assets/images/news/vatsal-ammodo-2025.jpg": {
+    "width": 1524,
+    "height": 1492,
+    "sources": [
+      {
+        "src": "/assets/images/news/vatsal-ammodo-2025-200.webp",
+        "width": 200
+      },
+      {
+        "src": "/assets/images/news/vatsal-ammodo-2025-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/images/news/vatsal-ammodo-2025.webp",
+        "width": 800
+      }
+    ]
+  },
+  "/assets/images/research/NatComm-jet-drop.png": {
+    "width": 750,
+    "height": 750,
+    "sources": [
+      {
+        "src": "/assets/images/research/NatComm-jet-drop-200.webp",
+        "width": 200
+      },
+      {
+        "src": "/assets/images/research/NatComm-jet-drop-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/images/research/NatComm-jet-drop.webp",
+        "width": 750
+      }
+    ]
+  },
+  "/assets/images/research/S002211202500237X_figAb.png": {
+    "width": 1250,
+    "height": 1041,
+    "sources": [
+      {
+        "src": "/assets/images/research/S002211202500237X_figAb-200.webp",
+        "width": 200
+      },
+      {
+        "src": "/assets/images/research/S002211202500237X_figAb-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/images/research/S002211202500237X_figAb-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/assets/images/research/S002211202500237X_figAb.webp",
+        "width": 960
+      }
+    ]
+  },
+  "/assets/images/research/bouncing-microdrops.png": {
+    "width": 454,
+    "height": 740,
+    "sources": [
+      {
+        "src": "/assets/images/research/bouncing-microdrops-200.webp",
+        "width": 200
+      },
+      {
+        "src": "/assets/images/research/bouncing-microdrops.webp",
+        "width": 454
+      }
+    ]
+  },
+  "/assets/images/research/drop-impact-prl.png": {
+    "width": 1348,
+    "height": 1140,
+    "sources": [
+      {
+        "src": "/assets/images/research/drop-impact-prl-200.webp",
+        "width": 200
+      },
+      {
+        "src": "/assets/images/research/drop-impact-prl-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/images/research/drop-impact-prl-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/assets/images/research/drop-impact-prl.webp",
+        "width": 960
+      }
+    ]
+  },
+  "/assets/images/research/elasticity-bubble-pinch-off-poster.png": {
+    "width": 600,
+    "height": 1450,
+    "sources": [
+      {
+        "src": "/assets/images/research/elasticity-bubble-pinch-off-poster-200.webp",
+        "width": 200
+      },
+      {
+        "src": "/assets/images/research/elasticity-bubble-pinch-off-poster-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/images/research/elasticity-bubble-pinch-off-poster.webp",
+        "width": 600
+      }
+    ]
+  },
+  "/assets/images/research/elasticity-bubble-pinch-off.png": {
+    "width": 1200,
+    "height": 1311,
+    "sources": [
+      {
+        "src": "/assets/images/research/elasticity-bubble-pinch-off-200.webp",
+        "width": 200
+      },
+      {
+        "src": "/assets/images/research/elasticity-bubble-pinch-off-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/images/research/elasticity-bubble-pinch-off-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/assets/images/research/elasticity-bubble-pinch-off.webp",
+        "width": 960
+      }
+    ]
+  },
+  "/assets/images/research/hero-worthington-jets.jpg": {
+    "width": 1280,
+    "height": 720,
+    "sources": [
+      {
+        "src": "/assets/images/research/hero-worthington-jets-200.webp",
+        "width": 200
+      },
+      {
+        "src": "/assets/images/research/hero-worthington-jets-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/images/research/hero-worthington-jets-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/assets/images/research/hero-worthington-jets.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/assets/images/research/holey-sheets.png": {
+    "width": 2098,
+    "height": 1564,
+    "sources": [
+      {
+        "src": "/assets/images/research/holey-sheets-200.webp",
+        "width": 200
+      },
+      {
+        "src": "/assets/images/research/holey-sheets-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/images/research/holey-sheets-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/assets/images/research/holey-sheets.webp",
+        "width": 960
+      }
+    ]
+  },
+  "/assets/images/research/integral-surface-tension.jpg": {
+    "width": 1084,
+    "height": 1085,
+    "sources": [
+      {
+        "src": "/assets/images/research/integral-surface-tension-200.webp",
+        "width": 200
+      },
+      {
+        "src": "/assets/images/research/integral-surface-tension-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/images/research/integral-surface-tension-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/assets/images/research/integral-surface-tension.webp",
+        "width": 960
+      }
+    ]
+  },
+  "/assets/images/research/jumping-bubbles.png": {
+    "width": 1626,
+    "height": 1934,
+    "sources": [
+      {
+        "src": "/assets/images/research/jumping-bubbles-200.webp",
+        "width": 200
+      },
+      {
+        "src": "/assets/images/research/jumping-bubbles-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/images/research/jumping-bubbles-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/assets/images/research/jumping-bubbles.webp",
+        "width": 960
+      }
+    ]
+  },
+  "/assets/images/research/self-similar-worthington-jet-collapse-v2.png": {
+    "width": 743,
+    "height": 759,
+    "sources": [
+      {
+        "src": "/assets/images/research/self-similar-worthington-jet-collapse-v2-200.webp",
+        "width": 200
+      },
+      {
+        "src": "/assets/images/research/self-similar-worthington-jet-collapse-v2-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/images/research/self-similar-worthington-jet-collapse-v2.webp",
+        "width": 743
+      }
+    ]
+  },
+  "/assets/images/research/self-similar-worthington-jet-collapse.png": {
+    "width": 743,
+    "height": 759,
+    "sources": [
+      {
+        "src": "/assets/images/research/self-similar-worthington-jet-collapse-200.webp",
+        "width": 200
+      },
+      {
+        "src": "/assets/images/research/self-similar-worthington-jet-collapse-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/images/research/self-similar-worthington-jet-collapse.webp",
+        "width": 743
+      }
+    ]
+  },
+  "/assets/images/research/singularities-soft-matter-visual-dictionary.png": {
+    "width": 2391,
+    "height": 2090,
+    "sources": [
+      {
+        "src": "/assets/images/research/singularities-soft-matter-visual-dictionary-200.webp",
+        "width": 200
+      },
+      {
+        "src": "/assets/images/research/singularities-soft-matter-visual-dictionary-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/images/research/singularities-soft-matter-visual-dictionary-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/assets/images/research/singularities-soft-matter-visual-dictionary.webp",
+        "width": 960
+      }
+    ]
+  },
+  "/assets/images/research/stood-up-drops.png": {
+    "width": 534,
+    "height": 525,
+    "sources": [
+      {
+        "src": "/assets/images/research/stood-up-drops-200.webp",
+        "width": 200
+      },
+      {
+        "src": "/assets/images/research/stood-up-drops-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/images/research/stood-up-drops.webp",
+        "width": 534
+      }
+    ]
+  },
+  "/assets/images/research/taylor-culick.jpg": {
+    "width": 601,
+    "height": 405,
+    "sources": [
+      {
+        "src": "/assets/images/research/taylor-culick-200.webp",
+        "width": 200
+      },
+      {
+        "src": "/assets/images/research/taylor-culick-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/images/research/taylor-culick.webp",
+        "width": 601
+      }
+    ]
+  },
+  "/assets/images/teaching/basilisk-madrid-banner.jpg": {
+    "width": 1201,
+    "height": 401,
+    "sources": [
+      {
+        "src": "/assets/images/teaching/basilisk-madrid-banner-200.webp",
+        "width": 200
+      },
+      {
+        "src": "/assets/images/teaching/basilisk-madrid-banner-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/images/teaching/basilisk-madrid-banner-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/assets/images/teaching/basilisk-madrid-banner.webp",
+        "width": 1201
+      }
+    ]
+  },
+  "/assets/images/teaching/basilisk-madrid.jpg": {
+    "width": 601,
+    "height": 405,
+    "sources": [
+      {
+        "src": "/assets/images/teaching/basilisk-madrid-200.webp",
+        "width": 200
+      },
+      {
+        "src": "/assets/images/teaching/basilisk-madrid-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/images/teaching/basilisk-madrid.webp",
+        "width": 601
+      }
+    ]
+  },
+  "/assets/images/teaching/courseBanner-dark.jpg": {
+    "width": 2501,
+    "height": 834,
+    "sources": [
+      {
+        "src": "/assets/images/teaching/courseBanner-dark-200.webp",
+        "width": 200
+      },
+      {
+        "src": "/assets/images/teaching/courseBanner-dark-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/images/teaching/courseBanner-dark-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/assets/images/teaching/courseBanner-dark-1200.webp",
+        "width": 1200
+      },
+      {
+        "src": "/assets/images/teaching/courseBanner-dark.webp",
+        "width": 1400
+      }
+    ]
+  },
+  "/assets/images/team/0.jpg": {
+    "width": 1332,
+    "height": 1333,
+    "sources": [
+      {
+        "src": "/assets/images/team/0-200.webp",
+        "width": 200
+      },
+      {
+        "src": "/assets/images/team/0-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/images/team/0.webp",
+        "width": 640
+      }
+    ]
+  },
+  "/assets/images/team/1.jpg": {
+    "width": 400,
+    "height": 400,
+    "sources": [
+      {
+        "src": "/assets/images/team/1-200.webp",
+        "width": 200
+      },
+      {
+        "src": "/assets/images/team/1.webp",
+        "width": 400
+      }
+    ]
+  },
+  "/assets/images/team/2.jpg": {
+    "width": 300,
+    "height": 300,
+    "sources": [
+      {
+        "src": "/assets/images/team/2-200.webp",
+        "width": 200
+      },
+      {
+        "src": "/assets/images/team/2.webp",
+        "width": 300
+      }
+    ]
+  },
+  "/assets/images/team/3.jpg": {
+    "width": 300,
+    "height": 300,
+    "sources": [
+      {
+        "src": "/assets/images/team/3-200.webp",
+        "width": 200
+      },
+      {
+        "src": "/assets/images/team/3.webp",
+        "width": 300
+      }
+    ]
+  },
+  "/assets/images/team/4.jpg": {
+    "width": 400,
+    "height": 400,
+    "sources": [
+      {
+        "src": "/assets/images/team/4-200.webp",
+        "width": 200
+      },
+      {
+        "src": "/assets/images/team/4.webp",
+        "width": 400
+      }
+    ]
+  },
+  "/assets/images/team/5.jpg": {
+    "width": 400,
+    "height": 400,
+    "sources": [
+      {
+        "src": "/assets/images/team/5-200.webp",
+        "width": 200
+      },
+      {
+        "src": "/assets/images/team/5.webp",
+        "width": 400
+      }
+    ]
+  },
+  "/assets/images/team/6.jpg": {
+    "width": 300,
+    "height": 300,
+    "sources": [
+      {
+        "src": "/assets/images/team/6-200.webp",
+        "width": 200
+      },
+      {
+        "src": "/assets/images/team/6.webp",
+        "width": 300
+      }
+    ]
+  },
+  "/assets/images/team/7.png": {
+    "width": 221,
+    "height": 293,
+    "sources": [
+      {
+        "src": "/assets/images/team/7-200.webp",
+        "width": 200
+      },
+      {
+        "src": "/assets/images/team/7.webp",
+        "width": 221
+      }
+    ]
+  },
+  "/assets/images/team/placeholder.jpg": {
+    "width": 400,
+    "height": 400,
+    "sources": [
+      {
+        "src": "/assets/images/team/placeholder-200.webp",
+        "width": 200
+      },
+      {
+        "src": "/assets/images/team/placeholder.webp",
+        "width": 400
+      }
+    ]
+  },
+  "/assets/logos/CoMPhy-Lab-no-name.png": {
+    "width": 1557,
+    "height": 1035,
+    "sources": [
+      {
+        "src": "/assets/logos/CoMPhy-Lab-no-name-200.webp",
+        "width": 200
+      },
+      {
+        "src": "/assets/logos/CoMPhy-Lab-no-name.webp",
+        "width": 320
+      }
+    ]
+  },
+  "/assets/logos/Durham-University-white.png": {
+    "width": 418,
+    "height": 173,
+    "sources": [
+      {
+        "src": "/assets/logos/Durham-University-white-200.webp",
+        "width": 200
+      },
+      {
+        "src": "/assets/logos/Durham-University-white.webp",
+        "width": 418
+      }
+    ]
+  },
+  "/assets/logos/Durham-University.png": {
+    "width": 417,
+    "height": 173,
+    "sources": [
+      {
+        "src": "/assets/logos/Durham-University-200.webp",
+        "width": 200
+      },
+      {
+        "src": "/assets/logos/Durham-University.webp",
+        "width": 417
+      }
+    ]
+  },
+  "/assets/logos/Durham-University_NoText.png": {
+    "width": 197,
+    "height": 222,
+    "sources": [
+      {
+        "src": "/assets/logos/Durham-University_NoText.webp",
+        "width": 197
+      }
+    ]
+  },
+  "/assets/logos/LogoPof_transparent_white.png": {
+    "width": 1772,
+    "height": 1300,
+    "sources": [
+      {
+        "src": "/assets/logos/LogoPof_transparent_white-200.webp",
+        "width": 200
+      },
+      {
+        "src": "/assets/logos/LogoPof_transparent_white.webp",
+        "width": 480
+      }
+    ]
+  },
+  "/assets/logos/Logo_Vatsal_Vector.png": {
+    "width": 1825,
+    "height": 1104,
+    "sources": [
+      {
+        "src": "/assets/logos/Logo_Vatsal_Vector-200.webp",
+        "width": 200
+      },
+      {
+        "src": "/assets/logos/Logo_Vatsal_Vector-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/logos/Logo_Vatsal_Vector.webp",
+        "width": 640
+      }
+    ]
+  },
+  "/assets/logos/Logo_Vatsal_v3_OutLine.png": {
+    "width": 1825,
+    "height": 1104,
+    "sources": [
+      {
+        "src": "/assets/logos/Logo_Vatsal_v3_OutLine-200.webp",
+        "width": 200
+      },
+      {
+        "src": "/assets/logos/Logo_Vatsal_v3_OutLine-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/logos/Logo_Vatsal_v3_OutLine.webp",
+        "width": 640
+      }
+    ]
+  },
+  "/assets/logos/UT_Logo_2400_Sta_White_EN.png": {
+    "width": 1928,
+    "height": 964,
+    "sources": [
+      {
+        "src": "/assets/logos/UT_Logo_2400_Sta_White_EN-200.webp",
+        "width": 200
+      },
+      {
+        "src": "/assets/logos/UT_Logo_2400_Sta_White_EN-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/logos/UT_Logo_2400_Sta_White_EN.webp",
+        "width": 640
+      }
+    ]
+  },
+  "/assets/logos/UT_Logo_2400_White_EN.png": {
+    "width": 7795,
+    "height": 1502,
+    "sources": [
+      {
+        "src": "/assets/logos/UT_Logo_2400_White_EN-200.webp",
+        "width": 200
+      },
+      {
+        "src": "/assets/logos/UT_Logo_2400_White_EN-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/logos/UT_Logo_2400_White_EN.webp",
+        "width": 640
+      }
+    ]
+  },
+  "/assets/logos/bluesky.png": {
+    "width": 32,
+    "height": 32,
+    "sources": [
+      {
+        "src": "/assets/logos/bluesky.webp",
+        "width": 32
+      }
+    ]
+  },
+  "/assets/logos/logoBasilisk_TransparentBackground.png": {
+    "width": 1303,
+    "height": 1164,
+    "sources": [
+      {
+        "src": "/assets/logos/logoBasilisk_TransparentBackground-200.webp",
+        "width": 200
+      },
+      {
+        "src": "/assets/logos/logoBasilisk_TransparentBackground.webp",
+        "width": 480
+      }
+    ]
+  }
+}

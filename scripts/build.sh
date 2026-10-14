@@ -274,6 +274,15 @@ else
     fi
 fi
 
+# Resized WebP siblings. Committed variants are the fallback when Pillow
+# is not installed (CI still serves them).
+if python3 -c "import PIL" >/dev/null 2>&1; then
+    echo "Generating resized WebP image variants..."
+    python3 scripts/optimize-images.py
+else
+    echo "Pillow not available; using committed WebP variants."
+fi
+
 # Build the Jekyll site
 echo "Building Jekyll site..."
 JEKYLL_ENV=production run_bundle exec jekyll build

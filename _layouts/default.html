@@ -16,16 +16,21 @@
     .s-header {
       visibility: visible;
     }
+    #preloader { display: none !important; }
+    .c-footer__partners-logos .logo-dark-only { display: none; }
+    :root[data-theme="dark"] .c-footer__partners-logos .logo-light-only { display: none; }
+    :root[data-theme="dark"] .c-footer__partners-logos .logo-dark-only { display: block; }
   </style>
 
   <!-- Self-hosted CoMPhy brand webfonts: Cormorant italic (hero) ·
        Fraunces (headings) · IBM Plex Sans (body/UI) · IBM Plex Mono -->
   <link rel="stylesheet" href="/assets/fonts/fonts.css">
+  {% if page.url == "/" or page.url == "/news/" %}
+  <link rel="preload" href="/assets/fonts/ibm-plex-sans-normal-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/fraunces-normal-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+  {% endif %}
 
-  <!-- Preload critical resources -->
-  <link rel="preload" href="/assets/js/main.js" as="script">
-  <link rel="preload" href="/assets/css/fontello/css/fontello.css" as="style">
-  <link rel="preload" href="/assets/css/academicons-1.7.0/css/academicons.min.css" as="style">
+  <!-- Icon CSS is deferred in deferred-icons.html. Do not preload it. -->
 
   <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
@@ -53,12 +58,7 @@
       src: local('system-ui');
     }
   </style>
-  <link rel="stylesheet" href="/assets/css/fontello/css/fontello.css">
-  <link rel="stylesheet" href="/assets/css/academicons-1.7.0/css/academicons.min.css">
-  <noscript>
-    <link rel="stylesheet" href="/assets/css/fontello/css/fontello.css">
-    <link rel="stylesheet" href="/assets/css/academicons-1.7.0/css/academicons.min.css">
-  </noscript>
+  {% include deferred-icons.html %}
 
   <!-- Design-system tokens — source of truth. Loaded first so every
        subsequent stylesheet can `var(--c-*)` the new palette. -->
@@ -67,16 +67,18 @@
   <!-- Site styles (legacy) -->
   <link rel="stylesheet" href="/assets/css/vendor.css">
   <link rel="stylesheet" href="/assets/css/styles.css">
-  <link rel="stylesheet" href="/assets/css/shared-news-history.css">
-  <link rel="stylesheet" href="/assets/css/about-layout.css">
+  {% include deferred-stylesheet.html href="/assets/css/shared-news-history.css" %}
+  {% include deferred-stylesheet.html href="/assets/css/about-layout.css" %}
 
   <!-- Bridge layer — loaded AFTER styles.css so its :root wins and
        the legacy --color-* / --font-* variables resolve to the new
        tokens in the cascade. -->
   <link rel="stylesheet" href="/assets/css/bridge.css">
 
-  <!-- Paper-tint footer (replaces the legacy dark-slab footer) -->
-  <link rel="stylesheet" href="/assets/css/footer-v2.css">
+  <!-- Paper-tint footer. Below the fold, so it does not block first paint.
+       The Durham light/dark swap is inlined above so the wrong mark
+       cannot flash while this file loads. -->
+  {% include deferred-stylesheet.html href="/assets/css/footer-v2.css" %}
 
   {% if page.url == "/" %}
   <link rel="stylesheet" href="/assets/css/home.css">
@@ -120,17 +122,9 @@
   }
   </script>
   {% endif %}
-  <link rel="stylesheet" href="/assets/css/command-palette.css">
+  {% include deferred-stylesheet.html href="/assets/css/command-palette.css" %}
 
   {% include site-scripts.html %}
-
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  >
 
 </head>
 <body id="top"{% if page.body_class %} class="{{ page.body_class }}"{% endif %}>

@@ -15,7 +15,47 @@
 
    Fourteen faces, fourteen woff2 files. Not vendored: Source Serif 4
    (Fraunces leads --t-serif) and IBM Plex Sans 700 (no consumer).
+
+   Fraunces Fallback is metric-matched Georgia (size-adjust only).
+   It is used while the woff2 is in flight so headings do not rewrap
+   when Fraunces swaps in. The loaded Fraunces face is unchanged.
 */
+
+@font-face {
+  font-family: "Fraunces Fallback";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Georgia"), local("Liberation Serif"), local("Times New Roman");
+  size-adjust: 113%;
+}
+
+@font-face {
+  font-family: "Fraunces Fallback";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local("Georgia"), local("Liberation Serif"), local("Times New Roman");
+  size-adjust: 113%;
+}
+
+@font-face {
+  font-family: "Fraunces Fallback";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local("Georgia"), local("Liberation Serif"), local("Times New Roman");
+  size-adjust: 113%;
+}
+
+@font-face {
+  font-family: "Fraunces Fallback";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Georgia"), local("Liberation Serif"), local("Times New Roman");
+  size-adjust: 110%;
+}
 
 /* latin-ext */
 @font-face {
