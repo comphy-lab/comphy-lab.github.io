@@ -1075,6 +1075,12 @@ body.home-v2 #featured-wrapper {
   max-width: 58ch;
 }
 
+.closing-cta p a,
+.closing-cta p a:hover {
+  text-decoration-line: underline;
+  text-underline-offset: 0.12em;
+}
+
 @media (max-width: 760px) {
   .closing-cta {
     grid-template-columns: 1fr;

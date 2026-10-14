@@ -51,14 +51,18 @@ description: >-
               {% else %}Update
             {% endcase %}
           </div>
-          <h3 class="news-item__title">{{ n.title }}</h3>
+          <h2 class="news-item__title">{{ n.title }}</h2>
           <p class="news-item__meta">{{ n.meta }}</p>
         </div>
       </div>
 
       <a class="btn-ghost news-item__action" href="{{ n.action_href }}"
-         {% if n.action_href contains "://" %}target="_blank" rel="noopener noreferrer"{% endif %}>
+         {% if n.action_href contains "://" %}target="_blank" rel="noopener noreferrer"{% endif %}
+         {% if n.action_label == "Read more" %}aria-label="Read more about {{ n.title | strip_html | escape }}"{% endif %}>
         {{ n.action_label }}
+        {% if n.action_label == "Read more" %}
+        <span class="visually-hidden"> about {{ n.title | strip_html }}</span>
+        {% endif %}
       </a>
     </article>
     {% endfor %}
@@ -175,6 +179,7 @@ description: >-
     line-height: 1.35;
     color: var(--fg-strong);
     margin: 0 0 var(--s-2);
+    padding-bottom: 0;
     letter-spacing: -0.005em;
     max-width: 58ch;
     font-variation-settings: "opsz" 24;
@@ -188,7 +193,7 @@ description: >-
   }
   .news-page .news-item__meta em { font-family: var(--t-serif); font-variation-settings: "opsz" 14; }
   .news-page .news-item__meta strong { color: var(--c-accent-coral); font-weight: 600; }
-  .news-page .news-item__action { align-self: center; }
+  .news-page .news-item__action { align-self: center; position: relative; }
   .news-page .news-item--paper .news-item__body {
     display: grid; grid-template-columns: 88px 1fr; gap: var(--s-4);
   }

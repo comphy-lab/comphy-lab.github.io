@@ -92,6 +92,6 @@ Our teaching approach emphasizes:
 - **Think before you compute**: Understanding the underlying physics before implementation
 - **Modular code structure**: Building maintainable and extensible computational tools
 - **Numerical methods**: Using the right discretisation for the problem
-- **Open science**: Sharing knowledge and tools with the scientific community. Checkout <a href="https://github.com/comphy-lab"><i class="fa-brands fa-github" style="font-size: 1.5em; color: black; font-style: normal;"></i></a>
+- **Open science**: Sharing knowledge and tools with the scientific community. Checkout <a href="https://github.com/comphy-lab" aria-label="CoMPhy Lab on GitHub"><i class="fa-brands fa-github" style="font-size: 1.5em; color: black; font-style: normal;"></i></a>
 
 If you're interested in hosting a course or workshop with CoMPhy Lab, please [contact us](/join) for collaboration opportunities.

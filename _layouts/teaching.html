@@ -22,6 +22,17 @@ layout: default
     {% assign content_with_lazy = content | replace: '<img', lazy_img %}
     {% capture lazy_iframe %}<div class="video-container"><iframe loading="lazy"{% endcapture %}
     {% assign content_with_video = content_with_lazy | replace: '<iframe', lazy_iframe | replace: '</iframe>', '</iframe></div>' %}
-    {{ content_with_video }}
+    {%- comment -%}
+      Course cards are h3 in the page source. Promote them to h2 so
+      the outline does not skip a level under the page h1. Rewrite
+      only the first closing tag after each course-card title.
+    {%- endcomment -%}
+    {%- assign card_parts = content_with_video | split: '<h3 class="course-card__title">' -%}
+    {%- assign content_headed = card_parts | first -%}
+    {%- for card_part in card_parts offset:1 -%}
+      {%- assign card_closed = card_part | replace_first: '</h3>', '</h2>' -%}
+      {%- assign content_headed = content_headed | append: '<h2 class="course-card__title">' | append: card_closed -%}
+    {%- endfor -%}
+    {{ content_headed }}
   </div>
 </main>
