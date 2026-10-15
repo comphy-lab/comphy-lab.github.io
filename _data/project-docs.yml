@@ -9,6 +9,10 @@
 #      or rely on the page template which sorts by title at build time.
 #   4. Do not list comphy-lab.github.io (this site) or known 404s.
 #
+# Exception: darwin-drift is a page in this repository (darwin-drift/index.html,
+# an owned route in scripts/purge-website-cache.py), not a Pages site; keep
+# GitHub Pages disabled on comphy-lab/darwin-drift so the two cannot collide.
+#
 # Fields:
 #   repo   GitHub repo slug under comphy-lab/ (also the URL path).
 #   title  Human-readable label shown on /projects/.
@@ -27,6 +31,9 @@ items:
     title: CoMPhy Lab logos, links, and QR codes
   - repo: comphy-python101
     title: CoMPhy Python 101
+  - repo: darwin-drift
+    title: Darwin drift past fixed obstacles
+    note: Material-line drift past a sphere, a cylinder and a 25-cylinder patch
   - repo: Drop-Impact
     title: Drop Impact Simulations
   - repo: ElasticPinchOff

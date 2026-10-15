@@ -1,0 +1,422 @@
+---
+layout: default
+title: "Darwin drift past fixed obstacles"
+permalink: /darwin-drift/
+body_class: darwin-drift-page
+description: >-
+  How much fluid does an obstacle carry with it? Material-line drift past a
+  sphere, a circular cylinder and a patch of 25 cylinders in steady viscous
+  flow, compared with the potential-flow and Stokes-flow limits.
+---
+
+<style>
+  .dd {
+    width: min(100% - 2rem, 1040px);
+    margin: 0 auto;
+    padding: var(--s-9) 0 var(--s-8);
+    color: var(--fg-1);
+    font-family: var(--t-sans);
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+  }
+  .dd__head { max-width: 72ch; margin: 0 auto var(--s-8); text-align: center; }
+  .dd__kicker {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: var(--t-eyebrow); font-weight: 600; letter-spacing: var(--t-track-wide);
+    text-transform: uppercase; color: var(--fg-2); margin-bottom: var(--s-4);
+  }
+  .dd__kicker .rule { width: 32px; height: 1px; background: var(--c-border-strong); }
+  .dd__title {
+    font-family: var(--t-serif); font-weight: 600; font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.1; letter-spacing: -0.02em; color: var(--fg-strong); margin: 0 0 var(--s-4);
+    text-wrap: balance;
+  }
+  .dd__lede {
+    font-family: var(--t-serif); font-size: var(--t-body-lg); line-height: 1.55;
+    color: var(--fg-1); margin: 0 auto; max-width: 64ch;
+  }
+  .dd__date { color: var(--fg-2); font-size: var(--t-small); margin-top: var(--s-4); }
+  .dd h2 {
+    font-family: var(--t-serif); font-weight: 600; font-size: clamp(24px, 2.6vw, 32px);
+    color: var(--fg-strong); margin: var(--s-8) 0 var(--s-4); padding-top: var(--s-5);
+    border-top: 1px solid var(--c-border);
+  }
+  .dd h3 { font-family: var(--t-serif); font-weight: 600; font-size: 1.2rem; color: var(--fg-strong); margin: var(--s-6) 0 var(--s-3); }
+  .dd p { margin: 0 0 var(--s-4); max-width: 80ch; }
+  .dd a { color: var(--c-accent-teal); }
+  .dd .m { font-style: italic; font-family: "STIX Two Text", "Cambria Math", Cambria, "Times New Roman", serif; font-weight: 400; }
+  .dd sub, .dd sup { font-size: 0.75em; line-height: 0; position: relative; vertical-align: baseline; }
+  .dd sub { bottom: -0.25em; }
+  .dd sup { top: -0.5em; }
+  .dd figure { margin: var(--s-6) 0; }
+  .dd figure img, .dd video {
+    display: block; width: 100%; height: auto; background: #fff;
+    border: 1px solid var(--c-border); border-radius: var(--r-sm);
+  }
+  .dd figcaption { font-size: var(--t-small); color: var(--fg-2); margin-top: var(--s-2); max-width: 90ch; }
+  .dd__schem-wrap { overflow-x: auto; }
+  .dd__schem { width: 100%; height: auto; display: block; color: var(--fg-1); }
+  .dd__schem text { font-family: var(--t-sans); font-size: 13px; fill: currentColor; }
+  .dd__schem .small { font-size: 11.5px; }
+  .dd__schem .mat { fill: #c0392b; }
+  .dd__schem .ref { fill: #2f6db5; }
+  .dd__summary {
+    background: var(--c-surface-strong); border: 1px solid var(--c-border); border-radius: var(--r-md);
+    padding: var(--s-5) var(--s-6); margin: var(--s-6) 0;
+  }
+  .dd__summary ul { margin: 0; padding-left: 1.2em; }
+  .dd__summary li { margin: var(--s-2) 0; list-style: disc; }
+  .dd__steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--s-3); list-style: none; padding: 0; margin: var(--s-5) 0; }
+  .dd__steps li {
+    background: var(--c-surface-strong); border: 1px solid var(--c-border); border-radius: var(--r-sm);
+    padding: var(--s-3) var(--s-4); font-size: var(--t-small);
+  }
+  .dd__steps .dd__lead { display: block; margin-bottom: var(--s-1); }
+  .dd .dd__lead { font-weight: 600; color: var(--fg-strong); }
+  .dd__table-wrap { overflow-x: auto; margin: var(--s-5) 0; }
+  .dd table { border-collapse: collapse; font-size: var(--t-small); min-width: 100%; }
+  .dd caption { text-align: left; color: var(--fg-2); padding-bottom: var(--s-2); }
+  .dd th, .dd td { padding: 6px 10px; border-bottom: 1px solid var(--c-border); text-align: left; vertical-align: top; }
+  .dd th { color: var(--fg-strong); font-weight: 600; }
+  .dd td.n, .dd th.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .dd__points { list-style: none; padding: 0; margin: var(--s-4) 0; }
+  .dd__points li { margin: var(--s-3) 0; max-width: 85ch; }
+  .dd__tag { font-weight: 600; color: var(--fg-strong); white-space: nowrap; }
+  .dd__tag::before { content: ""; display: inline-block; width: 0.62em; height: 0.62em; margin-right: 0.35em; border-radius: 1px; vertical-align: 0.05em; }
+  .dd__tag--meas::before { background: #2a9d8f; }
+  .dd__tag--interp::before { background: #8e6cc0; }
+  .dd__schem .mat-s { stroke: #c0392b; }
+  .dd__schem .mat-a { fill: #c0392b; }
+  .dd__schem .ref-s { stroke: #2f6db5; }
+  :root[data-theme="dark"] .dd__schem .mat { fill: #f07a6a; }
+  :root[data-theme="dark"] .dd__schem .ref { fill: #8fb8ff; }
+  :root[data-theme="dark"] .dd__schem .mat-s { stroke: #f07a6a; }
+  :root[data-theme="dark"] .dd__schem .mat-a { fill: #f07a6a; }
+  :root[data-theme="dark"] .dd__schem .ref-s { stroke: #8fb8ff; }
+  .dd tbody th { font-weight: 400; color: var(--fg-1); }
+  .dd th.g { text-align: center; border-bottom: 1px solid var(--c-border-strong); }
+  .dd__table-wrap:focus-visible, .dd__schem-wrap:focus-visible { outline: 2px solid var(--c-accent-teal); outline-offset: 2px; }
+  .dd__key { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: var(--t-small); margin: var(--s-3) 0 var(--s-5); }
+  .dd__key span { white-space: nowrap; }
+  .dd__sw { display: inline-block; width: 22px; height: 0; vertical-align: middle; margin-right: 6px; border-top: 3px solid; }
+  .dd__sw--mat { border-color: #c0392b; }
+  .dd__sw--ref { border-color: #2f6db5; border-top-style: dashed; border-top-width: 2px; }
+  .dd__sw--str { border-color: #9aa0a6; border-top-width: 1.5px; }
+  .dd__sw--edd { border-color: #4a6fa5; border-top-width: 1.5px; }
+  .dd__vids { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-5) var(--s-5); }
+  .dd__vids figure { margin: 0; }
+  .dd__limits { padding-left: 1.2em; max-width: 85ch; }
+  .dd__limits li { margin: var(--s-2) 0; list-style: disc; }
+  .dd__refs { font-size: var(--t-small); padding-left: 1.2em; }
+  .dd__refs li { list-style: decimal; }
+  .dd__refs li { margin: var(--s-2) 0; }
+  .dd code { font-family: var(--t-mono); font-size: 0.85em; }
+  @media (max-width: 760px) {
+    .dd__steps, .dd__vids { grid-template-columns: 1fr; }
+    .dd__schem { min-width: 640px; }
+  }
+</style>
+
+<main class="dd">
+  <header class="dd__head">
+    <p class="dd__kicker"><span class="rule" aria-hidden="true"></span><span>CoMPhy Lab · Research snapshot</span><span class="rule" aria-hidden="true"></span></p>
+    <h1 class="dd__title">Darwin drift past fixed obstacles</h1>
+    <p class="dd__lede">How much fluid does an obstacle carry with it? We compute the permanent drift of material lines past a sphere, a circular cylinder and a patch of 25 cylinders in steady viscous flow, and compare it with the classical potential-flow and Stokes-flow limits.</p>
+    <p class="dd__date">Snapshot of results, October 2026. Work in progress; values may be refined.</p>
+  </header>
+
+  <section class="dd__summary" aria-labelledby="dd-summary">
+    <h2 id="dd-summary" style="margin-top:0;border-top:0;padding-top:0">In brief</h2>
+    <ul>
+      <li>In ideal (potential) flow the drift equals the obstacle's added-mass volume: half its own volume for a sphere, and the area of its circular cross-section, <span class="m">πa²</span>, for a cylinder. In viscous flow the drift is far larger. For a marked sheet released 20 radii upstream and observed 20 radii downstream, 2 to 10 radii in half-width, it is 10 to 150 times the obstacle's volume (sphere) or area (cylinder) at Reynolds numbers 1 to 200, against less than one for potential flow.</li>
+      <li>At that plane the viscous drift falls steadily with Reynolds number, and every viscous curve keeps growing the further downstream it is measured. The drift is therefore a map over measurement windows, not a single number.</li>
+      <li>Thirty radii behind a 25-cylinder patch at solid fraction 0.1 (<span class="m">Re<sub>D</sub></span> = 1 and 2), the drift is about 570 to 770 single-cylinder areas, including fluid held in the patch's standing eddies. A random layout and a 5×5 lattice with the same number of cylinders differ by at most about 2%, and by how much depends on how the two layouts are aligned, so no effect of arrangement is resolved yet.</li>
+      <li>The drift measurement reproduces exact potential-flow and Stokes-flow results, and the flow solutions reproduce published drag, wake and instability data.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="dd-question">
+    <h2 id="dd-question">The question</h2>
+    <p>When a body moves through fluid, it carries fluid with it. A sheet of marked fluid that the body passes through is left permanently bent, and the volume between the bent sheet and its starting position is the drift volume <span class="m">Ω<sub>d</sub></span>. For a body moving through unbounded ideal fluid, Darwin (1953) showed that the drift equals the added-mass volume: half the volume for a sphere and the area of its circular cross-section, <span class="m">πa²</span>, for a cylinder. The equality holds only when the path of the body is much longer than the sheet is wide. A sheet released a finite distance from the body gives instead the "partial drift" (Eames, Belcher &amp; Hunt 1994), whose value depends on the ratio of the sheet's width to that distance.</p>
+    <p>Viscous flow changes the picture. In Stokes flow the disturbance decays only as <span class="m">1/r</span>, and the drift of an unbounded sheet is infinite (Eames, Gobby &amp; Dalziel 2003; Chisholm &amp; Khair 2017). At finite Reynolds number the wake carries a volume deficit set by the drag, so the drift keeps growing downstream. We therefore measure the drift in a stated window and report it as <span class="m">Ω<sub>d</sub>/Ω</span>, where <span class="m">Ω</span> is the volume or area of one obstacle.</p>
+
+    <figure>
+      <div class="dd__schem-wrap" tabindex="0" role="region" aria-label="Schematic of the drift measurement">
+      <svg class="dd__schem" viewBox="0 0 760 290" role="img" aria-labelledby="dd-s1t dd-s1d">
+        <title id="dd-s1t">How the drift is measured</title>
+        <desc id="dd-s1d">Uniform flow U passes a fixed body. A material line released at the plane x0 is advected downstream. Near the axis it lags behind its no-body position x0 plus U t, which is taken as the observation plane x_p. The shaded area between them is the drift. Two bounding streamlines, labelled plus and minus h by their upstream offsets, set the aperture.</desc>
+        <defs>
+          <marker id="dd-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker>
+        </defs>
+        <g stroke="currentColor" stroke-width="1.6" marker-end="url(#dd-arr)" opacity="0.75">
+          <line x1="18" y1="105" x2="64" y2="105"/>
+          <line x1="18" y1="150" x2="64" y2="150"/>
+          <line x1="18" y1="195" x2="64" y2="195"/>
+        </g>
+        <text x="34" y="88" style="font-size:15px;font-style:italic">U</text>
+        <path class="mat-a" d="M540,60 C538,96 520,122 430,138 C385,146 350,149 330,150 C350,151 385,154 430,162 C520,178 538,204 540,240 Z" fill-opacity="0.16" stroke="none"/>
+        <g fill="none" stroke="#7d8389" stroke-width="1.6">
+          <path d="M90,60 C220,60 255,47 300,47 C345,47 380,60 610,60"/>
+          <path d="M90,240 C220,240 255,253 300,253 C345,253 380,240 610,240"/>
+        </g>
+        <line x1="90" y1="52" x2="90" y2="248" stroke="currentColor" stroke-width="1.4" opacity="0.7"/>
+        <line class="ref-s" x1="540" y1="52" x2="540" y2="248" stroke-width="2" stroke-dasharray="6 5"/>
+        <circle cx="300" cy="150" r="26" fill="currentColor" fill-opacity="0.8"/>
+        <path class="mat-s" d="M540,60 C538,96 520,122 430,138 C385,146 350,149 330,150 C350,151 385,154 430,162 C520,178 538,204 540,240" fill="none" stroke-width="2.6"/>
+        <text x="90" y="270" text-anchor="middle">x₀: release plane</text>
+        <text x="540" y="40" text-anchor="middle" class="ref">x<tspan dy="3" class="small">p</tspan><tspan dy="-3"> = x₀ + Ut: where the line would be with no body</tspan></text>
+        <text x="618" y="64" class="small">b = +h</text>
+        <text x="618" y="244" class="small">b = −h</text>
+        <text x="360" y="104" class="mat">material line at time t</text>
+        <line class="mat-s" x1="420" y1="110" x2="440" y2="134" stroke-width="1.2"/>
+        <text x="468" y="155" class="mat" style="font-size:16px;font-weight:600">Ω<tspan dy="4" style="font-size:11px">d</tspan></text>
+        <text x="300" y="196" text-anchor="middle" class="small">fixed body</text>
+      </svg>
+      </div>
+      <figcaption>How the drift is measured (schematic, not to scale). In the frame of the fixed body the fluid near the body is slowed, so a line released at <span class="m">x₀</span> lags behind its no-body position <span class="m">x₀ + Ut</span>; the shaded lag is the drift. We compute it as the streamtube-closure drift of Chisholm &amp; Khair (2017), <span class="m">D<sub>st</sub> = V<sub>tube</sub> − QL/U</span>. Here <span class="m">V<sub>tube</sub></span> is the fluid held inside the tube between two bounding streamlines and the planes <span class="m">x₀</span> and <span class="m">x<sub>p</sub></span>, <span class="m">Q</span> is the volume flux through the tube and <span class="m">L = x<sub>p</sub> − x₀</span>, so <span class="m">QL/U</span> is what a uniform stream would hold. Each streamline is labelled <span class="m">b</span> by its position far upstream, and the aperture <span class="m">h</span> is the label of the bounding streamlines: the upstream half-width of the marked sheet for the cylinder and patch, and its upstream radius for the sphere. With <span class="m">x<sub>p</sub> = x₀ + Ut</span>, <span class="m">D<sub>st</sub></span> equals the shaded fluid volume between the line at time <span class="m">t</span> and the plane <span class="m">x<sub>p</sub></span>. Where the line wraps around standing eddies, which it never enters, that volume includes the fluid trapped on their closed streamlines, <span class="m">V<sub>closed</sub></span>, so the flux-weighted delay of the material that passes is <span class="m">D<sub>st</sub> − V<sub>closed</sub></span>. Moving <span class="m">x<sub>p</sub></span> downstream follows the line for longer. Every value is quoted with its window: <span class="m">h</span>, <span class="m">x₀</span> and <span class="m">x<sub>p</sub></span>.</figcaption>
+    </figure>
+
+    <figure>
+      <div class="dd__schem-wrap" tabindex="0" role="region" aria-label="Schematic of the three geometries">
+      <svg class="dd__schem" viewBox="0 0 760 205" role="img" aria-labelledby="dd-s2t dd-s2d">
+        <title id="dd-s2t">The three geometries</title>
+        <desc id="dd-s2d">Left: a sphere in axisymmetric coordinates, Reynolds number 0 to 200. Middle: a single planar cylinder, Reynolds number 1 to 40. Right: a 25-cylinder patch of side 28 radii at solid fraction 0.1, as a five by five lattice and as a random layout, Reynolds number 1 and 2.</desc>
+        <text x="115" y="26" text-anchor="middle" style="font-weight:600">Sphere (axisymmetric)</text>
+        <line x1="22" y1="122" x2="208" y2="122" stroke="currentColor" stroke-width="1.2" stroke-dasharray="10 4 2 4" opacity="0.7"/>
+        <circle cx="115" cy="122" r="34" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
+        <path d="M81,122 A34,34 0 0 1 149,122 Z" fill="currentColor" fill-opacity="0.8"/>
+        <line x1="30" y1="122" x2="30" y2="62" stroke="currentColor" stroke-width="1.2" marker-end="url(#dd-arr)" opacity="0.75"/>
+        <text x="38" y="70" style="font-style:italic">r</text>
+        <text x="200" y="138" text-anchor="end" class="small">axis</text>
+        <text x="115" y="170" text-anchor="middle" class="small">Ω = 4πa³/3 · solved on r ≥ 0</text>
+        <text x="115" y="188" text-anchor="middle" class="small">Re<tspan dy="3" style="font-size:9px">D</tspan><tspan dy="-3"> = 0 (Stokes) to 200</tspan></text>
+        <text x="375" y="26" text-anchor="middle" style="font-weight:600">Cylinder (planar)</text>
+        <circle cx="375" cy="106" r="34" fill="currentColor" fill-opacity="0.8"/>
+        <text x="375" y="170" text-anchor="middle" class="small">Ω = πa² per unit span</text>
+        <text x="375" y="188" text-anchor="middle" class="small">Re<tspan dy="3" style="font-size:9px">D</tspan><tspan dy="-3"> = 1 to 40</tspan></text>
+        <text x="632" y="26" text-anchor="middle" style="font-weight:600">25-cylinder patch, φ = 0.1</text>
+        <rect x="530" y="56" width="84.07" height="84.07" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="4 3" opacity="0.6"/>
+        <rect x="650" y="56" width="84.07" height="84.07" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="4 3" opacity="0.6"/>
+        <g fill="currentColor" fill-opacity="0.8"><circle cx="538.40" cy="131.66" r="3"/><circle cx="538.40" cy="114.85" r="3"/><circle cx="538.40" cy="98.03" r="3"/><circle cx="538.40" cy="81.22" r="3"/><circle cx="538.40" cy="64.41" r="3"/><circle cx="555.22" cy="131.66" r="3"/><circle cx="555.22" cy="114.85" r="3"/><circle cx="555.22" cy="98.03" r="3"/><circle cx="555.22" cy="81.22" r="3"/><circle cx="555.22" cy="64.41" r="3"/><circle cx="572.03" cy="131.66" r="3"/><circle cx="572.03" cy="114.85" r="3"/><circle cx="572.03" cy="98.03" r="3"/><circle cx="572.03" cy="81.22" r="3"/><circle cx="572.03" cy="64.41" r="3"/><circle cx="588.85" cy="131.66" r="3"/><circle cx="588.85" cy="114.85" r="3"/><circle cx="588.85" cy="98.03" r="3"/><circle cx="588.85" cy="81.22" r="3"/><circle cx="588.85" cy="64.41" r="3"/><circle cx="605.66" cy="131.66" r="3"/><circle cx="605.66" cy="114.85" r="3"/><circle cx="605.66" cy="98.03" r="3"/><circle cx="605.66" cy="81.22" r="3"/><circle cx="605.66" cy="64.41" r="3"/></g>
+        <g fill="currentColor" fill-opacity="0.8"><circle cx="663.49" cy="70.91" r="3"/><circle cx="712.63" cy="117.16" r="3"/><circle cx="691.68" cy="101.98" r="3"/><circle cx="703.87" cy="75.49" r="3"/><circle cx="660.32" cy="134.86" r="3"/><circle cx="718.25" cy="103.28" r="3"/><circle cx="712.51" cy="136.91" r="3"/><circle cx="687.77" cy="80.74" r="3"/><circle cx="670.86" cy="63.27" r="3"/><circle cx="723.38" cy="134.68" r="3"/><circle cx="654.99" cy="94.80" r="3"/><circle cx="726.32" cy="107.31" r="3"/><circle cx="669.91" cy="104.12" r="3"/><circle cx="655.26" cy="119.76" r="3"/><circle cx="671.20" cy="119.05" r="3"/><circle cx="675.62" cy="135.39" r="3"/><circle cx="718.39" cy="93.63" r="3"/><circle cx="703.14" cy="122.56" r="3"/><circle cx="730.49" cy="69.93" r="3"/><circle cx="662.44" cy="111.10" r="3"/><circle cx="676.68" cy="91.20" r="3"/><circle cx="692.45" cy="91.09" r="3"/><circle cx="666.50" cy="94.22" r="3"/><circle cx="707.89" cy="84.41" r="3"/><circle cx="682.25" cy="102.80" r="3"/></g>
+        <text x="572" y="156" text-anchor="middle" class="small">5×5 lattice</text>
+        <text x="692" y="156" text-anchor="middle" class="small">random layout</text>
+        <text x="632" y="174" text-anchor="middle" class="small">side L<tspan dy="3" style="font-size:9px">p</tspan><tspan dy="-3"> = 28.0a = 14.0D · Ω = πa² (one cylinder)</tspan></text>
+        <text x="632" y="192" text-anchor="middle" class="small">Re<tspan dy="3" style="font-size:9px">D</tspan><tspan dy="-3"> = 1, 2 (patch Reynolds number 14, 28)</tspan></text>
+      </svg>
+      </div>
+      <figcaption>The three geometries, drawn to scale within each panel; the patch layouts are the computed ones and the dashed square is the nominal patch outline. <span class="m">Ω</span> is always the volume or area of one obstacle, so patch values count in single-cylinder areas. <span class="m">Re<sub>D</sub> = UD/ν</span> uses the obstacle diameter <span class="m">D = 2a</span>, and positions <span class="m">x</span> are measured from the centre of the obstacle or of the nominal patch outline.</figcaption>
+    </figure>
+  </section>
+
+  <section aria-labelledby="dd-method">
+    <h2 id="dd-method">How each result is produced</h2>
+    <ol class="dd__steps" role="list">
+      <li><span class="dd__lead">Steady flow</span>Finite elements with Taylor–Hood (P2/P1) triangles in pyoomph, Newton's method with continuation in Reynolds number. The sphere is axisymmetric; the cylinder and patch are planar.</li>
+      <li><span class="dd__lead">Steadiness</span>Linear stability by shift-and-invert eigenvalue searches around complex shifts, covering the wake-shedding frequencies.</li>
+      <li><span class="dd__lead">Field evaluation</span>Direct evaluation of the quadratic finite-element velocity, with a persistent point locator.</li>
+      <li><span class="dd__lead">Drift</span>Bounding streamlines released by label and traced with an embedded Runge–Kutta scheme; the tube volume follows from contour integrals.</li>
+      <li><span class="dd__lead">Output</span>Drift maps over the observation plane and aperture, and material lines traced through each steady flow.</li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="dd-single">
+    <h2 id="dd-single">Results: sphere and cylinder</h2>
+    <figure>
+      <img src="/assets/images/darwin-drift/sphere-drift.webp" width="1600" height="742" loading="lazy" decoding="async" alt="Sphere drift. Panel a: drift ratio against the observation plane for potential flow, exact Stokes flow and Reynolds numbers 1 to 200, aperture 5a, release at minus 20a. Panel b: drift ratio at x_p equals 20a against Reynolds number for apertures 2a, 5a and 10a, with potential and Stokes references.">
+      <figcaption><span class="dd__lead">Sphere.</span> (a) <span class="m">Ω<sub>d</sub>/Ω</span> against the observation plane <span class="m">x<sub>p</sub></span> for aperture <span class="m">h = 5a</span> and release at <span class="m">x₀ = −20a</span>; dashed, potential flow; dotted, exact Stokes flow. (b) The value at <span class="m">x<sub>p</sub> = 20a</span> against <span class="m">Re<sub>D</sub></span> for three apertures, with the potential (dashed) and Stokes (dotted) values for each aperture. The arrow marked "&lt; 0" in (a) marks a short interval near the rear of the body (<span class="m">x<sub>p</sub> ≈ a</span>) where the potential-flow drift is slightly negative, so it cannot be drawn on the logarithmic axis.</figcaption>
+    </figure>
+    <figure>
+      <img src="/assets/images/darwin-drift/cylinder-drift.webp" width="1600" height="742" loading="lazy" decoding="async" alt="Cylinder drift. Panel a: drift ratio against the observation plane for potential flow and Reynolds numbers 1 to 40, aperture 5a. Panel b: drift ratio at x_p equals 20a against Reynolds number for apertures 2a, 5a and 10a.">
+      <figcaption><span class="dd__lead">Cylinder.</span> Same layout, including the "&lt; 0" arrow in (a). No Stokes solution exists in planar flow (Stokes' paradox), so only the potential-flow references are drawn. The runs at <span class="m">Re<sub>D</sub></span> ≤ 2 and ≥ 5 use lateral domain half-widths of 150a and 100a.</figcaption>
+    </figure>
+
+    <div class="dd__table-wrap" tabindex="0" role="region" aria-labelledby="dd-t1c">
+      <table>
+        <caption id="dd-t1c"><span class="m">Ω<sub>d</sub>/Ω</span> at <span class="m">x<sub>p</sub> = 20a</span> with release at <span class="m">x₀ = −20a</span>, for three apertures.</caption>
+        <colgroup><col></colgroup><colgroup span="3"></colgroup><colgroup span="3"></colgroup>
+        <thead>
+          <tr><th scope="col" rowspan="2">Flow</th><th scope="colgroup" colspan="3" class="g">Sphere</th><th scope="colgroup" colspan="3" class="g">Cylinder</th></tr>
+          <tr><th scope="col" class="n">h = 2a</th><th scope="col" class="n">h = 5a</th><th scope="col" class="n">h = 10a</th><th scope="col" class="n">h = 2a</th><th scope="col" class="n">h = 5a</th><th scope="col" class="n">h = 10a</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Potential (exact)</th><td class="n">0.47</td><td class="n">0.45</td><td class="n">0.34</td><td class="n">0.78</td><td class="n">0.67</td><td class="n">0.40</td></tr>
+          <tr><th scope="row">Stokes, unbounded (exact)</th><td class="n">34.2</td><td class="n">133.4</td><td class="n">349.0</td><td class="n">–</td><td class="n">–</td><td class="n">–</td></tr>
+          <tr><th scope="row"><span class="m">Re<sub>D</sub></span> = 1</th><td class="n">24.9</td><td class="n">79.6</td><td class="n">152.7</td><td class="n">36.2</td><td class="n">57.4</td><td class="n">69.2</td></tr>
+          <tr><th scope="row"><span class="m">Re<sub>D</sub></span> = 2</th><td class="n">–</td><td class="n">–</td><td class="n">–</td><td class="n">30.5</td><td class="n">44.7</td><td class="n">49.6</td></tr>
+          <tr><th scope="row"><span class="m">Re<sub>D</sub></span> = 5</th><td class="n">–</td><td class="n">–</td><td class="n">–</td><td class="n">24.7</td><td class="n">31.3</td><td class="n">30.9</td></tr>
+          <tr><th scope="row"><span class="m">Re<sub>D</sub></span> = 10</th><td class="n">18.3</td><td class="n">35.2</td><td class="n">37.9</td><td class="n">21.7</td><td class="n">24.6</td><td class="n">23.2</td></tr>
+          <tr><th scope="row"><span class="m">Re<sub>D</sub></span> = 20</th><td class="n">–</td><td class="n">–</td><td class="n">–</td><td class="n">19.4</td><td class="n">20.0</td><td class="n">18.4</td></tr>
+          <tr><th scope="row"><span class="m">Re<sub>D</sub></span> = 40</th><td class="n">–</td><td class="n">–</td><td class="n">–</td><td class="n">18.0</td><td class="n">17.5</td><td class="n">15.9</td></tr>
+          <tr><th scope="row"><span class="m">Re<sub>D</sub></span> = 50</th><td class="n">14.0</td><td class="n">16.2</td><td class="n">15.8</td><td class="n">–</td><td class="n">–</td><td class="n">–</td></tr>
+          <tr><th scope="row"><span class="m">Re<sub>D</sub></span> = 100</th><td class="n">12.0</td><td class="n">12.4</td><td class="n">12.0</td><td class="n">–</td><td class="n">–</td><td class="n">–</td></tr>
+          <tr><th scope="row"><span class="m">Re<sub>D</sub></span> = 200</th><td class="n">10.3</td><td class="n">10.3</td><td class="n">9.9</td><td class="n">–</td><td class="n">–</td><td class="n">–</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <ul class="dd__points" role="list">
+      <li><span class="dd__tag dd__tag--meas">Measured</span> At <span class="m">Re<sub>D</sub></span> = 1 to 200, viscous drift is 10–150 obstacle volumes (sphere) or areas (cylinder) in these windows, rising to 34–349 sphere volumes in exact Stokes flow, against 0.3–0.8 for potential flow in the same windows. The potential values lie below Darwin's ½ and 1 because the windows are finite.</li>
+      <li><span class="dd__tag dd__tag--meas">Measured</span> At <span class="m">x<sub>p</sub> = 20a</span> the drift falls steadily with Reynolds number: at <span class="m">h = 5a</span>, from 80 to 10 for the sphere (<span class="m">Re<sub>D</sub></span> 1 to 200) and from 57 to 17 for the cylinder (<span class="m">Re<sub>D</sub></span> 1 to 40). No viscous curve levels off; all are still rising at <span class="m">x<sub>p</sub> = 100a</span>.</li>
+      <li><span class="dd__tag dd__tag--meas">Measured</span> The aperture matters strongly at low Reynolds number and much less at high. For the sphere at <span class="m">Re<sub>D</sub></span> = 1, apertures of 2a, 5a and 10a give 25, 80 and 153; at <span class="m">Re<sub>D</sub></span> = 200 they give 10.3, 10.3 and 9.9.</li>
+      <li><span class="dd__tag dd__tag--interp">Interpretation</span> This fits a drift carried by the wake's volume deficit. The drag sets that deficit, so while the wake lies inside the window the drift grows downstream at a rate proportional to the drag (Chisholm &amp; Khair 2017). At low Reynolds number the disturbance is broad, so a wider sheet collects more lag; at high Reynolds number the deficit sits in a thin wake that even the narrowest window encloses.</li>
+      <li><span class="dd__tag dd__tag--meas">Measured</span> Where the flow recirculates (the sphere from <span class="m">Re<sub>D</sub></span> = 50, the cylinder from 10), the drift includes the fluid held in the standing eddy behind the body, which no material line enters.</li>
+      <li><span class="dd__tag dd__tag--meas">Measured</span> The computed Stokes flow past the sphere (not shown in the figure) gives drift 3.6–16.7% below the exact unbounded solution. On a small verification domain with the exact solution imposed on its boundary, the drift error on the finest mesh falls to about 10<sup>−6</sup> sphere volumes, so the difference reflects the finite computational domain: Stokes flow decays so slowly that the outer boundary matters. At <span class="m">Re<sub>D</sub></span> = 1 the domain effect is estimated at 1–2%.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="dd-patch">
+    <h2 id="dd-patch">Results: 25-cylinder patch</h2>
+    <figure>
+      <img src="/assets/images/darwin-drift/patch-drift.webp" width="1600" height="742" loading="lazy" decoding="async" alt="Patch drift. Panel a: drift ratio against the observation plane for lattice and random layouts at Reynolds numbers 1 and 2, aperture 21a, release at minus 24a. Panel b: drift ratio at x_p equals 44a against the aperture in units of the patch half-width.">
+      <figcaption><span class="dd__lead">Patch.</span> (a) <span class="m">Ω<sub>d</sub>/Ω</span> against <span class="m">x<sub>p</sub></span> for aperture <span class="m">h = 21.0a</span> (1.5 patch half-widths) and release at <span class="m">x₀ = −24.0a</span>, on linear axes. (b) The value at <span class="m">x<sub>p</sub> = 44a</span>, 30a behind the nominal patch outline, against the aperture in units of the patch half-width <span class="m">L<sub>p</sub>/2</span>. <span class="m">Ω</span> is one cylinder, so 700 means 700 single-cylinder areas for the whole patch. The same planes are used for both layouts.</figcaption>
+    </figure>
+    <div class="dd__table-wrap" tabindex="0" role="region" aria-labelledby="dd-t2c">
+      <table>
+        <caption id="dd-t2c">Patch drift <span class="m">Ω<sub>d</sub>/Ω</span> at <span class="m">x<sub>p</sub> = 44a</span>, with the same planes for both layouts, and the difference of the random layout relative to the lattice.</caption>
+        <colgroup><col></colgroup><colgroup span="3"></colgroup><colgroup span="3"></colgroup>
+        <thead>
+          <tr><th scope="col" rowspan="2">Aperture h</th><th scope="colgroup" colspan="3" class="g"><span class="m">Re<sub>D</sub></span> = 1</th><th scope="colgroup" colspan="3" class="g"><span class="m">Re<sub>D</sub></span> = 2</th></tr>
+          <tr><th scope="col" class="n">lattice</th><th scope="col" class="n">random</th><th scope="col" class="n">difference</th><th scope="col" class="n">lattice</th><th scope="col" class="n">random</th><th scope="col" class="n">difference</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">14.0a (<span class="m">L<sub>p</sub>/2</span>)</th><td class="n">770.2</td><td class="n">755.0</td><td class="n">−2.0%</td><td class="n">707.3</td><td class="n">693.9</td><td class="n">−1.9%</td></tr>
+          <tr><th scope="row">21.0a</th><td class="n">753.4</td><td class="n">739.1</td><td class="n">−1.9%</td><td class="n">678.2</td><td class="n">665.9</td><td class="n">−1.8%</td></tr>
+          <tr><th scope="row">28.0a</th><td class="n">722.9</td><td class="n">709.5</td><td class="n">−1.8%</td><td class="n">643.3</td><td class="n">632.1</td><td class="n">−1.7%</td></tr>
+          <tr><th scope="row">42.0a</th><td class="n">653.7</td><td class="n">641.9</td><td class="n">−1.8%</td><td class="n">576.2</td><td class="n">566.6</td><td class="n">−1.7%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul class="dd__points" role="list">
+      <li><span class="dd__tag dd__tag--meas">Measured</span> Thirty radii behind the nominal patch outline, the drift is about 570–770 single-cylinder areas, depending on the window and the Reynolds number. At both Reynolds numbers the value includes fluid held in the patch's standing eddies. At <span class="m">Re<sub>D</sub></span> = 1 the eddies close near <span class="m">x</span> ≈ 30a, upstream of this plane, so all of their fluid is counted; at <span class="m">Re<sub>D</sub></span> = 2 this plane cuts through them. The material that passes the patch lags by less.</li>
+      <li><span class="dd__tag dd__tag--meas">Measured</span> At a fixed plane the drift falls as the window widens. In the videos the outer part of the line runs ahead of its no-body position.</li>
+      <li><span class="dd__tag dd__tag--interp">Interpretation</span> The wide windows include fluid pushed sideways around the patch, which moves faster than the free stream.</li>
+      <li><span class="dd__tag dd__tag--meas">Measured</span> The lateral boundaries of the computational domain lower the patch drift slightly: widening the domain by half raises it by 0.9–2.8% at <span class="m">x<sub>p</sub> = 44a</span>, by the same factor for both layouts. Mesh refinement changes the drift by at most 0.02%.</li>
+      <li><span class="dd__tag dd__tag--meas">Measured</span> With the same planes for both layouts, the random layout drifts 1.7–2.0% less than the lattice at <span class="m">x<sub>p</sub> = 44a</span>. The random layout's cylinders, however, extend 1.6a further downstream than the lattice's, and with each window placed at the same distances from each layout's rear edge the difference falls to 0.1–0.5%.</li>
+      <li><span class="dd__tag dd__tag--interp">Interpretation</span> The difference depends on how the layouts are aligned, and it comes from a single random layout. No effect of arrangement is resolved yet.</li>
+      <li><span class="dd__tag dd__tag--meas">Measured</span> Both patches carry a patch-scale pair of standing eddies. At <span class="m">Re<sub>D</sub></span> = 2 their rear stagnation point lies at <span class="m">x</span> ≈ 54a from the patch centre, about 40a (1.4<span class="m">L<sub>p</sub></span>) behind the patch. The material line stays caught at the front cylinders long after the outer line has passed: little fluid flows through the patch.</li>
+      <li><span class="dd__tag dd__tag--interp">Interpretation</span> At this solid fraction and these Reynolds numbers the patch behaves much like one porous bluff body (compare Nicolle &amp; Eames 2011). Its least-damped linear mode at <span class="m">Re<sub>D</sub></span> = 2 oscillates with a Strouhal number of about 0.115 based on the patch width, close to the value for a single cylinder at the onset of vortex shedding (0.117, table below); that mode is still damped.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="dd-videos">
+    <h2 id="dd-videos">Material lines in the steady flows</h2>
+    <p>Each video holds the flow fixed at its converged steady state and follows a material line released at <span class="m">x₀ = −15a</span> with aperture <span class="m">h = 5a</span> for the sphere and cylinder (the drift figures above use <span class="m">x₀ = −20a</span>), and at <span class="m">x₀ = −24.0a</span> with <span class="m">h = 21.0a</span> for the patch. All six flows are steady (see the steadiness table below).</p>
+    <div class="dd__key" role="group" aria-labelledby="dd-key-lead">
+      <span class="dd__lead" id="dd-key-lead">Key:</span>
+      <span><span class="dd__sw dd__sw--mat" aria-hidden="true"></span>material line</span>
+      <span><span class="dd__sw dd__sw--ref" aria-hidden="true"></span>no-body position, <span class="m">x₀ + Ut</span></span>
+      <span><span class="dd__sw dd__sw--str" aria-hidden="true"></span>streamlines</span>
+      <span><span class="dd__sw dd__sw--edd" aria-hidden="true"></span>recirculating eddies</span>
+    </div>
+    <div class="dd__vids">
+      <figure>
+        <video controls loop muted playsinline preload="metadata" width="1570" height="590" poster="/assets/images/darwin-drift/sphere-Re100-poster.webp" aria-label="Material line advected past a sphere at Reynolds number 100">
+          <source src="/assets/videos/darwin-drift/sphere-Re100.mp4" type="video/mp4">
+        </video>
+        <figcaption><span class="dd__lead">Sphere, <span class="m">Re<sub>D</sub></span> = 100.</span> An attached recirculation bubble; the line drapes into a long tongue along the wake. Axisymmetric, so the meridional plane is mirrored about the axis.</figcaption>
+      </figure>
+      <figure>
+        <video controls loop muted playsinline preload="metadata" width="1570" height="590" poster="/assets/images/darwin-drift/sphere-Re10-poster.webp" aria-label="Material line advected past a sphere at Reynolds number 10">
+          <source src="/assets/videos/darwin-drift/sphere-Re10.mp4" type="video/mp4">
+        </video>
+        <figcaption><span class="dd__lead">Sphere, <span class="m">Re<sub>D</sub></span> = 10.</span> No recirculation (separation begins near <span class="m">Re<sub>D</sub></span> = 20). The lag is broader than at 100 and reaches the edge of the aperture.</figcaption>
+      </figure>
+      <figure>
+        <video controls loop muted playsinline preload="metadata" width="1570" height="590" poster="/assets/images/darwin-drift/cylinder-Re40-poster.webp" aria-label="Material line advected past a circular cylinder at Reynolds number 40">
+          <source src="/assets/videos/darwin-drift/cylinder-Re40.mp4" type="video/mp4">
+        </video>
+        <figcaption><span class="dd__lead">Cylinder, <span class="m">Re<sub>D</sub></span> = 40.</span> Twin standing eddies 2.25D long, below the onset of vortex shedding near <span class="m">Re<sub>D</sub></span> = 47.</figcaption>
+      </figure>
+      <figure>
+        <video controls loop muted playsinline preload="metadata" width="1570" height="590" poster="/assets/images/darwin-drift/cylinder-Re10-poster.webp" aria-label="Material line advected past a circular cylinder at Reynolds number 10">
+          <source src="/assets/videos/darwin-drift/cylinder-Re10.mp4" type="video/mp4">
+        </video>
+        <figcaption><span class="dd__lead">Cylinder, <span class="m">Re<sub>D</sub></span> = 10.</span> Small twin eddies (0.24D long) and a broader lag than at 40.</figcaption>
+      </figure>
+      <figure>
+        <video controls loop muted playsinline preload="metadata" width="1536" height="1074" poster="/assets/images/darwin-drift/patch-random-Re2-poster.webp" aria-label="Material line advected past a random 25-cylinder patch at Reynolds number 2">
+          <source src="/assets/videos/darwin-drift/patch-random-Re2.mp4" type="video/mp4">
+        </video>
+        <figcaption><span class="dd__lead">Random patch, <span class="m">Re<sub>D</sub></span> = 2.</span> The line hangs on the front cylinders while its outer part sweeps around; patch-scale eddies sit behind, drawn as traced closed orbits.</figcaption>
+      </figure>
+      <figure>
+        <video controls loop muted playsinline preload="metadata" width="1536" height="1074" poster="/assets/images/darwin-drift/patch-lattice-Re2-poster.webp" aria-label="Material line advected past a 5 by 5 lattice patch at Reynolds number 2">
+          <source src="/assets/videos/darwin-drift/patch-lattice-Re2.mp4" type="video/mp4">
+        </video>
+        <figcaption><span class="dd__lead">Lattice patch, <span class="m">Re<sub>D</sub></span> = 2.</span> The same picture for the 5×5 lattice, with a more symmetric wake.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section aria-labelledby="dd-trust">
+    <h2 id="dd-trust">Verification and validation</h2>
+    <div class="dd__table-wrap">
+      <table>
+        <caption>Checks against exact solutions and published data.</caption>
+        <thead><tr><th scope="col">Check</th><th scope="col">Result</th><th scope="col">Reference</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Displacement of fluid particles after complete passage, exact potential flow past a cylinder</th><td>agrees with Darwin's closed-form expression to 10<sup>−10</sup></td><td>Darwin (1953)</td></tr>
+          <tr><th scope="row">Streamtube drift, exact Stokes flow past a sphere, window <span class="m">x₀ = −2h</span>, <span class="m">x<sub>p</sub> = 2h</span></th><td>relative error below 10<sup>−9</sup> against independent quadrature; <span class="m">D<sub>st</sub>/a³</span> = 1461.967 (<span class="m">h = 10a</span>) and 389.859 (<span class="m">h = 5a</span>)</td><td>exact Stokes flow; drift definition of Chisholm &amp; Khair (2017)</td></tr>
+          <tr><th scope="row">Computed Stokes sphere on a small domain with exact boundary values, three meshes</th><td>drift error 3.9×10<sup>−4</sup>, 1.2×10<sup>−4</sup>, 1.2×10<sup>−6</sup> Ω</td><td>exact Stokes flow</td></tr>
+          <tr><th scope="row">Sphere drag, <span class="m">Re<sub>D</sub></span> = 100, 200</th><td>within about 0.04% on the reference's truncated domain; 0.14–0.15% lower in the larger production domain</td><td>Tabata &amp; Itakura (1998)</td></tr>
+          <tr><th scope="row">Sphere, onset of separation</th><td>between <span class="m">Re<sub>D</sub></span> = 20 and 20.5</td><td>20.5, Dennis &amp; Walker (1971)</td></tr>
+          <tr><th scope="row">Cylinder drag, <span class="m">Re<sub>D</sub></span> = 10, 40</th><td><span class="m">C<sub>D</sub></span> = 2.790 (−0.18%), 1.509 (−0.01%)</td><td>Sen, Mittal &amp; Biswas (2009); at <span class="m">Re<sub>D</sub></span> = 10, from their fitted correlation</td></tr>
+          <tr><th scope="row">Cylinder wake, <span class="m">Re<sub>D</sub></span> = 40</th><td>length 2.249D, separation angle 53.60°</td><td>Sen, Mittal &amp; Biswas (2009)</td></tr>
+          <tr><th scope="row">Cylinder, onset of vortex shedding</th><td><span class="m">Re<sub>D</sub></span> = 46.71–46.72, Strouhal number 0.1167</td><td>46.7 to 47.4 in Giannetti &amp; Luchini (2007) and Kumar &amp; Mittal (2006)</td></tr>
+          <tr><th scope="row">Patch, mesh convergence</th><td>relative drift change at most 2×10<sup>−4</sup> (0.02%) between the two finest meshes</td><td>three meshes</td></tr>
+          <tr><th scope="row">Patch, lateral domain enlarged by half</th><td>drift +0.9% to +2.8% at <span class="m">x<sub>p</sub> = 44a</span>, the same factor for both layouts</td><td>two domains</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="dd__table-wrap" tabindex="0" role="region" aria-labelledby="dd-t4c">
+      <table>
+        <caption id="dd-t4c">Steadiness: least-damped eigenvalue <span class="m">σ = σ<sub>r</sub> + iω</span> in units of <span class="m">U/D</span>: growth rate <span class="m">σ<sub>r</sub></span> (negative means decay) and angular frequency <span class="m">ω</span>. The Strouhal number is <span class="m">ωD/(2πU)</span> for the cylinder and <span class="m">ωL<sub>p</sub>/(2πU)</span> for the patch.</caption>
+        <thead><tr><th scope="col">State</th><th scope="col" class="n">Growth rate</th><th scope="col" class="n">Angular frequency</th><th scope="col">Verdict</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Cylinder, <span class="m">Re<sub>D</sub></span> = 10</th><td class="n">−0.0396</td><td class="n">0.017</td><td>stable within the searched region</td></tr>
+          <tr><th scope="row">Cylinder, <span class="m">Re<sub>D</sub></span> = 20</th><td class="n">−0.0412</td><td class="n">0.016</td><td>stable within the searched region</td></tr>
+          <tr><th scope="row">Cylinder, <span class="m">Re<sub>D</sub></span> = 40</th><td class="n">−0.0310</td><td class="n">0.720</td><td>stable within the searched region (wake mode)</td></tr>
+          <tr><th scope="row">Patch, random and lattice, <span class="m">Re<sub>D</sub></span> = 1</th><td class="n">−0.0131</td><td class="n">0</td><td>stable within the searched region</td></tr>
+          <tr><th scope="row">Patch, random and lattice, <span class="m">Re<sub>D</sub></span> = 2</th><td class="n">−0.0073, −0.0074</td><td class="n">0.052, 0.051</td><td>stable within the searched region</td></tr>
+          <tr><th scope="row">Sphere, <span class="m">Re<sub>D</sub></span> = 200 (least-stable of the axisymmetric and first non-axisymmetric modes at 100 and 200)</th><td class="n">−0.0374</td><td class="n">0</td><td>stable within the searched region, on reduced domains (not the drift domains)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>For the cylinder and the patch, "stable within the searched region" means a regional eigenvalue search on a coarser mesh followed by confirmation of the leading mode on the production mesh. For the sphere, the search was repeated on two meshes in two computational domains smaller than the one used for the drift. It is a numerical assessment, not a proof that no unstable mode exists elsewhere in the spectrum. The sphere at <span class="m">Re<sub>D</sub></span> ≤ 50 and the cylinder at <span class="m">Re<sub>D</sub></span> ≤ 5 were not assessed; they lie far below the known instabilities of these flows.</p>
+  </section>
+
+  <section aria-labelledby="dd-limits">
+    <h2 id="dd-limits">Limitations of this snapshot</h2>
+    <ul class="dd__limits">
+      <li>Only steady flows are computed, all in finite domains. The domain shifts the drift by about 1–3% for the patch, and by up to 17% for the sphere in Stokes flow, falling to an estimated 1–2% at <span class="m">Re<sub>D</sub></span> = 1. The sensitivity of the single-cylinder drift to the lateral boundaries has not been measured, and the cylinder runs use a lateral half-width of 150a for <span class="m">Re<sub>D</sub></span> ≤ 2 and 100a for <span class="m">Re<sub>D</sub></span> ≥ 5.</li>
+      <li>Where the flow recirculates, the drift includes fluid trapped in standing eddies; this volume has not yet been separated from the drift of the material that passes the obstacles.</li>
+      <li>The arrangement comparison rests on a single random layout and depends on how the layouts are aligned.</li>
+      <li>Stability is assessed within a searched region of the spectrum, not globally. The sphere flows at <span class="m">Re<sub>D</sub></span> = 100 and 200 were tested only on reduced computational domains; <span class="m">Re<sub>D</sub></span> = 200 lies just below the non-axisymmetric instability at <span class="m">Re<sub>D</sub></span> ≈ 210 (Natarajan &amp; Acrivos 1993).</li>
+      <li>The computed onset of cylinder vortex shedding, 46.71, lies at the lower end of published linear-stability values.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="dd-software">
+    <h2 id="dd-software">Methods, software and references</h2>
+    <p>Flows were computed with pyoomph (Diddens &amp; Rocha 2024), built on oomph-lib (Heil &amp; Hazel 2006), using the CoMPhy fork <code>comphy-lab/pyoomph</code> at commit <code>f912ac10</code>, with Taylor–Hood elements (Taylor &amp; Hood 1973), Gmsh meshes (Geuzaine &amp; Remacle 2009) and the Spectra shift-and-invert eigensolver with Pardiso and SuperLU sparse factorisations. The drift measurement and figures were produced with the <code>comphy-lab/darwin-drift</code> solver; the figures at commit <code>c5f8b18</code>.</p>
+    <ol class="dd__refs">
+      <li>Chisholm, N. G. &amp; Khair, A. S. 2017 Drift volume in viscous flows. <em>Phys. Rev. Fluids</em> 2, 064101. <a href="https://doi.org/10.1103/PhysRevFluids.2.064101">doi:10.1103/PhysRevFluids.2.064101</a></li>
+      <li>Darwin, C. 1953 Note on hydrodynamics. <em>Proc. Camb. Phil. Soc.</em> 49, 342–354. <a href="https://doi.org/10.1017/S0305004100028449">doi:10.1017/S0305004100028449</a></li>
+      <li>Dennis, S. C. R. &amp; Walker, J. D. A. 1971 Calculation of the steady flow past a sphere at low and moderate Reynolds numbers. <em>J. Fluid Mech.</em> 48, 771–789. <a href="https://doi.org/10.1017/S0022112071001848">doi:10.1017/S0022112071001848</a></li>
+      <li>Diddens, C. &amp; Rocha, D. 2024 Bifurcation tracking on moving meshes and with consideration of azimuthal symmetry breaking instabilities. <em>J. Comput. Phys.</em> 518, 113306. <a href="https://doi.org/10.1016/j.jcp.2024.113306">doi:10.1016/j.jcp.2024.113306</a></li>
+      <li>Eames, I., Belcher, S. E. &amp; Hunt, J. C. R. 1994 Drift, partial drift and Darwin's proposition. <em>J. Fluid Mech.</em> 275, 201–223. <a href="https://doi.org/10.1017/S0022112094002338">doi:10.1017/S0022112094002338</a></li>
+      <li>Eames, I., Gobby, D. &amp; Dalziel, S. B. 2003 Fluid displacement by Stokes flow past a spherical droplet. <em>J. Fluid Mech.</em> 485, 67–85. <a href="https://doi.org/10.1017/S0022112003004361">doi:10.1017/S0022112003004361</a></li>
+      <li>Geuzaine, C. &amp; Remacle, J.-F. 2009 Gmsh: a 3-D finite element mesh generator with built-in pre- and post-processing facilities. <em>Int. J. Numer. Meth. Engng</em> 79, 1309–1331. <a href="https://doi.org/10.1002/nme.2579">doi:10.1002/nme.2579</a></li>
+      <li>Giannetti, F. &amp; Luchini, P. 2007 Structural sensitivity of the first instability of the cylinder wake. <em>J. Fluid Mech.</em> 581, 167–197. <a href="https://doi.org/10.1017/S0022112007005654">doi:10.1017/S0022112007005654</a></li>
+      <li>Heil, M. &amp; Hazel, A. L. 2006 oomph-lib — an object-oriented multi-physics finite-element library. In <em>Fluid-Structure Interaction</em>, Lecture Notes in Computational Science and Engineering 53, 19–49. Springer. <a href="https://doi.org/10.1007/3-540-34596-5_2">doi:10.1007/3-540-34596-5_2</a></li>
+      <li>Kumar, B. &amp; Mittal, S. 2006 Effect of blockage on critical parameters for flow past a circular cylinder. <em>Int. J. Numer. Meth. Fluids</em> 50, 987–1001. <a href="https://doi.org/10.1002/fld.1098">doi:10.1002/fld.1098</a></li>
+      <li>Natarajan, R. &amp; Acrivos, A. 1993 The instability of the steady flow past spheres and disks. <em>J. Fluid Mech.</em> 254, 323–344. <a href="https://doi.org/10.1017/S0022112093002150">doi:10.1017/S0022112093002150</a></li>
+      <li>Nicolle, A. &amp; Eames, I. 2011 Numerical study of flow through and around a circular array of cylinders. <em>J. Fluid Mech.</em> 679, 1–31. <a href="https://doi.org/10.1017/jfm.2011.77">doi:10.1017/jfm.2011.77</a></li>
+      <li>Sen, S., Mittal, S. &amp; Biswas, G. 2009 Steady separated flow past a circular cylinder at low Reynolds numbers. <em>J. Fluid Mech.</em> 620, 89–119. <a href="https://doi.org/10.1017/S0022112008004904">doi:10.1017/S0022112008004904</a></li>
+      <li>Tabata, M. &amp; Itakura, K. 1998 A precise computation of drag coefficients of a sphere. <em>Int. J. Comput. Fluid Dyn.</em> 9, 303–311. <a href="https://doi.org/10.1080/10618569808940861">doi:10.1080/10618569808940861</a></li>
+      <li>Taylor, C. &amp; Hood, P. 1973 A numerical solution of the Navier–Stokes equations using the finite element technique. <em>Comput. Fluids</em> 1, 73–100. <a href="https://doi.org/10.1016/0045-7930(73)90027-3">doi:10.1016/0045-7930(73)90027-3</a></li>
+    </ol>
+  </section>
+</main>
