@@ -19,6 +19,7 @@ const templates = [
   "about-legacy.html",
   "about.html",
   "contact.html",
+  "darwin-drift/index.html",
   "index.html",
   "news/index.md",
   "scripts/generate_filtered_research.rb",
