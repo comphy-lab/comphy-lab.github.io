@@ -10,10 +10,16 @@ description: >-
 ---
 
 <style>
+  /* One opaque reading sheet over the site's background grid, from the same tokens in both themes. */
   .dd {
-    width: min(100% - 2rem, 1040px);
-    margin: 0 auto;
-    padding: var(--s-9) 0 var(--s-8);
+    box-sizing: border-box;
+    width: min(100% - 2rem, 1120px);
+    margin: var(--s-7) auto var(--s-8);
+    padding: var(--s-8) clamp(var(--s-4), 5vw, var(--s-7)) var(--s-7);
+    background: var(--c-surface-strong);
+    border: 1px solid var(--c-border);
+    border-radius: var(--r-lg);
+    box-shadow: var(--shadow-soft);
     color: var(--fg-1);
     font-family: var(--t-sans);
     line-height: 1.6;
@@ -62,14 +68,14 @@ description: >-
   .dd__schem .mat { fill: #c0392b; }
   .dd__schem .ref { fill: #2f6db5; }
   .dd__summary {
-    background: var(--c-surface-strong); border: 1px solid var(--c-border); border-radius: var(--r-md);
+    background: var(--c-paper); border: 1px solid var(--c-border); border-radius: var(--r-md);
     padding: var(--s-5) var(--s-6); margin: var(--s-6) 0;
   }
   .dd__summary ul { margin: 0; padding-left: 1.2em; }
   .dd__summary li { margin: var(--s-2) 0; list-style: disc; }
   .dd__steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--s-3); list-style: none; padding: 0; margin: var(--s-5) 0; }
   .dd__steps li {
-    background: var(--c-surface-strong); border: 1px solid var(--c-border); border-radius: var(--r-sm);
+    background: var(--c-paper); border: 1px solid var(--c-border); border-radius: var(--r-sm);
     padding: var(--s-3) var(--s-4); font-size: var(--t-small);
   }
   .dd__steps .dd__lead { display: block; margin-bottom: var(--s-1); }
@@ -113,6 +119,7 @@ description: >-
   .dd__refs li { margin: var(--s-2) 0; }
   .dd code { font-family: var(--t-mono); font-size: 0.85em; }
   @media (max-width: 760px) {
+    .dd { width: calc(100% - 1rem); margin-top: var(--s-5); border-radius: var(--r-md); }
     .dd__steps, .dd__vids { grid-template-columns: 1fr; }
     .dd__schem { min-width: 640px; }
   }
