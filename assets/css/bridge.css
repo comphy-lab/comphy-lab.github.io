@@ -30,7 +30,7 @@
   --color-link-hover: var(--c-accent-teal-hover);
 
   /* Accents re-aliased to new tokens */
-  --color-strong: var(--c-accent-coral);
+  --color-strong: var(--c-accent-coral-text);
   --color-blue-bright: var(--c-accent-violet);
   --color-blue-darker: var(--hero-grad-4);
   --color-red-bright: var(--c-accent-red);
@@ -184,7 +184,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .chip--coral {
   background: color-mix(in srgb, var(--c-accent-coral) 10%, transparent);
-  color: var(--c-accent-coral);
+  color: #b03c00;
   border-color: color-mix(in srgb, var(--c-accent-coral) 22%, transparent);
 }
 
