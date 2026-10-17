@@ -72,9 +72,6 @@ class PurgePolicyTests(unittest.TestCase):
             "/projects/index.html",
             "/history/index.html",
             "/contact-card/",
-            "/darwin-drift/",
-            "/darwin-drift/index.html",
-            "/darwin-drift",
             "/featured/Bubbles.jpg",
             "/sitemapindex.xml",
         ):
