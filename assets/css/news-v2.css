@@ -27,7 +27,7 @@
   color: var(--fg-2);
 }
 
-.news-page__kicker .rule {
+.news-page__rule {
   width: var(--s-6);
   height: 0;
   border-top: 1px solid var(--c-border-strong);

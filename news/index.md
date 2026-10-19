@@ -13,9 +13,9 @@ description: >-
 <main class="news-page">
   <header class="news-page__head">
     <p class="news-page__kicker">
-      <span class="rule" aria-hidden="true"></span>
+      <span class="news-page__rule" aria-hidden="true"></span>
       <span>CoMPhy Lab · News archive</span>
-      <span class="rule" aria-hidden="true"></span>
+      <span class="news-page__rule" aria-hidden="true"></span>
     </p>
     <h1 class="news-page__title">News &amp; announcements</h1>
     <p class="news-page__lede">Papers, talks, arrivals, and awards.</p>

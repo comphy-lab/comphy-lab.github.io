@@ -112,9 +112,7 @@ body.home-v2 #featured-wrapper {
   font-size: clamp(36px, 4.4vw, 56px);
   line-height: 1;
   letter-spacing: -0.015em;
-  color: var(
-    --hero-grad-2
-  ); /* solid fallback; clip+fill applied only when supported */
+  color: var(--hero-grad-2); /* solid fallback before the clip */
   margin: 0 0 var(--s-3);
   display: inline-block;
 }

@@ -282,9 +282,10 @@ h6 {
 
 .news-row {
   display: grid;
-  grid-template-columns: var(--s-9) minmax(0, 1fr) auto;
-  gap: var(--s-5);
-  align-items: start;
+  grid-template-columns: auto auto minmax(0, 1fr);
+  column-gap: var(--s-4);
+  row-gap: var(--s-3);
+  align-items: center;
   padding: var(--s-5) 0;
   border-bottom: 1px solid var(--c-border);
 }
@@ -323,11 +324,7 @@ h6 {
 }
 
 .news-row__body {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: var(--s-4);
-  align-items: start;
-  min-width: 0;
+  display: contents;
 }
 
 .news-row__copy {
@@ -398,8 +395,14 @@ h6 {
   color: var(--c-accent-coral-text);
 }
 
+.news-row__copy,
 .news-row__action {
-  align-self: center;
+  grid-column: 1 / -1;
+  align-self: start;
+}
+
+.news-row__action {
+  justify-self: start;
 }
 
 .news-row__thumb {
@@ -557,28 +560,29 @@ h6 {
   }
 }
 
-/* Date and thumbnail sit above the copy. The action follows the
-   copy in normal flow, so it does not hang under a short media
-   column while the title wraps. */
-@media (max-width: 760px) {
+/* Wider viewports keep the date, media, and action in one row. */
+@media (min-width: 761px) {
   .news-row {
-    grid-template-columns: auto auto minmax(0, 1fr);
-    column-gap: var(--s-4);
-    row-gap: var(--s-3);
-    align-items: center;
+    grid-template-columns: var(--s-9) minmax(0, 1fr) auto;
+    gap: var(--s-5);
+    align-items: start;
   }
 
   .news-row__body {
-    display: contents;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: var(--s-4);
+    align-items: start;
+    min-width: 0;
   }
 
   .news-row__copy,
   .news-row__action {
-    grid-column: 1 / -1;
-    align-self: start;
+    grid-column: auto;
   }
 
   .news-row__action {
-    justify-self: start;
+    align-self: center;
+    justify-self: auto;
   }
 }
