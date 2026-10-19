@@ -83,6 +83,9 @@
   {% if page.url == "/" %}
   <link rel="stylesheet" href="/assets/css/home.css">
   {% endif %}
+  {% if page.body_class contains "news-v2" %}
+  <link rel="stylesheet" href="/assets/css/news-v2.css">
+  {% endif %}
   {% if page.layout == "research" or page.body_class contains "research-v2" %}
   <link rel="stylesheet" href="/assets/css/research-v2.css">
   {% endif %}
