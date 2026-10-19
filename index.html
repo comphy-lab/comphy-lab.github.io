@@ -171,22 +171,22 @@ description: >-
       {% for n in sorted_news limit:5 %}
       {% assign d = n.date | date: "%-d" %}
       {% assign mo = n.date | date: "%b %y" %}
-      <article class="news-item news-item--{{ n.kind }}" data-kind="{{ n.kind }}">
-        <div class="news-item__date">
-          <span class="news-item__day">{{ d }}</span>
-          <span class="news-item__mo">{{ mo }}</span>
+      <article class="news-row news-row--{{ n.kind }}" data-kind="{{ n.kind }}">
+        <div class="news-row__date">
+          <span class="news-row__day">{{ d }}</span>
+          <span class="news-row__mo">{{ mo }}</span>
         </div>
 
-        <div class="news-item__body">
+        <div class="news-row__body">
           {% if n.kind == "paper" %}
-          <div class="news-item__thumb">
+          <div class="news-row__thumb">
             {% if n.thumb %}<img src="{{ n.thumb }}" alt="" loading="lazy" decoding="async" data-image-state="hide-on-error" />{% endif %}
           </div>
           {% else %}
-          <div class="news-item__avatar">{{ n.avatar | default: "·" }}</div>
+          <div class="news-row__avatar">{{ n.avatar | default: "·" }}</div>
           {% endif %}
-          <div>
-            <div class="news-item__kicker">
+          <div class="news-row__copy">
+            <div class="news-row__kicker">
               <span class="swatch" aria-hidden="true"></span>
               {% case n.kind %}
                 {% when "paper" %}Paper
@@ -196,12 +196,12 @@ description: >-
                 {% when "award" %}Award
               {% endcase %}
             </div>
-            <h3 class="news-item__title">{{ n.title }}</h3>
-            <p class="news-item__meta">{{ n.meta }}</p>
+            <h3 class="news-row__title">{{ n.title }}</h3>
+            <p class="news-row__meta">{{ n.meta }}</p>
           </div>
         </div>
 
-        <a class="btn-ghost news-item__action" href="{{ n.action_href }}"
+        <a class="btn-ghost news-row__action" href="{{ n.action_href }}"
            {% if n.action_href contains "://" %}target="_blank" rel="noopener noreferrer"{% endif %}>
           {{ n.action_label }}
         </a>

@@ -1,0 +1,57 @@
+/* News archive chrome. Rows come from bridge.css .news-row. */
+
+.news-page {
+  position: relative;
+  z-index: 1;
+  width: min(100% - var(--s-6), var(--maxw-page));
+  margin: 0 auto;
+  padding: var(--s-9) 0 var(--s-8);
+}
+
+.news-page__head {
+  max-width: var(--maxw-read);
+  margin: 0 auto var(--s-8);
+  text-align: center;
+}
+
+.news-page__kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-3);
+  margin-bottom: var(--s-4);
+  font-family: var(--t-sans);
+  font-size: var(--t-eyebrow);
+  font-weight: var(--t-weight-semi);
+  letter-spacing: var(--t-track-wide);
+  text-transform: uppercase;
+  color: var(--fg-2);
+}
+
+.news-page__rule {
+  width: var(--s-6);
+  height: 0;
+  border-top: 1px solid var(--c-border-strong);
+}
+
+.news-page__title {
+  margin: 0 0 var(--s-4);
+  font-family: var(--t-serif);
+  font-size: var(--t-h1);
+  font-weight: var(--t-weight-semi);
+  line-height: 1.1;
+  letter-spacing: var(--t-track-tight);
+  color: var(--fg-strong);
+  text-wrap: balance;
+  font-variation-settings: "opsz" 96;
+}
+
+.news-page__lede {
+  max-width: 60ch;
+  margin: 0 auto;
+  font-family: var(--t-serif);
+  font-size: var(--t-body-lg);
+  font-weight: var(--t-weight-reg);
+  line-height: 1.55;
+  color: var(--fg-1);
+  font-variation-settings: "opsz" 18;
+}
