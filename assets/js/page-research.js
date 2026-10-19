@@ -76,7 +76,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  var contentTags = researchContent.querySelectorAll(".tags span");
+  var contentTags = researchContent.querySelectorAll(
+    ".tags button, .tags span"
+  );
   var themeTags = document.querySelectorAll(".r-theme__tag[data-filter-tag]");
   var tagControls = Array.from(contentTags).concat(Array.from(themeTags));
   var papers = researchContent.querySelectorAll(".paper-container");
@@ -86,9 +88,16 @@ document.addEventListener("DOMContentLoaded", function () {
     return control.getAttribute("data-filter-tag") || control.textContent;
   }
 
+  function setPressed(control, pressed) {
+    control.classList.toggle("active", pressed);
+    if (control.tagName === "BUTTON") {
+      control.setAttribute("aria-pressed", pressed ? "true" : "false");
+    }
+  }
+
   function setActive(tagText) {
     tagControls.forEach(function (control) {
-      control.classList.toggle("active", getTagText(control) === tagText);
+      setPressed(control, getTagText(control) === tagText);
     });
   }
 
@@ -103,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
     options = options || {};
     activeTag = null;
     tagControls.forEach(function (control) {
-      control.classList.remove("active");
+      setPressed(control, false);
     });
     papers.forEach(function (paper) {
       paper.classList.remove("hidden");
@@ -119,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
       var tags = paper.querySelector(".tags");
       var match =
         tags &&
-        Array.from(tags.querySelectorAll("span")).some(function (tag) {
+        Array.from(tags.querySelectorAll("button, span")).some(function (tag) {
           return tag.textContent === tagText;
         });
       paper.classList.toggle("hidden", !match);
@@ -137,16 +146,20 @@ document.addEventListener("DOMContentLoaded", function () {
     control.addEventListener("click", function () {
       activateTag(control);
     });
-    if (control.tagName !== "BUTTON") {
-      control.setAttribute("role", "button");
-      control.setAttribute("tabindex", "0");
-      control.addEventListener("keydown", function (event) {
-        if (event.key === "Enter" || event.key === " ") {
-          event.preventDefault();
-          activateTag(control);
-        }
-      });
+    if (control.tagName === "BUTTON") {
+      if (!control.hasAttribute("aria-pressed")) {
+        control.setAttribute("aria-pressed", "false");
+      }
+      return;
     }
+    control.setAttribute("role", "button");
+    control.setAttribute("tabindex", "0");
+    control.addEventListener("keydown", function (event) {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        activateTag(control);
+      }
+    });
   }
 
   tagControls.forEach(bindTagControl);

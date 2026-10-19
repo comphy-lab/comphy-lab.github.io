@@ -80,7 +80,7 @@ content.
 ### Research tag filtering
 
 - Client-side JS filtering plus pre-generated tag pages for SEO.
-- Tags must use `<div class="tags"><span>TagName</span></div>` in
+- Tags must use `<div class="tags"><button type="button">TagName</button></div>` in
   `_research/index.md`.
 
 ### Redirect pages
@@ -133,7 +133,7 @@ Add to `_research/index.md` in this exact form:
 ```markdown
 <h3 id="NUMBER">[NUMBER] Author1, A., **Author2, B.**, & Author3, C. Title. _Journal_, Volume, Pages (Year).</h3>
 
-<div class="tags"><span>Tag1</span><span>Tag2</span><span>Featured</span></div>
+<div class="tags"><button type="button" aria-pressed="false">Tag1</button><button type="button" aria-pressed="false">Tag2</button><button type="button" aria-pressed="false">Featured</button></div>
 
 [![Badge](https://img.shields.io/static/v1.svg?style=flat-square&label=LABEL&message=MESSAGE&color=COLOR)](URL)
 ```
