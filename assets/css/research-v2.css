@@ -509,12 +509,12 @@
    flow horizontally and wrap. The `_research/index.md` sort-by-topic
    block uses one `.tags` div per tag; inline-flex lets them queue up
    on a single line instead of stacking. Per-paper `.tags` rows still
-   look right because each contains its own spans in one div. */
+   look right because each contains its own buttons in one div. */
 .research-content .tags {
   display: inline-flex;
   flex-wrap: wrap;
-  gap: 6px;
-  margin: 0 6px 6px 0;
+  gap: var(--s-2);
+  margin: 0 var(--s-2) var(--s-2) 0;
   vertical-align: top;
 }
 
@@ -533,30 +533,48 @@
   margin: var(--s-2) 0 var(--s-3);
 }
 
+.research-content .tags button,
 .research-content .tags span {
+  appearance: none;
   display: inline-flex;
   align-items: center;
-  padding: 4px 10px;
-  background: color-mix(in srgb, var(--c-brand-purple) 10%, transparent);
-  color: var(--c-brand-purple);
-  border: 1px solid color-mix(in srgb, var(--c-brand-purple) 22%, transparent);
+  margin: 0;
+  padding: var(--s-1) var(--s-3);
+  background: color-mix(in srgb, var(--c-accent-teal) 10%, transparent);
+  color: var(--c-accent-teal);
+  border: 1px solid color-mix(in srgb, var(--c-accent-teal) 22%, transparent);
   border-radius: var(--r-pill);
   font-family: var(--t-sans);
-  font-weight: 500;
-  font-size: 12px;
-  letter-spacing: 0.02em;
+  font-weight: var(--t-weight-med);
+  font-size: var(--t-eyebrow);
+  line-height: 1.6;
+  white-space: nowrap;
   cursor: pointer;
-  transition: background var(--dur-fast) var(--ease);
+  transition:
+    background var(--dur-fast) var(--ease),
+    color var(--dur-fast) var(--ease),
+    border-color var(--dur-fast) var(--ease);
 }
 
+.research-content .tags button:hover,
 .research-content .tags span:hover {
   background: color-mix(in srgb, var(--c-accent-teal) 15%, transparent);
   color: var(--c-accent-teal);
   border-color: var(--c-accent-teal);
 }
 
-[data-theme="dark"] .research-content .tags span {
-  color: #d99adc;
+.research-content .tags button:focus-visible,
+.research-content .tags span:focus-visible {
+  outline: var(--s-1) solid var(--c-accent-teal);
+  outline-offset: var(--s-1);
+}
+
+.research-content .tags button[aria-pressed="true"],
+.research-content .tags button.active,
+.research-content .tags span.active {
+  background: var(--c-accent-teal);
+  color: var(--c-accent-teal-fg);
+  border-color: var(--c-accent-teal);
 }
 
 /* Shield badges inline. Long DOI badges are wider than a 390 px

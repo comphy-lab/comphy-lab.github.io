@@ -102,11 +102,11 @@ describe("command palette action workflows", () => {
       "beforeend",
       `
         <div class="research-content">
-          <h3 id="24">Paper A</h3><div class="tags"><span>Elastic</span></div>
-          <h3 id="23">Paper B</h3><div class="tags"><span>Newtonian</span><span>Elastic</span></div>
-          <h3 id="22">Paper C</h3><div class="tags"><span>Capillary</span></div>
-          <h3 id="21">Paper D</h3><div class="tags"><span>Inertial</span></div>
-          <h3 id="20">Paper E</h3><div class="tags"><span>Viscous</span></div>
+          <h3 id="24">Paper A</h3><div class="tags"><button type="button">Elastic</button></div>
+          <h3 id="23">Paper B</h3><div class="tags"><button type="button">Newtonian</button><button type="button">Elastic</button></div>
+          <h3 id="22">Paper C</h3><div class="tags"><button type="button">Capillary</button></div>
+          <h3 id="21">Paper D</h3><div class="tags"><button type="button">Inertial</button></div>
+          <h3 id="20">Paper E</h3><div class="tags"><button type="button">Viscous</button></div>
         </div>`
     );
     require("../assets/js/page-research.js");
@@ -137,7 +137,7 @@ describe("command palette action workflows", () => {
       "beforeend",
       `
       <div class="tags">${["A", "B", "C", "D", "E"]
-        .map((tag) => `<span>${tag}</span>`)
+        .map((tag) => `<button type="button">${tag}</button>`)
         .join("")}</div>`
     );
     initPage("/research/");

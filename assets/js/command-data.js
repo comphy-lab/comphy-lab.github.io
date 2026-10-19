@@ -540,7 +540,9 @@
               window.matchMedia("(prefers-color-scheme: dark)").matches;
 
             // Collect all unique tags from the page
-            const tagElements = document.querySelectorAll(".tags span");
+            const tagElements = document.querySelectorAll(
+              ".tags button, .tags span"
+            );
             const tags = new Set();
             tagElements.forEach((tag) => {
               tags.add(tag.textContent);
@@ -656,7 +658,7 @@
                 // Find the actual tag in the document and simulate a click on it
                 const tagText = btn.textContent;
                 const matchingTag = Array.from(
-                  document.querySelectorAll(".tags span")
+                  document.querySelectorAll(".tags button, .tags span")
                 ).find((tag) => tag.textContent === tagText);
 
                 if (matchingTag) {

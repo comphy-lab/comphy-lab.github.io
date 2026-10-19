@@ -11,9 +11,9 @@ describe("research tag filtering user paths", () => {
       <button class="r-theme__tag" data-filter-tag="Viscoelastic">Elasticity</button>
       <div class="research-content">
         <h2>Published work</h2>
-        <h3 id="24">Paper A</h3><div class="tags"><span>Viscoelastic</span></div>
+        <h3 id="24">Paper A</h3><div class="tags"><button type="button" aria-pressed="false">Viscoelastic</button></div>
         <p>Elastic material</p>
-        <h3 id="23">Paper B</h3><div class="tags"><span>Newtonian</span></div>
+        <h3 id="23">Paper B</h3><div class="tags"><button type="button" aria-pressed="false">Newtonian</button></div>
         <h2 id="methods">Methods</h2><p>Methods text</p>
       </div>`;
     require("../assets/js/page-research.js");
@@ -64,15 +64,21 @@ describe("research tag filtering user paths", () => {
 
   test("published paper tags filter and a second activation clears", () => {
     load();
-    const tag = document.querySelector(".tags span");
+    const tag = document.querySelector(".tags button");
+    expect(tag.tagName).toBe("BUTTON");
     expect(visiblePapers()).toEqual(["24", "23"]);
     tag.click();
     expect(visiblePapers()).toEqual(["24"]);
     expect(window.location.search).toBe("?tag=Viscoelastic");
+    expect(tag.getAttribute("aria-pressed")).toBe("true");
+    expect(
+      document.querySelector(".r-theme__tag").getAttribute("aria-pressed")
+    ).toBe("true");
     expect(document.querySelector(".r-theme__tag").classList).toContain(
       "active"
     );
     tag.click();
+    expect(tag.getAttribute("aria-pressed")).toBe("false");
     expect(visiblePapers()).toEqual(["24", "23"]);
     expect(window.location.search).toBe("");
   });
@@ -80,6 +86,27 @@ describe("research tag filtering user paths", () => {
   test("keyboard Enter and Space operate tags with stable deep links", () => {
     load("?tag=Newtonian");
     expect(visiblePapers()).toEqual(["23"]);
+    const tag = document.querySelector(".tags button");
+    expect(tag.getAttribute("type")).toBe("button");
+    expect(tag.tabIndex).toBe(0);
+    // Enter and Space activate a real button through click.
+    tag.click();
+    expect(tag.getAttribute("aria-pressed")).toBe("true");
+    expect(visiblePapers()).toEqual(["24"]);
+    tag.click();
+    expect(tag.getAttribute("aria-pressed")).toBe("false");
+    expect(visiblePapers()).toEqual(["24", "23"]);
+  });
+
+  test("legacy span chips still filter from Enter and Space", () => {
+    window.history.replaceState({}, "", "/research/");
+    document.body.innerHTML = `
+      <div class="research-content">
+        <h3 id="24">Paper A</h3><div class="tags"><span>Viscoelastic</span></div>
+        <h3 id="23">Paper B</h3><div class="tags"><span>Newtonian</span></div>
+      </div>`;
+    require("../assets/js/page-research.js");
+    ready();
     const tag = document.querySelector(".tags span");
     expect(tag.getAttribute("role")).toBe("button");
     expect(tag.tabIndex).toBe(0);
@@ -91,7 +118,13 @@ describe("research tag filtering user paths", () => {
     tag.dispatchEvent(enter);
     expect(enter.defaultPrevented).toBe(true);
     expect(visiblePapers()).toEqual(["24"]);
-    tag.dispatchEvent(new KeyboardEvent("keydown", { key: " " }));
+    tag.dispatchEvent(
+      new KeyboardEvent("keydown", {
+        key: " ",
+        bubbles: true,
+        cancelable: true,
+      })
+    );
     expect(visiblePapers()).toEqual(["24", "23"]);
   });
 
