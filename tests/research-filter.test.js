@@ -98,6 +98,36 @@ describe("research tag filtering user paths", () => {
     expect(visiblePapers()).toEqual(["24", "23"]);
   });
 
+  test("legacy span chips still filter from Enter and Space", () => {
+    window.history.replaceState({}, "", "/research/");
+    document.body.innerHTML = `
+      <div class="research-content">
+        <h3 id="24">Paper A</h3><div class="tags"><span>Viscoelastic</span></div>
+        <h3 id="23">Paper B</h3><div class="tags"><span>Newtonian</span></div>
+      </div>`;
+    require("../assets/js/page-research.js");
+    ready();
+    const tag = document.querySelector(".tags span");
+    expect(tag.getAttribute("role")).toBe("button");
+    expect(tag.tabIndex).toBe(0);
+    const enter = new KeyboardEvent("keydown", {
+      key: "Enter",
+      bubbles: true,
+      cancelable: true,
+    });
+    tag.dispatchEvent(enter);
+    expect(enter.defaultPrevented).toBe(true);
+    expect(visiblePapers()).toEqual(["24"]);
+    tag.dispatchEvent(
+      new KeyboardEvent("keydown", {
+        key: " ",
+        bubbles: true,
+        cancelable: true,
+      })
+    );
+    expect(visiblePapers()).toEqual(["24", "23"]);
+  });
+
   test("theme controls and back/forward state use the same filter", () => {
     load();
     document.querySelector(".r-theme__tag").click();
