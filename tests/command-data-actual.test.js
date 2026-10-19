@@ -4,7 +4,7 @@
 
 // Mock dependencies
 global.Fuse = jest.fn().mockImplementation(() => ({
-  search: jest.fn().mockReturnValue([])
+  search: jest.fn().mockReturnValue([]),
 }));
 global.sortCoursesByDate = jest.fn();
 
@@ -124,10 +124,10 @@ describe("command-data.js actual implementation", () => {
     window.history.replaceState({}, "", "/research");
     document.body.innerHTML = `
       <div class="tags">
-        <span></span>
+        <button type="button"></button>
       </div>
     `;
-    document.querySelector(".tags span").textContent = "<img src=x>";
+    document.querySelector(".tags button").textContent = "<img src=x>";
 
     require("../assets/js/command-data.js");
 
