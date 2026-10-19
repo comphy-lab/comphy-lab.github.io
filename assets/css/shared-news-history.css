@@ -16,9 +16,9 @@
   --shared-h3-color: var(--color-heading-h3);
   --shared-h3-border-color: var(--color-heading-h3);
 
-  /* Strong Tag Colors */
-  --shared-strong-color: var(--color-strong, #cf4900);
-  --shared-strong-color-dark: var(--color-strong, #ff8650);
+  /* Strong tag colours. Both themes follow the design-system text token. */
+  --shared-strong-color: var(--c-accent-coral-text);
+  --shared-strong-color-dark: var(--c-accent-coral-text);
 
   /* Box Styles */
   --news-history-box-bg: var(--about-grid-bg, #f7f7f9);
@@ -49,7 +49,7 @@ p strong,
 div strong,
 section strong {
   font-weight: 700;
-  color: var(--shared-strong-color, #cf4900) !important;
+  color: var(--c-accent-coral-text) !important;
 }
 
 /* Dark mode strong tag styling */
@@ -64,7 +64,7 @@ section strong {
 [data-theme="dark"] p strong,
 [data-theme="dark"] div strong,
 [data-theme="dark"] section strong {
-  color: var(--shared-strong-color-dark, #ff8650) !important;
+  color: var(--c-accent-coral-text) !important;
 }
 
 /* Fix for links and buttons getting italicized */
@@ -126,8 +126,7 @@ div a.doi-link,
 #news-content a.doi-link,
 .history-news-box a.doi-link,
 #news-content a[href^="https://doi.org"],
-.history-news-box a[href^="https://doi.org"]
-{
+.history-news-box a[href^="https://doi.org"] {
   color: var(--shared-doi-link-color);
   font-weight: 500;
   display: flex;
@@ -219,8 +218,7 @@ div a.pdf-link,
 [data-theme="dark"] #news-content a.doi-link,
 [data-theme="dark"] .history-news-box a.doi-link,
 [data-theme="dark"] #news-content a[href^="https://doi.org"],
-[data-theme="dark"] .history-news-box a[href^="https://doi.org"]
-{
+[data-theme="dark"] .history-news-box a[href^="https://doi.org"] {
   color: var(--shared-doi-link-color-dark);
 }
 
