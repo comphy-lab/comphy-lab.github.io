@@ -116,8 +116,10 @@
   --color-peru-alpha-35: rgba(205, 133, 63, 0.35);
 
   /* Typography */
-  --font-primary: "Helvetica Neue", helvetica, arial, system-ui, -apple-system, blinkmacsystemfont, "Segoe UI", sans-serif;
-  --font-display: 'Cormorant Garamond', georgia, 'Times New Roman', serif;
+  --font-primary:
+    "Helvetica Neue", helvetica, arial, system-ui, -apple-system,
+    blinkmacsystemfont, "Segoe UI", sans-serif;
+  --font-display: "Cormorant Garamond", georgia, "Times New Roman", serif;
 
   /* Heading Styling */
   --h2-gradient-start: #2b65c6;
@@ -513,7 +515,12 @@ body {
  *-------------------------------------------------------------- */
 
 /* Global Heading Styles */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-display);
 }
 
@@ -535,14 +542,14 @@ h2:after {
 
 /* Strong Element Styling - Applied globally with specific exceptions */
 strong:not(
-    a strong,
-    h1 strong,
-    h2 strong,
-    h3 strong,
-    h4 strong,
-    h5 strong,
-    h6 strong
-  ),
+  a strong,
+  h1 strong,
+  h2 strong,
+  h3 strong,
+  h4 strong,
+  h5 strong,
+  h6 strong
+),
 #news-content strong:not(a strong, a *),
 .s-about__desc strong:not(a strong, a *) {
   font-weight: 600;
@@ -785,7 +792,9 @@ a:hover {
 [data-animate-block] [data-animate-el] {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 0.55s ease, transform 0.55s ease;
+  transition:
+    opacity 0.55s ease,
+    transform 0.55s ease;
 }
 
 [data-animate-block].is-inview [data-animate-el] {
@@ -793,11 +802,17 @@ a:hover {
   transform: translateY(0);
 }
 
-[data-animate-block].is-inview [data-animate-el]:nth-child(2) { transition-delay: 0.1s; }
+[data-animate-block].is-inview [data-animate-el]:nth-child(2) {
+  transition-delay: 0.1s;
+}
 
-[data-animate-block].is-inview [data-animate-el]:nth-child(3) { transition-delay: 0.2s; }
+[data-animate-block].is-inview [data-animate-el]:nth-child(3) {
+  transition-delay: 0.2s;
+}
 
-[data-animate-block].is-inview [data-animate-el]:nth-child(4) { transition-delay: 0.3s; }
+[data-animate-block].is-inview [data-animate-el]:nth-child(4) {
+  transition-delay: 0.3s;
+}
 
 @media (prefers-reduced-motion: reduce) {
   [data-animate-block] [data-animate-el] {
@@ -1037,7 +1052,7 @@ a:hover {
 
 /* Film-grain overlay on hero for depth — subtle, non-distracting */
 .s-intro:after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
@@ -1120,7 +1135,8 @@ a:hover {
   opacity: 0;
   animation: fadeInUp 1s ease forwards;
   animation-delay: 0.2s;
-  color: var(--hero-grad-2); /* solid fallback; clip+fill applied only when supported */
+  /* solid fallback; clip+fill applied only when supported */
+  color: var(--hero-grad-2);
   text-shadow: 2px 2px 3px var(--intro-title-shadow);
   letter-spacing: 0.02em;
   font-weight: 600;
@@ -1607,88 +1623,88 @@ h3.news-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: var(--copyable-bg);
-  border: 1px solid var(--copyable-border);
-  border-radius: 6px;
-  padding: 0.8em 1em;
-  margin: 1em 0;
-  transition: var(--transition-medium);
+  gap: var(--s-3);
+  max-width: 100%;
+  background: var(--c-surface-strong);
+  border: 1px solid var(--c-border-strong);
+  border-radius: var(--r-sm);
+  padding: var(--s-3) var(--s-4);
+  margin: var(--s-4) 0;
+  transition:
+    border-color var(--dur-fast) var(--ease),
+    color var(--dur-fast) var(--ease);
 }
 
-.email-container:hover {
-  background: var(--copyable-bg-hover);
-  border-color: var(--copyable-border-hover);
+.email-container:hover,
+.email-container:focus-within {
+  border-color: var(--c-accent-teal);
 }
 
 .email-text {
-  font-family: "Consolas", "Monaco", monospace;
-  color: var(--copyable-text);
+  min-width: 0;
+  font-family: var(--t-mono);
+  color: var(--fg-1);
   font-size: 0.95em;
+  overflow-wrap: anywhere;
   user-select: all;
+}
+
+.email-container:hover .email-text,
+.email-container:has(:focus-visible) .email-text,
+.email-text:hover,
+.email-text:focus-visible {
+  color: var(--c-accent-teal);
 }
 
 /* Group right-side actions for email container */
 .email-actions {
   display: flex;
+  flex: 0 0 auto;
   align-items: center;
-  gap: 8px;
+  gap: var(--s-2);
 }
 
-.copy-btn {
+.copy-btn,
+.email-link {
   background: transparent;
-  border: none;
-  color: var(--copyable-text);
+  border: 0;
+  border-bottom: 0;
+  color: var(--fg-1);
   cursor: pointer;
-  padding: 0.6em;
-  border-radius: 4px;
-  transition: var(--transition-fast);
-  opacity: 0.7;
+  padding: var(--s-2);
+  border-radius: var(--r-xs);
+  transition:
+    color var(--dur-fast) var(--ease),
+    background-color var(--dur-fast) var(--ease);
   font-size: 1.1em;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 36px;
+  min-width: var(--s-6);
+  text-decoration: none;
 }
 
-.copy-btn:hover {
-  opacity: 1;
-  background: var(--copy-btn-hover-bg);
+.copy-btn:hover,
+.copy-btn:focus-visible,
+.email-link:hover,
+.email-link:focus-visible {
+  color: var(--c-accent-teal);
+  background: color-mix(in srgb, var(--c-accent-teal) 12%, transparent);
+  outline: none;
 }
 
-.copy-btn:active {
+.copy-btn:active,
+.email-link:active {
   transform: scale(0.95);
 }
 
 .copy-btn.copied {
-  background: var(--copy-btn-copied-bg);
-  color: var(--copy-btn-copied-text);
-  opacity: 1;
+  background: color-mix(in srgb, var(--c-accent-teal) 16%, transparent);
+  color: var(--c-accent-teal);
 }
 
 .copy-btn i {
   pointer-events: none;
-}
-
-/* Envelope mailto link styled like copy button */
-.email-link {
-  background: transparent;
-  border: none;
-  color: var(--copyable-text);
-  cursor: pointer;
-  padding: 0.6em;
-  border-radius: 4px;
-  transition: var(--transition-fast);
-  opacity: 0.7;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 36px;
-  text-decoration: none;
-}
-
-.email-link:hover {
-  opacity: 1;
-  background: var(--copy-btn-hover-bg);
 }
 
 /* --------------------------------------------------------------
