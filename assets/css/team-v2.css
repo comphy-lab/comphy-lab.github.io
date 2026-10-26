@@ -65,9 +65,14 @@
 }
 
 /* -- Roster group head -------------------------------------- */
-.roster { display: grid; gap: var(--s-8); }
+.roster {
+  display: grid;
+  gap: var(--s-8);
+}
 
-.roster__group { scroll-margin-top: var(--s-7); }
+.roster__group {
+  scroll-margin-top: var(--s-7);
+}
 
 .roster__group-head {
   display: flex;
@@ -127,10 +132,18 @@
 
 [data-theme="dark"] .t-member__photo {
   color: #d99adc;
-  background: color-mix(in srgb, var(--c-brand-purple) 18%, var(--c-paper-tint));
+  background: color-mix(
+    in srgb,
+    var(--c-brand-purple) 18%,
+    var(--c-paper-tint)
+  );
 }
 
-.t-member__photo img { width: 100%; height: 100%; object-fit: cover; }
+.t-member__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 /* Missing-asset stripe */
 .t-member__photo--ph:after {
@@ -171,13 +184,16 @@
 }
 
 .t-member__bio {
-  font-size: 13px;
+  font-size: var(--t-small);
   color: var(--fg-1);
   line-height: 1.55;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  /* Cap the box at exactly three lines so subpixel glyph tops
+     from a fourth line cannot paint below the ellipsis. */
+  max-height: calc(3 * 1.55em);
   text-wrap: pretty;
   max-width: 42ch;
   margin: 0;
@@ -206,7 +222,9 @@
   color: var(--c-accent-teal);
 }
 
-.t-member__links i { font-size: 13px; }
+.t-member__links i {
+  font-size: 13px;
+}
 
 /* Beat :root[data-theme="dark"] a:where(:not([class])) (0,2,1). */
 :root[data-theme="dark"] .t-member__links a {
@@ -237,14 +255,22 @@
   text-decoration: none;
 }
 
-.t-member__name-link:hover { color: var(--c-accent-teal); }
+.t-member__name-link:hover {
+  color: var(--c-accent-teal);
+}
 
 @media (max-width: 520px) {
-  .roster-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+  .roster-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
 
-  .t-member__photo { aspect-ratio: 1 / 1; }
+  .t-member__photo {
+    aspect-ratio: 1 / 1;
+  }
 
-  .t-member__photo { font-size: 36px; }
+  .t-member__photo {
+    font-size: 36px;
+  }
 }
 
 /* --- Neutralise legacy .team-section / .team-grid layout ---
@@ -252,7 +278,11 @@
    styles in team.css. If a page still carries that markup it
    inherits new tokens through bridge.css; we just silence the
    overriding background-colors so paper shows through. */
-.team-section, .team-grid, .team-member { background: transparent; }
+.team-section,
+.team-grid,
+.team-member {
+  background: transparent;
+}
 
 /* --- Photo-free compact tiles for collaborators + alumni.
    Collaborators and alumni lists are long and the photo slot
@@ -261,7 +291,9 @@
    project rather than their face. Drop the photo bed, tighten
    the bio clamp, let the grid pack more per row. */
 #collaborators .t-member__photo,
-#alumni .t-member__photo { display: none; }
+#alumni .t-member__photo {
+  display: none;
+}
 
 #collaborators .t-member,
 #alumni .t-member {
@@ -272,11 +304,18 @@
   border-radius: var(--r-md);
 }
 
-#collaborators .t-member__bio { -webkit-line-clamp: 4; }
+#collaborators .t-member__bio {
+  -webkit-line-clamp: 4;
+  max-height: calc(4 * 1.55em);
+}
 
 /* Alumni bios sometimes carry a 'finished MPhys / went to X / now at Y'
    sentence that runs longer than collaborator one-liners. Let them flow. */
-#alumni .t-member__bio { -webkit-line-clamp: unset; display: block; }
+#alumni .t-member__bio {
+  -webkit-line-clamp: unset;
+  display: block;
+  max-height: none;
+}
 
 /* =========================================================
    World map — team / collaborators / talks / conference visits.
@@ -289,7 +328,10 @@
   scroll-margin-top: var(--s-7);
 }
 
-.t-map__head { max-width: 68ch; margin: 0 0 var(--s-6); }
+.t-map__head {
+  max-width: 68ch;
+  margin: 0 0 var(--s-6);
+}
 
 .t-map__num {
   font-family: var(--t-mono);
@@ -335,7 +377,10 @@
   gap: 8px;
 }
 
-.t-map__legend strong { color: var(--fg-strong); font-weight: 600; }
+.t-map__legend strong {
+  color: var(--fg-strong);
+  font-weight: 600;
+}
 
 .t-map__dot {
   width: 10px;
@@ -348,13 +393,21 @@
 
 /* Match the four Google-Maps marker colours so the legend reads
    together with the iframe content. */
-.t-map__dot--hometown { background: #f29900; }
+.t-map__dot--hometown {
+  background: #f29900;
+}
 
-.t-map__dot--collab   { background: #3aa757; }
+.t-map__dot--collab {
+  background: #3aa757;
+}
 
-.t-map__dot--talk     { background: var(--c-brand-purple); }
+.t-map__dot--talk {
+  background: var(--c-brand-purple);
+}
 
-.t-map__dot--visit    { background: var(--fg-3); }
+.t-map__dot--visit {
+  background: var(--fg-3);
+}
 
 /* Map frame — paper-tint card with the iframe filling it. */
 .t-map__frame {
@@ -389,7 +442,9 @@
 }
 
 @media (max-width: 760px) {
-  .t-map__frame { aspect-ratio: 4 / 3; }
+  .t-map__frame {
+    aspect-ratio: 4 / 3;
+  }
 }
 
 /* Alumni thesis link — PDF icon + italic title, coral accent */
@@ -399,12 +454,15 @@
   gap: 6px;
   font-size: 12px;
   color: var(--c-accent-coral);
-  border-bottom: 1px solid color-mix(in srgb, var(--c-accent-coral) 30%, transparent);
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--c-accent-coral) 30%, transparent);
   text-decoration: none;
   margin-top: 4px;
   padding-bottom: 1px;
   line-height: 1.35;
-  transition: color var(--dur-fast) var(--ease), border-bottom-color var(--dur-fast) var(--ease);
+  transition:
+    color var(--dur-fast) var(--ease),
+    border-bottom-color var(--dur-fast) var(--ease);
 }
 
 .t-member__thesis:hover {
@@ -412,13 +470,22 @@
   border-bottom-color: var(--c-accent-teal);
 }
 
-.t-member__thesis i { font-size: 11px; flex-shrink: 0; }
+.t-member__thesis i {
+  font-size: 11px;
+  flex-shrink: 0;
+}
 
-.t-member__thesis em { font-style: italic; }
+.t-member__thesis em {
+  font-style: italic;
+}
 
-:root[data-theme="dark"] .t-member__thesis { color: #f96; }
+:root[data-theme="dark"] .t-member__thesis {
+  color: #f96;
+}
 
-:root[data-theme="dark"] .t-member__thesis:hover { color: var(--c-accent-teal); }
+:root[data-theme="dark"] .t-member__thesis:hover {
+  color: var(--c-accent-teal);
+}
 
 /* Denser grid for the photo-less lists */
 #collaborators .roster-grid,
