@@ -623,6 +623,7 @@
 /* Static images in the paper list sit at full width, paper-style */
 .research-content img:not([src*="img.shields.io"]) {
   max-width: 100%;
+  height: auto;
   border-radius: var(--r-sm);
   margin: var(--s-3) 0;
 }
