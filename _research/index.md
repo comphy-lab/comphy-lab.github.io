@@ -32,7 +32,7 @@ title: Research
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2607.08972&color=green)](https://arxiv.org/abs/2607.08972)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/Bursting-Bubble)
 
-![Self-similar collapse of the bubble cavity before and of the Worthington jet after inception, rescaled with the conical exponent 0.629](/assets/images/research/self-similar-worthington-jet-collapse-v2.png){: width="75%" .center-block style="display: block; margin-left: auto; margin-right: auto;"}
+![Cavity collapse and Worthington jet shown unscaled, rescaled with exponent 2/3, and rescaled with exponent 0.629](/assets/images/research/self-similar-worthington-jet-collapse-v3.png){: width="75%" .center-block style="display: block; margin-left: auto; margin-right: auto;"}
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/cCzpLutubF4?rel=0" title="Self-similar Worthington jets — full video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
