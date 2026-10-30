@@ -645,6 +645,91 @@
   }
 }
 
+/* Figure + portrait clip as a balanced media row (paper [25] pattern).
+   Panels use --c-paper + --r-lg. Video keeps its true aspect; height is
+   capped so a tall portrait clip cannot dominate the figure. */
+.research-media-row {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--s-4);
+  margin: var(--s-4) 0;
+}
+
+.research-media-row__panel {
+  background: var(--c-paper);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  min-width: 0;
+}
+
+.research-media-row__figure img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+  border-radius: 0;
+}
+
+.research-media-row__clip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.research-media-row__clip video {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+  border-radius: 0;
+  background: var(--c-paper);
+}
+
+@media (min-width: 901px) {
+  .research-media-row {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--s-5);
+  }
+
+  .research-media-row__figure {
+    flex: 1 1 0;
+  }
+
+  .research-media-row__clip {
+    flex: 0 0 auto;
+    align-self: center;
+  }
+
+  /* Portrait clip: cap height near the companion figure
+     (~7 × --s-9 ≈ figure render height) and let width follow the
+     intrinsic aspect. Overrides the generic .research-content video
+     max-width rules above. */
+  .research-media-row__clip video {
+    max-height: calc(var(--s-9) * 7);
+    max-width: none;
+    width: auto;
+    height: auto;
+  }
+}
+
+@media (max-width: 900px) {
+  .research-media-row__clip {
+    width: fit-content;
+    max-width: 100%;
+    margin-inline: auto;
+  }
+
+  .research-media-row__clip video {
+    max-height: calc(var(--s-9) * 4);
+    margin-inline: auto;
+  }
+}
+
 @media (max-width: 900px) {
   .research-layout {
     grid-template-columns: minmax(0, 1fr);

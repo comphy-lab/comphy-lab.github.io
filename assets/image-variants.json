@@ -323,6 +323,28 @@
       }
     ]
   },
+  "/assets/images/research/self-similar-worthington-jet-collapse-v3.png": {
+    "width": 1511,
+    "height": 897,
+    "sources": [
+      {
+        "src": "/assets/images/research/self-similar-worthington-jet-collapse-v3-200.webp",
+        "width": 200
+      },
+      {
+        "src": "/assets/images/research/self-similar-worthington-jet-collapse-v3-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/images/research/self-similar-worthington-jet-collapse-v3-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/assets/images/research/self-similar-worthington-jet-collapse-v3.webp",
+        "width": 960
+      }
+    ]
+  },
   "/assets/images/research/self-similar-worthington-jet-collapse.png": {
     "width": 743,
     "height": 759,

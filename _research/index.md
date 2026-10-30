@@ -32,7 +32,7 @@ title: Research
 [![arXiv](https://img.shields.io/static/v1.svg?style=flat-square&label=arXiv&message=2607.08972&color=green)](https://arxiv.org/abs/2607.08972)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/Bursting-Bubble)
 
-![Self-similar collapse of the bubble cavity before and of the Worthington jet after inception, rescaled with the conical exponent 0.629](/assets/images/research/self-similar-worthington-jet-collapse-v2.png){: width="75%" .center-block style="display: block; margin-left: auto; margin-right: auto;"}
+![Cavity collapse and Worthington jet shown unscaled, rescaled with exponent 2/3, and rescaled with exponent 0.629](/assets/images/research/self-similar-worthington-jet-collapse-v3.png){: width="75%" .center-block style="display: block; margin-left: auto; margin-right: auto;"}
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/cCzpLutubF4?rel=0" title="Self-similar Worthington jets — full video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -71,13 +71,31 @@ title: Research
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/comphy-lab/ElasticPinchOff/)
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/)
 
-![Drop vs bubble pinch-off: Newtonian and elastic sequences with stress scaling](/assets/images/research/elasticity-bubble-pinch-off.png){: width="75%" .center-block style="display: block; margin-left: auto; margin-right: auto;"}
-
-<video autoplay muted loop playsinline controls preload="metadata"
-  poster="/assets/images/research/elasticity-bubble-pinch-off-poster.png"
-  title="Viscoelastic bubble pinch-off (Ec=0.1, Oh=0.01)">
-  <source src="/assets/videos/elasticity-bubble-pinch-off.mp4" type="video/mp4" />
-</video>
+<div class="research-media-row">
+  <div class="research-media-row__panel research-media-row__figure">
+    <img
+      src="/assets/images/research/elasticity-bubble-pinch-off.png"
+      alt="Drop vs bubble pinch-off: Newtonian and elastic sequences with stress scaling"
+    />
+  </div>
+  <div class="research-media-row__panel research-media-row__clip">
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      controls
+      preload="metadata"
+      poster="/assets/images/research/elasticity-bubble-pinch-off-poster.png"
+      title="Viscoelastic bubble pinch-off (Ec=0.1, Oh=0.01)"
+    >
+      <source
+        src="/assets/videos/elasticity-bubble-pinch-off.mp4"
+        type="video/mp4"
+      />
+    </video>
+  </div>
+</div>
 
 <h3 id="24">[24] Appleford, T., <strong>Sanjay, V.</strong>, & Jalaal, M. Rheology of Two-Dimensional Dilute Emulsions. Phys. Rev. Fluids, 11, 033607 (2026).</h3>
 
@@ -378,7 +396,7 @@ title: Research
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com/VatsalSy/FluidChains)
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/)
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=n7uhBt_Q1UIA5_2C&amp;list=PLf5C5HCrvhLE6jNYonsmX3l3Ab0Y3lNZ5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/uOcaFduOnrg?list=PLf5C5HCrvhLE6jNYonsmX3l3Ab0Y3lNZ5&amp;rel=0" title="Collision of liquid jets to form stable chain structure" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <h3 id="1">[1] <strong>Sanjay, V.</strong>, & Das, A. K. On air entrainment in a water pool by impingement of a jet. AIChE J., 63(11), 5169-5181 (2017).</h3>
 
@@ -388,4 +406,4 @@ title: Research
 [![DOI](https://img.shields.io/static/v1.svg?style=flat-square&label=DOI&message=10.1002/aic.15828&color=orange)](https://doi.org/10.1002/aic.15828)
 [![Blog](https://img.shields.io/badge/Blog-Coming%20Soon-yellow?style=flat-square&logo=obsidian&logoColor=white)](https://blogs.comphy-lab.org/)
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=PJQxZK5Cd6D2y9eN&amp;list=PLf5C5HCrvhLEc8TUdAPz3FLbUWW3OFLTv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Afswba7rFTo?list=PLf5C5HCrvhLEc8TUdAPz3FLbUWW3OFLTv&amp;rel=0" title="Inception of bubble entrainment by adjacent liquid jets" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
