@@ -214,6 +214,44 @@ h6 {
   color: #f96;
 }
 
+/* Linked chips — teal is the only interactive accent. Neutral /
+   brand / blue / coral chip variants stay non-interactive labels. */
+a.chip {
+  text-decoration: none;
+  border-bottom: 0;
+  color: var(--c-accent-teal);
+  background: color-mix(in srgb, var(--c-accent-teal) 8%, transparent);
+  border-color: color-mix(in srgb, var(--c-accent-teal) 28%, transparent);
+  cursor: pointer;
+  transition:
+    color var(--dur-fast) var(--ease),
+    background var(--dur-fast) var(--ease),
+    border-color var(--dur-fast) var(--ease);
+}
+
+a.chip:hover {
+  color: var(--c-accent-teal);
+  background: color-mix(in srgb, var(--c-accent-teal) 14%, transparent);
+  border-color: var(--c-accent-teal);
+  border-bottom-color: var(--c-accent-teal);
+}
+
+a.chip:focus-visible {
+  outline: var(--s-1) solid
+    color-mix(in srgb, var(--c-accent-teal) 45%, transparent);
+  outline-offset: var(--s-1);
+  border-color: var(--c-accent-teal);
+}
+
+:root[data-theme="dark"] a.chip {
+  color: var(--c-accent-teal);
+}
+
+:root[data-theme="dark"] a.chip:hover,
+:root[data-theme="dark"] a.chip:focus-visible {
+  color: var(--c-accent-teal);
+}
+
 /* Buttons — tokens.css ships .btn, .btn-ghost, .btn-pill. Keep the
    full button border while suppressing legacy link underlines. */
 .btn,
