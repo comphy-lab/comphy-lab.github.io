@@ -215,10 +215,11 @@ h6 {
 }
 
 /* Linked chips — teal is the only interactive accent. Neutral /
-   brand / blue / coral chip variants stay non-interactive labels. */
+   brand / blue / coral chip variants stay non-interactive labels.
+   Keep the .chip 1px border on all sides; only drop the prose-link
+   underline via text-decoration (do not zero border-bottom). */
 a.chip {
   text-decoration: none;
-  border-bottom: 0;
   color: var(--c-accent-teal);
   background: color-mix(in srgb, var(--c-accent-teal) 8%, transparent);
   border-color: color-mix(in srgb, var(--c-accent-teal) 28%, transparent);
@@ -233,7 +234,6 @@ a.chip:hover {
   color: var(--c-accent-teal);
   background: color-mix(in srgb, var(--c-accent-teal) 14%, transparent);
   border-color: var(--c-accent-teal);
-  border-bottom-color: var(--c-accent-teal);
 }
 
 a.chip:focus-visible {
