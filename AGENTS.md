@@ -135,7 +135,7 @@ Add to `_research/index.md` in this exact form:
 
 <div class="tags"><button type="button" aria-pressed="false">Tag1</button><button type="button" aria-pressed="false">Tag2</button><button type="button" aria-pressed="false">Featured</button></div>
 
-[![Badge](https://img.shields.io/static/v1.svg?style=flat-square&label=LABEL&message=MESSAGE&color=COLOR)](URL)
+<a class="chip" href="URL">LABEL · <span class="chip__id">MESSAGE</span></a>
 ```
 
 - Use `**Name**` for lab members.

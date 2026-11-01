@@ -347,8 +347,9 @@
 
 /* Paper list chrome — scoped to .research-content inside .r-full.
    The markdown content from _research/index.md uses h2 for year
-   headings, h3 for paper titles, and .tags/.pdf-link/.doi-link for
-   badges. Restyle against new tokens while preserving structure. */
+   headings, h3 for paper titles, .tags for topic filters, and
+   a.chip links for paper actions. Restyle against new tokens while
+   preserving structure. */
 .research-layout {
   display: grid;
   grid-template-columns: 240px minmax(0, 1fr);
@@ -577,28 +578,31 @@
   border-color: var(--c-accent-teal);
 }
 
-/* Shield badges inline. Long DOI badges are wider than a 390 px
-   phone; without max-width they inflate the grid column and the
-   layout viewport. Keep intrinsic height, cap width, and wrap rows. */
-.research-content img[src*="img.shields.io"] {
-  display: inline-block;
-  vertical-align: middle;
-  margin: 2px 0;
-  max-width: 100%;
-  height: auto;
-}
-
-.research-content a:has(> img[src*="img.shields.io"]) {
-  max-width: 100%;
-  min-width: 0;
-}
-
-.research-content p:has(img[src*="img.shields.io"]) {
+/* Paper action chips (DOI, arXiv, PDF, GitHub, Blog, …). Long DOI
+   labels wrap on a 390-wide viewport so they do not inflate the
+   research grid column. Teal interactive styles live on a.chip in
+   bridge.css. */
+.research-content p:has(> a.chip) {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 6px;
+  gap: var(--s-2);
   max-width: 100%;
+}
+
+.research-content a.chip {
+  max-width: 100%;
+  min-width: 0;
+  white-space: normal;
+  /* Prefer breaks at / and . in DOIs; avoid mid-digit columns. */
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+.research-content a.chip .chip__id {
+  display: inline;
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
 /* Video embeds — research.js wraps iframes in .video-container */
@@ -621,7 +625,7 @@
 }
 
 /* Static images in the paper list sit at full width, paper-style */
-.research-content img:not([src*="img.shields.io"]) {
+.research-content img {
   max-width: 100%;
   height: auto;
   border-radius: var(--r-sm);
