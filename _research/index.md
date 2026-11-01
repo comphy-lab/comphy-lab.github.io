@@ -29,7 +29,7 @@ title: Research
 
 <div class="tags"><button type="button" aria-pressed="false">Bubbles</button><button type="button" aria-pressed="false">Jets</button><button type="button" aria-pressed="false">Soft-matter-singularities</button><button type="button" aria-pressed="false">Featured</button></div>
 
-<a class="chip" href="https://arxiv.org/abs/2607.08972">arXiv · 2607.08972</a>
+<a class="chip" href="https://arxiv.org/abs/2607.08972">arXiv · <span class="chip__id">2607.08972</span></a>
 <a class="chip" href="https://github.com/comphy-lab/Bursting-Bubble">GitHub</a>
 
 ![Cavity collapse and Worthington jet shown unscaled, rescaled with exponent 2/3, and rescaled with exponent 0.629](/assets/images/research/self-similar-worthington-jet-collapse-v3.png){: width="75%" .center-block style="display: block; margin-left: auto; margin-right: auto;"}
@@ -40,13 +40,13 @@ title: Research
 
 <div class="tags"><button type="button" aria-pressed="false">Bubbles</button><button type="button" aria-pressed="false">Jets</button><button type="button" aria-pressed="false">Drops</button><button type="button" aria-pressed="false">Soft-matter-singularities</button></div>
 
-<a class="chip" href="https://arxiv.org/abs/2606.28609">arXiv · 2606.28609</a>
+<a class="chip" href="https://arxiv.org/abs/2606.28609">arXiv · <span class="chip__id">2606.28609</span></a>
 
 ### Ghaemi, A. H., Yang, Z., Huang, A., <strong>Sanjay, V.</strong>, Feng, J., & Constante-Amores, C. R. Bursting bubbles in Herschel-Bulkley fluids: dynamics and jetting transitions. arXiv preprint arXiv:2511.23345 (2025).
 
 <div class="tags"><button type="button" aria-pressed="false">Bubbles</button><button type="button" aria-pressed="false">Non-Newtonian</button><button type="button" aria-pressed="false">Jets</button></div>
 
-<a class="chip" href="https://arxiv.org/abs/2511.23345">arXiv · 2511.23345</a>
+<a class="chip" href="https://arxiv.org/abs/2511.23345">arXiv · <span class="chip__id">2511.23345</span></a>
 <a class="chip" href="https://github.com/comphy-lab/BurstingBubble_Herschel-Bulkley/">GitHub</a>
 <a class="chip" href="https://blogs.comphy-lab.org/">Blog · Coming Soon</a>
 
@@ -56,8 +56,8 @@ title: Research
 
 <div class="tags"><button type="button" aria-pressed="false">Soft-matter-singularities</button><button type="button" aria-pressed="false">Featured</button></div>
 
-<a class="chip" href="https://doi.org/10.1080/00107514.2026.2721118">Contemporary Physics · DOI: 10.1080/00107514.2026.2721118</a>
-<a class="chip" href="https://arxiv.org/abs/2608.11060">arXiv · 2608.11060</a>
+<a class="chip" href="https://doi.org/10.1080/00107514.2026.2721118">Contemporary Physics · DOI: <span class="chip__id">10.1080/00107514.2026.2721118</span></a>
+<a class="chip" href="https://arxiv.org/abs/2608.11060">arXiv · <span class="chip__id">2608.11060</span></a>
 
 ![Visual dictionary for singularities in soft matter: pinch-off, contact line, interfacial cusp, and beyond-interface cutoffs](/assets/images/research/singularities-soft-matter-visual-dictionary.png){: width="75%" .center-block style="display: block; margin-left: auto; margin-right: auto;"}
 
@@ -65,8 +65,8 @@ title: Research
 
 <div class="tags"><button type="button" aria-pressed="false">Bubbles</button><button type="button" aria-pressed="false">Soft-matter-singularities</button><button type="button" aria-pressed="false">Elastic beads</button></div>
 
-<a class="chip" href="https://doi.org/10.1103/5sp3-k5l2">PRF · DOI: 10.1103/5sp3-k5l2</a>
-<a class="chip" href="https://arxiv.org/abs/2511.20075">arXiv · 2511.20075</a>
+<a class="chip" href="https://doi.org/10.1103/5sp3-k5l2">PRF · DOI: <span class="chip__id">10.1103/5sp3-k5l2</span></a>
+<a class="chip" href="https://arxiv.org/abs/2511.20075">arXiv · <span class="chip__id">2511.20075</span></a>
 <a class="chip" href="/assets/videos/elasticity-bubble-pinch-off.mp4">Video · mp4</a>
 <a class="chip" href="https://github.com/comphy-lab/ElasticPinchOff/">GitHub</a>
 <a class="chip" href="https://blogs.comphy-lab.org/">Blog · Coming Soon</a>
@@ -101,8 +101,8 @@ title: Research
 
 <div class="tags"><button type="button" aria-pressed="false">Emulsions</button><button type="button" aria-pressed="false">Rheology</button></div>
 
-<a class="chip" href="https://doi.org/10.1103/9dgt-rkp5">PRF · DOI: 10.1103/9dgt-rkp5</a>
-<a class="chip" href="https://arxiv.org/abs/2508.13022">arXiv · 2508.13022</a>
+<a class="chip" href="https://doi.org/10.1103/9dgt-rkp5">PRF · DOI: <span class="chip__id">10.1103/9dgt-rkp5</span></a>
+<a class="chip" href="https://arxiv.org/abs/2508.13022">arXiv · <span class="chip__id">2508.13022</span></a>
 <a class="chip" href="https://github.com/tappleford/droplet_under_shear_newtonian_2D">GitHub</a>
 <a class="chip" href="https://blogs.comphy-lab.org/">Blog · Coming Soon</a>
 
@@ -110,8 +110,8 @@ title: Research
 
 <div class="tags"><button type="button" aria-pressed="false">Drops</button><button type="button" aria-pressed="false">Impact forces</button><button type="button" aria-pressed="false">Elastic beads</button><button type="button" aria-pressed="false">Featured</button></div>
 
-<a class="chip" href="https://doi.org/10.1039/D5SM01078K">Soft Matter · DOI: 10.1039/D5SM01078K</a>
-<a class="chip" href="https://arxiv.org/abs/2510.24855">arXiv · 2510.24855</a>
+<a class="chip" href="https://doi.org/10.1039/D5SM01078K">Soft Matter · DOI: <span class="chip__id">10.1039/D5SM01078K</span></a>
+<a class="chip" href="https://arxiv.org/abs/2510.24855">arXiv · <span class="chip__id">2510.24855</span></a>
 <a class="chip" href="https://github.com/comphy-lab/Soft-Sphere-Impacts">GitHub</a>
 <a class="chip" href="https://blogs.comphy-lab.org/">Blog · Coming Soon</a>
 
@@ -131,8 +131,8 @@ title: Research
 
 <div class="tags"><button type="button" aria-pressed="false">Sheets</button><button type="button" aria-pressed="false">Rupture</button><button type="button" aria-pressed="false">Soft-matter-singularities</button><button type="button" aria-pressed="false">Featured</button></div>
 
-<a class="chip" href="https://doi.org/10.1103/bdpw-7mr5">Phys. Rev. Lett. · DOI: 10.1103/bdpw-7mr5</a>
-<a class="chip" href="https://arxiv.org/abs/2509.12789">arXiv · 2509.12789</a>
+<a class="chip" href="https://doi.org/10.1103/bdpw-7mr5">Phys. Rev. Lett. · DOI: <span class="chip__id">10.1103/bdpw-7mr5</span></a>
+<a class="chip" href="https://arxiv.org/abs/2509.12789">arXiv · <span class="chip__id">2509.12789</span></a>
 <a class="chip" href="https://github.com/comphy-lab/HoleySheet">GitHub</a>
 <a class="chip" href="https://blogs.comphy-lab.org/">Blog · Coming Soon</a>
 
@@ -142,8 +142,8 @@ title: Research
 
 <div class="tags"><button type="button" aria-pressed="false">Drops</button><button type="button" aria-pressed="false">Contact line</button><button type="button" aria-pressed="false">Superamphiphobic-surfaces</button><button type="button" aria-pressed="false">Featured</button></div>
 
-<a class="chip" href="https://doi.org/10.1039/D5SM00985E">Soft Matter · DOI: 10.1039/D5SM00985E</a>
-<a class="chip" href="https://arxiv.org/abs/2511.20259">arXiv · 2511.20259</a>
+<a class="chip" href="https://doi.org/10.1039/D5SM00985E">Soft Matter · DOI: <span class="chip__id">10.1039/D5SM00985E</span></a>
+<a class="chip" href="https://arxiv.org/abs/2511.20259">arXiv · <span class="chip__id">2511.20259</span></a>
 <a class="chip" href="https://github.com/comphy-lab/Retracting-Droplet">GitHub</a>
 <a class="chip" href="https://blogs.comphy-lab.org/">Blog · Coming Soon</a>
 
@@ -154,7 +154,7 @@ title: Research
 <div class="tags"><button type="button" aria-pressed="false">Bubbles</button><button type="button" aria-pressed="false">Coalescence</button></div>
 
 <a class="chip" href="https://doi.org/10.1103/nq3w-57gg">PRF · OA</a>
-<a class="chip" href="https://arxiv.org/abs/2501.05532">arXiv · 2501.05532</a>
+<a class="chip" href="https://arxiv.org/abs/2501.05532">arXiv · <span class="chip__id">2501.05532</span></a>
 <a class="chip" href="https://github.com/VatsalSy/jumping-bubbles">GitHub</a>
 <a class="chip" href="https://blogs.comphy-lab.org/">Blog · Coming Soon</a>
 
@@ -165,7 +165,7 @@ title: Research
 <div class="tags"><button type="button" aria-pressed="false">Drops</button><button type="button" aria-pressed="false">Bouncing</button></div>
 
 <a class="chip" href="https://doi.org/10.1073/pnas.2507309122">PNAS · OA</a>
-<a class="chip" href="https://arxiv.org/abs/2503.22527">arXiv · 2503.22527</a>
+<a class="chip" href="https://arxiv.org/abs/2503.22527">arXiv · <span class="chip__id">2503.22527</span></a>
 <a class="chip" href="https://blogs.comphy-lab.org/">Blog · Coming Soon</a>
 
 <h3 id="18">[18] Saini, M., <strong>Sanjay, V.</strong>, Saade, Y., Lohse, D., & Popinet, S. Implementation of integral surface tension formulations in a volume of fluid framework and their applications to Marangoni flows. J. Comput. Phys., 542, 114348 (2025).</h3>
@@ -181,7 +181,7 @@ title: Research
 <div class="tags"><button type="button" aria-pressed="false">Bubbles</button><button type="button" aria-pressed="false">Jets</button><button type="button" aria-pressed="false">Coalescence</button><button type="button" aria-pressed="false">Soft-matter-singularities</button><button type="button" aria-pressed="false">Drops</button></div>
 
 <a class="chip" href="https://doi.org/10.1038/s41467-025-59762-7">Nat. Commun. · OA</a>
-<a class="chip" href="https://arxiv.org/abs/2409.00515">arXiv · 2409.00515</a>
+<a class="chip" href="https://arxiv.org/abs/2409.00515">arXiv · <span class="chip__id">2409.00515</span></a>
 <a class="chip" href="https://github.com/VatsalSy/Asymmetries-in-coalescence">GitHub</a>
 <a class="chip" href="https://blogs.comphy-lab.org/">Blog · Coming Soon</a>
 
@@ -192,7 +192,7 @@ title: Research
 <div class="tags"><button type="button" aria-pressed="false">Bubbles</button><button type="button" aria-pressed="false">Non-Newtonian</button><button type="button" aria-pressed="false">Jets</button><button type="button" aria-pressed="false">Soft-matter-singularities</button><button type="button" aria-pressed="false">Drops</button></div>
 
 <a class="chip" href="https://doi.org/10.1017/jfm.2025.237">JFM · OA</a>
-<a class="chip" href="https://arxiv.org/abs/2408.05089">arXiv · 2408.05089</a>
+<a class="chip" href="https://arxiv.org/abs/2408.05089">arXiv · <span class="chip__id">2408.05089</span></a>
 <a class="chip" href="https://github.com/comphy-lab/Viscoelastic-Worthington-jets-and-droplets-produced-by-bursting-bubbles">GitHub</a>
 <a class="chip" href="https://blogs.comphy-lab.org/">Blog · Coming Soon</a>
 
@@ -203,7 +203,7 @@ title: Research
 <div class="tags"><button type="button" aria-pressed="false">Drops</button><button type="button" aria-pressed="false">Dissipative anomaly</button><button type="button" aria-pressed="false">Superamphiphobic-surfaces</button><button type="button" aria-pressed="false">Impact forces</button></div>
 
 <a class="chip" href="https://doi.org/10.1103/PhysRevLett.134.104003">PRL · OA</a>
-<a class="chip" href="https://arxiv.org/abs/2408.12714">arXiv · 2408.12714</a>
+<a class="chip" href="https://arxiv.org/abs/2408.12714">arXiv · <span class="chip__id">2408.12714</span></a>
 <a class="chip" href="https://github.com/VatsalSy/Impact-forces-of-water-drops-falling-on-superhydrophobic-surfaces.git">GitHub</a>
 <a class="chip" href="https://blogs.comphy-lab.org/">Blog · Coming Soon</a>
 
@@ -214,7 +214,7 @@ title: Research
 <div class="tags"><button type="button" aria-pressed="false">Drops</button><button type="button" aria-pressed="false">Impact forces</button></div>
 
 <a class="chip" href="https://doi.org/10.1017/jfm.2024.982">JFM · OA</a>
-<a class="chip" href="https://arxiv.org/abs/2311.03012">arXiv · 2311.03012</a>
+<a class="chip" href="https://arxiv.org/abs/2311.03012">arXiv · <span class="chip__id">2311.03012</span></a>
 <a class="chip" href="https://github.com/VatsalSy/The-role-of-viscosity-on-drop-impact-forces">GitHub</a>
 <a class="chip" href="https://blogs.comphy-lab.org/Blog/2025-JFM-viscous-drop-impact">Blog · Coming Soon</a>
 
@@ -235,7 +235,7 @@ title: Research
 <div class="tags"><button type="button" aria-pressed="false">Waves</button><button type="button" aria-pressed="false">Dissipative anomaly</button></div>
 
 <a class="chip" href="https://doi.org/10.1017/jfm.2024.1089">JFM · OA</a>
-<a class="chip" href="https://arxiv.org/abs/2406.05416">arXiv · 2406.05416</a>
+<a class="chip" href="https://arxiv.org/abs/2406.05416">arXiv · <span class="chip__id">2406.05416</span></a>
 <a class="chip" href="https://github.com/comphy-lab/concentricWave">GitHub</a>
 <a class="chip" href="https://blogs.comphy-lab.org/">Blog · Coming Soon</a>
 
@@ -313,8 +313,8 @@ title: Research
 
 <a class="chip" href="https://github.com/VatsalSy/Impact-forces-of-water-drops-falling-on-superhydrophobic-surfaces">GitHub</a>
 <a class="chip" href="https://qrco.de/bd9aV3">PDF · Download</a>
-<a class="chip" href="https://arxiv.org/abs/2202.02437">arXiv · 2202.02437</a>
-<a class="chip" href="https://doi.org/10.1103/PhysRevLett.129.104501">Phys. Rev. Lett. · DOI: 10.1103/PhysRevLett.129.104501</a>
+<a class="chip" href="https://arxiv.org/abs/2202.02437">arXiv · <span class="chip__id">2202.02437</span></a>
+<a class="chip" href="https://doi.org/10.1103/PhysRevLett.129.104501">Phys. Rev. Lett. · DOI: <span class="chip__id">10.1103/PhysRevLett.129.104501</span></a>
 <a class="chip" href="https://blogs.comphy-lab.org/">Blog · Coming Soon</a>
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=CBVTgXd3QiYucPOG&amp;list=PLf5C5HCrvhLGmlYTF1Gg2WviZ-Bkmy2qr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -323,7 +323,7 @@ title: Research
 
 * As of March/April 2024, this highly cited paper received enough citations to place it in the top 1% of the academic field of Physics based on a highly cited threshold for the field and publication year. Source: Web of Science.
 * Editor's Suggestion of that issue of Phys. Rev. Lett.
-* Research Highlight: Castelvecchi, D. The physics of a bouncing droplet's impact. *Nature*, 609, 225 (2022). <a class="chip" href="https://doi.org/10.1038/d41586-022-02302-w">DOI: 10.1038/d41586-022-02302-w</a>
+* Research Highlight: Castelvecchi, D. The physics of a bouncing droplet's impact. *Nature*, 609, 225 (2022). <a class="chip" href="https://doi.org/10.1038/d41586-022-02302-w">DOI: <span class="chip__id">10.1038/d41586-022-02302-w</span></a>
 
 ## 2021
 
@@ -332,7 +332,7 @@ title: Research
 <div class="tags"><button type="button" aria-pressed="false">Bubbles</button><button type="button" aria-pressed="false">Jets</button><button type="button" aria-pressed="false">Non-Newtonian</button><button type="button" aria-pressed="false">Soft-matter-singularities</button></div>
 
 <a class="chip" href="https://doi.org/10.1017/jfm.2021.489">JFM · OA</a>
-<a class="chip" href="https://arxiv.org/abs/2101.07744">arXiv · 2101.07744</a>
+<a class="chip" href="https://arxiv.org/abs/2101.07744">arXiv · <span class="chip__id">2101.07744</span></a>
 <a class="chip" href="https://github.com/VatsalSy/Bursting-Bubble-In-a-Viscoplastic-Medium">GitHub</a>
 <a class="chip" href="https://blogs.comphy-lab.org/">Blog · Coming Soon</a>
 
@@ -345,7 +345,7 @@ title: Research
 <div class="tags"><button type="button" aria-pressed="false">Drops</button><button type="button" aria-pressed="false">Superamphiphobic-surfaces</button><button type="button" aria-pressed="false">Lifting</button></div>
 
 <a class="chip" href="https://doi.org/10.1126/sciadv.aba4330">Sci. Adv. · OA</a>
-<a class="chip" href="https://arxiv.org/abs/1912.02667">arXiv · 1912.02667</a>
+<a class="chip" href="https://arxiv.org/abs/1912.02667">arXiv · <span class="chip__id">1912.02667</span></a>
 <a class="chip" href="https://github.com/VatsalSy/Lifting-a-sessile-drop">GitHub</a>
 <a class="chip" href="https://blogs.comphy-lab.org/">Blog · Coming Soon</a>
 
@@ -358,7 +358,7 @@ title: Research
 <div class="tags"><button type="button" aria-pressed="false">Jets</button><button type="button" aria-pressed="false">Bubbles</button></div>
 
 <a class="chip" href="https://www.dropbox.com/scl/fi/ug7njhulcy9zq8lib911j/2019-Vatsal-_Consequences-of-Inclined-and-Dual-Jet-Impingement-in-Stagnant-Liquid-and-Stratified-Layers.pdf?rlkey=l00thknv7wt55sb0bcuiy8isw&amp;dl=0">PDF · Available</a>
-<a class="chip" href="https://doi.org/10.1002/aic.16373">DOI · 10.1002/aic.16373</a>
+<a class="chip" href="https://doi.org/10.1002/aic.16373">DOI · <span class="chip__id">10.1002/aic.16373</span></a>
 <a class="chip" href="https://blogs.comphy-lab.org/">Blog · Coming Soon</a>
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=MpAj4REMZUt2rCvu&amp;list=PLf5C5HCrvhLFExMDxQ9Kgl-Y0DiNvqUd8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -370,7 +370,7 @@ title: Research
 <div class="tags"><button type="button" aria-pressed="false">Jets</button></div>
 
 <a class="chip" href="https://www.dropbox.com/scl/fi/zbs17s77qlu2l2i4c6sak/2018-Vatsal-preprint-_Formation-of-fluid-structures-due-to-jet-jet-and-jet-sheet-interactions.pdf?rlkey=beya847mr9hf8bbdabwyanrmf&amp;dl=0">PDF · Available</a>
-<a class="chip" href="https://doi.org/10.1016/j.ces.2018.06.055">DOI · 10.1016/j.ces.2018.06.055</a>
+<a class="chip" href="https://doi.org/10.1016/j.ces.2018.06.055">DOI · <span class="chip__id">10.1016/j.ces.2018.06.055</span></a>
 <a class="chip" href="https://blogs.comphy-lab.org/">Blog · Coming Soon</a>
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=mC4w9clMEhE2-dZk&amp;list=PLf5C5HCrvhLGi0-WLqlhRbUQXEJsv5GHF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -380,7 +380,7 @@ title: Research
 <div class="tags"><button type="button" aria-pressed="false">Others</button><button type="button" aria-pressed="false">Fire</button><button type="button" aria-pressed="false">Evacuation</button></div>
 
 <a class="chip" href="https://www.dropbox.com/scl/fi/c9vob7a6kso4ai4mygpj2/2018-Vatsal-_Numerical-assessment-of-hazard-in-compartmental-fire-having-steady-heat-release-rate-from-the-source.pdf?rlkey=e8rjz2d3e8nt0xof863i3xb3p&amp;dl=0">PDF · Available</a>
-<a class="chip" href="https://doi.org/10.1007/s12273-017-0411-y">DOI · 10.1007/s12273-017-0411-y</a>
+<a class="chip" href="https://doi.org/10.1007/s12273-017-0411-y">DOI · <span class="chip__id">10.1007/s12273-017-0411-y</span></a>
 <a class="chip" href="https://blogs.comphy-lab.org/">Blog · Coming Soon</a>
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=w56YOERWB3txiLmQ&amp;list=PLf5C5HCrvhLEFuWesek9r4gT4eweOAx1y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -392,7 +392,7 @@ title: Research
 <div class="tags"><button type="button" aria-pressed="false">Jets</button><button type="button" aria-pressed="false">Sheets</button></div>
 
 <a class="chip" href="https://www.dropbox.com/scl/fi/fmk08c3z9twdat138v8b3/2017-Vatsal-preprint-_Formation-of-liquid-chain-by-collision-of-two-laminar-jets.pdf?rlkey=imwh2a606aecpbvjq3ctdq168&amp;dl=0">PDF · Available</a>
-<a class="chip" href="https://doi.org/10.1063/1.4998288">DOI · 10.1063/1.4998288</a>
+<a class="chip" href="https://doi.org/10.1063/1.4998288">DOI · <span class="chip__id">10.1063/1.4998288</span></a>
 <a class="chip" href="https://github.com/VatsalSy/FluidChains">GitHub</a>
 <a class="chip" href="https://blogs.comphy-lab.org/">Blog · Coming Soon</a>
 
@@ -403,7 +403,7 @@ title: Research
 <div class="tags"><button type="button" aria-pressed="false">Jets</button><button type="button" aria-pressed="false">Bubbles</button></div>
 
 <a class="chip" href="https://www.dropbox.com/scl/fi/37ek49y5ae1t1lr18q95n/2017-Vatsal-preprint-_On-Air-Entrainment-in-a-Water-pool-by-Impingement-of-a-Jet.pdf?rlkey=iqb3ejms8t990owpiuqmpy0k6&amp;dl=0">PDF · Available</a>
-<a class="chip" href="https://doi.org/10.1002/aic.15828">DOI · 10.1002/aic.15828</a>
+<a class="chip" href="https://doi.org/10.1002/aic.15828">DOI · <span class="chip__id">10.1002/aic.15828</span></a>
 <a class="chip" href="https://blogs.comphy-lab.org/">Blog · Coming Soon</a>
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Afswba7rFTo?list=PLf5C5HCrvhLEc8TUdAPz3FLbUWW3OFLTv&amp;rel=0" title="Inception of bubble entrainment by adjacent liquid jets" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

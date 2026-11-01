@@ -135,7 +135,7 @@ Add to `_research/index.md` in this exact form:
 
 <div class="tags"><button type="button" aria-pressed="false">Tag1</button><button type="button" aria-pressed="false">Tag2</button><button type="button" aria-pressed="false">Featured</button></div>
 
-<a class="chip" href="URL">LABEL · MESSAGE</a>
+<a class="chip" href="URL">LABEL · <span class="chip__id">MESSAGE</span></a>
 ```
 
 - Use `**Name**` for lab members.

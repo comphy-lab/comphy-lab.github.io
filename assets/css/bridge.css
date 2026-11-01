@@ -252,6 +252,13 @@ a.chip:focus-visible {
   color: var(--c-accent-teal);
 }
 
+/* DOI / arXiv identifiers inside chips — Plex Mono; inherit size so
+   chip height and alignment stay unchanged. */
+.chip__id {
+  font-family: var(--t-mono);
+  font-weight: var(--t-weight-reg);
+}
+
 /* Buttons — tokens.css ships .btn, .btn-ghost, .btn-pill. Keep the
    full button border while suppressing legacy link underlines. */
 .btn,
