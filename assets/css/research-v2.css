@@ -594,8 +594,15 @@
   max-width: 100%;
   min-width: 0;
   white-space: normal;
-  overflow-wrap: anywhere;
-  line-height: 1.35;
+  /* Prefer breaks at / and . in DOIs; avoid mid-digit columns. */
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+.research-content a.chip .chip__id {
+  display: inline;
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
 /* Video embeds — research.js wraps iframes in .video-container */

@@ -217,9 +217,13 @@ h6 {
 /* Linked chips — teal is the only interactive accent. Neutral /
    brand / blue / coral chip variants stay non-interactive labels.
    Keep the .chip 1px border on all sides; only drop the prose-link
-   underline via text-decoration (do not zero border-bottom). */
+   underline via text-decoration (do not zero border-bottom).
+   Use inline-block (not inline-flex) so label + .chip__id stay one
+   text flow; flex would column-split them and collapse spaces. */
 a.chip {
+  display: inline-block;
   text-decoration: none;
+  vertical-align: middle;
   color: var(--c-accent-teal);
   background: color-mix(in srgb, var(--c-accent-teal) 8%, transparent);
   border-color: color-mix(in srgb, var(--c-accent-teal) 28%, transparent);
@@ -252,11 +256,16 @@ a.chip:focus-visible {
   color: var(--c-accent-teal);
 }
 
-/* DOI / arXiv identifiers inside chips — Plex Mono; inherit size so
-   chip height and alignment stay unchanged. */
+/* DOI / arXiv identifiers — Plex Mono, same size/baseline as label.
+   display:inline keeps the id in the chip's text flow. */
 .chip__id {
+  display: inline;
   font-family: var(--t-mono);
+  font-size: inherit;
+  /* Mono pack ships 400 only; keep the shipped face, not a faux 500. */
   font-weight: var(--t-weight-reg);
+  line-height: inherit;
+  letter-spacing: normal;
 }
 
 /* Buttons — tokens.css ships .btn, .btn-ghost, .btn-pill. Keep the
