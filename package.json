@@ -42,7 +42,8 @@
     "stylelint-config-standard": "^36.0.0"
   },
   "overrides": {
-    "fast-uri": "^3.1.7",
+    "deepmerge": "4.1.2",
+    "fast-uri": "^3.1.9",
     "form-data": "^4.0.4",
     "js-yaml": "~5.4.1",
     "markdown-it": "~14.3.3",
