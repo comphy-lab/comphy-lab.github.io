@@ -57,6 +57,7 @@ jobs:
           python3 tests/sync-cloudflare-security-headers.test.py
           bundle exec ruby tests/research-tag-collision.test.rb
           bundle exec ruby tests/asset-fingerprints.test.rb
+          bundle exec ruby tests/responsive-images.test.rb
 
       - name: Build site
         run: bash scripts/build.sh --skip-deps

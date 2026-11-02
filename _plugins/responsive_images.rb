@@ -54,10 +54,38 @@ module CoMPhyResponsiveImages
 
   def apply_dimensions(img, info)
     return unless info
-    return if img['width'] && img['height']
 
-    img['width'] = info['width'].to_s
-    img['height'] = info['height'].to_s
+    existing_width = img['width']
+    existing_height = img['height']
+    return if existing_width && existing_height
+
+    natural_w = info['width'].to_f
+    natural_h = info['height'].to_f
+    return if natural_w <= 0 || natural_h <= 0
+
+    # Author set neither: emit both intrinsic dims for CLS.
+    if existing_width.nil? && existing_height.nil?
+      img['width'] = info['width'].to_s
+      img['height'] = info['height'].to_s
+      return
+    end
+
+    # Numeric width without height: keep width, scale height.
+    if existing_width && existing_height.nil?
+      if existing_width.match?(/\A\d+(\.\d+)?\z/)
+        scaled = (existing_width.to_f * natural_h / natural_w).round
+        img['height'] = scaled.to_s if scaled.positive?
+      end
+      # Non-numeric width (e.g. 75%): leave alone; never invent height.
+      return
+    end
+
+    # Numeric height without width: keep height, scale width.
+    return unless existing_height && existing_width.nil?
+    return unless existing_height.match?(/\A\d+(\.\d+)?\z/)
+
+    scaled = (existing_height.to_f * natural_w / natural_h).round
+    img['width'] = scaled.to_s if scaled.positive?
   end
 
   def apply_loading(img)

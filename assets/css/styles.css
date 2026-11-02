@@ -1621,6 +1621,7 @@ h3.news-header {
 
 .email-container {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: var(--s-3);
@@ -1640,12 +1641,17 @@ h3.news-header {
   border-color: var(--c-accent-teal);
 }
 
+/* Keep the address as one unit. Prefer wrapping the action icons
+   below at narrow widths (flex-wrap). Soft break only after @ via
+   <wbr>; never mid-domain (overflow-wrap: anywhere did that). */
 .email-text {
+  flex: 1 0 auto;
+  max-width: 100%;
   min-width: 0;
   font-family: var(--t-mono);
   color: var(--fg-1);
   font-size: 0.95em;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
   user-select: all;
 }
 

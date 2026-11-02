@@ -10,7 +10,7 @@ mathematics, or engineering helps, especially in continuum mechanics,
 numerics, and scientific computing.
 
 <div class="email-container">
-  <span class="email-text">vatsal.sanjay@durham.ac.uk</span>
+  <span class="email-text">vatsal.sanjay@<wbr>durham.ac.uk</span>
   <div class="email-actions">
     <a class="email-link" href="mailto:vatsal.sanjay@durham.ac.uk" aria-label="Email vatsal.sanjay@durham.ac.uk">
       <i class="fa-regular fa-envelope"></i>
