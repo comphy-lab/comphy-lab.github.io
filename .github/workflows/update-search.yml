@@ -3,102 +3,78 @@ name: Update Search Database
 on:
   schedule:
     - cron: "11 5 1,15 * *" # 1st and 15th at 05:11 UTC
-  workflow_dispatch: # Allow manual trigger
-  push:
-    branches: [main]
-    paths:
-      - "**/*.md"
-      - "**/*.html"
-      - ".github/workflows/update-search.yml"
+  workflow_dispatch:
 
-# Queue concurrent runs instead of cancelling; avoids lost updates when
-# several merges land close together and each triggers this workflow.
-concurrency:
-  group: update-search-database
-  cancel-in-progress: false
-
-# Add permissions needed for the workflow
 permissions:
-  contents: write # This allows the action to commit and push changes
+  contents: read
 
 jobs:
   update-search:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     env:
-      APP_BOT_USER_ID: 256885647
-
+      SEARCH_REVISION: ${{ vars.COMPHY_SEARCH_REVISION }}
+      INDEX_DESTINATION: assets/js/search_db.json
     steps:
-      - name: Create GitHub App token
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - name: Fetch and validate the reviewed index
+        id: prepare
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ -z "$SEARCH_REVISION" ]]; then
+            printf '%s\n' 'No reviewed COMPHY_SEARCH_REVISION is configured; skipping import.'
+            exit 0
+          fi
+          [[ "$SEARCH_REVISION" =~ ^[0-9a-f]{40}$ ]]
+          tmp="$(mktemp -d)"
+          trap 'rm -rf -- "$tmp"' EXIT
+          git -C "$tmp" init -q
+          git -C "$tmp" fetch --depth=1 --no-tags https://github.com/comphy-lab/comphy-search.git "$SEARCH_REVISION"
+          [[ "$(git -C "$tmp" rev-parse FETCH_HEAD)" == "$SEARCH_REVISION" ]]
+          read -r mode kind object path <<< "$(git -C "$tmp" ls-tree "$SEARCH_REVISION" -- search_db.json)"
+          [[ "$mode" == 100644 && "$kind" == blob && "$path" == search_db.json ]]
+          # Read the blob, not a checked-out path that may be a symlink.
+          git -C "$tmp" cat-file blob "$object" > "$tmp/search_db.json"
+          python3 .github/scripts/validate-search-index.py "$tmp/search_db.json"
+          install -m 0644 "$tmp/search_db.json" "$INDEX_DESTINATION"
+          git add -- "$INDEX_DESTINATION"
+          if ! git diff --cached --quiet -- "$INDEX_DESTINATION"; then
+            printf '%s\n' 'changed=true' >> "$GITHUB_OUTPUT"
+          fi
+
+      # With no owner or repositories input the token covers this repository only.
+      - name: Create repository-scoped update token
+        if: steps.prepare.outputs.changed == 'true'
         id: app-token
         uses: actions/create-github-app-token@c8f55efbd427e7465d6da1106e7979bc8aaee856 # v1.10.1
         with:
           app-id: ${{ secrets.APP_ID }}
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
 
-      # Always check out the current tip of main, not github.sha from the
-      # triggering push. Concurrent merges can advance main before this job
-      # starts; pinning to the trigger SHA then makes the later push a
-      # non-fast-forward reject.
-      - uses: actions/checkout@v5
-        with:
-          ref: main
-          fetch-depth: 0 # Fetch all history for proper git operations
-          token: ${{ steps.app-token.outputs.token }}
-          persist-credentials: false
-
-      - name: Clone comphy-search repository
-        run: |
-          git clone https://github.com/comphy-lab/comphy-search.git
-          mkdir -p assets/js
-
-      - name: Copy search database
-        run: |
-          test -f comphy-search/search_db.json
-          test ! -L comphy-search/search_db.json
-          jq empty comphy-search/search_db.json
-          cp --no-dereference comphy-search/search_db.json assets/js/search_db.json
-
-      - name: Commit and push changes with app token
+      - name: Open an index update pull request
+        if: steps.prepare.outputs.changed == 'true'
         env:
-          APP_TOKEN: ${{ steps.app-token.outputs.token }}
-          GIT_AUTHOR_NAME: comphy-search-updater[bot]
-          GIT_AUTHOR_EMAIL: >-
-            ${{ env.APP_BOT_USER_ID }}+comphy-search-updater[bot]@users.noreply.github.com
-          GIT_COMMITTER_NAME: comphy-search-updater[bot]
-          GIT_COMMITTER_EMAIL: >-
-            ${{ env.APP_BOT_USER_ID }}+comphy-search-updater[bot]@users.noreply.github.com
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+          GIT_CONFIG_COUNT: '1'
+          GIT_CONFIG_KEY_0: credential.helper
+          GIT_CONFIG_VALUE_0: '!gh auth git-credential'
+        shell: bash
         run: |
-          git add assets/js/search_db.json
-          if git diff --staged --quiet; then
-            echo "No changes to commit"
-          else
-            git commit -m "Update search database from comphy-search repository"
-            git log -1 --pretty=fuller
-
-            remote_url="https://x-access-token:${APP_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-            max_attempts=3
-            attempt=1
-            while [ "${attempt}" -le "${max_attempts}" ]; do
-              if git push "${remote_url}" HEAD:main; then
-                echo "Push succeeded on attempt ${attempt}"
-                exit 0
-              fi
-
-              if [ "${attempt}" -eq "${max_attempts}" ]; then
-                break
-              fi
-
-              echo "Push rejected (attempt ${attempt}/${max_attempts}); rebasing onto origin/main"
-              git fetch origin main
-              if ! git rebase origin/main; then
-                echo "Rebase onto origin/main failed"
-                git rebase --abort || true
-                exit 1
-              fi
-
-              attempt=$((attempt + 1))
-            done
-
-            echo "Push failed after ${max_attempts} attempts"
-            exit 1
+          set -euo pipefail
+          branch="automation/review-search-index-${SEARCH_REVISION}"
+          if [[ -n "$(gh pr list --head "$branch" --state open --json number --jq '.[0].number // empty')" ]]; then
+            printf '%s\n' 'An index update pull request already exists.'
+            exit 0
           fi
+          if [[ -z "$(git ls-remote origin "refs/heads/$branch")" ]]; then
+            git -c user.name='github-actions[bot]' \
+              -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+              commit -m 'Update the reviewed search index' -- "$INDEX_DESTINATION"
+            git push origin "HEAD:refs/heads/$branch"
+          fi
+          gh pr create --base main --head "$branch" \
+            --title 'Update the reviewed search index' \
+            --body "Import the validated search database at comphy-lab/comphy-search@${SEARCH_REVISION}."
